@@ -4,13 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="17a8a927-0db7-41d4-8f81-9181fc87e6d9" name="更改" comment="修改安装的py库列表">
-      <change afterPath="$PROJECT_DIR$/module/json/json_h.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module/oi/oi_h.py" afterDir="false" />
+    <list default="true" id="17a8a927-0db7-41d4-8f81-9181fc87e6d9" name="更改" comment="获取\Content\Audio\GeneratedSoundBanks\Windows\Event下的json文件路径">
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_订阅_接收对象名称被修改时的信息.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/oi/oi_h.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/oi/oi_h.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/module/waapi/waapi_json数据解析.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_json数据解析.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/waapi_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/waapi_test.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,13 +55,14 @@
     "Python.test.executor": "Run",
     "Python.waapi_json数据解析.executor": "Run",
     "Python.waapi_test.executor": "Run",
+    "Python.waapi_订阅_接收对象名称被修改时的信息.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "master",
     "last_opened_file_path": "F:/pppppy/SP"
   }
 }]]></component>
-  <component name="RunManager" selected="Python.oi_h">
+  <component name="RunManager" selected="Python.waapi_订阅_接收对象名称被修改时的信息">
     <configuration name="oi_h" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="SP" />
       <option name="ENV_FILES" value="" />
@@ -100,6 +99,28 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test/test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="waapi_订阅_接收对象名称被修改时的信息" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="SP" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/module/waapi" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/module/waapi/waapi_订阅_接收对象名称被修改时的信息.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -154,8 +175,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.oi_h" />
+        <item itemvalue="Python.waapi_订阅_接收对象名称被修改时的信息" />
         <item itemvalue="Python.waapi_json数据解析" />
+        <item itemvalue="Python.oi_h" />
         <item itemvalue="Python.waapi_test" />
         <item itemvalue="Python.test" />
       </list>
@@ -209,7 +231,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716990775694</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="获取\Content\Audio\GeneratedSoundBanks\Windows\Event下的json文件路径">
+      <option name="closed" value="true" />
+      <created>1717049475935</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1717049475935</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -218,6 +248,7 @@
     <MESSAGE value="测试文件提交" />
     <MESSAGE value="传入安装的py库列表" />
     <MESSAGE value="修改安装的py库列表" />
-    <option name="LAST_COMMIT_MESSAGE" value="修改安装的py库列表" />
+    <MESSAGE value="获取\Content\Audio\GeneratedSoundBanks\Windows\Event下的json文件路径" />
+    <option name="LAST_COMMIT_MESSAGE" value="获取\Content\Audio\GeneratedSoundBanks\Windows\Event下的json文件路径" />
   </component>
 </project>

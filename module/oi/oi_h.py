@@ -23,7 +23,7 @@ def oi_get_json_filesname():
 
         # 提取规则：只提取json文件
         for json_root, json_dirs, json_files in os.walk(root):
-            pprint(json_root)
+            # pprint(json_root)
             for json_file in json_files:
                 if ".json" in json_file:
                     # pprint(json_file)
@@ -34,7 +34,8 @@ def oi_get_json_filesname():
                     file_json_list.append(file_json_dict)
 
     return file_json_list
-
+    # [{'name': 'Play_VO_Munin_07.json',
+    #   'path': 'S:\\spgame\\Project\\Content\\Audio\\GeneratedSoundBanks\\Windows\\Event\\English\\28\\Play_VO_Munin_07.json'}]
 
 # 调用范例
 # file_json_list = oi_get_json_filesname()

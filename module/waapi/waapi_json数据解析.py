@@ -3,8 +3,8 @@ from pprint import pprint
 import config
 import module.oi.oi_h as oi_h
 
-file_name_json_list = oi_h.oi_get_json_filesname()
-print(file_name_json_list)
+# file_json_list = oi_h.oi_get_json_filesname()
+# pprint(file_json_list)
 
 with WaapiClient() as client:
-    pass
+    client.call("ak.wwise.core.soundbank.generated")
