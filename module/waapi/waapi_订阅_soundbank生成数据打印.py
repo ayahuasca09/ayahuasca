@@ -1,6 +1,20 @@
 from waapi import WaapiClient, CannotConnectToWaapiException
 from pprint import pprint
 import openpyxl
+from module.excel.excel_h import excel_get_sheet as excel_get_sheet
+
+excel = r'S:\chen.gong_DCC_Audio\Audio\Tool\生成的wem文件查询.xlsx'
+# 打开excel表
+sheet, wb = excel_get_sheet(excel, "Sheet1")
+
+# 存放.wem的list
+wem_id_list = []
+
+# 先清除excel数据
+for cell in list(sheet.columns)[0]:
+    # 第一排和空的不读
+    if cell.row != 1:
+        sheet.delete_rows(cell.row)
 
 # Python 的异常处理 try…except…else… 语句
 try:
@@ -11,7 +25,9 @@ except CannotConnectToWaapiException:
 
 else:
 
-    # 建立 on_name_changed() 准备在订阅中作为回调函数，用来接收字典形式的返回参数
+    """生成soundbank时订阅生成信息发送"""
+
+
     def soundbank_generated(*args, **kwargs):
 
         bankinfo_list = kwargs.get("bankInfo")
@@ -21,9 +37,22 @@ else:
         for bankinfo_dict in bankinfo_list:
             print("*****生成的单个BankInfo*****")
             # pprint(bankinfo_dict)
-            for media_dict in bankinfo_dict['Media']:
-                pprint(media_dict['Id'])
-                pprint(media_dict['ShortName'])
+
+            if 'Media' in bankinfo_dict:
+                for media_dict in bankinfo_dict['Media']:
+                    wem_id = media_dict['Id']
+                    wem_name = media_dict['ShortName']
+                    if wem_id not in wem_id_list:
+                        # 加入一个ID表进行后面重复的比对
+                        wem_id_list.append(wem_id)
+                        # pprint(wem_id)
+                        # pprint(wem_name)
+                        insert_row = sheet.max_row + 1
+                        # 插入为空的行
+                        sheet.cell(row=insert_row, column=1).value = int(wem_id)
+                        # 事件名称赋值
+                        sheet.cell(row=insert_row, column=2).value = wem_name
+
             print("*****生成的单个BankInfo结束*****")
 
         # 数据解析
@@ -35,15 +64,18 @@ else:
         client.disconnect()
 
 
-    # 订阅所需主题，传入回调函数，使用选项 type 以让名称修改时传回的字典里直接有被修改的对象类型
-    new_data = client.subscribe("ak.wwise.core.soundbank.generated", soundbank_generated, infoFile=True)
+    # 订阅所需主题，传入回调函数
+    client.subscribe("ak.wwise.core.soundbank.generated", soundbank_generated, infoFile=True)
 
+    """soundbank生成"""
     args = {
         "soundbanks": [
-            {"name": "ab"}
+            {"name": "Stop_All"}
         ],
         "writeToDisk": True,
         # "clearAudioFileCache": True
     }
 
     gen_log = client.call("ak.wwise.core.soundbank.generate", args)
+
+wb.save(excel)
