@@ -1,9 +1,21 @@
 from waapi import WaapiClient, CannotConnectToWaapiException
-from pprint import pprint
-import openpyxl
 from module.excel.excel_h import excel_get_sheet as excel_get_sheet
+import json
+from os.path import abspath, dirname
+import os
+from openpyxl.styles import Alignment
 
-excel_path = r'S:\chen.gong_DCC_Audio\Audio\Tool\生成的wem文件查询.xlsx'
+# 文件所在目录
+py_path = dirname(abspath(__file__))
+# 获取excel文件路径
+excel_name = '生成的wem文件查询.xlsx'
+excel_path = os.path.join(py_path, excel_name)
+# 获取json文件路径
+json_name = 'GenerateSoundbank_Log.json'
+json_path = os.path.join(py_path, json_name)
+
+# 创建openpyxl对齐方式：左对齐
+align = Alignment(horizontal='left')
 
 # 清空excel表的内容
 sheet, wb = excel_get_sheet(excel_path, 'Sheet1')
@@ -32,12 +44,14 @@ else:
         for bankinfo_dict in bankinfo_list:
             print("*****生成的单个BankInfo*****")
             # pprint(bankinfo_dict)
-            for media_dict in bankinfo_dict['Media']:
-                if media_dict['Id'] not in wem_id_list:
-                    wem_id_list.append(media_dict['Id'])
-                    insert_row = sheet.max_row + 1
-                    sheet.cell(row=insert_row, column=1).value = int(media_dict['Id'])
-                    sheet.cell(row=insert_row, column=2).value = media_dict['ShortName']
+            if 'Media' in bankinfo_dict:
+                for media_dict in bankinfo_dict['Media']:
+                    if media_dict['Id'] not in wem_id_list:
+                        wem_id_list.append(media_dict['Id'])
+                        insert_row = sheet.max_row + 1
+                        sheet.cell(row=insert_row, column=1).value = int(media_dict['Id'])
+                        sheet.cell(row=insert_row, column=1).alignment = align
+                        sheet.cell(row=insert_row, column=2).value = media_dict['ShortName']
 
             print("*****生成的单个BankInfo结束*****")
 
@@ -62,5 +76,12 @@ else:
     }
 
     gen_log = client.call("ak.wwise.core.soundbank.generate", args)
+    # pprint(gen_log)
+
+    # 将log写入json
+    gen_log_json = json.dumps(gen_log, indent=4)
+    with open(json_path, 'w') as file:
+        file.write(gen_log_json)
 
 wb.save(excel_path)
+os.system(excel_path)

@@ -4,12 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="17a8a927-0db7-41d4-8f81-9181fc87e6d9" name="更改" comment="名称迭代">
+    <list default="true" id="17a8a927-0db7-41d4-8f81-9181fc87e6d9" name="更改" comment="文件测试">
+      <change afterPath="$PROJECT_DIR$/module/waapi/GenerateSoundbank_Log.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/生成的wem文件查询.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/build/test/Analysis-00.toc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/build/test/EXE-00.toc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/build/test/PKG-00.toc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/build/test/PYZ-00.pyz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/build/test/PYZ-00.toc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/build/test/base_library.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/build/test/test.pkg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/build/test/warn-test.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/build/test/xref-test.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/dist/test.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/test.spec" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/test.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_订阅_soundbank生成数据打印.spec" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_订阅_soundbank生成数据.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_订阅_soundbank生成数据.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/waapi_test.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,6 +69,7 @@
     "Python.waapi_json数据解析.executor": "Run",
     "Python.waapi_sounbank生成.executor": "Run",
     "Python.waapi_test.executor": "Run",
+    "Python.waapi_订阅_soundbank生成数据 (1).executor": "Run",
     "Python.waapi_订阅_soundbank生成数据打印 (1).executor": "Run",
     "Python.waapi_订阅_接收对象名称被修改时的信息.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -66,7 +79,7 @@
     "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.语言默认设置"
   }
 }]]></component>
-  <component name="RunManager" selected="Python.test">
+  <component name="RunManager" selected="Python.waapi_订阅_soundbank生成数据 (1)">
     <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="SP" />
       <option name="ENV_FILES" value="" />
@@ -89,7 +102,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="waapi_订阅_接收对象名称被修改时的信息" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="waapi_订阅_soundbank生成数据 (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="SP" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -102,7 +115,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/module/waapi/waapi_订阅_接收对象名称被修改时的信息.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/module/waapi/waapi_订阅_soundbank生成数据.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -179,11 +192,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.waapi_订阅_soundbank生成数据 (1)" />
         <item itemvalue="Python.test" />
         <item itemvalue="Python.waapi_订阅_soundbank生成数据打印 (1)" />
         <item itemvalue="Python.waapi_test" />
         <item itemvalue="Python.waapi_订阅_soundbank生成数据打印" />
-        <item itemvalue="Python.waapi_订阅_接收对象名称被修改时的信息" />
       </list>
     </recent_temporary>
   </component>
@@ -275,7 +288,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717502391974</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="文件测试">
+      <option name="closed" value="true" />
+      <created>1717557540070</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1717557540070</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -300,6 +321,7 @@
     <MESSAGE value="打包测试封装为exe文件" />
     <MESSAGE value="soundbank生成并写入" />
     <MESSAGE value="名称迭代" />
-    <option name="LAST_COMMIT_MESSAGE" value="名称迭代" />
+    <MESSAGE value="文件测试" />
+    <option name="LAST_COMMIT_MESSAGE" value="文件测试" />
   </component>
 </project>
