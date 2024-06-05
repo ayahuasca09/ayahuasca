@@ -4,16 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="17a8a927-0db7-41d4-8f81-9181fc87e6d9" name="更改" comment="打包测试封装为exe文件">
+    <list default="true" id="17a8a927-0db7-41d4-8f81-9181fc87e6d9" name="更改" comment="名称迭代">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/waapi/build/waapi_订阅_soundbank生成数据打印/Analysis-00.toc" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/build/waapi_订阅_soundbank生成数据打印/Analysis-00.toc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/waapi/build/waapi_订阅_soundbank生成数据打印/EXE-00.toc" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/build/waapi_订阅_soundbank生成数据打印/EXE-00.toc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/waapi/build/waapi_订阅_soundbank生成数据打印/PKG-00.toc" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/build/waapi_订阅_soundbank生成数据打印/PKG-00.toc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/waapi/build/waapi_订阅_soundbank生成数据打印/waapi_订阅_soundbank生成数据打印.pkg" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/build/waapi_订阅_soundbank生成数据打印/waapi_订阅_soundbank生成数据打印.pkg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/waapi/build/waapi_订阅_soundbank生成数据打印/warn-waapi_订阅_soundbank生成数据打印.txt" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/build/waapi_订阅_soundbank生成数据打印/warn-waapi_订阅_soundbank生成数据打印.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/waapi/build/waapi_订阅_soundbank生成数据打印/xref-waapi_订阅_soundbank生成数据打印.html" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/build/waapi_订阅_soundbank生成数据打印/xref-waapi_订阅_soundbank生成数据打印.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/waapi/dist/waapi_订阅_soundbank生成数据打印.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_订阅_soundbank生成数据打印.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_订阅_soundbank生成数据打印.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_订阅_soundbank生成数据打印.spec" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/waapi_test.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,8 +66,8 @@
     "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.语言默认设置"
   }
 }]]></component>
-  <component name="RunManager" selected="Python.waapi_订阅_soundbank生成数据打印 (1)">
-    <configuration name="oi_h" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.test">
+    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="SP" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -80,11 +76,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/module/oi" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/module/oi/oi_h.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test/test.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -115,7 +111,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="waapi_订阅_soundbank生成数据打印 (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="waapi_订阅_soundbank生成数据" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="SP" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -128,7 +124,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/module/waapi/waapi_订阅_soundbank生成数据打印.py" />
+      <option name="SCRIPT_NAME" value="F:\pppppy\SP\module\waapi\waapi_订阅_soundbank生成数据.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -137,7 +133,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="waapi_订阅_soundbank生成数据打印" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="waapi_订阅_soundbank生成数据" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="SP" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -150,7 +146,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="F:\pppppy\SP\module\waapi\waapi_订阅_soundbank生成数据打印.py" />
+      <option name="SCRIPT_NAME" value="F:\pppppy\SP\module\waapi\waapi_订阅_soundbank生成数据.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -159,7 +155,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="waapi_sounbank生成" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="waapi_test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="SP" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -172,7 +168,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/module/waapi/waapi_sounbank生成.py" />
+      <option name="SCRIPT_NAME" value="F:\pppppy\SP\module\waapi\waapi_test.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -183,11 +179,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.test" />
         <item itemvalue="Python.waapi_订阅_soundbank生成数据打印 (1)" />
-        <item itemvalue="Python.waapi_sounbank生成" />
+        <item itemvalue="Python.waapi_test" />
         <item itemvalue="Python.waapi_订阅_soundbank生成数据打印" />
         <item itemvalue="Python.waapi_订阅_接收对象名称被修改时的信息" />
-        <item itemvalue="Python.oi_h" />
       </list>
     </recent_temporary>
   </component>
@@ -263,7 +259,23 @@
       <option name="project" value="LOCAL" />
       <updated>1717499896284</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="soundbank生成并写入">
+      <option name="closed" value="true" />
+      <created>1717502310185</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1717502310185</updated>
+    </task>
+    <task id="LOCAL-00009" summary="名称迭代">
+      <option name="closed" value="true" />
+      <created>1717502391974</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1717502391974</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -286,6 +298,8 @@
     <MESSAGE value="获取\Content\Audio\GeneratedSoundBanks\Windows\Event下的json文件路径" />
     <MESSAGE value="waapi_订阅_接收对象名称被修改时的信息" />
     <MESSAGE value="打包测试封装为exe文件" />
-    <option name="LAST_COMMIT_MESSAGE" value="打包测试封装为exe文件" />
+    <MESSAGE value="soundbank生成并写入" />
+    <MESSAGE value="名称迭代" />
+    <option name="LAST_COMMIT_MESSAGE" value="名称迭代" />
   </component>
 </project>
