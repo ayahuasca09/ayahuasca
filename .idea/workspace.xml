@@ -4,24 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="17a8a927-0db7-41d4-8f81-9181fc87e6d9" name="更改" comment="文件测试">
-      <change afterPath="$PROJECT_DIR$/module/waapi/GenerateSoundbank_Log.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module/waapi/生成的wem文件查询.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/build/test/Analysis-00.toc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/build/test/EXE-00.toc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/build/test/PKG-00.toc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/build/test/PYZ-00.pyz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/build/test/PYZ-00.toc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/build/test/base_library.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/build/test/test.pkg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/build/test/warn-test.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/build/test/xref-test.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/dist/test.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/test.spec" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/test.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_订阅_soundbank生成数据.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_订阅_soundbank生成数据.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test.py" afterDir="false" />
+    <list default="true" id="17a8a927-0db7-41d4-8f81-9181fc87e6d9" name="更改" comment="GenerateSoundbank_v1.1更新">
+      <change beforePath="$PROJECT_DIR$/module/waapi/GenerateSoundbank_Log.json" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_generatesoundbank/GenerateSoundbank_Log.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_订阅_soundbank生成数据.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_generatesoundbank/waapi_订阅_soundbank生成数据.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/waapi/生成的wem文件查询.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_generatesoundbank/生成的wem文件查询.xlsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,6 +65,11 @@
     "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.语言默认设置"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\pppppy\SP\module\waapi\waapi_generatesoundbank" />
+    </key>
+  </component>
   <component name="RunManager" selected="Python.waapi_订阅_soundbank生成数据 (1)">
     <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="SP" />
@@ -111,11 +102,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/module/waapi" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/module/waapi/waapi_generatesoundbank" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/module/waapi/waapi_订阅_soundbank生成数据.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/module/waapi/waapi_generatesoundbank/waapi_订阅_soundbank生成数据.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -137,7 +128,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="F:\pppppy\SP\module\waapi\waapi_订阅_soundbank生成数据.py" />
+      <option name="SCRIPT_NAME" value="F:\pppppy\SP\module\waapi\waapi_generatesoundbank\waapi_订阅_soundbank生成数据.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -159,7 +150,29 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="F:\pppppy\SP\module\waapi\waapi_订阅_soundbank生成数据.py" />
+      <option name="SCRIPT_NAME" value="F:\pppppy\SP\module\waapi\waapi_generatesoundbank\waapi_订阅_soundbank生成数据.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="waapi_订阅_soundbank生成数据" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="SP" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/module/waapi" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="F:\pppppy\SP\module\waapi\waapi_generatesoundbank\waapi_订阅_soundbank生成数据.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -193,10 +206,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.waapi_订阅_soundbank生成数据 (1)" />
+        <item itemvalue="Python.waapi_订阅_soundbank生成数据 (1)" />
         <item itemvalue="Python.test" />
         <item itemvalue="Python.waapi_订阅_soundbank生成数据打印 (1)" />
         <item itemvalue="Python.waapi_test" />
-        <item itemvalue="Python.waapi_订阅_soundbank生成数据打印" />
       </list>
     </recent_temporary>
   </component>
@@ -296,7 +309,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717557540070</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="GenerateSoundbank_v1.1更新">
+      <option name="closed" value="true" />
+      <created>1717571815151</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1717571815151</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -322,6 +343,7 @@
     <MESSAGE value="soundbank生成并写入" />
     <MESSAGE value="名称迭代" />
     <MESSAGE value="文件测试" />
-    <option name="LAST_COMMIT_MESSAGE" value="文件测试" />
+    <MESSAGE value="GenerateSoundbank_v1.1更新" />
+    <option name="LAST_COMMIT_MESSAGE" value="GenerateSoundbank_v1.1更新" />
   </component>
 </project>
