@@ -1,0 +1,118 @@
+{
+    "logs": [
+        {
+            "message": "Override project External Sources output paths: False",
+            "time": 1717581574,
+            "severity": "Message",
+            "messageId": "OverrideProjectExternalSourcesOutputPaths"
+        },
+        {
+            "message": "Override project SoundBank settings: False",
+            "time": 1717581574,
+            "severity": "Message",
+            "messageId": "OverrideProjectSoundBankSettings"
+        },
+        {
+            "message": "Override project SoundBank paths: False",
+            "time": 1717581574,
+            "severity": "Message",
+            "messageId": "OverrideProjectSoundBankPaths"
+        },
+        {
+            "message": "Use Source Control for Generated Files: False",
+            "time": 1717581574,
+            "severity": "Message",
+            "messageId": "UseSourceControlGeneratedFiles"
+        },
+        {
+            "platform": {
+                "id": "{A6F7E702-5333-4251-8D99-8E15D0F96E20}",
+                "name": "Windows"
+            },
+            "message": "External Sources output path: S:\\chen.gong_DCC_Audio\\Audio\\SilverPalace_WwiseProject\\GeneratedSoundBanks\\Windows",
+            "time": 1717581574,
+            "severity": "Message",
+            "messageId": "ExternalSourcesOutputPath"
+        },
+        {
+            "platform": {
+                "id": "{A6F7E702-5333-4251-8D99-8E15D0F96E20}",
+                "name": "Windows"
+            },
+            "message": "SoundBanks output path: S:\\spgame\\Project\\Content\\Audio\\GeneratedSoundBanks\\Windows\\",
+            "time": 1717581574,
+            "severity": "Message",
+            "messageId": "SoundBanksOutputPath"
+        },
+        {
+            "message": "Removed unused files from output directory (Windows).",
+            "time": 1717581574,
+            "severity": "Message",
+            "messageId": "OutputFolderCleanupMessage"
+        },
+        {
+            "platform": {
+                "id": "{D31960DE-8093-49AF-AF08-1D4E7BA82FF4}",
+                "name": "iOS"
+            },
+            "message": "External Sources output path: S:\\chen.gong_DCC_Audio\\Audio\\SilverPalace_WwiseProject\\GeneratedSoundBanks\\iOS",
+            "time": 1717581574,
+            "severity": "Message",
+            "messageId": "ExternalSourcesOutputPath"
+        },
+        {
+            "platform": {
+                "id": "{D31960DE-8093-49AF-AF08-1D4E7BA82FF4}",
+                "name": "iOS"
+            },
+            "message": "SoundBanks output path: S:\\spgame\\Project\\Content\\Audio\\GeneratedSoundBanks\\iOS\\",
+            "time": 1717581574,
+            "severity": "Message",
+            "messageId": "SoundBanksOutputPath"
+        },
+        {
+            "message": "Removed unused files from output directory (iOS).",
+            "time": 1717581575,
+            "severity": "Message",
+            "messageId": "OutputFolderCleanupMessage"
+        },
+        {
+            "platform": {
+                "id": "{ED1F22F4-D025-4F26-8597-12485BE3F4EC}",
+                "name": "Android"
+            },
+            "message": "External Sources output path: S:\\chen.gong_DCC_Audio\\Audio\\SilverPalace_WwiseProject\\GeneratedSoundBanks\\Android",
+            "time": 1717581575,
+            "severity": "Message",
+            "messageId": "ExternalSourcesOutputPath"
+        },
+        {
+            "platform": {
+                "id": "{ED1F22F4-D025-4F26-8597-12485BE3F4EC}",
+                "name": "Android"
+            },
+            "message": "SoundBanks output path: S:\\spgame\\Project\\Content\\Audio\\GeneratedSoundBanks\\Android\\",
+            "time": 1717581575,
+            "severity": "Message",
+            "messageId": "SoundBanksOutputPath"
+        },
+        {
+            "message": "Removed unused files from output directory (Android).",
+            "time": 1717581575,
+            "severity": "Message",
+            "messageId": "OutputFolderCleanupMessage"
+        },
+        {
+            "message": "Root output path: S:\\spgame\\Project\\Content\\Audio\\GeneratedSoundBanks\\",
+            "time": 1717581575,
+            "severity": "Message",
+            "messageId": "RootOutputPath"
+        },
+        {
+            "message": "14 message(s), 0 warning(s), 0 error(s), 0 fatal error(s)",
+            "time": 1717581575,
+            "severity": "Message",
+            "messageId": ""
+        }
+    ]
+}

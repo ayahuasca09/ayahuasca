@@ -1,12 +1,30 @@
 from waapi import WaapiClient, CannotConnectToWaapiException
-from module.excel.excel_h import excel_get_sheet as excel_get_sheet
+import openpyxl
 import json
 from os.path import abspath, dirname
 import os
 from openpyxl.styles import Alignment
+import sys
+
+
+# 打开工作簿并获取工作表
+def excel_get_sheet(path, sheetname):
+    # 打开工作簿
+    wb = openpyxl.load_workbook(path)
+    # print(wb)
+    # 获取工作表
+    sheet = wb[sheetname]
+    # print(sheet)
+    return sheet, wb
+
 
 # 文件所在目录
-py_path = dirname(abspath(__file__))
+py_path = ""
+if hasattr(sys, 'frozen'):
+    py_path = dirname(sys.executable)
+elif __file__:
+    py_path = dirname(abspath(__file__))
+
 # 获取excel文件路径
 excel_name = '生成的wem文件查询.xlsx'
 excel_path = os.path.join(py_path, excel_name)
@@ -69,7 +87,7 @@ else:
 
     args = {
         "soundbanks": [
-            {"name": "ab"}
+            {"name": "Stop_All"}
         ],
         "writeToDisk": True,
         # "clearAudioFileCache": True

@@ -2,25 +2,25 @@
     "logs": [
         {
             "message": "Override project External Sources output paths: False",
-            "time": 1717571898,
+            "time": 1717578049,
             "severity": "Message",
             "messageId": "OverrideProjectExternalSourcesOutputPaths"
         },
         {
             "message": "Override project SoundBank settings: False",
-            "time": 1717571898,
+            "time": 1717578049,
             "severity": "Message",
             "messageId": "OverrideProjectSoundBankSettings"
         },
         {
             "message": "Override project SoundBank paths: False",
-            "time": 1717571898,
+            "time": 1717578049,
             "severity": "Message",
             "messageId": "OverrideProjectSoundBankPaths"
         },
         {
             "message": "Use Source Control for Generated Files: False",
-            "time": 1717571898,
+            "time": 1717578049,
             "severity": "Message",
             "messageId": "UseSourceControlGeneratedFiles"
         },
@@ -30,7 +30,7 @@
                 "name": "Windows"
             },
             "message": "External Sources output path: S:\\chen.gong_DCC_Audio\\Audio\\SilverPalace_WwiseProject\\GeneratedSoundBanks\\Windows",
-            "time": 1717571898,
+            "time": 1717578049,
             "severity": "Message",
             "messageId": "ExternalSourcesOutputPath"
         },
@@ -40,13 +40,13 @@
                 "name": "Windows"
             },
             "message": "SoundBanks output path: S:\\spgame\\Project\\Content\\Audio\\GeneratedSoundBanks\\Windows\\",
-            "time": 1717571898,
+            "time": 1717578049,
             "severity": "Message",
             "messageId": "SoundBanksOutputPath"
         },
         {
             "message": "Removed unused files from output directory (Windows).",
-            "time": 1717571898,
+            "time": 1717578049,
             "severity": "Message",
             "messageId": "OutputFolderCleanupMessage"
         },
@@ -56,7 +56,7 @@
                 "name": "iOS"
             },
             "message": "External Sources output path: S:\\chen.gong_DCC_Audio\\Audio\\SilverPalace_WwiseProject\\GeneratedSoundBanks\\iOS",
-            "time": 1717571898,
+            "time": 1717578049,
             "severity": "Message",
             "messageId": "ExternalSourcesOutputPath"
         },
@@ -66,13 +66,13 @@
                 "name": "iOS"
             },
             "message": "SoundBanks output path: S:\\spgame\\Project\\Content\\Audio\\GeneratedSoundBanks\\iOS\\",
-            "time": 1717571898,
+            "time": 1717578049,
             "severity": "Message",
             "messageId": "SoundBanksOutputPath"
         },
         {
             "message": "Removed unused files from output directory (iOS).",
-            "time": 1717571898,
+            "time": 1717578049,
             "severity": "Message",
             "messageId": "OutputFolderCleanupMessage"
         },
@@ -82,7 +82,7 @@
                 "name": "Android"
             },
             "message": "External Sources output path: S:\\chen.gong_DCC_Audio\\Audio\\SilverPalace_WwiseProject\\GeneratedSoundBanks\\Android",
-            "time": 1717571898,
+            "time": 1717578049,
             "severity": "Message",
             "messageId": "ExternalSourcesOutputPath"
         },
@@ -92,25 +92,25 @@
                 "name": "Android"
             },
             "message": "SoundBanks output path: S:\\spgame\\Project\\Content\\Audio\\GeneratedSoundBanks\\Android\\",
-            "time": 1717571898,
+            "time": 1717578049,
             "severity": "Message",
             "messageId": "SoundBanksOutputPath"
         },
         {
             "message": "Removed unused files from output directory (Android).",
-            "time": 1717571898,
+            "time": 1717578049,
             "severity": "Message",
             "messageId": "OutputFolderCleanupMessage"
         },
         {
             "message": "Root output path: S:\\spgame\\Project\\Content\\Audio\\GeneratedSoundBanks\\",
-            "time": 1717571898,
+            "time": 1717578049,
             "severity": "Message",
             "messageId": "RootOutputPath"
         },
         {
             "message": "14 message(s), 0 warning(s), 0 error(s), 0 fatal error(s)",
-            "time": 1717571898,
+            "time": 1717578049,
             "severity": "Message",
             "messageId": ""
         }
