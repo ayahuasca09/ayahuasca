@@ -1,20 +1,28 @@
 {
 	"Amb": {
-		"X00": 
-		{
+		"X00": {
 			"name": "A",
 			"child": [ "MgSt", "Crem" ],
-			"description": 
-			{
+			"description": {
 				"length": 25
 			}
 		},
-		"Gen": 
-		{
-           "description": 
-			{
+		"Gen": {
+           "description": {
 				"length": 25
 			}
 		}
-	}
+	},
+	"Char":{
+		"module":"((Skill)|(Foley)|(Mov))",
+		"name":"C",
+    "property":
+		   "((Atk\\d*)|(Hook)|(SkyAtk)|(Battle)|"
+           "(Dodge)|(Counter)|"
+           "(Execu\\d*)|"
+           "(Focus)|"
+           "(Gen)|"
+           "(Hit)|(Death)|"
+           "(Strafe)|"
+           "(Ult))"	
 }

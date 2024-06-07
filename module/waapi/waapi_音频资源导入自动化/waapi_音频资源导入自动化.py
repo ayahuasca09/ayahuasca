@@ -27,15 +27,17 @@ name = "Char_C03_Skill_Execu1_Pre_Hook"
 name_list = name.split("_")
 
 """检查LP是否在末尾"""
-if "LP" in name:
-    # print("LP")
-    # .*代表所有字符 _LP$代表以_LP结尾
-    pattern = r".*_LP$"
-    result = re.match(pattern, name)
-    if result != None:
-        pass
-    else:
-        print(name + "：_LP应放在最末尾")
+def check_LP_in_last():
+    if "LP" in name:
+        # print("LP")
+        # .*代表所有字符 _LP$代表以_LP结尾
+        pattern = r".*_LP$"
+        result = re.match(pattern, name)
+        if result != None:
+            pass
+        else:
+            print(name + "：_LP应放在最末尾")
+# check_LP_in_last()
 
 """判定_的每个开头都要大写"""
 
@@ -46,12 +48,16 @@ if "LP" in name:
 """正则规则列表"""
 pattern_list = []
 
+char = "Char"
+
 """Char检查规则"""
-# 以Char开头
-pattern = ("^Char"
+# 以Char开头,命名分组以供输出(?P<正则>)
+pattern = ("(?P<first>"
+           "^" + char +
            "_"
            # 角色名称：C01，C02……
            "C\\d{2,4}"
+           ")"
            "_"
            # 所属哪个模块
            "((Skill)|(Foley))"
@@ -72,5 +78,9 @@ pattern = ("^Char"
 pattern_list.append(pattern)
 # result = re.search(pattern, name)
 # print(result)
+# data_list = re.finditer(pattern, name)
+# for item in data_list:
+#     item_dict = item.groupdict()
+#     pprint(item_dict)
 
 # print(name_list)
