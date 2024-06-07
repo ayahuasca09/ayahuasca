@@ -17,13 +17,8 @@ elif __file__:
 json_name = '导入规则.json'
 json_path = os.path.join(py_path, json_name)
 
-"""测试名称"""
-name = "Char_Skill_C01_Focus_Ready2"
-name_list = name.split("_")
-# 一级系统名称
-system_name = ""
-
 """*****************功能检测区******************"""
+
 """字符串长度检查"""
 
 
@@ -42,7 +37,7 @@ def check_by_json(system_dict):
     pattern = (
         # 一级结构
             "(?P<the1>" + "^" +
-            name_list[0] +
+            word_list[0] +
             ")" + "_" +
 
             # module
@@ -90,11 +85,11 @@ def check_first_system_name(js_dict):
     flag = 0
     for key in js_dict:
         # print(key)
-        if key == name_list[0]:
+        if key == word_list[0]:
             flag = 1
             break
     if flag == 1:
-        return js_dict[name_list[0]]
+        return js_dict[word_list[0]]
     else:
         print(name + "：一级系统名称（如Amb、Char）等有误，请检查拼写")
 
@@ -113,6 +108,25 @@ def check_LP_in_last():
         else:
             print(name + "：_LP应放在最末尾")
 
+
+"""测试名称"""
+name = "Char_Skill_C01_Focus_Ready2_LP"
+word_list = name.split("_")
+is_title = True
+for word in word_list:
+    """判定_的每个都不能超过10个"""
+    check_by_str_length(word, 10)
+    """判定_的每个开头必须大写"""
+    # 只需要检查第一个字符，因为istitle会导致检查字符串只能首字母大写
+    result = word[0].istitle()
+    if result == False:
+        is_title = False
+        break
+if is_title == False:
+    print(name + "：通过”_“分隔的每个单词开头都需要大写")
+
+# 一级系统名称
+system_name = ""
 
 """*****************主程序处理******************"""
 # 打开json文件并转为python字典
@@ -143,20 +157,3 @@ with open(json_path, 'r') as jsfile:
     check_by_json(system_dict)
 
 # check_LP_in_last()
-
-"""判定_的每个开头都要大写"""
-
-"""判定_的每个都不能超过10个"""
-
-"""长词需要使用缩写"""
-
-"""正则规则列表"""
-
-# result = re.search(pattern, name)
-# print(result)
-# data_list = re.finditer(pattern, name)
-# for item in data_list:
-#     item_dict = item.groupdict()
-#     pprint(item_dict)
-
-# print(name_list)
