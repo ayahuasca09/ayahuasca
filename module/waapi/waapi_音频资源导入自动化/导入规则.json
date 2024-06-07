@@ -1,0 +1,20 @@
+{
+	"Amb": {
+		"X00": 
+		{
+			"name": "A",
+			"child": [ "MgSt", "Crem" ],
+			"description": 
+			{
+				"length": 25
+			}
+		},
+		"Gen": 
+		{
+           "description": 
+			{
+				"length": 25
+			}
+		}
+	}
+}
