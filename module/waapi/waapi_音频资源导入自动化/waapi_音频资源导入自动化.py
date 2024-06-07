@@ -24,11 +24,63 @@ name_list = name.split("_")
 system_name = ""
 
 """*****************功能检测区******************"""
+"""字符串长度检查"""
+
+
+def check_by_str_length(str1, length):
+    if len(str1) > length:
+        if "_" in str1:
+            print(name + "：描述后缀名过长，限制字符数为" + str(length))
+        else:
+            print(name + "：通过_切分的某个单词过长，每个单词长度不应超过10个字符，需要再拆分")
+
+
 """按照json配置检查"""
 
 
-def check_by_json():
-    pass
+def check_by_json(system_dict):
+    pattern = (
+        # 一级结构
+            "(?P<the1>" + "^" +
+            name_list[0] +
+            ")" + "_" +
+
+            # module
+            "(?P<the2>" +
+            system_dict['module'] +
+            ")" + "_" +
+
+            # name
+            "(?P<the3>" +
+            system_dict['name'] +
+            ")" + "_"
+
+            # property
+                  "(?P<the4>" +
+            system_dict['property'] +
+            ")" + "_"
+
+            # 其他
+                  "(?P<the5>" +
+            ".*" +
+            ")"
+    )
+    result = re.search(pattern, name)
+    if result == None:
+        print((name + "：中间有字段匹配错误，请检查是否为结构顺序或拼写错误"))
+    else:
+        data_list = re.finditer(pattern, name)
+        for item in data_list:
+            item_dict = item.groupdict()
+            # pprint(item_dict)
+            # {'the1': 'Char',
+            #  'the2': 'Skill',
+            #  'the3': 'C01',
+            #  'the4': 'Focus',
+            #  'the5': 'Ready2'}
+
+            # 字符串长度检查
+            check_by_str_length(item_dict['the5'], system_dict['length'])
 
 
 """检查系统名是否正确"""
@@ -84,45 +136,11 @@ with open(json_path, 'r') as jsfile:
     #  'property': '((Atk\\d*)|(Hook)|(SkyAtk)|(Battle)|(Dodge)|(Counter)|
     #  (Execu\\d*)|(Focus)|(Gen)|(Hit)|(Death)|(Strafe)|(Ult))'}
 
-    pattern = (
-        # 一级结构
-            "(?P<the1>" + "^" +
-            name_list[0] +
-            ")" + "_" +
-
-            # module
-            "(?P<the2>" +
-            system_dict['module'] +
-            ")" + "_" +
-
-            # name
-            "(?P<the3>" +
-            system_dict['name'] +
-            ")" + "_"
-
-            # property
-                  "(?P<the4>" +
-            system_dict['property'] +
-            ")" + "_"
-
-            # 其他
-                  "(?P<the5>" +
-            ".*" +
-            ")"
-    )
-    # data_list = re.finditer(pattern, name)
-    # for item in data_list:
-    #     item_dict = item.groupdict()
-    #     pprint(item_dict)
-
-    result = re.search(pattern, name)
-    if result == None:
-        print((name + "：中间有字段匹配错误，请检查是否为结构顺序或拼写错误"))
-    else:
-        pass
-
     # 检查LP是否在末尾
     check_LP_in_last()
+
+    # check_by_json(system_dict)
+    check_by_json(system_dict)
 
 # check_LP_in_last()
 
