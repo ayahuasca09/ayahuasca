@@ -6,27 +6,40 @@ import os
 from pprint import pprint
 import re
 
-# # 文件所在目录
-# py_path = ""
-# if hasattr(sys, 'frozen'):
-#     py_path = dirname(sys.executable)
-# elif __file__:
-#     py_path = dirname(abspath(__file__))
-#
-# """获取json文件路径"""
-# json_name = '导入规则.json'
-# json_path = os.path.join(py_path, json_name)
-#
-# # 打开json文件并转为python字典
-# with open(json_path, 'r') as jsfile:
-#     js_dict = json.load(jsfile)
-#     # pprint(js_dict)
+# 文件所在目录
+py_path = ""
+if hasattr(sys, 'frozen'):
+    py_path = dirname(sys.executable)
+elif __file__:
+    py_path = dirname(abspath(__file__))
+
+"""获取json文件路径"""
+json_name = '导入规则.json'
+json_path = os.path.join(py_path, json_name)
 
 """测试名称"""
 name = "Char_C03_Skill_Execu1_Pre_Hook"
 name_list = name.split("_")
 
+"""*****************功能检测区******************"""
+"""检查系统名是否正确"""
+
+
+def check_first_system_name(js_dict):
+    flag = 0
+    for key in js_dict:
+        # print(key)
+        if key == name_list[0]:
+            flag = 1
+    if flag == 1:
+        pass
+    else:
+        print(name + "：一级系统名称（如Amb、Char）等有误，请检查拼写")
+
+
 """检查LP是否在末尾"""
+
+
 def check_LP_in_last():
     if "LP" in name:
         # print("LP")
@@ -37,6 +50,24 @@ def check_LP_in_last():
             pass
         else:
             print(name + "：_LP应放在最末尾")
+
+
+"""*****************主程序处理******************"""
+# 打开json文件并转为python字典
+with open(json_path, 'r') as jsfile:
+    js_dict = json.load(jsfile)
+    # pprint(js_dict)
+    # {'Amb': {'Gen': {'description': {'length': 25}},
+    #          'X00': {'child': ['MgSt', 'Crem'],
+    #                  'description': {'length': 25},
+    #                  'name': 'A'}},
+    #  'Char': {'module': '((Skill)|(Foley)|(Mov))',
+    #           'name': 'C',
+    #           'property': '((Atk\\d*)|(Hook)|(SkyAtk)|(Battle)|(Dodge)|(Counter)|
+    #           (Execu\\d*)|(Focus)|(Gen)|(Hit)|(Death)|(Strafe)|(Ult))'}}
+
+    check_first_system_name(js_dict)
+
 # check_LP_in_last()
 
 """判定_的每个开头都要大写"""

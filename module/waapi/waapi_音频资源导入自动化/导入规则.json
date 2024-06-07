@@ -8,21 +8,14 @@
 			}
 		},
 		"Gen": {
-           "description": {
+			"description": {
 				"length": 25
 			}
 		}
 	},
-	"Char":{
-		"module":"((Skill)|(Foley)|(Mov))",
-		"name":"C",
-    "property":
-		   "((Atk\\d*)|(Hook)|(SkyAtk)|(Battle)|"
-           "(Dodge)|(Counter)|"
-           "(Execu\\d*)|"
-           "(Focus)|"
-           "(Gen)|"
-           "(Hit)|(Death)|"
-           "(Strafe)|"
-           "(Ult))"	
+	"Char": {
+		"module": "((Skill)|(Foley)|(Mov))",
+		"name": "C",
+		"property": "((Atk\\d*)|(Hook)|(SkyAtk)|(Battle)|(Dodge)|(Counter)|(Execu\\d*)|(Focus)|(Gen)|(Hit)|(Death)|(Strafe)|(Ult))"
+	}
 }
