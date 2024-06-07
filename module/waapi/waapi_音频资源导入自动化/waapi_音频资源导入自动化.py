@@ -18,10 +18,19 @@ json_name = '导入规则.json'
 json_path = os.path.join(py_path, json_name)
 
 """测试名称"""
-name = "Char_C03_Skill_Execu1_Pre_Hook"
+name = "Char_Skill_C01_Focus_Ready2"
 name_list = name.split("_")
+# 一级系统名称
+system_name = ""
 
 """*****************功能检测区******************"""
+"""按照json配置检查"""
+
+
+def check_by_json():
+    pass
+
+
 """检查系统名是否正确"""
 
 
@@ -31,8 +40,9 @@ def check_first_system_name(js_dict):
         # print(key)
         if key == name_list[0]:
             flag = 1
+            break
     if flag == 1:
-        pass
+        return js_dict[name_list[0]]
     else:
         print(name + "：一级系统名称（如Amb、Char）等有误，请检查拼写")
 
@@ -66,7 +76,53 @@ with open(json_path, 'r') as jsfile:
     #           'property': '((Atk\\d*)|(Hook)|(SkyAtk)|(Battle)|(Dodge)|(Counter)|
     #           (Execu\\d*)|(Focus)|(Gen)|(Hit)|(Death)|(Strafe)|(Ult))'}}
 
-    check_first_system_name(js_dict)
+    # 检查系统名是否正确
+    system_dict = check_first_system_name(js_dict)
+    # pprint(system_dict)
+    # {'module': '((Skill)|(Foley)|(Mov))',
+    #  'name': 'C',
+    #  'property': '((Atk\\d*)|(Hook)|(SkyAtk)|(Battle)|(Dodge)|(Counter)|
+    #  (Execu\\d*)|(Focus)|(Gen)|(Hit)|(Death)|(Strafe)|(Ult))'}
+
+    pattern = (
+        # 一级结构
+            "(?P<the1>" + "^" +
+            name_list[0] +
+            ")" + "_" +
+
+            # module
+            "(?P<the2>" +
+            system_dict['module'] +
+            ")" + "_" +
+
+            # name
+            "(?P<the3>" +
+            system_dict['name'] +
+            ")" + "_"
+
+            # property
+                  "(?P<the4>" +
+            system_dict['property'] +
+            ")" + "_"
+
+            # 其他
+                  "(?P<the5>" +
+            ".*" +
+            ")"
+    )
+    # data_list = re.finditer(pattern, name)
+    # for item in data_list:
+    #     item_dict = item.groupdict()
+    #     pprint(item_dict)
+
+    result = re.search(pattern, name)
+    if result == None:
+        print((name + "：中间有字段匹配错误，请检查是否为结构顺序或拼写错误"))
+    else:
+        pass
+
+    # 检查LP是否在末尾
+    check_LP_in_last()
 
 # check_LP_in_last()
 
@@ -77,36 +133,7 @@ with open(json_path, 'r') as jsfile:
 """长词需要使用缩写"""
 
 """正则规则列表"""
-pattern_list = []
 
-char = "Char"
-
-"""Char检查规则"""
-# 以Char开头,命名分组以供输出(?P<正则>)
-pattern = ("(?P<first>"
-           "^" + char +
-           "_"
-           # 角色名称：C01，C02……
-           "C\\d{2,4}"
-           ")"
-           "_"
-           # 所属哪个模块
-           "((Skill)|(Foley))"
-           "_"
-           # 所属哪个Actor-Mixer,*d代表出现0或多次数字
-           "((Atk\\d*)|(Hook)|(SkyAtk)|(Battle)|"
-           "(Dodge)|(Counter)|"
-           "(Execu\\d*)|"
-           "(Focus)|"
-           "(Gen)|"
-           "(Hit)|(Death)|"
-           "(Strafe)|"
-           "(Ult))"
-           "_"
-           # 最后的状态描述，不能超过20个
-           ".*"
-           )
-pattern_list.append(pattern)
 # result = re.search(pattern, name)
 # print(result)
 # data_list = re.finditer(pattern, name)

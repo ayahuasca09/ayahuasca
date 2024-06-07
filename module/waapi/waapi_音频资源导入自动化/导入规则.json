@@ -15,7 +15,7 @@
 	},
 	"Char": {
 		"module": "((Skill)|(Foley)|(Mov))",
-		"name": "C",
+		"name": "C\\d{2,4}",
 		"property": "((Atk\\d*)|(Hook)|(SkyAtk)|(Battle)|(Dodge)|(Counter)|(Execu\\d*)|(Focus)|(Gen)|(Hit)|(Death)|(Strafe)|(Ult))"
 	}
 }

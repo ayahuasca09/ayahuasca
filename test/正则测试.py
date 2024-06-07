@@ -12,3 +12,28 @@ pattern = (".")
 # result = re.search(pattern, name)
 # print(result)
 
+"""Char检查规则范例"""
+# 以Char开头,命名分组以供输出(?P<正则>)
+# pattern = ("(?P<first>"
+#            "^Char"
+#            "_"
+#            # 角色名称：C01，C02……
+#            "C\\d{2,4}"
+#            ")"
+#            "_"
+#            # 所属哪个模块
+#            "((Skill)|(Foley))"
+#            "_"
+#            # 所属哪个Actor-Mixer,*d代表出现0或多次数字
+#            "((Atk\\d*)|(Hook)|(SkyAtk)|(Battle)|"
+#            "(Dodge)|(Counter)|"
+#            "(Execu\\d*)|"
+#            "(Focus)|"
+#            "(Gen)|"
+#            "(Hit)|(Death)|"
+#            "(Strafe)|"
+#            "(Ult))"
+#            "_"
+#            # 最后的状态描述，不能超过20个
+#            ".*"
+#            )
