@@ -17,6 +17,10 @@ elif __file__:
 json_name = '导入规则.json'
 json_path = os.path.join(py_path, json_name)
 
+# 打开json文件并转为python字典
+with open(json_path, 'r') as jsfile:
+    js_dict = json.load(jsfile)
+
 """*****************功能检测区******************"""
 """检查描述/状态/修饰词是否在末尾"""
 
@@ -30,6 +34,18 @@ def check_is_chinese(string):
     return False
 
 
+"""通过正则表达式检查"""
+
+
+def check_by_re(pattern, name, log):
+    result = re.search(pattern, name)
+    if result == None:
+        print((cell_sound.value + log))
+    else:
+        new_name = name.replace(result.group(), "")
+        return new_name
+
+
 """字符串长度检查"""
 
 
@@ -41,9 +57,7 @@ def check_by_str_length(str1, length):
             print(name + "：通过_切分的某个单词过长，每个单词长度不应超过10个字符，需要再拆分")
 
 
-"""按照json配置检查"""
-
-
+# 已废弃按照json配置检查
 def check_by_json_by_re(system_dict):
     pattern = (
         # 一级结构
@@ -89,16 +103,46 @@ def check_by_json_by_re(system_dict):
             check_by_str_length(item_dict['the5'], system_dict['length'])
 
 
+"""Char类型检查"""
+
+
+def check_by_char(name):
+    module_dict = js_dict['Char']['module']
+    flag = 0
+    for module in module_dict:
+        # 模块层查询
+        if module + "_" in name:
+            name = name.replace(module + "_", "")
+            # 角色名层查询
+            name = check_by_re(js_dict['Char']['name'] + "_", name,
+                               "：角色名称（如C01）不正确，请检查")
+            if name != None:
+                # 技能层查询
+                name = check_by_re(module_dict[module]['property'] + "_*", name,
+                                   "：技能名称等不在通用列表中，请查看是否拼写错误或需要添加列表")
+                # 长度限制查询
+                if name != None:
+                    if len(name) > js_dict['Char']['length']:
+                        print(
+                            cell_sound.value + "：状态/描述/修饰后缀过长，请考虑精简字符")
+
+            flag = 1
+            break
+
+    if flag == 0:
+        print(cell_sound.value + "：Char的模块（如Skill，Foley等）有误，请检查是否添加模块名称或是否拼写有误")
+
+
 """获取一级系统名走不同的检测方式"""
 
 
-def check_first_system_name():
+def check_first_system_name(name):
     if word_list[0] == "Amb":
         return name.replace("Amb_", "")
     elif word_list[0] == "Cg":
         return name.replace("Cg_", "")
     elif word_list[0] == "Char":
-        return name.replace("Char_", "")
+        check_by_char(name.replace("Char_", ""))
     elif word_list[0] == "Imp":
         return name.replace("Imp_", "")
     elif word_list[0] == "Mon":
@@ -139,10 +183,6 @@ for i in os.walk(py_path):
     file_names.append(i)
 # pprint("输出文件夹下的文件名：")
 file_name_list = file_names[0][2]
-
-# 打开json文件并转为python字典
-with open(json_path, 'r') as jsfile:
-    js_dict = json.load(jsfile)
 
 # 提取规则：只提取xlsx文件
 for i in file_name_list:
@@ -186,5 +226,5 @@ for i in file_name_list:
                                 # print(name)
 
                                 # 检查一级系统并索引到不同的检测方式
-                                name = check_first_system_name()
+                                check_first_system_name(name)
                                 # print(name)
