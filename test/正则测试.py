@@ -1,10 +1,10 @@
 import re
 
 """测试名称"""
-name = "Char_C03_Skill_Execu1_Pre_Hook"
+name = "Char_C03_Skill_Execu1_Pre_Hook_LP"
 
 """测试模式"""
-pattern = (".")
+pattern = r"_LP$"
 
 """测试结果类型"""
 # 查看匹配的位置和名称
@@ -37,3 +37,7 @@ pattern = (".")
 #            # 最后的状态描述，不能超过20个
 #            ".*"
 #            )
+
+"""正则取代_LP测试"""
+new_name = re.sub(pattern, "", name)
+print(new_name)

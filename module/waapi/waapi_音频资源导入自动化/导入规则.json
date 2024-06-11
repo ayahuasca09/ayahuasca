@@ -1,22 +1,94 @@
 {
 	"Amb": {
-		"X00": {
-			"name": "A",
-			"child": [ "MgSt", "Crem" ],
-			"description": {
-				"length": 25
-			}
-		},
-		"Gen": {
-			"description": {
-				"length": 25
-			}
-		}
+		"module": ".*",
+		"name": ".*",
+		"property": ".*",
+		"length": 20
+	},
+	"Cg": {
+		"module": ".*",
+		"name": ".*",
+		"property": ".*",
+		"length": 20
 	},
 	"Char": {
-		"module": "((Skill)|(Foley)|(Mov))",
+		"module": {
+			"Skill": {
+				"property": "((Atk\\d*)|(Hook)|(SkyAtk)|(Battle)|(Dodge)|(Counter)|(Execu\\d*)|(Focus)|(Gen)|(Hit)|(Death)|(Strafe)|(Ult))"
+			},
+			"Foley": {
+				"property": ".*"
+			},
+			"Mov": {
+				"property": ".*"
+			},
+			"Shout": {
+				"property": ".*"
+			}
+		},
 		"name": "C\\d{2,4}",
-		"property": "((Atk\\d*)|(Hook)|(SkyAtk)|(Battle)|(Dodge)|(Counter)|(Execu\\d*)|(Focus)|(Gen)|(Hit)|(Death)|(Strafe)|(Ult))",
+		"length": 20
+	},
+	"Imp": {
+		"module": ".*",
+		"name": ".*",
+		"property": ".*",
+		"length": 20
+	},
+	"Mon": {
+			"Mob": {
+				"module": {
+					"Skill": {
+						"property": "((Atk\\d*)|(Death)|(.*))"
+					},
+					"Foley": {
+						"property": ".*"
+					},
+					"Shout": {
+						"property": ".*"
+					}
+				},
+				"name": "M\\d{2,4}",
+				"length": 20
+			},
+		"Boss": {
+			"module": {
+				"Body": {
+					"property": "((Atk\\d*)|(Execu\\d*)|(Death)|(.*))"
+				},
+				"Part": {
+					"property": ".*"
+				},
+				"Shout": {
+					"property": ".*"
+				},
+				"Mov": {
+					"property": ".*"
+				},
+				"Foley": {
+					"property": ".*"
+				}
+			},
+			"name": "(B\\d{2,4})",
+			"length": 20
+		}
+	},
+	"Mus": {
+		"module": ".*",
+		"name": ".*",
+		"property": ".*",
+		"length": 20
+	},
+	"Sys": {
+		"module": ".*",
+		"name": ".*",
+		"property": ".*",
+		"length": 20
+	},
+	"VO": {
+		"module": ".*",
+		"name": ".*",
+		"property": ".*",
 		"length": 20
 	}
 }
