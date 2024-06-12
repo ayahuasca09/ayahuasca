@@ -86,7 +86,8 @@
 			"Show": {
 				"property": "((C\\d{2,4})|Gen)",
 				"property2": "Def",
-				"property3": "((Enter_Pose)|(Exit_Pose)|(Idle_Pose))"
+				"property3": "((Enter_Pose\\d*)|(Exit_Pose\\d*)|(Idle_Pose\\d*))",
+				"length": 10
 			}
 		},
 		"name": ".*",

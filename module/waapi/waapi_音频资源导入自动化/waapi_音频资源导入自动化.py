@@ -219,9 +219,12 @@ def check_by_sys(name):
                         name = check_by_re(module_dict[module]['property2'] + "_", name)
                         if name != None:
                             # 动作名称
-                            name = check_by_re(module_dict[module]['property3'] + "_", name)
-        flag = 1
-        break
+                            name = check_by_re(module_dict[module]['property3'] + "_*", name)
+                            if name != None:
+                                # 长度限制查询
+                                check_by_str_length(name, module_dict[module]['length'])
+            flag = 1
+            break
     if flag == 0:
         print(cell_sound.value + "：Sys的模块（如Show等）有误，请检查是否添加模块名称或是否拼写有误")
 
