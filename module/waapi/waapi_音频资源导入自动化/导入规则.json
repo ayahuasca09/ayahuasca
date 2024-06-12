@@ -1,7 +1,7 @@
 {
 	"Amb": {
 		"module": ".*",
-		"name": ".*",
+		"name": "((A\\d{2,4})|Gen)",
 		"property": ".*",
 		"length": 20
 	},
@@ -20,13 +20,15 @@
 				"property": ".*"
 			},
 			"Mov": {
-				"property": ".*"
+				"property": "((HHeel)|(SHeel)|(Boot)|(MJ))",
+				"property2": "((Walk)|(Run)|(Sprint)|(Jump)|(Step)|（Rub）)",
+				"property3": "((Dirt)|(Rock)|(Wood)|(Gen)"
 			},
 			"Shout": {
 				"property": ".*"
 			}
 		},
-		"name": "C\\d{2,4}",
+		"name": "((C\\d{2,4})|Gen)",
 		"length": 20
 	},
 	"Imp": {
@@ -36,21 +38,21 @@
 		"length": 20
 	},
 	"Mon": {
-			"Mob": {
-				"module": {
-					"Skill": {
-						"property": "((Atk\\d*)|(Death)|(.*))"
-					},
-					"Foley": {
-						"property": ".*"
-					},
-					"Shout": {
-						"property": ".*"
-					}
+		"Mob": {
+			"module": {
+				"Skill": {
+					"property": "((Atk\\d*)|(Death)|(.*))"
 				},
-				"name": "M\\d{2,4}",
-				"length": 20
+				"Foley": {
+					"property": ".*"
+				},
+				"Shout": {
+					"property": ".*"
+				}
 			},
+			"name": "((M\\d{2,4})|Gen)",
+			"length": 20
+		},
 		"Boss": {
 			"module": {
 				"Body": {
@@ -69,7 +71,7 @@
 					"property": ".*"
 				}
 			},
-			"name": "(B\\d{2,4})",
+			"name": "((B\\d{2,4})|Gen)",
 			"length": 20
 		}
 	},
@@ -80,7 +82,13 @@
 		"length": 20
 	},
 	"Sys": {
-		"module": ".*",
+		"module": {
+			"Show": {
+				"property": "((C\\d{2,4})|Gen)",
+				"property2": "Def",
+				"property3": "((Enter_Pose)|(Exit_Pose)|(Idle_Pose))"
+			}
+		},
 		"name": ".*",
 		"property": ".*",
 		"length": 20
@@ -90,5 +98,20 @@
 		"name": ".*",
 		"property": ".*",
 		"length": 20
+	},
+	"Gen_Word": {
+		"Lit": [ "Light", "Small" ],
+		"Mid": [ "Middle", "Medium" ],
+		"Hvy": [ "Heavy", "Large", "Big" ],
+		"Far": [ "Distant" ],
+		"Med": [ "Medium" ],
+		"Cls": [ "Close", "Near" ],
+		"VeryCls": [ "VeryClose" ],
+		"LP": [ "Lp", "Loop", "lp" ],
+		"Grd": [ "Ground" ],
+		"Death": [ "Die", "Dying" ],
+		"Sucs": [ "Succeed", "Success" ],
+		"Fail": [ "False", "Lose", "Failure" ],
+		"Def": ["Default"]
 	}
 }
