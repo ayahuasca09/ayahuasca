@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="17a8a927-0db7-41d4-8f81-9181fc87e6d9" name="更改" comment="音频资源导入检测——命名规范细则补充">
+    <list default="true" id="17a8a927-0db7-41d4-8f81-9181fc87e6d9" name="更改" comment="音频资源导入检测——命名规范之sys_show">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/SilverPalace战斗音频需求资源管理表.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/SilverPalace战斗音频需求资源管理表.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/SilverPalace音频需求资源管理表.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/SilverPalace音频需求资源管理表.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/waapi_音频资源导入自动化.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/waapi_音频资源导入自动化.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/导入规则.json" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/导入规则.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -439,7 +439,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718204610734</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="音频资源导入检测——命名规范之sys_show">
+      <option name="closed" value="true" />
+      <created>1718205508864</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1718205508864</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -477,6 +485,7 @@
     <MESSAGE value="音频资源导入检测——检测方式更改" />
     <MESSAGE value="音频资源导入检测——角色命名逐个规范修改" />
     <MESSAGE value="音频资源导入检测——命名规范细则补充" />
-    <option name="LAST_COMMIT_MESSAGE" value="音频资源导入检测——命名规范细则补充" />
+    <MESSAGE value="音频资源导入检测——命名规范之sys_show" />
+    <option name="LAST_COMMIT_MESSAGE" value="音频资源导入检测——命名规范之sys_show" />
   </component>
 </project>

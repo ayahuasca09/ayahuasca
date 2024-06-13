@@ -5,6 +5,7 @@ from os.path import abspath, dirname
 import os
 from pprint import pprint
 import re
+from waapi import WaapiClient, CannotConnectToWaapiException
 
 # 文件所在目录
 py_path = ""
@@ -38,23 +39,31 @@ def check_is_chinese(string):
 
 
 def check_by_re(pattern, name):
+    pattern = str(pattern)
+    name = str(name)
     result = re.search(pattern, name)
+    new_name = ""
+    is_pass = False
     if result == None:
         print((cell_sound.value + "：请检查" + pattern + "是否拼写错误或未添加到列表中"))
     else:
         new_name = name.replace(result.group(), "")
-        return new_name
+        is_pass = True
+    return new_name, is_pass
 
 
 """字符串长度检查"""
 
 
 def check_by_str_length(str1, length):
+    is_pass = True
     if len(str1) > length:
+        is_pass = False
         if "_" in str1:
             print(name + "：描述后缀名过长，限制字符数为" + str(length))
         else:
             print(name + "：通过_切分的某个单词过长，每个单词长度不应超过10个字符，需要再拆分")
+    return is_pass
 
 
 # 已废弃按照json配置检查
@@ -110,6 +119,7 @@ def check_by_char(name):
     module_dict = js_dict['Char']['module']
     flag = 0
     is_mov = False
+    is_pass = 0
     for module in module_dict:
         # 模块层查询
         if module + "_" in name:
@@ -123,18 +133,19 @@ def check_by_char(name):
                 name = check_by_re(module_dict[module]['property'] + "_*", name)
                 # 长度限制查询
                 if name != None:
-                    check_by_str_length(name, js_dict['Char']['length'])
+                    is_pass = check_by_str_length(name, js_dict['Char']['length'])
                 # Mov层加查询
                 if is_mov == True:
                     name = check_by_re(module_dict[module]['property2'] + "_*", name)
                     if name != None:
-                        name = check_by_re(module_dict[module]['property3'] + "_*", name)
+                        name, is_pass = check_by_re(module_dict[module]['property3'] + "_*", name)
 
             flag = 1
             break
 
     if flag == 0:
         print(cell_sound.value + "：Char的模块（如Skill，Foley等）有误，请检查是否添加模块名称或是否拼写有误")
+    return is_pass
 
 
 """Mon类型检查"""
@@ -238,7 +249,9 @@ def check_first_system_name(name):
     elif word_list[0] == "Cg":
         return name.replace("Cg_", "")
     elif word_list[0] == "Char":
-        check_by_char(name.replace("Char_", ""))
+        # 如果检测通过
+        if (check_by_char(name.replace("Char_", ""))) == True:
+            pass
     elif word_list[0] == "Imp":
         return name.replace("Imp_", "")
     elif word_list[0] == "Mon":
@@ -287,57 +300,61 @@ def check_by_com_word(name):
 
 """*****************主程序处理******************"""
 """获取.xlsx文件"""
+
 file_names = []
 for i in os.walk(py_path):
     file_names.append(i)
 # pprint("输出文件夹下的文件名：")
 file_name_list = file_names[0][2]
 
-# 提取规则：只提取xlsx文件
-for i in file_name_list:
-    if ".xlsx" in i:
-        # 拼接xlsx的路径
-        file_path_xlsx = os.path.join(py_path, i)
-        # 获取xlsx的workbook
-        wb = openpyxl.load_workbook(file_path_xlsx)
-        # 获取xlsx的所有sheet
-        sheet_names = wb.sheetnames
-        # 加载所有工作表
-        for sheet_name in sheet_names:
-            sheet = wb[sheet_name]
-            # 获取工作表第一行数据
-            for cell in list(sheet.rows)[0]:
-                if 'Sample Name' in str(cell.value):
-                    # 获取音效名下的内容
-                    for cell_sound in list(sheet.columns)[cell.column - 1]:
-                        # 空格和中文不检测
-                        if cell_sound.value != None:
-                            if check_is_chinese(cell_sound.value) == False:
-                                """❤❤❤❤数据获取❤❤❤❤"""
-                                """测试名称"""
-                                name = cell_sound.value
-                                # pprint(cell_sound.value)
-                                word_list = name.split("_")
-                                is_title = True
-                                for word in word_list:
-                                    """判定_的每个都不能超过10个"""
-                                    check_by_str_length(word, 10)
-                                    """判定_的每个开头必须大写"""
-                                    if len(word) > 0:
-                                        # 只需要检查第一个字符，因为istitle会导致检查字符串只能首字母大写
-                                        if word[0].istitle() == False and word[0].isdigit() == False:
-                                            is_title = False
-                                            break
-                                if is_title == False:
-                                    print(name + "：通过”_“分隔的每个单词开头都需要大写")
+with WaapiClient() as client:
+    # 提取规则：只提取xlsx文件
+    for i in file_name_list:
+        if ".xlsx" in i:
+            # 拼接xlsx的路径
+            file_path_xlsx = os.path.join(py_path, i)
+            # 获取xlsx的workbook
+            wb = openpyxl.load_workbook(file_path_xlsx)
+            # 获取xlsx的所有sheet
+            sheet_names = wb.sheetnames
+            # 加载所有工作表
+            for sheet_name in sheet_names:
+                sheet = wb[sheet_name]
+                # 获取工作表第一行数据
+                for cell in list(sheet.rows)[0]:
+                    if 'Sample Name' in str(cell.value):
+                        # 获取音效名下的内容
+                        for cell_sound in list(sheet.columns)[cell.column - 1]:
+                            # 空格和中文不检测
+                            if cell_sound.value != None:
+                                if check_is_chinese(cell_sound.value) == False:
+                                    """❤❤❤❤数据获取❤❤❤❤"""
+                                    """测试名称"""
+                                    name = cell_sound.value
+                                    # pprint(cell_sound.value)
+                                    word_list = name.split("_")
+                                    is_title = True
+                                    for word in word_list:
+                                        """判定_的每个都不能超过10个"""
+                                        check_by_str_length(word, 10)
+                                        """判定_的每个开头必须大写"""
+                                        if len(word) > 0:
+                                            # 只需要检查第一个字符，因为istitle会导致检查字符串只能首字母大写
+                                            if word[0].istitle() == False and word[0].isdigit() == False:
+                                                is_title = False
+                                                break
+                                    if is_title == False:
+                                        print(name + "：通过”_“分隔的每个单词开头都需要大写")
 
-                                # 检查LP是否在末尾
-                                name = check_LP_in_last()
-                                # print(name)
+                                    # 检查LP是否在末尾
+                                    name = check_LP_in_last()
+                                    # print(name)
 
-                                # 检查一级系统并索引到不同的检测方式
-                                check_first_system_name(name)
-                                # print(name)
+                                    # 检查一级系统并索引到不同的检测方式
+                                    check_first_system_name(name)
+                                    # print(name)
 
-                                # 通用词汇检查
-                                check_by_com_word(name)
+                                    # 通用词汇检查
+                                    check_by_com_word(name)
+
+
