@@ -22,6 +22,17 @@ json_path = os.path.join(py_path, json_name)
 with open(json_path, 'r', encoding='UTF-8') as jsfile:
     js_dict = json.load(jsfile)
 
+# 获取Wwise的配置
+wwise_dict = js_dict["Wwise"]
+
+"""获取.xlsx文件"""
+
+file_names = []
+for i in os.walk(py_path):
+    file_names.append(i)
+# pprint("输出文件夹下的文件名：")
+file_name_list = file_names[0][2]
+
 """*****************功能检测区******************"""
 """检查描述/状态/修饰词是否在末尾"""
 
@@ -251,7 +262,7 @@ def check_first_system_name(name):
     elif word_list[0] == "Char":
         # 如果检测通过
         if (check_by_char(name.replace("Char_", ""))) == True:
-            pass
+            media_import(wwise_dict['Root'], cell_sound.value)
     elif word_list[0] == "Imp":
         return name.replace("Imp_", "")
     elif word_list[0] == "Mon":
@@ -298,16 +309,26 @@ def check_by_com_word(name):
                     print("PS：Mid表体积/重量，Med表距离")
 
 
-"""*****************主程序处理******************"""
-"""获取.xlsx文件"""
-
-file_names = []
-for i in os.walk(py_path):
-    file_names.append(i)
-# pprint("输出文件夹下的文件名：")
-file_name_list = file_names[0][2]
-
 with WaapiClient() as client:
+    """*****************Wwise功能区******************"""
+
+
+    def media_import(path, rnd_name):
+        args = {
+            # 选择父级
+            "parent": path,
+            # 创建类型机名称
+            "type": "RandomSequenceContainer",
+            "name": rnd_name,
+            "@RandomOrSequence": 1,
+            "@NormalOrShuffle": 0,
+            "@RandomAvoidRepeatingCount": 3
+        }
+        # 创建rnd object并获取其信息
+        rnd_container_object = client.call("ak.wwise.core.object.create", args)
+
+
+    """*****************主程序处理******************"""
     # 提取规则：只提取xlsx文件
     for i in file_name_list:
         if ".xlsx" in i:
@@ -356,5 +377,3 @@ with WaapiClient() as client:
 
                                     # 通用词汇检查
                                     check_by_com_word(name)
-
-

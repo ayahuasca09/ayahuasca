@@ -113,6 +113,9 @@
 		"Death": [ "Die", "Dying" ],
 		"Sucs": [ "Succeed", "Success" ],
 		"Fail": [ "False", "Lose", "Failure" ],
-		"Def": ["Default"]
+		"Def": [ "Default" ]
+	},
+	"Wwise": {
+		"Root": "\\Actor-Mixer Hierarchy\\v1"
 	}
 }
