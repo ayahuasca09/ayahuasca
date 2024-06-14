@@ -251,33 +251,6 @@ def check_by_sys(name):
         print(cell_sound.value + "：Sys的模块（如Show等）有误，请检查是否添加模块名称或是否拼写有误")
 
 
-"""获取一级系统名走不同的检测方式"""
-
-
-def check_first_system_name(name):
-    if word_list[0] == "Amb":
-        return name.replace("Amb_", "")
-    elif word_list[0] == "Cg":
-        return name.replace("Cg_", "")
-    elif word_list[0] == "Char":
-        # 如果检测通过
-        if (check_by_char(name.replace("Char_", ""))) == True:
-            media_import(wwise_dict['Root'], cell_sound.value)
-    elif word_list[0] == "Imp":
-        return name.replace("Imp_", "")
-    elif word_list[0] == "Mon":
-        check_by_mon(name.replace("Mon_", ""))
-    elif word_list[0] == "Mus":
-        return name.replace("Mus_", "")
-    elif word_list[0] == "Sys":
-        check_by_sys(name.replace("Sys_", ""))
-    elif word_list[0] == "VO":
-        return name.replace("VO_", "")
-    else:
-        print(name + "：一级系统名称（如Amb、Char）等有误，请检查拼写")
-        return name
-
-
 """检查LP是否在末尾"""
 
 
@@ -309,23 +282,94 @@ def check_by_com_word(name):
                     print("PS：Mid表体积/重量，Med表距离")
 
 
+"""获取一级系统名走不同的检测方式"""
+
+
+def check_first_system_name(name):
+    if word_list[0] == "Amb":
+        return name.replace("Amb_", "")
+    elif word_list[0] == "Cg":
+        return name.replace("Cg_", "")
+    elif word_list[0] == "Char":
+        # 如果检测通过
+        if (check_by_char(name.replace("Char_", ""))) == True:
+            create_wwise_content(wwise_dict['Root'], cell_sound.value)
+    elif word_list[0] == "Imp":
+        return name.replace("Imp_", "")
+    elif word_list[0] == "Mon":
+        check_by_mon(name.replace("Mon_", ""))
+    elif word_list[0] == "Mus":
+        return name.replace("Mus_", "")
+    elif word_list[0] == "Sys":
+        check_by_sys(name.replace("Sys_", ""))
+    elif word_list[0] == "VO":
+        return name.replace("VO_", "")
+    else:
+        print(name + "：一级系统名称（如Amb、Char）等有误，请检查拼写")
+        return name
+
+
 with WaapiClient() as client:
     """*****************Wwise功能区******************"""
 
+    """去除带数字的文件名后缀"""
 
-    def media_import(path, rnd_name):
-        args = {
-            # 选择父级
-            "parent": path,
-            # 创建类型机名称
-            "type": "RandomSequenceContainer",
-            "name": rnd_name,
-            "@RandomOrSequence": 1,
-            "@NormalOrShuffle": 0,
-            "@RandomAvoidRepeatingCount": 3
+    """查找对象"""
+
+
+    def find_obj(args):
+        options = {
+            'return': ['name', 'id', 'notes']
+
         }
-        # 创建rnd object并获取其信息
-        rnd_container_object = client.call("ak.wwise.core.object.create", args)
+        obj_sub_list = client.call("ak.wwise.core.object.get", args, options=options)['return']
+        if not obj_sub_list:
+            obj_sub_id = ""
+        else:
+            obj_sub_id = obj_sub_list[0]['id']
+        return obj_sub_list, obj_sub_id
+
+
+    """随机容器创建"""
+
+
+    def create_rnd_container(path, rnd_name):
+
+        # 查找该rnd是否已存在
+        flag = 0
+        rnd_container_list, rnd_id = find_obj(
+            {'waql': ' "%s" select descendants where type = "RandomSequenceContainer" ' % path})
+        for rnd_container_dict in rnd_container_list:
+            if rnd_container_dict['name'] in rnd_name:
+                # pprint(rnd_name + "：RandomContainer已存在，将不再导入")
+                flag = 1
+                break
+        # 不存在则创建
+        if flag == 0:
+            original_name = rnd_name
+            # 去除随机容器数字
+            rnd_name = re.sub(r"(_R\d{2,4})$", "", rnd_name)
+            # 创建的rnd属性
+            args = {
+                # 选择父级
+                "parent": path,
+                # 创建类型机名称
+                "type": "RandomSequenceContainer",
+                "name": rnd_name,
+                "@RandomOrSequence": 1,
+                "@NormalOrShuffle": 0,
+                "@RandomAvoidRepeatingCount": 3
+            }
+            rnd_container_object = client.call("ak.wwise.core.object.create", args)
+            pprint(rnd_name + "：RandomContainer创建")
+
+
+    """媒体资源导入的总流程"""
+
+
+    def create_wwise_content(path, rnd_name):
+        # 随机容器创建
+        create_rnd_container(path, rnd_name)
 
 
     """*****************主程序处理******************"""
@@ -371,9 +415,9 @@ with WaapiClient() as client:
                                     name = check_LP_in_last()
                                     # print(name)
 
+                                    # 通用词汇检查
+                                    check_by_com_word(name)
+
                                     # 检查一级系统并索引到不同的检测方式
                                     check_first_system_name(name)
                                     # print(name)
-
-                                    # 通用词汇检查
-                                    check_by_com_word(name)

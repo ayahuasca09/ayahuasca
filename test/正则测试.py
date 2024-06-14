@@ -1,7 +1,7 @@
 import re
 
 """测试名称"""
-name = "Char_C03_Skill_Execu1_Pre_Hook_LP"
+name = "Char_C03_Skill_Execu1_01_Pre_Hook_LP"
 
 """测试模式"""
 pattern = r"_LP$"
@@ -39,5 +39,9 @@ pattern = r"_LP$"
 #            )
 
 """正则取代_LP测试"""
-new_name = re.sub(pattern, "", name)
-print(new_name)
+# new_name = re.sub(pattern, "", name)
+# print(new_name)
+
+"""正则去除数字末尾"""
+rnd_name = re.sub(r"(_\d{2,4})$", "", name)
+print(rnd_name)

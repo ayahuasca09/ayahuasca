@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="17a8a927-0db7-41d4-8f81-9181fc87e6d9" name="更改" comment="音频资源导入检测——命名规范完善">
+    <list default="true" id="17a8a927-0db7-41d4-8f81-9181fc87e6d9" name="更改" comment="音频资源导入检测——导入随机容器测试">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/SilverPalace战斗音频需求资源管理表.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/SilverPalace战斗音频需求资源管理表.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/waapi_音频资源导入自动化.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/waapi_音频资源导入自动化.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/导入规则.json" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/导入规则.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/正则测试.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/正则测试.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,27 +48,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Python.excel_音效需求表音效名读取.executor": "Run",
-    "Python.oi_h.executor": "Run",
-    "Python.test.executor": "Run",
-    "Python.waapi_json数据解析.executor": "Run",
-    "Python.waapi_sounbank生成.executor": "Run",
-    "Python.waapi_test.executor": "Run",
-    "Python.waapi_订阅_soundbank生成数据 (1).executor": "Run",
-    "Python.waapi_订阅_soundbank生成数据打印 (1).executor": "Run",
-    "Python.waapi_订阅_接收对象名称被修改时的信息.executor": "Run",
-    "Python.waapi_音频资源导入自动化.executor": "Run",
-    "Python.正则测试.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "F:/pppppy/SV",
-    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.语言默认设置"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Python.excel_音效需求表音效名读取.executor&quot;: &quot;Run&quot;,
+    &quot;Python.oi_h.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test.executor&quot;: &quot;Run&quot;,
+    &quot;Python.waapi_json数据解析.executor&quot;: &quot;Run&quot;,
+    &quot;Python.waapi_sounbank生成.executor&quot;: &quot;Run&quot;,
+    &quot;Python.waapi_test.executor&quot;: &quot;Run&quot;,
+    &quot;Python.waapi_订阅_soundbank生成数据 (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.waapi_订阅_soundbank生成数据打印 (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.waapi_订阅_接收对象名称被修改时的信息.executor&quot;: &quot;Run&quot;,
+    &quot;Python.waapi_音频资源导入自动化.executor&quot;: &quot;Run&quot;,
+    &quot;Python.正则测试.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;F:/pppppy/SV&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.IDE.editor.colors.语言默认设置&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="F:\pppppy\SP\module\waapi\waapi_generatesoundbank" />
@@ -231,8 +232,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.waapi_音频资源导入自动化" />
-        <item itemvalue="Python.test" />
         <item itemvalue="Python.正则测试" />
+        <item itemvalue="Python.test" />
         <item itemvalue="Python.excel_音效需求表音效名读取" />
         <item itemvalue="Python.oi_h" />
       </list>
@@ -454,7 +455,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718260482247</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="音频资源导入检测——导入随机容器测试">
+      <option name="closed" value="true" />
+      <created>1718262922831</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1718262922831</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -494,6 +503,7 @@
     <MESSAGE value="音频资源导入检测——命名规范细则补充" />
     <MESSAGE value="音频资源导入检测——命名规范之sys_show" />
     <MESSAGE value="音频资源导入检测——命名规范完善" />
-    <option name="LAST_COMMIT_MESSAGE" value="音频资源导入检测——命名规范完善" />
+    <MESSAGE value="音频资源导入检测——导入随机容器测试" />
+    <option name="LAST_COMMIT_MESSAGE" value="音频资源导入检测——导入随机容器测试" />
   </component>
 </project>
