@@ -116,6 +116,7 @@
 		"Def": [ "Default" ]
 	},
 	"Wwise": {
-		"Root": "\\Actor-Mixer Hierarchy\\v1"
+		"Root": "\\Actor-Mixer Hierarchy\\v1",
+		"Event_Root": "\\Events\\v1"
 	}
 }

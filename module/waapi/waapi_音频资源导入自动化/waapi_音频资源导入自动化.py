@@ -6,6 +6,7 @@ import os
 from pprint import pprint
 import re
 from waapi import WaapiClient, CannotConnectToWaapiException
+import shutil
 
 # 文件所在目录
 py_path = ""
@@ -292,9 +293,10 @@ def check_first_system_name(name):
     elif word_list[0] == "Cg":
         return name.replace("Cg_", "")
     elif word_list[0] == "Char":
+        system_name = "Char"
         # 如果检测通过
-        if (check_by_char(name.replace("Char_", ""))) == True:
-            create_wwise_content(os.path.join(wwise_dict['Root'], "Char"), cell_sound.value)
+        if check_by_char(name.replace(system_name + "_", "")):
+            create_wwise_content(cell_sound.value, system_name)
     elif word_list[0] == "Imp":
         return name.replace("Imp_", "")
     elif word_list[0] == "Mon":
@@ -320,57 +322,86 @@ with WaapiClient() as client:
 
     def find_obj(args):
         options = {
-            'return': ['name', 'id', 'notes']
+            'return': ['name', 'id', 'notes', 'path']
 
         }
         obj_sub_list = client.call("ak.wwise.core.object.get", args, options=options)['return']
         if not obj_sub_list:
             obj_sub_id = ""
+            obj_sub_path = ""
         else:
             obj_sub_id = obj_sub_list[0]['id']
-        return obj_sub_list, obj_sub_id
+            obj_sub_path = obj_sub_list[0]['path']
+        return obj_sub_list, obj_sub_id, obj_sub_path
 
 
-    """随机容器创建"""
+    """获取随机容器的父级：需要弃用"""
+    #
+    #
+    # # 数据获取
+    #
+    # def find_rnd_parent(path, rnd_name):
+    #     # 所有Actor-Mixer获取
+    #     mixer_list, mixer_id, _ = find_obj(
+    #         {'waql': ' "%s" select descendants,this where type = "ActorMixer" ' % path})
+    #     # pprint(mixer_container_list)
+    #     # [{'id': '{446650AE-60B4-40A0-8B14-3470DBBB83B0}', 'name': 'Amb', 'notes': ''},
+    #     #  {'id': '{E0A2685C-387A-4180-BB45-6E6C1559E7F8}', 'name': 'CG', 'notes': ''}]
+    #     # 存储符合的rnd的父级，最后找出最长最符合的
+    #     mixer_len = 0
+    #     rnd_parent_id = {}
+    #     rnd_parent_path = ""
+    #     rnd_parent_name = ""
+    #     for mixer_dict in mixer_list:
+    #         if mixer_dict['name'] in rnd_name:
+    #             if len(mixer_dict['name']) > mixer_len:
+    #                 mixer_len = len(mixer_dict['name'])
+    #                 rnd_parent_id = mixer_dict['id']
+    #     return rnd_parent_id
+
+    """获取wwise对象的最长字符串父级"""
 
 
-    # 数据获取
+    def find_obj_parent(obj_name, waql):
+        # 所有Unit获取
+        parent_list, parent_id, _ = find_obj(waql)
 
-    def find_rnd_parent(path, rnd_name):
-        # 所有Actor-Mixer获取
-        mixer_list, mixer_id = find_obj(
-            {'waql': ' "%s" select descendants,this where type = "ActorMixer" ' % path})
-        # pprint(mixer_container_list)
-        # [{'id': '{446650AE-60B4-40A0-8B14-3470DBBB83B0}', 'name': 'Amb', 'notes': ''},
-        #  {'id': '{E0A2685C-387A-4180-BB45-6E6C1559E7F8}', 'name': 'CG', 'notes': ''}]
-        # 存储符合的rnd的父级，最后找出最长最符合的
-        mixer_len = 0
-        rnd_parent = {}
-        for mixer_dict in mixer_list:
-            if mixer_dict['name'] in rnd_name:
-                if len(mixer_dict['name']) > mixer_len:
-                    mixer_len = len(mixer_dict['name'])
-                    rnd_parent = mixer_dict['id']
-        return rnd_parent
+        # 存储符合的对象的父级，最后找出最长最符合的
+        parent_len = 0
+        obj_parent_id = {}
+        for parent_dict in parent_list:
+            if parent_dict['name'] in obj_name:
+                if len(parent_dict['name']) > parent_len:
+                    parent_len = len(parent_dict['name'])
+                    obj_parent_id = parent_dict['id']
+        return obj_parent_id
 
 
-    def create_rnd_container(path, rnd_name):
+    """创建新的随机容器"""
+
+
+    def create_rnd_container(media_name, system_name):
         # 查找该rnd是否已存在
         flag = 0
-        rnd_container_list, rnd_id = find_obj(
-            {'waql': ' "%s" select descendants where type = "RandomSequenceContainer" ' % path})
+        # 去除随机容器数字
+        rnd_name = re.sub(r"(_R\d{2,4})$", "", media_name)
+        rnd_path = ""
+        rnd_container_list, rnd_id, _ = find_obj(
+            {'waql': ' "%s" select descendants where type = "RandomSequenceContainer" ' % os.path.join(
+                wwise_dict['Root'], system_name)})
         for rnd_container_dict in rnd_container_list:
-            if rnd_container_dict['name'] in rnd_name:
+            if rnd_container_dict['name'] == rnd_name:
                 # pprint(rnd_name + "：RandomContainer已存在，将不再导入")
                 flag = 1
+                rnd_path = rnd_container_dict['path']
                 break
         # 不存在则创建
         if flag == 0:
-            original_name = rnd_name
-            # 去除随机容器数字
-            rnd_name = re.sub(r"(_R\d{2,4})$", "", rnd_name)
             # 查找所在路径
-            rnd_parent_id = find_rnd_parent(path, rnd_name)
+            rnd_parent_id = find_obj_parent(rnd_name,
+                                            {
+                                                'waql': ' "%s" select descendants,this where type = "ActorMixer" ' % os.path.join(
+                                                    wwise_dict['Root'], system_name)})
             if rnd_parent_id != None:
                 # 创建的rnd属性
                 args = {
@@ -384,16 +415,118 @@ with WaapiClient() as client:
                     "@RandomAvoidRepeatingCount": 3
                 }
                 rnd_container_object = client.call("ak.wwise.core.object.create", args)
-                pprint(rnd_name + "：RandomContainer创建")
+
+                # 查找新创建的容器的路径
+                _, _, rnd_path = find_obj(
+                    {'waql': ' "%s"  ' % rnd_container_object['id']})
+
+                # 媒体资源复制
+                # 复制到的目录
+                copy_catalog = os.path.join(py_path, "New_Media")
+                source_path = shutil.copy2(os.path.join(py_path, "Media_Temp.wav"),
+                                           os.path.join(copy_catalog, media_name + ".wav"))
+
+                # 在容器中创建媒体资源
+                import_media_in_rnd(source_path, media_name, rnd_path, system_name)
+
+                pprint(rnd_name + "：RandomContainer创建及媒体资源导入")
+
+        return rnd_path, rnd_name
+
+
+    """媒体资源导入"""
+
+
+    def import_media_in_rnd(source_path, media_name, rnd_path, system_name):
+        args_import = {
+            # createNew
+            # useExisting：会增加一个新媒体文件但旧的不会删除
+            # replaceExisting:会销毁Sound，上面做的设置都无了
+            "importOperation": "replaceExisting",
+            "default": {
+                "importLanguage": "SFX"
+            },
+            "imports": [
+                {
+                    "audioFile": source_path,
+                    "objectPath": rnd_path + '\\<Sound SFX>' + media_name,
+                    "originalsSubFolder": system_name
+                    #                                                         名为Test 0的顺序容器            名为My SFX 0 的音效
+                    # "objectPath": "\\Actor-Mixer Hierarchy\\Default Work Unit\\<Sequence Container>Test 0\\<Sound SFX>My SFX 0"
+                }
+            ]
+        }
+        # 定义返回结果参数，让其只返回 Windows 平台下的信息，信息中包含 GUID 和新创建的对象名
+        opts = {
+            "platform": "Windows",
+            "return": [
+                "id", "name"
+            ]
+        }
+        client.call("ak.wwise.core.audio.import", args_import, options=opts)
+
+
+    """创建事件的参数"""
+
+
+    def get_event_args(event_parent_path, event_name, event_action, event_target):
+        args_new_event = {
+            # 上半部分属性中分别为 Event 创建后存放的路径、类型、名称、遇到名字冲突时的处理方法
+            "parent": event_parent_path,
+            "type": "Event",
+            "name": event_name,
+            "onNameConflict": "merge",
+            "children": [
+                {
+                    # 为其创建播放行为，名字留空，使用 @ActionType 定义其播放行为为 Play，@Target 为被播放的声音对象
+                    "name": "",
+                    "type": "Action",
+                    "@ActionType": event_action,
+                    "@Target": event_target
+                }
+            ]
+        }
+        return args_new_event
+
+
+    """事件生成"""
+
+
+    def create_event(system_name, rnd_name, rnd_path):
+        parent_id = find_obj_parent(rnd_name, {
+            'waql': ' "%s" select descendants where type = "WorkUnit" ' % os.path.join(wwise_dict['Event_Root'],
+                                                                                       system_name)})
+        event_name = "AKE_" + "Play_" + rnd_name
+        # 查找事件是否已存在
+        event_list, _, _ = find_obj(
+            {'waql': ' "%s" select descendants where type = "Event" ' %
+                     wwise_dict['Event_Root']})
+        flag = 0
+        for event_dict in event_list:
+            if event_dict['name'] == event_name:
+                flag = 1
+                break
+        if flag == 0:
+            event_args = get_event_args(parent_id, event_name, 1, rnd_path)
+            client.call("ak.wwise.core.object.create", event_args)
+            pprint(event_name + "事件创建")
+            if "_LP" in rnd_name:
+                event_name = "AKE_" + "Stop_" + rnd_name
+                event_args = get_event_args(parent_id, event_name, 2, rnd_path)
+                client.call("ak.wwise.core.object.create", event_args)
+                pprint(event_name + "事件创建")
 
 
     """媒体资源导入的总流程"""
 
 
-    def create_wwise_content(path, rnd_name):
+    def create_wwise_content(media_name, system_name):
 
         # 随机容器创建
-        create_rnd_container(path, rnd_name)
+        rnd_path, rnd_name = create_rnd_container(media_name, system_name)
+
+        # 事件自动生成
+        create_event(system_name, rnd_name, rnd_path)
 
 
     """*****************主程序处理******************"""
@@ -450,6 +583,10 @@ with WaapiClient() as client:
                                     # print(name)
     # 撤销结束
     client.call("ak.wwise.core.undo.endGroup", displayName="rnd创建撤销")
+
+    # 清除复制的媒体资源
+    shutil.rmtree("New_Media")
+    os.mkdir("New_Media")
 
     # rnd创建撤销
     # client.call("ak.wwise.core.undo.undo")
