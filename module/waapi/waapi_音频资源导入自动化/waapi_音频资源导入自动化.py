@@ -5,7 +5,7 @@ from os.path import abspath, dirname
 import os
 from pprint import pprint
 import re
-from waapi import WaapiClient, CannotConnectToWaapiException
+from waapi import WaapiClient
 import shutil
 
 # 文件所在目录
@@ -34,8 +34,21 @@ for i in os.walk(py_path):
 # pprint("输出文件夹下的文件名：")
 file_name_list = file_names[0][2]
 
+# 检测是否通过
+is_pass = True
+# 一级系统名称
+system_name = ""
+
 """*****************功能检测区******************"""
 """检查描述/状态/修饰词是否在末尾"""
+"""报错捕获"""
+
+
+def print_error(error_info):
+    global is_pass
+    is_pass = False
+    print(cell_sound.value + error_info)
+
 
 """检测字符串是否含有中文"""
 
@@ -55,89 +68,91 @@ def check_by_re(pattern, name):
     name = str(name)
     result = re.search(pattern, name)
     new_name = ""
-    is_pass = False
     if result == None:
-        print((cell_sound.value + "：请检查" + pattern + "是否拼写错误或未添加到列表中"))
+        print_error("：请检查" + pattern + "是否拼写错误或未添加到列表中")
     else:
         new_name = name.replace(result.group(), "")
-        is_pass = True
-    return new_name, is_pass
+    return new_name
 
 
 """字符串长度检查"""
 
 
 def check_by_str_length(str1, length):
-    is_pass = True
     if len(str1) > length:
-        is_pass = False
         if "_" in str1:
-            print(name + "：描述后缀名过长，限制字符数为" + str(length))
+            print_error("：描述后缀名过长，限制字符数为" + str(length))
         else:
-            print(name + "：通过_切分的某个单词过长，每个单词长度不应超过10个字符，需要再拆分")
-    return is_pass
+            print_error("：通过_切分的某个单词过长，每个单词长度不应超过10个字符，需要再拆分")
 
 
-# 已废弃按照json配置检查
-def check_by_json_by_re(system_dict):
-    pattern = (
-        # 一级结构
-            "(?P<the1>" + "^" +
-            word_list[0] +
-            ")" + "_" +
+"""模块类型输出报错"""
 
-            # module
-            "(?P<the2>" +
-            system_dict['module'] +
-            ")" + "_" +
 
-            # name
-            "(?P<the3>" +
-            system_dict['name'] +
-            ")" + "_"
+def print_error_by_module(module_dict):
+    module_type = ""
+    for module in module_dict:
+        # 如果不是最后一位，需要加|
+        if module != list(module_dict.keys())[-1]:
+            module_type += module + "|"
+        else:
+            module_type += module
+    print_error("：" + module_type + "有误，请检查是否添加模块名称或是否拼写有误")
 
-            # property
-                  "(?P<the4>" +
-            system_dict['property'] +
-            ")" + "_*"
 
-            # 其他
-                  "(?P<the5>" +
-            ".*" +
-            ")"
-    )
-    result = re.search(pattern, name)
-    if result == None:
-        print((name + "：中间有字段匹配错误，请检查是否为结构顺序或拼写错误"))
-    else:
-        data_list = re.finditer(pattern, name)
-        for item in data_list:
-            item_dict = item.groupdict()
-            # pprint(item_dict)
-            # {'the1': 'Char',
-            #  'the2': 'Skill',
-            #  'the3': 'C01',
-            #  'the4': 'Focus',
-            #  'the5': 'Ready2'}
+"""Amb类型检查"""
 
-            # 字符串长度检查
-            check_by_str_length(item_dict['the5'], system_dict['length'])
+
+def check_by_Amb(name):
+    global is_pass
+    is_pass = False
+
+
+"""CG类型检查"""
+
+
+def check_by_CG(name):
+    global is_pass
+    is_pass = False
+
+
+"""Imp类型检查"""
+
+
+def check_by_Imp(name):
+    global is_pass
+    is_pass = False
+
+
+"""Mus类型检查"""
+
+
+def check_by_Mus(name):
+    global is_pass
+    is_pass = False
+
+
+"""VO类型检查"""
+
+
+def check_by_VO(name):
+    global is_pass
+    is_pass = False
 
 
 """Char类型检查"""
 
 
-def check_by_char(name):
-    module_dict = js_dict['Char']['module']
+def check_by_Char(name):
+    module_dict = js_dict[system_name]['module']
     flag = 0
     is_mov = False
-    is_pass = 0
     for module in module_dict:
         # 模块层查询
         if module + "_" in name:
             name = name.replace(module + "_", "")
             # 角色名层查询
-            name = check_by_re(js_dict['Char']['name'] + "_", name)
+            name = check_by_re(js_dict[system_name]['name'] + "_", name)
             if name != None:
                 if "Mov_" in name:
                     is_mov = True
@@ -145,88 +160,57 @@ def check_by_char(name):
                 name = check_by_re(module_dict[module]['property'] + "_*", name)
                 # 长度限制查询
                 if name != None:
-                    is_pass = check_by_str_length(name, js_dict['Char']['length'])
+                    check_by_str_length(name, js_dict[system_name]['length'])
                 # Mov层加查询
                 if is_mov == True:
                     name = check_by_re(module_dict[module]['property2'] + "_*", name)
                     if name != None:
-                        name, is_pass = check_by_re(module_dict[module]['property3'] + "_*", name)
+                        name = check_by_re(module_dict[module]['property3'] + "_*", name)
 
             flag = 1
             break
 
     if flag == 0:
-        print(cell_sound.value + "：Char的模块（如Skill，Foley等）有误，请检查是否添加模块名称或是否拼写有误")
-    return is_pass
+        print_error_by_module(module_dict)
 
 
 """Mon类型检查"""
 
 
-def check_by_mon(name):
-    if "Mob_" in name:
-        name = name.replace("Mob_", "")
-        check_by_mob(name)
-    elif "Boss_" in name:
-        name = name.replace("Boss_", "")
-        check_by_boss(name)
-    else:
-        print(cell_sound.value + "：Boss、Mob拼写有误或漏写，请检查")
-
-
-"""Boss类型检查"""
-
-
-def check_by_boss(name):
-    module_dict = js_dict['Mon']['Boss']['module']
+def check_by_Mon(name):
+    type_dict = js_dict[system_name]
     flag = 0
-    for module in module_dict:
-        # 模块层查询
-        if module + "_" in name:
-            name = name.replace(module + "_", "")
-            # Boss名层查询
-            name = check_by_re(js_dict['Mon']['Boss']['name'] + "_", name)
-            if name != None:
-                # 技能层查询
-                name = check_by_re(module_dict[module]['property'] + "_*", name)
-                # 长度限制查询
-                if name != None:
-                    check_by_str_length(name, js_dict['Mon']['Boss']['length'])
-
+    for type in type_dict:
+        if type in name:
+            name = name.replace(type + "_", "")
             flag = 1
+            module_dict = js_dict[system_name][type]['module']
+            flag = 0
+            for module in module_dict:
+                # 模块层查询
+                if module + "_" in name:
+                    name = name.replace(module + "_", "")
+                    # Boss名层查询
+                    name = check_by_re(js_dict[system_name][type]['name'] + "_", name)
+                    if name != None:
+                        # 技能层查询
+                        name = check_by_re(module_dict[module]['property'] + "_*", name)
+                        # 长度限制查询
+                        if name != None:
+                            check_by_str_length(name, js_dict[system_name][type]['length'])
+
+                    flag = 1
+                    break
+
+            if flag == 0:
+                print_error_by_module(module_dict)
             break
-
     if flag == 0:
-        print(cell_sound.value + "：Boss的模块（如Body，Part等）有误，请检查是否添加模块名称或是否拼写有误")
+        print_error_by_module(type_dict)
 
 
-"""Mob类型检查"""
-
-
-def check_by_mob(name):
-    module_dict = js_dict['Mon']['Mob']['module']
-    flag = 0
-    for module in module_dict:
-        # 模块层查询
-        if module + "_" in name:
-            name = name.replace(module + "_", "")
-            # 小怪名层查询
-            name = check_by_re(js_dict['Mon']['Mob']['name'] + "_", name)
-            if name != None:
-                # 技能层查询
-                name = check_by_re(module_dict[module]['property'] + "_*", name)
-                # 长度限制查询
-                if name != None:
-                    check_by_str_length(name, js_dict['Mon']['Mob']['length'])
-            flag = 1
-            break
-
-    if flag == 0:
-        print(cell_sound.value + "：Mob的模块（如Skill，Foley等）有误，请检查是否添加模块名称或是否拼写有误")
-
-
-def check_by_sys(name):
-    module_dict = js_dict['Sys']['module']
+def check_by_Sys(name):
+    module_dict = js_dict[system_name]['module']
     flag = 0
     for module in module_dict:
         # 模块层查询
@@ -249,7 +233,7 @@ def check_by_sys(name):
             flag = 1
             break
     if flag == 0:
-        print(cell_sound.value + "：Sys的模块（如Show等）有误，请检查是否添加模块名称或是否拼写有误")
+        print_error_by_module(module_dict)
 
 
 """检查LP是否在末尾"""
@@ -265,7 +249,7 @@ def check_LP_in_last():
             new_name = re.sub(r"_LP$", "", name)
             return new_name
         else:
-            print(cell_sound.value + "：_LP应放在最末尾")
+            print_error("：_LP应放在最末尾")
     else:
         return name
 
@@ -278,51 +262,35 @@ def check_by_com_word(name):
     for key in com_word_dict:
         for value in com_word_dict[key]:
             if value in name:
-                print(cell_sound.value + "：" + value + "应改为通用词" + key)
+                print_error(value + "应改为通用词" + key)
                 if "Medium" in name:
-                    print("PS：Mid表体积/重量，Med表距离")
+                    print_error("PS：Mid表体积/重量，Med表距离")
 
 
 """获取一级系统名走不同的检测方式"""
 
 
 def check_first_system_name(name):
-    system_name = ""
-    if word_list[0] == "Amb":
-        return name.replace("Amb_", "")
-    elif word_list[0] == "Cg":
-        return name.replace("Cg_", "")
-    elif word_list[0] == "Char":
-        system_name = "Char"
-        # 如果检测通过
-        if check_by_char(name.replace(system_name + "_", "")):
+    global system_name
+    system_name = word_list[0]
+    if system_name in js_dict:
+        func_name = "check_by_" + system_name
+        eval(func_name)(name.replace(system_name + "_", ""))
+        if is_pass == True:
             create_wwise_content(cell_sound.value, system_name)
-    elif word_list[0] == "Imp":
-        return name.replace("Imp_", "")
-    elif word_list[0] == "Mon":
-        check_by_mon(name.replace("Mon_", ""))
-    elif word_list[0] == "Mus":
-        return name.replace("Mus_", "")
-    elif word_list[0] == "Sys":
-        check_by_sys(name.replace("Sys_", ""))
-    elif word_list[0] == "VO":
-        return name.replace("VO_", "")
     else:
-        print(name + "：一级系统名称（如Amb、Char）等有误，请检查拼写")
-        return name
+        print_error_by_module(js_dict)
 
 
 with WaapiClient() as client:
     """*****************Wwise功能区******************"""
-
-    """去除带数字的文件名后缀"""
 
     """查找对象"""
 
 
     def find_obj(args):
         options = {
-            'return': ['name', 'id', 'notes', 'path']
+            'return': ['name', 'id', 'path', 'notes']
 
         }
         obj_sub_list = client.call("ak.wwise.core.object.get", args, options=options)['return']
@@ -335,30 +303,6 @@ with WaapiClient() as client:
         return obj_sub_list, obj_sub_id, obj_sub_path
 
 
-    """获取随机容器的父级：需要弃用"""
-    #
-    #
-    # # 数据获取
-    #
-    # def find_rnd_parent(path, rnd_name):
-    #     # 所有Actor-Mixer获取
-    #     mixer_list, mixer_id, _ = find_obj(
-    #         {'waql': ' "%s" select descendants,this where type = "ActorMixer" ' % path})
-    #     # pprint(mixer_container_list)
-    #     # [{'id': '{446650AE-60B4-40A0-8B14-3470DBBB83B0}', 'name': 'Amb', 'notes': ''},
-    #     #  {'id': '{E0A2685C-387A-4180-BB45-6E6C1559E7F8}', 'name': 'CG', 'notes': ''}]
-    #     # 存储符合的rnd的父级，最后找出最长最符合的
-    #     mixer_len = 0
-    #     rnd_parent_id = {}
-    #     rnd_parent_path = ""
-    #     rnd_parent_name = ""
-    #     for mixer_dict in mixer_list:
-    #         if mixer_dict['name'] in rnd_name:
-    #             if len(mixer_dict['name']) > mixer_len:
-    #                 mixer_len = len(mixer_dict['name'])
-    #                 rnd_parent_id = mixer_dict['id']
-    #     return rnd_parent_id
-
     """获取wwise对象的最长字符串父级"""
 
 
@@ -369,11 +313,15 @@ with WaapiClient() as client:
         # 存储符合的对象的父级，最后找出最长最符合的
         parent_len = 0
         obj_parent_id = {}
-        for parent_dict in parent_list:
-            if parent_dict['name'] in obj_name:
-                if len(parent_dict['name']) > parent_len:
-                    parent_len = len(parent_dict['name'])
-                    obj_parent_id = parent_dict['id']
+        if parent_list != None:
+            for parent_dict in parent_list:
+                if parent_dict['name'] in obj_name:
+                    if len(parent_dict['name']) > parent_len:
+                        parent_len = len(parent_dict['name'])
+                        obj_parent_id = parent_dict['id']
+        else:
+            print_error("相应的Unit目录结构未创建！需要创建")
+
         return obj_parent_id
 
 
@@ -391,7 +339,7 @@ with WaapiClient() as client:
                 wwise_dict['Root'], system_name)})
         for rnd_container_dict in rnd_container_list:
             if rnd_container_dict['name'] == rnd_name:
-                # pprint(rnd_name + "：RandomContainer已存在，将不再导入")
+                pprint(rnd_name + "：RandomContainer已存在，将不再导入")
                 flag = 1
                 rnd_path = rnd_container_dict['path']
                 break
@@ -400,8 +348,9 @@ with WaapiClient() as client:
             # 查找所在路径
             rnd_parent_id = find_obj_parent(rnd_name,
                                             {
-                                                'waql': ' "%s" select descendants,this where type = "ActorMixer" ' % os.path.join(
-                                                    wwise_dict['Root'], system_name)})
+                                                'waql': ' "%s" select descendants,this where type = "ActorMixer" ' %
+                                                        os.path.join(
+                                                            wwise_dict['Root'], system_name)})
             if rnd_parent_id != None:
                 # 创建的rnd属性
                 args = {
@@ -415,7 +364,6 @@ with WaapiClient() as client:
                     "@RandomAvoidRepeatingCount": 3
                 }
                 rnd_container_object = client.call("ak.wwise.core.object.create", args)
-
                 # 查找新创建的容器的路径
                 _, _, rnd_path = find_obj(
                     {'waql': ' "%s"  ' % rnd_container_object['id']})
@@ -427,7 +375,7 @@ with WaapiClient() as client:
                                            os.path.join(copy_catalog, media_name + ".wav"))
 
                 # 在容器中创建媒体资源
-                import_media_in_rnd(source_path, media_name, rnd_path, system_name)
+                import_media_in_rnd(source_path, media_name, rnd_path)
 
                 pprint(rnd_name + "：RandomContainer创建及媒体资源导入")
 
@@ -437,7 +385,7 @@ with WaapiClient() as client:
     """媒体资源导入"""
 
 
-    def import_media_in_rnd(source_path, media_name, rnd_path, system_name):
+    def import_media_in_rnd(source_path, media_name, rnd_path):
         args_import = {
             # createNew
             # useExisting：会增加一个新媒体文件但旧的不会删除
@@ -492,7 +440,7 @@ with WaapiClient() as client:
     """事件生成"""
 
 
-    def create_event(system_name, rnd_name, rnd_path):
+    def create_event(rnd_name, rnd_path):
         parent_id = find_obj_parent(rnd_name, {
             'waql': ' "%s" select descendants where type = "WorkUnit" ' % os.path.join(wwise_dict['Event_Root'],
                                                                                        system_name)})
@@ -526,7 +474,7 @@ with WaapiClient() as client:
         rnd_path, rnd_name = create_rnd_container(media_name, system_name)
 
         # 事件自动生成
-        create_event(system_name, rnd_name, rnd_path)
+        create_event(rnd_name, rnd_path)
 
 
     """*****************主程序处理******************"""
@@ -569,7 +517,7 @@ with WaapiClient() as client:
                                                 is_title = False
                                                 break
                                     if is_title == False:
-                                        print(name + "：通过”_“分隔的每个单词开头都需要大写")
+                                        print_error("：通过”_“分隔的每个单词开头都需要大写")
 
                                     # 检查LP是否在末尾
                                     name = check_LP_in_last()

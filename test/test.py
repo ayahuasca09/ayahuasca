@@ -42,3 +42,31 @@ import sys
 #     for value in args['Gen_Word'][key]:
 #         if value == "Light":
 #             print(key)
+
+"""测试获取字典的最后一位"""
+# my_dict = {
+#     "first_key": 'first_value',
+#     "second_key": "second_value",
+#     "third_key": "third_value",
+# }
+# print("last key : ", list(my_dict.keys())[-1])
+# print("last value : ", my_dict.get(list(my_dict.keys())[-1]))
+
+
+"""通过字符串调用函数"""
+# def check_by_Char():
+#     print("Char")
+#     return True
+# type = "Char"
+# func_name = "check_by_" + type
+# result = eval(func_name)()
+# print(result)
+
+"""在函数中改变全局变量的值"""
+# a = 100
+# def change_value():
+#     global a
+#     a = 50
+# change_value()
+# print(a)
+

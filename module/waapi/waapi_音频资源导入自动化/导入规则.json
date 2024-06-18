@@ -3,13 +3,17 @@
 		"module": ".*",
 		"name": "((A\\d{2,4})|Gen)",
 		"property": ".*",
-		"length": 20
+		"length": "20",
+		"actormixer_path": "\\Actor-Mixer Hierarchy\\v1\\v1_Amb",
+		"event_path": ""
 	},
-	"Cg": {
+	"CG": {
 		"module": ".*",
 		"name": ".*",
 		"property": ".*",
-		"length": 20
+		"length": 20,
+		"actormixer_path": "\\Actor-Mixer Hierarchy\\v1\\CG",
+		"event_path": ""
 	},
 	"Char": {
 		"module": {
@@ -29,13 +33,17 @@
 			}
 		},
 		"name": "((C\\d{2,4})|Gen)",
-		"length": 20
+		"length": 20,
+		"actormixer_path": "\\Actor-Mixer Hierarchy\\v1\\Char",
+		"event_path": ""
 	},
 	"Imp": {
 		"module": ".*",
 		"name": ".*",
 		"property": ".*",
-		"length": 20
+		"length": 20,
+		"actormixer_path": "\\Actor-Mixer Hierarchy\\v1\\v1_Imp",
+		"event_path": ""
 	},
 	"Mon": {
 		"Mob": {
@@ -72,14 +80,18 @@
 				}
 			},
 			"name": "((B\\d{2,4})|Gen)",
-			"length": 20
+			"length": 20,
+			"actormixer_path": "\\Actor-Mixer Hierarchy\\v1\\Mon",
+			"event_path": ""
 		}
 	},
 	"Mus": {
 		"module": ".*",
 		"name": ".*",
 		"property": ".*",
-		"length": 20
+		"length": 20,
+		"actormixer_path": "",
+		"event_path": ""
 	},
 	"Sys": {
 		"module": {
@@ -92,13 +104,17 @@
 		},
 		"name": ".*",
 		"property": ".*",
-		"length": 20
+		"length": 20,
+		"actormixer_path": "\\Actor-Mixer Hierarchy\\v1\\Sys",
+		"event_path": ""
 	},
 	"VO": {
 		"module": ".*",
 		"name": ".*",
 		"property": ".*",
-		"length": 20
+		"length": 20,
+		"actormixer_path": "\\Actor-Mixer Hierarchy\\v1\\VO",
+		"event_path": ""
 	},
 	"Gen_Word": {
 		"Lit": [ "Light", "Small" ],
