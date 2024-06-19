@@ -20,6 +20,18 @@ wav_path = r"S:\chen.gong_DCC_Audio\Audio\SilverPalace_WwiseProject\Originals\SF
 # 容器根目录
 waapi_path = "\\Actor-Mixer Hierarchy\\v1"
 
+
+# 打开工作簿并获取工作表
+def excel_get_sheet(path, sheetname):
+    # 打开工作簿
+    wb = openpyxl.load_workbook(path)
+    # print(wb)
+    # 获取工作表
+    sheet = wb[sheetname]
+    # print(sheet)
+    return sheet, wb
+
+
 """获取.xlsx文件"""
 
 file_names = []
@@ -27,6 +39,11 @@ for i in os.walk(py_path):
     file_names.append(i)
 file_name_list = file_names[0][2]
 # pprint(file_name_list)
+
+"""获取资源导入记录表"""
+excel_media_import_path = r"F:\pppppy\SP\module\oi\oi_媒体资源重命名\资源导入记录表.xlsx"
+sheet_m, wb_m = excel_get_sheet(excel_media_import_path, 'Sheet1')
+# print(sheet_m)
 
 """获取.wav文件"""
 file_wav_dict = get_type_file_name_and_path('.wav', wav_path)
@@ -70,39 +87,42 @@ with WaapiClient() as client:
     # 提取规则：只提取xlsx文件
     for i in file_name_list:
         if ".xlsx" in i:
-            # 拼接xlsx的路径
-            file_path_xlsx = os.path.join(py_path, i)
-            # 获取xlsx的workbook
-            wb = openpyxl.load_workbook(file_path_xlsx)
-            # 获取xlsx的所有sheet
-            sheet_names = wb.sheetnames
-            # 加载所有工作表
-            for sheet_name in sheet_names:
-                sheet = wb[sheet_name]
-                # 获取工作表第一行数据
-                for cell in list(sheet.rows)[0]:
-                    if 'Sample Name' in str(cell.value):
-                        # 获取音效名下的内容
-                        for cell_sound in list(sheet.columns)[cell.column - 1]:
-                            # 空格和中文不检测
-                            if cell_sound.value != None:
-                                if check_is_chinese(cell_sound.value) == False:
-                                    """❤❤❤❤数据获取❤❤❤❤"""
-                                    """测试名称"""
-                                    new_name = cell_sound.value
-                                    old_name = sheet.cell(row=cell_sound.row, column=cell_sound.column - 1).value
-                                    # pprint(old_name)
-                                    if new_name in rnd_container_list:
-                                        # 表中有名字，但没有对应的wav文件
-                                        if old_name and (old_name + '.wav' not in file_wav_dict):
-                                            pprint(old_name + ":目前没有表中对应的wav文件")
-                                        else:
-                                            # 有名字也有文件
-                                            if old_name:
-                                                pprint(old_name)
-                                            # 表里没有旧名字，应该没资源
+            if i == "资源导入记录表.xlsx":
+                pass
+            else:
+                # 拼接xlsx的路径
+                file_path_xlsx = os.path.join(py_path, i)
+                # 获取xlsx的workbook
+                wb = openpyxl.load_workbook(file_path_xlsx)
+                # 获取xlsx的所有sheet
+                sheet_names = wb.sheetnames
+                # 加载所有工作表
+                for sheet_name in sheet_names:
+                    sheet = wb[sheet_name]
+                    # 获取工作表第一行数据
+                    for cell in list(sheet.rows)[0]:
+                        if 'Sample Name' in str(cell.value):
+                            # 获取音效名下的内容
+                            for cell_sound in list(sheet.columns)[cell.column - 1]:
+                                # 空格和中文不检测
+                                if cell_sound.value != None:
+                                    if check_is_chinese(cell_sound.value) == False:
+                                        """❤❤❤❤数据获取❤❤❤❤"""
+                                        """测试名称"""
+                                        new_name = cell_sound.value
+                                        old_name = sheet.cell(row=cell_sound.row, column=cell_sound.column - 1).value
+                                        # pprint(old_name)
+                                        if new_name in rnd_container_list:
+                                            # 表中有名字，但没有对应的wav文件
+                                            if old_name and (old_name + '.wav' not in file_wav_dict):
+                                                # pprint(old_name + ":目前没有表中对应的wav文件")
+                                                pass
                                             else:
-                                                pprint(new_name)
-
-
-
+                                                # 有名字也有文件
+                                                if old_name:
+                                                    # pprint(old_name)
+                                                    pass
+                                                # 表里没有旧名字，应该没资源
+                                                else:
+                                                    # pprint(new_name)
+                                                    pass

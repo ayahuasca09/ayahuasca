@@ -4,13 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="17a8a927-0db7-41d4-8f81-9181fc87e6d9" name="更改" comment="音频资源导入检测——全量媒体资源导入和事件生成">
-      <change afterPath="$PROJECT_DIR$/module/oi/oi_媒体资源重命名/SilverPalace战斗音频需求资源管理表.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module/oi/oi_媒体资源重命名/SilverPalace音频需求资源管理表.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module/oi/oi_媒体资源重命名/oi_媒体资源重命名.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module/oi/oi_媒体资源重命名/资源导入记录表.xlsx" afterDir="false" />
+    <list default="true" id="17a8a927-0db7-41d4-8f81-9181fc87e6d9" name="更改" comment="音频资源导入检测——媒体资源导入记录表">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/oi/oi_h.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/oi/oi_h.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/oi/oi_媒体资源重命名/oi_媒体资源重命名.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/oi/oi_媒体资源重命名/oi_媒体资源重命名.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -454,7 +450,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718712583294</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="音频资源导入检测——媒体资源导入记录表">
+      <option name="closed" value="true" />
+      <created>1718789744627</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1718789744627</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -470,7 +474,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="获取\Content\Audio\GeneratedSoundBanks\Windows\Event下的json文件路径" />
     <MESSAGE value="waapi_订阅_接收对象名称被修改时的信息" />
     <MESSAGE value="打包测试封装为exe文件" />
     <MESSAGE value="soundbank生成并写入" />
@@ -495,6 +498,7 @@
     <MESSAGE value="音频资源导入检测——随机容器可以根据分类创建" />
     <MESSAGE value="音频资源导入检测——媒体资源导入和事件创建" />
     <MESSAGE value="音频资源导入检测——全量媒体资源导入和事件生成" />
-    <option name="LAST_COMMIT_MESSAGE" value="音频资源导入检测——全量媒体资源导入和事件生成" />
+    <MESSAGE value="音频资源导入检测——媒体资源导入记录表" />
+    <option name="LAST_COMMIT_MESSAGE" value="音频资源导入检测——媒体资源导入记录表" />
   </component>
 </project>
