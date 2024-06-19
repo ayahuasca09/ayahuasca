@@ -30,6 +30,24 @@ def find_all_files_by_type(dir_path, file_type):
 # 测试
 # find_all_files_by_type(r'F:\pppppy\SP\module\excel', '.xlsx')
 
+"""遍历文件目录获取文件名称和路径
+"""
+
+
+def get_type_file_name_and_path(file_type, dir_path):
+    file_dict = {}
+    # 遍历文件夹下的所有子文件
+    # 绝对路径，子文件夹，文件名
+    for root, dirs, files in os.walk(dir_path):
+        # {'name': ['1111.akd', 'Creature Growls 4.akd', 'Sonic Salute_005_2_20.akd'],
+        #  'path': 'S:\\chen.gong_DCC_Audio\\Audio\\SilverPalace_WwiseProject\\Originals\\SFX'}
+        for file in files:
+            if file_type in file:
+                file_dict[file] = os.path.join(
+                    root, file)
+
+    return file_dict
+
 
 # 获取\Content\Audio\GeneratedSoundBanks\Windows\Event下的json文件路径
 def oi_get_json_filesname():
@@ -63,7 +81,6 @@ def oi_get_json_filesname():
     return file_json_list
     # [{'name': 'Play_VO_Munin_07.json',
     #   'path': 'S:\\spgame\\Project\\Content\\Audio\\GeneratedSoundBanks\\Windows\\Event\\English\\28\\Play_VO_Munin_07.json'}]
-
 
 # 调用范例
 # file_json_list = oi_get_json_filesname()
