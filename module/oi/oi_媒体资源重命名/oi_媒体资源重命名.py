@@ -7,6 +7,7 @@ from pprint import pprint
 import shutil
 from waapi import WaapiClient
 from openpyxl.styles import colors
+import re
 
 # 文件所在目录
 py_path = ""
@@ -49,6 +50,9 @@ sheet_m, wb_m = excel_get_sheet(excel_media_import_path, 'Sheet1')
 """获取.wav文件"""
 file_wav_dict = get_type_file_name_and_path('.wav', wav_path)
 # pprint(file_wav_dict)
+
+"""复制.wav文件的路径"""
+copy_path = r"F:\pppppy\SP\module\oi\oi_媒体资源重命名\New_Media"
 
 """*****************功能检测区******************"""
 
@@ -129,7 +133,28 @@ with WaapiClient() as client:
                                         # 表中有名字，但没有对应的wav文件
                                         if old_name and (old_name + '.wav' not in file_wav_dict):
                                             # pprint(old_name + ":目前没有表中对应的wav文件")
-                                            pass
+                                            # 为随机容器的资源
+                                            for wav_name in file_wav_dict:
+                                                if old_name in wav_name:
+                                                    # 获取词缀尾部
+                                                    no_wav_name = re.sub(".wav", "", wav_name)
+                                                    wav_tail = re.search(r"(\d{2,4})$", no_wav_name)
+                                                    if wav_tail:
+                                                        # print(wav_tail.group())
+                                                        new_tail = "_R" + wav_tail.group()
+                                                        new_wav_name = new_name + new_tail + ".wav"
+                                                        # print(new_wav_name)
+                                                        # 文件复制
+                                                        shutil.copy2(file_wav_dict[wav_name]
+                                                                     , os.path.join(copy_path, new_wav_name))
+                                                        # 颜色修改
+                                                        for cell_color in list(sheet_m.rows)[insert_row - 1]:
+                                                            cell_color.fill = openpyxl.styles.PatternFill(
+                                                                start_color='F1FC72',
+                                                                end_color='F1FC72',
+                                                                fill_type='solid')
+                                                        sheet_m.cell(row=insert_row, column=3).value = 1
+
                                         else:
                                             # 有名字也有文件
                                             if old_name:
@@ -140,6 +165,9 @@ with WaapiClient() as client:
                                                     cell_color.fill = openpyxl.styles.PatternFill(start_color='88DB29',
                                                                                                   end_color='88DB29',
                                                                                                   fill_type='solid')
+                                                # 文件复制
+                                                # shutil.copy2(file_wav_dict[old_name + '.wav']
+                                                #              , os.path.join(copy_path, new_name + ".wav"))
                                             # 表里没有旧名字，应该没资源
                                             else:
                                                 sheet_m.cell(row=insert_row, column=7).value = 1
