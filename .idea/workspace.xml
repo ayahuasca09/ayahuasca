@@ -7,6 +7,7 @@
     <list default="true" id="17a8a927-0db7-41d4-8f81-9181fc87e6d9" name="更改" comment="音频资源导入检测——媒体资源导入记录表">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/module/oi/oi_媒体资源重命名/oi_媒体资源重命名.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/oi/oi_媒体资源重命名/oi_媒体资源重命名.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/oi/oi_媒体资源重命名/资源导入记录表.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/module/oi/oi_媒体资源重命名/资源导入记录表.xlsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -458,7 +459,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718789744627</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="音频资源导入检测——媒体资源导入记录表">
+      <option name="closed" value="true" />
+      <created>1718792816738</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1718792816738</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
