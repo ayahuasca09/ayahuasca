@@ -7,7 +7,7 @@ from pprint import pprint
 import re
 from waapi import WaapiClient
 import shutil
-
+# a
 # 文件所在目录
 py_path = ""
 if hasattr(sys, 'frozen'):

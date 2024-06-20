@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="17a8a927-0db7-41d4-8f81-9181fc87e6d9" name="更改" comment="音频资源导入检测——媒体资源导入随机容器">
+    <list default="true" id="17a8a927-0db7-41d4-8f81-9181fc87e6d9" name="更改" comment="音频资源导入检测——正式资源替换占位资源">
       <change afterPath="$PROJECT_DIR$/module/oi/oi_媒体资源重命名/New_Media/Char_Mov_Gen_Boot_End_Dirt_R01.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/oi/oi_媒体资源重命名/New_Media/Char_Mov_Gen_Boot_End_Dirt_R02.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/oi/oi_媒体资源重命名/New_Media/Char_Mov_Gen_Boot_End_Dirt_R03.wav" afterDir="false" />
@@ -557,82 +557,103 @@
       <change afterPath="$PROJECT_DIR$/module/oi/oi_媒体资源重命名/New_Media/Sys_Show_C05_Def_Exit_Pose05_02.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/oi/oi_媒体资源重命名/New_Media/Sys_Show_C05_Def_Exit_Pose06.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/oi/oi_媒体资源重命名/New_Media/Sys_Show_C05_Def_Idle_Pose03_02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Mov_Gen_Boot_End_Dirt.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Mov_Gen_Boot_End_Dirt_R02.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Mov_Gen_Boot_End_Dirt_R03.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Mov_Gen_Boot_End_Dirt_R04.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Mov_Gen_Boot_End_Dirt_R05.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Mov_Gen_Boot_End_Dirt_R06.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Mov_Gen_Boot_Fall_Dirt_Hvy.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Mov_Gen_Boot_Fall_Dirt_Hvy_R02.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Mov_Gen_Boot_Fall_Dirt_Hvy_R03.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Mov_Gen_Boot_Fall_Dirt_Lit.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Mov_Gen_Boot_Fall_Dirt_Lit_R02.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Mov_Gen_Boot_Fall_Dirt_Lit_R03.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Mov_Gen_Boot_Jump_Dirt.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Mov_Gen_Boot_Jump_Dirt_R02.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Mov_Gen_Boot_Jump_Dirt_R03.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Mov_Gen_Boot_Run_Dirt.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Mov_Gen_Boot_Run_Dirt_R02.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Mov_Gen_Boot_Run_Dirt_R03.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Mov_Gen_Boot_Run_Dirt_R04.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Mov_Gen_Boot_Run_Dirt_R05.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Mov_Gen_Boot_Run_Dirt_R06.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Mov_Gen_Boot_Sprint_Dirt.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Mov_Gen_Boot_Sprint_Dirt_R02.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Mov_Gen_Boot_Sprint_Dirt_R03.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Mov_Gen_Boot_Sprint_Dirt_R04.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Mov_Gen_Boot_Sprint_Dirt_R05.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Mov_Gen_Boot_Sprint_Dirt_R06.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Mov_Gen_Boot_Walk_Dirt.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Mov_Gen_Boot_Walk_Wood.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Mov_Gen_Boot_Walk_Wood_R02.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Mov_Gen_Boot_Walk_Wood_R03.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Mov_Gen_Boot_Walk_Wood_R04.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Mov_Gen_Boot_Walk_Wood_R05.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Mov_Gen_Boot_Walk_Wood_R06.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Mov_Gen_HHeel_End_Dirt.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Mov_Gen_HHeel_End_Dirt_R02.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Mov_Gen_HHeel_End_Dirt_R03.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Mov_Gen_HHeel_End_Dirt_R04.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Mov_Gen_HHeel_End_Dirt_R05.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Mov_Gen_HHeel_End_Dirt_R06.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Mov_Gen_HHeel_Fall_Dirt_Hvy.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Mov_Gen_HHeel_Fall_Dirt_Hvy_R02.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Mov_Gen_HHeel_Fall_Dirt_Hvy_R03.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Mov_Gen_HHeel_Fall_Dirt_Lit.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Mov_Gen_HHeel_Fall_Dirt_Lit_R02.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Mov_Gen_HHeel_Fall_Dirt_Lit_R03.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Mov_Gen_HHeel_Jump_Dirt.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Mov_Gen_HHeel_Jump_Dirt_R02.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Mov_Gen_HHeel_Jump_Dirt_R03.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Mov_Gen_HHeel_Run_Dirt.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Mov_Gen_HHeel_Run_Dirt_R02.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Mov_Gen_HHeel_Run_Dirt_R03.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Mov_Gen_HHeel_Run_Dirt_R04.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Mov_Gen_HHeel_Run_Dirt_R05.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Mov_Gen_HHeel_Run_Dirt_R06.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Mov_Gen_HHeel_Sprint_Dirt.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Mov_Gen_HHeel_Sprint_Dirt_R02.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Mov_Gen_HHeel_Sprint_Dirt_R03.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Mov_Gen_HHeel_Sprint_Dirt_R04.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Mov_Gen_HHeel_Sprint_Dirt_R05.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Mov_Gen_HHeel_Sprint_Dirt_R06.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Mov_Gen_HHeel_Walk_Dirt.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Mov_Gen_HHeel_Walk_Wood.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Mov_Gen_HHeel_Walk_Wood_R02.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Mov_Gen_HHeel_Walk_Wood_R03.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Mov_Gen_HHeel_Walk_Wood_R04.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Mov_Gen_HHeel_Walk_Wood_R05.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Mov_Gen_HHeel_Walk_Wood_R06.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Mov_Gen_SHeel_End_Dirt.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Mov_Gen_SHeel_End_Dirt_R02.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Mov_Gen_SHeel_End_Dirt_R03.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Mov_Gen_SHeel_End_Dirt_R04.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Mov_Gen_SHeel_End_Dirt_R05.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Mov_Gen_SHeel_End_Dirt_R06.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Mov_Gen_SHeel_Fall_Dirt_Hvy.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Mov_Gen_SHeel_Fall_Dirt_Hvy_R02.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Mov_Gen_SHeel_Fall_Dirt_Hvy_R03.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Mov_Gen_SHeel_Fall_Dirt_Lit.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Mov_Gen_SHeel_Fall_Dirt_Lit_R02.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Mov_Gen_SHeel_Fall_Dirt_Lit_R03.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Mov_Gen_SHeel_Jump_Dirt.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Mov_Gen_SHeel_Jump_Dirt_R02.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Mov_Gen_SHeel_Jump_Dirt_R03.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Mov_Gen_SHeel_Run_Dirt.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Mov_Gen_SHeel_Run_Dirt_R02.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Mov_Gen_SHeel_Run_Dirt_R03.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Mov_Gen_SHeel_Run_Dirt_R04.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Mov_Gen_SHeel_Run_Dirt_R05.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Mov_Gen_SHeel_Run_Dirt_R06.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Mov_Gen_SHeel_Sprint_Dirt.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Mov_Gen_SHeel_Sprint_Dirt_R02.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Mov_Gen_SHeel_Sprint_Dirt_R03.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Mov_Gen_SHeel_Sprint_Dirt_R04.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Mov_Gen_SHeel_Sprint_Dirt_R05.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Mov_Gen_SHeel_Sprint_Dirt_R06.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Mov_Gen_SHeel_Walk_Dirt.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Mov_Gen_SHeel_Walk_Wood.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Mov_Gen_SHeel_Walk_Wood_R02.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Mov_Gen_SHeel_Walk_Wood_R03.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Mov_Gen_SHeel_Walk_Wood_R04.wav" afterDir="false" />
@@ -645,6 +666,7 @@
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Skill_C01_Atk5.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Skill_C01_Counter.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Skill_C01_Counter_Sp.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Skill_C01_Dodge.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Skill_C01_Dodge_R02.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Skill_C01_Execu1.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Skill_C01_Execu1_Pre.wav" afterDir="false" />
@@ -690,9 +712,11 @@
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Skill_C02_Counter_Hvy.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Skill_C02_Counter_Lit.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Skill_C02_Counter_Sp_Atk.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Skill_C02_Dodge.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Skill_C02_Dodge_R02.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Skill_C02_Dodge_R03.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Skill_C02_Dodge_R04.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Skill_C02_Dodge_Step.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Skill_C02_Dodge_Step_R02.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Skill_C02_Dodge_Step_R03.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Skill_C02_Dodge_Step_R04.wav" afterDir="false" />
@@ -708,6 +732,7 @@
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Skill_C02_Focus_Ready7.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Skill_C02_Focus_Ready8.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Skill_C02_Hit_Death_Grd.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Skill_C02_Hit_Fall_End.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Skill_C02_Hit_Fall_End_R02.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Skill_C02_Hit_Fall_End_R03.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Skill_C02_Hit_Fly_End.wav" afterDir="false" />
@@ -730,6 +755,7 @@
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Skill_C03_Battle_Enter.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Skill_C03_Battle_Exit.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Skill_C03_Death.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Skill_C03_Dodge.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Skill_C03_Dodge_R02.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Skill_C03_Dodge_R03.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Skill_C03_Execu1.wav" afterDir="false" />
@@ -739,12 +765,15 @@
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Skill_C03_Execu2.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Skill_C03_Execu3.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Skill_C03_Focus_Atk1.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Skill_C03_Focus_Atk1_Exp_Lit.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Skill_C03_Focus_Atk1_Exp_Lit_R02.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Skill_C03_Focus_Atk1_Exp_Lit_R03.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Skill_C03_Focus_Atk2.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Skill_C03_Focus_Atk2_Exp_Mid.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Skill_C03_Focus_Atk2_Exp_Mid_R02.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Skill_C03_Focus_Atk2_Exp_Mid_R03.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Skill_C03_Focus_Atk3.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Skill_C03_Focus_Atk3_Exp_Hvy.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Skill_C03_Focus_Atk3_Exp_Hvy_R02.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Skill_C03_Focus_Atk3_Exp_Hvy_R03.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Skill_C03_Focus_LP.wav" afterDir="false" />
@@ -764,12 +793,10 @@
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Skill_C03_Hit_Wall_End.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Skill_C03_Strafe_End.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Skill_C03_Strafe_Enter.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Skill_C03_Strafe_Enter_R01.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Skill_C03_Strafe_Enter_R02.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Skill_C03_Strafe_Exit.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Skill_C03_Strafe_Exit_R01.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Skill_C03_Strafe_Exit_R02.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Skill_C03_Strafe_Fire_Single_R01.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Skill_C03_Strafe_Fire_Single.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Skill_C03_Strafe_Fire_Single_R02.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Skill_C03_Strafe_Fire_Single_R03.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Skill_C03_Strafe_Fire_Single_R04.wav" afterDir="false" />
@@ -781,7 +808,7 @@
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Skill_C03_Strafe_Reload_Multi_LP.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Skill_C03_Strafe_Reload_Single.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Skill_C03_Strafe_Reload_Start.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Skill_C03_Strafe_Shell_Fall_R01.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Skill_C03_Strafe_Shell_Fall.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Skill_C03_Strafe_Shell_Fall_R02.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Skill_C03_Strafe_Shell_Fall_R03.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Char_Skill_C03_Strafe_Shell_Fall_R04.wav" afterDir="false" />
@@ -879,113 +906,113 @@
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Boss_Shout_B01_Horse_Stun_Hit.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Boss_Shout_B01_Horse_Stun_LP.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Boss_Shout_B01_Horse_Stun_Start.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Foley_M01_Fall_Death_R01.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Foley_M01_Fall_Death.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Foley_M01_Fall_Death_R02.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Foley_M01_Fall_Death_R03.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Foley_M01_Fall_Hvy_R01.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Foley_M01_Fall_Hvy.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Foley_M01_Fall_Hvy_R02.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Foley_M01_Fall_Hvy_R03.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Foley_M01_Getup.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Foley_M01_Jump_R01.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Foley_M01_Jump.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Foley_M01_Jump_R02.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Foley_M01_Jump_R03.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Foley_M01_Rub_R01.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Foley_M01_Rub.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Foley_M01_Rub_R02.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Foley_M01_Rub_R03.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Foley_M01_Run_R01.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Foley_M01_Run.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Foley_M01_Run_R02.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Foley_M01_Run_R03.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Foley_M01_Step.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Foley_M01_Walk_R01.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Foley_M01_Walk.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Foley_M01_Walk_R02.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Foley_M01_Walk_R03.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Foley_M02_Crawl_R01.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Foley_M02_Crawl.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Foley_M02_Crawl_R02.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Foley_M02_Crawl_R03.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Foley_M02_Crawl_R04.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Foley_M02_Crawl_R05.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Foley_M02_Death_R01.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Foley_M02_Death.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Foley_M02_Death_R02.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Foley_M02_Death_R03.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Foley_M02_Fall_Down.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Foley_M02_Knock_R01.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Foley_M02_Knock.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Foley_M02_Knock_R02.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Foley_M02_Knock_R03.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Foley_M02_Mutilate.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Foley_M02_Run_R01.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Foley_M02_Run.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Foley_M02_Run_R02.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Foley_M02_Run_R03.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Foley_M02_Run_R04.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Foley_M02_Run_R05.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Foley_M02_Stop_R01.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Foley_M02_Stop.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Foley_M02_Stop_R02.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Foley_M02_Stop_R03.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Foley_M02_Stop_R04.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Foley_M02_Stop_R05.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Shout_M01_Atk_D_R01.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Shout_M01_Atk.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Shout_M01_Atk_D.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Shout_M01_Atk_D_R02.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Shout_M01_Atk_D_R03.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Shout_M01_Atk_R01.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Shout_M01_Atk_R02.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Shout_M01_Atk_R03.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Shout_M01_Born_Foley_R01.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Shout_M01_Born_Foley.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Shout_M01_Born_Foley_R02.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Shout_M01_Born_Trans_R01.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Shout_M01_Born_Trans.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Shout_M01_Born_Trans_R02.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Shout_M01_Born_Trans_R03.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Shout_M01_Death_R01.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Shout_M01_Death.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Shout_M01_Death_R02.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Shout_M01_Death_R03.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Shout_M01_Getup_R01.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Shout_M01_Getup.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Shout_M01_Getup_R02.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Shout_M01_Getup_R03.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Shout_M01_Hit_Hvy_R01.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Shout_M01_Hit.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Shout_M01_Hit_Hvy.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Shout_M01_Hit_Hvy_R02.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Shout_M01_Hit_Hvy_R03.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Shout_M01_Hit_R01.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Shout_M01_Hit_R02.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Shout_M01_Hit_R03.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Shout_M01_Hit_R04.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Shout_M01_Jump_R01.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Shout_M01_Jump.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Shout_M01_Jump_R02.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Shout_M01_Jump_R03.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Shout_M01_Knock_R01.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Shout_M01_Knock.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Shout_M01_Knock_R02.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Shout_M01_Sprint_R01.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Shout_M01_Sprint.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Shout_M01_Sprint_R02.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Shout_M01_Sprint_R03.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Shout_M01_Sprint_R04.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Shout_M01_Step_R01.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Shout_M01_Step.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Shout_M01_Step_R02.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Shout_M01_Step_R03.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Shout_M02_Atk5_R01.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Shout_M02_Atk.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Shout_M02_Atk5.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Shout_M02_Atk5_R02.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Shout_M02_Atk6.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Shout_M02_Atk_R01.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Shout_M02_Atk_R02.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Shout_M02_Atk_R03.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Shout_M02_Born.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Shout_M02_Buffer.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Shout_M02_Death_Hvy_R01.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Shout_M02_Death.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Shout_M02_Death_Hvy.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Shout_M02_Death_Hvy_R02.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Shout_M02_Death_R01.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Shout_M02_Death_R02.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Shout_M02_Getup_R01.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Shout_M02_Getup.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Shout_M02_Getup_R02.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Shout_M02_Hit_Hvy_R01.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Shout_M02_Hit.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Shout_M02_Hit_Hvy.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Shout_M02_Hit_Hvy_R02.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Shout_M02_Hit_Hvy_R03.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Shout_M02_Hit_R01.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Shout_M02_Hit_R02.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Shout_M02_Hit_R03.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Shout_M02_Hit_R04.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Shout_M02_Hit_R05.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Shout_M02_Knock_R01.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Shout_M02_Knock.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Shout_M02_Knock_R02.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Shout_M02_Run_To_Crawl_R01.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Shout_M02_Run_To_Crawl.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Shout_M02_Run_To_Crawl_R02.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Shout_M02_Run_To_Crawl_R03.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Shout_M02_Struggle_R01.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Shout_M02_Struggle.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Shout_M02_Struggle_R02.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Shout_M02_Struggle_R03.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Skill_M01_Atk1.wav" afterDir="false" />
@@ -995,7 +1022,7 @@
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Skill_M01_Death_Hit.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Skill_M01_Door.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Skill_M01_Jump_Start.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Skill_M01_Step_R01.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Skill_M01_Step.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Skill_M01_Step_R02.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Skill_M01_Step_R03.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Skill_M01_Stun.wav" afterDir="false" />
@@ -1009,7 +1036,7 @@
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Skill_M02_Born.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Skill_M02_Buffer.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Skill_M02_Buffer_Crawl.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Skill_M02_Death_R01.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Skill_M02_Death.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Skill_M02_Death_R02.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Mon_Mob_Skill_M02_Death_R03.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Sys_Show_C01_Def_Enter_Pose01.wav" afterDir="false" />
@@ -1080,9 +1107,7 @@
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Sys_Show_C05_Def_Exit_Pose05_02.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Sys_Show_C05_Def_Exit_Pose06.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Sys_Show_C05_Def_Idle_Pose03_02.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/waapi_音频资源导入_从媒体资源导入.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/waapi_音频资源导入自动化.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/waapi_音频资源导入_从表导入.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -1559,7 +1584,23 @@
       <option name="project" value="LOCAL" />
       <updated>1718867666955</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="音频资源导入检测——媒体资源导入随机容器">
+      <option name="closed" value="true" />
+      <created>1718883467558</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1718883467558</updated>
+    </task>
+    <task id="LOCAL-00036" summary="音频资源导入检测——正式资源替换占位资源">
+      <option name="closed" value="true" />
+      <created>1718883508985</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1718883508985</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -1575,7 +1616,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="soundbank生成并写入" />
     <MESSAGE value="名称迭代" />
     <MESSAGE value="文件测试" />
     <MESSAGE value="GenerateSoundbank_v1.1更新" />
@@ -1600,6 +1640,7 @@
     <MESSAGE value="音频资源导入检测——媒体资源导入记录表" />
     <MESSAGE value="音频资源导入检测——媒体资源导入记录表颜色改变" />
     <MESSAGE value="音频资源导入检测——媒体资源导入随机容器" />
-    <option name="LAST_COMMIT_MESSAGE" value="音频资源导入检测——媒体资源导入随机容器" />
+    <MESSAGE value="音频资源导入检测——正式资源替换占位资源" />
+    <option name="LAST_COMMIT_MESSAGE" value="音频资源导入检测——正式资源替换占位资源" />
   </component>
 </project>
