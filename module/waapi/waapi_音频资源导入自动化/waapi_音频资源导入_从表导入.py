@@ -7,7 +7,7 @@ from pprint import pprint
 import re
 from waapi import WaapiClient
 import shutil
-# a
+
 # 文件所在目录
 py_path = ""
 if hasattr(sys, 'frozen'):
@@ -290,7 +290,7 @@ with WaapiClient() as client:
 
     def find_obj(args):
         options = {
-            'return': ['name', 'id', 'path', 'notes']
+            'return': ['name', 'id', 'path', 'notes', 'originalWavFilePath']
 
         }
         obj_sub_list = client.call("ak.wwise.core.object.get", args, options=options)['return']
@@ -339,7 +339,7 @@ with WaapiClient() as client:
                 wwise_dict['Root'], system_name)})
         for rnd_container_dict in rnd_container_list:
             if rnd_container_dict['name'] == rnd_name:
-                pprint(rnd_name + "：RandomContainer已存在，将不再导入")
+                # pprint(rnd_name + "：RandomContainer已存在，将不再导入")
                 flag = 1
                 rnd_path = rnd_container_dict['path']
                 break
@@ -477,6 +477,55 @@ with WaapiClient() as client:
         create_event(rnd_name, rnd_path)
 
 
+    def delete_wwise_content():
+        for i in file_name_list:
+            if ".xlsx" in i:
+                # 拼接xlsx的路径
+                file_path_xlsx = os.path.join(py_path, i)
+                # 获取xlsx的workbook
+                wb = openpyxl.load_workbook(file_path_xlsx)
+                # 获取xlsx的所有sheet
+                sheet_names = wb.sheetnames
+                # 加载所有工作表
+                for sheet_name in sheet_names:
+                    sheet = wb[sheet_name]
+                    # 获取工作表第一行数据
+                    for cell in list(sheet.rows)[0]:
+                        if 'Sample Name' in str(cell.value):
+                            # 获取音效名下的内容
+                            for cell_sound in list(sheet.columns)[cell.column - 1]:
+                                # 空格和中文不检测
+                                if cell_sound.value != None:
+                                    if check_is_chinese(cell_sound.value) == False:
+                                        """❤❤❤❤数据获取❤❤❤❤"""
+                                        """测试名称"""
+                                        name = cell_sound.value
+                                        if rnd_container['name'] == name:
+                                            return
+        # 随机容器引用的资产删除
+        media_list, media_id, _ = find_obj(
+            {'waql': ' "%s" select children where type = "Sound" ' % rnd_container['id']})
+        for media_dict in media_list:
+            os.remove(media_dict['originalWavFilePath'])
+            pprint(media_dict['originalWavFilePath'] + "已删除")
+
+        # 随机容器删除
+        args = {
+            "object": "%s" % rnd_container['id']
+        }
+        client.call("ak.wwise.core.object.delete", args)
+        pprint(rnd_container['name'] + ":RandomContainer已删除")
+
+        # 事件删除
+        for event_dict in event_list:
+            if rnd_container['name'] in event_dict['name']:
+                args = {
+                    "object": "%s" % event_dict['id']
+                }
+                client.call("ak.wwise.core.object.delete", args)
+                pprint(event_dict['name'] + ":Event已删除")
+
+
     """*****************主程序处理******************"""
     # 撤销开始
     client.call("ak.wwise.core.undo.beginGroup")
@@ -529,6 +578,23 @@ with WaapiClient() as client:
                                     # 检查一级系统并索引到不同的检测方式
                                     check_first_system_name(name)
                                     # print(name)
+
+    """删除表中没有的内容"""
+    # 查找所有Rnd和Event
+    rnd_container_list, rnd_id, _ = find_obj(
+        {'waql': ' "%s" select descendants where type = "RandomSequenceContainer" ' % wwise_dict['Root']})
+    # [{'id': '{C1BFDDC1-CA6F-45BC-8B43-15AE866AA20A}',
+    #   'name': 'Char_Skill_C01_Atk1',
+    #   'notes': '',
+    #   'path': '\\Actor-Mixer '
+    #           'Hierarchy\\v1\\Char\\Char\\Char_Skill\\Char_Skill\\Char_Skill_C01\\Char_Skill_C01\\Char_Skill_C01_Atk1'}
+
+    event_list, event_id, _ = find_obj(
+        {'waql': ' "%s" select descendants where type = "Event" ' % wwise_dict['Event_Root']})
+
+    for rnd_container in rnd_container_list:
+        delete_wwise_content()
+
     # 撤销结束
     client.call("ak.wwise.core.undo.endGroup", displayName="rnd创建撤销")
 
