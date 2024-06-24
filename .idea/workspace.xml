@@ -4,11 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="17a8a927-0db7-41d4-8f81-9181fc87e6d9" name="更改" comment="音频资源导入检测——正式资源替换占位资源">
+    <list default="true" id="17a8a927-0db7-41d4-8f81-9181fc87e6d9" name="更改" comment="音频资源导入检测——自动删除同步">
+      <change afterPath="$PROJECT_DIR$/module/ue/ue_ID表生成/Audio.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/ue/ue_ID表生成/ue_ID表生成.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unreal.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/SP.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/SP.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/SilverPalace战斗音频需求资源管理表.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/SilverPalace战斗音频需求资源管理表.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/waapi_音频资源导入_从表导入.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/waapi_音频资源导入_从表导入.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/导入规则.json" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/导入规则.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,6 +59,7 @@
     "Python.oi_h.executor": "Run",
     "Python.oi_媒体资源重命名.executor": "Run",
     "Python.test.executor": "Run",
+    "Python.ue_ID表生成.executor": "Run",
     "Python.waapi_json数据解析.executor": "Run",
     "Python.waapi_sounbank生成.executor": "Run",
     "Python.waapi_test.executor": "Run",
@@ -68,17 +73,21 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "F:/pppppy/SV",
-    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.语言默认设置"
+    "last_opened_file_path": "F:/pppppy/SP",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\pppppy\SP" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\pppppy\SP\module\ue\ue_ID表生成" />
       <recent name="F:\pppppy\SP\module\waapi\waapi_generatesoundbank" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.waapi_音频资源导入_从表导入 (1)">
-    <configuration name="oi_媒体资源重命名" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.正则测试">
+    <configuration name="正则测试" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="SP" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -87,11 +96,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/module/oi/oi_媒体资源重命名" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/module/oi/oi_媒体资源重命名/oi_媒体资源重命名.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test/正则测试.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -100,7 +109,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="oi_h" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="ue_ID表生成" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="SP" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -109,11 +118,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/module/oi" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/module/ue" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/module/oi/oi_h.py" />
+      <option name="SCRIPT_NAME" value="F:\pppppy\SP\module\ue\ue_ID表生成\ue_ID表生成.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -144,7 +153,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="waapi_音频资源导入_从表导入" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="waapi_音频资源导入_从媒体资源导入" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="SP" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -157,7 +166,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="F:\pppppy\SP\module\waapi\waapi_音频资源导入自动化\waapi_音频资源导入_从表导入.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/waapi_音频资源导入_从媒体资源导入.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -212,11 +221,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.正则测试" />
+        <item itemvalue="Python.ue_ID表生成" />
         <item itemvalue="Python.waapi_音频资源导入_从表导入 (1)" />
+        <item itemvalue="Python.waapi_音频资源导入_从媒体资源导入" />
         <item itemvalue="Python.waapi_test" />
-        <item itemvalue="Python.oi_媒体资源重命名" />
-        <item itemvalue="Python.oi_h" />
-        <item itemvalue="Python.waapi_音频资源导入_从表导入" />
       </list>
     </recent_temporary>
   </component>
@@ -532,7 +541,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718883715388</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="音频资源导入检测——自动删除同步">
+      <option name="closed" value="true" />
+      <created>1718965110428</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1718965110428</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -548,7 +565,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="名称迭代" />
     <MESSAGE value="文件测试" />
     <MESSAGE value="GenerateSoundbank_v1.1更新" />
     <MESSAGE value="GenerateSoundbank工具路径修改" />
@@ -573,6 +589,7 @@
     <MESSAGE value="音频资源导入检测——媒体资源导入记录表颜色改变" />
     <MESSAGE value="音频资源导入检测——媒体资源导入随机容器" />
     <MESSAGE value="音频资源导入检测——正式资源替换占位资源" />
-    <option name="LAST_COMMIT_MESSAGE" value="音频资源导入检测——正式资源替换占位资源" />
+    <MESSAGE value="音频资源导入检测——自动删除同步" />
+    <option name="LAST_COMMIT_MESSAGE" value="音频资源导入检测——自动删除同步" />
   </component>
 </project>
