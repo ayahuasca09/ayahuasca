@@ -1,0 +1,2972 @@
+[
+    {
+        "id": "{9507EB2A-0C85-4903-922E-DCCC31284098}",
+        "name": "AKE_Play_Mon_Boss_Body_B01_Shot_Aim_Start",
+        "path": "\\Events\\v1\\Mon\\Mon_Boss\\Mon_Boss_B01\\Mon_Boss_Body_B01\\AKE_Play_Mon_Boss_Body_B01_Shot_Aim_Start",
+        "notes": ""
+    },
+    {
+        "id": "{CB36DF32-AF63-4EF2-BABE-4551715FE3D1}",
+        "name": "AKE_Play_Mon_Boss_Body_B01_Shot",
+        "path": "\\Events\\v1\\Mon\\Mon_Boss\\Mon_Boss_B01\\Mon_Boss_Body_B01\\AKE_Play_Mon_Boss_Body_B01_Shot",
+        "notes": ""
+    },
+    {
+        "id": "{C2FAAE70-749A-420D-9942-47BD5A0C3B58}",
+        "name": "AKE_Play_Mon_Boss_Body_B01_Shot_Aim_End",
+        "path": "\\Events\\v1\\Mon\\Mon_Boss\\Mon_Boss_B01\\Mon_Boss_Body_B01\\AKE_Play_Mon_Boss_Body_B01_Shot_Aim_End",
+        "notes": ""
+    },
+    {
+        "id": "{4D4026D3-BF78-4E22-A213-217ED2AD21CC}",
+        "name": "AKE_Play_Mon_Boss_Body_B01_Atk1",
+        "path": "\\Events\\v1\\Mon\\Mon_Boss\\Mon_Boss_B01\\Mon_Boss_Body_B01\\AKE_Play_Mon_Boss_Body_B01_Atk1",
+        "notes": ""
+    },
+    {
+        "id": "{C3540E2C-2F5B-4C0B-B5FD-C9BC7949F7B9}",
+        "name": "AKE_Play_Mon_Boss_Body_B01_Atk2",
+        "path": "\\Events\\v1\\Mon\\Mon_Boss\\Mon_Boss_B01\\Mon_Boss_Body_B01\\AKE_Play_Mon_Boss_Body_B01_Atk2",
+        "notes": ""
+    },
+    {
+        "id": "{05517209-9327-454E-8470-D7E1445853FC}",
+        "name": "AKE_Play_Mon_Boss_Body_B01_Atk3",
+        "path": "\\Events\\v1\\Mon\\Mon_Boss\\Mon_Boss_B01\\Mon_Boss_Body_B01\\AKE_Play_Mon_Boss_Body_B01_Atk3",
+        "notes": ""
+    },
+    {
+        "id": "{998602DE-0D01-40A7-B3A8-4B3115C9293F}",
+        "name": "AKE_Play_Mon_Boss_Body_B01_Atk4",
+        "path": "\\Events\\v1\\Mon\\Mon_Boss\\Mon_Boss_B01\\Mon_Boss_Body_B01\\AKE_Play_Mon_Boss_Body_B01_Atk4",
+        "notes": ""
+    },
+    {
+        "id": "{2D66F08D-3179-4F0C-B629-2E2C20F5A4F0}",
+        "name": "AKE_Play_Mon_Boss_Body_B01_Atk5",
+        "path": "\\Events\\v1\\Mon\\Mon_Boss\\Mon_Boss_B01\\Mon_Boss_Body_B01\\AKE_Play_Mon_Boss_Body_B01_Atk5",
+        "notes": ""
+    },
+    {
+        "id": "{50EB798C-D89E-42D3-8251-84C15D473DD8}",
+        "name": "AKE_Play_Mon_Boss_Body_B01_Atk6_Start",
+        "path": "\\Events\\v1\\Mon\\Mon_Boss\\Mon_Boss_B01\\Mon_Boss_Body_B01\\AKE_Play_Mon_Boss_Body_B01_Atk6_Start",
+        "notes": ""
+    },
+    {
+        "id": "{AC60ED85-44CD-478E-9B07-660B46EF0533}",
+        "name": "AKE_Play_Mon_Boss_Body_B01_Atk6_Shoot",
+        "path": "\\Events\\v1\\Mon\\Mon_Boss\\Mon_Boss_B01\\Mon_Boss_Body_B01\\AKE_Play_Mon_Boss_Body_B01_Atk6_Shoot",
+        "notes": ""
+    },
+    {
+        "id": "{D736583E-53B7-4339-B4A8-58FD2302C62F}",
+        "name": "AKE_Play_Mon_Boss_Body_B01_Atk6_End",
+        "path": "\\Events\\v1\\Mon\\Mon_Boss\\Mon_Boss_B01\\Mon_Boss_Body_B01\\AKE_Play_Mon_Boss_Body_B01_Atk6_End",
+        "notes": ""
+    },
+    {
+        "id": "{EFC577C5-A1AD-43DF-82DB-A6EF497BCC66}",
+        "name": "AKE_Play_Mon_Boss_Body_B01_Execu_Move_Start",
+        "path": "\\Events\\v1\\Mon\\Mon_Boss\\Mon_Boss_B01\\Mon_Boss_Body_B01\\AKE_Play_Mon_Boss_Body_B01_Execu_Move_Start",
+        "notes": ""
+    },
+    {
+        "id": "{767DCA49-9B21-46C4-8EF3-59EDB0BF3E27}",
+        "name": "AKE_Play_Mon_Boss_Body_B01_Execu_Move_LP",
+        "path": "\\Events\\v1\\Mon\\Mon_Boss\\Mon_Boss_B01\\Mon_Boss_Body_B01\\AKE_Play_Mon_Boss_Body_B01_Execu_Move_LP",
+        "notes": ""
+    },
+    {
+        "id": "{A1B793FD-3438-41FA-825C-AD6005EF9351}",
+        "name": "AKE_Stop_Mon_Boss_Body_B01_Execu_Move_LP",
+        "path": "\\Events\\v1\\Mon\\Mon_Boss\\Mon_Boss_B01\\Mon_Boss_Body_B01\\AKE_Stop_Mon_Boss_Body_B01_Execu_Move_LP",
+        "notes": ""
+    },
+    {
+        "id": "{4D18BFA9-A5F0-491B-8485-49F8E6327991}",
+        "name": "AKE_Play_Mon_Boss_Body_B01_Execu_Move_End",
+        "path": "\\Events\\v1\\Mon\\Mon_Boss\\Mon_Boss_B01\\Mon_Boss_Body_B01\\AKE_Play_Mon_Boss_Body_B01_Execu_Move_End",
+        "notes": ""
+    },
+    {
+        "id": "{1892A129-D620-49B3-9361-2FAC2F19AFA1}",
+        "name": "AKE_Play_Mon_Boss_Body_B01_Execu_Tread_Start",
+        "path": "\\Events\\v1\\Mon\\Mon_Boss\\Mon_Boss_B01\\Mon_Boss_Body_B01\\AKE_Play_Mon_Boss_Body_B01_Execu_Tread_Start",
+        "notes": ""
+    },
+    {
+        "id": "{FCE7625A-021D-4CAA-8A55-2D07EC6ADF08}",
+        "name": "AKE_Play_Mon_Boss_Body_B01_Execu_Tread_LP",
+        "path": "\\Events\\v1\\Mon\\Mon_Boss\\Mon_Boss_B01\\Mon_Boss_Body_B01\\AKE_Play_Mon_Boss_Body_B01_Execu_Tread_LP",
+        "notes": ""
+    },
+    {
+        "id": "{18523F5C-8043-46CF-8C25-612742D733EB}",
+        "name": "AKE_Stop_Mon_Boss_Body_B01_Execu_Tread_LP",
+        "path": "\\Events\\v1\\Mon\\Mon_Boss\\Mon_Boss_B01\\Mon_Boss_Body_B01\\AKE_Stop_Mon_Boss_Body_B01_Execu_Tread_LP",
+        "notes": ""
+    },
+    {
+        "id": "{00B19646-FCDA-4CC8-B4B1-8F4988FCADD8}",
+        "name": "AKE_Play_Mon_Boss_Body_B01_Execu_Tread_Parried_Start",
+        "path": "\\Events\\v1\\Mon\\Mon_Boss\\Mon_Boss_B01\\Mon_Boss_Body_B01\\AKE_Play_Mon_Boss_Body_B01_Execu_Tread_Parried_Start",
+        "notes": ""
+    },
+    {
+        "id": "{00C0EE04-187F-493F-89A3-AFDE7C5B788E}",
+        "name": "AKE_Play_Mon_Boss_Body_B01_Execu_Tread_Parried_LP",
+        "path": "\\Events\\v1\\Mon\\Mon_Boss\\Mon_Boss_B01\\Mon_Boss_Body_B01\\AKE_Play_Mon_Boss_Body_B01_Execu_Tread_Parried_LP",
+        "notes": ""
+    },
+    {
+        "id": "{867ABB72-AF0C-4265-8D24-8FAF6F6A980E}",
+        "name": "AKE_Stop_Mon_Boss_Body_B01_Execu_Tread_Parried_LP",
+        "path": "\\Events\\v1\\Mon\\Mon_Boss\\Mon_Boss_B01\\Mon_Boss_Body_B01\\AKE_Stop_Mon_Boss_Body_B01_Execu_Tread_Parried_LP",
+        "notes": ""
+    },
+    {
+        "id": "{5B82D6EE-3E40-4958-BFB0-948E837750C4}",
+        "name": "AKE_Play_Mon_Boss_Body_B01_Execu_Tread_Parried_Fail",
+        "path": "\\Events\\v1\\Mon\\Mon_Boss\\Mon_Boss_B01\\Mon_Boss_Body_B01\\AKE_Play_Mon_Boss_Body_B01_Execu_Tread_Parried_Fail",
+        "notes": ""
+    },
+    {
+        "id": "{03DE4F60-0DDB-4DA0-9C1D-DF7A47E06879}",
+        "name": "AKE_Play_Mon_Boss_Body_B01_Execu_Tread_Parried_Sucs",
+        "path": "\\Events\\v1\\Mon\\Mon_Boss\\Mon_Boss_B01\\Mon_Boss_Body_B01\\AKE_Play_Mon_Boss_Body_B01_Execu_Tread_Parried_Sucs",
+        "notes": ""
+    },
+    {
+        "id": "{D03E865D-F2A2-482C-ABA5-315171B87006}",
+        "name": "AKE_Play_Mon_Boss_Body_B01_Execu_Tread_End",
+        "path": "\\Events\\v1\\Mon\\Mon_Boss\\Mon_Boss_B01\\Mon_Boss_Body_B01\\AKE_Play_Mon_Boss_Body_B01_Execu_Tread_End",
+        "notes": ""
+    },
+    {
+        "id": "{C496B355-AF7C-43F0-84C6-9E8779FDDED0}",
+        "name": "AKE_Play_Mon_Boss_Body_B01_Jump_Car",
+        "path": "\\Events\\v1\\Mon\\Mon_Boss\\Mon_Boss_B01\\Mon_Boss_Body_B01\\AKE_Play_Mon_Boss_Body_B01_Jump_Car",
+        "notes": ""
+    },
+    {
+        "id": "{46C80FFD-7FF9-4638-80B2-3470CF6D934F}",
+        "name": "AKE_Play_Mon_Boss_Body_B01_Jump_Grd",
+        "path": "\\Events\\v1\\Mon\\Mon_Boss\\Mon_Boss_B01\\Mon_Boss_Body_B01\\AKE_Play_Mon_Boss_Body_B01_Jump_Grd",
+        "notes": ""
+    },
+    {
+        "id": "{15E5DC76-6CD3-4051-86C2-4DA23B16EB13}",
+        "name": "AKE_Play_Mon_Boss_Body_B01_Stun",
+        "path": "\\Events\\v1\\Mon\\Mon_Boss\\Mon_Boss_B01\\Mon_Boss_Body_B01\\AKE_Play_Mon_Boss_Body_B01_Stun",
+        "notes": ""
+    },
+    {
+        "id": "{C9D02C09-8CC9-477B-8D7C-03BF10A40BA4}",
+        "name": "AKE_Play_Mon_Boss_Body_B01_Ult",
+        "path": "\\Events\\v1\\Mon\\Mon_Boss\\Mon_Boss_B01\\Mon_Boss_Body_B01\\AKE_Play_Mon_Boss_Body_B01_Ult",
+        "notes": ""
+    },
+    {
+        "id": "{9CFE6F89-7094-45A5-954C-D3E9E32623A8}",
+        "name": "AKE_Play_Mon_Boss_Body_B01_Kick",
+        "path": "\\Events\\v1\\Mon\\Mon_Boss\\Mon_Boss_B01\\Mon_Boss_Body_B01\\AKE_Play_Mon_Boss_Body_B01_Kick",
+        "notes": ""
+    },
+    {
+        "id": "{E64D88B5-E404-4D7A-BA0E-2CC7C6CEC5BE}",
+        "name": "AKE_Play_Mon_Boss_Foley_B01_Car_Walk_Start",
+        "path": "\\Events\\v1\\Mon\\Mon_Boss\\Mon_Boss_B01\\Mon_Boss_Foley_B01\\AKE_Play_Mon_Boss_Foley_B01_Car_Walk_Start",
+        "notes": ""
+    },
+    {
+        "id": "{B6D13E4C-B660-4613-B47B-E052498E0738}",
+        "name": "AKE_Play_Mon_Boss_Foley_B01_Car_Walk_LP",
+        "path": "\\Events\\v1\\Mon\\Mon_Boss\\Mon_Boss_B01\\Mon_Boss_Foley_B01\\AKE_Play_Mon_Boss_Foley_B01_Car_Walk_LP",
+        "notes": ""
+    },
+    {
+        "id": "{B67714F8-0A34-4826-8F83-D83870F54F31}",
+        "name": "AKE_Stop_Mon_Boss_Foley_B01_Car_Walk_LP",
+        "path": "\\Events\\v1\\Mon\\Mon_Boss\\Mon_Boss_B01\\Mon_Boss_Foley_B01\\AKE_Stop_Mon_Boss_Foley_B01_Car_Walk_LP",
+        "notes": ""
+    },
+    {
+        "id": "{653F8D38-5DE5-4C6E-80F7-50E928A9DDDB}",
+        "name": "AKE_Play_Mon_Boss_Foley_B01_Car_Walk_Stop",
+        "path": "\\Events\\v1\\Mon\\Mon_Boss\\Mon_Boss_B01\\Mon_Boss_Foley_B01\\AKE_Play_Mon_Boss_Foley_B01_Car_Walk_Stop",
+        "notes": ""
+    },
+    {
+        "id": "{0781537F-B822-46C4-88E4-21BA050538A8}",
+        "name": "AKE_Play_Mon_Boss_Foley_B01_Car_Run_Start",
+        "path": "\\Events\\v1\\Mon\\Mon_Boss\\Mon_Boss_B01\\Mon_Boss_Foley_B01\\AKE_Play_Mon_Boss_Foley_B01_Car_Run_Start",
+        "notes": ""
+    },
+    {
+        "id": "{C3494D81-DB45-468E-B806-9405A5593A9D}",
+        "name": "AKE_Play_Mon_Boss_Foley_B01_Car_Run_LP",
+        "path": "\\Events\\v1\\Mon\\Mon_Boss\\Mon_Boss_B01\\Mon_Boss_Foley_B01\\AKE_Play_Mon_Boss_Foley_B01_Car_Run_LP",
+        "notes": ""
+    },
+    {
+        "id": "{CD6B4BB3-DD91-4354-B3A0-8C63EBEB167E}",
+        "name": "AKE_Stop_Mon_Boss_Foley_B01_Car_Run_LP",
+        "path": "\\Events\\v1\\Mon\\Mon_Boss\\Mon_Boss_B01\\Mon_Boss_Foley_B01\\AKE_Stop_Mon_Boss_Foley_B01_Car_Run_LP",
+        "notes": ""
+    },
+    {
+        "id": "{16E3A87B-A117-4865-8316-997F93C845F0}",
+        "name": "AKE_Play_Mon_Boss_Foley_B01_Car_Run_Stop",
+        "path": "\\Events\\v1\\Mon\\Mon_Boss\\Mon_Boss_B01\\Mon_Boss_Foley_B01\\AKE_Play_Mon_Boss_Foley_B01_Car_Run_Stop",
+        "notes": ""
+    },
+    {
+        "id": "{40729484-5E39-4227-B0A2-E080D10A089B}",
+        "name": "AKE_Play_Mon_Boss_Foley_B01_Car_Sprint_Start",
+        "path": "\\Events\\v1\\Mon\\Mon_Boss\\Mon_Boss_B01\\Mon_Boss_Foley_B01\\AKE_Play_Mon_Boss_Foley_B01_Car_Sprint_Start",
+        "notes": ""
+    },
+    {
+        "id": "{50F92520-DC01-4607-B8D1-4328069A8818}",
+        "name": "AKE_Play_Mon_Boss_Foley_B01_Car_Sprint_LP",
+        "path": "\\Events\\v1\\Mon\\Mon_Boss\\Mon_Boss_B01\\Mon_Boss_Foley_B01\\AKE_Play_Mon_Boss_Foley_B01_Car_Sprint_LP",
+        "notes": ""
+    },
+    {
+        "id": "{252CB8F2-1EEF-4F75-84E4-00D455C9D523}",
+        "name": "AKE_Stop_Mon_Boss_Foley_B01_Car_Sprint_LP",
+        "path": "\\Events\\v1\\Mon\\Mon_Boss\\Mon_Boss_B01\\Mon_Boss_Foley_B01\\AKE_Stop_Mon_Boss_Foley_B01_Car_Sprint_LP",
+        "notes": ""
+    },
+    {
+        "id": "{42CF40C3-9D50-434D-958B-27C052AE9B15}",
+        "name": "AKE_Play_Mon_Boss_Foley_B01_Car_Piaffe_LP",
+        "path": "\\Events\\v1\\Mon\\Mon_Boss\\Mon_Boss_B01\\Mon_Boss_Foley_B01\\AKE_Play_Mon_Boss_Foley_B01_Car_Piaffe_LP",
+        "notes": ""
+    },
+    {
+        "id": "{51B8DCBC-2809-4D91-A66F-DD8ECE76AD7C}",
+        "name": "AKE_Stop_Mon_Boss_Foley_B01_Car_Piaffe_LP",
+        "path": "\\Events\\v1\\Mon\\Mon_Boss\\Mon_Boss_B01\\Mon_Boss_Foley_B01\\AKE_Stop_Mon_Boss_Foley_B01_Car_Piaffe_LP",
+        "notes": ""
+    },
+    {
+        "id": "{7DDA4D51-6A66-42F7-8D60-F746E5928E3E}",
+        "name": "AKE_Play_Mon_Boss_Foley_B01_Car_Surround_Start",
+        "path": "\\Events\\v1\\Mon\\Mon_Boss\\Mon_Boss_B01\\Mon_Boss_Foley_B01\\AKE_Play_Mon_Boss_Foley_B01_Car_Surround_Start",
+        "notes": ""
+    },
+    {
+        "id": "{349FAD09-AFC0-421F-8350-5B379BC8C45A}",
+        "name": "AKE_Play_Mon_Boss_Foley_B01_Car_Stun_Start",
+        "path": "\\Events\\v1\\Mon\\Mon_Boss\\Mon_Boss_B01\\Mon_Boss_Foley_B01\\AKE_Play_Mon_Boss_Foley_B01_Car_Stun_Start",
+        "notes": ""
+    },
+    {
+        "id": "{0831F8D1-3B41-4D7A-8A89-19927D6EE5D4}",
+        "name": "AKE_Play_Mon_Boss_Foley_B01_Car_Stun_LP",
+        "path": "\\Events\\v1\\Mon\\Mon_Boss\\Mon_Boss_B01\\Mon_Boss_Foley_B01\\AKE_Play_Mon_Boss_Foley_B01_Car_Stun_LP",
+        "notes": ""
+    },
+    {
+        "id": "{3F5F8AF0-0FF9-4F45-B306-8047AB4C638E}",
+        "name": "AKE_Stop_Mon_Boss_Foley_B01_Car_Stun_LP",
+        "path": "\\Events\\v1\\Mon\\Mon_Boss\\Mon_Boss_B01\\Mon_Boss_Foley_B01\\AKE_Stop_Mon_Boss_Foley_B01_Car_Stun_LP",
+        "notes": ""
+    },
+    {
+        "id": "{5F06B1EE-1635-405E-91DD-65EAEB80644C}",
+        "name": "AKE_Play_Mon_Boss_Foley_B01_Car_Stun_Hit",
+        "path": "\\Events\\v1\\Mon\\Mon_Boss\\Mon_Boss_B01\\Mon_Boss_Foley_B01\\AKE_Play_Mon_Boss_Foley_B01_Car_Stun_Hit",
+        "notes": ""
+    },
+    {
+        "id": "{B8ECF032-EFC6-402B-9A6D-B10EFAD76C51}",
+        "name": "AKE_Play_Mon_Boss_Foley_B01_Car_Stun_End",
+        "path": "\\Events\\v1\\Mon\\Mon_Boss\\Mon_Boss_B01\\Mon_Boss_Foley_B01\\AKE_Play_Mon_Boss_Foley_B01_Car_Stun_End",
+        "notes": ""
+    },
+    {
+        "id": "{39C438C8-111C-4711-8153-388AF92A7121}",
+        "name": "AKE_Play_Mon_Boss_Foley_B01_Car_Death",
+        "path": "\\Events\\v1\\Mon\\Mon_Boss\\Mon_Boss_B01\\Mon_Boss_Foley_B01\\AKE_Play_Mon_Boss_Foley_B01_Car_Death",
+        "notes": ""
+    },
+    {
+        "id": "{6B094DF1-64A4-4174-9C69-7C4D1E518FD4}",
+        "name": "AKE_Play_Mon_Boss_Part_B01_Car_Charge_Storage_Start",
+        "path": "\\Events\\v1\\Mon\\Mon_Boss\\Mon_Boss_B01\\Mon_Boss_Part_B01\\AKE_Play_Mon_Boss_Part_B01_Car_Charge_Storage_Start",
+        "notes": ""
+    },
+    {
+        "id": "{969CFCAD-29E3-4911-88B0-D9FBE89744F1}",
+        "name": "AKE_Play_Mon_Boss_Part_B01_Car_Charge_Storage_LP",
+        "path": "\\Events\\v1\\Mon\\Mon_Boss\\Mon_Boss_B01\\Mon_Boss_Part_B01\\AKE_Play_Mon_Boss_Part_B01_Car_Charge_Storage_LP",
+        "notes": ""
+    },
+    {
+        "id": "{ADFDA262-4994-47C0-BADB-0C662E9EC50E}",
+        "name": "AKE_Stop_Mon_Boss_Part_B01_Car_Charge_Storage_LP",
+        "path": "\\Events\\v1\\Mon\\Mon_Boss\\Mon_Boss_B01\\Mon_Boss_Part_B01\\AKE_Stop_Mon_Boss_Part_B01_Car_Charge_Storage_LP",
+        "notes": ""
+    },
+    {
+        "id": "{A4E5A124-0699-4016-8307-E6AE7D354E46}",
+        "name": "AKE_Play_Mon_Boss_Part_B01_Car_Charge_Atk_Start",
+        "path": "\\Events\\v1\\Mon\\Mon_Boss\\Mon_Boss_B01\\Mon_Boss_Part_B01\\AKE_Play_Mon_Boss_Part_B01_Car_Charge_Atk_Start",
+        "notes": ""
+    },
+    {
+        "id": "{50BD8B0C-A864-42C3-8BA4-BB9DEC80B9EE}",
+        "name": "AKE_Play_Mon_Boss_Part_B01_Car_Charge_Atk_LP",
+        "path": "\\Events\\v1\\Mon\\Mon_Boss\\Mon_Boss_B01\\Mon_Boss_Part_B01\\AKE_Play_Mon_Boss_Part_B01_Car_Charge_Atk_LP",
+        "notes": ""
+    },
+    {
+        "id": "{F41F7C56-4416-4955-9B42-8DDBFECAD934}",
+        "name": "AKE_Stop_Mon_Boss_Part_B01_Car_Charge_Atk_LP",
+        "path": "\\Events\\v1\\Mon\\Mon_Boss\\Mon_Boss_B01\\Mon_Boss_Part_B01\\AKE_Stop_Mon_Boss_Part_B01_Car_Charge_Atk_LP",
+        "notes": ""
+    },
+    {
+        "id": "{6FA300E6-4A74-40BE-ACA3-722671C4BD62}",
+        "name": "AKE_Play_Mon_Boss_Part_B01_Car_Charge_Cancel",
+        "path": "\\Events\\v1\\Mon\\Mon_Boss\\Mon_Boss_B01\\Mon_Boss_Part_B01\\AKE_Play_Mon_Boss_Part_B01_Car_Charge_Cancel",
+        "notes": ""
+    },
+    {
+        "id": "{DDF8D084-675D-4022-AB47-31F384D0E3D8}",
+        "name": "AKE_Play_Mon_Boss_Part_B01_Car_Charge_Atk_End2",
+        "path": "\\Events\\v1\\Mon\\Mon_Boss\\Mon_Boss_B01\\Mon_Boss_Part_B01\\AKE_Play_Mon_Boss_Part_B01_Car_Charge_Atk_End2",
+        "notes": ""
+    },
+    {
+        "id": "{98359EC1-2182-45A7-AD19-421313B3BBF5}",
+        "name": "AKE_Play_Mon_Boss_Part_B01_Car_Charge_Atk_End3",
+        "path": "\\Events\\v1\\Mon\\Mon_Boss\\Mon_Boss_B01\\Mon_Boss_Part_B01\\AKE_Play_Mon_Boss_Part_B01_Car_Charge_Atk_End3",
+        "notes": ""
+    },
+    {
+        "id": "{34A3362C-DA45-4BC8-9DEB-21DEB2FD1F4F}",
+        "name": "AKE_Play_Mon_Boss_Part_B01_Car_Trample_Start",
+        "path": "\\Events\\v1\\Mon\\Mon_Boss\\Mon_Boss_B01\\Mon_Boss_Part_B01\\AKE_Play_Mon_Boss_Part_B01_Car_Trample_Start",
+        "notes": ""
+    },
+    {
+        "id": "{53BC0207-E39B-43AE-A3BE-14B55F22A30B}",
+        "name": "AKE_Play_Mon_Boss_Part_B01_Car_Trample_Move_LP",
+        "path": "\\Events\\v1\\Mon\\Mon_Boss\\Mon_Boss_B01\\Mon_Boss_Part_B01\\AKE_Play_Mon_Boss_Part_B01_Car_Trample_Move_LP",
+        "notes": ""
+    },
+    {
+        "id": "{97F98B44-CE79-41C8-86C7-292E4C586584}",
+        "name": "AKE_Stop_Mon_Boss_Part_B01_Car_Trample_Move_LP",
+        "path": "\\Events\\v1\\Mon\\Mon_Boss\\Mon_Boss_B01\\Mon_Boss_Part_B01\\AKE_Stop_Mon_Boss_Part_B01_Car_Trample_Move_LP",
+        "notes": ""
+    },
+    {
+        "id": "{ADDC8C29-9033-45B1-AC55-8DD56C73EC99}",
+        "name": "AKE_Play_Mon_Boss_Part_B01_Car_Trample_Move_Start",
+        "path": "\\Events\\v1\\Mon\\Mon_Boss\\Mon_Boss_B01\\Mon_Boss_Part_B01\\AKE_Play_Mon_Boss_Part_B01_Car_Trample_Move_Start",
+        "notes": ""
+    },
+    {
+        "id": "{F04757E9-7D26-44FD-90AD-F8498D8BAAAD}",
+        "name": "AKE_Play_Mon_Boss_Part_B01_Car_Trample_End",
+        "path": "\\Events\\v1\\Mon\\Mon_Boss\\Mon_Boss_B01\\Mon_Boss_Part_B01\\AKE_Play_Mon_Boss_Part_B01_Car_Trample_End",
+        "notes": ""
+    },
+    {
+        "id": "{BC7FA532-D0A8-4F7D-9663-A449A427B596}",
+        "name": "AKE_Play_Mon_Boss_Part_B01_Car_Trample_Move_End",
+        "path": "\\Events\\v1\\Mon\\Mon_Boss\\Mon_Boss_B01\\Mon_Boss_Part_B01\\AKE_Play_Mon_Boss_Part_B01_Car_Trample_Move_End",
+        "notes": ""
+    },
+    {
+        "id": "{8DDD3528-15D5-49EB-9072-A0D2A72D4827}",
+        "name": "AKE_Play_Mon_Boss_Part_B01_Acc_Puff_Start",
+        "path": "\\Events\\v1\\Mon\\Mon_Boss\\Mon_Boss_B01\\Mon_Boss_Part_B01\\AKE_Play_Mon_Boss_Part_B01_Acc_Puff_Start",
+        "notes": ""
+    },
+    {
+        "id": "{CB51402A-3065-4B2C-B601-9B464F53805C}",
+        "name": "AKE_Play_Mon_Boss_Part_B01_Acc_Puff_LP",
+        "path": "\\Events\\v1\\Mon\\Mon_Boss\\Mon_Boss_B01\\Mon_Boss_Part_B01\\AKE_Play_Mon_Boss_Part_B01_Acc_Puff_LP",
+        "notes": ""
+    },
+    {
+        "id": "{8700B6A3-8573-4C49-AB81-EC51500F06DD}",
+        "name": "AKE_Stop_Mon_Boss_Part_B01_Acc_Puff_LP",
+        "path": "\\Events\\v1\\Mon\\Mon_Boss\\Mon_Boss_B01\\Mon_Boss_Part_B01\\AKE_Stop_Mon_Boss_Part_B01_Acc_Puff_LP",
+        "notes": ""
+    },
+    {
+        "id": "{E104596C-A516-4ED3-8B30-0324D1B0928B}",
+        "name": "AKE_Play_Mon_Boss_Part_B01_Acc_Contract_Start",
+        "path": "\\Events\\v1\\Mon\\Mon_Boss\\Mon_Boss_B01\\Mon_Boss_Part_B01\\AKE_Play_Mon_Boss_Part_B01_Acc_Contract_Start",
+        "notes": ""
+    },
+    {
+        "id": "{CB7E60EE-53E4-493D-B84C-A2B7683D4C4B}",
+        "name": "AKE_Play_Mon_Boss_Part_B01_Acc_Contract_LP",
+        "path": "\\Events\\v1\\Mon\\Mon_Boss\\Mon_Boss_B01\\Mon_Boss_Part_B01\\AKE_Play_Mon_Boss_Part_B01_Acc_Contract_LP",
+        "notes": ""
+    },
+    {
+        "id": "{74FB163D-3110-477D-BAB7-AB1990E50322}",
+        "name": "AKE_Stop_Mon_Boss_Part_B01_Acc_Contract_LP",
+        "path": "\\Events\\v1\\Mon\\Mon_Boss\\Mon_Boss_B01\\Mon_Boss_Part_B01\\AKE_Stop_Mon_Boss_Part_B01_Acc_Contract_LP",
+        "notes": ""
+    },
+    {
+        "id": "{AB001EF7-8584-44E3-80CE-BB287DCB3836}",
+        "name": "AKE_Play_Mon_Boss_Part_B01_Acc_Contract_End",
+        "path": "\\Events\\v1\\Mon\\Mon_Boss\\Mon_Boss_B01\\Mon_Boss_Part_B01\\AKE_Play_Mon_Boss_Part_B01_Acc_Contract_End",
+        "notes": ""
+    },
+    {
+        "id": "{D1D9B8D6-71F3-4E74-BE17-5177435C6F48}",
+        "name": "AKE_Play_Mon_Boss_Part_B01_Car_Bombing_Start",
+        "path": "\\Events\\v1\\Mon\\Mon_Boss\\Mon_Boss_B01\\Mon_Boss_Part_B01\\AKE_Play_Mon_Boss_Part_B01_Car_Bombing_Start",
+        "notes": ""
+    },
+    {
+        "id": "{9F04FC2E-6459-497A-A9E2-99E97411F21C}",
+        "name": "AKE_Play_Mon_Boss_Part_B01_Car_Bombing_LP",
+        "path": "\\Events\\v1\\Mon\\Mon_Boss\\Mon_Boss_B01\\Mon_Boss_Part_B01\\AKE_Play_Mon_Boss_Part_B01_Car_Bombing_LP",
+        "notes": ""
+    },
+    {
+        "id": "{07FCCECB-6139-449B-A453-57BD482AA707}",
+        "name": "AKE_Stop_Mon_Boss_Part_B01_Car_Bombing_LP",
+        "path": "\\Events\\v1\\Mon\\Mon_Boss\\Mon_Boss_B01\\Mon_Boss_Part_B01\\AKE_Stop_Mon_Boss_Part_B01_Car_Bombing_LP",
+        "notes": ""
+    },
+    {
+        "id": "{6A9F9A8F-92B3-4275-8AEC-155BE130E55A}",
+        "name": "AKE_Play_Mon_Boss_Part_B01_Car_Bombing_End",
+        "path": "\\Events\\v1\\Mon\\Mon_Boss\\Mon_Boss_B01\\Mon_Boss_Part_B01\\AKE_Play_Mon_Boss_Part_B01_Car_Bombing_End",
+        "notes": ""
+    },
+    {
+        "id": "{B6EFBF6D-5071-4975-BBAA-7681764B145D}",
+        "name": "AKE_Play_Mon_Boss_Part_B01_Car_Drift_L",
+        "path": "\\Events\\v1\\Mon\\Mon_Boss\\Mon_Boss_B01\\Mon_Boss_Part_B01\\AKE_Play_Mon_Boss_Part_B01_Car_Drift_L",
+        "notes": ""
+    },
+    {
+        "id": "{C5F31DD1-9A66-4BEA-9B56-71ABB79A567A}",
+        "name": "AKE_Play_Mon_Boss_Part_B01_Car_Drift_R",
+        "path": "\\Events\\v1\\Mon\\Mon_Boss\\Mon_Boss_B01\\Mon_Boss_Part_B01\\AKE_Play_Mon_Boss_Part_B01_Car_Drift_R",
+        "notes": ""
+    },
+    {
+        "id": "{CA064B22-7C78-4A26-AA0D-21017A3EBF83}",
+        "name": "AKE_Play_Mon_Boss_Part_B01_Pumpkin_Seed_Start",
+        "path": "\\Events\\v1\\Mon\\Mon_Boss\\Mon_Boss_B01\\Mon_Boss_Part_B01\\AKE_Play_Mon_Boss_Part_B01_Pumpkin_Seed_Start",
+        "notes": ""
+    },
+    {
+        "id": "{D4CEA3DC-6A93-4922-9FE6-7AD249B3B229}",
+        "name": "AKE_Play_Mon_Boss_Part_B01_Pumpkin_Seed_LP",
+        "path": "\\Events\\v1\\Mon\\Mon_Boss\\Mon_Boss_B01\\Mon_Boss_Part_B01\\AKE_Play_Mon_Boss_Part_B01_Pumpkin_Seed_LP",
+        "notes": ""
+    },
+    {
+        "id": "{31361808-B1E5-435B-9435-2303A07BE807}",
+        "name": "AKE_Stop_Mon_Boss_Part_B01_Pumpkin_Seed_LP",
+        "path": "\\Events\\v1\\Mon\\Mon_Boss\\Mon_Boss_B01\\Mon_Boss_Part_B01\\AKE_Stop_Mon_Boss_Part_B01_Pumpkin_Seed_LP",
+        "notes": ""
+    },
+    {
+        "id": "{AC97A4E1-B5DA-4FE1-9D32-BD390DC850AE}",
+        "name": "AKE_Play_Mon_Boss_Part_B01_Pumpkin_Seed_End",
+        "path": "\\Events\\v1\\Mon\\Mon_Boss\\Mon_Boss_B01\\Mon_Boss_Part_B01\\AKE_Play_Mon_Boss_Part_B01_Pumpkin_Seed_End",
+        "notes": ""
+    },
+    {
+        "id": "{168AC1AC-B341-47E8-91A4-7E4912988DD2}",
+        "name": "AKE_Play_Mon_Boss_Part_B01_Spi_Action",
+        "path": "\\Events\\v1\\Mon\\Mon_Boss\\Mon_Boss_B01\\Mon_Boss_Part_B01\\AKE_Play_Mon_Boss_Part_B01_Spi_Action",
+        "notes": ""
+    },
+    {
+        "id": "{627D227C-CEFD-4045-83D2-7282C4724739}",
+        "name": "AKE_Play_Mon_Boss_Part_B01_Spi_Born",
+        "path": "\\Events\\v1\\Mon\\Mon_Boss\\Mon_Boss_B01\\Mon_Boss_Part_B01\\AKE_Play_Mon_Boss_Part_B01_Spi_Born",
+        "notes": ""
+    },
+    {
+        "id": "{A5F64B50-DFCC-456A-8820-6C760CF3D65F}",
+        "name": "AKE_Play_Mon_Boss_Part_B01_Spi_Spread",
+        "path": "\\Events\\v1\\Mon\\Mon_Boss\\Mon_Boss_B01\\Mon_Boss_Part_B01\\AKE_Play_Mon_Boss_Part_B01_Spi_Spread",
+        "notes": ""
+    },
+    {
+        "id": "{C1148877-F124-4FA3-B5D6-D22596145FDD}",
+        "name": "AKE_Play_Mon_Boss_Part_B01_Spi_Run_LP",
+        "path": "\\Events\\v1\\Mon\\Mon_Boss\\Mon_Boss_B01\\Mon_Boss_Part_B01\\AKE_Play_Mon_Boss_Part_B01_Spi_Run_LP",
+        "notes": ""
+    },
+    {
+        "id": "{E3ABE3E6-B110-4115-B3EF-16050BE2E2C1}",
+        "name": "AKE_Stop_Mon_Boss_Part_B01_Spi_Run_LP",
+        "path": "\\Events\\v1\\Mon\\Mon_Boss\\Mon_Boss_B01\\Mon_Boss_Part_B01\\AKE_Stop_Mon_Boss_Part_B01_Spi_Run_LP",
+        "notes": ""
+    },
+    {
+        "id": "{8FD5C393-A1D7-4D3B-ADF7-E4674D3D6260}",
+        "name": "AKE_Play_Mon_Boss_Part_B01_Spi_Plant",
+        "path": "\\Events\\v1\\Mon\\Mon_Boss\\Mon_Boss_B01\\Mon_Boss_Part_B01\\AKE_Play_Mon_Boss_Part_B01_Spi_Plant",
+        "notes": ""
+    },
+    {
+        "id": "{D7EE1D19-D7EC-4EA6-AFB2-BA83A2B0A65D}",
+        "name": "AKE_Play_Mon_Boss_Part_B01_Spi_Bomb",
+        "path": "\\Events\\v1\\Mon\\Mon_Boss\\Mon_Boss_B01\\Mon_Boss_Part_B01\\AKE_Play_Mon_Boss_Part_B01_Spi_Bomb",
+        "notes": ""
+    },
+    {
+        "id": "{80119367-6356-442D-A18A-0E2993F91D3D}",
+        "name": "AKE_Play_Mon_Boss_Part_B01_Car_88_Start",
+        "path": "\\Events\\v1\\Mon\\Mon_Boss\\Mon_Boss_B01\\Mon_Boss_Part_B01\\AKE_Play_Mon_Boss_Part_B01_Car_88_Start",
+        "notes": ""
+    },
+    {
+        "id": "{23BF29DE-6EA0-4F2E-A562-F8279D8B034B}",
+        "name": "AKE_Play_Mon_Boss_Part_B01_Car_88_Recoil",
+        "path": "\\Events\\v1\\Mon\\Mon_Boss\\Mon_Boss_B01\\Mon_Boss_Part_B01\\AKE_Play_Mon_Boss_Part_B01_Car_88_Recoil",
+        "notes": ""
+    },
+    {
+        "id": "{F22100EF-D1AB-4B24-BD76-971A4638399C}",
+        "name": "AKE_Play_Mon_Boss_Part_B01_Car_88_End",
+        "path": "\\Events\\v1\\Mon\\Mon_Boss\\Mon_Boss_B01\\Mon_Boss_Part_B01\\AKE_Play_Mon_Boss_Part_B01_Car_88_End",
+        "notes": ""
+    },
+    {
+        "id": "{EB6F5755-49DA-43F4-B780-6345DA6878EC}",
+        "name": "AKE_Play_Mon_Boss_Part_B01_Car_Party_Start",
+        "path": "\\Events\\v1\\Mon\\Mon_Boss\\Mon_Boss_B01\\Mon_Boss_Part_B01\\AKE_Play_Mon_Boss_Part_B01_Car_Party_Start",
+        "notes": ""
+    },
+    {
+        "id": "{713310A5-BCD2-4F68-95DA-9FBFCFADC04C}",
+        "name": "AKE_Play_Mon_Boss_Part_B01_Car_Party_LP",
+        "path": "\\Events\\v1\\Mon\\Mon_Boss\\Mon_Boss_B01\\Mon_Boss_Part_B01\\AKE_Play_Mon_Boss_Part_B01_Car_Party_LP",
+        "notes": ""
+    },
+    {
+        "id": "{E2A924A4-F1FC-4AAC-B6DB-D334A1C6D3D0}",
+        "name": "AKE_Stop_Mon_Boss_Part_B01_Car_Party_LP",
+        "path": "\\Events\\v1\\Mon\\Mon_Boss\\Mon_Boss_B01\\Mon_Boss_Part_B01\\AKE_Stop_Mon_Boss_Part_B01_Car_Party_LP",
+        "notes": ""
+    },
+    {
+        "id": "{E80C1973-B66F-4124-A9EA-A69F13DAEDC8}",
+        "name": "AKE_Play_Mon_Boss_Part_B01_Car_Party_End",
+        "path": "\\Events\\v1\\Mon\\Mon_Boss\\Mon_Boss_B01\\Mon_Boss_Part_B01\\AKE_Play_Mon_Boss_Part_B01_Car_Party_End",
+        "notes": ""
+    },
+    {
+        "id": "{342B59B2-BEE4-493B-B22A-4349D3B6A000}",
+        "name": "AKE_Play_Mon_Boss_Part_B01_Pumpkin_Door_Hit",
+        "path": "\\Events\\v1\\Mon\\Mon_Boss\\Mon_Boss_B01\\Mon_Boss_Part_B01\\AKE_Play_Mon_Boss_Part_B01_Pumpkin_Door_Hit",
+        "notes": ""
+    },
+    {
+        "id": "{7293114A-D366-421C-AABA-27A0861F48F0}",
+        "name": "AKE_Play_Mon_Boss_Part_B01_Pumpkin_Core_Silent",
+        "path": "\\Events\\v1\\Mon\\Mon_Boss\\Mon_Boss_B01\\Mon_Boss_Part_B01\\AKE_Play_Mon_Boss_Part_B01_Pumpkin_Core_Silent",
+        "notes": ""
+    },
+    {
+        "id": "{574D27E8-1259-404C-AD59-9EEBAE9E1C2A}",
+        "name": "AKE_Play_Mon_Boss_Part_B01_Pumpkin_Core_Active",
+        "path": "\\Events\\v1\\Mon\\Mon_Boss\\Mon_Boss_B01\\Mon_Boss_Part_B01\\AKE_Play_Mon_Boss_Part_B01_Pumpkin_Core_Active",
+        "notes": ""
+    },
+    {
+        "id": "{161C4B3C-177A-4319-B043-EF4E876E45E3}",
+        "name": "AKE_Play_Mon_Boss_Part_B01_Pumpkin_Hit_Hvy",
+        "path": "\\Events\\v1\\Mon\\Mon_Boss\\Mon_Boss_B01\\Mon_Boss_Part_B01\\AKE_Play_Mon_Boss_Part_B01_Pumpkin_Hit_Hvy",
+        "notes": ""
+    },
+    {
+        "id": "{954A1C86-A908-4B26-836B-B3A12ECA008B}",
+        "name": "AKE_Play_Mon_Boss_Part_B01_Coffin_Drop",
+        "path": "\\Events\\v1\\Mon\\Mon_Boss\\Mon_Boss_B01\\Mon_Boss_Part_B01\\AKE_Play_Mon_Boss_Part_B01_Coffin_Drop",
+        "notes": ""
+    },
+    {
+        "id": "{45CF8A01-EBC5-4BB5-8DF6-999E1F6F3823}",
+        "name": "AKE_Play_Mon_Boss_Shout_B01_Horse_Hit_Lit",
+        "path": "\\Events\\v1\\Mon\\Mon_Boss\\Mon_Boss_B01\\Mon_Boss_Shout_B01\\AKE_Play_Mon_Boss_Shout_B01_Horse_Hit_Lit",
+        "notes": ""
+    },
+    {
+        "id": "{A2FD71F7-AD74-4B78-8D98-85795D5443AE}",
+        "name": "AKE_Play_Mon_Boss_Shout_B01_Horse_Hit_Hvy",
+        "path": "\\Events\\v1\\Mon\\Mon_Boss\\Mon_Boss_B01\\Mon_Boss_Shout_B01\\AKE_Play_Mon_Boss_Shout_B01_Horse_Hit_Hvy",
+        "notes": ""
+    },
+    {
+        "id": "{71B40347-A36E-4DA7-A250-C59B5E694607}",
+        "name": "AKE_Play_Mon_Boss_Shout_B01_Horse_Stun_Start",
+        "path": "\\Events\\v1\\Mon\\Mon_Boss\\Mon_Boss_B01\\Mon_Boss_Shout_B01\\AKE_Play_Mon_Boss_Shout_B01_Horse_Stun_Start",
+        "notes": ""
+    },
+    {
+        "id": "{511A7389-6339-46FA-BF4A-57E813E90EA1}",
+        "name": "AKE_Play_Mon_Boss_Shout_B01_Horse_Stun_LP",
+        "path": "\\Events\\v1\\Mon\\Mon_Boss\\Mon_Boss_B01\\Mon_Boss_Shout_B01\\AKE_Play_Mon_Boss_Shout_B01_Horse_Stun_LP",
+        "notes": ""
+    },
+    {
+        "id": "{E2DB44AF-7476-4580-8AE3-35E35A5AE6BA}",
+        "name": "AKE_Stop_Mon_Boss_Shout_B01_Horse_Stun_LP",
+        "path": "\\Events\\v1\\Mon\\Mon_Boss\\Mon_Boss_B01\\Mon_Boss_Shout_B01\\AKE_Stop_Mon_Boss_Shout_B01_Horse_Stun_LP",
+        "notes": ""
+    },
+    {
+        "id": "{92D9E775-4776-47F2-96D2-AA45FB5EAF9F}",
+        "name": "AKE_Play_Mon_Boss_Shout_B01_Horse_Stun_Hit",
+        "path": "\\Events\\v1\\Mon\\Mon_Boss\\Mon_Boss_B01\\Mon_Boss_Shout_B01\\AKE_Play_Mon_Boss_Shout_B01_Horse_Stun_Hit",
+        "notes": ""
+    },
+    {
+        "id": "{96D71969-E0ED-48B1-80D9-A9264F01AB78}",
+        "name": "AKE_Play_Mon_Boss_Shout_B01_Horse_Stun_End",
+        "path": "\\Events\\v1\\Mon\\Mon_Boss\\Mon_Boss_B01\\Mon_Boss_Shout_B01\\AKE_Play_Mon_Boss_Shout_B01_Horse_Stun_End",
+        "notes": ""
+    },
+    {
+        "id": "{EEA5F08E-08A8-4A67-B847-B26AD052622F}",
+        "name": "AKE_Play_Mon_Boss_Shout_B01_Horse_Death",
+        "path": "\\Events\\v1\\Mon\\Mon_Boss\\Mon_Boss_B01\\Mon_Boss_Shout_B01\\AKE_Play_Mon_Boss_Shout_B01_Horse_Death",
+        "notes": ""
+    },
+    {
+        "id": "{D8B4EF91-19DD-4211-9B73-1ACDDF3F98F7}",
+        "name": "AKE_Play_Mon_Boss_Shout_B01_Horse_Gen_Start",
+        "path": "\\Events\\v1\\Mon\\Mon_Boss\\Mon_Boss_B01\\Mon_Boss_Shout_B01\\AKE_Play_Mon_Boss_Shout_B01_Horse_Gen_Start",
+        "notes": ""
+    },
+    {
+        "id": "{447083D1-7F9A-48DD-9A79-30346D4B0F2B}",
+        "name": "AKE_Play_Mon_Boss_Shout_B01_Horse_Hvy",
+        "path": "\\Events\\v1\\Mon\\Mon_Boss\\Mon_Boss_B01\\Mon_Boss_Shout_B01\\AKE_Play_Mon_Boss_Shout_B01_Horse_Hvy",
+        "notes": ""
+    },
+    {
+        "id": "{0F37E48E-614E-4350-8DEB-8466F77BC888}",
+        "name": "AKE_Play_Mon_Boss_Shout_B01_Horse_Gen_Stop",
+        "path": "\\Events\\v1\\Mon\\Mon_Boss\\Mon_Boss_B01\\Mon_Boss_Shout_B01\\AKE_Play_Mon_Boss_Shout_B01_Horse_Gen_Stop",
+        "notes": ""
+    },
+    {
+        "id": "{9F712D16-58CC-4F48-88E2-E27D412ECBB7}",
+        "name": "AKE_Play_Mon_Boss_Shout_B01_Horse_Gen_Snort",
+        "path": "\\Events\\v1\\Mon\\Mon_Boss\\Mon_Boss_B01\\Mon_Boss_Shout_B01\\AKE_Play_Mon_Boss_Shout_B01_Horse_Gen_Snort",
+        "notes": ""
+    },
+    {
+        "id": "{DAAE2EE3-B74C-47B8-A464-F2AE22C7CB4D}",
+        "name": "AKE_Play_Mon_Boss_Shout_B01_Atk1",
+        "path": "\\Events\\v1\\Mon\\Mon_Boss\\Mon_Boss_B01\\Mon_Boss_Shout_B01\\AKE_Play_Mon_Boss_Shout_B01_Atk1",
+        "notes": ""
+    },
+    {
+        "id": "{651FEB0B-17B5-4388-BA86-F342A2D238F4}",
+        "name": "AKE_Play_Mon_Boss_Shout_B01_Atk2",
+        "path": "\\Events\\v1\\Mon\\Mon_Boss\\Mon_Boss_B01\\Mon_Boss_Shout_B01\\AKE_Play_Mon_Boss_Shout_B01_Atk2",
+        "notes": ""
+    },
+    {
+        "id": "{5BEDBD7C-C8EB-418B-95D3-407308411D69}",
+        "name": "AKE_Play_Mon_Boss_Shout_B01_Atk3",
+        "path": "\\Events\\v1\\Mon\\Mon_Boss\\Mon_Boss_B01\\Mon_Boss_Shout_B01\\AKE_Play_Mon_Boss_Shout_B01_Atk3",
+        "notes": ""
+    },
+    {
+        "id": "{39C9076B-F2CE-423C-9CC0-A776E43A9B83}",
+        "name": "AKE_Play_Mon_Boss_Shout_B01_Atk4",
+        "path": "\\Events\\v1\\Mon\\Mon_Boss\\Mon_Boss_B01\\Mon_Boss_Shout_B01\\AKE_Play_Mon_Boss_Shout_B01_Atk4",
+        "notes": ""
+    },
+    {
+        "id": "{A70B7260-5A79-4447-97EA-74C2B9729022}",
+        "name": "AKE_Play_Mon_Boss_Shout_B01_Atk5",
+        "path": "\\Events\\v1\\Mon\\Mon_Boss\\Mon_Boss_B01\\Mon_Boss_Shout_B01\\AKE_Play_Mon_Boss_Shout_B01_Atk5",
+        "notes": ""
+    },
+    {
+        "id": "{DA9B2B78-7501-4FBE-831D-CF1D24F12E18}",
+        "name": "AKE_Play_Mon_Boss_Shout_B01_Atk6",
+        "path": "\\Events\\v1\\Mon\\Mon_Boss\\Mon_Boss_B01\\Mon_Boss_Shout_B01\\AKE_Play_Mon_Boss_Shout_B01_Atk6",
+        "notes": ""
+    },
+    {
+        "id": "{E8B1942F-15E0-4D09-8D9E-E5232B0E52EE}",
+        "name": "AKE_Play_Mon_Boss_Shout_B01_Execu",
+        "path": "\\Events\\v1\\Mon\\Mon_Boss\\Mon_Boss_B01\\Mon_Boss_Shout_B01\\AKE_Play_Mon_Boss_Shout_B01_Execu",
+        "notes": ""
+    },
+    {
+        "id": "{5722C065-FD01-48B4-BFC6-A3FE7A82CD43}",
+        "name": "AKE_Play_Mon_Boss_Shout_B01_Execu_Parried",
+        "path": "\\Events\\v1\\Mon\\Mon_Boss\\Mon_Boss_B01\\Mon_Boss_Shout_B01\\AKE_Play_Mon_Boss_Shout_B01_Execu_Parried",
+        "notes": ""
+    },
+    {
+        "id": "{8AB2F516-94C2-46F1-98FE-CDA41DCFA9A6}",
+        "name": "AKE_Play_Mon_Boss_Shout_B01_Hit",
+        "path": "\\Events\\v1\\Mon\\Mon_Boss\\Mon_Boss_B01\\Mon_Boss_Shout_B01\\AKE_Play_Mon_Boss_Shout_B01_Hit",
+        "notes": ""
+    },
+    {
+        "id": "{231F6758-1C3F-408E-9E03-DE371870E619}",
+        "name": "AKE_Play_Mon_Boss_Shout_B01_Hit_Hvy",
+        "path": "\\Events\\v1\\Mon\\Mon_Boss\\Mon_Boss_B01\\Mon_Boss_Shout_B01\\AKE_Play_Mon_Boss_Shout_B01_Hit_Hvy",
+        "notes": ""
+    },
+    {
+        "id": "{B3A0E3DF-84F8-46FB-A695-6DE8AEACDDAB}",
+        "name": "AKE_Play_Mon_Mob_Foley_M01_Getup",
+        "path": "\\Events\\v1\\Mon\\Mon_Mob\\Mon_Mob_M01\\Mon_Mob_Foley_M01\\AKE_Play_Mon_Mob_Foley_M01_Getup",
+        "notes": ""
+    },
+    {
+        "id": "{9C5CB610-D449-4993-9C65-69E4C72949B2}",
+        "name": "AKE_Play_Mon_Mob_Foley_M01_Jump",
+        "path": "\\Events\\v1\\Mon\\Mon_Mob\\Mon_Mob_M01\\Mon_Mob_Foley_M01\\AKE_Play_Mon_Mob_Foley_M01_Jump",
+        "notes": ""
+    },
+    {
+        "id": "{BB47ABFA-4332-481D-B9CC-B715E13C51E0}",
+        "name": "AKE_Play_Mon_Mob_Foley_M01_Rub",
+        "path": "\\Events\\v1\\Mon\\Mon_Mob\\Mon_Mob_M01\\Mon_Mob_Foley_M01\\AKE_Play_Mon_Mob_Foley_M01_Rub",
+        "notes": ""
+    },
+    {
+        "id": "{6307284F-E842-442F-BB0D-78E8A39D9FFB}",
+        "name": "AKE_Play_Mon_Mob_Foley_M01_Step",
+        "path": "\\Events\\v1\\Mon\\Mon_Mob\\Mon_Mob_M01\\Mon_Mob_Foley_M01\\AKE_Play_Mon_Mob_Foley_M01_Step",
+        "notes": ""
+    },
+    {
+        "id": "{F74DE77A-9D6A-4203-A296-98A9A532F607}",
+        "name": "AKE_Play_Mon_Mob_Foley_M01_Run",
+        "path": "\\Events\\v1\\Mon\\Mon_Mob\\Mon_Mob_M01\\Mon_Mob_Foley_M01\\AKE_Play_Mon_Mob_Foley_M01_Run",
+        "notes": ""
+    },
+    {
+        "id": "{A8808DB3-D47A-4E10-97D8-C927BF339B2D}",
+        "name": "AKE_Play_Mon_Mob_Foley_M01_Walk",
+        "path": "\\Events\\v1\\Mon\\Mon_Mob\\Mon_Mob_M01\\Mon_Mob_Foley_M01\\AKE_Play_Mon_Mob_Foley_M01_Walk",
+        "notes": ""
+    },
+    {
+        "id": "{9124C01D-92E7-414C-B183-9085D198E3D0}",
+        "name": "AKE_Play_Mon_Mob_Foley_M01_Fall_Death",
+        "path": "\\Events\\v1\\Mon\\Mon_Mob\\Mon_Mob_M01\\Mon_Mob_Foley_M01\\AKE_Play_Mon_Mob_Foley_M01_Fall_Death",
+        "notes": ""
+    },
+    {
+        "id": "{BDBDC4E4-4907-4C90-85ED-C104AA3D936F}",
+        "name": "AKE_Play_Mon_Mob_Foley_M01_Falll_Foley",
+        "path": "\\Events\\v1\\Mon\\Mon_Mob\\Mon_Mob_M01\\Mon_Mob_Foley_M01\\AKE_Play_Mon_Mob_Foley_M01_Falll_Foley",
+        "notes": ""
+    },
+    {
+        "id": "{1FB2896D-55EC-4859-8F64-3265CD040AEB}",
+        "name": "AKE_Play_Mon_Mob_Foley_M01_Fall_Hvy",
+        "path": "\\Events\\v1\\Mon\\Mon_Mob\\Mon_Mob_M01\\Mon_Mob_Foley_M01\\AKE_Play_Mon_Mob_Foley_M01_Fall_Hvy",
+        "notes": ""
+    },
+    {
+        "id": "{62CB7555-699D-4AD3-90AC-514C1868C288}",
+        "name": "AKE_Play_Mon_Mob_Foley_M01_Fall_Land",
+        "path": "\\Events\\v1\\Mon\\Mon_Mob\\Mon_Mob_M01\\Mon_Mob_Foley_M01\\AKE_Play_Mon_Mob_Foley_M01_Fall_Land",
+        "notes": ""
+    },
+    {
+        "id": "{BBEE8E58-2A53-4F44-9A32-5FC9FA368A3E}",
+        "name": "AKE_Play_Mon_Mob_Shout_M01_Born_Trans",
+        "path": "\\Events\\v1\\Mon\\Mon_Mob\\Mon_Mob_M01\\Mon_Mob_Shout_M01\\AKE_Play_Mon_Mob_Shout_M01_Born_Trans",
+        "notes": ""
+    },
+    {
+        "id": "{DED2D5AF-8991-4F75-8867-23B8BB650980}",
+        "name": "AKE_Play_Mon_Mob_Shout_M01_Born_Foley",
+        "path": "\\Events\\v1\\Mon\\Mon_Mob\\Mon_Mob_M01\\Mon_Mob_Shout_M01\\AKE_Play_Mon_Mob_Shout_M01_Born_Foley",
+        "notes": ""
+    },
+    {
+        "id": "{7A82DE33-3CDF-4B2D-B5F8-691081ED00C6}",
+        "name": "AKE_Play_Mon_Mob_Shout_M01_Threaten",
+        "path": "\\Events\\v1\\Mon\\Mon_Mob\\Mon_Mob_M01\\Mon_Mob_Shout_M01\\AKE_Play_Mon_Mob_Shout_M01_Threaten",
+        "notes": ""
+    },
+    {
+        "id": "{67968DE6-02EB-4EEA-A1FA-13AF4F61D591}",
+        "name": "AKE_Play_Mon_Mob_Shout_M01_Land",
+        "path": "\\Events\\v1\\Mon\\Mon_Mob\\Mon_Mob_M01\\Mon_Mob_Shout_M01\\AKE_Play_Mon_Mob_Shout_M01_Land",
+        "notes": ""
+    },
+    {
+        "id": "{3117244D-8FA8-4AD3-A171-63A2112C3FF5}",
+        "name": "AKE_Play_Mon_Mob_Shout_M01_Jump",
+        "path": "\\Events\\v1\\Mon\\Mon_Mob\\Mon_Mob_M01\\Mon_Mob_Shout_M01\\AKE_Play_Mon_Mob_Shout_M01_Jump",
+        "notes": ""
+    },
+    {
+        "id": "{702BC554-5248-41E0-8DA3-E2E4E836D8D4}",
+        "name": "AKE_Play_Mon_Mob_Shout_M01_Hit",
+        "path": "\\Events\\v1\\Mon\\Mon_Mob\\Mon_Mob_M01\\Mon_Mob_Shout_M01\\AKE_Play_Mon_Mob_Shout_M01_Hit",
+        "notes": ""
+    },
+    {
+        "id": "{D44501FC-40D8-4367-BDC4-095808D1C5C6}",
+        "name": "AKE_Play_Mon_Mob_Shout_M01_Hit_Hvy",
+        "path": "\\Events\\v1\\Mon\\Mon_Mob\\Mon_Mob_M01\\Mon_Mob_Shout_M01\\AKE_Play_Mon_Mob_Shout_M01_Hit_Hvy",
+        "notes": ""
+    },
+    {
+        "id": "{4492230A-89AC-4275-96B0-5D67EC0687F0}",
+        "name": "AKE_Play_Mon_Mob_Shout_M01_Death",
+        "path": "\\Events\\v1\\Mon\\Mon_Mob\\Mon_Mob_M01\\Mon_Mob_Shout_M01\\AKE_Play_Mon_Mob_Shout_M01_Death",
+        "notes": ""
+    },
+    {
+        "id": "{13D9D3D7-4FB8-4AC3-8D94-16292E97C7B3}",
+        "name": "AKE_Play_Mon_Mob_Shout_M01_Death_Hvy",
+        "path": "\\Events\\v1\\Mon\\Mon_Mob\\Mon_Mob_M01\\Mon_Mob_Shout_M01\\AKE_Play_Mon_Mob_Shout_M01_Death_Hvy",
+        "notes": ""
+    },
+    {
+        "id": "{73EA2FEB-3AC3-4214-8F57-326A453F968A}",
+        "name": "AKE_Play_Mon_Mob_Shout_M01_Stun",
+        "path": "\\Events\\v1\\Mon\\Mon_Mob\\Mon_Mob_M01\\Mon_Mob_Shout_M01\\AKE_Play_Mon_Mob_Shout_M01_Stun",
+        "notes": ""
+    },
+    {
+        "id": "{2BB08411-F9E0-4204-BA70-E435D14A5813}",
+        "name": "AKE_Play_Mon_Mob_Shout_M01_Knock",
+        "path": "\\Events\\v1\\Mon\\Mon_Mob\\Mon_Mob_M01\\Mon_Mob_Shout_M01\\AKE_Play_Mon_Mob_Shout_M01_Knock",
+        "notes": ""
+    },
+    {
+        "id": "{FBAB3012-9EED-41B3-9750-97E6B576C899}",
+        "name": "AKE_Play_Mon_Mob_Shout_M01_Getup",
+        "path": "\\Events\\v1\\Mon\\Mon_Mob\\Mon_Mob_M01\\Mon_Mob_Shout_M01\\AKE_Play_Mon_Mob_Shout_M01_Getup",
+        "notes": ""
+    },
+    {
+        "id": "{484A00C6-95E0-4482-8191-42494B4CABDE}",
+        "name": "AKE_Play_Mon_Mob_Shout_M01_Sprint",
+        "path": "\\Events\\v1\\Mon\\Mon_Mob\\Mon_Mob_M01\\Mon_Mob_Shout_M01\\AKE_Play_Mon_Mob_Shout_M01_Sprint",
+        "notes": ""
+    },
+    {
+        "id": "{963915A2-1B53-41CA-A3A6-ECC9796CDCB1}",
+        "name": "AKE_Play_Mon_Mob_Shout_M01_Atk",
+        "path": "\\Events\\v1\\Mon\\Mon_Mob\\Mon_Mob_M01\\Mon_Mob_Shout_M01\\AKE_Play_Mon_Mob_Shout_M01_Atk",
+        "notes": ""
+    },
+    {
+        "id": "{A511E3CE-3926-411C-A98C-C87F22EFC053}",
+        "name": "AKE_Play_Mon_Mob_Shout_M01_Atk_Hvy",
+        "path": "\\Events\\v1\\Mon\\Mon_Mob\\Mon_Mob_M01\\Mon_Mob_Shout_M01\\AKE_Play_Mon_Mob_Shout_M01_Atk_Hvy",
+        "notes": ""
+    },
+    {
+        "id": "{6E2FED71-004F-4246-85ED-9822C2927A99}",
+        "name": "AKE_Play_Mon_Mob_Shout_M01_Atk_D",
+        "path": "\\Events\\v1\\Mon\\Mon_Mob\\Mon_Mob_M01\\Mon_Mob_Shout_M01\\AKE_Play_Mon_Mob_Shout_M01_Atk_D",
+        "notes": ""
+    },
+    {
+        "id": "{782C6826-A092-4EC2-8289-CCE5CDFF4985}",
+        "name": "AKE_Play_Mon_Mob_Shout_M01_Step",
+        "path": "\\Events\\v1\\Mon\\Mon_Mob\\Mon_Mob_M01\\Mon_Mob_Shout_M01\\AKE_Play_Mon_Mob_Shout_M01_Step",
+        "notes": ""
+    },
+    {
+        "id": "{7F844103-2914-4248-AE6E-809321ACCA5E}",
+        "name": "AKE_Play_Mon_Mob_Skill_M01_Born_Trans",
+        "path": "\\Events\\v1\\Mon\\Mon_Mob\\Mon_Mob_M01\\Mon_Mob_Skill_M01\\AKE_Play_Mon_Mob_Skill_M01_Born_Trans",
+        "notes": ""
+    },
+    {
+        "id": "{6C607D09-B6C2-4052-B3EF-B47779410EDF}",
+        "name": "AKE_Play_Mon_Mob_Skill_M01_Jump_Start",
+        "path": "\\Events\\v1\\Mon\\Mon_Mob\\Mon_Mob_M01\\Mon_Mob_Skill_M01\\AKE_Play_Mon_Mob_Skill_M01_Jump_Start",
+        "notes": ""
+    },
+    {
+        "id": "{463541BE-BB7C-4FF1-B658-AB71404CC121}",
+        "name": "AKE_Play_Mon_Mob_Skill_M01_Born_Foley",
+        "path": "\\Events\\v1\\Mon\\Mon_Mob\\Mon_Mob_M01\\Mon_Mob_Skill_M01\\AKE_Play_Mon_Mob_Skill_M01_Born_Foley",
+        "notes": ""
+    },
+    {
+        "id": "{8823F2B8-C8BD-400D-A36D-908DE5132295}",
+        "name": "AKE_Play_Mon_Mob_Skill_M01_Door",
+        "path": "\\Events\\v1\\Mon\\Mon_Mob\\Mon_Mob_M01\\Mon_Mob_Skill_M01\\AKE_Play_Mon_Mob_Skill_M01_Door",
+        "notes": ""
+    },
+    {
+        "id": "{47B9F345-E32F-45CA-8D1A-E4910067DB78}",
+        "name": "AKE_Play_Mon_Mob_Skill_M01_Atk1",
+        "path": "\\Events\\v1\\Mon\\Mon_Mob\\Mon_Mob_M01\\Mon_Mob_Skill_M01\\AKE_Play_Mon_Mob_Skill_M01_Atk1",
+        "notes": ""
+    },
+    {
+        "id": "{99CB3C4F-EE2E-48C4-B33A-B7761F1707D5}",
+        "name": "AKE_Play_Mon_Mob_Skill_M01_Atk2",
+        "path": "\\Events\\v1\\Mon\\Mon_Mob\\Mon_Mob_M01\\Mon_Mob_Skill_M01\\AKE_Play_Mon_Mob_Skill_M01_Atk2",
+        "notes": ""
+    },
+    {
+        "id": "{7FE43779-82EA-4D64-BFE1-360A41AA0985}",
+        "name": "AKE_Play_Mon_Mob_Skill_M01_Step",
+        "path": "\\Events\\v1\\Mon\\Mon_Mob\\Mon_Mob_M01\\Mon_Mob_Skill_M01\\AKE_Play_Mon_Mob_Skill_M01_Step",
+        "notes": ""
+    },
+    {
+        "id": "{0614EF9E-3392-4F48-98C2-045BE0629FE6}",
+        "name": "AKE_Play_Mon_Mob_Skill_M01_Stun",
+        "path": "\\Events\\v1\\Mon\\Mon_Mob\\Mon_Mob_M01\\Mon_Mob_Skill_M01\\AKE_Play_Mon_Mob_Skill_M01_Stun",
+        "notes": ""
+    },
+    {
+        "id": "{401A9CDB-79B1-416E-94C3-0B22F6148084}",
+        "name": "AKE_Play_Mon_Mob_Skill_M01_Death_Hit",
+        "path": "\\Events\\v1\\Mon\\Mon_Mob\\Mon_Mob_M01\\Mon_Mob_Skill_M01\\AKE_Play_Mon_Mob_Skill_M01_Death_Hit",
+        "notes": ""
+    },
+    {
+        "id": "{7D7FE730-006C-4600-80B7-B47B113C4C49}",
+        "name": "AKE_Play_Mon_Mob_Skill_M01_Death_Hit_Hvy",
+        "path": "\\Events\\v1\\Mon\\Mon_Mob\\Mon_Mob_M01\\Mon_Mob_Skill_M01\\AKE_Play_Mon_Mob_Skill_M01_Death_Hit_Hvy",
+        "notes": ""
+    },
+    {
+        "id": "{EF3977EE-B1EE-410B-A96D-F42B85982E3B}",
+        "name": "AKE_Play_Mon_Mob_Skill_M01_Death_Stun",
+        "path": "\\Events\\v1\\Mon\\Mon_Mob\\Mon_Mob_M01\\Mon_Mob_Skill_M01\\AKE_Play_Mon_Mob_Skill_M01_Death_Stun",
+        "notes": ""
+    },
+    {
+        "id": "{2ABD0CCF-76B1-4DBB-BF92-45CB049C943A}",
+        "name": "AKE_Play_Mon_Mob_Skill_M01_Death",
+        "path": "\\Events\\v1\\Mon\\Mon_Mob\\Mon_Mob_M01\\Mon_Mob_Skill_M01\\AKE_Play_Mon_Mob_Skill_M01_Death",
+        "notes": ""
+    },
+    {
+        "id": "{85E84D98-AB81-4FAE-94C4-61195439B055}",
+        "name": "AKE_Play_Mon_Mob_Skill_M01_Born_Trans_LP",
+        "path": "\\Events\\v1\\Mon\\Mon_Mob\\Mon_Mob_M01\\Mon_Mob_Skill_M01\\AKE_Play_Mon_Mob_Skill_M01_Born_Trans_LP",
+        "notes": ""
+    },
+    {
+        "id": "{FD86EA61-0F0C-49AE-9BF9-E60F0B2A5DD2}",
+        "name": "AKE_Stop_Mon_Mob_Skill_M01_Born_Trans_LP",
+        "path": "\\Events\\v1\\Mon\\Mon_Mob\\Mon_Mob_M01\\Mon_Mob_Skill_M01\\AKE_Stop_Mon_Mob_Skill_M01_Born_Trans_LP",
+        "notes": ""
+    },
+    {
+        "id": "{1191E4BE-93C6-4D7B-BE17-00F42B20AB35}",
+        "name": "AKE_Play_Mon_Mob_Skill_M01_Jump",
+        "path": "\\Events\\v1\\Mon\\Mon_Mob\\Mon_Mob_M01\\Mon_Mob_Skill_M01\\AKE_Play_Mon_Mob_Skill_M01_Jump",
+        "notes": ""
+    },
+    {
+        "id": "{DB8E9D3A-928E-49CC-B356-80CB12DB3B54}",
+        "name": "AKE_Play_Mon_Mob_Foley_M02_Run_To_Crawl",
+        "path": "\\Events\\v1\\Mon\\Mon_Mob\\Mon_Mob_M02\\Mon_Mob_Foley_M02\\AKE_Play_Mon_Mob_Foley_M02_Run_To_Crawl",
+        "notes": ""
+    },
+    {
+        "id": "{15635B7A-8443-40AD-A4D8-4A9061D1A046}",
+        "name": "AKE_Play_Mon_Mob_Foley_M02_Run",
+        "path": "\\Events\\v1\\Mon\\Mon_Mob\\Mon_Mob_M02\\Mon_Mob_Foley_M02\\AKE_Play_Mon_Mob_Foley_M02_Run",
+        "notes": ""
+    },
+    {
+        "id": "{6C02E7C4-3B53-417D-9A50-9BA1EEB81AC8}",
+        "name": "AKE_Play_Mon_Mob_Foley_M02_Stop",
+        "path": "\\Events\\v1\\Mon\\Mon_Mob\\Mon_Mob_M02\\Mon_Mob_Foley_M02\\AKE_Play_Mon_Mob_Foley_M02_Stop",
+        "notes": ""
+    },
+    {
+        "id": "{F18A2AAB-5F65-4F09-8D87-B30115C86763}",
+        "name": "AKE_Play_Mon_Mob_Foley_M02_Crawl",
+        "path": "\\Events\\v1\\Mon\\Mon_Mob\\Mon_Mob_M02\\Mon_Mob_Foley_M02\\AKE_Play_Mon_Mob_Foley_M02_Crawl",
+        "notes": ""
+    },
+    {
+        "id": "{2159E4F3-8D19-41D7-9A6A-652248D043A6}",
+        "name": "AKE_Play_Mon_Mob_Foley_M02_Death",
+        "path": "\\Events\\v1\\Mon\\Mon_Mob\\Mon_Mob_M02\\Mon_Mob_Foley_M02\\AKE_Play_Mon_Mob_Foley_M02_Death",
+        "notes": ""
+    },
+    {
+        "id": "{5A35675E-FD8B-46E2-9A89-A3A8D80FE4CE}",
+        "name": "AKE_Play_Mon_Mob_Foley_M02_Getup",
+        "path": "\\Events\\v1\\Mon\\Mon_Mob\\Mon_Mob_M02\\Mon_Mob_Foley_M02\\AKE_Play_Mon_Mob_Foley_M02_Getup",
+        "notes": ""
+    },
+    {
+        "id": "{16CE5DE2-0641-4D9C-86F7-336328E079A2}",
+        "name": "AKE_Play_Mon_Mob_Foley_M02_Knock",
+        "path": "\\Events\\v1\\Mon\\Mon_Mob\\Mon_Mob_M02\\Mon_Mob_Foley_M02\\AKE_Play_Mon_Mob_Foley_M02_Knock",
+        "notes": ""
+    },
+    {
+        "id": "{86066B2A-4101-4281-A72A-8A2F377AE004}",
+        "name": "AKE_Play_Mon_Mob_Foley_M02_Mutilate",
+        "path": "\\Events\\v1\\Mon\\Mon_Mob\\Mon_Mob_M02\\Mon_Mob_Foley_M02\\AKE_Play_Mon_Mob_Foley_M02_Mutilate",
+        "notes": ""
+    },
+    {
+        "id": "{24D460DE-E6DF-4742-A094-C4B023B98436}",
+        "name": "AKE_Play_Mon_Mob_Foley_M02_Fall_Down",
+        "path": "\\Events\\v1\\Mon\\Mon_Mob\\Mon_Mob_M02\\Mon_Mob_Foley_M02\\AKE_Play_Mon_Mob_Foley_M02_Fall_Down",
+        "notes": ""
+    },
+    {
+        "id": "{A1BEBBB4-08DE-497F-B549-8C41F2554329}",
+        "name": "AKE_Play_Mon_Mob_Shout_M02_Atk",
+        "path": "\\Events\\v1\\Mon\\Mon_Mob\\Mon_Mob_M02\\Mon_Mob_Shout_M02\\AKE_Play_Mon_Mob_Shout_M02_Atk",
+        "notes": ""
+    },
+    {
+        "id": "{02AB8E60-C5CD-4226-95FD-3D496526C136}",
+        "name": "AKE_Play_Mon_Mob_Shout_M02_Atk_Hvy",
+        "path": "\\Events\\v1\\Mon\\Mon_Mob\\Mon_Mob_M02\\Mon_Mob_Shout_M02\\AKE_Play_Mon_Mob_Shout_M02_Atk_Hvy",
+        "notes": ""
+    },
+    {
+        "id": "{4CED167C-E5CF-4FD2-B71A-563C4214C4CD}",
+        "name": "AKE_Play_Mon_Mob_Shout_M02_Atk5",
+        "path": "\\Events\\v1\\Mon\\Mon_Mob\\Mon_Mob_M02\\Mon_Mob_Shout_M02\\AKE_Play_Mon_Mob_Shout_M02_Atk5",
+        "notes": ""
+    },
+    {
+        "id": "{95F516D3-520D-4EAE-ACF1-5A5DE7B1A669}",
+        "name": "AKE_Play_Mon_Mob_Shout_M02_Atk6",
+        "path": "\\Events\\v1\\Mon\\Mon_Mob\\Mon_Mob_M02\\Mon_Mob_Shout_M02\\AKE_Play_Mon_Mob_Shout_M02_Atk6",
+        "notes": ""
+    },
+    {
+        "id": "{6EA0165D-58E0-463D-8EAB-112B291D246F}",
+        "name": "AKE_Play_Mon_Mob_Shout_M02_Born",
+        "path": "\\Events\\v1\\Mon\\Mon_Mob\\Mon_Mob_M02\\Mon_Mob_Shout_M02\\AKE_Play_Mon_Mob_Shout_M02_Born",
+        "notes": ""
+    },
+    {
+        "id": "{A5248C6B-648F-4CC1-93BE-DE7C71E347EF}",
+        "name": "AKE_Play_Mon_Mob_Shout_M02_Buffer",
+        "path": "\\Events\\v1\\Mon\\Mon_Mob\\Mon_Mob_M02\\Mon_Mob_Shout_M02\\AKE_Play_Mon_Mob_Shout_M02_Buffer",
+        "notes": ""
+    },
+    {
+        "id": "{6EF9BC54-9D77-4FA9-8E90-F0DB580CB692}",
+        "name": "AKE_Play_Mon_Mob_Shout_M02_Getup",
+        "path": "\\Events\\v1\\Mon\\Mon_Mob\\Mon_Mob_M02\\Mon_Mob_Shout_M02\\AKE_Play_Mon_Mob_Shout_M02_Getup",
+        "notes": ""
+    },
+    {
+        "id": "{5EA03D10-4AD6-46EA-B498-C17F0E00858D}",
+        "name": "AKE_Play_Mon_Mob_Shout_M02_Hit",
+        "path": "\\Events\\v1\\Mon\\Mon_Mob\\Mon_Mob_M02\\Mon_Mob_Shout_M02\\AKE_Play_Mon_Mob_Shout_M02_Hit",
+        "notes": ""
+    },
+    {
+        "id": "{BCE1EC78-9B1C-4C72-B142-C70F3B6656AF}",
+        "name": "AKE_Play_Mon_Mob_Shout_M02_Hit_Hvy",
+        "path": "\\Events\\v1\\Mon\\Mon_Mob\\Mon_Mob_M02\\Mon_Mob_Shout_M02\\AKE_Play_Mon_Mob_Shout_M02_Hit_Hvy",
+        "notes": ""
+    },
+    {
+        "id": "{F774ADC7-599E-4E2E-BF7D-0DEF1F433907}",
+        "name": "AKE_Play_Mon_Mob_Shout_M02_Knock",
+        "path": "\\Events\\v1\\Mon\\Mon_Mob\\Mon_Mob_M02\\Mon_Mob_Shout_M02\\AKE_Play_Mon_Mob_Shout_M02_Knock",
+        "notes": ""
+    },
+    {
+        "id": "{613CD399-CFA1-4D1D-8C49-C755667A4C51}",
+        "name": "AKE_Play_Mon_Mob_Shout_M02_Death",
+        "path": "\\Events\\v1\\Mon\\Mon_Mob\\Mon_Mob_M02\\Mon_Mob_Shout_M02\\AKE_Play_Mon_Mob_Shout_M02_Death",
+        "notes": ""
+    },
+    {
+        "id": "{C34B94C2-3FEE-44BD-91CD-BCEF18965941}",
+        "name": "AKE_Play_Mon_Mob_Shout_M02_Death_Hvy",
+        "path": "\\Events\\v1\\Mon\\Mon_Mob\\Mon_Mob_M02\\Mon_Mob_Shout_M02\\AKE_Play_Mon_Mob_Shout_M02_Death_Hvy",
+        "notes": ""
+    },
+    {
+        "id": "{762C13D3-6452-46A9-AE1F-9D19C6EF7C12}",
+        "name": "AKE_Play_Mon_Mob_Shout_M02_Run_To_Crawl",
+        "path": "\\Events\\v1\\Mon\\Mon_Mob\\Mon_Mob_M02\\Mon_Mob_Shout_M02\\AKE_Play_Mon_Mob_Shout_M02_Run_To_Crawl",
+        "notes": ""
+    },
+    {
+        "id": "{03B5D065-8B71-4857-8FC2-E852EB747A93}",
+        "name": "AKE_Play_Mon_Mob_Shout_M02_Struggle",
+        "path": "\\Events\\v1\\Mon\\Mon_Mob\\Mon_Mob_M02\\Mon_Mob_Shout_M02\\AKE_Play_Mon_Mob_Shout_M02_Struggle",
+        "notes": ""
+    },
+    {
+        "id": "{F5387290-2EA8-4E6E-BCCC-6276DCBC9B4F}",
+        "name": "AKE_Play_Mon_Mob_Skill_M02_Born",
+        "path": "\\Events\\v1\\Mon\\Mon_Mob\\Mon_Mob_M02\\Mon_Mob_Skill_M02\\AKE_Play_Mon_Mob_Skill_M02_Born",
+        "notes": ""
+    },
+    {
+        "id": "{DD9D8D37-7214-4541-AD25-99AAD5027649}",
+        "name": "AKE_Play_Mon_Mob_Skill_M02_Atk1",
+        "path": "\\Events\\v1\\Mon\\Mon_Mob\\Mon_Mob_M02\\Mon_Mob_Skill_M02\\AKE_Play_Mon_Mob_Skill_M02_Atk1",
+        "notes": ""
+    },
+    {
+        "id": "{5E87A7BD-4575-40A4-BBE6-D515A4DD7A2F}",
+        "name": "AKE_Play_Mon_Mob_Skill_M02_Atk2",
+        "path": "\\Events\\v1\\Mon\\Mon_Mob\\Mon_Mob_M02\\Mon_Mob_Skill_M02\\AKE_Play_Mon_Mob_Skill_M02_Atk2",
+        "notes": ""
+    },
+    {
+        "id": "{D9AAB61E-28F8-410C-B5A8-54E4C1CDA758}",
+        "name": "AKE_Play_Mon_Mob_Skill_M02_Atk3",
+        "path": "\\Events\\v1\\Mon\\Mon_Mob\\Mon_Mob_M02\\Mon_Mob_Skill_M02\\AKE_Play_Mon_Mob_Skill_M02_Atk3",
+        "notes": ""
+    },
+    {
+        "id": "{376F2E42-500C-4442-8199-7B18CECEEECB}",
+        "name": "AKE_Play_Mon_Mob_Skill_M02_Atk4",
+        "path": "\\Events\\v1\\Mon\\Mon_Mob\\Mon_Mob_M02\\Mon_Mob_Skill_M02\\AKE_Play_Mon_Mob_Skill_M02_Atk4",
+        "notes": ""
+    },
+    {
+        "id": "{D263A51B-A02E-4305-BBD9-162013C61CE8}",
+        "name": "AKE_Play_Mon_Mob_Skill_M02_Atk5",
+        "path": "\\Events\\v1\\Mon\\Mon_Mob\\Mon_Mob_M02\\Mon_Mob_Skill_M02\\AKE_Play_Mon_Mob_Skill_M02_Atk5",
+        "notes": ""
+    },
+    {
+        "id": "{DA8DC019-59C9-4A45-89B2-19C1CEFD9895}",
+        "name": "AKE_Play_Mon_Mob_Skill_M02_Atk5_Crawl",
+        "path": "\\Events\\v1\\Mon\\Mon_Mob\\Mon_Mob_M02\\Mon_Mob_Skill_M02\\AKE_Play_Mon_Mob_Skill_M02_Atk5_Crawl",
+        "notes": ""
+    },
+    {
+        "id": "{0B052690-971D-4C5A-9EC2-71A732EEF52F}",
+        "name": "AKE_Play_Mon_Mob_Skill_M02_Atk6",
+        "path": "\\Events\\v1\\Mon\\Mon_Mob\\Mon_Mob_M02\\Mon_Mob_Skill_M02\\AKE_Play_Mon_Mob_Skill_M02_Atk6",
+        "notes": ""
+    },
+    {
+        "id": "{F6B51DF6-C0F5-44BF-89F4-44625780681F}",
+        "name": "AKE_Play_Mon_Mob_Skill_M02_Atk6_Crawl",
+        "path": "\\Events\\v1\\Mon\\Mon_Mob\\Mon_Mob_M02\\Mon_Mob_Skill_M02\\AKE_Play_Mon_Mob_Skill_M02_Atk6_Crawl",
+        "notes": ""
+    },
+    {
+        "id": "{ABE66970-8F19-4987-BBE2-38A71986D500}",
+        "name": "AKE_Play_Mon_Mob_Skill_M02_Buffer",
+        "path": "\\Events\\v1\\Mon\\Mon_Mob\\Mon_Mob_M02\\Mon_Mob_Skill_M02\\AKE_Play_Mon_Mob_Skill_M02_Buffer",
+        "notes": ""
+    },
+    {
+        "id": "{98A60806-4B0D-45C9-BBF1-F6BA6EE9CE51}",
+        "name": "AKE_Play_Mon_Mob_Skill_M02_Buffer_Crawl",
+        "path": "\\Events\\v1\\Mon\\Mon_Mob\\Mon_Mob_M02\\Mon_Mob_Skill_M02\\AKE_Play_Mon_Mob_Skill_M02_Buffer_Crawl",
+        "notes": ""
+    },
+    {
+        "id": "{F180EF1F-99D4-4CB5-A31A-F4C19114004B}",
+        "name": "AKE_Play_Mon_Mob_Skill_M02_Death",
+        "path": "\\Events\\v1\\Mon\\Mon_Mob\\Mon_Mob_M02\\Mon_Mob_Skill_M02\\AKE_Play_Mon_Mob_Skill_M02_Death",
+        "notes": ""
+    },
+    {
+        "id": "{7C897117-72D7-4BD2-8CA6-4800776CDA82}",
+        "name": "AKE_Play_Char_Skill_C02_Battle_Enter1",
+        "path": "\\Events\\v1\\Char\\Char_C02\\Char_Skill_C02\\AKE_Play_Char_Skill_C02_Battle_Enter1",
+        "notes": ""
+    },
+    {
+        "id": "{32867973-BF5C-423A-91F5-845813A1F5D9}",
+        "name": "AKE_Play_Char_Skill_C02_Battle_Enter2",
+        "path": "\\Events\\v1\\Char\\Char_C02\\Char_Skill_C02\\AKE_Play_Char_Skill_C02_Battle_Enter2",
+        "notes": ""
+    },
+    {
+        "id": "{3270A92F-4FDD-4765-849E-4F053E53A037}",
+        "name": "AKE_Play_Char_Skill_C02_Battle_Exit",
+        "path": "\\Events\\v1\\Char\\Char_C02\\Char_Skill_C02\\AKE_Play_Char_Skill_C02_Battle_Exit",
+        "notes": ""
+    },
+    {
+        "id": "{07FC3546-AB50-49E9-A01F-68914AE53BBD}",
+        "name": "AKE_Play_Char_Skill_C02_Atk1",
+        "path": "\\Events\\v1\\Char\\Char_C02\\Char_Skill_C02\\AKE_Play_Char_Skill_C02_Atk1",
+        "notes": ""
+    },
+    {
+        "id": "{0BADBF87-1965-4C76-B424-237A6CC1BFA5}",
+        "name": "AKE_Play_Char_Skill_C02_Atk2",
+        "path": "\\Events\\v1\\Char\\Char_C02\\Char_Skill_C02\\AKE_Play_Char_Skill_C02_Atk2",
+        "notes": ""
+    },
+    {
+        "id": "{9BB08FF5-4D4C-4E2B-BBFE-BB08B07AF21F}",
+        "name": "AKE_Play_Char_Skill_C02_Atk3",
+        "path": "\\Events\\v1\\Char\\Char_C02\\Char_Skill_C02\\AKE_Play_Char_Skill_C02_Atk3",
+        "notes": ""
+    },
+    {
+        "id": "{4D46A8B3-3D2E-4F00-A7AC-7AF58DDCF975}",
+        "name": "AKE_Play_Char_Skill_C02_Atk4",
+        "path": "\\Events\\v1\\Char\\Char_C02\\Char_Skill_C02\\AKE_Play_Char_Skill_C02_Atk4",
+        "notes": ""
+    },
+    {
+        "id": "{677DEF8E-FE8D-4EDC-8DA1-1EDAB56D8887}",
+        "name": "AKE_Play_Char_Skill_C02_Atk5",
+        "path": "\\Events\\v1\\Char\\Char_C02\\Char_Skill_C02\\AKE_Play_Char_Skill_C02_Atk5",
+        "notes": ""
+    },
+    {
+        "id": "{60A68603-8780-470C-BEF6-304ABF274E21}",
+        "name": "AKE_Play_Char_Skill_C02_Focus_Ready1",
+        "path": "\\Events\\v1\\Char\\Char_C02\\Char_Skill_C02\\AKE_Play_Char_Skill_C02_Focus_Ready1",
+        "notes": ""
+    },
+    {
+        "id": "{6E0BC9D4-CF5D-4CDF-BCD1-3CE3BFECA4C0}",
+        "name": "AKE_Play_Char_Skill_C02_Focus_Ready2",
+        "path": "\\Events\\v1\\Char\\Char_C02\\Char_Skill_C02\\AKE_Play_Char_Skill_C02_Focus_Ready2",
+        "notes": ""
+    },
+    {
+        "id": "{59339CFA-CCB4-4917-A9E9-B2294960ABA5}",
+        "name": "AKE_Play_Char_Skill_C02_Focus_Ready3",
+        "path": "\\Events\\v1\\Char\\Char_C02\\Char_Skill_C02\\AKE_Play_Char_Skill_C02_Focus_Ready3",
+        "notes": ""
+    },
+    {
+        "id": "{09444143-084A-43D6-B06A-A818C3FE86E7}",
+        "name": "AKE_Play_Char_Skill_C02_Focus_Ready4",
+        "path": "\\Events\\v1\\Char\\Char_C02\\Char_Skill_C02\\AKE_Play_Char_Skill_C02_Focus_Ready4",
+        "notes": ""
+    },
+    {
+        "id": "{86B98794-7519-4F7B-85B2-32E8806F58B6}",
+        "name": "AKE_Play_Char_Skill_C02_Focus_Ready5",
+        "path": "\\Events\\v1\\Char\\Char_C02\\Char_Skill_C02\\AKE_Play_Char_Skill_C02_Focus_Ready5",
+        "notes": ""
+    },
+    {
+        "id": "{30A1BC88-CC49-41DC-96A5-F1B7A2CD036D}",
+        "name": "AKE_Play_Char_Skill_C02_Focus_Ready6",
+        "path": "\\Events\\v1\\Char\\Char_C02\\Char_Skill_C02\\AKE_Play_Char_Skill_C02_Focus_Ready6",
+        "notes": ""
+    },
+    {
+        "id": "{7AE261AA-416A-435B-A0AC-9F0C80FE247B}",
+        "name": "AKE_Play_Char_Skill_C02_Focus_Ready7",
+        "path": "\\Events\\v1\\Char\\Char_C02\\Char_Skill_C02\\AKE_Play_Char_Skill_C02_Focus_Ready7",
+        "notes": ""
+    },
+    {
+        "id": "{DA0C8F16-3A25-4352-BA91-9A0BA6171C77}",
+        "name": "AKE_Play_Char_Skill_C02_Focus_Ready8",
+        "path": "\\Events\\v1\\Char\\Char_C02\\Char_Skill_C02\\AKE_Play_Char_Skill_C02_Focus_Ready8",
+        "notes": ""
+    },
+    {
+        "id": "{EBF02940-342A-4385-8526-B2F13F8B5833}",
+        "name": "AKE_Play_Char_Skill_C02_Focus_Atk1",
+        "path": "\\Events\\v1\\Char\\Char_C02\\Char_Skill_C02\\AKE_Play_Char_Skill_C02_Focus_Atk1",
+        "notes": ""
+    },
+    {
+        "id": "{197CB894-9888-4305-8A1C-A7E6CE502C12}",
+        "name": "AKE_Play_Char_Skill_C02_Focus_Atk2",
+        "path": "\\Events\\v1\\Char\\Char_C02\\Char_Skill_C02\\AKE_Play_Char_Skill_C02_Focus_Atk2",
+        "notes": ""
+    },
+    {
+        "id": "{04852B85-E2F6-4776-9DEE-924F00C0308A}",
+        "name": "AKE_Play_Char_Skill_C02_Focus_Atk3",
+        "path": "\\Events\\v1\\Char\\Char_C02\\Char_Skill_C02\\AKE_Play_Char_Skill_C02_Focus_Atk3",
+        "notes": ""
+    },
+    {
+        "id": "{518A10D4-2D63-4F0E-8642-1A4BADDC6134}",
+        "name": "AKE_Play_Char_Skill_C02_Atk_Rush",
+        "path": "\\Events\\v1\\Char\\Char_C02\\Char_Skill_C02\\AKE_Play_Char_Skill_C02_Atk_Rush",
+        "notes": ""
+    },
+    {
+        "id": "{E87F77A1-8193-469F-B943-E842B885DF58}",
+        "name": "AKE_Play_Char_Skill_C02_SkyAtk_Start",
+        "path": "\\Events\\v1\\Char\\Char_C02\\Char_Skill_C02\\AKE_Play_Char_Skill_C02_SkyAtk_Start",
+        "notes": ""
+    },
+    {
+        "id": "{EBF87B13-29C8-4083-94AA-B7A3AE234C95}",
+        "name": "AKE_Play_Char_Skill_C02_SkyAtk_End",
+        "path": "\\Events\\v1\\Char\\Char_C02\\Char_Skill_C02\\AKE_Play_Char_Skill_C02_SkyAtk_End",
+        "notes": ""
+    },
+    {
+        "id": "{F1CB3FF3-9502-4442-AE66-DC9BAD5778F1}",
+        "name": "AKE_Play_Char_Skill_C02_Strafe_Enter",
+        "path": "\\Events\\v1\\Char\\Char_C02\\Char_Skill_C02\\AKE_Play_Char_Skill_C02_Strafe_Enter",
+        "notes": ""
+    },
+    {
+        "id": "{035B2525-62BE-4940-9B75-99173BF93917}",
+        "name": "AKE_Play_Char_Skill_C02_Strafe_Exit",
+        "path": "\\Events\\v1\\Char\\Char_C02\\Char_Skill_C02\\AKE_Play_Char_Skill_C02_Strafe_Exit",
+        "notes": ""
+    },
+    {
+        "id": "{67BB603B-883D-4ED8-9A9C-67EE33B17622}",
+        "name": "AKE_Play_Char_Skill_C02_Strafe_Shake",
+        "path": "\\Events\\v1\\Char\\Char_C02\\Char_Skill_C02\\AKE_Play_Char_Skill_C02_Strafe_Shake",
+        "notes": ""
+    },
+    {
+        "id": "{E65EC848-7CCF-44B2-98C1-D8A12456B514}",
+        "name": "AKE_Play_Char_Skill_C02_Strafe_Defense_Atk",
+        "path": "\\Events\\v1\\Char\\Char_C02\\Char_Skill_C02\\AKE_Play_Char_Skill_C02_Strafe_Defense_Atk",
+        "notes": ""
+    },
+    {
+        "id": "{4A315D70-F0DC-4A1D-8421-53B41B523BCA}",
+        "name": "AKE_Play_Char_Skill_C02_Strafe_Counter_Atk2",
+        "path": "\\Events\\v1\\Char\\Char_C02\\Char_Skill_C02\\AKE_Play_Char_Skill_C02_Strafe_Counter_Atk2",
+        "notes": ""
+    },
+    {
+        "id": "{4D55E2F9-671B-46DF-B411-28CC33E603A3}",
+        "name": "AKE_Play_Char_Skill_C02_Strafe_Counter_Atk3",
+        "path": "\\Events\\v1\\Char\\Char_C02\\Char_Skill_C02\\AKE_Play_Char_Skill_C02_Strafe_Counter_Atk3",
+        "notes": ""
+    },
+    {
+        "id": "{E44FFCAF-DD39-4EC9-89C2-BCFE29CAFDA6}",
+        "name": "AKE_Play_Char_Skill_C02_Strafe_Defense_Hit",
+        "path": "\\Events\\v1\\Char\\Char_C02\\Char_Skill_C02\\AKE_Play_Char_Skill_C02_Strafe_Defense_Hit",
+        "notes": ""
+    },
+    {
+        "id": "{AB4FD65F-DB03-434A-981A-D9C5F7A1949C}",
+        "name": "AKE_Play_Char_Skill_C02_Strafe_Defense_Break",
+        "path": "\\Events\\v1\\Char\\Char_C02\\Char_Skill_C02\\AKE_Play_Char_Skill_C02_Strafe_Defense_Break",
+        "notes": ""
+    },
+    {
+        "id": "{7B5D14B6-77BE-46C3-90A3-FD186B92C95E}",
+        "name": "AKE_Play_Char_Skill_C02_Hook_Launch_F",
+        "path": "\\Events\\v1\\Char\\Char_C02\\Char_Skill_C02\\AKE_Play_Char_Skill_C02_Hook_Launch_F",
+        "notes": ""
+    },
+    {
+        "id": "{A5C1A783-4916-4BA6-B5AF-A7F595B29FF9}",
+        "name": "AKE_Play_Char_Skill_C02_Hook_Launch_B",
+        "path": "\\Events\\v1\\Char\\Char_C02\\Char_Skill_C02\\AKE_Play_Char_Skill_C02_Hook_Launch_B",
+        "notes": ""
+    },
+    {
+        "id": "{DAE2C8E6-C0D6-4E4A-A3F9-9EB1C4FDF0E1}",
+        "name": "AKE_Play_Char_Skill_C02_Hook_Suc_F",
+        "path": "\\Events\\v1\\Char\\Char_C02\\Char_Skill_C02\\AKE_Play_Char_Skill_C02_Hook_Suc_F",
+        "notes": ""
+    },
+    {
+        "id": "{ACD5013F-9E36-4DA7-946E-9045C7DA21AB}",
+        "name": "AKE_Play_Char_Skill_C02_Hook_Suc_D",
+        "path": "\\Events\\v1\\Char\\Char_C02\\Char_Skill_C02\\AKE_Play_Char_Skill_C02_Hook_Suc_D",
+        "notes": ""
+    },
+    {
+        "id": "{98BEA03E-AE9D-41D0-8A3E-38D2FC7997E9}",
+        "name": "AKE_Play_Char_Skill_C02_Hook_Fly",
+        "path": "\\Events\\v1\\Char\\Char_C02\\Char_Skill_C02\\AKE_Play_Char_Skill_C02_Hook_Fly",
+        "notes": ""
+    },
+    {
+        "id": "{4311132D-305C-402A-97E2-0386EF2CC056}",
+        "name": "AKE_Play_Char_Skill_C02_Hook_Fail",
+        "path": "\\Events\\v1\\Char\\Char_C02\\Char_Skill_C02\\AKE_Play_Char_Skill_C02_Hook_Fail",
+        "notes": ""
+    },
+    {
+        "id": "{96E4DBC4-C335-4FD4-8B5A-604C33B34038}",
+        "name": "AKE_Play_Char_Skill_C02_Execu1_Pre",
+        "path": "\\Events\\v1\\Char\\Char_C02\\Char_Skill_C02\\AKE_Play_Char_Skill_C02_Execu1_Pre",
+        "notes": ""
+    },
+    {
+        "id": "{3423B045-4EC9-4254-83CB-37D9CE2C2729}",
+        "name": "AKE_Play_Char_Skill_C02_Execu1_Pre_Far",
+        "path": "\\Events\\v1\\Char\\Char_C02\\Char_Skill_C02\\AKE_Play_Char_Skill_C02_Execu1_Pre_Far",
+        "notes": ""
+    },
+    {
+        "id": "{ADF5DC20-9DD5-4874-93AB-9075EAEE95E3}",
+        "name": "AKE_Play_Char_Skill_C02_Execu1_Pre_Hook",
+        "path": "\\Events\\v1\\Char\\Char_C02\\Char_Skill_C02\\AKE_Play_Char_Skill_C02_Execu1_Pre_Hook",
+        "notes": ""
+    },
+    {
+        "id": "{6E8E82D4-39FC-4433-AD9F-5F87B4FF6E83}",
+        "name": "AKE_Play_Char_Skill_C02_Execu1_Pre_Far_Hook",
+        "path": "\\Events\\v1\\Char\\Char_C02\\Char_Skill_C02\\AKE_Play_Char_Skill_C02_Execu1_Pre_Far_Hook",
+        "notes": ""
+    },
+    {
+        "id": "{6493B629-568A-4A3A-B029-E79525F0D618}",
+        "name": "AKE_Play_Char_Skill_C02_Execu1",
+        "path": "\\Events\\v1\\Char\\Char_C02\\Char_Skill_C02\\AKE_Play_Char_Skill_C02_Execu1",
+        "notes": ""
+    },
+    {
+        "id": "{A2CFA050-D468-494F-ACF0-DA14D13C1EC4}",
+        "name": "AKE_Play_Char_Skill_C02_Execu2_Start",
+        "path": "\\Events\\v1\\Char\\Char_C02\\Char_Skill_C02\\AKE_Play_Char_Skill_C02_Execu2_Start",
+        "notes": ""
+    },
+    {
+        "id": "{F69A327B-5456-424F-8906-E7A524C3654F}",
+        "name": "AKE_Play_Char_Skill_C02_Execu2_LP",
+        "path": "\\Events\\v1\\Char\\Char_C02\\Char_Skill_C02\\AKE_Play_Char_Skill_C02_Execu2_LP",
+        "notes": ""
+    },
+    {
+        "id": "{433792DB-B489-402C-BF48-1CE9819203C5}",
+        "name": "AKE_Stop_Char_Skill_C02_Execu2_LP",
+        "path": "\\Events\\v1\\Char\\Char_C02\\Char_Skill_C02\\AKE_Stop_Char_Skill_C02_Execu2_LP",
+        "notes": ""
+    },
+    {
+        "id": "{9ABB0B81-0509-4B17-8133-C5C5C131E21F}",
+        "name": "AKE_Play_Char_Skill_C02_Execu2_End",
+        "path": "\\Events\\v1\\Char\\Char_C02\\Char_Skill_C02\\AKE_Play_Char_Skill_C02_Execu2_End",
+        "notes": ""
+    },
+    {
+        "id": "{DE818108-5300-4368-8B78-18C46AE75006}",
+        "name": "AKE_Play_Char_Skill_C02_Execu2_End_Sp",
+        "path": "\\Events\\v1\\Char\\Char_C02\\Char_Skill_C02\\AKE_Play_Char_Skill_C02_Execu2_End_Sp",
+        "notes": ""
+    },
+    {
+        "id": "{4790EA27-6BEE-4534-A9D3-7418DE8C7F73}",
+        "name": "AKE_Play_Char_Skill_C02_Ult",
+        "path": "\\Events\\v1\\Char\\Char_C02\\Char_Skill_C02\\AKE_Play_Char_Skill_C02_Ult",
+        "notes": ""
+    },
+    {
+        "id": "{48D7F05C-E768-44AA-B30B-94DAA9295ED4}",
+        "name": "AKE_Play_Char_Skill_C02_Counter",
+        "path": "\\Events\\v1\\Char\\Char_C02\\Char_Skill_C02\\AKE_Play_Char_Skill_C02_Counter",
+        "notes": ""
+    },
+    {
+        "id": "{478FF183-B5B2-4DCE-8DFB-C50672FF3151}",
+        "name": "AKE_Play_Char_Skill_C02_Counter_Lit",
+        "path": "\\Events\\v1\\Char\\Char_C02\\Char_Skill_C02\\AKE_Play_Char_Skill_C02_Counter_Lit",
+        "notes": ""
+    },
+    {
+        "id": "{5B2D057D-BCC9-42FF-967D-C7D050F210FF}",
+        "name": "AKE_Play_Char_Skill_C02_Counter_Hvy",
+        "path": "\\Events\\v1\\Char\\Char_C02\\Char_Skill_C02\\AKE_Play_Char_Skill_C02_Counter_Hvy",
+        "notes": ""
+    },
+    {
+        "id": "{59488641-94B8-4904-AEA2-C2EC4115D1AF}",
+        "name": "AKE_Play_Char_Skill_C02_Counter_Sp_Atk",
+        "path": "\\Events\\v1\\Char\\Char_C02\\Char_Skill_C02\\AKE_Play_Char_Skill_C02_Counter_Sp_Atk",
+        "notes": ""
+    },
+    {
+        "id": "{DB2E03F8-2101-45B0-9C79-65BA76A5CB40}",
+        "name": "AKE_Play_Char_Skill_C02_Dodge",
+        "path": "\\Events\\v1\\Char\\Char_C02\\Char_Skill_C02\\AKE_Play_Char_Skill_C02_Dodge",
+        "notes": ""
+    },
+    {
+        "id": "{3ECBAF82-534C-467C-8B3E-EF8884829755}",
+        "name": "AKE_Play_Char_Skill_C02_Dodge_Step",
+        "path": "\\Events\\v1\\Char\\Char_C02\\Char_Skill_C02\\AKE_Play_Char_Skill_C02_Dodge_Step",
+        "notes": ""
+    },
+    {
+        "id": "{457EE620-FFFC-48F3-B530-B4A18BCD21C1}",
+        "name": "AKE_Play_Char_Skill_C02_Hit_Fly_Start",
+        "path": "\\Events\\v1\\Char\\Char_C02\\Char_Skill_C02\\AKE_Play_Char_Skill_C02_Hit_Fly_Start",
+        "notes": ""
+    },
+    {
+        "id": "{B2A4E4DA-32D7-4502-963B-24FF443AE911}",
+        "name": "AKE_Play_Char_Skill_C02_Hit_Fly_End",
+        "path": "\\Events\\v1\\Char\\Char_C02\\Char_Skill_C02\\AKE_Play_Char_Skill_C02_Hit_Fly_End",
+        "notes": ""
+    },
+    {
+        "id": "{2D64BA6C-5247-4AB7-AFF8-A320D5BD6BB7}",
+        "name": "AKE_Play_Char_Skill_C02_Hit_Wall",
+        "path": "\\Events\\v1\\Char\\Char_C02\\Char_Skill_C02\\AKE_Play_Char_Skill_C02_Hit_Wall",
+        "notes": ""
+    },
+    {
+        "id": "{E016FB30-0426-4709-A465-01D8A9F861AB}",
+        "name": "AKE_Play_Char_Skill_C02_Hit_Wall_End",
+        "path": "\\Events\\v1\\Char\\Char_C02\\Char_Skill_C02\\AKE_Play_Char_Skill_C02_Hit_Wall_End",
+        "notes": ""
+    },
+    {
+        "id": "{4AC47A34-D45D-4898-98B5-59D07BB95F73}",
+        "name": "AKE_Play_Char_Skill_C02_Hit_Death",
+        "path": "\\Events\\v1\\Char\\Char_C02\\Char_Skill_C02\\AKE_Play_Char_Skill_C02_Hit_Death",
+        "notes": ""
+    },
+    {
+        "id": "{EFEDF331-D187-48FD-A35F-9D02E5C59F83}",
+        "name": "AKE_Play_Char_Skill_C02_Hit_Death_Grd",
+        "path": "\\Events\\v1\\Char\\Char_C02\\Char_Skill_C02\\AKE_Play_Char_Skill_C02_Hit_Death_Grd",
+        "notes": ""
+    },
+    {
+        "id": "{91A17E93-B444-4378-A631-F106D133A3F4}",
+        "name": "AKE_Play_Char_Skill_C02_Hit_Fall_Start",
+        "path": "\\Events\\v1\\Char\\Char_C02\\Char_Skill_C02\\AKE_Play_Char_Skill_C02_Hit_Fall_Start",
+        "notes": ""
+    },
+    {
+        "id": "{0CB97974-2C66-48A4-95B2-23D0427A4C66}",
+        "name": "AKE_Play_Char_Skill_C02_Hit_Fall_End",
+        "path": "\\Events\\v1\\Char\\Char_C02\\Char_Skill_C02\\AKE_Play_Char_Skill_C02_Hit_Fall_End",
+        "notes": ""
+    },
+    {
+        "id": "{E1666F15-42AE-48A4-9C08-2036BE0F30B3}",
+        "name": "AKE_Play_Char_Skill_C02_Hit_Hvy",
+        "path": "\\Events\\v1\\Char\\Char_C02\\Char_Skill_C02\\AKE_Play_Char_Skill_C02_Hit_Hvy",
+        "notes": ""
+    },
+    {
+        "id": "{DA9565B5-4CFF-4E74-B3E9-1922518506FA}",
+        "name": "AKE_Play_Char_Skill_C01_Atk1",
+        "path": "\\Events\\v1\\Char\\Char_C01\\Char_Skill_C01\\AKE_Play_Char_Skill_C01_Atk1",
+        "notes": ""
+    },
+    {
+        "id": "{78A108FC-7119-4B2B-9D87-007AC7A47566}",
+        "name": "AKE_Play_Char_Skill_C01_Atk2",
+        "path": "\\Events\\v1\\Char\\Char_C01\\Char_Skill_C01\\AKE_Play_Char_Skill_C01_Atk2",
+        "notes": ""
+    },
+    {
+        "id": "{38A0F6B7-88EB-4980-B42A-1AE8F4E98744}",
+        "name": "AKE_Play_Char_Skill_C01_Atk3",
+        "path": "\\Events\\v1\\Char\\Char_C01\\Char_Skill_C01\\AKE_Play_Char_Skill_C01_Atk3",
+        "notes": ""
+    },
+    {
+        "id": "{927EBDA8-66BA-4961-8C4E-A156A2112DE5}",
+        "name": "AKE_Play_Char_Skill_C01_Atk4",
+        "path": "\\Events\\v1\\Char\\Char_C01\\Char_Skill_C01\\AKE_Play_Char_Skill_C01_Atk4",
+        "notes": ""
+    },
+    {
+        "id": "{E792B4D2-3004-468B-8DCB-9E8009848464}",
+        "name": "AKE_Play_Char_Skill_C01_Atk5",
+        "path": "\\Events\\v1\\Char\\Char_C01\\Char_Skill_C01\\AKE_Play_Char_Skill_C01_Atk5",
+        "notes": ""
+    },
+    {
+        "id": "{060920F9-7819-4D73-921A-0CE1AB7C30D6}",
+        "name": "AKE_Play_Char_Skill_C01_Focus_Ready1",
+        "path": "\\Events\\v1\\Char\\Char_C01\\Char_Skill_C01\\AKE_Play_Char_Skill_C01_Focus_Ready1",
+        "notes": ""
+    },
+    {
+        "id": "{C28FAD17-D363-4519-AFA6-4CCDAD812DD4}",
+        "name": "AKE_Play_Char_Skill_C01_Focus_Ready2",
+        "path": "\\Events\\v1\\Char\\Char_C01\\Char_Skill_C01\\AKE_Play_Char_Skill_C01_Focus_Ready2",
+        "notes": ""
+    },
+    {
+        "id": "{DF469400-4217-486D-9089-DE78B4CEE994}",
+        "name": "AKE_Play_Char_Skill_C01_Focus_Ready3",
+        "path": "\\Events\\v1\\Char\\Char_C01\\Char_Skill_C01\\AKE_Play_Char_Skill_C01_Focus_Ready3",
+        "notes": ""
+    },
+    {
+        "id": "{98A6DBB4-42E9-4F78-87F9-95A7D4BD558D}",
+        "name": "AKE_Play_Char_Skill_C01_Focus_Ready4",
+        "path": "\\Events\\v1\\Char\\Char_C01\\Char_Skill_C01\\AKE_Play_Char_Skill_C01_Focus_Ready4",
+        "notes": ""
+    },
+    {
+        "id": "{557BCAF0-7816-44CF-9D08-5DB73BF2897C}",
+        "name": "AKE_Play_Char_Skill_C01_Focus_Ready5",
+        "path": "\\Events\\v1\\Char\\Char_C01\\Char_Skill_C01\\AKE_Play_Char_Skill_C01_Focus_Ready5",
+        "notes": ""
+    },
+    {
+        "id": "{BDD4D692-F37F-45A6-B70D-A82E0F1638C3}",
+        "name": "AKE_Play_Char_Skill_C01_Focus_Atk1",
+        "path": "\\Events\\v1\\Char\\Char_C01\\Char_Skill_C01\\AKE_Play_Char_Skill_C01_Focus_Atk1",
+        "notes": ""
+    },
+    {
+        "id": "{EF245113-30E1-438B-8330-391D44BB6EA5}",
+        "name": "AKE_Play_Char_Skill_C01_Focus_Atk2",
+        "path": "\\Events\\v1\\Char\\Char_C01\\Char_Skill_C01\\AKE_Play_Char_Skill_C01_Focus_Atk2",
+        "notes": ""
+    },
+    {
+        "id": "{54DEBF3B-1510-41EE-94C6-2ECEA145F43E}",
+        "name": "AKE_Play_Char_Skill_C01_Focus_Atk3",
+        "path": "\\Events\\v1\\Char\\Char_C01\\Char_Skill_C01\\AKE_Play_Char_Skill_C01_Focus_Atk3",
+        "notes": ""
+    },
+    {
+        "id": "{1B18C01C-4C55-47E5-8C12-2230BDB7DE1B}",
+        "name": "AKE_Play_Char_Skill_C01_Strafe_Enter",
+        "path": "\\Events\\v1\\Char\\Char_C01\\Char_Skill_C01\\AKE_Play_Char_Skill_C01_Strafe_Enter",
+        "notes": ""
+    },
+    {
+        "id": "{0917B8F8-6014-48C1-A330-6ADF34992C17}",
+        "name": "AKE_Play_Char_Skill_C01_Strafe_Fire",
+        "path": "\\Events\\v1\\Char\\Char_C01\\Char_Skill_C01\\AKE_Play_Char_Skill_C01_Strafe_Fire",
+        "notes": ""
+    },
+    {
+        "id": "{172559C5-D28F-4167-AC3A-196BA512BB9C}",
+        "name": "AKE_Play_Char_Skill_C01_Strafe_Reload",
+        "path": "\\Events\\v1\\Char\\Char_C01\\Char_Skill_C01\\AKE_Play_Char_Skill_C01_Strafe_Reload",
+        "notes": ""
+    },
+    {
+        "id": "{B2C5E93E-2BFF-4329-A4A4-5B6EAC79B487}",
+        "name": "AKE_Play_Char_Skill_C01_Strafe_Exit",
+        "path": "\\Events\\v1\\Char\\Char_C01\\Char_Skill_C01\\AKE_Play_Char_Skill_C01_Strafe_Exit",
+        "notes": ""
+    },
+    {
+        "id": "{CE762ED6-8A94-4F23-8100-04A463FC9F27}",
+        "name": "AKE_Play_Char_Skill_C01_Hook_Launch_F",
+        "path": "\\Events\\v1\\Char\\Char_C01\\Char_Skill_C01\\AKE_Play_Char_Skill_C01_Hook_Launch_F",
+        "notes": ""
+    },
+    {
+        "id": "{4ECA6224-F8C8-4BD3-9943-5BA3761302A9}",
+        "name": "AKE_Play_Char_Skill_C01_Hook_Launch_B",
+        "path": "\\Events\\v1\\Char\\Char_C01\\Char_Skill_C01\\AKE_Play_Char_Skill_C01_Hook_Launch_B",
+        "notes": ""
+    },
+    {
+        "id": "{600E514D-E2E0-406C-9149-84058C58B908}",
+        "name": "AKE_Play_Char_Skill_C01_Hook_Suc_F",
+        "path": "\\Events\\v1\\Char\\Char_C01\\Char_Skill_C01\\AKE_Play_Char_Skill_C01_Hook_Suc_F",
+        "notes": ""
+    },
+    {
+        "id": "{2FB0B895-E624-4916-BD7D-6EBEFF7A5685}",
+        "name": "AKE_Play_Char_Skill_C01_Hook_Suc_D",
+        "path": "\\Events\\v1\\Char\\Char_C01\\Char_Skill_C01\\AKE_Play_Char_Skill_C01_Hook_Suc_D",
+        "notes": ""
+    },
+    {
+        "id": "{1F2D8F87-6DA3-43F3-9BDA-135AE40167BA}",
+        "name": "AKE_Play_Char_Skill_C01_Hook_Fly",
+        "path": "\\Events\\v1\\Char\\Char_C01\\Char_Skill_C01\\AKE_Play_Char_Skill_C01_Hook_Fly",
+        "notes": ""
+    },
+    {
+        "id": "{1424F87E-88FA-4C8A-8247-3440ED2BAE02}",
+        "name": "AKE_Play_Char_Skill_C01_Hook_Fail",
+        "path": "\\Events\\v1\\Char\\Char_C01\\Char_Skill_C01\\AKE_Play_Char_Skill_C01_Hook_Fail",
+        "notes": ""
+    },
+    {
+        "id": "{98022007-6B37-45B9-AF66-E43242F0AB15}",
+        "name": "AKE_Play_Char_Skill_C01_Execu1_Pre",
+        "path": "\\Events\\v1\\Char\\Char_C01\\Char_Skill_C01\\AKE_Play_Char_Skill_C01_Execu1_Pre",
+        "notes": ""
+    },
+    {
+        "id": "{D3DFFB18-0B3D-4024-B49B-FA445D1700E9}",
+        "name": "AKE_Play_Char_Skill_C01_Execu1_Pre_Far",
+        "path": "\\Events\\v1\\Char\\Char_C01\\Char_Skill_C01\\AKE_Play_Char_Skill_C01_Execu1_Pre_Far",
+        "notes": ""
+    },
+    {
+        "id": "{E5EFAC33-E8E7-44E2-8139-A5B6AE57FF64}",
+        "name": "AKE_Play_Char_Skill_C01_Execu1_Pre_Hook",
+        "path": "\\Events\\v1\\Char\\Char_C01\\Char_Skill_C01\\AKE_Play_Char_Skill_C01_Execu1_Pre_Hook",
+        "notes": ""
+    },
+    {
+        "id": "{E9A8A24C-874D-4832-9DDC-88E385DAF2FA}",
+        "name": "AKE_Play_Char_Skill_C01_Execu1_Pre_Far_Hook",
+        "path": "\\Events\\v1\\Char\\Char_C01\\Char_Skill_C01\\AKE_Play_Char_Skill_C01_Execu1_Pre_Far_Hook",
+        "notes": ""
+    },
+    {
+        "id": "{9BB11692-8CFB-42D5-AEB8-C1BBFE7BFCBF}",
+        "name": "AKE_Play_Char_Skill_C01_Execu1",
+        "path": "\\Events\\v1\\Char\\Char_C01\\Char_Skill_C01\\AKE_Play_Char_Skill_C01_Execu1",
+        "notes": ""
+    },
+    {
+        "id": "{22BEAE63-4076-4C28-846B-7022C1112407}",
+        "name": "AKE_Play_Char_Skill_C01_Execu2",
+        "path": "\\Events\\v1\\Char\\Char_C01\\Char_Skill_C01\\AKE_Play_Char_Skill_C01_Execu2",
+        "notes": ""
+    },
+    {
+        "id": "{05516BFA-DB70-4A6E-A1E1-3C61A8757AF2}",
+        "name": "AKE_Play_Char_Skill_C01_Ult",
+        "path": "\\Events\\v1\\Char\\Char_C01\\Char_Skill_C01\\AKE_Play_Char_Skill_C01_Ult",
+        "notes": ""
+    },
+    {
+        "id": "{E72ADAD4-C738-4197-9CD2-C0B00C92C2E5}",
+        "name": "AKE_Play_Char_Skill_C01_Ult_End",
+        "path": "\\Events\\v1\\Char\\Char_C01\\Char_Skill_C01\\AKE_Play_Char_Skill_C01_Ult_End",
+        "notes": ""
+    },
+    {
+        "id": "{E1A13FDE-8984-41F8-BFFF-D51978CF718A}",
+        "name": "AKE_Play_Char_Skill_C01_Counter",
+        "path": "\\Events\\v1\\Char\\Char_C01\\Char_Skill_C01\\AKE_Play_Char_Skill_C01_Counter",
+        "notes": ""
+    },
+    {
+        "id": "{BC894A82-979F-4B35-948E-E8023ECA2EA4}",
+        "name": "AKE_Play_Char_Skill_C01_Counter_Sp",
+        "path": "\\Events\\v1\\Char\\Char_C01\\Char_Skill_C01\\AKE_Play_Char_Skill_C01_Counter_Sp",
+        "notes": ""
+    },
+    {
+        "id": "{C183D6AD-05C6-45DA-8FB2-B15BA7CF7F68}",
+        "name": "AKE_Play_Char_Skill_C01_Dodge",
+        "path": "\\Events\\v1\\Char\\Char_C01\\Char_Skill_C01\\AKE_Play_Char_Skill_C01_Dodge",
+        "notes": ""
+    },
+    {
+        "id": "{B9254DBF-25AC-4AD6-A718-4383A22E52EF}",
+        "name": "AKE_Play_Char_Skill_C01_Dodge_Step",
+        "path": "\\Events\\v1\\Char\\Char_C01\\Char_Skill_C01\\AKE_Play_Char_Skill_C01_Dodge_Step",
+        "notes": ""
+    },
+    {
+        "id": "{2DF43378-DBB0-4B19-9C17-B8A31287C849}",
+        "name": "AKE_Play_Char_Skill_C01_Hit_FlyStart",
+        "path": "\\Events\\v1\\Char\\Char_C01\\Char_Skill_C01\\AKE_Play_Char_Skill_C01_Hit_FlyStart",
+        "notes": ""
+    },
+    {
+        "id": "{3E162109-B05E-4D47-B27D-A6D056CF6AC7}",
+        "name": "AKE_Play_Char_Skill_C01_Hit_FlyEnd",
+        "path": "\\Events\\v1\\Char\\Char_C01\\Char_Skill_C01\\AKE_Play_Char_Skill_C01_Hit_FlyEnd",
+        "notes": ""
+    },
+    {
+        "id": "{A55C3C13-CF43-4CCF-9A93-AFCA66E1D6C5}",
+        "name": "AKE_Play_Char_Skill_C01_Hit_Wall",
+        "path": "\\Events\\v1\\Char\\Char_C01\\Char_Skill_C01\\AKE_Play_Char_Skill_C01_Hit_Wall",
+        "notes": ""
+    },
+    {
+        "id": "{879E2EB2-29FF-4071-ACE3-B6839188DB6B}",
+        "name": "AKE_Play_Char_Skill_C01_Hit_Wall_End",
+        "path": "\\Events\\v1\\Char\\Char_C01\\Char_Skill_C01\\AKE_Play_Char_Skill_C01_Hit_Wall_End",
+        "notes": ""
+    },
+    {
+        "id": "{CEE7A22A-0320-4066-8E6D-D7B42ABC155A}",
+        "name": "AKE_Play_Char_Skill_C01_Hit_Death",
+        "path": "\\Events\\v1\\Char\\Char_C01\\Char_Skill_C01\\AKE_Play_Char_Skill_C01_Hit_Death",
+        "notes": ""
+    },
+    {
+        "id": "{2A6C998C-2ECA-400D-8365-BAD7330A4AAF}",
+        "name": "AKE_Play_Char_Skill_C01_Hit_Death_Grd",
+        "path": "\\Events\\v1\\Char\\Char_C01\\Char_Skill_C01\\AKE_Play_Char_Skill_C01_Hit_Death_Grd",
+        "notes": ""
+    },
+    {
+        "id": "{934A235E-B933-4960-999D-C7041B2B45C1}",
+        "name": "AKE_Play_Char_Skill_C01_Hit_Fall_Start",
+        "path": "\\Events\\v1\\Char\\Char_C01\\Char_Skill_C01\\AKE_Play_Char_Skill_C01_Hit_Fall_Start",
+        "notes": ""
+    },
+    {
+        "id": "{53C68F55-B87A-45A8-9530-7139C73D757F}",
+        "name": "AKE_Play_Char_Skill_C01_Hit_Fall_End",
+        "path": "\\Events\\v1\\Char\\Char_C01\\Char_Skill_C01\\AKE_Play_Char_Skill_C01_Hit_Fall_End",
+        "notes": ""
+    },
+    {
+        "id": "{9C0FE60B-D5B6-44E3-A363-0F5CA7ADF476}",
+        "name": "AKE_Play_Char_Skill_C01_Hit_Hvy",
+        "path": "\\Events\\v1\\Char\\Char_C01\\Char_Skill_C01\\AKE_Play_Char_Skill_C01_Hit_Hvy",
+        "notes": ""
+    },
+    {
+        "id": "{6C1A9E66-7A96-4286-AED3-D941EECA7022}",
+        "name": "AKE_Play_Char_Skill_C01_Hit_Death_B",
+        "path": "\\Events\\v1\\Char\\Char_C01\\Char_Skill_C01\\AKE_Play_Char_Skill_C01_Hit_Death_B",
+        "notes": ""
+    },
+    {
+        "id": "{95E88D14-92B1-401B-BE1B-F78408D58817}",
+        "name": "AKE_Play_Char_Skill_C03_Atk1",
+        "path": "\\Events\\v1\\Char\\Char_C03\\Char_Skill_C03\\AKE_Play_Char_Skill_C03_Atk1",
+        "notes": ""
+    },
+    {
+        "id": "{60946A2A-9EE4-470F-981C-0D3E542B0410}",
+        "name": "AKE_Play_Char_Skill_C03_Atk2",
+        "path": "\\Events\\v1\\Char\\Char_C03\\Char_Skill_C03\\AKE_Play_Char_Skill_C03_Atk2",
+        "notes": ""
+    },
+    {
+        "id": "{6EBD5526-1FF1-4C4E-9195-DD0537877FFD}",
+        "name": "AKE_Play_Char_Skill_C03_Atk3",
+        "path": "\\Events\\v1\\Char\\Char_C03\\Char_Skill_C03\\AKE_Play_Char_Skill_C03_Atk3",
+        "notes": ""
+    },
+    {
+        "id": "{6DE95E14-A46F-4E42-A56B-A605A17EA1C3}",
+        "name": "AKE_Play_Char_Skill_C03_Atk3_1",
+        "path": "\\Events\\v1\\Char\\Char_C03\\Char_Skill_C03\\AKE_Play_Char_Skill_C03_Atk3_1",
+        "notes": ""
+    },
+    {
+        "id": "{C182E5E4-301D-4C31-B31C-725394E29D50}",
+        "name": "AKE_Play_Char_Skill_C03_Focus_ReadyN",
+        "path": "\\Events\\v1\\Char\\Char_C03\\Char_Skill_C03\\AKE_Play_Char_Skill_C03_Focus_ReadyN",
+        "notes": ""
+    },
+    {
+        "id": "{B1BF3668-49E1-4E9E-B402-FB518138E4F8}",
+        "name": "AKE_Play_Char_Skill_C03_Focus_Ready1",
+        "path": "\\Events\\v1\\Char\\Char_C03\\Char_Skill_C03\\AKE_Play_Char_Skill_C03_Focus_Ready1",
+        "notes": ""
+    },
+    {
+        "id": "{2BA34232-345F-4E61-B06D-98997C5AE521}",
+        "name": "AKE_Play_Char_Skill_C03_Focus_Ready2",
+        "path": "\\Events\\v1\\Char\\Char_C03\\Char_Skill_C03\\AKE_Play_Char_Skill_C03_Focus_Ready2",
+        "notes": ""
+    },
+    {
+        "id": "{BF0145B0-CA8D-4AFC-9E88-E329BEE8C26B}",
+        "name": "AKE_Play_Char_Skill_C03_Focus_Ready3",
+        "path": "\\Events\\v1\\Char\\Char_C03\\Char_Skill_C03\\AKE_Play_Char_Skill_C03_Focus_Ready3",
+        "notes": ""
+    },
+    {
+        "id": "{06E26BD6-6A9D-46FE-BA37-2B7022470689}",
+        "name": "AKE_Play_Char_Skill_C03_Focus_Ready4",
+        "path": "\\Events\\v1\\Char\\Char_C03\\Char_Skill_C03\\AKE_Play_Char_Skill_C03_Focus_Ready4",
+        "notes": ""
+    },
+    {
+        "id": "{AEA43B36-E1CE-441E-B782-230585E655FD}",
+        "name": "AKE_Play_Char_Skill_C03_Focus_Atk1",
+        "path": "\\Events\\v1\\Char\\Char_C03\\Char_Skill_C03\\AKE_Play_Char_Skill_C03_Focus_Atk1",
+        "notes": ""
+    },
+    {
+        "id": "{A0D2F9A8-DA45-427C-8978-E57E1C7DFB5E}",
+        "name": "AKE_Play_Char_Skill_C03_Focus_Atk1_Exp_Lit",
+        "path": "\\Events\\v1\\Char\\Char_C03\\Char_Skill_C03\\AKE_Play_Char_Skill_C03_Focus_Atk1_Exp_Lit",
+        "notes": ""
+    },
+    {
+        "id": "{8ACCF452-FA3F-4DD6-8BDE-8ADC964A3D21}",
+        "name": "AKE_Play_Char_Skill_C03_Focus_Atk2",
+        "path": "\\Events\\v1\\Char\\Char_C03\\Char_Skill_C03\\AKE_Play_Char_Skill_C03_Focus_Atk2",
+        "notes": ""
+    },
+    {
+        "id": "{F4E67BB5-5DF4-4893-8D3A-88E769461CD5}",
+        "name": "AKE_Play_Char_Skill_C03_Focus_Atk2_Exp_Mid",
+        "path": "\\Events\\v1\\Char\\Char_C03\\Char_Skill_C03\\AKE_Play_Char_Skill_C03_Focus_Atk2_Exp_Mid",
+        "notes": ""
+    },
+    {
+        "id": "{699094EE-0325-4FB3-8E68-40CFA1471917}",
+        "name": "AKE_Play_Char_Skill_C03_Focus_Atk3",
+        "path": "\\Events\\v1\\Char\\Char_C03\\Char_Skill_C03\\AKE_Play_Char_Skill_C03_Focus_Atk3",
+        "notes": ""
+    },
+    {
+        "id": "{56CB4898-132A-4073-9B60-90B8684B7F78}",
+        "name": "AKE_Play_Char_Skill_C03_Focus_Atk3_Exp_Hvy",
+        "path": "\\Events\\v1\\Char\\Char_C03\\Char_Skill_C03\\AKE_Play_Char_Skill_C03_Focus_Atk3_Exp_Hvy",
+        "notes": ""
+    },
+    {
+        "id": "{53C1AA41-C91E-48DE-A202-94EEAAE8EABB}",
+        "name": "AKE_Play_Char_Skill_C03_Focus_LP",
+        "path": "\\Events\\v1\\Char\\Char_C03\\Char_Skill_C03\\AKE_Play_Char_Skill_C03_Focus_LP",
+        "notes": ""
+    },
+    {
+        "id": "{7AA981C4-814E-4982-8DD3-2CCA0C45416B}",
+        "name": "AKE_Stop_Char_Skill_C03_Focus_LP",
+        "path": "\\Events\\v1\\Char\\Char_C03\\Char_Skill_C03\\AKE_Stop_Char_Skill_C03_Focus_LP",
+        "notes": ""
+    },
+    {
+        "id": "{A0F9646A-11D2-4259-8A25-3BD8843E483F}",
+        "name": "AKE_Play_Char_Skill_C03_Strafe_Enter",
+        "path": "\\Events\\v1\\Char\\Char_C03\\Char_Skill_C03\\AKE_Play_Char_Skill_C03_Strafe_Enter",
+        "notes": ""
+    },
+    {
+        "id": "{D15EE90D-186B-43B0-8C6E-8EE0EA0C0B0F}",
+        "name": "AKE_Play_Char_Skill_C03_Strafe_Exit",
+        "path": "\\Events\\v1\\Char\\Char_C03\\Char_Skill_C03\\AKE_Play_Char_Skill_C03_Strafe_Exit",
+        "notes": ""
+    },
+    {
+        "id": "{DA6C5276-28AE-416E-AD28-E0151DF05BB4}",
+        "name": "AKE_Play_Char_Skill_C03_Strafe_Fire_Single",
+        "path": "\\Events\\v1\\Char\\Char_C03\\Char_Skill_C03\\AKE_Play_Char_Skill_C03_Strafe_Fire_Single",
+        "notes": ""
+    },
+    {
+        "id": "{1E75B3C5-DB95-4BE5-8612-2FED9E46740F}",
+        "name": "AKE_Play_Char_Skill_C03_Strafe_Reload_Start",
+        "path": "\\Events\\v1\\Char\\Char_C03\\Char_Skill_C03\\AKE_Play_Char_Skill_C03_Strafe_Reload_Start",
+        "notes": ""
+    },
+    {
+        "id": "{C5980646-DCB3-4257-9073-03D797CE8F4B}",
+        "name": "AKE_Play_Char_Skill_C03_Strafe_Reload_LP",
+        "path": "\\Events\\v1\\Char\\Char_C03\\Char_Skill_C03\\AKE_Play_Char_Skill_C03_Strafe_Reload_LP",
+        "notes": ""
+    },
+    {
+        "id": "{10292637-55C3-4A5F-A1D3-6EA80234F6D1}",
+        "name": "AKE_Stop_Char_Skill_C03_Strafe_Reload_LP",
+        "path": "\\Events\\v1\\Char\\Char_C03\\Char_Skill_C03\\AKE_Stop_Char_Skill_C03_Strafe_Reload_LP",
+        "notes": ""
+    },
+    {
+        "id": "{EBF8727F-6D2A-40A9-8618-0D7B84965912}",
+        "name": "AKE_Play_Char_Skill_C03_Strafe_Reload_Single",
+        "path": "\\Events\\v1\\Char\\Char_C03\\Char_Skill_C03\\AKE_Play_Char_Skill_C03_Strafe_Reload_Single",
+        "notes": ""
+    },
+    {
+        "id": "{C24D2689-F3C9-4DDE-BB0D-7192BB43D0FE}",
+        "name": "AKE_Play_Char_Skill_C03_Strafe_Reload_End",
+        "path": "\\Events\\v1\\Char\\Char_C03\\Char_Skill_C03\\AKE_Play_Char_Skill_C03_Strafe_Reload_End",
+        "notes": ""
+    },
+    {
+        "id": "{96AEB66A-CDC0-4A64-814D-EC0FB1348228}",
+        "name": "AKE_Play_Char_Skill_C03_Strafe_Reload_Multi_LP",
+        "path": "\\Events\\v1\\Char\\Char_C03\\Char_Skill_C03\\AKE_Play_Char_Skill_C03_Strafe_Reload_Multi_LP",
+        "notes": ""
+    },
+    {
+        "id": "{21CBF3DE-1788-4A60-9FA9-55195937AAB1}",
+        "name": "AKE_Stop_Char_Skill_C03_Strafe_Reload_Multi_LP",
+        "path": "\\Events\\v1\\Char\\Char_C03\\Char_Skill_C03\\AKE_Stop_Char_Skill_C03_Strafe_Reload_Multi_LP",
+        "notes": ""
+    },
+    {
+        "id": "{5F5FB045-3C2F-438B-9312-66FE9B65504B}",
+        "name": "AKE_Play_Char_Skill_C03_Strafe_Shell_Fall",
+        "path": "\\Events\\v1\\Char\\Char_C03\\Char_Skill_C03\\AKE_Play_Char_Skill_C03_Strafe_Shell_Fall",
+        "notes": ""
+    },
+    {
+        "id": "{2654AAB1-A737-4C57-BB5C-E585C6AD84F1}",
+        "name": "AKE_Play_Char_Skill_C03_Execu2",
+        "path": "\\Events\\v1\\Char\\Char_C03\\Char_Skill_C03\\AKE_Play_Char_Skill_C03_Execu2",
+        "notes": ""
+    },
+    {
+        "id": "{ACB0C014-1FBB-4807-A064-F9095A8A3115}",
+        "name": "AKE_Play_Char_Skill_C03_Execu3",
+        "path": "\\Events\\v1\\Char\\Char_C03\\Char_Skill_C03\\AKE_Play_Char_Skill_C03_Execu3",
+        "notes": ""
+    },
+    {
+        "id": "{92E9895F-F7FD-467F-B484-8B0ED935D3F8}",
+        "name": "AKE_Play_Char_Skill_C03_Execu1_Pre_Hook",
+        "path": "\\Events\\v1\\Char\\Char_C03\\Char_Skill_C03\\AKE_Play_Char_Skill_C03_Execu1_Pre_Hook",
+        "notes": ""
+    },
+    {
+        "id": "{3F12F24B-E0BD-40CF-9650-EE6145E9B418}",
+        "name": "AKE_Play_Char_Skill_C03_Execu1_Pre_Cls",
+        "path": "\\Events\\v1\\Char\\Char_C03\\Char_Skill_C03\\AKE_Play_Char_Skill_C03_Execu1_Pre_Cls",
+        "notes": ""
+    },
+    {
+        "id": "{EC84DD54-0926-4347-8DD0-960A223D8F00}",
+        "name": "AKE_Play_Char_Skill_C03_Execu1_Pre",
+        "path": "\\Events\\v1\\Char\\Char_C03\\Char_Skill_C03\\AKE_Play_Char_Skill_C03_Execu1_Pre",
+        "notes": ""
+    },
+    {
+        "id": "{3F963B69-4BC2-4647-B291-2F10452AD178}",
+        "name": "AKE_Play_Char_Skill_C03_Execu1",
+        "path": "\\Events\\v1\\Char\\Char_C03\\Char_Skill_C03\\AKE_Play_Char_Skill_C03_Execu1",
+        "notes": ""
+    },
+    {
+        "id": "{E46B43C5-3E21-4A7E-9A12-6064AECE8DE7}",
+        "name": "AKE_Play_Char_Skill_C03_Dodge",
+        "path": "\\Events\\v1\\Char\\Char_C03\\Char_Skill_C03\\AKE_Play_Char_Skill_C03_Dodge",
+        "notes": ""
+    },
+    {
+        "id": "{2F9895BA-8047-49A9-8879-95E72D536E01}",
+        "name": "AKE_Play_Char_Skill_C03_Dodge_Step",
+        "path": "\\Events\\v1\\Char\\Char_C03\\Char_Skill_C03\\AKE_Play_Char_Skill_C03_Dodge_Step",
+        "notes": ""
+    },
+    {
+        "id": "{D3202A06-8289-4E32-87A7-AE12EE89B02E}",
+        "name": "AKE_Play_Char_Skill_C03_Ult_Full",
+        "path": "\\Events\\v1\\Char\\Char_C03\\Char_Skill_C03\\AKE_Play_Char_Skill_C03_Ult_Full",
+        "notes": ""
+    },
+    {
+        "id": "{D6E045B9-42AF-40C8-B1EF-6CB1FD2F0283}",
+        "name": "AKE_Play_Char_Skill_C03_Ult_Hit",
+        "path": "\\Events\\v1\\Char\\Char_C03\\Char_Skill_C03\\AKE_Play_Char_Skill_C03_Ult_Hit",
+        "notes": ""
+    },
+    {
+        "id": "{7D685027-157F-41AF-A79B-D52107F2A18A}",
+        "name": "AKE_Play_Char_Skill_C03_Ult_Shot",
+        "path": "\\Events\\v1\\Char\\Char_C03\\Char_Skill_C03\\AKE_Play_Char_Skill_C03_Ult_Shot",
+        "notes": ""
+    },
+    {
+        "id": "{3FD44221-9979-4833-A04F-6184DA40F01A}",
+        "name": "AKE_Play_Char_Skill_C03_Ult_LP",
+        "path": "\\Events\\v1\\Char\\Char_C03\\Char_Skill_C03\\AKE_Play_Char_Skill_C03_Ult_LP",
+        "notes": ""
+    },
+    {
+        "id": "{2D034C0F-2D92-4F23-81E3-2E8DE1AD8E1F}",
+        "name": "AKE_Stop_Char_Skill_C03_Ult_LP",
+        "path": "\\Events\\v1\\Char\\Char_C03\\Char_Skill_C03\\AKE_Stop_Char_Skill_C03_Ult_LP",
+        "notes": ""
+    },
+    {
+        "id": "{BA0EFBA3-EF38-4750-8EF3-9F3B4E0D213A}",
+        "name": "AKE_Play_Char_Skill_C03_Ult_End",
+        "path": "\\Events\\v1\\Char\\Char_C03\\Char_Skill_C03\\AKE_Play_Char_Skill_C03_Ult_End",
+        "notes": ""
+    },
+    {
+        "id": "{45781234-0D3E-429E-BE67-B2B554A4B0C4}",
+        "name": "AKE_Play_Char_Skill_C03_Strafe_End",
+        "path": "\\Events\\v1\\Char\\Char_C03\\Char_Skill_C03\\AKE_Play_Char_Skill_C03_Strafe_End",
+        "notes": ""
+    },
+    {
+        "id": "{C3DB30C1-C0D7-4E36-8D0E-F8CB61D39054}",
+        "name": "AKE_Play_Char_Skill_C03_Battle_Enter",
+        "path": "\\Events\\v1\\Char\\Char_C03\\Char_Skill_C03\\AKE_Play_Char_Skill_C03_Battle_Enter",
+        "notes": ""
+    },
+    {
+        "id": "{A0417294-9164-4DDF-A95E-B258FB265ACD}",
+        "name": "AKE_Play_Char_Skill_C03_Battle_Exit",
+        "path": "\\Events\\v1\\Char\\Char_C03\\Char_Skill_C03\\AKE_Play_Char_Skill_C03_Battle_Exit",
+        "notes": ""
+    },
+    {
+        "id": "{BF754794-DCCF-4A47-9D95-F0BC9628281F}",
+        "name": "AKE_Play_Char_Skill_C03_Hit_Fly",
+        "path": "\\Events\\v1\\Char\\Char_C03\\Char_Skill_C03\\AKE_Play_Char_Skill_C03_Hit_Fly",
+        "notes": ""
+    },
+    {
+        "id": "{9AE6D9B5-3223-47F5-BD46-5E432DB3BCB9}",
+        "name": "AKE_Play_Char_Skill_C03_Hit_Fly_End",
+        "path": "\\Events\\v1\\Char\\Char_C03\\Char_Skill_C03\\AKE_Play_Char_Skill_C03_Hit_Fly_End",
+        "notes": ""
+    },
+    {
+        "id": "{71DB84F8-1872-468C-8E6A-91AF950CE9F0}",
+        "name": "AKE_Play_Char_Skill_C03_Hit_Wall",
+        "path": "\\Events\\v1\\Char\\Char_C03\\Char_Skill_C03\\AKE_Play_Char_Skill_C03_Hit_Wall",
+        "notes": ""
+    },
+    {
+        "id": "{EAA18C45-1352-4E14-88E3-CE1E58B68E13}",
+        "name": "AKE_Play_Char_Skill_C03_Hit_Wall_End",
+        "path": "\\Events\\v1\\Char\\Char_C03\\Char_Skill_C03\\AKE_Play_Char_Skill_C03_Hit_Wall_End",
+        "notes": ""
+    },
+    {
+        "id": "{AF92DAEB-C24D-421D-B7EB-6A05DC43D07F}",
+        "name": "AKE_Play_Char_Skill_C03_Death",
+        "path": "\\Events\\v1\\Char\\Char_C03\\Char_Skill_C03\\AKE_Play_Char_Skill_C03_Death",
+        "notes": ""
+    },
+    {
+        "id": "{48A74854-2FEB-4BED-9A23-8475D56CE284}",
+        "name": "AKE_Play_Char_Skill_C03_Hit_Death_Grd",
+        "path": "\\Events\\v1\\Char\\Char_C03\\Char_Skill_C03\\AKE_Play_Char_Skill_C03_Hit_Death_Grd",
+        "notes": ""
+    },
+    {
+        "id": "{9BDA2657-BACB-4C09-A25E-7DE18C9AD40A}",
+        "name": "AKE_Play_Char_Skill_C03_Hit_Fall_Start",
+        "path": "\\Events\\v1\\Char\\Char_C03\\Char_Skill_C03\\AKE_Play_Char_Skill_C03_Hit_Fall_Start",
+        "notes": ""
+    },
+    {
+        "id": "{49AC458C-6C81-434D-8F7F-BE1C17144CC1}",
+        "name": "AKE_Play_Char_Skill_C03_Hit_Fall_End",
+        "path": "\\Events\\v1\\Char\\Char_C03\\Char_Skill_C03\\AKE_Play_Char_Skill_C03_Hit_Fall_End",
+        "notes": ""
+    },
+    {
+        "id": "{0F20E8BB-90BC-4166-805B-3D8ADBC7A746}",
+        "name": "AKE_Play_Char_Skill_C03_Hit_Hvy",
+        "path": "\\Events\\v1\\Char\\Char_C03\\Char_Skill_C03\\AKE_Play_Char_Skill_C03_Hit_Hvy",
+        "notes": ""
+    },
+    {
+        "id": "{04C434B2-0BAD-49D3-8DBD-AC686E6585B2}",
+        "name": "AKE_Play_Char_Skill_C03_Hit_Death_B",
+        "path": "\\Events\\v1\\Char\\Char_C03\\Char_Skill_C03\\AKE_Play_Char_Skill_C03_Hit_Death_B",
+        "notes": ""
+    },
+    {
+        "id": "{3818BBFD-4FA8-4ED0-949C-F1097B58E1B6}",
+        "name": "AKE_Play_Char_Mov_Gen_HHeel_Walk_Dirt",
+        "path": "\\Events\\v1\\Char\\Char_Gen\\Char_Mov_Gen\\AKE_Play_Char_Mov_Gen_HHeel_Walk_Dirt",
+        "notes": ""
+    },
+    {
+        "id": "{BFCC955A-73B8-4735-BADF-E51009783DCD}",
+        "name": "AKE_Play_Char_Mov_Gen_HHeel_Walk_Rock",
+        "path": "\\Events\\v1\\Char\\Char_Gen\\Char_Mov_Gen\\AKE_Play_Char_Mov_Gen_HHeel_Walk_Rock",
+        "notes": ""
+    },
+    {
+        "id": "{98562793-253E-4C75-AECA-E481A9951013}",
+        "name": "AKE_Play_Char_Mov_Gen_HHeel_Walk_Wood",
+        "path": "\\Events\\v1\\Char\\Char_Gen\\Char_Mov_Gen\\AKE_Play_Char_Mov_Gen_HHeel_Walk_Wood",
+        "notes": ""
+    },
+    {
+        "id": "{122B10BE-6099-4EA8-8DD1-8D5B8078A031}",
+        "name": "AKE_Play_Char_Mov_Gen_HHeel_Run_Dirt",
+        "path": "\\Events\\v1\\Char\\Char_Gen\\Char_Mov_Gen\\AKE_Play_Char_Mov_Gen_HHeel_Run_Dirt",
+        "notes": ""
+    },
+    {
+        "id": "{0937C1E5-E911-43A5-95AB-24C3854E1358}",
+        "name": "AKE_Play_Char_Mov_Gen_HHeel_Sprint_Dirt",
+        "path": "\\Events\\v1\\Char\\Char_Gen\\Char_Mov_Gen\\AKE_Play_Char_Mov_Gen_HHeel_Sprint_Dirt",
+        "notes": ""
+    },
+    {
+        "id": "{6B5FF395-7530-437B-8651-58D0FC406AA6}",
+        "name": "AKE_Play_Char_Mov_Gen_HHeel_End_Dirt",
+        "path": "\\Events\\v1\\Char\\Char_Gen\\Char_Mov_Gen\\AKE_Play_Char_Mov_Gen_HHeel_End_Dirt",
+        "notes": ""
+    },
+    {
+        "id": "{24BBE502-A4E1-4A71-810E-C038FD5F5CA7}",
+        "name": "AKE_Play_Char_Mov_Gen_HHeel_Slide_Gen",
+        "path": "\\Events\\v1\\Char\\Char_Gen\\Char_Mov_Gen\\AKE_Play_Char_Mov_Gen_HHeel_Slide_Gen",
+        "notes": ""
+    },
+    {
+        "id": "{581F9D38-D2A5-4B88-B308-C5555A9F9111}",
+        "name": "AKE_Play_Char_Mov_Gen_HHeel_Slide_Gen_Dev",
+        "path": "\\Events\\v1\\Char\\Char_Gen\\Char_Mov_Gen\\AKE_Play_Char_Mov_Gen_HHeel_Slide_Gen_Dev",
+        "notes": ""
+    },
+    {
+        "id": "{84CBE787-12FB-4817-8E31-56D001E4190A}",
+        "name": "AKE_Play_Char_Mov_Gen_HHeel_Slide_Gen_Stop",
+        "path": "\\Events\\v1\\Char\\Char_Gen\\Char_Mov_Gen\\AKE_Play_Char_Mov_Gen_HHeel_Slide_Gen_Stop",
+        "notes": ""
+    },
+    {
+        "id": "{82E6A4D8-2780-4633-AB03-4DC8A8633D3E}",
+        "name": "AKE_Play_Char_Mov_Gen_HHeel_Squat_Dirt",
+        "path": "\\Events\\v1\\Char\\Char_Gen\\Char_Mov_Gen\\AKE_Play_Char_Mov_Gen_HHeel_Squat_Dirt",
+        "notes": ""
+    },
+    {
+        "id": "{139ECD16-6CEA-4EE4-9DAE-3B02DBAF89E7}",
+        "name": "AKE_Play_Char_Mov_Gen_HHeel_Climb_Gen",
+        "path": "\\Events\\v1\\Char\\Char_Gen\\Char_Mov_Gen\\AKE_Play_Char_Mov_Gen_HHeel_Climb_Gen",
+        "notes": ""
+    },
+    {
+        "id": "{9DE834A1-6586-4F4F-AB0F-0E599B71EDB3}",
+        "name": "AKE_Play_Char_Mov_Gen_HHeel_Jump_Dirt",
+        "path": "\\Events\\v1\\Char\\Char_Gen\\Char_Mov_Gen\\AKE_Play_Char_Mov_Gen_HHeel_Jump_Dirt",
+        "notes": ""
+    },
+    {
+        "id": "{04AF3D18-7EF9-4EEC-89B7-A9CA995FD86C}",
+        "name": "AKE_Play_Char_Mov_Gen_HHeel_Fall_Dirt_Hvy",
+        "path": "\\Events\\v1\\Char\\Char_Gen\\Char_Mov_Gen\\AKE_Play_Char_Mov_Gen_HHeel_Fall_Dirt_Hvy",
+        "notes": ""
+    },
+    {
+        "id": "{739EAA7F-6B3A-4D2E-9E16-E833764428CE}",
+        "name": "AKE_Play_Char_Mov_Gen_HHeel_Fall_Dirt_Lit",
+        "path": "\\Events\\v1\\Char\\Char_Gen\\Char_Mov_Gen\\AKE_Play_Char_Mov_Gen_HHeel_Fall_Dirt_Lit",
+        "notes": ""
+    },
+    {
+        "id": "{D298F6A9-FC19-4DC1-B4B2-3A0970BEDA45}",
+        "name": "AKE_Play_Char_Mov_Gen_Boot_Walk_Dirt",
+        "path": "\\Events\\v1\\Char\\Char_Gen\\Char_Mov_Gen\\AKE_Play_Char_Mov_Gen_Boot_Walk_Dirt",
+        "notes": ""
+    },
+    {
+        "id": "{D0F98A9E-7AEA-4F7C-9376-FBFF5A99B68C}",
+        "name": "AKE_Play_Char_Mov_Gen_Boot_Walk_Rock",
+        "path": "\\Events\\v1\\Char\\Char_Gen\\Char_Mov_Gen\\AKE_Play_Char_Mov_Gen_Boot_Walk_Rock",
+        "notes": ""
+    },
+    {
+        "id": "{280AE44D-3989-4E4D-B4F6-7508BB3AF861}",
+        "name": "AKE_Play_Char_Mov_Gen_Boot_Run_Dirt",
+        "path": "\\Events\\v1\\Char\\Char_Gen\\Char_Mov_Gen\\AKE_Play_Char_Mov_Gen_Boot_Run_Dirt",
+        "notes": ""
+    },
+    {
+        "id": "{26B24425-5C6F-4A74-907F-857C991C0892}",
+        "name": "AKE_Play_Char_Mov_Gen_Boot_Sprint_Dirt",
+        "path": "\\Events\\v1\\Char\\Char_Gen\\Char_Mov_Gen\\AKE_Play_Char_Mov_Gen_Boot_Sprint_Dirt",
+        "notes": ""
+    },
+    {
+        "id": "{BBA4ACBE-667C-4F9F-9C79-3CFD3469EA90}",
+        "name": "AKE_Play_Char_Mov_Gen_Boot_End_Dirt",
+        "path": "\\Events\\v1\\Char\\Char_Gen\\Char_Mov_Gen\\AKE_Play_Char_Mov_Gen_Boot_End_Dirt",
+        "notes": ""
+    },
+    {
+        "id": "{DC4A0176-BB98-4A7A-BDDE-AB5112D7F2B3}",
+        "name": "AKE_Play_Char_Mov_Gen_Boot_Slide_Gen",
+        "path": "\\Events\\v1\\Char\\Char_Gen\\Char_Mov_Gen\\AKE_Play_Char_Mov_Gen_Boot_Slide_Gen",
+        "notes": ""
+    },
+    {
+        "id": "{84723F27-E042-41A6-9F8C-B33791B08B6D}",
+        "name": "AKE_Play_Char_Mov_Gen_Boot_Slide_Gen_Dev",
+        "path": "\\Events\\v1\\Char\\Char_Gen\\Char_Mov_Gen\\AKE_Play_Char_Mov_Gen_Boot_Slide_Gen_Dev",
+        "notes": ""
+    },
+    {
+        "id": "{BBF7C6C2-B020-44A1-BE13-41FFF4A2246E}",
+        "name": "AKE_Play_Char_Mov_Gen_Boot_Slide_Gen_Stop",
+        "path": "\\Events\\v1\\Char\\Char_Gen\\Char_Mov_Gen\\AKE_Play_Char_Mov_Gen_Boot_Slide_Gen_Stop",
+        "notes": ""
+    },
+    {
+        "id": "{36DCFBD1-6CDB-46AF-9ADC-C47B7A6D7EF3}",
+        "name": "AKE_Play_Char_Mov_Gen_Boot_Squat_Dirt",
+        "path": "\\Events\\v1\\Char\\Char_Gen\\Char_Mov_Gen\\AKE_Play_Char_Mov_Gen_Boot_Squat_Dirt",
+        "notes": ""
+    },
+    {
+        "id": "{B609BFEA-DE05-4BB1-B293-62DF234963C3}",
+        "name": "AKE_Play_Char_Mov_Gen_Boot_Climb_Gen",
+        "path": "\\Events\\v1\\Char\\Char_Gen\\Char_Mov_Gen\\AKE_Play_Char_Mov_Gen_Boot_Climb_Gen",
+        "notes": ""
+    },
+    {
+        "id": "{909612FF-45BC-4DEA-BF66-BF82FA6B14B9}",
+        "name": "AKE_Play_Char_Mov_Gen_Boot_Jump_Dirt",
+        "path": "\\Events\\v1\\Char\\Char_Gen\\Char_Mov_Gen\\AKE_Play_Char_Mov_Gen_Boot_Jump_Dirt",
+        "notes": ""
+    },
+    {
+        "id": "{E0926691-2B2E-4987-9DB8-954F8508833F}",
+        "name": "AKE_Play_Char_Mov_Gen_Boot_Fall_Dirt_Hvy",
+        "path": "\\Events\\v1\\Char\\Char_Gen\\Char_Mov_Gen\\AKE_Play_Char_Mov_Gen_Boot_Fall_Dirt_Hvy",
+        "notes": ""
+    },
+    {
+        "id": "{49A5E0D2-1641-4FDD-80AC-B7B333B517CF}",
+        "name": "AKE_Play_Char_Mov_Gen_Boot_Fall_Dirt_Lit",
+        "path": "\\Events\\v1\\Char\\Char_Gen\\Char_Mov_Gen\\AKE_Play_Char_Mov_Gen_Boot_Fall_Dirt_Lit",
+        "notes": ""
+    },
+    {
+        "id": "{A62D5FD5-014B-4A20-9FF0-2CBA712AABEE}",
+        "name": "AKE_Play_Char_Mov_Gen_SHeel_Walk_Dirt",
+        "path": "\\Events\\v1\\Char\\Char_Gen\\Char_Mov_Gen\\AKE_Play_Char_Mov_Gen_SHeel_Walk_Dirt",
+        "notes": ""
+    },
+    {
+        "id": "{F440C732-3325-4A7E-B5DA-4E9DF6538593}",
+        "name": "AKE_Play_Char_Mov_Gen_SHeel_Walk_Rock",
+        "path": "\\Events\\v1\\Char\\Char_Gen\\Char_Mov_Gen\\AKE_Play_Char_Mov_Gen_SHeel_Walk_Rock",
+        "notes": ""
+    },
+    {
+        "id": "{4AB52BD0-30AA-452B-859F-7AAB5192BE91}",
+        "name": "AKE_Play_Char_Mov_Gen_SHeel_Walk_Wood",
+        "path": "\\Events\\v1\\Char\\Char_Gen\\Char_Mov_Gen\\AKE_Play_Char_Mov_Gen_SHeel_Walk_Wood",
+        "notes": ""
+    },
+    {
+        "id": "{389557FE-F91D-459B-884F-91B473B0890B}",
+        "name": "AKE_Play_Char_Mov_Gen_SHeel_Run_Dirt",
+        "path": "\\Events\\v1\\Char\\Char_Gen\\Char_Mov_Gen\\AKE_Play_Char_Mov_Gen_SHeel_Run_Dirt",
+        "notes": ""
+    },
+    {
+        "id": "{D41242C2-7554-4801-BAE6-84829902D938}",
+        "name": "AKE_Play_Char_Mov_Gen_SHeel_Sprint_Dirt",
+        "path": "\\Events\\v1\\Char\\Char_Gen\\Char_Mov_Gen\\AKE_Play_Char_Mov_Gen_SHeel_Sprint_Dirt",
+        "notes": ""
+    },
+    {
+        "id": "{BAC52FF6-61A1-4BBF-92BC-A1BAB50C732B}",
+        "name": "AKE_Play_Char_Mov_Gen_SHeel_End_Dirt",
+        "path": "\\Events\\v1\\Char\\Char_Gen\\Char_Mov_Gen\\AKE_Play_Char_Mov_Gen_SHeel_End_Dirt",
+        "notes": ""
+    },
+    {
+        "id": "{3F765D37-C2E3-405F-A6B5-89CC091A4DB6}",
+        "name": "AKE_Play_Char_Mov_Gen_SHeel_Slide_Gen",
+        "path": "\\Events\\v1\\Char\\Char_Gen\\Char_Mov_Gen\\AKE_Play_Char_Mov_Gen_SHeel_Slide_Gen",
+        "notes": ""
+    },
+    {
+        "id": "{076DA7E1-ED4E-4E91-8C85-BCE888B2A863}",
+        "name": "AKE_Play_Char_Mov_Gen_SHeel_Slide_Gen_Dev",
+        "path": "\\Events\\v1\\Char\\Char_Gen\\Char_Mov_Gen\\AKE_Play_Char_Mov_Gen_SHeel_Slide_Gen_Dev",
+        "notes": ""
+    },
+    {
+        "id": "{F615EDDC-5AA9-4218-B7D7-F9B4C0CC78AC}",
+        "name": "AKE_Play_Char_Mov_Gen_SHeel_Slide_Gen_Stop",
+        "path": "\\Events\\v1\\Char\\Char_Gen\\Char_Mov_Gen\\AKE_Play_Char_Mov_Gen_SHeel_Slide_Gen_Stop",
+        "notes": ""
+    },
+    {
+        "id": "{50FE898A-DA38-42B1-AFB8-04F3B978C653}",
+        "name": "AKE_Play_Char_Mov_Gen_SHeel_Squat_Dirt",
+        "path": "\\Events\\v1\\Char\\Char_Gen\\Char_Mov_Gen\\AKE_Play_Char_Mov_Gen_SHeel_Squat_Dirt",
+        "notes": ""
+    },
+    {
+        "id": "{75438D1A-9FE4-425C-8C1A-8A40351F7CCA}",
+        "name": "AKE_Play_Char_Mov_Gen_SHeel_Climb_Gen",
+        "path": "\\Events\\v1\\Char\\Char_Gen\\Char_Mov_Gen\\AKE_Play_Char_Mov_Gen_SHeel_Climb_Gen",
+        "notes": ""
+    },
+    {
+        "id": "{1A3EBA1B-6AB9-4F76-88A4-8CA6BDECF892}",
+        "name": "AKE_Play_Char_Mov_Gen_SHeel_Jump_Dirt",
+        "path": "\\Events\\v1\\Char\\Char_Gen\\Char_Mov_Gen\\AKE_Play_Char_Mov_Gen_SHeel_Jump_Dirt",
+        "notes": ""
+    },
+    {
+        "id": "{AF2F5851-BE6C-43F2-A8BF-BDEBC941C81A}",
+        "name": "AKE_Play_Char_Mov_Gen_SHeel_Fall_Dirt_Hvy",
+        "path": "\\Events\\v1\\Char\\Char_Gen\\Char_Mov_Gen\\AKE_Play_Char_Mov_Gen_SHeel_Fall_Dirt_Hvy",
+        "notes": ""
+    },
+    {
+        "id": "{7AB4C009-3BAE-44D2-83DF-D42B60DBA1CF}",
+        "name": "AKE_Play_Char_Mov_Gen_SHeel_Fall_Dirt_Lit",
+        "path": "\\Events\\v1\\Char\\Char_Gen\\Char_Mov_Gen\\AKE_Play_Char_Mov_Gen_SHeel_Fall_Dirt_Lit",
+        "notes": ""
+    },
+    {
+        "id": "{4D863A05-92A3-45DD-9546-6F61183A3D64}",
+        "name": "AKE_Play_Char_Mov_Gen_HHeel_Slide_Gen_LP",
+        "path": "\\Events\\v1\\Char\\Char_Gen\\Char_Mov_Gen\\AKE_Play_Char_Mov_Gen_HHeel_Slide_Gen_LP",
+        "notes": ""
+    },
+    {
+        "id": "{301C81F3-F697-487D-BA55-6C917038D561}",
+        "name": "AKE_Stop_Char_Mov_Gen_HHeel_Slide_Gen_LP",
+        "path": "\\Events\\v1\\Char\\Char_Gen\\Char_Mov_Gen\\AKE_Stop_Char_Mov_Gen_HHeel_Slide_Gen_LP",
+        "notes": ""
+    },
+    {
+        "id": "{093A7785-EE41-4AF5-A4D6-BC0522BF8755}",
+        "name": "AKE_Play_Sys_Show_C03_Def_Enter_Pose01",
+        "path": "\\Events\\v1\\Sys\\Sys_C03\\Sys_Show_C03\\AKE_Play_Sys_Show_C03_Def_Enter_Pose01",
+        "notes": ""
+    },
+    {
+        "id": "{E31A02E9-E944-4ED0-95D3-29A943B653EB}",
+        "name": "AKE_Play_Sys_Show_C03_Def_Enter_Pose02",
+        "path": "\\Events\\v1\\Sys\\Sys_C03\\Sys_Show_C03\\AKE_Play_Sys_Show_C03_Def_Enter_Pose02",
+        "notes": ""
+    },
+    {
+        "id": "{5D6BE02D-514C-4EE6-9CD3-15A118692106}",
+        "name": "AKE_Play_Sys_Show_C03_Def_Enter_Pose03_01",
+        "path": "\\Events\\v1\\Sys\\Sys_C03\\Sys_Show_C03\\AKE_Play_Sys_Show_C03_Def_Enter_Pose03_01",
+        "notes": ""
+    },
+    {
+        "id": "{6268B943-DF7A-4092-9999-399320711A90}",
+        "name": "AKE_Play_Sys_Show_C03_Def_Enter_Pose03_02",
+        "path": "\\Events\\v1\\Sys\\Sys_C03\\Sys_Show_C03\\AKE_Play_Sys_Show_C03_Def_Enter_Pose03_02",
+        "notes": ""
+    },
+    {
+        "id": "{0511852D-D4E8-4A2E-99B7-9939D9AC07C2}",
+        "name": "AKE_Play_Sys_Show_C03_Def_Enter_Pose03_03",
+        "path": "\\Events\\v1\\Sys\\Sys_C03\\Sys_Show_C03\\AKE_Play_Sys_Show_C03_Def_Enter_Pose03_03",
+        "notes": ""
+    },
+    {
+        "id": "{69170093-8114-4B54-A09E-2AB4D025A8D7}",
+        "name": "AKE_Play_Sys_Show_C03_Def_Enter_Pose03_04",
+        "path": "\\Events\\v1\\Sys\\Sys_C03\\Sys_Show_C03\\AKE_Play_Sys_Show_C03_Def_Enter_Pose03_04",
+        "notes": ""
+    },
+    {
+        "id": "{922FA705-1CBA-48CF-A404-5593E2598321}",
+        "name": "AKE_Play_Sys_Show_C03_Def_Enter_Pose03_05",
+        "path": "\\Events\\v1\\Sys\\Sys_C03\\Sys_Show_C03\\AKE_Play_Sys_Show_C03_Def_Enter_Pose03_05",
+        "notes": ""
+    },
+    {
+        "id": "{D1EB1685-2042-4029-84C9-B4A968E47A7D}",
+        "name": "AKE_Play_Sys_Show_C03_Def_Enter_Pose04",
+        "path": "\\Events\\v1\\Sys\\Sys_C03\\Sys_Show_C03\\AKE_Play_Sys_Show_C03_Def_Enter_Pose04",
+        "notes": ""
+    },
+    {
+        "id": "{4D264A21-28CF-4D71-BD97-F7524D790033}",
+        "name": "AKE_Play_Sys_Show_C03_Def_Enter_Pose05_01",
+        "path": "\\Events\\v1\\Sys\\Sys_C03\\Sys_Show_C03\\AKE_Play_Sys_Show_C03_Def_Enter_Pose05_01",
+        "notes": ""
+    },
+    {
+        "id": "{B10478D4-173C-4163-BA7A-24D7A5EF0C4D}",
+        "name": "AKE_Play_Sys_Show_C03_Def_Enter_Pose05_02",
+        "path": "\\Events\\v1\\Sys\\Sys_C03\\Sys_Show_C03\\AKE_Play_Sys_Show_C03_Def_Enter_Pose05_02",
+        "notes": ""
+    },
+    {
+        "id": "{5BCC2F35-597F-40D8-9323-976DBA2F45FB}",
+        "name": "AKE_Play_Sys_Show_C03_Def_Enter_Pose06",
+        "path": "\\Events\\v1\\Sys\\Sys_C03\\Sys_Show_C03\\AKE_Play_Sys_Show_C03_Def_Enter_Pose06",
+        "notes": ""
+    },
+    {
+        "id": "{291F11BE-5EA0-4E76-8DDA-583F7511F7C8}",
+        "name": "AKE_Play_Sys_Show_C03_Def_Exit_Pose04",
+        "path": "\\Events\\v1\\Sys\\Sys_C03\\Sys_Show_C03\\AKE_Play_Sys_Show_C03_Def_Exit_Pose04",
+        "notes": ""
+    },
+    {
+        "id": "{2F27105C-ED6C-477A-8C08-E317984FB776}",
+        "name": "AKE_Play_Sys_Show_C03_Def_Exit_Pose05_01",
+        "path": "\\Events\\v1\\Sys\\Sys_C03\\Sys_Show_C03\\AKE_Play_Sys_Show_C03_Def_Exit_Pose05_01",
+        "notes": ""
+    },
+    {
+        "id": "{DFDB229B-E367-4D6D-91D4-F2C5A5638C00}",
+        "name": "AKE_Play_Sys_Show_C03_Def_Exit_Pose05_01_1",
+        "path": "\\Events\\v1\\Sys\\Sys_C03\\Sys_Show_C03\\AKE_Play_Sys_Show_C03_Def_Exit_Pose05_01_1",
+        "notes": ""
+    },
+    {
+        "id": "{140EDB3C-3C77-48BF-BF96-35C63199B75E}",
+        "name": "AKE_Play_Sys_Show_C03_Def_Idle_Pose02_01",
+        "path": "\\Events\\v1\\Sys\\Sys_C03\\Sys_Show_C03\\AKE_Play_Sys_Show_C03_Def_Idle_Pose02_01",
+        "notes": ""
+    },
+    {
+        "id": "{05C67ED4-02A8-4484-A131-4DA253436761}",
+        "name": "AKE_Play_Sys_Show_C02_Def_Enter_Pose01",
+        "path": "\\Events\\v1\\Sys\\Sys_C02\\Sys_Show_C02\\AKE_Play_Sys_Show_C02_Def_Enter_Pose01",
+        "notes": ""
+    },
+    {
+        "id": "{A5B93E42-ABA9-4BC3-B6D2-BAA73CE2F095}",
+        "name": "AKE_Play_Sys_Show_C02_Def_Enter_Pose02",
+        "path": "\\Events\\v1\\Sys\\Sys_C02\\Sys_Show_C02\\AKE_Play_Sys_Show_C02_Def_Enter_Pose02",
+        "notes": ""
+    },
+    {
+        "id": "{2817F55F-BD47-468D-99C1-1DB2673349A6}",
+        "name": "AKE_Play_Sys_Show_C02_Def_Enter_Pose03_01",
+        "path": "\\Events\\v1\\Sys\\Sys_C02\\Sys_Show_C02\\AKE_Play_Sys_Show_C02_Def_Enter_Pose03_01",
+        "notes": ""
+    },
+    {
+        "id": "{86122782-6862-4B12-A2E3-95E153EFF9E6}",
+        "name": "AKE_Play_Sys_Show_C02_Def_Enter_Pose03_02",
+        "path": "\\Events\\v1\\Sys\\Sys_C02\\Sys_Show_C02\\AKE_Play_Sys_Show_C02_Def_Enter_Pose03_02",
+        "notes": ""
+    },
+    {
+        "id": "{0329D311-A4A5-4EC9-AC36-0F51588FE5C8}",
+        "name": "AKE_Play_Sys_Show_C02_Def_Enter_Pose03_03",
+        "path": "\\Events\\v1\\Sys\\Sys_C02\\Sys_Show_C02\\AKE_Play_Sys_Show_C02_Def_Enter_Pose03_03",
+        "notes": ""
+    },
+    {
+        "id": "{4C73EBC5-CB46-484B-AC41-AA95E361B234}",
+        "name": "AKE_Play_Sys_Show_C02_Def_Enter_Pose03_04",
+        "path": "\\Events\\v1\\Sys\\Sys_C02\\Sys_Show_C02\\AKE_Play_Sys_Show_C02_Def_Enter_Pose03_04",
+        "notes": ""
+    },
+    {
+        "id": "{106E540F-E0CE-4A65-83A7-6AD6163F8A4E}",
+        "name": "AKE_Play_Sys_Show_C02_Def_Enter_Pose03_05",
+        "path": "\\Events\\v1\\Sys\\Sys_C02\\Sys_Show_C02\\AKE_Play_Sys_Show_C02_Def_Enter_Pose03_05",
+        "notes": ""
+    },
+    {
+        "id": "{BB050007-E9A2-4C63-A9CB-A6A2F2920FDC}",
+        "name": "AKE_Play_Sys_Show_C02_Def_Enter_Pose04",
+        "path": "\\Events\\v1\\Sys\\Sys_C02\\Sys_Show_C02\\AKE_Play_Sys_Show_C02_Def_Enter_Pose04",
+        "notes": ""
+    },
+    {
+        "id": "{CF846EB6-5428-4FF5-878E-72F6603A4C33}",
+        "name": "AKE_Play_Sys_Show_C02_Def_Enter_Pose05",
+        "path": "\\Events\\v1\\Sys\\Sys_C02\\Sys_Show_C02\\AKE_Play_Sys_Show_C02_Def_Enter_Pose05",
+        "notes": ""
+    },
+    {
+        "id": "{1FE90E8C-1EBE-4E64-A4EB-C425837672B4}",
+        "name": "AKE_Play_Sys_Show_C02_Def_Enter_Pose06",
+        "path": "\\Events\\v1\\Sys\\Sys_C02\\Sys_Show_C02\\AKE_Play_Sys_Show_C02_Def_Enter_Pose06",
+        "notes": ""
+    },
+    {
+        "id": "{9ED41455-4ED8-4F25-9F27-C144646B996A}",
+        "name": "AKE_Play_Sys_Show_C02_Def_Enter_Pose06_Anim",
+        "path": "\\Events\\v1\\Sys\\Sys_C02\\Sys_Show_C02\\AKE_Play_Sys_Show_C02_Def_Enter_Pose06_Anim",
+        "notes": ""
+    },
+    {
+        "id": "{69A9907F-4349-42F7-97F5-9C55BC150EF0}",
+        "name": "AKE_Play_Sys_Show_C02_Def_Exit_Pose03_01",
+        "path": "\\Events\\v1\\Sys\\Sys_C02\\Sys_Show_C02\\AKE_Play_Sys_Show_C02_Def_Exit_Pose03_01",
+        "notes": ""
+    },
+    {
+        "id": "{56366B0F-4062-42B7-ABFF-9306985917D5}",
+        "name": "AKE_Play_Sys_Show_C02_Def_Exit_Pose03_02",
+        "path": "\\Events\\v1\\Sys\\Sys_C02\\Sys_Show_C02\\AKE_Play_Sys_Show_C02_Def_Exit_Pose03_02",
+        "notes": ""
+    },
+    {
+        "id": "{F20A665D-8142-43C8-96E9-F14182BE68FC}",
+        "name": "AKE_Play_Sys_Show_C02_Def_Exit_Pose03_02_B",
+        "path": "\\Events\\v1\\Sys\\Sys_C02\\Sys_Show_C02\\AKE_Play_Sys_Show_C02_Def_Exit_Pose03_02_B",
+        "notes": ""
+    },
+    {
+        "id": "{D6D7C5D8-9B3A-41D2-94C0-368CD30DD193}",
+        "name": "AKE_Play_Sys_Show_C02_Def_Exit_Pose03_03",
+        "path": "\\Events\\v1\\Sys\\Sys_C02\\Sys_Show_C02\\AKE_Play_Sys_Show_C02_Def_Exit_Pose03_03",
+        "notes": ""
+    },
+    {
+        "id": "{E73C0E85-2A65-42D7-84FD-B972C2749325}",
+        "name": "AKE_Play_Sys_Show_C02_Def_Exit_Pose03_04",
+        "path": "\\Events\\v1\\Sys\\Sys_C02\\Sys_Show_C02\\AKE_Play_Sys_Show_C02_Def_Exit_Pose03_04",
+        "notes": ""
+    },
+    {
+        "id": "{4CA843A3-5FD6-459E-99FC-27E093A8F111}",
+        "name": "AKE_Play_Sys_Show_C02_Def_Exit_Pose03_05",
+        "path": "\\Events\\v1\\Sys\\Sys_C02\\Sys_Show_C02\\AKE_Play_Sys_Show_C02_Def_Exit_Pose03_05",
+        "notes": ""
+    },
+    {
+        "id": "{CD5D844A-26E3-48A7-B020-F580492CA33C}",
+        "name": "AKE_Play_Sys_Show_C02_Def_Exit_Pose04",
+        "path": "\\Events\\v1\\Sys\\Sys_C02\\Sys_Show_C02\\AKE_Play_Sys_Show_C02_Def_Exit_Pose04",
+        "notes": ""
+    },
+    {
+        "id": "{98DE3F1F-B8C7-458E-B995-08D0B60E63F9}",
+        "name": "AKE_Play_Sys_Show_C02_Def_Exit_Pose05",
+        "path": "\\Events\\v1\\Sys\\Sys_C02\\Sys_Show_C02\\AKE_Play_Sys_Show_C02_Def_Exit_Pose05",
+        "notes": ""
+    },
+    {
+        "id": "{FBF7BAA6-0CB5-4352-9CCC-2943DEA5B1F3}",
+        "name": "AKE_Play_Sys_Show_C02_Def_Exit_Pose06",
+        "path": "\\Events\\v1\\Sys\\Sys_C02\\Sys_Show_C02\\AKE_Play_Sys_Show_C02_Def_Exit_Pose06",
+        "notes": ""
+    },
+    {
+        "id": "{0E535F3C-3FFF-484A-9685-D47FF6B09A6C}",
+        "name": "AKE_Play_Sys_Show_C02_Def_Idle_Pose02_01",
+        "path": "\\Events\\v1\\Sys\\Sys_C02\\Sys_Show_C02\\AKE_Play_Sys_Show_C02_Def_Idle_Pose02_01",
+        "notes": ""
+    },
+    {
+        "id": "{6D712E79-1264-4C98-8AC8-3CA3635239E2}",
+        "name": "AKE_Play_Sys_Show_C04_Def_Enter_Pose01",
+        "path": "\\Events\\v1\\Sys\\Sys_C04\\Sys_Show_C04\\AKE_Play_Sys_Show_C04_Def_Enter_Pose01",
+        "notes": ""
+    },
+    {
+        "id": "{1B9D04BA-C8F7-453F-A6D2-209E95BDE32F}",
+        "name": "AKE_Play_Sys_Show_C04_Def_Enter_Pose02",
+        "path": "\\Events\\v1\\Sys\\Sys_C04\\Sys_Show_C04\\AKE_Play_Sys_Show_C04_Def_Enter_Pose02",
+        "notes": ""
+    },
+    {
+        "id": "{541E75AD-050E-48DF-82F7-FA50C62EBACC}",
+        "name": "AKE_Play_Sys_Show_C04_Def_Enter_Pose03_01",
+        "path": "\\Events\\v1\\Sys\\Sys_C04\\Sys_Show_C04\\AKE_Play_Sys_Show_C04_Def_Enter_Pose03_01",
+        "notes": ""
+    },
+    {
+        "id": "{C71ADC4E-4F0C-41F2-894B-002208DC890D}",
+        "name": "AKE_Play_Sys_Show_C04_Def_Enter_Pose03_02",
+        "path": "\\Events\\v1\\Sys\\Sys_C04\\Sys_Show_C04\\AKE_Play_Sys_Show_C04_Def_Enter_Pose03_02",
+        "notes": ""
+    },
+    {
+        "id": "{7588874D-D7B0-45A6-9FA1-7C02B0D2EB31}",
+        "name": "AKE_Play_Sys_Show_C04_Def_Enter_Pose03_03",
+        "path": "\\Events\\v1\\Sys\\Sys_C04\\Sys_Show_C04\\AKE_Play_Sys_Show_C04_Def_Enter_Pose03_03",
+        "notes": ""
+    },
+    {
+        "id": "{CF6D1983-96DE-4C64-A052-10458B7204B5}",
+        "name": "AKE_Play_Sys_Show_C04_Def_Enter_Pose03_04",
+        "path": "\\Events\\v1\\Sys\\Sys_C04\\Sys_Show_C04\\AKE_Play_Sys_Show_C04_Def_Enter_Pose03_04",
+        "notes": ""
+    },
+    {
+        "id": "{6DFA3257-6E8C-4875-BE84-4BAA51714E2C}",
+        "name": "AKE_Play_Sys_Show_C04_Def_Enter_Pose03_05",
+        "path": "\\Events\\v1\\Sys\\Sys_C04\\Sys_Show_C04\\AKE_Play_Sys_Show_C04_Def_Enter_Pose03_05",
+        "notes": ""
+    },
+    {
+        "id": "{4FF55CE2-992D-4899-9F6E-A06209B5A74C}",
+        "name": "AKE_Play_Sys_Show_C04_Def_Enter_Pose03_06",
+        "path": "\\Events\\v1\\Sys\\Sys_C04\\Sys_Show_C04\\AKE_Play_Sys_Show_C04_Def_Enter_Pose03_06",
+        "notes": ""
+    },
+    {
+        "id": "{382D9DD4-7E55-4F65-907F-4718907DC696}",
+        "name": "AKE_Play_Sys_Show_C04_Def_Enter_Pose04",
+        "path": "\\Events\\v1\\Sys\\Sys_C04\\Sys_Show_C04\\AKE_Play_Sys_Show_C04_Def_Enter_Pose04",
+        "notes": ""
+    },
+    {
+        "id": "{FFAC47BA-15BF-4A36-8FF7-4BEAA8B15272}",
+        "name": "AKE_Play_Sys_Show_C04_Def_Enter_Pose05",
+        "path": "\\Events\\v1\\Sys\\Sys_C04\\Sys_Show_C04\\AKE_Play_Sys_Show_C04_Def_Enter_Pose05",
+        "notes": ""
+    },
+    {
+        "id": "{CBEA7883-37B4-4569-9028-03C1835EF395}",
+        "name": "AKE_Play_Sys_Show_C04_Def_Enter_Pose05_01",
+        "path": "\\Events\\v1\\Sys\\Sys_C04\\Sys_Show_C04\\AKE_Play_Sys_Show_C04_Def_Enter_Pose05_01",
+        "notes": ""
+    },
+    {
+        "id": "{E1CE99A0-F4FD-4E6B-ADFE-D4BEB1A23069}",
+        "name": "AKE_Play_Sys_Show_C04_Def_Exit_Pose03_01",
+        "path": "\\Events\\v1\\Sys\\Sys_C04\\Sys_Show_C04\\AKE_Play_Sys_Show_C04_Def_Exit_Pose03_01",
+        "notes": ""
+    },
+    {
+        "id": "{08343AC7-27AF-4802-81BE-ED5F0EB48CF7}",
+        "name": "AKE_Play_Sys_Show_C04_Def_Exit_Pose03_02",
+        "path": "\\Events\\v1\\Sys\\Sys_C04\\Sys_Show_C04\\AKE_Play_Sys_Show_C04_Def_Exit_Pose03_02",
+        "notes": ""
+    },
+    {
+        "id": "{35458BD1-12D7-4857-B157-176B1672324A}",
+        "name": "AKE_Play_Sys_Show_C04_Def_Exit_Pose03_03",
+        "path": "\\Events\\v1\\Sys\\Sys_C04\\Sys_Show_C04\\AKE_Play_Sys_Show_C04_Def_Exit_Pose03_03",
+        "notes": ""
+    },
+    {
+        "id": "{8FFFA0C1-E6A2-4E0F-A309-067643C3F586}",
+        "name": "AKE_Play_Sys_Show_C04_Def_Exit_Pose03_04",
+        "path": "\\Events\\v1\\Sys\\Sys_C04\\Sys_Show_C04\\AKE_Play_Sys_Show_C04_Def_Exit_Pose03_04",
+        "notes": ""
+    },
+    {
+        "id": "{4C8A0B49-6B9A-4C35-AF7E-0A44F73BA192}",
+        "name": "AKE_Play_Sys_Show_C04_Def_Exit_Pose03_05",
+        "path": "\\Events\\v1\\Sys\\Sys_C04\\Sys_Show_C04\\AKE_Play_Sys_Show_C04_Def_Exit_Pose03_05",
+        "notes": ""
+    },
+    {
+        "id": "{6F3A1E7F-ECEE-4B79-8CD2-F3846537EA10}",
+        "name": "AKE_Play_Sys_Show_C04_Def_Exit_Pose03_06",
+        "path": "\\Events\\v1\\Sys\\Sys_C04\\Sys_Show_C04\\AKE_Play_Sys_Show_C04_Def_Exit_Pose03_06",
+        "notes": ""
+    },
+    {
+        "id": "{9ADE9B2D-C7FA-4100-BDAD-25F2F8BC4187}",
+        "name": "AKE_Play_Sys_Show_C04_Def_Exit_Pose04",
+        "path": "\\Events\\v1\\Sys\\Sys_C04\\Sys_Show_C04\\AKE_Play_Sys_Show_C04_Def_Exit_Pose04",
+        "notes": ""
+    },
+    {
+        "id": "{E974FE5F-CA09-43FD-9103-A1AC67576B71}",
+        "name": "AKE_Play_Sys_Show_C04_Def_Exit_Pose05",
+        "path": "\\Events\\v1\\Sys\\Sys_C04\\Sys_Show_C04\\AKE_Play_Sys_Show_C04_Def_Exit_Pose05",
+        "notes": ""
+    },
+    {
+        "id": "{F2089695-F974-4021-A5E4-29D0815846A2}",
+        "name": "AKE_Play_Sys_Show_C04_Def_Exit_Pose05_01",
+        "path": "\\Events\\v1\\Sys\\Sys_C04\\Sys_Show_C04\\AKE_Play_Sys_Show_C04_Def_Exit_Pose05_01",
+        "notes": ""
+    },
+    {
+        "id": "{77012608-4E66-4F88-916A-9CD2BBAAAB5D}",
+        "name": "AKE_Play_Sys_Show_C04_Def_Idle_Pose02_Intv",
+        "path": "\\Events\\v1\\Sys\\Sys_C04\\Sys_Show_C04\\AKE_Play_Sys_Show_C04_Def_Idle_Pose02_Intv",
+        "notes": ""
+    },
+    {
+        "id": "{E09878F0-CEA5-4B56-A8A0-6655D36E02E5}",
+        "name": "AKE_Play_Sys_Show_C05_Def_Enter_Pose01",
+        "path": "\\Events\\v1\\Sys\\Sys_C05\\Sys_Show_C05\\AKE_Play_Sys_Show_C05_Def_Enter_Pose01",
+        "notes": ""
+    },
+    {
+        "id": "{40A205CD-CC86-40E1-9107-4C8B81A4774C}",
+        "name": "AKE_Play_Sys_Show_C05_Def_Enter_Pose02",
+        "path": "\\Events\\v1\\Sys\\Sys_C05\\Sys_Show_C05\\AKE_Play_Sys_Show_C05_Def_Enter_Pose02",
+        "notes": ""
+    },
+    {
+        "id": "{A2D84E7A-A77B-4364-A647-BCB6F0255B7D}",
+        "name": "AKE_Play_Sys_Show_C05_Def_Enter_Pose03_01",
+        "path": "\\Events\\v1\\Sys\\Sys_C05\\Sys_Show_C05\\AKE_Play_Sys_Show_C05_Def_Enter_Pose03_01",
+        "notes": ""
+    },
+    {
+        "id": "{80736B76-96F9-4A3B-AF59-7B42DD68E5C2}",
+        "name": "AKE_Play_Sys_Show_C05_Def_Enter_Pose03_02",
+        "path": "\\Events\\v1\\Sys\\Sys_C05\\Sys_Show_C05\\AKE_Play_Sys_Show_C05_Def_Enter_Pose03_02",
+        "notes": ""
+    },
+    {
+        "id": "{F50DF0E6-2061-407A-9118-EF364FF35AFB}",
+        "name": "AKE_Play_Sys_Show_C05_Def_Enter_Pose04",
+        "path": "\\Events\\v1\\Sys\\Sys_C05\\Sys_Show_C05\\AKE_Play_Sys_Show_C05_Def_Enter_Pose04",
+        "notes": ""
+    },
+    {
+        "id": "{FF409AB2-05FB-4245-B71B-847016E9D844}",
+        "name": "AKE_Play_Sys_Show_C05_Def_Enter_Pose05_01",
+        "path": "\\Events\\v1\\Sys\\Sys_C05\\Sys_Show_C05\\AKE_Play_Sys_Show_C05_Def_Enter_Pose05_01",
+        "notes": ""
+    },
+    {
+        "id": "{34249932-0821-4669-9931-31EC35EDE0C7}",
+        "name": "AKE_Play_Sys_Show_C05_Def_Enter_Pose05_02",
+        "path": "\\Events\\v1\\Sys\\Sys_C05\\Sys_Show_C05\\AKE_Play_Sys_Show_C05_Def_Enter_Pose05_02",
+        "notes": ""
+    },
+    {
+        "id": "{1ACEBFE5-1685-4F9D-ADDB-95A65FACCC1B}",
+        "name": "AKE_Play_Sys_Show_C05_Def_Enter_Pose06",
+        "path": "\\Events\\v1\\Sys\\Sys_C05\\Sys_Show_C05\\AKE_Play_Sys_Show_C05_Def_Enter_Pose06",
+        "notes": ""
+    },
+    {
+        "id": "{F3FA5925-75D7-47D5-A582-4855FE51F99E}",
+        "name": "AKE_Play_Sys_Show_C05_Def_Exit_Pose03_01",
+        "path": "\\Events\\v1\\Sys\\Sys_C05\\Sys_Show_C05\\AKE_Play_Sys_Show_C05_Def_Exit_Pose03_01",
+        "notes": ""
+    },
+    {
+        "id": "{F36B615F-1FC8-45ED-B2E1-0E5D825A069A}",
+        "name": "AKE_Play_Sys_Show_C05_Def_Exit_Pose03_02",
+        "path": "\\Events\\v1\\Sys\\Sys_C05\\Sys_Show_C05\\AKE_Play_Sys_Show_C05_Def_Exit_Pose03_02",
+        "notes": ""
+    },
+    {
+        "id": "{E2F448AF-6BAC-4D2D-9604-C8D1FA8F2795}",
+        "name": "AKE_Play_Sys_Show_C05_Def_Exit_Pose04",
+        "path": "\\Events\\v1\\Sys\\Sys_C05\\Sys_Show_C05\\AKE_Play_Sys_Show_C05_Def_Exit_Pose04",
+        "notes": ""
+    },
+    {
+        "id": "{18C36A74-4227-4EEE-8C8F-96C9E64CACE5}",
+        "name": "AKE_Play_Sys_Show_C05_Def_Exit_Pose05_01",
+        "path": "\\Events\\v1\\Sys\\Sys_C05\\Sys_Show_C05\\AKE_Play_Sys_Show_C05_Def_Exit_Pose05_01",
+        "notes": ""
+    },
+    {
+        "id": "{5BBB6F12-2CED-46E6-B901-F78E4A47769B}",
+        "name": "AKE_Play_Sys_Show_C05_Def_Exit_Pose05_02",
+        "path": "\\Events\\v1\\Sys\\Sys_C05\\Sys_Show_C05\\AKE_Play_Sys_Show_C05_Def_Exit_Pose05_02",
+        "notes": ""
+    },
+    {
+        "id": "{070AFC4E-D402-49CE-B4F4-09A0F2FB40A9}",
+        "name": "AKE_Play_Sys_Show_C05_Def_Exit_Pose06",
+        "path": "\\Events\\v1\\Sys\\Sys_C05\\Sys_Show_C05\\AKE_Play_Sys_Show_C05_Def_Exit_Pose06",
+        "notes": ""
+    },
+    {
+        "id": "{E3500573-E47D-40E7-875E-C42DD8134A23}",
+        "name": "AKE_Play_Sys_Show_C05_Def_Idle_Pose02_01",
+        "path": "\\Events\\v1\\Sys\\Sys_C05\\Sys_Show_C05\\AKE_Play_Sys_Show_C05_Def_Idle_Pose02_01",
+        "notes": ""
+    },
+    {
+        "id": "{1BC813AF-1249-45CB-9082-84B0D6649613}",
+        "name": "AKE_Play_Sys_Show_C05_Def_Idle_Pose03_02",
+        "path": "\\Events\\v1\\Sys\\Sys_C05\\Sys_Show_C05\\AKE_Play_Sys_Show_C05_Def_Idle_Pose03_02",
+        "notes": ""
+    },
+    {
+        "id": "{1988CDDD-B51B-4F8E-8AD6-3FF952DE12C8}",
+        "name": "AKE_Play_Sys_Show_C01_Def_Enter_Pose01",
+        "path": "\\Events\\v1\\Sys\\Sys_C01\\Sys_Show_C01\\AKE_Play_Sys_Show_C01_Def_Enter_Pose01",
+        "notes": ""
+    },
+    {
+        "id": "{B6AAED9B-E0C8-4A9B-B852-B4E0F1BD8962}",
+        "name": "AKE_Play_Sys_Show_C01_Def_Enter_Pose02",
+        "path": "\\Events\\v1\\Sys\\Sys_C01\\Sys_Show_C01\\AKE_Play_Sys_Show_C01_Def_Enter_Pose02",
+        "notes": ""
+    },
+    {
+        "id": "{DFB52D20-5A51-4238-B448-47C9B6866C1F}",
+        "name": "AKE_Play_Sys_Show_C01_Def_Enter_Pose03_01",
+        "path": "\\Events\\v1\\Sys\\Sys_C01\\Sys_Show_C01\\AKE_Play_Sys_Show_C01_Def_Enter_Pose03_01",
+        "notes": ""
+    },
+    {
+        "id": "{BE88C3F8-3163-4D72-A7CA-5C228FC261CA}",
+        "name": "AKE_Play_Sys_Show_C01_Def_Enter_Pose03_02",
+        "path": "\\Events\\v1\\Sys\\Sys_C01\\Sys_Show_C01\\AKE_Play_Sys_Show_C01_Def_Enter_Pose03_02",
+        "notes": ""
+    },
+    {
+        "id": "{0ADDF26F-9BEF-43EA-81B2-DB64B2D7D918}",
+        "name": "AKE_Play_Sys_Show_C01_Def_Enter_Pose03_03",
+        "path": "\\Events\\v1\\Sys\\Sys_C01\\Sys_Show_C01\\AKE_Play_Sys_Show_C01_Def_Enter_Pose03_03",
+        "notes": ""
+    },
+    {
+        "id": "{7D6CC473-538B-41C1-AD30-977C67555129}",
+        "name": "AKE_Play_Sys_Show_C01_Def_Enter_Pose03_04",
+        "path": "\\Events\\v1\\Sys\\Sys_C01\\Sys_Show_C01\\AKE_Play_Sys_Show_C01_Def_Enter_Pose03_04",
+        "notes": ""
+    },
+    {
+        "id": "{9221C146-1780-4FEE-8AA8-2FF1D1199317}",
+        "name": "AKE_Play_Sys_Show_C01_Def_Enter_Pose04",
+        "path": "\\Events\\v1\\Sys\\Sys_C01\\Sys_Show_C01\\AKE_Play_Sys_Show_C01_Def_Enter_Pose04",
+        "notes": ""
+    },
+    {
+        "id": "{5BF2FCDE-B0B0-4FCB-986B-DF3E90E49F3C}",
+        "name": "AKE_Play_Sys_Show_C01_Def_Enter_Pose05_01",
+        "path": "\\Events\\v1\\Sys\\Sys_C01\\Sys_Show_C01\\AKE_Play_Sys_Show_C01_Def_Enter_Pose05_01",
+        "notes": ""
+    },
+    {
+        "id": "{3DA5471D-3B26-443E-B79C-D3D4429BE5C0}",
+        "name": "AKE_Play_Sys_Show_C01_Def_Enter_Pose05_02",
+        "path": "\\Events\\v1\\Sys\\Sys_C01\\Sys_Show_C01\\AKE_Play_Sys_Show_C01_Def_Enter_Pose05_02",
+        "notes": ""
+    },
+    {
+        "id": "{86D8261A-EDEF-4312-9200-C86F81EE5F75}",
+        "name": "AKE_Play_Sys_Show_C01_Def_Enter_Pose06",
+        "path": "\\Events\\v1\\Sys\\Sys_C01\\Sys_Show_C01\\AKE_Play_Sys_Show_C01_Def_Enter_Pose06",
+        "notes": ""
+    },
+    {
+        "id": "{9CA41EEA-B782-4080-BB64-E44A99BCD719}",
+        "name": "AKE_Play_Sys_Show_C01_Def_Exit_Pose03_01",
+        "path": "\\Events\\v1\\Sys\\Sys_C01\\Sys_Show_C01\\AKE_Play_Sys_Show_C01_Def_Exit_Pose03_01",
+        "notes": ""
+    },
+    {
+        "id": "{613C4D58-193C-44A6-B58D-CE515B20993E}",
+        "name": "AKE_Play_Sys_Show_C01_Def_Exit_Pose03_02",
+        "path": "\\Events\\v1\\Sys\\Sys_C01\\Sys_Show_C01\\AKE_Play_Sys_Show_C01_Def_Exit_Pose03_02",
+        "notes": ""
+    },
+    {
+        "id": "{64E326C4-850D-41DE-8E0E-60C53459FFEC}",
+        "name": "AKE_Play_Sys_Show_C01_Def_Exit_Pose03_03",
+        "path": "\\Events\\v1\\Sys\\Sys_C01\\Sys_Show_C01\\AKE_Play_Sys_Show_C01_Def_Exit_Pose03_03",
+        "notes": ""
+    },
+    {
+        "id": "{C6BF95AD-E08C-4CEE-BADE-48302DAC09D7}",
+        "name": "AKE_Play_Sys_Show_C01_Def_Exit_Pose03_04",
+        "path": "\\Events\\v1\\Sys\\Sys_C01\\Sys_Show_C01\\AKE_Play_Sys_Show_C01_Def_Exit_Pose03_04",
+        "notes": ""
+    },
+    {
+        "id": "{561D2701-EAC3-4E0B-81FA-DF4B0BEA2100}",
+        "name": "AKE_Play_Sys_Show_C01_Def_Exit_Pose04",
+        "path": "\\Events\\v1\\Sys\\Sys_C01\\Sys_Show_C01\\AKE_Play_Sys_Show_C01_Def_Exit_Pose04",
+        "notes": ""
+    },
+    {
+        "id": "{DFBB2EC4-50D7-4FD6-9BCF-1D250651D670}",
+        "name": "AKE_Play_Sys_Show_C01_Def_Exit_Pose05_01",
+        "path": "\\Events\\v1\\Sys\\Sys_C01\\Sys_Show_C01\\AKE_Play_Sys_Show_C01_Def_Exit_Pose05_01",
+        "notes": ""
+    },
+    {
+        "id": "{333F406D-45A4-4BAA-9E64-C1F77AC26FC8}",
+        "name": "AKE_Play_Sys_Show_C01_Def_Exit_Pose05_02",
+        "path": "\\Events\\v1\\Sys\\Sys_C01\\Sys_Show_C01\\AKE_Play_Sys_Show_C01_Def_Exit_Pose05_02",
+        "notes": ""
+    },
+    {
+        "id": "{D46EF42C-DC8A-423F-AE54-065C5D02B068}",
+        "name": "AKE_Play_Sys_Show_C01_Def_Exit_Pose06",
+        "path": "\\Events\\v1\\Sys\\Sys_C01\\Sys_Show_C01\\AKE_Play_Sys_Show_C01_Def_Exit_Pose06",
+        "notes": ""
+    }
+]

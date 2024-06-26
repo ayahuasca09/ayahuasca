@@ -70,3 +70,19 @@ import sys
 # change_value()
 # print(a)
 
+
+"""多条件判断测试"""
+# max = [3, 5, 7, 6, 8, 4]
+# if 3 in max:
+#     print("aaa")
+
+"""全局变量测试"""
+# def get_imax():
+#     global imax
+#     imax = 6
+#
+#
+# for i in range(1, 10):
+#     imax = 3
+#     get_imax()
+# print(imax)

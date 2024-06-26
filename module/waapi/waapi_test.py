@@ -75,24 +75,30 @@ with WaapiClient() as client:
     #     client.call("ak.wwise.core.object.delete", args)
 
     """查找对象引用测试"""
+    #
+    # def find_obj(args):
+    #     options = {
+    #         'return': ['name', 'id', 'notes']
+    #
+    #     }
+    #     obj_sub_list = client.call("ak.wwise.core.object.get", args, options=options)['return']
+    #     if not obj_sub_list:
+    #         obj_sub_id = ""
+    #     else:
+    #         obj_sub_id = obj_sub_list[0]['id']
+    #     return obj_sub_list, obj_sub_id
+    #
+    #
+    # args = {
+    #     'waql': '"%s" select referencesTo' % (
+    #         '{2F8B7868-B380-4767-9681-1665DACC4087}')
+    # }
+    # refer_list, refer_id = find_obj(args)
+    # print(refer_list)
 
-
-    def find_obj(args):
-        options = {
-            'return': ['name', 'id', 'notes']
-
-        }
-        obj_sub_list = client.call("ak.wwise.core.object.get", args, options=options)['return']
-        if not obj_sub_list:
-            obj_sub_id = ""
-        else:
-            obj_sub_id = obj_sub_list[0]['id']
-        return obj_sub_list, obj_sub_id
-
-
+    """设置对象notes"""
     args = {
-        'waql': '"%s" select referencesTo' % (
-            '{2F8B7868-B380-4767-9681-1665DACC4087}')
+        'object': '{15E5DC76-6CD3-4051-86C2-4DA23B16EB13}',
+        'value': "aaaaa"
     }
-    refer_list, refer_id = find_obj(args)
-    print(refer_list)
+    client.call("ak.wwise.core.object.setNotes", args)

@@ -153,3 +153,48 @@
 #
 #     if flag == 0:
 #         print_error_by_module(module_dict, system_name)
+
+"""将事件写入json"""
+# js_event_info_path = r"F:\pppppy\SP\module\ue\ue_ID表生成\js_event_info.json"
+# event_list, event_id, _ = find_obj(
+#     {'waql': ' "%s" select descendants where type = "Event" ' % wwise_dict['Event_Root']})
+# js_event_info = json.dumps(event_list, indent=4)
+# with open(js_event_info_path, 'w') as writeJs:
+#     writeJs.write(js_event_info)
+
+"""事件创建ID"""
+# # 保存已有事件的id
+# id_list = []
+# for event_dict in event_list:
+#     data = re.search(r'(?<=id:)\d+|$', event_dict['notes'])
+#     if data.group():
+#         id_list.append(int(data.group()))
+#
+# for event_dict in event_list:
+#     # 获取值域范围
+#     get_module_range(event_dict['name'])
+#     if (range_min != 0) and (range_max != 0) and range_min and range_max:
+#         # id创建
+#         tmp = range_min
+#         while tmp in id_list:
+#             tmp = tmp + 1
+#         args = {
+#             'object': event_dict['id'],
+#             'value': "id:" + str(tmp) + "|"
+#         }
+#         client.call("ak.wwise.core.object.setNotes", args)
+
+"""获取ID范围"""
+# def get_module_range(event_name):
+#     global range_min, range_max
+#     flag = 0
+#     for module_name in js_dict:
+#         if str(module_name) in str(event_name):
+#             range_min = js_dict[module_name].get('min')
+#             range_max = js_dict[module_name].get('max')
+#             flag = 1
+#             return
+#     if flag == 0:
+#         range_min = 0
+#         range_max = 0
+#         print_error("找不到" + event_name + "的系统名，无法设置ID")

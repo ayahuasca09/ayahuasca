@@ -7,6 +7,7 @@ from pprint import pprint
 import re
 from waapi import WaapiClient
 import shutil
+from openpyxl.cell import MergedCell
 
 # 文件所在目录
 py_path = ""
@@ -34,10 +35,11 @@ for i in os.walk(py_path):
 # pprint("输出文件夹下的文件名：")
 file_name_list = file_names[0][2]
 
-# 检测是否通过
-is_pass = True
 # 一级系统名称
 system_name = ""
+
+# 状态列表
+status_list = ['占位', '临时资源', 'to do', 'in progress', 'done']
 
 """*****************功能检测区******************"""
 """检查描述/状态/修饰词是否在末尾"""
@@ -47,7 +49,11 @@ system_name = ""
 def print_error(error_info):
     global is_pass
     is_pass = False
-    print(cell_sound.value + error_info)
+    print(error_info)
+
+
+def print_warning(warn_info):
+    print("[warning]" + warn_info)
 
 
 """检测字符串是否含有中文"""
@@ -69,7 +75,7 @@ def check_by_re(pattern, name):
     result = re.search(pattern, name)
     new_name = ""
     if result == None:
-        print_error("：请检查" + pattern + "是否拼写错误或未添加到列表中")
+        print_error(cell_sound.value + "：请检查" + pattern + "是否拼写错误或未添加到列表中")
     else:
         new_name = name.replace(result.group(), "")
     return new_name
@@ -81,9 +87,9 @@ def check_by_re(pattern, name):
 def check_by_str_length(str1, length):
     if len(str1) > length:
         if "_" in str1:
-            print_error("：描述后缀名过长，限制字符数为" + str(length))
+            print_error(cell_sound.value + "：描述后缀名过长，限制字符数为" + str(length))
         else:
-            print_error("：通过_切分的某个单词过长，每个单词长度不应超过10个字符，需要再拆分")
+            print_error(cell_sound.value + "：通过_切分的某个单词过长，每个单词长度不应超过10个字符，需要再拆分")
 
 
 """模块类型输出报错"""
@@ -97,7 +103,7 @@ def print_error_by_module(module_dict):
             module_type += module + "|"
         else:
             module_type += module
-    print_error("：" + module_type + "有误，请检查是否添加模块名称或是否拼写有误")
+    print_error(cell_sound.value + "：" + module_type + "有误，请检查是否添加模块名称或是否拼写有误")
 
 
 """Amb类型检查"""
@@ -249,7 +255,7 @@ def check_LP_in_last():
             new_name = re.sub(r"_LP$", "", name)
             return new_name
         else:
-            print_error("：_LP应放在最末尾")
+            print_error(cell_sound.value + "：_LP应放在最末尾")
     else:
         return name
 
@@ -262,24 +268,118 @@ def check_by_com_word(name):
     for key in com_word_dict:
         for value in com_word_dict[key]:
             if value in name:
-                print_error(value + "应改为通用词" + key)
+                print_error(cell_sound.value + value + "应改为通用词" + key)
                 if "Medium" in name:
-                    print_error("PS：Mid表体积/重量，Med表距离")
+                    print_error(cell_sound.value + "PS：Mid表体积/重量，Med表距离")
+
+
+"""分隔符的大小写和长度检查"""
+
+
+def check_by_length_and_word():
+    # pprint(cell_sound.value)
+    word_list = name.split("_")
+    is_title = True
+    for word in word_list:
+        """判定_的每个都不能超过10个"""
+        check_by_str_length(word, 10)
+        """判定_的每个开头必须大写"""
+        if len(word) > 0:
+            # 只需要检查第一个字符，因为istitle会导致检查字符串只能首字母大写
+            if word[0].istitle() == False and word[0].isdigit() == False:
+                is_title = False
+                break
+    if is_title == False:
+        print_error(cell_sound.value + "：通过”_“分隔的每个单词开头都需要大写")
+    if word_list:
+        return word_list[0]
+    else:
+        return None
 
 
 """获取一级系统名走不同的检测方式"""
 
 
 def check_first_system_name(name):
-    global system_name
-    system_name = word_list[0]
-    if system_name in js_dict:
+    if system_name and (system_name in js_dict):
         func_name = "check_by_" + system_name
         eval(func_name)(name.replace(system_name + "_", ""))
-        if is_pass == True:
-            create_wwise_content(cell_sound.value, system_name)
     else:
         print_error_by_module(js_dict)
+
+
+"""获取表格中的事件描述和状态所在的列"""
+
+
+def get_descrip_and_status_column():
+    require_module_column = 999
+    second_module_column = 999
+    require_name_column = 999
+    status_column = 999
+    for cell in list(sheet.rows)[0]:
+        if cell.value:
+            if 'Require Module' in str(cell.value):
+                require_module_column = cell.column
+                # print(require_module_column)
+            if 'Second Module' in str(cell.value):
+                second_module_column = cell.column
+                # print(second_module_column)
+            if 'Require Name' in str(cell.value):
+                require_name_column = cell.column
+                # print(require_name_column)
+            if 'Status' in str(cell.value):
+                status_column = cell.column
+                # print(status_column)
+    return require_module_column, second_module_column, require_name_column, status_column
+
+
+"""检查是否为合并单元格"""
+
+
+def check_is_mergecell(cell):
+    if isinstance(cell, MergedCell):  # 判断该单元格是否为合并单元格
+        for merged_range in sheet.merged_cells.ranges:  # 循环查找该单元格所属的合并区域
+            if cell.coordinate in merged_range:
+                # 获取合并区域左上角的单元格作为该单元格的值返回
+                cell = sheet.cell(row=merged_range.min_row, column=merged_range.min_col)
+                break
+    return cell.value
+
+
+"""拼接事件描述"""
+
+
+def get_event_descrip():
+    event_descrip = ""
+    if require_module_column != 999:
+        require_module_value = check_is_mergecell(sheet.cell(row=cell_sound.row, column=require_module_column))
+        if require_module_value:
+            event_descrip = require_module_value + "_"
+    if second_module_column != 999:
+        second_module_value = check_is_mergecell(sheet.cell(row=cell_sound.row, column=second_module_column))
+        if event_descrip:
+            if second_module_value:
+                event_descrip = event_descrip + second_module_value + "_"
+        else:
+            if second_module_value:
+                event_descrip = second_module_value + "_"
+
+    if require_name_column != 999:
+        require_name_value = check_is_mergecell(sheet.cell(row=cell_sound.row, column=require_name_column))
+        if event_descrip:
+            if require_name_value:
+                event_descrip = event_descrip + require_name_value + "_"
+        else:
+            if require_name_value:
+                event_descrip = require_name_value + "_"
+    if not event_descrip:
+        print_error(cell_sound.value + "：没有事件描述，请补充！")
+    # 格式规范
+    else:
+        event_descrip = re.sub(r'^_', "", event_descrip)
+        event_descrip = re.sub(r'_*$', "", event_descrip)
+        event_descrip = re.sub(r'\s+', "", event_descrip)
+    return event_descrip
 
 
 with WaapiClient() as client:
@@ -320,7 +420,7 @@ with WaapiClient() as client:
                         parent_len = len(parent_dict['name'])
                         obj_parent_id = parent_dict['id']
         else:
-            print_error("相应的Unit目录结构未创建！需要创建")
+            print_error(cell_sound.value + "相应的Unit目录结构未创建！需要创建")
 
         return obj_parent_id
 
@@ -457,6 +557,9 @@ with WaapiClient() as client:
         if flag == 0:
             event_args = get_event_args(parent_id, event_name, 1, rnd_path)
             client.call("ak.wwise.core.object.create", event_args)
+            # {'children': [{'id': '{26A1FB06-3908-4F55-AB8A-E67264100F18}', 'name': ''}],
+            #  'id': '{F04A7B4F-9266-4DAB-8DD2-CAF6BFD6D78A}',
+            #  'name': 'AKE_Play_Mon_Boss_Body_B01_Atk5'}
             pprint(event_name + "事件创建")
             if "_LP" in rnd_name:
                 event_name = "AKE_" + "Stop_" + rnd_name
@@ -542,6 +645,7 @@ with WaapiClient() as client:
             # 加载所有工作表
             for sheet_name in sheet_names:
                 sheet = wb[sheet_name]
+                require_module_column, second_module_column, require_name_column, status_column = get_descrip_and_status_column()
                 # 获取工作表第一行数据
                 for cell in list(sheet.rows)[0]:
                     if 'Sample Name' in str(cell.value):
@@ -550,34 +654,41 @@ with WaapiClient() as client:
                             # 空格和中文不检测
                             if cell_sound.value != None:
                                 if check_is_chinese(cell_sound.value) == False:
-                                    """❤❤❤❤数据获取❤❤❤❤"""
-                                    """测试名称"""
-                                    name = cell_sound.value
-                                    # pprint(cell_sound.value)
-                                    word_list = name.split("_")
-                                    is_title = True
-                                    for word in word_list:
-                                        """判定_的每个都不能超过10个"""
-                                        check_by_str_length(word, 10)
-                                        """判定_的每个开头必须大写"""
-                                        if len(word) > 0:
-                                            # 只需要检查第一个字符，因为istitle会导致检查字符串只能首字母大写
-                                            if word[0].istitle() == False and word[0].isdigit() == False:
-                                                is_title = False
-                                                break
-                                    if is_title == False:
-                                        print_error("：通过”_“分隔的每个单词开头都需要大写")
+                                    pass
 
-                                    # 检查LP是否在末尾
-                                    name = check_LP_in_last()
-                                    # print(name)
+                                    if (status_column != 999) and (sheet.cell(row=cell_sound.row,
+                                                                              column=status_column).value in status_list):
+                                        """❤❤❤❤数据获取❤❤❤❤"""
+                                        """检测表格内容"""
+                                        is_pass = True
+                                        """测试名称"""
+                                        name = cell_sound.value
+                                        """事件描述"""
+                                        event_descrip = get_event_descrip()
+                                        # print(event_descrip)
 
-                                    # 通用词汇检查
-                                    check_by_com_word(name)
+                                        if is_pass == True:
+                                            # 分隔符的大小写和长度检查
+                                            system_name = check_by_length_and_word()
 
-                                    # 检查一级系统并索引到不同的检测方式
-                                    check_first_system_name(name)
-                                    # print(name)
+                                            # 检查LP是否在末尾
+                                            name = check_LP_in_last()
+                                            # print(name)
+
+                                            # 通用词汇检查
+                                            check_by_com_word(name)
+
+                                            # 检查一级系统并索引到不同的检测方式
+                                            check_first_system_name(name)
+                                            # print(name)
+
+                                            # 生成Wwise内容
+                                            # if is_pass == True:
+                                            #     create_wwise_content(cell_sound.value, system_name)
+
+
+                                    # else:
+                                    #     print_warning(cell_sound.value + "：该状态不会生成Wwise占位资源，请检查")
 
     """删除表中没有的内容"""
     # 查找所有Rnd和Event
@@ -588,10 +699,8 @@ with WaapiClient() as client:
     #   'notes': '',
     #   'path': '\\Actor-Mixer '
     #           'Hierarchy\\v1\\Char\\Char\\Char_Skill\\Char_Skill\\Char_Skill_C01\\Char_Skill_C01\\Char_Skill_C01_Atk1'}
-
     event_list, event_id, _ = find_obj(
         {'waql': ' "%s" select descendants where type = "Event" ' % wwise_dict['Event_Root']})
-
     for rnd_container in rnd_container_list:
         delete_wwise_content()
 
@@ -604,6 +713,3 @@ with WaapiClient() as client:
 
     # rnd创建撤销
     # client.call("ak.wwise.core.undo.undo")
-
-
-
