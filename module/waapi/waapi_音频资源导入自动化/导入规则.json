@@ -134,6 +134,6 @@
 	"Wwise": {
 		"Root": "\\Actor-Mixer Hierarchy\\v1",
 		"Event_Root": "\\Events\\v1",
-		"AudioDT_Path": "F:\\pppppy\\SP\\module\\waapi\\waapi_音频资源导入自动化\\Audio.xlsx"
+		"WwiseProj_Root": "S:\\chen.gong_DCC_Audio\\Audio\\SilverPalace_WwiseProject"
 	}
 }

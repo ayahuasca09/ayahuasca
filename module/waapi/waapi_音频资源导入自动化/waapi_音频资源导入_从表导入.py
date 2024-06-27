@@ -532,7 +532,8 @@ with WaapiClient() as client:
                     "@ActionType": event_action,
                     "@Target": event_target
                 }
-            ]
+            ],
+            "notes": event_descrip
         }
         return args_new_event
 
@@ -683,9 +684,8 @@ with WaapiClient() as client:
                                             # print(name)
 
                                             # 生成Wwise内容
-                                            # if is_pass == True:
-                                            #     create_wwise_content(cell_sound.value, system_name)
-
+                                            if is_pass == True:
+                                                create_wwise_content(cell_sound.value, system_name)
 
                                     # else:
                                     #     print_warning(cell_sound.value + "：该状态不会生成Wwise占位资源，请检查")
