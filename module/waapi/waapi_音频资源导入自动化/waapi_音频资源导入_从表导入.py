@@ -41,7 +41,7 @@ system_name = ""
 # 状态列表
 status_list = ['占位', '临时资源', 'to do', 'in progress', 'done']
 # 要删除的状态列表
-del_status_list = ['占位', '临时资源', 'to do', 'in progress', 'done']
+del_status_list = ['占位', '临时资源', 'to do', 'in progress', 'done', 'cancel']
 
 # 事件描述字典：用于记录描述键和行作为值
 event_descrip_dict = {}
@@ -378,7 +378,9 @@ def get_event_descrip():
             if require_name_value:
                 event_descrip = require_name_value + "_"
     if not event_descrip:
-        print_error(cell_sound.value + "：没有事件描述，请补充！")
+        if cell_sound.value:
+            print_error(cell_sound.value + "：没有事件描述，请补充！")
+
     # 格式规范
     else:
         event_descrip = re.sub(r'^_', "", event_descrip)
@@ -447,7 +449,7 @@ with WaapiClient() as client:
     """修改Wwise内容的名字"""
 
 
-    def change_name_by_wwise_content(obj_id, name):
+    def change_name_by_wwise_content(obj_id, name, old_name, obj_type):
         args = {
             "objects": [
                 {
@@ -458,6 +460,18 @@ with WaapiClient() as client:
             ]
         }
         client.call("ak.wwise.core.object.set", args)
+        print_warning(old_name + "(" + obj_type + ")改名为：" + name)
+
+
+    """设置obj的notes"""
+
+
+    def set_obj_notes(obj_id, notes_value):
+        args = {
+            'object': obj_id,
+            'value': notes_value
+        }
+        client.call("ak.wwise.core.object.setNotes", args)
 
 
     """创建新的随机容器"""
@@ -479,13 +493,15 @@ with WaapiClient() as client:
                 # pprint(rnd_name + "：RandomContainer已存在，将不再导入")
                 flag = 1
                 rnd_path = rnd_container_dict['path']
+                set_obj_notes(rnd_container_dict['id'], event_descrip)
                 break
             # 没有重名但描述一致，判定为改名
             elif rnd_container_dict['notes'] == event_descrip:
                 # pprint(rnd_name + "：RandomContainer已存在，将不再导入")
                 flag = 2
                 rnd_path = rnd_container_dict['path'].replace(rnd_container_dict['name'], rnd_name)
-                change_name_by_wwise_content(rnd_container_dict['id'], rnd_name)
+                change_name_by_wwise_content(rnd_container_dict['id'], rnd_name, rnd_container_dict['name'],
+                                             "RandContainer")
                 # Sound也要改名
                 sound_container_list, sound_container_id, _ = find_obj(
                     {'waql': ' "%s" select children  ' % rnd_container_dict['id']})
@@ -494,7 +510,8 @@ with WaapiClient() as client:
                     sound_name = rnd_name
                     if wav_tail:
                         sound_name = rnd_name + wav_tail.group()
-                    change_name_by_wwise_content(sound_cotainer_dict['id'], sound_name)
+                    change_name_by_wwise_content(sound_cotainer_dict['id'], sound_name, sound_cotainer_dict['name'],
+                                                 "Sound")
                     # Media路径更改
                     new_media_path = sound_cotainer_dict['originalWavFilePath'].replace(sound_cotainer_dict['name'],
                                                                                         sound_name)
@@ -503,7 +520,7 @@ with WaapiClient() as client:
                               new_media_path)
                     # 在容器中重新导入media
                     import_media_in_rnd(new_media_path, sound_name, rnd_path)
-                    print_warning(rnd_name + "：RandomContainer改名及媒体资源导入")
+                    print_warning(sound_cotainer_dict['originalWavFilePath'] + "(Media)改名为：" + new_media_path)
                 break
 
         # 不存在则创建
@@ -534,7 +551,8 @@ with WaapiClient() as client:
 
                 # 媒体资源导入
                 import_media(media_name, rnd_path)
-                print_warning(rnd_name + "：RandomContainer创建及媒体资源导入")
+                print_warning(rnd_name + "：RandContainer创建")
+                print_warning(media_name + "：Sound创建及Media导入")
 
         return rnd_path, rnd_name
 
@@ -611,6 +629,7 @@ with WaapiClient() as client:
         for event_dict in event_list:
             if event_dict['name'] == event_name:
                 flag = 1
+                set_obj_notes(event_dict['id'], event_descrip)
                 break
             # 没有重名但描述一致，判定为改名
             elif event_dict['notes'] == event_descrip:
@@ -620,8 +639,7 @@ with WaapiClient() as client:
                     pass
                 elif "Stop" in event_dict['name']:
                     event_name = "AKE_" + "Stop_" + rnd_name
-                change_name_by_wwise_content(event_dict['id'], event_name)
-                print_warning(event_name + "：Event改名")
+                change_name_by_wwise_content(event_dict['id'], event_name, event_dict['name'], "Event")
         if flag == 0:
             event_args = get_event_args(parent_id, event_name, 1, rnd_path)
             client.call("ak.wwise.core.object.create", event_args)
@@ -648,68 +666,68 @@ with WaapiClient() as client:
         create_event(rnd_name, rnd_path)
 
 
-    #
-    # def delete_wwise_content():
-    #     # 随机容器引用的资产删除
-    #     media_list, media_id, _ = find_obj(
-    #         {'waql': ' "%s" select children where type = "Sound" ' % rnd_container['id']})
-    #     for media_dict in media_list:
-    #         os.remove(media_dict['originalWavFilePath'])
-    #         pprint(media_dict['originalWavFilePath'] + "已删除")
-    #
-    #     # 随机容器删除
-    #     args = {
-    #         "object": "%s" % rnd_container['id']
-    #     }
-    #     client.call("ak.wwise.core.object.delete", args)
-    #     pprint(rnd_container['name'] + ":RandomContainer已删除")
-    #
-    #     # 事件删除
-    #     for event_dict in event_list:
-    #         if rnd_container['name'] in event_dict['name']:
-    #             args = {
-    #                 "object": "%s" % event_dict['id']
-    #             }
-    #             client.call("ak.wwise.core.object.delete", args)
-    #             pprint(event_dict['name'] + ":Event已删除")
+    def delete_wwise_content():
+        # 随机容器引用的资产删除
+        media_list, media_id, _ = find_obj(
+            {'waql': ' "%s" select children where type = "Sound" ' % rnd_container['id']})
+        if media_list:
+            for media_dict in media_list:
+                if os.path.isfile(media_dict['originalWavFilePath']):
+                    os.remove(media_dict['originalWavFilePath'])
+                    print_warning(media_dict['originalWavFilePath'] + "已删除")
 
-    #
-    # def delete_or_modify_wwise_content():
-    #     for i in file_name_list:
-    #         if ".xlsx" in i:
-    #             # 拼接xlsx的路径
-    #             file_path_xlsx = os.path.join(py_path, i)
-    #             # 获取xlsx的workbook
-    #             wb = openpyxl.load_workbook(file_path_xlsx)
-    #             # 获取xlsx的所有sheet
-    #             sheet_names = wb.sheetnames
-    #             # 加载所有工作表
-    #             for sheet_name in sheet_names:
-    #                 sheet = wb[sheet_name]
-    #                 require_module_column, second_module_column, require_name_column, status_column = get_descrip_and_status_column()
-    #                 # 获取工作表第一行数据
-    #                 for cell in list(sheet.rows)[0]:
-    #                     if 'Sample Name' in str(cell.value):
-    #                         # 获取音效名下的内容
-    #                         for cell_sound in list(sheet.columns)[cell.column - 1]:
-    #                             # 空格和中文不检测
-    #                             if cell_sound.value != None:
-    #                                 if check_is_chinese(cell_sound.value) == False:
-    #                                     if (status_column != 999) and (sheet.cell(row=cell_sound.row,
-    #                                                                               column=status_column).value in del_status_list):
-    #                                         event_descrip = get_event_descrip()
-    #                                         # 如果音效名与rnd名相同
-    #                                         if rnd_container['name'] == cell_sound.value:
-    #                                             # 如果状态标为取消的删除
-    #                                             if sheet.cell(row=cell_sound.row,
-    #                                                           column=status_column).value == "cancel":
-    #                                                 delete_wwise_content()
-    #                                             return
-    #
-    #                                         # 名字不同就找notes
-    #                                         elif rnd_container['notes'] == event_descrip:
-    #
-    #     # 下面是在表格中没有找到rnd中的名字
+        # 随机容器删除
+        args = {
+            "object": "%s" % rnd_container['id']
+        }
+        client.call("ak.wwise.core.object.delete", args)
+        print_warning(rnd_container['name'] + ":RandomContainer已删除")
+
+        # 事件删除
+        for event_dict in event_list:
+            if rnd_container['name'] in event_dict['name']:
+                args = {
+                    "object": "%s" % event_dict['id']
+                }
+                client.call("ak.wwise.core.object.delete", args)
+                print_warning(event_dict['name'] + ":Event已删除")
+
+
+    def delete_or_modify_wwise_content():
+        for i in file_name_list:
+            if ".xlsx" in i:
+                # 拼接xlsx的路径
+                file_path_xlsx = os.path.join(py_path, i)
+                # 获取xlsx的workbook
+                wb = openpyxl.load_workbook(file_path_xlsx)
+                # 获取xlsx的所有sheet
+                sheet_names = wb.sheetnames
+                # 加载所有工作表
+                for sheet_name in sheet_names:
+                    sheet = wb[sheet_name]
+
+                    # 获取工作表第一行数据
+                    for cell in list(sheet.rows)[0]:
+                        if 'Sample Name' in str(cell.value):
+                            # 获取音效名下的内容
+                            for cell_sound in list(sheet.columns)[cell.column - 1]:
+                                # 空格和中文不检测
+                                if cell_sound.value != None:
+                                    if check_is_chinese(cell_sound.value) == False:
+
+                                        """事件描述"""
+                                        event_descrip = get_event_descrip()
+
+                                        # 如果音效名与rnd名相同
+                                        if rnd_container['name'] == cell_sound.value:
+                                            # 如果状态标为取消的删除
+                                            for status in list(sheet.rows)[cell_sound.row - 1]:
+                                                if "cancel" == status.value:
+                                                    delete_wwise_content()
+                                            return
+        # 其他为在表格中搜索不到的名字
+        delete_wwise_content()
+
 
     """*****************主程序处理******************"""
     # 撤销开始
@@ -774,7 +792,7 @@ with WaapiClient() as client:
                                     # else:
                                     #     print_warning(cell_sound.value + "：该状态不会生成Wwise占位资源，请检查")
 
-    """同步表中删改的内容"""
+    """同步表中删除的内容"""
     # 查找所有Rnd和Event
     rnd_container_list, rnd_id, _ = find_obj(
         {'waql': ' "%s" select descendants where type = "RandomSequenceContainer" ' % wwise_dict['Root']})
@@ -785,8 +803,8 @@ with WaapiClient() as client:
     #           'Hierarchy\\v1\\Char\\Char\\Char_Skill\\Char_Skill\\Char_Skill_C01\\Char_Skill_C01\\Char_Skill_C01_Atk1'}
     event_list, event_id, _ = find_obj(
         {'waql': ' "%s" select descendants where type = "Event" ' % wwise_dict['Event_Root']})
-    # for rnd_container in rnd_container_list:
-    #     delete_or_modify_wwise_content()
+    for rnd_container in rnd_container_list:
+        delete_or_modify_wwise_content()
 
     # 撤销结束
     client.call("ak.wwise.core.undo.endGroup", displayName="rnd创建撤销")

@@ -82,15 +82,28 @@ def get_module_range(event_name):
         unreal.log_error("找不到" + event_name + "的系统名")
 
 
-# 表的属性值修改
-def modify_event_property(insert_row, type_event_dict):
-    # 事件描述赋值
-    sheet.cell(row=insert_row, column=4).value = type_event_dict['notes']
+def set_event_path(insert_row):
+    flag = 0
     # Event路径赋值
     for asset_path in allAssets:
         if event_dict['name'] in asset_path:
             asset_refer_path = "/Script/AkAudio.AkAudioEvent\'" + asset_path + "\'"
             sheet.cell(row=insert_row, column=2).value = asset_refer_path
+            flag = 1
+            break
+    if flag == 0:
+        sheet.cell(row=insert_row, column=2).value = ""
+
+
+# # 表的属性值修改
+# def modify_event_property(insert_row, type_event_dict):
+#     # 事件描述赋值
+#     sheet.cell(row=insert_row, column=4).value = type_event_dict['notes']
+#     # Event路径赋值
+#     for asset_path in allAssets:
+#         if event_dict['name'] in asset_path:
+#             asset_refer_path = "/Script/AkAudio.AkAudioEvent\'" + asset_path + "\'"
+#             sheet.cell(row=insert_row, column=2).value = asset_refer_path
 
 
 # ID生成
@@ -116,8 +129,15 @@ def set_value():
     for cell in list(sheet.columns)[2]:
         if event_dict['name'] == cell.value:
             flag = 1
-            modify_event_property(cell.row, event_dict)
+            # 事件描述赋值
+            sheet.cell(row=cell.row, column=4).value = event_dict['notes']
+            set_event_path(cell.row)
             break
+        elif event_dict['notes'] == sheet.cell(cell.row, column=4).value:
+            flag = 2
+            # 事件名称复制
+            sheet.cell(row=cell.row, column=3).value = event_dict['name']
+            set_event_path(cell.row)
     if flag == 0:
         # 插入为空的行
         insert_row = sheet.max_row + 1
@@ -127,7 +147,9 @@ def set_value():
         temp = temp + 1
         # 事件名称赋值
         sheet.cell(row=insert_row, column=3).value = event_dict['name']
-        modify_event_property(insert_row, event_dict)
+        # 事件描述赋值
+        sheet.cell(row=insert_row, column=4).value = event_dict['notes']
+        set_event_path(insert_row)
 
 
 """******************UE功能区**********************"""
