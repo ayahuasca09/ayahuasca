@@ -97,8 +97,31 @@ with WaapiClient() as client:
     # print(refer_list)
 
     """设置对象notes"""
+    # args = {
+    #     'object': '{15E5DC76-6CD3-4051-86C2-4DA23B16EB13}',
+    #     'value': "aaaaa"
+    # }
+    # client.call("ak.wwise.core.object.setNotes", args)
+
+    """设置对象属性/媒体资源路径修改测试"""
     args = {
-        'object': '{15E5DC76-6CD3-4051-86C2-4DA23B16EB13}',
-        'value': "aaaaa"
+        "objects": [
+            {
+                # ______使用媒体对象SFX作为对象______
+                # 修改媒体对象的命名,音量
+                "object": "{C1466E57-C6EA-4798-B41A-EBE116DB3EFF}",
+                # 还可以使用GUID作为路径
+                # "object":"{B6D45483-A1BF-4EEC-87CF-2E0CD493B2CB}",
+                "name": "a_02",
+                "@Volume": -18,
+                "@Pitch": 200,
+                "notes": "asda"
+
+            }
+        ]
     }
-    client.call("ak.wwise.core.object.setNotes", args)
+    options = {
+        'return': ['name']
+    }
+    result = client.call("ak.wwise.core.object.set", args, options=options)
+    print(result)

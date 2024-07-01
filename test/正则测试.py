@@ -3,8 +3,6 @@ import re
 """测试名称"""
 name = "Char_C03_Skill_Execu1_01_Pre_Hook_LP"
 
-
-
 """测试结果类型"""
 # 查看匹配的位置和名称
 # <re.Match object; span=(0, 1), match='C'>
@@ -47,8 +45,16 @@ pattern = r"_LP$"
 # print(rnd_name)
 
 """正则输出ID"""
-aa = "id:ssd|hdabgk|7391"
-data = re.search(r'(?<=id:)\d+|$', aa)
-if data.group():
-    print(int(data.group()))
+# aa = "id:ssd|hdabgk|7391"
+# data = re.search(r'(?<=id:)\d+|$', aa)
+# if data.group():
+#     print(int(data.group()))
+
+"""末尾数字读取"""
+aa = "higio_Rw02"
+wav_tail = re.search(r"(_R\d{2,4})$", aa)
+if wav_tail:
+    print(wav_tail.group())
+else:
+    print("aaaa")
 

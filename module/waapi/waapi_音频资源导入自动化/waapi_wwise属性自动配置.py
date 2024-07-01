@@ -34,6 +34,8 @@ wwise_sfx_path = os.path.join(wwise_proj_path, "Originals", "SFX")
 wwise_vo_path = os.path.join(wwise_proj_path, "Originals", "Voices")
 # 获取Wwise的Audio根路径
 wwise_audio_root = "{5EA7BBF8-64C0-4A50-8821-A07E8BE21D68}"
+# 获取Wwise的Music路径
+wwise_music_root = "{49FED366-B530-42A8-993B-924873AAB707}"
 
 """*****************功能检测区******************"""
 """log打印"""
@@ -106,10 +108,17 @@ with WaapiClient() as client:
 
         for media in media_list:
             if media not in wwise_refer_media_list:
-
                 if os.path.isfile(media):
-                    os.remove(media)
-                    print_log("[文件清理]" + media + "已删除")
+                    # 音乐不删
+                    if "Music" in media:
+                        if ".wav" in media:
+                            pass
+                        else:
+                            os.remove(media)
+                            print_log("[文件清理]" + media + "已删除")
+                    else:
+                        os.remove(media)
+                        print_log("[文件清理]" + media + "已删除")
 
 
     """不需要的文件清理"""

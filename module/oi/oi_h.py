@@ -82,11 +82,15 @@ def oi_get_json_filesname():
     # [{'name': 'Play_VO_Munin_07.json',
     #   'path': 'S:\\spgame\\Project\\Content\\Audio\\GeneratedSoundBanks\\Windows\\Event\\English\\28\\Play_VO_Munin_07.json'}]
 
+
 # 调用范例
 # file_json_list = oi_get_json_filesname()
 # pprint(file_json_list)
 
-# 复制文件到指定文件夹并重命名
+"""复制文件到指定文件夹并重命名"""
 # uu = shutil.copy2(r"F:\pppppy\SP\module\waapi\waapi_音频资源导入自动化\Media_Temp.wav"
 #                   , os.path.join(r"F:\pppppy\SP\module\waapi\waapi_音频资源导入自动化\New_Media", 'Media_New' + ".wav"))
 # print(uu)
+
+"""修改文件名称"""
+# os.rename(r"C:\Users\happyelements\Desktop\面试问题补充.txt",r"C:\Users\happyelements\Desktop\面试.txt")
