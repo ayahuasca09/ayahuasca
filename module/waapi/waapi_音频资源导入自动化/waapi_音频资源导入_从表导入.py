@@ -54,7 +54,7 @@ event_descrip_dict = {}
 def print_error(error_info):
     global is_pass
     is_pass = False
-    print(error_info)
+    print("[error]"+error_info)
 
 
 def print_warning(warn_info):
@@ -551,10 +551,35 @@ with WaapiClient() as client:
 
                 # 媒体资源导入
                 import_media(media_name, rnd_path)
+                # Sound颜色设置
+                _, sound_container_id, _ = find_obj(
+                    {'waql': ' "%s" select children  ' % rnd_container_object['id']})
+                if sound_container_id:
+                    set_sound_color_default(sound_container_id)
+
                 print_warning(rnd_name + "：RandContainer创建")
                 print_warning(media_name + "：Sound创建及Media导入")
 
         return rnd_path, rnd_name
+
+
+    """设置新的占位Sound资源超越父级为灰色"""
+
+
+    def set_sound_color_default(obj_id):
+        args_property = {
+            "object": obj_id,
+            "property": "OverrideColor",
+            "value": True,
+        }
+        client.call("ak.wwise.core.object.setProperty", args_property)
+
+        args_property = {
+            "object": obj_id,
+            "property": "Color",
+            "value": 0,
+        }
+        client.call("ak.wwise.core.object.setProperty", args_property)
 
 
     """媒体资源导入"""
@@ -733,6 +758,9 @@ with WaapiClient() as client:
     # 撤销开始
     client.call("ak.wwise.core.undo.beginGroup")
 
+    # 记录所有资源名称
+    sound_name_list = []
+
     # 提取规则：只提取xlsx文件
     for i in file_name_list:
         if ".xlsx" in i:
@@ -759,35 +787,41 @@ with WaapiClient() as client:
                                         """❤❤❤❤数据获取❤❤❤❤"""
                                         """检测表格内容"""
                                         is_pass = True
-                                        """测试名称"""
-                                        name = cell_sound.value
-                                        """事件描述"""
-                                        event_descrip = get_event_descrip()
-                                        if event_descrip in event_descrip_dict:
-                                            print_error(event_descrip + "：表格中有重复项描述，请检查")
+
+                                        """检查表格中是否有内容重复项"""
+                                        if cell_sound.value in sound_name_list:
+                                            print_error(cell_sound.value + "：表格中有重复项音效名，请检查")
                                         else:
-                                            event_descrip_dict[event_descrip] = cell_sound.value
+                                            sound_name_list.append(cell_sound.value)
+                                            """测试名称"""
+                                            name = cell_sound.value
+                                            """事件描述"""
+                                            event_descrip = get_event_descrip()
+                                            if event_descrip in event_descrip_dict:
+                                                print_error(event_descrip + "：表格中有重复项描述，请检查")
+                                            else:
+                                                event_descrip_dict[event_descrip] = cell_sound.value
 
-                                        # print(event_descrip)
+                                            # print(event_descrip)
 
-                                        if is_pass:
-                                            # 分隔符的大小写和长度检查
-                                            system_name = check_by_length_and_word()
-
-                                            # 检查LP是否在末尾
-                                            name = check_LP_in_last()
-                                            # print(name)
-
-                                            # 通用词汇检查
-                                            check_by_com_word(name)
-
-                                            # 检查一级系统并索引到不同的检测方式
-                                            check_first_system_name(name)
-                                            # print(name)
-
-                                            # 生成Wwise内容
                                             if is_pass:
-                                                create_wwise_content(cell_sound.value, system_name)
+                                                # 分隔符的大小写和长度检查
+                                                system_name = check_by_length_and_word()
+
+                                                # 检查LP是否在末尾
+                                                name = check_LP_in_last()
+                                                # print(name)
+
+                                                # 通用词汇检查
+                                                check_by_com_word(name)
+
+                                                # 检查一级系统并索引到不同的检测方式
+                                                check_first_system_name(name)
+                                                # print(name)
+
+                                                # 生成Wwise内容
+                                                if is_pass:
+                                                    create_wwise_content(cell_sound.value, system_name)
 
                                     # else:
                                     #     print_warning(cell_sound.value + "：该状态不会生成Wwise占位资源，请检查")

@@ -166,8 +166,8 @@ with WaapiClient() as client:
                                                                                                   end_color='88DB29',
                                                                                                   fill_type='solid')
                                                 # 文件复制
-                                                # shutil.copy2(file_wav_dict[old_name + '.wav']
-                                                #              , os.path.join(copy_path, new_name + ".wav"))
+                                                shutil.copy2(file_wav_dict[old_name + '.wav']
+                                                             , os.path.join(copy_path, new_name + ".wav"))
                                             # 表里没有旧名字，应该没资源
                                             else:
                                                 sheet_m.cell(row=insert_row, column=7).value = 1

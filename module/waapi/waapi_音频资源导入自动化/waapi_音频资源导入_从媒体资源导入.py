@@ -45,10 +45,14 @@ def check_is_R01(media_name):
 """报错捕获"""
 
 
+def print_warning(warn_info):
+    print("[warning]" + warn_info)
+
+
 def print_error(error_info):
     global is_pass
     is_pass = False
-    print(no_wav_name + error_info)
+    print("[error]" + no_wav_name + error_info)
 
     """遍历文件目录获取文件名称和路径
     """
@@ -119,6 +123,18 @@ with WaapiClient() as client:
         return obj_parent_id
 
 
+    """设置新的占位Sound资源超越父级为灰色"""
+
+
+    def set_sound_color_default(obj_id):
+        args_property = {
+            "object": obj_id,
+            "property": "OverrideColor",
+            "value": False,
+        }
+        client.call("ak.wwise.core.object.setProperty", args_property)
+
+
     """创建新的随机容器"""
 
 
@@ -139,34 +155,15 @@ with WaapiClient() as client:
                 # 在容器中创建媒体资源
                 import_info = import_media_in_rnd(file_wav_dict[wav_name], media_name, rnd_path)
                 if import_info != None:
-                    pprint(media_name + "：已导入随机容器" + rnd_name)
+                    print_warning(media_name + "：已导入随机容器" + rnd_name)
+                    # 颜色修改
+                    sound_container_list, sound_container_id, _ = find_obj(
+                        {'waql': ' "%s" select children  ' % rnd_container_dict['id']})
+                    for sound_cotainer_dict in sound_container_list:
+                        set_sound_color_default(sound_cotainer_dict['id'])
                 break
-        # 不存在则创建
-        # if flag == 0:
-        #     # 查找所在路径
-        #     rnd_parent_id = find_obj_parent(rnd_name,
-        #                                     {
-        #                                         'waql': ' "%s" select descendants,this where type = "ActorMixer" ' %
-        #                                                 os.path.join(
-        #                                                     wwise_dict['Root'], system_name)})
-        #     if rnd_parent_id != None:
-        #         # 创建的rnd属性
-        #         args = {
-        #             # 选择父级
-        #             "parent": rnd_parent_id,
-        #             # 创建类型机名称
-        #             "type": "RandomSequenceContainer",
-        #             "name": rnd_name,
-        #             "@RandomOrSequence": 1,
-        #             "@NormalOrShuffle": 0,
-        #             "@RandomAvoidRepeatingCount": 3
-        #         }
-        #         rnd_container_object = client.call("ak.wwise.core.object.create", args)
-        #         # 查找新创建的容器的路径
-        #         _, _, rnd_path = find_obj(
-        #             {'waql': ' "%s"  ' % rnd_container_object['id']})
-        #
-        #         pprint(rnd_name + "：RandomContainer创建")
+        if flag == 0:
+            print_error("：未找到相应的随机randomcontainer，导入失败")
 
         return rnd_path, rnd_name
 
@@ -202,57 +199,6 @@ with WaapiClient() as client:
         }
         import_info = client.call("ak.wwise.core.audio.import", args_import, options=opts)
         return import_info
-
-
-    """创建事件的参数"""
-
-
-    def get_event_args(event_parent_path, event_name, event_action, event_target):
-        args_new_event = {
-            # 上半部分属性中分别为 Event 创建后存放的路径、类型、名称、遇到名字冲突时的处理方法
-            "parent": event_parent_path,
-            "type": "Event",
-            "name": event_name,
-            "onNameConflict": "merge",
-            "children": [
-                {
-                    # 为其创建播放行为，名字留空，使用 @ActionType 定义其播放行为为 Play，@Target 为被播放的声音对象
-                    "name": "",
-                    "type": "Action",
-                    "@ActionType": event_action,
-                    "@Target": event_target
-                }
-            ]
-        }
-        return args_new_event
-
-
-    """事件生成"""
-
-
-    def create_event(rnd_name, rnd_path):
-        parent_id = find_obj_parent(rnd_name, {
-            'waql': ' "%s" select descendants where type = "WorkUnit" ' % os.path.join(wwise_dict['Event_Root'],
-                                                                                       word_list[0])})
-        event_name = "AKE_" + "Play_" + rnd_name
-        # 查找事件是否已存在
-        event_list, _, _ = find_obj(
-            {'waql': ' "%s" select descendants where type = "Event" ' %
-                     wwise_dict['Event_Root']})
-        flag = 0
-        for event_dict in event_list:
-            if event_dict['name'] == event_name:
-                flag = 1
-                break
-        if flag == 0:
-            event_args = get_event_args(parent_id, event_name, 1, rnd_path)
-            client.call("ak.wwise.core.object.create", event_args)
-            pprint(event_name + "事件创建")
-            if "_LP" in rnd_name:
-                event_name = "AKE_" + "Stop_" + rnd_name
-                event_args = get_event_args(parent_id, event_name, 2, rnd_path)
-                client.call("ak.wwise.core.object.create", event_args)
-                pprint(event_name + "事件创建")
 
 
     """媒体资源导入的总流程"""

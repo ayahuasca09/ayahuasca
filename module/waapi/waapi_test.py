@@ -103,25 +103,27 @@ with WaapiClient() as client:
     # }
     # client.call("ak.wwise.core.object.setNotes", args)
 
-    """设置对象属性/媒体资源路径修改测试"""
-    args = {
-        "objects": [
-            {
-                # ______使用媒体对象SFX作为对象______
-                # 修改媒体对象的命名,音量
-                "object": "{C1466E57-C6EA-4798-B41A-EBE116DB3EFF}",
-                # 还可以使用GUID作为路径
-                # "object":"{B6D45483-A1BF-4EEC-87CF-2E0CD493B2CB}",
-                "name": "a_02",
-                "@Volume": -18,
-                "@Pitch": 200,
-                "notes": "asda"
+    # """设置对象属性/媒体资源路径修改测试"""
+    # args = {
+    #     "objects": [
+    #         {
+    #             # ______使用媒体对象SFX作为对象______
+    #             # 修改媒体对象的命名,音量
+    #             "object": "{C1466E57-C6EA-4798-B41A-EBE116DB3EFF}",
+    #             # 还可以使用GUID作为路径
+    #             # "object":"{B6D45483-A1BF-4EEC-87CF-2E0CD493B2CB}",
+    #             "name": "a_02",
+    #             "@Volume": -18,
+    #             "@Pitch": 200,
+    #             "notes": "asda"
+    #
+    #         }
+    #     ]
+    # }
+    # options = {
+    #     'return': ['name']
+    # }
+    # result = client.call("ak.wwise.core.object.set", args, options=options)
+    # print(result)
 
-            }
-        ]
-    }
-    options = {
-        'return': ['name']
-    }
-    result = client.call("ak.wwise.core.object.set", args, options=options)
-    print(result)
+
