@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<ExternalSourcesList SchemaVersion="1" Root="New_Media">
+	<Source Path="VO_Lorin_01.wav">
+		<name>我是大佬</name>
+	</Source>
+    <Source Path="VO_Lorin_02.wav"/>
+	<Source Path="VO_Lorin_03.wav">
+		<name>我是帅哥</name>
+	</Source>
+    <Source Path="VO_Lorin_04.wav"/>
+    <Source Path="VO_Lorin_05.wav"/>
+    <Source Path="VO_Lorin_06.wav"/>
+    <Source Path="VO_Munin_01.wav"/>
+    <Source Path="VO_Munin_02.wav"/>
+    <Source Path="VO_Munin_03.wav"/>
+    <Source Path="VO_Munin_04.wav"/>
+</ExternalSourcesList>
