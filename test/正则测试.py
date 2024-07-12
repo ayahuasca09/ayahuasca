@@ -51,10 +51,17 @@ pattern = r"_LP$"
 #     print(int(data.group()))
 
 """末尾数字读取"""
-aa = "higio_Rw02"
-wav_tail = re.search(r"(_R\d{2,4})$", aa)
+# aa = "higio_Rw02"
+# wav_tail = re.search(r"(_R\d{2,4})$", aa)
+# if wav_tail:
+#     print(wav_tail.group())
+# else:
+#     print("aaaa")
+
+"""检查开头是否含有VO"""
+aa = "aa_hgdiuagi"
+wav_tail = re.search(r"^(VO)", aa)
 if wav_tail:
     print(wav_tail.group())
 else:
     print("aaaa")
-
