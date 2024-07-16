@@ -1,0 +1,13 @@
+<?xml version="1.0" ?>
+<ExternalSourcesList SchemaVersion="1">
+	<Source Path="F:\pppppy\SP\module\waapi\waapi_Auto_Import_ExternalSource\New_Media\VO_C01_15_World.wav" Conversion="VO"/>
+	<Source Path="F:\pppppy\SP\module\waapi\waapi_Auto_Import_ExternalSource\New_Media\VO_C01_33_Battle.wav" Conversion="VO"/>
+	<Source Path="F:\pppppy\SP\module\waapi\waapi_Auto_Import_ExternalSource\New_Media\VO_C03_43_Emotion.wav" Conversion="VO"/>
+	<Source Path="F:\pppppy\SP\module\waapi\waapi_Auto_Import_ExternalSource\New_Media\VO_C04_45_Emotion.wav" Conversion="VO"/>
+	<Source Path="F:\pppppy\SP\module\waapi\waapi_Auto_Import_ExternalSource\New_Media\VO_C10_50_Emotion.wav" Conversion="VO"/>
+	<Source Path="F:\pppppy\SP\module\waapi\waapi_Auto_Import_ExternalSource\New_Media\VO_Lorin_01.wav" Conversion="VO"/>
+	<Source Path="F:\pppppy\SP\module\waapi\waapi_Auto_Import_ExternalSource\New_Media\VO_Lorin_02.wav" Conversion="VO"/>
+	<Source Path="F:\pppppy\SP\module\waapi\waapi_Auto_Import_ExternalSource\New_Media\VO_Lorin_03.wav" Conversion="VO"/>
+	<Source Path="F:\pppppy\SP\module\waapi\waapi_Auto_Import_ExternalSource\New_Media\VO_Lorin_04.wav" Conversion="VO"/>
+	<Source Path="F:\pppppy\SP\module\waapi\waapi_Auto_Import_ExternalSource\New_Media\VO_Munin_04.wav" Conversion="VO"/>
+</ExternalSourcesList>

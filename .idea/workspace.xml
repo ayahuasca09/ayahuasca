@@ -4,25 +4,41 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="17a8a927-0db7-41d4-8f81-9181fc87e6d9" name="更改" comment="音频自动配置">
-      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_语音导入自动化/ExternalSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_语音导入自动化/New_Media/VO_Lorin_01.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_语音导入自动化/New_Media/VO_Lorin_02.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_语音导入自动化/New_Media/VO_Lorin_03.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_语音导入自动化/New_Media/VO_Lorin_04.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_语音导入自动化/New_Media/VO_Lorin_05.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_语音导入自动化/New_Media/VO_Lorin_06.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_语音导入自动化/New_Media/VO_Munin_01.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_语音导入自动化/New_Media/VO_Munin_02.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_语音导入自动化/New_Media/VO_Munin_03.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_语音导入自动化/New_Media/VO_Munin_04.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_语音导入自动化/New_Media/此文件夹用于导入要转码的语音文件.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_语音导入自动化/SilverPalace_Voice_ExternalSource.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_语音导入自动化/waapi_语音导入.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module/xml/ExternalSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module/xml/test.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module/xml/xml文件读写示例.py" afterDir="false" />
+    <list default="true" id="17a8a927-0db7-41d4-8f81-9181fc87e6d9" name="更改" comment="xml文件写入测试">
+      <change afterPath="$PROJECT_DIR$/module/csv/MediaInfoTable.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/ExternalSource.wsources" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/ExternalSource.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/ExternalSourceDefaultMedia.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/MediaInfoTable.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/New_Media/VO_C01_15_World.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/New_Media/VO_C01_33_Battle.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/New_Media/VO_C03_43_Emotion.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/New_Media/VO_C04_45_Emotion.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/New_Media/VO_C10_50_Emotion.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/New_Media/VO_Lorin_01.akd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/New_Media/VO_Lorin_01.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/New_Media/VO_Lorin_02.akd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/New_Media/VO_Lorin_02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/New_Media/VO_Lorin_03.akd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/New_Media/VO_Lorin_03.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/New_Media/VO_Lorin_04.akd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/New_Media/VO_Lorin_04.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/New_Media/VO_Lorin_05.akd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/New_Media/VO_Lorin_06.akd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/New_Media/VO_Munin_01.akd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/New_Media/VO_Munin_02.akd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/New_Media/VO_Munin_03.akd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/New_Media/VO_Munin_04.akd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/New_Media/VO_Munin_04.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/New_Media/此文件夹用于导入要转码的语音文件.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/waapi_废弃功能.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/waapi_语音导入.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_语音导入自动化/ExternalSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_语音导入自动化/New_Media/此文件夹用于导入要转码的语音文件.txt" beforeDir="false" afterPath="$PROJECT_DIR$/module/csv/csv_pandas测试.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_语音导入自动化/SilverPalace_Voice_ExternalSource.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/SilverPalace_Voice_ExternalSource.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_语音导入自动化/waapi_语音导入.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pylibrary.txt" beforeDir="false" afterPath="$PROJECT_DIR$/pylibrary.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,6 +81,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Python.csv_pandas测试.executor": "Run",
     "Python.excel_音效需求表音效名读取.executor": "Run",
     "Python.oi_h.executor": "Run",
     "Python.oi_媒体资源重命名.executor": "Run",
@@ -79,6 +96,7 @@
     "Python.waapi_订阅_soundbank生成数据 (1).executor": "Run",
     "Python.waapi_订阅_soundbank生成数据打印 (1).executor": "Run",
     "Python.waapi_订阅_接收对象名称被修改时的信息.executor": "Run",
+    "Python.waapi_语音导入 (1).executor": "Run",
     "Python.waapi_语音导入.executor": "Run",
     "Python.waapi_转码类型创建.executor": "Run",
     "Python.waapi_音频资源导入_从媒体资源导入.executor": "Run",
@@ -106,8 +124,8 @@
       <recent name="F:\pppppy\SP\module\waapi\waapi_generatesoundbank" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.xml文件读写示例 (1)">
-    <configuration name="正则测试" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.waapi_语音导入 (1)">
+    <configuration name="csv_pandas测试" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="SP" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -116,11 +134,33 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/module/csv" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test/正则测试.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/module/csv/csv_pandas测试.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="waapi_语音导入 (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="SP" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/waapi_语音导入.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -143,28 +183,6 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/module/waapi/waapi_语音导入自动化/waapi_语音导入.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="waapi_wwise属性自动配置" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="SP" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/waapi_wwise属性自动配置.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -219,11 +237,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.waapi_语音导入 (1)" />
+        <item itemvalue="Python.csv_pandas测试" />
+        <item itemvalue="Python.waapi_语音导入" />
         <item itemvalue="Python.xml文件读写示例 (1)" />
         <item itemvalue="Python.xml文件读写示例" />
-        <item itemvalue="Python.waapi_语音导入" />
-        <item itemvalue="Python.waapi_wwise属性自动配置" />
-        <item itemvalue="Python.正则测试" />
       </list>
     </recent_temporary>
   </component>
@@ -611,7 +629,15 @@
       <option name="project" value="LOCAL" />
       <updated>1720771973590</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="xml文件写入测试">
+      <option name="closed" value="true" />
+      <created>1720778275333</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1720778275333</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -627,7 +653,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="音频资源导入检测——按json配置检查测试" />
     <MESSAGE value="音频资源导入检测——字符长度检查" />
     <MESSAGE value="音频资源导入检测——开头大写" />
     <MESSAGE value="音频资源导入检测——音效需求表读取" />
@@ -652,6 +677,7 @@
     <MESSAGE value="wwise属性自动配置——媒体资源重命名" />
     <MESSAGE value="自动删除和重命名表格修改" />
     <MESSAGE value="音频自动配置" />
-    <option name="LAST_COMMIT_MESSAGE" value="音频自动配置" />
+    <MESSAGE value="xml文件写入测试" />
+    <option name="LAST_COMMIT_MESSAGE" value="xml文件写入测试" />
   </component>
 </project>
