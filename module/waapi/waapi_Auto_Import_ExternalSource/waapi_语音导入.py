@@ -104,6 +104,62 @@ def get_vo_excel_column():
     return vo_id_column, file_name_column, external_type_column
 
 
+"""写入media_info csv表"""
+
+
+def write_media_info_csv():
+    # 在media_info表中未找到该ID，则新增
+    if media_info_data[media_info_data['Name'] == vo_id].empty:
+        new_data = pd.DataFrame({
+            "Name": vo_id,
+            'ExternalSourceMediaInfoId': vo_id,
+            'MediaName': cell_sound.value + ".wem",
+            'CodecID': 4,
+            'bIsStreamed': 'TRUE',
+            'bUseDeviceMemory': "FALSE",
+            'MemoryAlignment': 0,
+            'PrefetchSize': 0
+        }, index=[0])
+        # index无效，但不加会报错
+        new_data.to_csv(media_info_path, mode='a', header=False,
+                        index=False)
+    # 在media_info表中找到该ID，则替换
+    else:
+        media_info_data[media_info_data['Name'] == vo_id] = [vo_id,
+                                                             vo_id,
+                                                             cell_sound.value + ".wem",
+                                                             4, "TRUE",
+                                                             "FALSE",
+                                                             0, 0]
+        media_info_data.to_csv(media_info_path, index=False)
+
+
+"""写入wwise_cookie csv表"""
+
+
+def write_external_cookie_csv():
+    # 在media_info表中未找到该ID，则新增
+    if external_cookie_data[external_cookie_data['MediaInfoId'] == vo_id].empty:
+        new_data = pd.DataFrame({
+            "Name": vo_id,
+            'ExternalSourceCookie': external_sound_dict['shortId'],
+            'ExternalSourceName': external_sound_dict['name'],
+            'MediaInfoId': vo_id,
+            'MediaName': cell_sound.value + ".wem"
+        }, index=[0])
+        # index无效，但不加会报错
+        new_data.to_csv(external_cookie_path, mode='a', header=False,
+                        index=False)
+    # 在media_info表中找到该ID，则替换
+    else:
+        external_cookie_data[external_cookie_data['MediaInfoId'] == vo_id] = [vo_id,
+                                                                              external_sound_dict['shortId'],
+                                                                              external_sound_dict['name'],
+                                                                              vo_id,
+                                                                              cell_sound.value + ".wem"]
+        external_cookie_data.to_csv(external_cookie_path, index=False)
+
+
 # 获取媒体资源文件列表
 wav_path = os.path.join(py_path, "New_Media")
 file_wav_dict = get_type_file_name_and_path('.wav', wav_path)
@@ -161,28 +217,28 @@ with WaapiClient() as client:
 
     """*******************Wwise主程序*******************"""
 
-    # 读excel表
-    # 提取规则：只提取xlsx文件
-    for i in file_name_list:
-        if ".xlsx" in i:
-            # 拼接xlsx的路径
-            file_path_xlsx = os.path.join(py_path, i)
-            # 获取xlsx的workbook
-            wb = openpyxl.load_workbook(file_path_xlsx)
-            # 获取xlsx的所有sheet
-            sheet_names = wb.sheetnames
-            # 加载所有工作表
-            for sheet_name in sheet_names:
-                sheet = wb[sheet_name]
-                vo_id_column, file_name_column, external_type_column = get_vo_excel_column()
-                if file_name_column:
-                    # 获取音效名下的内容
-                    for cell_sound in list(sheet.columns)[file_name_column - 1]:
-                        if cell_sound.value and (cell_sound.value != "文件名"):
-                            # 查找要导入的媒体文件里有没有对应的
-                            for file_wav_name in file_wav_dict:
+    # 查找要导入的媒体文件里有没有对应的
+    for file_wav_name in file_wav_dict:
+        # 读excel表
+        # 提取规则：只提取xlsx文件
+        for i in file_name_list:
+            if ".xlsx" in i:
+                # 拼接xlsx的路径
+                file_path_xlsx = os.path.join(py_path, i)
+                # 获取xlsx的workbook
+                wb = openpyxl.load_workbook(file_path_xlsx)
+                # 获取xlsx的所有sheet
+                sheet_names = wb.sheetnames
+                # 加载所有工作表
+                for sheet_name in sheet_names:
+                    sheet = wb[sheet_name]
+                    vo_id_column, file_name_column, external_type_column = get_vo_excel_column()
+                    if file_name_column:
+                        # 获取音效名下的内容
+                        for cell_sound in list(sheet.columns)[file_name_column - 1]:
+                            if cell_sound.value and (cell_sound.value != "文件名"):
+
                                 if cell_sound.value in file_wav_name:
-                                    # print(cell_sound.value)
 
                                     # 查找Wwise中有无相应的Sound
                                     for external_sound_dict in external_sound_list:
@@ -197,27 +253,8 @@ with WaapiClient() as client:
                                                     vo_id = sheet.cell(
                                                         row=cell_sound.row,
                                                         column=vo_id_column).value
-                                                    # 在media_info表中未找到该ID，则新增
-                                                    if media_info_data[media_info_data['Name'] == vo_id].empty:
-                                                        new_data = pd.DataFrame({
-                                                            "Name": vo_id,
-                                                            'ExternalSourceMediaInfoId': vo_id,
-                                                            'MediaName': cell_sound.value + ".wem",
-                                                            'CodecID': 4,
-                                                            'bIsStreamed': 'TRUE',
-                                                            'bUseDeviceMemory': "FALSE",
-                                                            'MemoryAlignment': 0,
-                                                            'PrefetchSize': 0
-                                                        }, index=[0])
-                                                        # index无效，但不加会报错
-                                                        new_data.to_csv(media_info_path, mode='a', header=False,
-                                                                        index=False)
-                                                    # 在media_info表中找到该ID，则替换
-                                                    else:
-                                                        media_info_data[media_info_data['Name'] == vo_id] = [vo_id,
-                                                                                                             vo_id,
-                                                                                                             cell_sound.value + ".wem",
-                                                                                                             4, "TRUE",
-                                                                                                             "FALSE",
-                                                                                                             0, 0]
-                                                        media_info_data.to_csv(media_info_path, index=False)
+                                                    # 写入media_info csv表
+                                                    write_media_info_csv()
+                                                    # 写入wwise_cookie表
+                                                    write_external_cookie_csv()
+
