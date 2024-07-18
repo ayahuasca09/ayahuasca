@@ -126,4 +126,25 @@ with WaapiClient() as client:
     # result = client.call("ak.wwise.core.object.set", args, options=options)
     # print(result)
 
+    """external source自动转码测试"""
+    args = {
+        "sources": [
+            {
+                "input": "F:\\pppppy\\SP\\module\\waapi\\waapi_Auto_Import_ExternalSource\\ExternalSource.wsources",
+                "platform": "Windows",
+                "output": 'S:\\Ver_1.0.0\\Project\\Content\\Audio\\GeneratedExternalSources\\Windows'
+            },
+            {
+                "input": "F:\\pppppy\\SP\\module\\waapi\\waapi_Auto_Import_ExternalSource\\ExternalSource.wsources",
+                "platform": "Android",
+                "output": 'S:\\Ver_1.0.0\\Project\\Content\\Audio\\GeneratedExternalSources\\Android'
+            },
+            {
+                "input": "F:\\pppppy\\SP\\module\\waapi\\waapi_Auto_Import_ExternalSource\\ExternalSource.wsources",
+                "platform": "iOS",
+                "output": 'S:\\Ver_1.0.0\\Project\\Content\\Audio\\GeneratedExternalSources\\iOS'
+            }
+        ]
+    }
 
+    gen_log = client.call("ak.wwise.core.soundbank.convertExternalSources", args)

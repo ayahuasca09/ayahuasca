@@ -16,13 +16,13 @@ print(data)"""
 """data = data[(data['PrefetchSize'] == 0) & (data['Name'] == 200)]
 print(data)"""
 
-# 替换指定数据
+# 替换指定数据的所有值
 data[data['Name'] == 200] = [201, 201, "New.wem", 2, "TRUE", "FALSE", 22, 0]
 data.to_csv('MediaInfoTable.csv', index=False)
 # print(type(ft_data))
 
 # 新加数据
-new_data = pd.DataFrame({
+"""new_data = pd.DataFrame({
     "Name": 333,
     'ExternalSourceMediaInfoId': 333,
     'MediaName': ".wem",
@@ -33,10 +33,20 @@ new_data = pd.DataFrame({
     'PrefetchSize': 0
 }, index=[0])
 # index无效，但不加会报错
-new_data.to_csv('MediaInfoTable.csv', mode='a', header=False, index=False)
+new_data.to_csv('MediaInfoTable.csv', mode='a', header=False, index=False)"""
 # mode：不指定时如果csv文件不存在则自动创建
 
 # 判断当表格中不存在此值
-if data[data['Name'] == 333].empty:
-    print(42352)
+"""if data[data['Name'] == 333].empty:
+    print(42352)"""
 
+# 查找特定数据的行索引
+"""row_index = data.index[data['Name'] == 333].tolist()
+# print(row_index)"""
+
+# 获取列表的行数
+"""print(data.shape[0])"""
+
+# 替换指定数据的部分值
+data.loc[data['Name'] == 201, 'MediaName'] = "body"
+data.to_csv('MediaInfoTable.csv', index=False)
