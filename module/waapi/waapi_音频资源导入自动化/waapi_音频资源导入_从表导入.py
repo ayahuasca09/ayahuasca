@@ -54,7 +54,7 @@ event_descrip_dict = {}
 def print_error(error_info):
     global is_pass
     is_pass = False
-    print("[error]"+error_info)
+    print("[error]" + error_info)
 
 
 def print_warning(warn_info):
@@ -147,8 +147,25 @@ def check_by_Mus(name):
 
 
 def check_by_VO(name):
-    global is_pass
-    is_pass = False
+    module_dict = js_dict[system_name]['module']
+    flag = 0
+    for module in module_dict:
+        # 模块层查询
+        if module + "_" in name:
+            name = name.replace(module + "_", "")
+            if name:
+                # 类型名查询
+                name = check_by_re(module_dict[module]['property'] + "_", name)
+                if name:
+                    # 角色名查询
+                    name = check_by_re(js_dict[system_name]['name'] + "_", name)
+                    if name:
+                        # 数字编号查询
+                        name = check_by_re(r"\d*", name)
+            flag = 1
+            break
+    if flag == 0:
+        print_error_by_module(module_dict)
 
 
 """Char类型检查"""
@@ -164,18 +181,18 @@ def check_by_Char(name):
             name = name.replace(module + "_", "")
             # 角色名层查询
             name = check_by_re(js_dict[system_name]['name'] + "_", name)
-            if name != None:
+            if name:
                 if "Mov_" in name:
                     is_mov = True
                 # property
                 name = check_by_re(module_dict[module]['property'] + "_*", name)
                 # 长度限制查询
-                if name != None:
+                if name:
                     check_by_str_length(name, js_dict[system_name]['length'])
                 # Mov层加查询
-                if is_mov == True:
+                if is_mov:
                     name = check_by_re(module_dict[module]['property2'] + "_*", name)
-                    if name != None:
+                    if name:
                         name = check_by_re(module_dict[module]['property3'] + "_*", name)
 
             flag = 1
@@ -203,11 +220,11 @@ def check_by_Mon(name):
                     name = name.replace(module + "_", "")
                     # Boss名层查询
                     name = check_by_re(js_dict[system_name][type]['name'] + "_", name)
-                    if name != None:
+                    if name:
                         # 技能层查询
                         name = check_by_re(module_dict[module]['property'] + "_*", name)
                         # 长度限制查询
-                        if name != None:
+                        if name:
                             check_by_str_length(name, js_dict[system_name][type]['length'])
 
                     flag = 1
@@ -229,16 +246,16 @@ def check_by_Sys(name):
             name = name.replace(module + "_", "")
             # Show类查询
             if module == "Show":
-                if name != None:
+                if name:
                     # 角色名称
                     name = check_by_re(module_dict[module]['property'] + "_", name)
-                    if name != None:
+                    if name:
                         # 皮肤名称
                         name = check_by_re(module_dict[module]['property2'] + "_", name)
-                        if name != None:
+                        if name:
                             # 动作名称
                             name = check_by_re(module_dict[module]['property3'] + "_*", name)
-                            if name != None:
+                            if name:
                                 # 长度限制查询
                                 check_by_str_length(name, module_dict[module]['length'])
             flag = 1
@@ -256,7 +273,7 @@ def check_LP_in_last():
         # .*代表所有字符 _LP$代表以_LP结尾
         pattern = r".*_LP$"
         result = re.match(pattern, name)
-        if result != None:
+        if result:
             new_name = re.sub(r"_LP$", "", name)
             return new_name
         else:
@@ -317,22 +334,22 @@ def check_first_system_name(name):
 
 
 def get_descrip_and_status_column():
-    require_module_column = 999
-    second_module_column = 999
-    require_name_column = 999
-    status_column = 999
+    require_module_column = None
+    second_module_column = None
+    require_name_column = None
+    status_column = None
     for cell in list(sheet.rows)[0]:
         if cell.value:
             if 'Require Module' in str(cell.value):
                 require_module_column = cell.column
                 # print(require_module_column)
-            if 'Second Module' in str(cell.value):
+            elif 'Second Module' in str(cell.value):
                 second_module_column = cell.column
                 # print(second_module_column)
-            if 'Require Name' in str(cell.value):
+            elif 'Require Name' in str(cell.value):
                 require_name_column = cell.column
                 # print(require_name_column)
-            if 'Status' in str(cell.value):
+            elif 'Status' in str(cell.value):
                 status_column = cell.column
                 # print(status_column)
     return require_module_column, second_module_column, require_name_column, status_column
@@ -780,72 +797,72 @@ with WaapiClient() as client:
                         # 获取音效名下的内容
                         for cell_sound in list(sheet.columns)[cell.column - 1]:
                             # 空格和中文不检测
-                            if cell_sound.value != None:
-                                if check_is_chinese(cell_sound.value) == False:
-                                    if (status_column != 999) and (sheet.cell(row=cell_sound.row,
-                                                                              column=status_column).value in status_list):
-                                        """❤❤❤❤数据获取❤❤❤❤"""
-                                        """检测表格内容"""
-                                        is_pass = True
+                            if cell_sound.value:
+                                if not check_is_chinese(cell_sound.value):
+                                    if status_column:
+                                        if sheet.cell(row=cell_sound.row,
+                                                      column=status_column).value in status_list:
 
-                                        """检查表格中是否有内容重复项"""
-                                        if cell_sound.value in sound_name_list:
-                                            print_error(cell_sound.value + "：表格中有重复项音效名，请检查")
-                                        else:
-                                            sound_name_list.append(cell_sound.value)
-                                            """测试名称"""
-                                            name = cell_sound.value
-                                            """事件描述"""
-                                            event_descrip = get_event_descrip()
-                                            if event_descrip in event_descrip_dict:
-                                                print_error(event_descrip + "：表格中有重复项描述，请检查")
+                                            """❤❤❤❤数据获取❤❤❤❤"""
+                                            """检测表格内容"""
+                                            is_pass = True
+
+                                            """检查表格中是否有内容重复项"""
+                                            if cell_sound.value in sound_name_list:
+                                                print_error(cell_sound.value + "：表格中有重复项音效名，请检查")
                                             else:
-                                                event_descrip_dict[event_descrip] = cell_sound.value
+                                                sound_name_list.append(cell_sound.value)
+                                                """测试名称"""
+                                                name = cell_sound.value
+                                                """事件描述"""
+                                                event_descrip = get_event_descrip()
+                                                if event_descrip in event_descrip_dict:
+                                                    print_error(event_descrip + "：表格中有重复项描述，请检查")
+                                                else:
+                                                    event_descrip_dict[event_descrip] = cell_sound.value
 
-                                            # print(event_descrip)
+                                                # print(event_descrip)
 
-                                            if is_pass:
-                                                # 分隔符的大小写和长度检查
-                                                system_name = check_by_length_and_word()
-
-                                                # 检查LP是否在末尾
-                                                name = check_LP_in_last()
-                                                # print(name)
-
-                                                # 通用词汇检查
-                                                check_by_com_word(name)
-
-                                                # 检查一级系统并索引到不同的检测方式
-                                                check_first_system_name(name)
-                                                # print(name)
-
-                                                # 生成Wwise内容
                                                 if is_pass:
-                                                    create_wwise_content(cell_sound.value, system_name)
+                                                    # 分隔符的大小写和长度检查
+                                                    system_name = check_by_length_and_word()
 
-                                    # else:
-                                    #     print_warning(cell_sound.value + "：该状态不会生成Wwise占位资源，请检查")
+                                                    # 检查LP是否在末尾
+                                                    name = check_LP_in_last()
+                                                    # print(name)
+
+                                                    # 通用词汇检查
+                                                    check_by_com_word(name)
+
+                                                    # 检查一级系统并索引到不同的检测方式
+                                                    check_first_system_name(name)
+                                                    # print(name)
+
+                                                    # 生成Wwise内容
+                                                    if is_pass:
+                                                        # create_wwise_content(cell_sound.value, system_name)
+                                                       pass
+
+                                        # else:
+                                        #     print_warning(cell_sound.value + "：该状态不会生成Wwise占位资源，请检查")
 
     """同步表中删除的内容"""
-    # 查找所有Rnd和Event
-    rnd_container_list, rnd_id, _ = find_obj(
-        {'waql': ' "%s" select descendants where type = "RandomSequenceContainer" ' % wwise_dict['Root']})
-    # [{'id': '{C1BFDDC1-CA6F-45BC-8B43-15AE866AA20A}',
-    #   'name': 'Char_Skill_C01_Atk1',
-    #   'notes': '',
-    #   'path': '\\Actor-Mixer '
-    #           'Hierarchy\\v1\\Char\\Char\\Char_Skill\\Char_Skill\\Char_Skill_C01\\Char_Skill_C01\\Char_Skill_C01_Atk1'}
-    event_list, event_id, _ = find_obj(
-        {'waql': ' "%s" select descendants where type = "Event" ' % wwise_dict['Event_Root']})
-    for rnd_container in rnd_container_list:
-        delete_or_modify_wwise_content()
-
-    # 撤销结束
-    client.call("ak.wwise.core.undo.endGroup", displayName="rnd创建撤销")
-
-    # 清除复制的媒体资源
-    shutil.rmtree("New_Media")
-    os.mkdir("New_Media")
-
-    # rnd创建撤销
-    # client.call("ak.wwise.core.undo.undo")
+    # # 查找所有Rnd和Event
+    # rnd_container_list, rnd_id, _ = find_obj(
+    #     {'waql': ' "%s" select descendants where type = "RandomSequenceContainer" ' % wwise_dict['Root']})
+    # # [{'id': '{C1BFDDC1-CA6F-45BC-8B43-15AE866AA20A}',
+    # #   'name': 'Char_Skill_C01_Atk1',
+    # #   'notes': '',
+    # #   'path': '\\Actor-Mixer '
+    # #           'Hierarchy\\v1\\Char\\Char\\Char_Skill\\Char_Skill\\Char_Skill_C01\\Char_Skill_C01\\Char_Skill_C01_Atk1'}
+    # event_list, event_id, _ = find_obj(
+    #     {'waql': ' "%s" select descendants where type = "Event" ' % wwise_dict['Event_Root']})
+    # for rnd_container in rnd_container_list:
+    #     delete_or_modify_wwise_content()
+    #
+    # # 撤销结束
+    # client.call("ak.wwise.core.undo.endGroup", displayName="rnd创建撤销")
+    #
+    # # 清除复制的媒体资源
+    # shutil.rmtree("New_Media")
+    # os.mkdir("New_Media")
