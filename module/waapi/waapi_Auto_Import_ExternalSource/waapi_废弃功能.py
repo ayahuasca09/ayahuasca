@@ -112,3 +112,14 @@
 #             # media_info_data.loc[
 #             #     media_info_data['ExternalSourceMediaInfoId'] == vo_id, 'PrefetchSize'] = 0
 #             media_info_data.to_csv(media_info_path, index=False)
+
+"""删除csv表中相应的内容"""
+
+# def drop_csv_row(data, media_name, csv_path):
+#     row_index_list = data.index[data['MediaName'] == (media_name + '.wem')].tolist()
+#     for row_index in row_index_list:
+#         data = data.drop(row_index)
+#
+#     data.to_csv(csv_path, index=False)
+# drop_csv_row(media_info_data, media_name, media_info_path)
+# drop_csv_row(external_cookie_data, media_name, external_cookie_data)

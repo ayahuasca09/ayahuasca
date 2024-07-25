@@ -246,6 +246,10 @@ def delete_cancel_wem(media_name):
 
 def drop_row_by_cancel():
     # 移除空白行
+    media_info_data.dropna(how='all', inplace=True)
+    media_info_data.to_csv('MediaInfoTable.csv', index=False)
+    external_cookie_data.dropna(how='all', inplace=True)
+    external_cookie_data.to_csv('MediaInfoTable.csv', index=False)
 
     # 读excel表
     # 提取规则：只提取xlsx文件
@@ -270,8 +274,22 @@ def drop_row_by_cancel():
                                 media_name = (sheet.cell(state.row, column=file_name_column).value)
                                 # 删除相应的.wem文件
                                 delete_cancel_wem(media_name)
+
                                 # 删除media_info表中的内容
+                                row_index_list = media_info_data.index[
+                                    media_info_data['MediaName'] == (media_name + '.wem')].tolist()
+
+                                for row_index in row_index_list:
+                                    media_info_data.drop(row_index,inplace=True)
+                                media_info_data.to_csv(media_info_path, index=False)
+
                                 # 删除external_cookie的内容
+                                row_index_list = external_cookie_data.index[
+                                    external_cookie_data['MediaName'] == (media_name + '.wem')].tolist()
+                                print(row_index_list)
+                                for row_index in row_index_list:
+                                    external_cookie_data.drop(row_index,inplace=True)
+                                    external_cookie_data.to_csv(external_cookie_path, index=False)
 
 
 # 获取媒体资源文件列表

@@ -17,9 +17,9 @@ print(data)"""
 print(data)"""
 
 # 替换指定数据的所有值
-data[data['Name'] == 200] = [201, 201, "New.wem", 2, "TRUE", "FALSE", 22, 0]
+"""data[data['Name'] == 200] = [201, 201, "New.wem", 2, "TRUE", "FALSE", 22, 0]
 data.to_csv('MediaInfoTable.csv', index=False)
-# print(type(ft_data))
+# print(type(ft_data))"""
 
 # 新加数据
 """new_data = pd.DataFrame({
@@ -48,5 +48,16 @@ new_data.to_csv('MediaInfoTable.csv', mode='a', header=False, index=False)"""
 """print(data.shape[0])"""
 
 # 替换指定数据的部分值
-data.loc[data['Name'] == 201, 'MediaName'] = "body"
+"""data.loc[data['Name'] == 201, 'MediaName'] = "body"
+data.to_csv('MediaInfoTable.csv', index=False)"""
+
+# 数据删除测试
+"""row_index_list = data.index[data['Name'] == 333].tolist()
+for row_index in row_index_list:
+    data = data.drop(row_index)
+
+data.to_csv('MediaInfoTable.csv', index=False)"""
+
+# 删除所有值为空的行,如果不加how='all'就是只要有空值整行就被删除
+data.dropna(how='all', inplace=True)
 data.to_csv('MediaInfoTable.csv', index=False)

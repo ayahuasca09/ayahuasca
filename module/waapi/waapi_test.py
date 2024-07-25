@@ -127,24 +127,37 @@ with WaapiClient() as client:
     # print(result)
 
     """external source自动转码测试"""
+    # args = {
+    #     "sources": [
+    #         {
+    #             "input": "F:\\pppppy\\SP\\module\\waapi\\waapi_Auto_Import_ExternalSource\\ExternalSource.wsources",
+    #             "platform": "Windows",
+    #             "output": 'S:\\Ver_1.0.0\\Project\\Content\\Audio\\GeneratedExternalSources\\Windows'
+    #         },
+    #         {
+    #             "input": "F:\\pppppy\\SP\\module\\waapi\\waapi_Auto_Import_ExternalSource\\ExternalSource.wsources",
+    #             "platform": "Android",
+    #             "output": 'S:\\Ver_1.0.0\\Project\\Content\\Audio\\GeneratedExternalSources\\Android'
+    #         },
+    #         {
+    #             "input": "F:\\pppppy\\SP\\module\\waapi\\waapi_Auto_Import_ExternalSource\\ExternalSource.wsources",
+    #             "platform": "iOS",
+    #             "output": 'S:\\Ver_1.0.0\\Project\\Content\\Audio\\GeneratedExternalSources\\iOS'
+    #         }
+    #     ]
+    # }
+    #
+    # gen_log = client.call("ak.wwise.core.soundbank.convertExternalSources", args)
+
+    """语音导入测试"""
     args = {
-        "sources": [
+        "importOperation": "createNew",
+        "imports": [
             {
-                "input": "F:\\pppppy\\SP\\module\\waapi\\waapi_Auto_Import_ExternalSource\\ExternalSource.wsources",
-                "platform": "Windows",
-                "output": 'S:\\Ver_1.0.0\\Project\\Content\\Audio\\GeneratedExternalSources\\Windows'
-            },
-            {
-                "input": "F:\\pppppy\\SP\\module\\waapi\\waapi_Auto_Import_ExternalSource\\ExternalSource.wsources",
-                "platform": "Android",
-                "output": 'S:\\Ver_1.0.0\\Project\\Content\\Audio\\GeneratedExternalSources\\Android'
-            },
-            {
-                "input": "F:\\pppppy\\SP\\module\\waapi\\waapi_Auto_Import_ExternalSource\\ExternalSource.wsources",
-                "platform": "iOS",
-                "output": 'S:\\Ver_1.0.0\\Project\\Content\\Audio\\GeneratedExternalSources\\iOS'
+                "audioFile": "C:\\Users\\happyelements\\Desktop\\Rosy\\WILD\\VO_C10_01_Menu.wav",
+                "objectPath": "\\Actor-Mixer Hierarchy\\v1\\VO\\<Sound Voice>hello\\<AudioFileSource>hello_cn",
+                "importLanguage": "Chinese"
             }
         ]
     }
-
-    gen_log = client.call("ak.wwise.core.soundbank.convertExternalSources", args)
+    client.call("ak.wwise.core.audio.import", args)

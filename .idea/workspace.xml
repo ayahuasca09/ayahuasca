@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="17a8a927-0db7-41d4-8f81-9181fc87e6d9" name="更改" comment="语音自动化：wwise_cookie表自动生成">
+    <list default="true" id="17a8a927-0db7-41d4-8f81-9181fc87e6d9" name="更改" comment="语音自动化：删除时同步删除内容">
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/New_Media/VO_C01_15_World.akd" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/New_Media/VO_C01_15_World.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/New_Media/VO_C01_33_Battle.akd" afterDir="false" />
@@ -35,6 +35,153 @@
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/New_Media/VO_Munin_02.akd" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/New_Media/VO_Munin_03.akd" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/New_Media/VO_Munin_04.akd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/Char_Shout_C10_Atk_Hvy.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/Char_Shout_C10_Atk_Hvy_R02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/Char_Shout_C10_Atk_Hvy_R03.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/Char_Shout_C10_Atk_Lit.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/Char_Shout_C10_Atk_Lit_R02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/Char_Shout_C10_Atk_Lit_R03.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/Char_Shout_C10_Atk_Mid.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/Char_Shout_C10_Atk_Mid_R02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/Char_Shout_C10_Atk_Mid_R03.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/Char_Shout_C10_Dodge.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/Char_Shout_C10_Dodge_R02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/Char_Shout_C10_Dodge_R03.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/Char_Shout_C10_Focus.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/Char_Shout_C10_Focus_R02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/Char_Shout_C10_Focus_R03.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/Char_Shout_C10_Focus_Start.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/Char_Shout_C10_Focus_Start_R02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/Char_Shout_C10_Focus_Start_R03.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/Char_Shout_C10_Hit_Hvy.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/Char_Shout_C10_Hit_Hvy_R02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/Char_Shout_C10_Hit_Hvy_R03.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/Char_Shout_C10_Hit_Lit.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/Char_Shout_C10_Hit_Lit_R02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/Char_Shout_C10_Hit_Lit_R03.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_C10_01_Menu.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_C10_02_Menu.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_C10_04_Menu.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_C10_05_Menu.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_C10_06_Menu.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_C10_07_Menu.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_C10_08_Menu.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_C10_09_Menu.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_C10_10_World.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_C10_11_World.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_C10_12_World.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_C10_13_World.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_C10_14_World.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_C10_15_World.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_C10_16_World.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_C10_17_World.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_C10_18_World.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_C10_19_World.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_C10_20_World.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_C10_21_World.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_C10_22_World.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_C10_23_World.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_C10_24_World.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_C10_25_World.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_C10_26_World.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_C10_27_World.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_C10_28_World.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_C10_29_World.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_C10_30_World.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_C10_31_Battle.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_C10_32_Battle.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_C10_33_Battle.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_C10_34_Battle.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_C10_35_Battle.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_C10_36_Battle.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_C10_41_Battle.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_C10_42_Battle.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_C10_43_Battle.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_C10_44_Emotion.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_C10_45_Emotion.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_C10_46_Emotion.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_C10_47_Emotion.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_C10_48_Emotion.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_C10_49_Emotion.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_C10_50_Emotion.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_C10_51_Emotion.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_C10_52_Emotion.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_PV_C10_Cn_01.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_PV_C10_Cn_02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/English/Char_Shout_C10_Atk_Hvy.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/English/Char_Shout_C10_Atk_Hvy_R02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/English/Char_Shout_C10_Atk_Hvy_R03.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/English/Char_Shout_C10_Atk_Lit.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/English/Char_Shout_C10_Atk_Lit_R02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/English/Char_Shout_C10_Atk_Lit_R03.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/English/Char_Shout_C10_Atk_Mid.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/English/Char_Shout_C10_Atk_Mid_R02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/English/Char_Shout_C10_Atk_Mid_R03.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/English/Char_Shout_C10_Dodge.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/English/Char_Shout_C10_Dodge_R02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/English/Char_Shout_C10_Dodge_R03.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/English/Char_Shout_C10_Focus.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/English/Char_Shout_C10_Focus_R02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/English/Char_Shout_C10_Focus_R03.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/English/Char_Shout_C10_Focus_Start.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/English/Char_Shout_C10_Focus_Start_R02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/English/Char_Shout_C10_Focus_Start_R03.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/English/Char_Shout_C10_Hit_Hvy.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/English/Char_Shout_C10_Hit_Hvy_R02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/English/Char_Shout_C10_Hit_Hvy_R03.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/English/Char_Shout_C10_Hit_Lit.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/English/Char_Shout_C10_Hit_Lit_R02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/English/Char_Shout_C10_Hit_Lit_R03.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/English/VO_C10_01_Menu.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/English/VO_C10_02_Menu.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/English/VO_C10_04_Menu.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/English/VO_C10_05_Menu.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/English/VO_C10_06_Menu.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/English/VO_C10_07_Menu.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/English/VO_C10_08_Menu.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/English/VO_C10_09_Menu.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/English/VO_C10_10_World.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/English/VO_C10_11_World.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/English/VO_C10_12_World.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/English/VO_C10_13_World.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/English/VO_C10_14_World.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/English/VO_C10_15_World.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/English/VO_C10_16_World.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/English/VO_C10_17_World.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/English/VO_C10_18_World.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/English/VO_C10_19_World.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/English/VO_C10_20_World.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/English/VO_C10_21_World.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/English/VO_C10_22_World.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/English/VO_C10_23_World.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/English/VO_C10_24_World.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/English/VO_C10_25_World.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/English/VO_C10_26_World.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/English/VO_C10_27_World.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/English/VO_C10_28_World.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/English/VO_C10_29_World.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/English/VO_C10_30_World.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/English/VO_C10_31_Battle.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/English/VO_C10_32_Battle.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/English/VO_C10_33_Battle.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/English/VO_C10_34_Battle.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/English/VO_C10_35_Battle.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/English/VO_C10_36_Battle.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/English/VO_C10_41_Battle.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/English/VO_C10_42_Battle.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/English/VO_C10_43_Battle.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/English/VO_C10_44_Emotion.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/English/VO_C10_45_Emotion.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/English/VO_C10_46_Emotion.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/English/VO_C10_47_Emotion.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/English/VO_C10_48_Emotion.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/English/VO_C10_49_Emotion.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/English/VO_C10_50_Emotion.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/English/VO_C10_51_Emotion.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/English/VO_C10_52_Emotion.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/English/VO_PV_C10_Cn_01.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/English/VO_PV_C10_Cn_02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/voices_importer.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/module/csv/MediaInfoTable.csv" beforeDir="false" afterPath="$PROJECT_DIR$/module/csv/MediaInfoTable.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/module/csv/csv_pandas测试.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/csv/csv_pandas测试.py" afterDir="false" />
@@ -46,6 +193,7 @@
       <change beforePath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/waapi_废弃功能.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/waapi_废弃功能.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/waapi_语音导入.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/waapi_语音导入.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/module/waapi/waapi_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/导入规则.json" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/导入规则.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,6 +253,7 @@
     "Python.waapi_订阅_接收对象名称被修改时的信息.executor": "Run",
     "Python.waapi_语音导入 (1).executor": "Run",
     "Python.waapi_语音导入.executor": "Run",
+    "Python.waapi_语音导入测试.executor": "Run",
     "Python.waapi_转码类型创建.executor": "Run",
     "Python.waapi_音频资源导入_从媒体资源导入.executor": "Run",
     "Python.waapi_音频资源导入_从表导入 (1).executor": "Run",
@@ -131,7 +280,7 @@
       <recent name="F:\pppppy\SP\module\waapi\waapi_generatesoundbank" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.waapi_语音导入 (1)">
+  <component name="RunManager" selected="Python.waapi_语音导入测试">
     <configuration name="csv_pandas测试" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="SP" />
       <option name="ENV_FILES" value="" />
@@ -176,7 +325,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="waapi_语音导入" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="waapi_语音导入测试" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="SP" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -185,11 +334,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/module/waapi/waapi_语音导入自动化" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/module/waapi/waapi_语音导入自动化/waapi_语音导入.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/waapi_语音导入测试.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -220,7 +369,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="xml文件读写示例 (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="waapi_wwise属性自动配置" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="SP" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -229,11 +378,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/module/xml" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/module/xml/xml文件读写示例.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/waapi_wwise属性自动配置.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -244,11 +393,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.waapi_语音导入测试" />
         <item itemvalue="Python.waapi_语音导入 (1)" />
+        <item itemvalue="Python.waapi_wwise属性自动配置" />
         <item itemvalue="Python.csv_pandas测试" />
         <item itemvalue="Python.waapi_test" />
-        <item itemvalue="Python.waapi_语音导入" />
-        <item itemvalue="Python.xml文件读写示例 (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -267,14 +416,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1716955384994</updated>
-    </task>
-    <task id="LOCAL-00001" summary="配置文件创建">
-      <option name="closed" value="true" />
-      <created>1716977573905</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1716977573905</updated>
     </task>
     <task id="LOCAL-00002" summary="测试文件提交">
       <option name="closed" value="true" />
@@ -660,7 +801,15 @@
       <option name="project" value="LOCAL" />
       <updated>1721199624673</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="语音自动化：删除时同步删除内容">
+      <option name="closed" value="true" />
+      <created>1721295391572</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1721295391572</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -676,7 +825,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="音频资源导入检测——音效需求表读取" />
     <MESSAGE value="音频资源导入检测——检测方式更改" />
     <MESSAGE value="音频资源导入检测——角色命名逐个规范修改" />
     <MESSAGE value="音频资源导入检测——命名规范细则补充" />
@@ -701,6 +849,7 @@
     <MESSAGE value="xml文件写入测试" />
     <MESSAGE value="语音自动化：media_info表自动生成" />
     <MESSAGE value="语音自动化：wwise_cookie表自动生成" />
-    <option name="LAST_COMMIT_MESSAGE" value="语音自动化：wwise_cookie表自动生成" />
+    <MESSAGE value="语音自动化：删除时同步删除内容" />
+    <option name="LAST_COMMIT_MESSAGE" value="语音自动化：删除时同步删除内容" />
   </component>
 </project>

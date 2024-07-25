@@ -109,12 +109,15 @@
 		"max": 15000
 	},
 	"VO": {
-		"module": ".*",
-		"name": ".*",
-		"property": ".*",
+		"module": {
+			"Game": {
+				"property": "((Battle)|(Menu)|(World))"
+			}
+		},
+		"name": "((B\\d{2,4})|Gen|(C\\d{2,4}))",
 		"length": 20,
-		"min": 0,
-		"max": 0
+		"min": 15001,
+		"max": 30000
 	},
 	"Gen_Word": {
 		"Lit": [ "Light", "Small" ],
