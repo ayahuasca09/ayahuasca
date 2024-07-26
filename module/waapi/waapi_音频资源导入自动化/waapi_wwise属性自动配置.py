@@ -197,13 +197,16 @@ with WaapiClient() as client:
         # 各类型的转码类型判断及设置
         # 语音
         if re.search(r"^(VO)", sound_dict['name']):
-            set_conversion_type(sound_dict['id'], VO)
+            pass
+            # set_conversion_type(sound_dict['id'], VO)
         # CG
         elif re.search(r"^(CG)", sound_dict['name']):
-            set_conversion_type(sound_dict['id'], SFX_Long_Stereo)
+            pass
+            # set_conversion_type(sound_dict['id'], SFX_Long_Stereo)
         # Sys
         elif re.search(r"^(Sys)", sound_dict['name']):
-            set_conversion_type(sound_dict['id'], SFX_UI_Stereo)
+            pass
+            # set_conversion_type(sound_dict['id'], SFX_UI_Stereo)
         else:
             # 其他类进行2d/3d，长/短音效检测
             if '3DSpatialization' in sound_dict.keys():

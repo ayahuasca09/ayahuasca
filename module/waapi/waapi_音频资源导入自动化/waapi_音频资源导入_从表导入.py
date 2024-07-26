@@ -26,6 +26,7 @@ with open(json_path, 'r', encoding='UTF-8') as jsfile:
 
 # 获取Wwise的配置
 wwise_dict = js_dict["Wwise"]
+wwise_proj_path = wwise_dict['WwiseProj_Root']
 
 """获取.xlsx文件"""
 
@@ -46,8 +47,34 @@ del_status_list = ['占位', '临时资源', 'to do', 'in progress', 'done', 'ca
 # 事件描述字典：用于记录描述键和行作为值
 event_descrip_dict = {}
 
+# 是否导入语音
+is_soundvoice = False
+wwise_vo_media_path = wwise_proj_path + "\\Originals\\Voices"
+
 """*****************功能检测区******************"""
-"""检查描述/状态/修饰词是否在末尾"""
+"""遍历文件目录获取文件名称和路径"""
+
+
+def get_type_file_name_and_path(file_type, dir_path):
+    file_dict = {}
+    file_list = []
+    # 遍历文件夹下的所有子文件
+    # 绝对路径，子文件夹，文件名
+    for root, dirs, files in os.walk(dir_path):
+        # {'name': ['1111.akd', 'Creature Growls 4.akd', 'Sonic Salute_005_2_20.akd'],
+        #  'path': 'S:\\chen.gong_DCC_Audio\\Audio\\SilverPalace_WwiseProject\\Originals\\SFX'}
+        for file in files:
+            if file_type in file:
+                new_dict = {}
+                file_dict[file] = os.path.join(
+                    root, file)
+                new_dict[file] = os.path.join(
+                    root, file)
+                file_list.append(new_dict)
+
+    return file_dict, file_list
+
+
 """报错捕获"""
 
 
@@ -373,11 +400,11 @@ def check_is_mergecell(cell):
 
 def get_event_descrip():
     event_descrip = ""
-    if require_module_column != 999:
+    if require_module_column:
         require_module_value = check_is_mergecell(sheet.cell(row=cell_sound.row, column=require_module_column))
         if require_module_value:
             event_descrip = require_module_value + "_"
-    if second_module_column != 999:
+    if second_module_column:
         second_module_value = check_is_mergecell(sheet.cell(row=cell_sound.row, column=second_module_column))
         if event_descrip:
             if second_module_value:
@@ -386,7 +413,7 @@ def get_event_descrip():
             if second_module_value:
                 event_descrip = second_module_value + "_"
 
-    if require_name_column != 999:
+    if require_name_column:
         require_name_value = check_is_mergecell(sheet.cell(row=cell_sound.row, column=require_name_column))
         if event_descrip:
             if require_name_value:
@@ -491,6 +518,21 @@ with WaapiClient() as client:
         client.call("ak.wwise.core.object.setNotes", args)
 
 
+    """导入媒体资源"""
+
+
+    def import_sound_sfx_and_media(media_name, rnd_path, rnd_container_object):
+        # 媒体资源导入
+        import_media(media_name, rnd_path)
+        # Sound颜色设置
+        _, sound_container_id, _ = find_obj(
+            {'waql': ' "%s" select children  ' % rnd_container_object['id']})
+        if sound_container_id:
+            set_sound_color_default(sound_container_id)
+
+        print_warning(media_name + "：Sound创建及Media导入")
+
+
     """创建新的随机容器"""
 
 
@@ -548,7 +590,8 @@ with WaapiClient() as client:
                                                 'waql': ' "%s" select descendants,this where type = "ActorMixer" ' %
                                                         os.path.join(
                                                             wwise_dict['Root'], system_name)})
-            if rnd_parent_id != None:
+            if rnd_parent_id:
+
                 # 创建的rnd属性
                 args = {
                     # 选择父级
@@ -565,17 +608,14 @@ with WaapiClient() as client:
                 # 查找新创建的容器的路径
                 _, _, rnd_path = find_obj(
                     {'waql': ' "%s"  ' % rnd_container_object['id']})
+                if rnd_path:
+                    print_warning(rnd_name + "：RandContainer创建")
+                else:
+                    print_error(rnd_name + "：RandContainer未能成功创建")
 
-                # 媒体资源导入
-                import_media(media_name, rnd_path)
-                # Sound颜色设置
-                _, sound_container_id, _ = find_obj(
-                    {'waql': ' "%s" select children  ' % rnd_container_object['id']})
-                if sound_container_id:
-                    set_sound_color_default(sound_container_id)
+                # 声音容器创建及导入
 
-                print_warning(rnd_name + "：RandContainer创建")
-                print_warning(media_name + "：Sound创建及Media导入")
+                import_sound_sfx_and_media(media_name, rnd_path, rnd_container_object)
 
         return rnd_path, rnd_name
 
@@ -599,28 +639,84 @@ with WaapiClient() as client:
         client.call("ak.wwise.core.object.setProperty", args_property)
 
 
+    """VO：复制Chinese下的文件到其他文件夹里"""
+
+
+    def copy_reference_VO_to_other(media_name):
+        wwise_vo_media_path_cn = wwise_vo_media_path + "\\Chinese" + "\\" + media_name + ".wav"
+        wwise_vo_media_path_en = wwise_vo_media_path + "\\English" + "\\" + media_name + ".wav"
+        wwise_vo_media_path_jp = wwise_vo_media_path + "\\Japanese" + "\\" + media_name + ".wav"
+        wwise_vo_media_path_kr = wwise_vo_media_path + "\\Korean" + "\\" + media_name + ".wav"
+        if os.path.isfile(wwise_vo_media_path_cn):
+            # print(wwise_vo_media_path_cn)
+            if not os.path.isfile(wwise_vo_media_path_en):
+                source_path = shutil.copy2(wwise_vo_media_path_cn,
+                                           wwise_vo_media_path_en)
+                # print(wwise_vo_media_path_en)
+            if not os.path.isfile(wwise_vo_media_path_jp):
+                source_path = shutil.copy2(wwise_vo_media_path_cn,
+                                           wwise_vo_media_path_jp)
+                # print(wwise_vo_media_path_jp)
+            if not os.path.isfile(wwise_vo_media_path_kr):
+                source_path = shutil.copy2(wwise_vo_media_path_cn,
+                                           wwise_vo_media_path_kr)
+                # print(wwise_vo_media_path_kr)
+
+
     """媒体资源导入"""
 
 
     def import_media_in_rnd(source_path, media_name, rnd_path):
-        args_import = {
-            # createNew
-            # useExisting：会增加一个新媒体文件但旧的不会删除
-            # replaceExisting:会销毁Sound，上面做的设置都无了
-            "importOperation": "replaceExisting",
-            "default": {
-                "importLanguage": "SFX"
-            },
-            "imports": [
-                {
-                    "audioFile": source_path,
-                    "objectPath": rnd_path + '\\<Sound SFX>' + media_name,
-                    "originalsSubFolder": system_name
-                    #                                                         名为Test 0的顺序容器            名为My SFX 0 的音效
-                    # "objectPath": "\\Actor-Mixer Hierarchy\\Default Work Unit\\<Sequence Container>Test 0\\<Sound SFX>My SFX 0"
-                }
-            ]
-        }
+        global is_soundvoice
+        # 导入语音
+        if system_name == "VO":
+            is_soundvoice = True
+            args_import = {
+                "importOperation": "useExisting",
+                "imports": [
+                    {
+                        "audioFile": source_path,
+                        "objectPath": rnd_path + "\\<Sound Voice>" + media_name + "\\<AudioFileSource>" + "CN_" + media_name,
+                        "importLanguage": "Chinese"
+                    },
+                    {
+                        "audioFile": source_path,
+                        "objectPath": rnd_path + "\\<Sound Voice>" + media_name + "\\<AudioFileSource>" + "EN_" + media_name,
+                        "importLanguage": "English"
+                    },
+                    {
+                        "audioFile": source_path,
+                        "objectPath": rnd_path + "\\<Sound Voice>" + media_name + "\\<AudioFileSource>" + "JP_" + media_name,
+                        "importLanguage": "Japanese"
+                    },
+                    {
+                        "audioFile": source_path,
+                        "objectPath": rnd_path + "\\<Sound Voice>" + media_name + "\\<AudioFileSource>" + "KR_" + media_name,
+                        "importLanguage": "Korean"
+                    }
+                ]
+            }
+        # 导入音效
+        else:
+            args_import = {
+                # createNew
+                # useExisting：会增加一个新媒体文件但旧的不会删除
+                # replaceExisting:会销毁Sound，上面做的设置都无了
+                "importOperation": "replaceExisting",
+                "default": {
+                    "importLanguage": "SFX"
+                },
+                "imports": [
+                    {
+                        "audioFile": source_path,
+                        "objectPath": rnd_path + '\\<Sound SFX>' + media_name,
+                        "originalsSubFolder": system_name
+                        #                                                         名为Test 0的顺序容器            名为My SFX 0 的音效
+                        # "objectPath": "\\Actor-Mixer Hierarchy\\Default Work Unit\\<Sequence Container>Test 0\\<Sound SFX>My SFX 0"
+                    }
+                ]
+            }
+
         # 定义返回结果参数，让其只返回 Windows 平台下的信息，信息中包含 GUID 和新创建的对象名
         opts = {
             "platform": "Windows",
@@ -629,6 +725,9 @@ with WaapiClient() as client:
             ]
         }
         client.call("ak.wwise.core.audio.import", args_import, options=opts)
+
+        if system_name == "VO":
+            copy_reference_VO_to_other(media_name)
 
 
     """创建事件的参数"""
@@ -840,29 +939,30 @@ with WaapiClient() as client:
 
                                                     # 生成Wwise内容
                                                     if is_pass:
-                                                        # create_wwise_content(cell_sound.value, system_name)
-                                                       pass
+                                                        create_wwise_content(cell_sound.value, system_name)
 
                                         # else:
                                         #     print_warning(cell_sound.value + "：该状态不会生成Wwise占位资源，请检查")
 
     """同步表中删除的内容"""
-    # # 查找所有Rnd和Event
-    # rnd_container_list, rnd_id, _ = find_obj(
-    #     {'waql': ' "%s" select descendants where type = "RandomSequenceContainer" ' % wwise_dict['Root']})
-    # # [{'id': '{C1BFDDC1-CA6F-45BC-8B43-15AE866AA20A}',
-    # #   'name': 'Char_Skill_C01_Atk1',
-    # #   'notes': '',
-    # #   'path': '\\Actor-Mixer '
-    # #           'Hierarchy\\v1\\Char\\Char\\Char_Skill\\Char_Skill\\Char_Skill_C01\\Char_Skill_C01\\Char_Skill_C01_Atk1'}
-    # event_list, event_id, _ = find_obj(
-    #     {'waql': ' "%s" select descendants where type = "Event" ' % wwise_dict['Event_Root']})
-    # for rnd_container in rnd_container_list:
-    #     delete_or_modify_wwise_content()
-    #
-    # # 撤销结束
-    # client.call("ak.wwise.core.undo.endGroup", displayName="rnd创建撤销")
-    #
-    # # 清除复制的媒体资源
-    # shutil.rmtree("New_Media")
-    # os.mkdir("New_Media")
+    # 查找所有Rnd和Event
+    rnd_container_list, rnd_id, _ = find_obj(
+        {'waql': ' "%s" select descendants where type = "RandomSequenceContainer" ' % wwise_dict['Root']})
+    # [{'id': '{C1BFDDC1-CA6F-45BC-8B43-15AE866AA20A}',
+    #   'name': 'Char_Skill_C01_Atk1',
+    #   'notes': '',
+    #   'path': '\\Actor-Mixer '
+    #           'Hierarchy\\v1\\Char\\Char\\Char_Skill\\Char_Skill\\Char_Skill_C01\\Char_Skill_C01\\Char_Skill_C01_Atk1'}
+    event_list, event_id, _ = find_obj(
+        {'waql': ' "%s" select descendants where type = "Event" ' % wwise_dict['Event_Root']})
+    is_go = 0
+    if is_go == 1:
+        for rnd_container in rnd_container_list:
+            delete_or_modify_wwise_content()
+
+    # 撤销结束
+    client.call("ak.wwise.core.undo.endGroup", displayName="rnd创建撤销")
+
+    # 清除复制的媒体资源
+    shutil.rmtree("New_Media")
+    os.mkdir("New_Media")
