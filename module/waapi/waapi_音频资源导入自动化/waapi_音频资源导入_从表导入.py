@@ -672,7 +672,7 @@ with WaapiClient() as client:
         if system_name == "VO":
             is_soundvoice = True
             args_import = {
-                "importOperation": "useExisting",
+                "importOperation": "replaceExisting",
                 "imports": [
                     {
                         "audioFile": source_path,

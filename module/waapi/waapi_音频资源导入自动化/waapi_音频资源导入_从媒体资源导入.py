@@ -60,6 +60,7 @@ def print_error(error_info):
 
 def get_type_file_name_and_path(file_type, dir_path):
     file_dict = {}
+    file_list = []
     # 遍历文件夹下的所有子文件
     # 绝对路径，子文件夹，文件名
     for root, dirs, files in os.walk(dir_path):
@@ -67,15 +68,19 @@ def get_type_file_name_and_path(file_type, dir_path):
         #  'path': 'S:\\chen.gong_DCC_Audio\\Audio\\SilverPalace_WwiseProject\\Originals\\SFX'}
         for file in files:
             if file_type in file:
+                new_dict = {}
                 file_dict[file] = os.path.join(
                     root, file)
+                new_dict[file] = os.path.join(
+                    root, file)
+                file_list.append(new_dict)
 
-    return file_dict
+    return file_dict, file_list
 
 
 # 获取媒体资源文件列表
 wav_path = os.path.join(py_path, "New_Media")
-file_wav_dict = get_type_file_name_and_path('.wav', wav_path)
+_, file_wav_list = get_type_file_name_and_path('.wav', wav_path)
 # pprint(file_wav_dict)
 # {'Char_Mov_Gen_Boot_End_Dirt_R01.wav': 'F:\\pppppy\\SP\\module\\waapi\\waapi_音频资源导入自动化\\New_Media\\Char_Mov_Gen_Boot_End_Dirt_R01.wav',
 #  'Char_Mov_Gen_Boot_End_Dirt_R02.wav': 'F:\\pppppy\\SP\\module\\waapi\\waapi_音频资源导入自动化\\New_Media\\Char_Mov_Gen_Boot_End_Dirt_R02.wav',}
@@ -135,7 +140,7 @@ with WaapiClient() as client:
         client.call("ak.wwise.core.object.setProperty", args_property)
 
 
-    """创建新的随机容器"""
+    """随机容器内容取代"""
 
 
     def create_rnd_container(media_name, system_name):
@@ -152,7 +157,7 @@ with WaapiClient() as client:
                 # pprint(rnd_name + "：RandomContainer已存在")
                 flag = 1
                 rnd_path = rnd_container_dict['path']
-                # 在容器中创建媒体资源
+                # 在容器中替换媒体资源
                 import_info = import_media_in_rnd(file_wav_dict[wav_name], media_name, rnd_path)
                 if import_info != None:
                     print_warning(media_name + "：已导入随机容器" + rnd_name)
@@ -172,24 +177,74 @@ with WaapiClient() as client:
 
 
     def import_media_in_rnd(source_path, media_name, rnd_path):
-        args_import = {
-            # createNew
-            # useExisting：会增加一个新媒体文件但旧的不会删除
-            # replaceExisting:会销毁Sound，上面做的设置都无了
-            "importOperation": "replaceExisting",
-            "default": {
-                "importLanguage": "SFX"
-            },
-            "imports": [
-                {
-                    "audioFile": source_path,
-                    "objectPath": rnd_path + '\\<Sound SFX>' + media_name,
-                    "originalsSubFolder": word_list[0]
-                    #                                                         名为Test 0的顺序容器            名为My SFX 0 的音效
-                    # "objectPath": "\\Actor-Mixer Hierarchy\\Default Work Unit\\<Sequence Container>Test 0\\<Sound SFX>My SFX 0"
+        # 导入语音
+        if word_list[0] == "VO":
+            if 'Chinese' in source_path:
+                args_import = {
+                    "importOperation": "replaceExisting",
+                    "imports": [
+                        {
+                            "audioFile": source_path,
+                            "objectPath": rnd_path + "\\<Sound Voice>" + media_name + "\\<AudioFileSource>" + "CN_" + media_name,
+                            "importLanguage": "Chinese"
+                        }
+                    ]
                 }
-            ]
-        }
+            elif 'English' in source_path:
+                args_import = {
+                    "importOperation": "replaceExisting",
+                    "imports": [
+
+                        {
+                            "audioFile": source_path,
+                            "objectPath": rnd_path + "\\<Sound Voice>" + media_name + "\\<AudioFileSource>" + "EN_" + media_name,
+                            "importLanguage": "English"
+                        }
+                    ]
+                }
+            elif 'Japanese' in source_path:
+                args_import = {
+                    "importOperation": "replaceExisting",
+                    "imports": [
+
+                        {
+                            "audioFile": source_path,
+                            "objectPath": rnd_path + "\\<Sound Voice>" + media_name + "\\<AudioFileSource>" + "JP_" + media_name,
+                            "importLanguage": "Japanese"
+                        }
+                    ]
+                }
+            elif 'Korean' in source_path:
+                args_import = {
+                    "importOperation": "replaceExisting",
+                    "imports": [
+                        {
+                            "audioFile": source_path,
+                            "objectPath": rnd_path + "\\<Sound Voice>" + media_name + "\\<AudioFileSource>" + "KR_" + media_name,
+                            "importLanguage": "Korean"
+                        }
+                    ]
+                }
+
+        # 导入音效
+        else:
+            args_import = {
+                # createNew
+                # useExisting：会增加一个新媒体文件但旧的不会删除
+                # replaceExisting:会销毁Sound，上面做的设置都无了
+                "importOperation": "replaceExisting",
+                "default": {
+                    "importLanguage": "SFX"
+                },
+                "imports": [
+                    {
+                        "audioFile": source_path,
+                        "objectPath": rnd_path + '\\<Sound SFX>' + media_name,
+                        "originalsSubFolder": word_list[0]
+                    }
+                ]
+            }
+
         # 定义返回结果参数，让其只返回 Windows 平台下的信息，信息中包含 GUID 和新创建的对象名
         opts = {
             "platform": "Windows",
@@ -198,6 +253,7 @@ with WaapiClient() as client:
             ]
         }
         import_info = client.call("ak.wwise.core.audio.import", args_import, options=opts)
+
         return import_info
 
 
@@ -206,11 +262,8 @@ with WaapiClient() as client:
 
     def create_wwise_content(media_name, system_name):
 
-        # 随机容器创建
+        # 随机容器内容取代
         rnd_path, rnd_name = create_rnd_container(media_name, system_name)
-
-        # 事件自动生成
-        # create_event(rnd_name, rnd_path)
 
 
     """*****************主程序处理******************"""
@@ -218,15 +271,16 @@ with WaapiClient() as client:
     client.call("ak.wwise.core.undo.beginGroup")
 
     # 读取媒体资源文件
-    for wav_name in file_wav_dict:
-        # 去除wav的名字
-        no_wav_name = re.sub(".wav", "", wav_name)
-        # pprint(no_wav_name)
-        word_list = no_wav_name.split("_")
-        if word_list[0] in js_dict:
-            check_is_R01(no_wav_name)
-            if is_pass == True:
-                create_wwise_content(no_wav_name, word_list[0])
+    for file_wav_dict in file_wav_list:
+        for wav_name in file_wav_dict:
+            # 去除wav的名字
+            no_wav_name = re.sub(".wav", "", wav_name)
+            # pprint(no_wav_name)
+            word_list = no_wav_name.split("_")
+            if word_list[0] in js_dict:
+                check_is_R01(no_wav_name)
+                if is_pass == True:
+                    create_wwise_content(no_wav_name, word_list[0])
 
     # 撤销结束
     client.call("ak.wwise.core.undo.endGroup", displayName="rnd创建撤销")

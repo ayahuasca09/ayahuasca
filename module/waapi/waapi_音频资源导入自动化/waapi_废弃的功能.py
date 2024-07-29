@@ -198,3 +198,31 @@
 #         range_min = 0
 #         range_max = 0
 #         print_error("找不到" + event_name + "的系统名，无法设置ID")
+
+"""从媒体资源导入"""
+# args_import = {
+#             # createNew
+#             # useExisting：会增加一个新媒体文件但旧的不会删除
+#             # replaceExisting:会销毁Sound，上面做的设置都无了
+#             "importOperation": "replaceExisting",
+#             "default": {
+#                 "importLanguage": "SFX"
+#             },
+#             "imports": [
+#                 {
+#                     "audioFile": source_path,
+#                     "objectPath": rnd_path + '\\<Sound SFX>' + media_name,
+#                     "originalsSubFolder": word_list[0]
+#                     #                                                         名为Test 0的顺序容器            名为My SFX 0 的音效
+#                     # "objectPath": "\\Actor-Mixer Hierarchy\\Default Work Unit\\<Sequence Container>Test 0\\<Sound SFX>My SFX 0"
+#                 }
+#             ]
+#         }
+#         # 定义返回结果参数，让其只返回 Windows 平台下的信息，信息中包含 GUID 和新创建的对象名
+#         opts = {
+#             "platform": "Windows",
+#             "return": [
+#                 "id", "name"
+#             ]
+#         }
+#         import_info = client.call("ak.wwise.core.audio.import", args_import, options=opts)
