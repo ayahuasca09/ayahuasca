@@ -48,7 +48,6 @@ del_status_list = ['占位', '临时资源', 'to do', 'in progress', 'done', 'ca
 event_descrip_dict = {}
 
 # 是否导入语音
-is_soundvoice = False
 wwise_vo_media_path = wwise_proj_path + "\\Originals\\Voices"
 
 """*****************功能检测区******************"""
@@ -521,12 +520,12 @@ with WaapiClient() as client:
     """导入媒体资源"""
 
 
-    def import_sound_sfx_and_media(media_name, rnd_path, rnd_container_object):
+    def import_sound_sfx_and_media(media_name, rnd_path):
         # 媒体资源导入
         import_media(media_name, rnd_path)
         # Sound颜色设置
         _, sound_container_id, _ = find_obj(
-            {'waql': ' "%s" select children  ' % rnd_container_object['id']})
+            {'waql': 'from type Sound where name = "%s"' % media_name})
         if sound_container_id:
             set_sound_color_default(sound_container_id)
 
@@ -550,6 +549,9 @@ with WaapiClient() as client:
         for rnd_container_dict in rnd_container_list:
             if rnd_container_dict['name'] == rnd_name:
                 # pprint(rnd_name + "：RandomContainer已存在，将不再导入")
+                # 媒体为随机容器
+                # if rnd_name != media_name:
+                #     import_sound_sfx_and_media(media_name, rnd_container_dict['path'], rnd_container_dict)
                 flag = 1
                 rnd_path = rnd_container_dict['path']
                 set_obj_notes(rnd_container_dict['id'], event_descrip)
@@ -614,8 +616,7 @@ with WaapiClient() as client:
                     print_error(rnd_name + "：RandContainer未能成功创建")
 
                 # 声音容器创建及导入
-
-                import_sound_sfx_and_media(media_name, rnd_path, rnd_container_object)
+                import_sound_sfx_and_media(media_name, rnd_path)
 
         return rnd_path, rnd_name
 
@@ -667,12 +668,10 @@ with WaapiClient() as client:
 
 
     def import_media_in_rnd(source_path, media_name, rnd_path):
-        global is_soundvoice
         # 导入语音
         if system_name == "VO":
-            is_soundvoice = True
             args_import = {
-                "importOperation": "replaceExisting",
+                "importOperation": "useExisting",
                 "imports": [
                     {
                         "audioFile": source_path,

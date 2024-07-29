@@ -25,6 +25,8 @@ with open(json_path, 'r', encoding='UTF-8') as jsfile:
 
 # 获取Wwise的配置
 wwise_dict = js_dict["Wwise"]
+wwise_proj_path = wwise_dict['WwiseProj_Root']
+wwise_vo_media_path = wwise_proj_path + "\\Originals\\Voices"
 
 # 是否通过
 is_pass = True
@@ -58,6 +60,9 @@ def print_error(error_info):
     """
 
 
+"""获取文件名称和路径"""
+
+
 def get_type_file_name_and_path(file_type, dir_path):
     file_dict = {}
     file_list = []
@@ -73,6 +78,7 @@ def get_type_file_name_and_path(file_type, dir_path):
                     root, file)
                 new_dict[file] = os.path.join(
                     root, file)
+
                 file_list.append(new_dict)
 
     return file_dict, file_list
@@ -163,7 +169,7 @@ with WaapiClient() as client:
                     print_warning(media_name + "：已导入随机容器" + rnd_name)
                     # 颜色修改
                     sound_container_list, sound_container_id, _ = find_obj(
-                        {'waql': ' "%s" select children  ' % rnd_container_dict['id']})
+                        {'waql': 'from type Sound where name = "%s"' % media_name})
                     for sound_cotainer_dict in sound_container_list:
                         set_sound_color_default(sound_cotainer_dict['id'])
                 break
@@ -177,11 +183,12 @@ with WaapiClient() as client:
 
 
     def import_media_in_rnd(source_path, media_name, rnd_path):
+        args_import = {}
         # 导入语音
         if word_list[0] == "VO":
             if 'Chinese' in source_path:
                 args_import = {
-                    "importOperation": "replaceExisting",
+                    "importOperation": "useExisting",
                     "imports": [
                         {
                             "audioFile": source_path,
@@ -192,7 +199,7 @@ with WaapiClient() as client:
                 }
             elif 'English' in source_path:
                 args_import = {
-                    "importOperation": "replaceExisting",
+                    "importOperation": "useExisting",
                     "imports": [
 
                         {
@@ -204,7 +211,7 @@ with WaapiClient() as client:
                 }
             elif 'Japanese' in source_path:
                 args_import = {
-                    "importOperation": "replaceExisting",
+                    "importOperation": "useExisting",
                     "imports": [
 
                         {
@@ -216,7 +223,7 @@ with WaapiClient() as client:
                 }
             elif 'Korean' in source_path:
                 args_import = {
-                    "importOperation": "replaceExisting",
+                    "importOperation": "useExisting",
                     "imports": [
                         {
                             "audioFile": source_path,
@@ -252,9 +259,101 @@ with WaapiClient() as client:
                 "id", "name"
             ]
         }
-        import_info = client.call("ak.wwise.core.audio.import", args_import, options=opts)
+        if args_import:
+            import_info = client.call("ak.wwise.core.audio.import", args_import, options=opts)
+            return import_info
 
-        return import_info
+
+    """导入语言函数"""
+
+
+    def import_vo(source_path, vo_sound_dict, vo_name, lang):
+        opts = {
+            "platform": "Windows",
+            "return": [
+                "id", "name"
+            ]
+        }
+
+        args_import = {
+            "importOperation": "useExisting",
+            "imports": [
+                {
+                    "audioFile": source_path,
+                    "objectPath": vo_sound_dict['path'] + "\\<AudioFileSource>" + vo_name,
+                    "importLanguage": lang
+                }
+            ]
+        }
+        import_info = client.call("ak.wwise.core.audio.import", args_import, options=opts)
+        if import_info:
+            print_warning(vo_name + ":缺失语言补全")
+
+
+
+    """导入缺失语言的语音"""
+
+
+    def import_no_language_vo(source_path, lang_cn, lang_en, lang_jp, lang_kr, vo_sound_dict):
+        if not lang_cn:
+            import_vo(source_path, vo_sound_dict, "CN_" + vo_sound_dict['name'], "Chinese")
+
+        if not lang_en:
+            import_vo(source_path, vo_sound_dict, "EN_" + vo_sound_dict['name'], "English")
+
+        if not lang_jp:
+            import_vo(source_path, vo_sound_dict, "JP_" + vo_sound_dict['name'], "Japanese")
+
+        if not lang_kr:
+            import_vo(source_path, vo_sound_dict, "KR_" + vo_sound_dict['name'], "Korean")
+
+
+    """检查生成语音文件，若为缺资源的（例如随机容器）则补齐资源"""
+
+
+    def check_and_create_vo():
+        # 查找VO Unit的id
+        _, vo_unit_id, _ = find_obj(
+            {'waql': ' "%s" select children where type = "WorkUnit" and name="VO" ' %
+                     wwise_dict['Root']})
+        # pprint(vo_unit_id)
+
+        # 查找所有SoundVoice
+        if vo_unit_id:
+            vo_sound_list, _, _ = find_obj(
+                {'waql': ' "%s" select descendants where type = "Sound" and childrenCount<4 ' %
+                         vo_unit_id})
+            # pprint(vo_sound_list)
+            for vo_sound_dict in vo_sound_list:
+                if "External" not in vo_sound_dict['name']:
+                    # 获取语言不全的列表，补齐其他语言
+                    sound_language_list, _, _ = find_obj(
+                        {'waql': ' "%s" select children  ' %
+                                 vo_sound_dict['id']})
+                    # pprint(sound_language_list)
+
+                    # 媒体资源复制
+                    # 复制到的目录
+                    copy_catalog = os.path.join(py_path, "New_Media")
+                    source_path = shutil.copy2(os.path.join(py_path, "Media_Temp.wav"),
+                                               os.path.join(copy_catalog, vo_sound_dict['name'] + ".wav"))
+
+                    # 查找以下语言是否有的标志
+                    lang_cn = False
+                    lang_en = False
+                    lang_jp = False
+                    lang_kr = False
+                    for sound_language_dict in sound_language_list:
+                        if "CN_VO" in sound_language_dict['name']:
+                            lang_cn = True
+                        elif "EN_VO" in sound_language_dict['name']:
+                            lang_en = True
+                        elif "JP_VO" in sound_language_dict['name']:
+                            lang_jp = True
+                        elif "KR_VO" in sound_language_dict['name']:
+                            lang_kr = True
+
+                    import_no_language_vo(source_path, lang_cn, lang_en, lang_jp, lang_kr, vo_sound_dict)
 
 
     """媒体资源导入的总流程"""
@@ -281,6 +380,9 @@ with WaapiClient() as client:
                 check_is_R01(no_wav_name)
                 if is_pass == True:
                     create_wwise_content(no_wav_name, word_list[0])
+
+    # 检查生成语音文件，若为缺资源的（例如随机容器）则补齐资源
+    check_and_create_vo()
 
     # 撤销结束
     client.call("ak.wwise.core.undo.endGroup", displayName="rnd创建撤销")

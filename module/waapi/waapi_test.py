@@ -150,14 +150,37 @@ with WaapiClient() as client:
     # gen_log = client.call("ak.wwise.core.soundbank.convertExternalSources", args)
 
     """语音导入测试"""
+    # args = {
+    #     "importOperation": "createNew",
+    #     "imports": [
+    #         {
+    #             "audioFile": "C:\\Users\\happyelements\\Desktop\\Rosy\\WILD\\VO_C10_01_Menu.wav",
+    #             "objectPath": "\\Actor-Mixer Hierarchy\\v1\\VO\\<Sound Voice>hello\\<AudioFileSource>hello_cn",
+    #             "importLanguage": "Chinese"
+    #         }
+    #     ]
+    # }
+    # client.call("ak.wwise.core.audio.import", args)
+
+    """获取语音属性"""
+
+
+    def find_obj(args):
+        options = {
+            'return': ['name', 'id', 'notes', 'originalWavFilePath']
+
+        }
+        obj_sub_list = client.call("ak.wwise.core.object.get", args, options=options)['return']
+        if not obj_sub_list:
+            obj_sub_id = ""
+        else:
+            obj_sub_id = obj_sub_list[0]['id']
+        return obj_sub_list, obj_sub_id
+
+
     args = {
-        "importOperation": "createNew",
-        "imports": [
-            {
-                "audioFile": "C:\\Users\\happyelements\\Desktop\\Rosy\\WILD\\VO_C10_01_Menu.wav",
-                "objectPath": "\\Actor-Mixer Hierarchy\\v1\\VO\\<Sound Voice>hello\\<AudioFileSource>hello_cn",
-                "importLanguage": "Chinese"
-            }
-        ]
+        'waql': '"%s" select children ' % (
+            '{8CDBCB08-8C55-4C10-A1BE-25131DE0A81F}')
     }
-    client.call("ak.wwise.core.audio.import", args)
+    refer_list, refer_id = find_obj(args)
+    pprint(refer_list)
