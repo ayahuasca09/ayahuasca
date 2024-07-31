@@ -548,10 +548,6 @@ with WaapiClient() as client:
         # 找到重名的
         for rnd_container_dict in rnd_container_list:
             if rnd_container_dict['name'] == rnd_name:
-                # pprint(rnd_name + "：RandomContainer已存在，将不再导入")
-                # 媒体为随机容器
-                # if rnd_name != media_name:
-                #     import_sound_sfx_and_media(media_name, rnd_container_dict['path'], rnd_container_dict)
                 flag = 1
                 rnd_path = rnd_container_dict['path']
                 set_obj_notes(rnd_container_dict['id'], event_descrip)
@@ -582,6 +578,22 @@ with WaapiClient() as client:
                     # 在容器中重新导入media
                     import_media_in_rnd(new_media_path, sound_name, rnd_path)
                     print_warning(sound_cotainer_dict['originalWavFilePath'] + "(Media)改名为：" + new_media_path)
+
+                    # 语音的话需要删除容器内的引用
+                    if system_name == "VO":
+                        sound_language_list, _, _ = find_obj(
+                            {'waql': ' "%s" select children  ' %
+                                     sound_cotainer_dict['id']})
+                        if sound_language_list:
+                            for sound_language_dict in sound_language_list:
+                                if sound_cotainer_dict['name'] in sound_language_dict['name']:
+                                    args = {
+                                        "object": "%s" % sound_language_dict['id']
+                                    }
+                                    client.call("ak.wwise.core.object.delete", args)
+                                    print_warning(
+                                        sound_language_dict['name'] + "：容器引用删除")
+
                 break
 
         # 不存在则创建
@@ -845,7 +857,6 @@ with WaapiClient() as client:
                 # 加载所有工作表
                 for sheet_name in sheet_names:
                     sheet = wb[sheet_name]
-
                     # 获取工作表第一行数据
                     for cell in list(sheet.rows)[0]:
                         if 'Sample Name' in str(cell.value):
@@ -954,10 +965,9 @@ with WaapiClient() as client:
     #           'Hierarchy\\v1\\Char\\Char\\Char_Skill\\Char_Skill\\Char_Skill_C01\\Char_Skill_C01\\Char_Skill_C01_Atk1'}
     event_list, event_id, _ = find_obj(
         {'waql': ' "%s" select descendants where type = "Event" ' % wwise_dict['Event_Root']})
-    is_go = 0
-    if is_go == 1:
-        for rnd_container in rnd_container_list:
-            delete_or_modify_wwise_content()
+
+    for rnd_container in rnd_container_list:
+        delete_or_modify_wwise_content()
 
     # 撤销结束
     client.call("ak.wwise.core.undo.endGroup", displayName="rnd创建撤销")
@@ -965,3 +975,7 @@ with WaapiClient() as client:
     # 清除复制的媒体资源
     shutil.rmtree("New_Media")
     os.mkdir("New_Media")
+    os.mkdir("New_Media/Chinese")
+    os.mkdir("New_Media/English")
+    os.mkdir("New_Media/Japanese")
+    os.mkdir("New_Media/Korean")

@@ -167,7 +167,7 @@ with WaapiClient() as client:
 
     def find_obj(args):
         options = {
-            'return': ['name', 'id', 'notes', 'originalWavFilePath']
+            'return': ['name', 'id', 'notes', 'originalWavFilePath', 'isIncluded']
 
         }
         obj_sub_list = client.call("ak.wwise.core.object.get", args, options=options)['return']
@@ -180,7 +180,12 @@ with WaapiClient() as client:
 
     args = {
         'waql': '"%s" select children ' % (
-            '{8CDBCB08-8C55-4C10-A1BE-25131DE0A81F}')
+            '{D2EDE786-525F-42F3-B31F-C5531798CFCA}')
     }
     refer_list, refer_id = find_obj(args)
     pprint(refer_list)
+
+    # args = {
+    #     "object": "%s" % '{42F50D67-9115-4FE0-A1A1-2CBB56CDE9EE}'
+    # }
+    # client.call("ak.wwise.core.object.delete", args)

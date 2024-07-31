@@ -145,6 +145,35 @@ with WaapiClient() as client:
         set_obj_refer(myid, "Conversion", convert_type)
 
 
+    """清理未被引用的语音资源"""
+
+
+    def clear_file_vo_no_refer(vo_list):
+        # 查找所有sound
+        vo_sound_list, _, _ = find_obj(
+            {'waql': ' "%s" select descendants where type = "Sound" and childrenCount=4' % wwise_audio_root})
+        # pprint(sound_list)
+
+        # 获取Wwise中所有语音文件的路径
+        wwise_vo_path_list = []
+        for vo_sound_dict in vo_sound_list:
+            sound_language_list, _, _ = find_obj(
+                {'waql': ' "%s" select children  ' %
+                         vo_sound_dict['id']})
+            if sound_language_list:
+                for sound_language_dict in sound_language_list:
+                    wwise_vo_path_list.append(sound_language_dict['originalWavFilePath'])
+
+        # pprint(wwise_vo_path_list)
+        # 在文件夹中查找是否有Wwise中的语音路径，若没有则为无引用
+        for vo_path in vo_list:
+            if vo_path not in wwise_vo_path_list:
+                # print(vo_path)
+                if os.path.isfile(vo_path):
+                    os.remove(vo_path)
+                    print_log("[文件清理]" + vo_path + "已删除")
+
+
     """清理未被引用的媒体资源"""
 
 
@@ -182,10 +211,15 @@ with WaapiClient() as client:
     def clear_file():
         # 获取媒体文件列表
         sfx_list = get_all_media_path(wwise_sfx_path)
-        vo_list = get_all_media_path(wwise_sfx_path)
-        # 清理未被引用的媒体资源(包括.akd和.dat)
+        vo_list = get_all_media_path(wwise_vo_path)
+        # pprint(vo_list)
+        # 'S:\\chen.gong_DCC_Audio\\Audio\\SilverPalace_WwiseProject\\Originals\\Voices\\Korean\\VO_Game_World_C1001_06.wav',
+        #  'S:\\chen.gong_DCC_Audio\\Audio\\SilverPalace_WwiseProject\\Originals\\Voices\\Korean\\VO_Game_World_C1001_07.akd',
+        #  'S:\\chen.gong_DCC_Audio\\Audio\\SilverPalace_WwiseProject\\Originals\\Voices\\Korean\\VO_Game_World_C1001_07.wav',
+        #  'S:\\chen.gong_DCC_Audio\\Audio\\SilverPalace_WwiseProject\\Originals\\Voices\\Korean\\VO_Game_World_C1001_08.akd',
+        # 清理未被引用的媒体资源(无引用的容器和.wav以及.akd和.dat)
         clear_file_meida_no_refer(sfx_list)
-        clear_file_meida_no_refer(vo_list)
+        clear_file_vo_no_refer(vo_list)
         # 清理.prof文件
         clear_file_prof()
 
@@ -251,6 +285,7 @@ with WaapiClient() as client:
             set_obj_property(sound_dict['id'], "IsNonCachable", False)
             set_obj_property(sound_dict['id'], "IsZeroLatency", True)
             # print(sound_dict['name'])
+
 
     """*****************主程序处理******************"""
     # 不需要的文件清理

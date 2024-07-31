@@ -17,7 +17,8 @@ elif __file__:
     py_path = dirname(abspath(__file__))
 
 # wav文件目录
-wav_path = r"S:\chen.gong_DCC_Audio\Audio\SilverPalace_WwiseProject\Originals\SFX"
+# wav_path = r"S:\chen.gong_DCC_Audio\Audio\SilverPalace_WwiseProject\Originals\SFX"
+wav_path = r"C:\Users\happyelements\Desktop\Old"
 
 # 容器根目录
 waapi_path = "\\Actor-Mixer Hierarchy\\v1"
@@ -139,6 +140,8 @@ with WaapiClient() as client:
                                                     # 获取词缀尾部
                                                     no_wav_name = re.sub(".wav", "", wav_name)
                                                     wav_tail = re.search(r"(\d{2,4})$", no_wav_name)
+                                                    if not wav_tail:
+                                                        wav_tail = re.sub(r"(_R\d{2,4})$", "", no_wav_name)
                                                     if wav_tail:
                                                         # print(wav_tail.group())
                                                         new_tail = "_R" + wav_tail.group()
