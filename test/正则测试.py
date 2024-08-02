@@ -59,9 +59,28 @@ pattern = r"_LP$"
 #     print("aaaa")
 
 """检查开头是否含有VO"""
-aa = "aa_hgdiuagi"
-wav_tail = re.search(r"^(VO)", aa)
-if wav_tail:
-    print(wav_tail.group())
-else:
-    print("aaaa")
+# aa = "aa_hgdiuagi"
+# wav_tail = re.search(r"^(VO)", aa)
+# if wav_tail:
+#     print(wav_tail.group())
+# else:
+#     print("aaaa")
+
+"""替换资源路径为UE路径测试"""
+aa = (r"S:\Ver_1.0.0\Project\Content"
+      r"\Audio\WwiseAudio\Events\v1\VO\VO_Game\VO_Game_C01\VO_Game_Battle_C01\AKE_Play_VO_Game_Battle_C01_01.uasset")
+# 获取从\Audio开始的内容
+result = re.search('(?<=\\\\Content).*', aa).group()
+# \Audio\WwiseAudio\Events\v1\VO\VO_Game\VO_Game_C01\VO_Game_Battle_C01\AKE_Play_VO_Game_Battle_C01_01.uasset
+# /替换\
+result = result.replace("\\", "/")
+# /Audio/WwiseAudio/Events/v1/VO/VO_Game/VO_Game_C01/VO_Game_Battle_C01/AKE_Play_VO_Game_Battle_C01_01.uasset
+# 去除.uasset
+result = result.replace(".uasset", "")
+# /Audio/WwiseAudio/Events/v1/VO/VO_Game/VO_Game_C01/VO_Game_Battle_C01/AKE_Play_VO_Game_Battle_C01_01
+# 获取后缀
+result_list = result.split("/")
+# 拼接字符串
+if result_list[-1]:
+    result = '/Script/AkAudio.AkAudioEvent\'/Game' + result + "." + result_list[-1]+'\''
+print(result)
