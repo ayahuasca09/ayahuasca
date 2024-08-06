@@ -4,6 +4,8 @@ import os
 import re
 import pandas as pd
 import configparser
+import tkinter as tk
+from tkinter import messagebox
 
 """ID表内容写入"""
 # 获取ID表路径
@@ -257,3 +259,8 @@ df = pd.read_excel(excel_path)
 # 指定CSV文件名和编码格式
 encoding = 'utf-8'
 df.to_csv(csv_path, encoding=encoding, index=False)
+
+# 应用程序弹窗
+root = tk.Tk()
+root.withdraw()
+messagebox.showinfo("Info", "ID表已更新")

@@ -615,8 +615,8 @@ with WaapiClient() as client:
                     "name": rnd_name,
                     "notes": event_descrip,
                     "@RandomOrSequence": 1,
-                    "@NormalOrShuffle": 0,
-                    "@RandomAvoidRepeatingCount": 3
+                    "@NormalOrShuffle": 1,
+                    "@RandomAvoidRepeatingCount": 1
                 }
                 rnd_container_object = client.call("ak.wwise.core.object.create", args)
                 # 查找新创建的容器的路径
