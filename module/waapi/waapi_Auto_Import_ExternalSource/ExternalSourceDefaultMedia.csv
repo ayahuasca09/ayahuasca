@@ -1,9 +1,4 @@
 Name,ExternalSourceCookie,ExternalSourceName,MediaInfoId,MediaName
-200,1986569276,v12,200,VO_C04_45_Emotion.wem
-524,1986569276,v12,524,VO_C10_50_Emotion.wem
-526,1986569276,v12,526,VO_C10_52_Emotion.wem
-15,1986569276,v12,15,VO_C01_15_World.wem
-86,1986569276,v12,86,VO_C02_33_Battle.wem
-92,1986569276,v12,92,VO_C02_39_Battle.wem
-147,1986569276,v12,147,VO_C03_43_Emotion.wem
-166,1986569276,v12,166,VO_C04_11_World.wem
+64,1986569276,v12,64,VO_External_Emotion_C08_01.wem
+65,1986569276,v12,65,VO_External_Emotion_C08_02.wem
+66,1986569276,v12,66,VO_External_Emotion_C08_03.wem

@@ -137,6 +137,16 @@ def print_error_by_module(module_dict):
     print_error(cell_sound.value + "：" + module_type + "有误，请检查是否添加模块名称或是否拼写有误")
 
 
+"""随机容器后缀检查"""
+
+
+def check_is_random():
+    global is_pass
+    is_random = re.search(r"(_R\d{2,4})$", name)
+    if is_random:
+        is_pass = False
+
+
 """Amb类型检查"""
 
 
@@ -515,6 +525,7 @@ with WaapiClient() as client:
             'value': notes_value
         }
         client.call("ak.wwise.core.object.setNotes", args)
+        # print_warning(obj_name + "描述更改为：" + notes_value)
 
 
     """导入媒体资源"""
@@ -946,6 +957,9 @@ with WaapiClient() as client:
                                                     # 检查一级系统并索引到不同的检测方式
                                                     check_first_system_name(name)
                                                     # print(name)
+
+                                                    # 检查是否为随机样本
+                                                    check_is_random()
 
                                                     # 生成Wwise内容
                                                     if is_pass:

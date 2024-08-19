@@ -1,3 +1,6 @@
 <?xml version="1.0" ?>
 <ExternalSourcesList SchemaVersion="1">
+	<Source Path="F:\pppppy\SP\module\waapi\waapi_Auto_Import_ExternalSource\New_Media\VO_External_Emotion_C08_01.wav" Conversion="VO"/>
+	<Source Path="F:\pppppy\SP\module\waapi\waapi_Auto_Import_ExternalSource\New_Media\VO_External_Emotion_C08_02.wav" Conversion="VO"/>
+	<Source Path="F:\pppppy\SP\module\waapi\waapi_Auto_Import_ExternalSource\New_Media\VO_External_Emotion_C08_03.wav" Conversion="VO"/>
 </ExternalSourcesList>

@@ -1,5 +1,4 @@
 # xml读取库
-import xml.etree.ElementTree as ET
 import shutil
 import pandas as pd
 import sys
@@ -7,11 +6,7 @@ from os.path import abspath, dirname
 import os
 import warnings
 import openpyxl
-from openpyxl.styles import colors
-import csv
 from waapi import WaapiClient
-from pprint import pprint
-
 # xml写入库
 from xml.dom.minidom import Document
 
@@ -23,16 +18,15 @@ elif __file__:
     py_path = dirname(abspath(__file__))
 
 """*****************可变配置******************"""
-vo_external_path = "\\Actor-Mixer Hierarchy\\v1\\VO\\VO\\VO_External"
+vo_external_path = "\\Actor-Mixer Hierarchy\\VO"
 # 获取.csv文件
 media_info_path = os.path.join(py_path, "MediaInfoTable.csv")
 external_cookie_path = os.path.join(py_path, "ExternalSourceDefaultMedia.csv")
 # external的输入输出路径
 external_input_path = "F:\\pppppy\\SP\\module\\waapi\\waapi_Auto_Import_ExternalSource\\ExternalSource.wsources"
-external_output_win_path = 'S:\\Ver_1.0.0\\Project\\Content\\Audio\\GeneratedExternalSources\\Windows'
-external_output_android_path = 'S:\\Ver_1.0.0\\Project\\Content\\Audio\\GeneratedExternalSources\\Android'
-external_output_ios_path = 'S:\\Ver_1.0.0\\Project\\Content\\Audio\\GeneratedExternalSources\\iOS'
-external_output_path = 'S:\\Ver_1.0.0\\Project\\Content\\Audio\\GeneratedExternalSources'
+external_output_win_path = "F:\\SP\\UE53AndWwise2218\\UE53AndWwise2218\\Content\\GeneratedExternalSources\\Windows"
+external_output_mac_path = "F:\\SP\\UE53AndWwise2218\\UE53AndWwise2218\\Content\\GeneratedExternalSources\\Mac"
+external_output_path = "F:\\SP\\UE53AndWwise2218\\UE53AndWwise2218\\Content\\GeneratedExternalSources"
 
 """**************写xml**************"""
 # 创建一个对象
@@ -64,6 +58,8 @@ media_info_initial_row = media_info_data.shape[0]
 media_info_row_max = media_info_data.shape[0] + 1
 external_cookie_initial_row = external_cookie_data.shape[0]
 external_cookie_row_max = external_cookie_data.shape[0] + 1
+
+is_pass = True
 
 """*****************功能检测区******************"""
 
@@ -197,7 +193,7 @@ def write_external_cookie_csv():
                 'MediaName': cell_sound.value + ".wem"
             }, index=[0])
             # index无效，但不加会报错
-            new_data.to_csv(external_cookie_path, mode='a', header=False,
+            new_data.to_csv(external_cookie_path, mode='a+', header=False,
                             index=False)
             # 作新增操作
         else:
@@ -249,7 +245,7 @@ def drop_row_by_cancel():
     media_info_data.dropna(how='all', inplace=True)
     media_info_data.to_csv('MediaInfoTable.csv', index=False)
     external_cookie_data.dropna(how='all', inplace=True)
-    external_cookie_data.to_csv('ExternalSourceDefaultMedia.csv', index=False)
+    external_cookie_data.to_csv('MediaInfoTable.csv', index=False)
 
     # 读excel表
     # 提取规则：只提取xlsx文件
@@ -280,7 +276,7 @@ def drop_row_by_cancel():
                                     media_info_data['MediaName'] == (media_name + '.wem')].tolist()
 
                                 for row_index in row_index_list:
-                                    media_info_data.drop(row_index,inplace=True)
+                                    media_info_data.drop(row_index, inplace=True)
                                 media_info_data.to_csv(media_info_path, index=False)
 
                                 # 删除external_cookie的内容
@@ -288,7 +284,7 @@ def drop_row_by_cancel():
                                     external_cookie_data['MediaName'] == (media_name + '.wem')].tolist()
                                 print(row_index_list)
                                 for row_index in row_index_list:
-                                    external_cookie_data.drop(row_index,inplace=True)
+                                    external_cookie_data.drop(row_index, inplace=True)
                                     external_cookie_data.to_csv(external_cookie_path, index=False)
 
 
@@ -333,14 +329,10 @@ with WaapiClient() as client:
                 },
                 {
                     "input": external_input_path,
-                    "platform": "Android",
-                    "output": external_output_android_path
-                },
-                {
-                    "input": external_input_path,
-                    "platform": "iOS",
-                    "output": external_output_ios_path
+                    "platform": "Mac",
+                    "output": external_output_mac_path
                 }
+
             ]
         }
 
@@ -385,7 +377,6 @@ with WaapiClient() as client:
                         # 获取音效名下的内容
                         for cell_sound in list(sheet.columns)[file_name_column - 1]:
                             if cell_sound.value and (cell_sound.value != "文件名"):
-                                # print(cell_sound.value)
 
                                 if cell_sound.value in file_wav_name:
                                     if sheet.cell(row=cell_sound.row, column=state_column).value != 'cancel':

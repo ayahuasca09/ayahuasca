@@ -164,28 +164,26 @@ with WaapiClient() as client:
 
     """获取语音属性"""
 
-
-    def find_obj(args):
-        options = {
-            'return': ['name', 'id', 'notes', 'originalWavFilePath', 'isIncluded']
-
-        }
-        obj_sub_list = client.call("ak.wwise.core.object.get", args, options=options)['return']
-        if not obj_sub_list:
-            obj_sub_id = ""
-        else:
-            obj_sub_id = obj_sub_list[0]['id']
-        return obj_sub_list, obj_sub_id
-
-
-    args = {
-        'waql': '"%s" select children ' % (
-            '{D2EDE786-525F-42F3-B31F-C5531798CFCA}')
-    }
-    refer_list, refer_id = find_obj(args)
-    pprint(refer_list)
-
+    #
+    # def find_obj(args):
+    #     options = {
+    #         'return': ['name', 'id', 'notes', 'originalWavFilePath', 'isIncluded']
+    #
+    #     }
+    #     obj_sub_list = client.call("ak.wwise.core.object.get", args, options=options)['return']
+    #     if not obj_sub_list:
+    #         obj_sub_id = ""
+    #     else:
+    #         obj_sub_id = obj_sub_list[0]['id']
+    #     return obj_sub_list, obj_sub_id
+    #
+    #
     # args = {
-    #     "object": "%s" % '{42F50D67-9115-4FE0-A1A1-2CBB56CDE9EE}'
+    #     'waql': '"%s" select children ' % (
+    #         '{D2EDE786-525F-42F3-B31F-C5531798CFCA}')
     # }
-    # client.call("ak.wwise.core.object.delete", args)
+    # refer_list, refer_id = find_obj(args)
+    # pprint(refer_list)
+
+    """获取Wwise工程信息"""
+

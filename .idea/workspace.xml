@@ -5,20 +5,44 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="17a8a927-0db7-41d4-8f81-9181fc87e6d9" name="更改" comment="语音自动化：ID表生成流程准备打包">
-      <change afterPath="$PROJECT_DIR$/module/ue/ue_ID表生成/dist/Audio.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module/ue/ue_ID表生成/dist/Audio.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module/ue/ue_ID表生成/dist/Config.ini" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module/ue/ue_ID表生成/dist/ue_ID表生成v2.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module/ue/ue_ID表生成/ue_ID表生成v2.spec" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/SilverPalace战斗音频需求资源管理表 (2).xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/SilverPalace语音资源管理表.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/oi/oi_媒体资源重命名/New_Media/VO_Game_Battle_B01_01.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/oi/oi_媒体资源重命名/New_Media/VO_Game_Battle_B01_02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/oi/oi_媒体资源重命名/New_Media/VO_Game_Battle_B01_03.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/oi/oi_媒体资源重命名/New_Media/VO_Game_Battle_B01_04.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/oi/oi_媒体资源重命名/New_Media/VO_Game_Battle_B01_05.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/oi/oi_媒体资源重命名/New_Media/VO_Game_Battle_B01_06.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/oi/oi_媒体资源重命名/New_Media/VO_Game_Battle_B01_07.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/oi/oi_媒体资源重命名/New_Media/VO_Game_Battle_B01_08.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/oi/oi_媒体资源重命名/New_Media/VO_Game_Battle_B01_09.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/oi/oi_媒体资源重命名/New_Media/VO_Game_Battle_B01_10.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/oi/oi_媒体资源重命名/New_Media/VO_Game_Battle_B01_11.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/oi/oi_媒体资源重命名/New_Media/VO_Game_Battle_B01_12.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/oi/oi_媒体资源重命名/New_Media/VO_Game_Battle_B01_13.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/oi/oi_媒体资源重命名/SilverPalace语音资源管理表.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/New_Media/VO_External_Emotion_C08_01.akd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/New_Media/VO_External_Emotion_C08_01.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/New_Media/VO_External_Emotion_C08_02.akd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/New_Media/VO_External_Emotion_C08_02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/New_Media/VO_External_Emotion_C08_03.akd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/New_Media/VO_External_Emotion_C08_03.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/SilverPalace语音ES管理表.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/waapi_语音导入_本地UE工程测试版.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/SilverPalace语音资源管理表 (1).xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/oi_媒体资源重命名.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/资源导入记录表.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/oi/oi_媒体资源重命名/SilverPalace语音资源管理表 (3).xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/oi/oi_媒体资源重命名/资源导入记录表.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/module/oi/oi_媒体资源重命名/资源导入记录表.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/module/ue/ue_ID表生成/Audio.csv" beforeDir="false" afterPath="$PROJECT_DIR$/module/ue/ue_ID表生成/Audio.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/module/ue/ue_ID表生成/Audio.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/module/ue/ue_ID表生成/Audio.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/ue/ue_ID表生成/ue_ID表生成v2.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/ue/ue_ID表生成/ue_ID表生成v2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/SilverPalace战斗音频需求资源管理表.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/SilverPalace语音资源管理表 (3).xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/SilverPalace音频需求资源管理表.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/SilverPalace音频需求资源管理表.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/ExternalSource.wsources" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/ExternalSource.wsources" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/ExternalSource.xml" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/ExternalSource.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/ExternalSourceDefaultMedia.csv" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/ExternalSourceDefaultMedia.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/MediaInfoTable.csv" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/MediaInfoTable.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/SilverPalace_Voice_ExternalSource.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/waapi_语音导入.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/waapi_语音导入.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/SilverPalace语音资源管理表.xlsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/waapi_音频资源导入_从表导入.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/waapi_音频资源导入_从表导入.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -65,6 +89,7 @@
     "Python.csv_pandas测试.executor": "Run",
     "Python.excel_音效需求表音效名读取.executor": "Run",
     "Python.oi_h.executor": "Run",
+    "Python.oi_媒体资源重命名 (1).executor": "Run",
     "Python.oi_媒体资源重命名.executor": "Run",
     "Python.test.executor": "Run",
     "Python.ue_ID表生成 (1).executor": "Run",
@@ -80,6 +105,7 @@
     "Python.waapi_订阅_接收对象名称被修改时的信息.executor": "Run",
     "Python.waapi_语音导入 (1).executor": "Run",
     "Python.waapi_语音导入.executor": "Run",
+    "Python.waapi_语音导入_本地UE工程测试版.executor": "Run",
     "Python.waapi_语音导入测试.executor": "Run",
     "Python.waapi_转码类型创建.executor": "Run",
     "Python.waapi_音频资源导入_从媒体资源导入.executor": "Run",
@@ -92,12 +118,14 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "F:/pppppy/SP/module/ue/ue_ID表生成",
+    "last_opened_file_path": "F:/pppppy/SP/module/waapi/waapi_音频资源导入自动化",
     "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\pppppy\SP\module\waapi\waapi_音频资源导入自动化" />
+      <recent name="F:\pppppy\SP\module\waapi\waapi_Auto_Import_ExternalSource" />
       <recent name="F:\pppppy\SP\module\ue\ue_ID表生成" />
       <recent name="F:\pppppy\SP\module\xml" />
       <recent name="F:\pppppy\SP" />
@@ -118,8 +146,8 @@
       <visibility group="运行配置" flag="true" />
     </myKeys>
   </component>
-  <component name="RunManager" selected="Python.waapi_音频资源导入_从表导入">
-    <configuration name="正则测试" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.ue_ID表生成v2">
+    <configuration name="oi_媒体资源重命名 (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="SP" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -128,33 +156,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test/正则测试.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="oi_媒体资源重命名" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="SP" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/module/oi/oi_媒体资源重命名" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/module/oi/oi_媒体资源重命名/oi_媒体资源重命名.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/oi_媒体资源重命名.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -177,6 +183,28 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/module/ue/ue_ID表生成/ue_ID表生成v2.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="waapi_语音导入" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="SP" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/waapi_语音导入.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -229,7 +257,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="waapi_wwise属性自动配置" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="waapi_音频资源导入_从媒体资源导入" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="SP" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -242,7 +270,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/waapi_wwise属性自动配置.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/waapi_音频资源导入_从媒体资源导入.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -253,11 +281,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.waapi_音频资源导入_从表导入" />
         <item itemvalue="Python.ue_ID表生成v2" />
-        <item itemvalue="Python.正则测试" />
-        <item itemvalue="Python.oi_媒体资源重命名" />
-        <item itemvalue="Python.waapi_wwise属性自动配置" />
+        <item itemvalue="Python.waapi_音频资源导入_从表导入" />
+        <item itemvalue="Python.waapi_语音导入" />
+        <item itemvalue="Python.waapi_音频资源导入_从媒体资源导入" />
+        <item itemvalue="Python.oi_媒体资源重命名 (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -276,22 +304,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1716955384994</updated>
-    </task>
-    <task id="LOCAL-00009" summary="名称迭代">
-      <option name="closed" value="true" />
-      <created>1717502391974</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1717502391974</updated>
-    </task>
-    <task id="LOCAL-00010" summary="文件测试">
-      <option name="closed" value="true" />
-      <created>1717557540070</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1717557540070</updated>
     </task>
     <task id="LOCAL-00011" summary="GenerateSoundbank_v1.1更新">
       <option name="closed" value="true" />
@@ -669,7 +681,23 @@
       <option name="project" value="LOCAL" />
       <updated>1722581788414</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="语音自动化：ID表生成流程准备打包">
+      <option name="closed" value="true" />
+      <created>1722925810473</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1722925810473</updated>
+    </task>
+    <task id="LOCAL-00059" summary="语音自动化：ID表生成流程准备打包">
+      <option name="closed" value="true" />
+      <created>1722925873329</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1722925873329</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

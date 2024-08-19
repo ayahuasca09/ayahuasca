@@ -1,9 +1,4 @@
 Name,ExternalSourceMediaInfoId,MediaName,CodecID,bIsStreamed,bUseDeviceMemory,MemoryAlignment,PrefetchSize
-15,15,VO_C01_15_World.wem,4,TRUE,FALSE,0,0
-86,86,VO_C02_33_Battle.wem,4,TRUE,FALSE,0,0
-200,200,VO_C04_45_Emotion.wem,4,TRUE,FALSE,0,0
-524,524,VO_C10_50_Emotion.wem,4,TRUE,FALSE,0,0
-526,526,VO_C10_52_Emotion.wem,4,TRUE,FALSE,0,0
-92,92,VO_C02_39_Battle.wem,4,TRUE,FALSE,0,0
-147,147,VO_C03_43_Emotion.wem,4,TRUE,FALSE,0,0
-166,166,VO_C04_11_World.wem,4,TRUE,FALSE,0,0
+64,64,VO_External_Emotion_C08_01.wem,4,TRUE,FALSE,0,0
+65,65,VO_External_Emotion_C08_02.wem,4,TRUE,FALSE,0,0
+66,66,VO_External_Emotion_C08_03.wem,4,TRUE,FALSE,0,0
