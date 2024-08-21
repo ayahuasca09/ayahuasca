@@ -2,6 +2,19 @@ from waapi import WaapiClient, CannotConnectToWaapiException
 from pprint import pprint
 
 with WaapiClient() as client:
+    def find_obj(args):
+        options = {
+            'return': ['name', 'id', 'notes', 'originalWavFilePath', 'isIncluded', 'IsLoopingEnabled']
+
+        }
+        obj_sub_list = client.call("ak.wwise.core.object.get", args, options=options)['return']
+        if not obj_sub_list:
+            obj_sub_id = ""
+        else:
+            obj_sub_id = obj_sub_list[0]['id']
+        return obj_sub_list, obj_sub_id
+
+
     """soundbank生成测试"""
     # args = {
     #     "soundbanks": [
@@ -185,5 +198,40 @@ with WaapiClient() as client:
     # refer_list, refer_id = find_obj(args)
     # pprint(refer_list)
 
-    """获取Wwise工程信息"""
+    """获取事件引用的媒体是否为循环"""
 
+    args = {
+        'waql': '"%s" select descendants where type= "Action" ' % (
+            '{05244502-61D1-4B75-B7E1-5DD4852672D1}')
+    }
+
+    options = {
+        'return': ['Target', 'ActionType']
+
+    }
+    obj_sub_list = client.call("ak.wwise.core.object.get", args, options=options)['return']
+    # pprint(obj_sub_list)
+
+    # [{'ActionType': 1,
+    #   'Target': {'id': '{913295DF-370C-47EB-98B6-11E12815D7C7}',
+    #              'name': 'VO_Game_Battle_B01_09'}}]
+
+    # 需要type=1或type=23或type=22才继续往下判断是否为lp
+    # 22	/States/Set State
+    # 23	/Set Switch
+    # 1	/Play
+    if obj_sub_list:
+        for obj_dict in obj_sub_list:
+            if obj_dict['ActionType'] == 1:
+                # print("nice")
+                args = {
+                    'waql': '"%s" select descendants where type= "Sound" ' % (
+                        obj_dict['Target']['id'])
+                }
+                sound_list, sound_id = find_obj(args)
+                if sound_list:
+                    # pprint(sound_list)
+                    for sound_dict in sound_list:
+                        if sound_dict['IsLoopingEnabled']==True:
+                            # return True
+                            break

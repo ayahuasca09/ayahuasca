@@ -6,6 +6,7 @@ import pandas as pd
 import configparser
 import tkinter as tk
 from tkinter import messagebox
+from pprint import pprint
 
 """ID表内容写入"""
 # 获取ID表路径
@@ -40,6 +41,7 @@ audioid_index = 2
 audioname_index = 3
 audioevent_index = 4
 desc_index = 5
+isloop_index = 6
 
 event_id_config = {
     "Amb":
@@ -183,6 +185,43 @@ def create_id():
                     temp = temp + 1
 
 
+# 获取是否循环并赋值
+def get_is_loop():
+    is_loop = False
+    # 查找事件引用的对象
+    args = {
+        'waql': '"%s" select descendants where type= "Action" ' % (
+            event_dict['id'])
+    }
+
+    options = {
+        'return': ['Target', 'ActionType']
+
+    }
+    obj_sub_list = client.call("ak.wwise.core.object.get", args, options=options)['return']
+
+    if obj_sub_list:
+        for obj_dict in obj_sub_list:
+            if is_loop:
+                break
+            else:
+                # 为play的事件才继续查
+                if obj_dict['ActionType'] == 1:
+                    # print("nice")
+                    args = {
+                        'waql': '"%s" select descendants where type= "Sound" ' % (
+                            obj_dict['Target']['id'])
+                    }
+                    sound_list, _, _ = find_obj(args)
+                    # pprint(sound_list)
+                    if sound_list:
+                        for sound_dict in sound_list:
+                            if sound_dict['IsLoopingEnabled']:
+                                is_loop = True
+                                break
+    return is_loop
+
+
 # 表的值设置
 def set_value():
     global temp
@@ -194,12 +233,18 @@ def set_value():
             # 事件描述赋值
             sheet.cell(row=cell.row, column=desc_index).value = event_dict['notes']
             set_event_path(cell.row)
+            # 获取是否循环并赋值
+            sheet.cell(row=cell.row, column=isloop_index).value = get_is_loop()
             break
         elif event_dict['notes'] == sheet.cell(cell.row, column=desc_index).value:
             flag = 2
             # 事件名称复制
             sheet.cell(row=cell.row, column=audioname_index).value = event_dict['name']
             set_event_path(cell.row)
+            # 获取是否循环并赋值
+            sheet.cell(row=cell.row, column=isloop_index).value = get_is_loop()
+
+        # 是否循环赋值
     if flag == 0:
         # 插入为空的行
         insert_row = sheet.max_row + 1
@@ -214,13 +259,15 @@ def set_value():
         # 事件描述赋值
         sheet.cell(row=insert_row, column=desc_index).value = event_dict['notes']
         set_event_path(insert_row)
+        # 获取是否循环并赋值
+        sheet.cell(row=insert_row, column=isloop_index).value = get_is_loop()
 
 
 """从Wwise读Event_Info"""
 with WaapiClient() as client:
     def find_obj(args):
         options = {
-            'return': ['name', 'id', 'path', 'notes']
+            'return': ['name', 'id', 'path', 'notes', 'IsLoopingEnabled']
 
         }
         obj_sub_list = client.call("ak.wwise.core.object.get", args, options=options)['return']

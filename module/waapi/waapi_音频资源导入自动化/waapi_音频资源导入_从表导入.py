@@ -755,7 +755,7 @@ with WaapiClient() as client:
     """创建事件的参数"""
 
 
-    def get_event_args(event_parent_path, event_name, event_action, event_target):
+    def get_event_args(event_parent_path, event_name, event_action, event_target, notes):
         args_new_event = {
             # 上半部分属性中分别为 Event 创建后存放的路径、类型、名称、遇到名字冲突时的处理方法
             "parent": event_parent_path,
@@ -771,7 +771,7 @@ with WaapiClient() as client:
                     "@Target": event_target
                 }
             ],
-            "notes": event_descrip
+            "notes": notes
         }
         return args_new_event
 
@@ -784,27 +784,38 @@ with WaapiClient() as client:
             'waql': ' "%s" select descendants where type = "WorkUnit" ' % os.path.join(wwise_dict['Event_Root'],
                                                                                        system_name)})
         event_name = "AKE_" + "Play_" + rnd_name
+        event_stop_name = "AKE_" + "Stop_" + rnd_name
         # 查找事件是否已存在
         event_list, _, _ = find_obj(
             {'waql': ' "%s" select descendants where type = "Event" ' %
                      wwise_dict['Event_Root']})
+        # pprint(event_list)
         flag = 0
         for event_dict in event_list:
-            if event_dict['name'] == event_name:
-                flag = 1
-                set_obj_notes(event_dict['id'], event_descrip)
-                break
-            # 没有重名但描述一致，判定为改名
-            elif event_dict['notes'] == event_descrip:
-                # pprint(rnd_name + "：RandomContainer已存在，将不再导入")
-                flag = 2
-                if "Play" in event_dict['name']:
-                    pass
-                elif "Stop" in event_dict['name']:
-                    event_name = "AKE_" + "Stop_" + rnd_name
-                change_name_by_wwise_content(event_dict['id'], event_name, event_dict['name'], "Event")
+            if rnd_name in event_dict['name']:
+                # Play事件的notes重新设置
+                if event_dict['name'] == event_name:
+                    flag = 1
+                    set_obj_notes(event_dict['id'], event_descrip)
+                    # print(event_dict['name'])
+                elif event_dict['name'] == event_stop_name:
+                    flag = 2
+                    set_obj_notes(event_dict['id'], event_descrip + "停止")
+                    # print(event_dict['name'])
+            else:
+                # Play:没有重名但描述一致，判定为改名
+                if event_dict['notes'] == event_descrip:
+                    # pprint(rnd_name + "：RandomContainer已存在，将不再导入")
+                    flag = 3
+                    change_name_by_wwise_content(event_dict['id'], event_name, event_dict['name'], "Event")
+                # Stop：没有重名但描述一致，判定为改名
+                elif event_dict['notes'] == event_descrip + "停止":
+                    # pprint(rnd_name + "：RandomContainer已存在，将不再导入")
+                    flag = 4
+                    change_name_by_wwise_content(event_dict['id'], event_stop_name, event_dict['name'], "Event")
+
         if flag == 0:
-            event_args = get_event_args(parent_id, event_name, 1, rnd_path)
+            event_args = get_event_args(parent_id, event_name, 1, rnd_path, event_descrip)
             client.call("ak.wwise.core.object.create", event_args)
             # {'children': [{'id': '{26A1FB06-3908-4F55-AB8A-E67264100F18}', 'name': ''}],
             #  'id': '{F04A7B4F-9266-4DAB-8DD2-CAF6BFD6D78A}',
@@ -812,7 +823,7 @@ with WaapiClient() as client:
             pprint(event_name + "事件创建")
             if "_LP" in rnd_name:
                 event_name = "AKE_" + "Stop_" + rnd_name
-                event_args = get_event_args(parent_id, event_name, 2, rnd_path)
+                event_args = get_event_args(parent_id, event_name, 2, rnd_path, event_descrip + "停止")
                 client.call("ak.wwise.core.object.create", event_args)
                 pprint(event_name + "事件创建")
 
