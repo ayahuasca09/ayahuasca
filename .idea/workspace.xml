@@ -4,14 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="17a8a927-0db7-41d4-8f81-9181fc87e6d9" name="更改" comment="更新">
+    <list default="true" id="17a8a927-0db7-41d4-8f81-9181fc87e6d9" name="更改" comment="ID表——修复只生成循环事件的Play和Stop的某一个">
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_命令扩展/Commands/Commands_My_List.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/ue/ue_ID表生成/Audio.csv" beforeDir="false" afterPath="$PROJECT_DIR$/module/ue/ue_ID表生成/Audio.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/ue/ue_ID表生成/Audio.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/module/ue/ue_ID表生成/Audio.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/ue/ue_ID表生成/ue_ID表生成v2.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/ue/ue_ID表生成/ue_ID表生成v2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/ExternalSource.wsources" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/ExternalSource.wsources" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/module/waapi/waapi_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/waapi_音频资源导入_从表导入.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/waapi_音频资源导入_从表导入.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pylibrary.txt" beforeDir="false" afterPath="$PROJECT_DIR$/pylibrary.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,45 +48,45 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Python.csv_pandas测试.executor": "Run",
-    "Python.excel_音效需求表音效名读取.executor": "Run",
-    "Python.oi_h.executor": "Run",
-    "Python.oi_媒体资源重命名 (1).executor": "Run",
-    "Python.oi_媒体资源重命名.executor": "Run",
-    "Python.test.executor": "Run",
-    "Python.ue_ID表生成 (1).executor": "Run",
-    "Python.ue_ID表生成.executor": "Run",
-    "Python.ue_ID表生成v2.executor": "Run",
-    "Python.waapi_2023test.executor": "Run",
-    "Python.waapi_json数据解析.executor": "Run",
-    "Python.waapi_sounbank生成.executor": "Run",
-    "Python.waapi_test.executor": "Run",
-    "Python.waapi_wwise属性自动配置.executor": "Run",
-    "Python.waapi_订阅_soundbank生成数据 (1).executor": "Run",
-    "Python.waapi_订阅_soundbank生成数据打印 (1).executor": "Run",
-    "Python.waapi_订阅_接收对象名称被修改时的信息.executor": "Run",
-    "Python.waapi_语音导入 (1).executor": "Run",
-    "Python.waapi_语音导入.executor": "Run",
-    "Python.waapi_语音导入_本地UE工程测试版.executor": "Run",
-    "Python.waapi_语音导入测试.executor": "Run",
-    "Python.waapi_转码类型创建.executor": "Run",
-    "Python.waapi_音频资源导入_从媒体资源导入.executor": "Run",
-    "Python.waapi_音频资源导入_从表导入 (1).executor": "Run",
-    "Python.waapi_音频资源导入_从表导入.executor": "Run",
-    "Python.waapi_音频资源导入自动化.executor": "Run",
-    "Python.xml文件读写示例 (1).executor": "Run",
-    "Python.xml文件读写示例.executor": "Run",
-    "Python.正则测试.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "F:/pppppy/SP/module/waapi/waapi_音频资源导入自动化",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Python.csv_pandas测试.executor&quot;: &quot;Run&quot;,
+    &quot;Python.excel_音效需求表音效名读取.executor&quot;: &quot;Run&quot;,
+    &quot;Python.oi_h.executor&quot;: &quot;Run&quot;,
+    &quot;Python.oi_媒体资源重命名 (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.oi_媒体资源重命名.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test.executor&quot;: &quot;Run&quot;,
+    &quot;Python.ue_ID表生成 (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.ue_ID表生成.executor&quot;: &quot;Run&quot;,
+    &quot;Python.ue_ID表生成v2.executor&quot;: &quot;Run&quot;,
+    &quot;Python.waapi_2023test.executor&quot;: &quot;Run&quot;,
+    &quot;Python.waapi_json数据解析.executor&quot;: &quot;Run&quot;,
+    &quot;Python.waapi_sounbank生成.executor&quot;: &quot;Run&quot;,
+    &quot;Python.waapi_test.executor&quot;: &quot;Run&quot;,
+    &quot;Python.waapi_wwise属性自动配置.executor&quot;: &quot;Run&quot;,
+    &quot;Python.waapi_订阅_soundbank生成数据 (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.waapi_订阅_soundbank生成数据打印 (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.waapi_订阅_接收对象名称被修改时的信息.executor&quot;: &quot;Run&quot;,
+    &quot;Python.waapi_语音导入 (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.waapi_语音导入.executor&quot;: &quot;Run&quot;,
+    &quot;Python.waapi_语音导入_本地UE工程测试版.executor&quot;: &quot;Run&quot;,
+    &quot;Python.waapi_语音导入测试.executor&quot;: &quot;Run&quot;,
+    &quot;Python.waapi_转码类型创建.executor&quot;: &quot;Run&quot;,
+    &quot;Python.waapi_音频资源导入_从媒体资源导入.executor&quot;: &quot;Run&quot;,
+    &quot;Python.waapi_音频资源导入_从表导入 (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.waapi_音频资源导入_从表导入.executor&quot;: &quot;Run&quot;,
+    &quot;Python.waapi_音频资源导入自动化.executor&quot;: &quot;Run&quot;,
+    &quot;Python.xml文件读写示例 (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.xml文件读写示例.executor&quot;: &quot;Run&quot;,
+    &quot;Python.正则测试.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;F:/pppppy/SP/module/waapi/waapi_音频资源导入自动化&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="F:\pppppy\SP\module\waapi\waapi_音频资源导入自动化" />
@@ -253,7 +250,6 @@
         <item itemvalue="Python.waapi_音频资源导入_从表导入" />
         <item itemvalue="Python.waapi_test" />
         <item itemvalue="Python.waapi_语音导入" />
-        <item itemvalue="Python.waapi_音频资源导入_从媒体资源导入" />
       </list>
     </recent_temporary>
   </component>
@@ -272,14 +268,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1716955384994</updated>
-    </task>
-    <task id="LOCAL-00012" summary="GenerateSoundbank工具路径修改">
-      <option name="closed" value="true" />
-      <created>1717571951143</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1717571951143</updated>
     </task>
     <task id="LOCAL-00013" summary="GenerateSoundbank工具更新">
       <option name="closed" value="true" />
@@ -665,7 +653,15 @@
       <option name="project" value="LOCAL" />
       <updated>1724052327752</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="ID表——修复只生成循环事件的Play和Stop的某一个">
+      <option name="closed" value="true" />
+      <created>1724222973808</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1724222973808</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -681,7 +677,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="音频资源导入检测——媒体资源导入和事件创建" />
     <MESSAGE value="音频资源导入检测——全量媒体资源导入和事件生成" />
     <MESSAGE value="音频资源导入检测——媒体资源导入记录表" />
     <MESSAGE value="音频资源导入检测——媒体资源导入记录表颜色改变" />
@@ -706,6 +701,7 @@
     <MESSAGE value="语音自动化：媒体资源重命名" />
     <MESSAGE value="语音自动化：ID表生成流程准备打包" />
     <MESSAGE value="更新" />
-    <option name="LAST_COMMIT_MESSAGE" value="更新" />
+    <MESSAGE value="ID表——修复只生成循环事件的Play和Stop的某一个" />
+    <option name="LAST_COMMIT_MESSAGE" value="ID表——修复只生成循环事件的Play和Stop的某一个" />
   </component>
 </project>

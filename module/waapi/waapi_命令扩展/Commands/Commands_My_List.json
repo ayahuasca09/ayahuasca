@@ -1,0 +1,18 @@
+{
+    "commands":[
+      {
+        "id": "ak.create.parent.switchcontainer",
+        "displayName": "Create Parent-Switch Container",
+        "defaultShortcut": "",
+        "program": "py.exe",
+        "startMode": "MultipleSelectionSingleProcessSpaceSeparated",
+        "args": "-3 ${CurrentCommandDirectory}\\..\\create-parent-switchcontainer ${id}",
+        "cwd": "",
+        "contextMenu": {
+          "basePath": "",
+          "enabledFor": ""
+        },
+        "redirectOutputs": false
+      }
+    ]
+}

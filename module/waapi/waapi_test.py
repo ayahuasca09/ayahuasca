@@ -78,7 +78,7 @@ with WaapiClient() as client:
     # }
     # client.call("ak.wwise.core.audio.import", args_import, options=opts)
 
-    # """对象删除测试"""
+    """对象删除测试"""
     # objects_list = client.call("ak.wwise.ui.getSelectedObjects")['objects']
     # for object_dict in objects_list:
     #     object_id = object_dict['id']
