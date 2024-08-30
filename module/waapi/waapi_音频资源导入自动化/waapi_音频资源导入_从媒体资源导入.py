@@ -172,7 +172,6 @@ with WaapiClient() as client:
                         {'waql': 'from type Sound where name = "%s"' % media_name})
                     for sound_cotainer_dict in sound_container_list:
                         set_sound_color_default(sound_cotainer_dict['id'])
-                break
         if flag == 0:
             print_error("：未找到相应的随机randomcontainer，导入失败")
 
@@ -288,7 +287,6 @@ with WaapiClient() as client:
         import_info = client.call("ak.wwise.core.audio.import", args_import, options=opts)
         if import_info:
             print_warning(vo_name + ":缺失语言补全")
-
 
 
     """导入缺失语言的语音"""

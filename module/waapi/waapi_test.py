@@ -200,38 +200,48 @@ with WaapiClient() as client:
 
     """获取事件引用的媒体是否为循环"""
 
+    # args = {
+    #     'waql': '"%s" select descendants where type= "Action" ' % (
+    #         '{05244502-61D1-4B75-B7E1-5DD4852672D1}')
+    # }
+    #
+    # options = {
+    #     'return': ['Target', 'ActionType']
+    #
+    # }
+    # obj_sub_list = client.call("ak.wwise.core.object.get", args, options=options)['return']
+    # # pprint(obj_sub_list)
+    #
+    # # [{'ActionType': 1,
+    # #   'Target': {'id': '{913295DF-370C-47EB-98B6-11E12815D7C7}',
+    # #              'name': 'VO_Game_Battle_B01_09'}}]
+    #
+    # # 需要type=1或type=23或type=22才继续往下判断是否为lp
+    # # 22	/States/Set State
+    # # 23	/Set Switch
+    # # 1	/Play
+    # if obj_sub_list:
+    #     for obj_dict in obj_sub_list:
+    #         if obj_dict['ActionType'] == 1:
+    #             # print("nice")
+    #             args = {
+    #                 'waql': '"%s" select descendants where type= "Sound" ' % (
+    #                     obj_dict['Target']['id'])
+    #             }
+    #             sound_list, sound_id = find_obj(args)
+    #             if sound_list:
+    #                 # pprint(sound_list)
+    #                 for sound_dict in sound_list:
+    #                     if sound_dict['IsLoopingEnabled']==True:
+    #                         # return True
+    #                         break
+
+    """筛选出所有有多个随机资源的音效"""
     args = {
-        'waql': '"%s" select descendants where type= "Action" ' % (
-            '{05244502-61D1-4B75-B7E1-5DD4852672D1}')
+        'waql': '"%s" select descendants where type= "Sound" and name=/R\d+$/ and name=/^(?!VO).*/' % (
+            '{5CB72D1B-8D4B-484D-8B9D-FC52BD496843}')
     }
-
-    options = {
-        'return': ['Target', 'ActionType']
-
-    }
-    obj_sub_list = client.call("ak.wwise.core.object.get", args, options=options)['return']
-    # pprint(obj_sub_list)
-
-    # [{'ActionType': 1,
-    #   'Target': {'id': '{913295DF-370C-47EB-98B6-11E12815D7C7}',
-    #              'name': 'VO_Game_Battle_B01_09'}}]
-
-    # 需要type=1或type=23或type=22才继续往下判断是否为lp
-    # 22	/States/Set State
-    # 23	/Set Switch
-    # 1	/Play
-    if obj_sub_list:
-        for obj_dict in obj_sub_list:
-            if obj_dict['ActionType'] == 1:
-                # print("nice")
-                args = {
-                    'waql': '"%s" select descendants where type= "Sound" ' % (
-                        obj_dict['Target']['id'])
-                }
-                sound_list, sound_id = find_obj(args)
-                if sound_list:
-                    # pprint(sound_list)
-                    for sound_dict in sound_list:
-                        if sound_dict['IsLoopingEnabled']==True:
-                            # return True
-                            break
+    refer_list, refer_id = find_obj(args)
+    # pprint(refer_list)
+    for refer_dict in refer_list:
+        print(refer_dict['name'])

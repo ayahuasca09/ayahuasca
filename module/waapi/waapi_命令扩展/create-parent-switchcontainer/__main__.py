@@ -3,6 +3,7 @@
 from waapi import WaapiClient
 from pprint import pprint
 import os
+import re
 
 with WaapiClient() as client:
     """查找对象"""
@@ -52,6 +53,7 @@ with WaapiClient() as client:
             # 取出所选元素名称的共同前缀,作为父级switch容器的名称
             switch_name = os.path.commonprefix(selected_name_list)
             # 如果最后为_，则去掉
+            switch_name = re.sub(r"(_)$", "", switch_name)
 
             if switch_name:
                 # print(switch_name)
@@ -59,7 +61,7 @@ with WaapiClient() as client:
                 args = {
                     "objects": [
                         {
-                            "onNameConflict": "fail",
+                            "onNameConflict": "rename",
                             "object": parent_id,
                             "children": [
                                 {
@@ -72,6 +74,7 @@ with WaapiClient() as client:
                     ]
                 }
                 result = client.call("ak.wwise.core.object.set", args)
+                # print(result)
                 # {'objects': [{'children': [{'id': '{3BC5DF47-A8EF-4B64-A9BC-029E852E9A0C}',
                 #                             'name': 'Char_Skill_C02_Atk'}],
                 #               'id': '{9E148809-7E30-4D78-B7EF-BE2783053FCF}',

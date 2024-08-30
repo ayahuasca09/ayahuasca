@@ -5,10 +5,345 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="17a8a927-0db7-41d4-8f81-9181fc87e6d9" name="更改" comment="ID表——修复只生成循环事件的Play和Stop的某一个">
-      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_命令扩展/Commands/Commands_My_List.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/SilverPalace语音ES管理表 (1).xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/oi_媒体资源重命名.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/资源导入记录表.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_Battle_C01_01.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_Battle_C01_01_R02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_Battle_C01_03.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_Battle_C01_03_R02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_Battle_C01_05.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_Battle_C01_06.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_Battle_C01_07.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_Battle_C01_07_R02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_Battle_C01_07_R03.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_Battle_C01_08.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_Battle_C01_08_R02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_Battle_C01_08_R03.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_Battle_C01_09.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_Battle_C01_09_R02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_Battle_C01_09_R03.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_Battle_C01_10.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_Battle_C01_10_R02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_Battle_C01_10_R03.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_Battle_C01_11.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_Battle_C01_11_R02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_Battle_C01_11_R03.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_Battle_C01_12.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_Battle_C01_12_R02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_Battle_C01_12_R03.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_Battle_C01_13.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_Battle_C01_14.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_Battle_C01_15.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_Battle_C01_16.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_Battle_C01_16_R02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_Battle_C01_16_R03.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_Battle_C01_18.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_Battle_C01_19.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_Battle_C01_20.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_Battle_C01_20_R02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_Battle_C01_22.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_Battle_C01_22_R02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_Battle_C01_24.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_Battle_C01_24_R02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_Battle_C01_25.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_Battle_C01_26.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_Battle_C01_26_R02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_Battle_C01_26_R03.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_Battle_C01_27.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_Battle_C01_27_R02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_Battle_C01_27_R03.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_Battle_C01_28.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_Battle_C02_01.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_Battle_C02_01_R02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_Battle_C02_03.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_Battle_C02_03_R02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_Battle_C02_05.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_Battle_C02_06.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_Battle_C02_07.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_Battle_C02_07_R02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_Battle_C02_07_R03.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_Battle_C02_08.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_Battle_C02_08_R02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_Battle_C02_08_R03.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_Battle_C02_09.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_Battle_C02_09_R02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_Battle_C02_09_R03.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_Battle_C02_10.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_Battle_C02_10_R02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_Battle_C02_10_R03.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_Battle_C02_11.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_Battle_C02_11_R02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_Battle_C02_11_R03.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_Battle_C02_12.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_Battle_C02_12_R02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_Battle_C02_12_R03.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_Battle_C02_13.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_Battle_C02_14.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_Battle_C02_15.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_Battle_C02_16.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_Battle_C02_16_R02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_Battle_C02_16_R03.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_Battle_C02_17.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_Battle_C02_17_R02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_Battle_C02_17_R03.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_Battle_C02_18.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_Battle_C02_18_R02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_Battle_C02_18_R03.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_Battle_C02_20.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_Battle_C02_21.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_Battle_C02_22.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_Battle_C02_22_R02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_Battle_C02_24.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_Battle_C02_24_R02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_Battle_C02_26.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_Battle_C02_26_R02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_Battle_C02_27.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_Battle_C02_28.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_Battle_C02_28_R02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_Battle_C02_28_R03.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_Battle_C02_29.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_Battle_C02_29_R02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_Battle_C02_29_R03.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_Battle_C02_30.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_Menu_C01_01.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_Menu_C01_04.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_Menu_C01_04_R02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_Menu_C01_06.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_Menu_C01_07.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_Menu_C01_08.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_Menu_C01_09.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_Menu_C02_01.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_Menu_C02_02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_Menu_C02_04.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_Menu_C02_04_R02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_Menu_C02_06.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_Menu_C02_07.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_Menu_C02_08.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_Menu_C02_09.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_World_C01_01.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_World_C01_02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_World_C01_03.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_World_C01_04.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_World_C01_05.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_World_C01_06.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_World_C01_07.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_World_C01_08.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_World_C01_09.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_World_C01_10.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_World_C01_11.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_World_C01_12.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_World_C01_13.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_World_C01_14.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_World_C01_15.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_World_C01_16.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_World_C01_17.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_World_C01_18.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_World_C01_18_R02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_World_C01_20.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_World_C01_21.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_World_C01_21_R02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_World_C02_01.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_World_C02_02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_World_C02_03.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_World_C02_04.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_World_C02_05.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_World_C02_06.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_World_C02_07.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_World_C02_08.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_World_C02_09.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_World_C02_10.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_World_C02_11.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_World_C02_12.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_World_C02_13.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_World_C02_14.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_World_C02_15.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_World_C02_16.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_World_C02_17.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_World_C02_18.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_World_C02_19.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Chinese/VO_Game_World_C02_19_R02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_Battle_C01_01.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_Battle_C01_01_R02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_Battle_C01_03.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_Battle_C01_03_R02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_Battle_C01_05.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_Battle_C01_06.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_Battle_C01_07.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_Battle_C01_07_R02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_Battle_C01_07_R03.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_Battle_C01_08.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_Battle_C01_08_R02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_Battle_C01_08_R03.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_Battle_C01_09.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_Battle_C01_09_R02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_Battle_C01_09_R03.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_Battle_C01_10.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_Battle_C01_10_R02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_Battle_C01_10_R03.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_Battle_C01_11.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_Battle_C01_11_R02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_Battle_C01_11_R03.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_Battle_C01_12.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_Battle_C01_12_R02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_Battle_C01_12_R03.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_Battle_C01_13.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_Battle_C01_14.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_Battle_C01_15.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_Battle_C01_16.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_Battle_C01_16_R02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_Battle_C01_16_R03.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_Battle_C01_18.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_Battle_C01_19.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_Battle_C01_20.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_Battle_C01_20_R02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_Battle_C01_22.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_Battle_C01_22_R02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_Battle_C01_24.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_Battle_C01_24_R02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_Battle_C01_25.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_Battle_C01_26.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_Battle_C01_26_R02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_Battle_C01_26_R03.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_Battle_C01_27.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_Battle_C01_27_R02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_Battle_C01_27_R03.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_Battle_C01_28.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_Battle_C02_01.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_Battle_C02_01_R02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_Battle_C02_03.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_Battle_C02_03_R02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_Battle_C02_05.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_Battle_C02_06.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_Battle_C02_07.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_Battle_C02_07_R02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_Battle_C02_07_R03.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_Battle_C02_08.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_Battle_C02_08_R02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_Battle_C02_08_R03.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_Battle_C02_09.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_Battle_C02_09_R02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_Battle_C02_09_R03.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_Battle_C02_10.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_Battle_C02_10_R02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_Battle_C02_10_R03.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_Battle_C02_11.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_Battle_C02_11_R02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_Battle_C02_11_R03.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_Battle_C02_12.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_Battle_C02_12_R02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_Battle_C02_12_R03.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_Battle_C02_13.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_Battle_C02_14.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_Battle_C02_15.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_Battle_C02_16.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_Battle_C02_16_R02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_Battle_C02_16_R03.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_Battle_C02_17.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_Battle_C02_17_R02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_Battle_C02_17_R03.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_Battle_C02_18.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_Battle_C02_18_R02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_Battle_C02_18_R03.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_Battle_C02_20.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_Battle_C02_21.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_Battle_C02_22.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_Battle_C02_22_R02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_Battle_C02_24.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_Battle_C02_24_R02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_Battle_C02_26.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_Battle_C02_26_R02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_Battle_C02_27.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_Battle_C02_28.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_Battle_C02_28_R02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_Battle_C02_28_R03.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_Battle_C02_29.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_Battle_C02_29_R02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_Battle_C02_29_R03.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_Battle_C02_30.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_Menu_C01_01.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_Menu_C01_04.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_Menu_C01_04_R02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_Menu_C01_06.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_Menu_C01_07.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_Menu_C01_08.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_Menu_C01_09.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_Menu_C02_01.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_Menu_C02_02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_Menu_C02_04.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_Menu_C02_04_R02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_Menu_C02_06.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_Menu_C02_07.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_Menu_C02_08.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_Menu_C02_09.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_World_C01_01.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_World_C01_02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_World_C01_03.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_World_C01_04.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_World_C01_05.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_World_C01_06.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_World_C01_07.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_World_C01_08.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_World_C01_09.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_World_C01_10.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_World_C01_11.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_World_C01_12.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_World_C01_13.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_World_C01_14.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_World_C01_15.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_World_C01_15_R02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_World_C01_16.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_World_C01_17.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_World_C01_18.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_World_C01_18_R02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_World_C01_20.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_World_C01_21.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_World_C01_21_R02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_World_C02_01.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_World_C02_02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_World_C02_03.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_World_C02_04.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_World_C02_05.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_World_C02_06.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_World_C02_07.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_World_C02_08.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_World_C02_09.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_World_C02_10.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_World_C02_11.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_World_C02_12.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_World_C02_13.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_World_C02_14.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_World_C02_15.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_World_C02_16.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_World_C02_17.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_World_C02_18.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_World_C02_19.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/Japanese/VO_Game_World_C02_19_R02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/VO_Game_Battle_C01_01_R02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/VO_Game_Battle_C01_03_R02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/VO_Game_Battle_C01_22_R02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/VO_Game_Battle_C02_01_R02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/VO_Game_Battle_C02_03_R02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/VO_Game_Battle_C02_22_R02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/VO_Game_Battle_C02_24_R02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/VO_Game_Menu_C01_04_R02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/VO_Game_Menu_C02_04_R02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/VO_Game_World_C01_18_R02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/VO_Game_World_C01_21_R02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/New_Media/VO_Game_World_C02_19_R02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/SilverPalace语音资源管理表 (2).xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/ExternalSource.wsources" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/ExternalSource.wsources" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/ExternalSource.xml" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/ExternalSource.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/ExternalSourceDefaultMedia.csv" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/ExternalSourceDefaultMedia.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/MediaInfoTable.csv" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/MediaInfoTable.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/SilverPalace语音ES管理表.xlsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/module/waapi/waapi_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pylibrary.txt" beforeDir="false" afterPath="$PROJECT_DIR$/pylibrary.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_命令扩展/create-parent-switchcontainer/__main__.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_命令扩展/create-parent-switchcontainer/__main__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/SilverPalace语音资源管理表 (1).xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/waapi_音频资源导入_从媒体资源导入.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/waapi_音频资源导入_从媒体资源导入.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/waapi_音频资源导入_从表导入.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/waapi_音频资源导入_从表导入.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/资源导入记录表.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/资源导入记录表.xlsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,49 +383,49 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;Python.csv_pandas测试.executor&quot;: &quot;Run&quot;,
-    &quot;Python.excel_音效需求表音效名读取.executor&quot;: &quot;Run&quot;,
-    &quot;Python.oi_h.executor&quot;: &quot;Run&quot;,
-    &quot;Python.oi_媒体资源重命名 (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python.oi_媒体资源重命名.executor&quot;: &quot;Run&quot;,
-    &quot;Python.test.executor&quot;: &quot;Run&quot;,
-    &quot;Python.ue_ID表生成 (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python.ue_ID表生成.executor&quot;: &quot;Run&quot;,
-    &quot;Python.ue_ID表生成v2.executor&quot;: &quot;Run&quot;,
-    &quot;Python.waapi_2023test.executor&quot;: &quot;Run&quot;,
-    &quot;Python.waapi_json数据解析.executor&quot;: &quot;Run&quot;,
-    &quot;Python.waapi_sounbank生成.executor&quot;: &quot;Run&quot;,
-    &quot;Python.waapi_test.executor&quot;: &quot;Run&quot;,
-    &quot;Python.waapi_wwise属性自动配置.executor&quot;: &quot;Run&quot;,
-    &quot;Python.waapi_订阅_soundbank生成数据 (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python.waapi_订阅_soundbank生成数据打印 (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python.waapi_订阅_接收对象名称被修改时的信息.executor&quot;: &quot;Run&quot;,
-    &quot;Python.waapi_语音导入 (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python.waapi_语音导入.executor&quot;: &quot;Run&quot;,
-    &quot;Python.waapi_语音导入_本地UE工程测试版.executor&quot;: &quot;Run&quot;,
-    &quot;Python.waapi_语音导入测试.executor&quot;: &quot;Run&quot;,
-    &quot;Python.waapi_转码类型创建.executor&quot;: &quot;Run&quot;,
-    &quot;Python.waapi_音频资源导入_从媒体资源导入.executor&quot;: &quot;Run&quot;,
-    &quot;Python.waapi_音频资源导入_从表导入 (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python.waapi_音频资源导入_从表导入.executor&quot;: &quot;Run&quot;,
-    &quot;Python.waapi_音频资源导入自动化.executor&quot;: &quot;Run&quot;,
-    &quot;Python.xml文件读写示例 (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python.xml文件读写示例.executor&quot;: &quot;Run&quot;,
-    &quot;Python.正则测试.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;F:/pppppy/SP/module/waapi/waapi_音频资源导入自动化&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Python.csv_pandas测试.executor": "Run",
+    "Python.excel_音效需求表音效名读取.executor": "Run",
+    "Python.oi_h.executor": "Run",
+    "Python.oi_媒体资源重命名 (1).executor": "Run",
+    "Python.oi_媒体资源重命名.executor": "Run",
+    "Python.test.executor": "Run",
+    "Python.ue_ID表生成 (1).executor": "Run",
+    "Python.ue_ID表生成.executor": "Run",
+    "Python.ue_ID表生成v2.executor": "Run",
+    "Python.waapi_2023test.executor": "Run",
+    "Python.waapi_json数据解析.executor": "Run",
+    "Python.waapi_sounbank生成.executor": "Run",
+    "Python.waapi_test.executor": "Run",
+    "Python.waapi_wwise属性自动配置.executor": "Run",
+    "Python.waapi_订阅_soundbank生成数据 (1).executor": "Run",
+    "Python.waapi_订阅_soundbank生成数据打印 (1).executor": "Run",
+    "Python.waapi_订阅_接收对象名称被修改时的信息.executor": "Run",
+    "Python.waapi_语音导入 (1).executor": "Run",
+    "Python.waapi_语音导入.executor": "Run",
+    "Python.waapi_语音导入_本地UE工程测试版.executor": "Run",
+    "Python.waapi_语音导入测试.executor": "Run",
+    "Python.waapi_转码类型创建.executor": "Run",
+    "Python.waapi_音频资源导入_从媒体资源导入.executor": "Run",
+    "Python.waapi_音频资源导入_从表导入 (1).executor": "Run",
+    "Python.waapi_音频资源导入_从表导入.executor": "Run",
+    "Python.waapi_音频资源导入自动化.executor": "Run",
+    "Python.xml文件读写示例 (1).executor": "Run",
+    "Python.xml文件读写示例.executor": "Run",
+    "Python.正则测试.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "F:/pppppy/SP/module/waapi/waapi_Auto_Import_ExternalSource",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="F:\pppppy\SP\module\waapi\waapi_音频资源导入自动化" />
       <recent name="F:\pppppy\SP\module\waapi\waapi_Auto_Import_ExternalSource" />
+      <recent name="F:\pppppy\SP\module\waapi\waapi_音频资源导入自动化" />
       <recent name="F:\pppppy\SP\module\ue\ue_ID表生成" />
       <recent name="F:\pppppy\SP\module\xml" />
       <recent name="F:\pppppy\SP" />
@@ -111,7 +446,29 @@
       <visibility group="运行配置" flag="true" />
     </myKeys>
   </component>
-  <component name="RunManager" selected="Python.ue_ID表生成v2">
+  <component name="RunManager" selected="Python.waapi_语音导入">
+    <configuration name="oi_媒体资源重命名" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="SP" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/oi_媒体资源重命名.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="ue_ID表生成v2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="SP" />
       <option name="ENV_FILES" value="" />
@@ -246,10 +603,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.waapi_语音导入" />
+        <item itemvalue="Python.oi_媒体资源重命名" />
+        <item itemvalue="Python.waapi_test" />
         <item itemvalue="Python.ue_ID表生成v2" />
         <item itemvalue="Python.waapi_音频资源导入_从表导入" />
-        <item itemvalue="Python.waapi_test" />
-        <item itemvalue="Python.waapi_语音导入" />
       </list>
     </recent_temporary>
   </component>

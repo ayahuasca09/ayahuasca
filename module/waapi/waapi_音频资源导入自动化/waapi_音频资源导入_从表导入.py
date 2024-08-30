@@ -141,10 +141,11 @@ def print_error_by_module(module_dict):
 
 
 def check_is_random():
-    global is_pass
     is_random = re.search(r"(_R\d{2,4})$", name)
     if is_random:
-        is_pass = False
+        return True
+    else:
+        return False
 
 
 """Amb类型检查"""
@@ -947,7 +948,7 @@ with WaapiClient() as client:
                                                 name = cell_sound.value
                                                 """事件描述"""
                                                 event_descrip = get_event_descrip()
-                                                if event_descrip in event_descrip_dict:
+                                                if (event_descrip in event_descrip_dict) and (not check_is_random()):
                                                     print_error(event_descrip + "：表格中有重复项描述，请检查")
                                                 else:
                                                     event_descrip_dict[event_descrip] = cell_sound.value
@@ -970,7 +971,8 @@ with WaapiClient() as client:
                                                     # print(name)
 
                                                     # 检查是否为随机样本
-                                                    check_is_random()
+                                                    if check_is_random():
+                                                        is_pass = False
 
                                                     # 生成Wwise内容
                                                     if is_pass:
