@@ -13,7 +13,7 @@ from waapi import WaapiClient
 from pprint import pprint
 
 # xml写入库
-from xml.dom.minidom import Document
+from xml.dom.minidom import Document, parse
 
 """获取文件所在目录"""
 py_path = ""
@@ -33,6 +33,7 @@ external_output_win_path = 'S:\\Ver_1.0.0\\Project\\Content\\Audio\\GeneratedExt
 external_output_android_path = 'S:\\Ver_1.0.0\\Project\\Content\\Audio\\GeneratedExternalSources\\Android'
 external_output_ios_path = 'S:\\Ver_1.0.0\\Project\\Content\\Audio\\GeneratedExternalSources\\iOS'
 external_output_path = 'S:\\Ver_1.0.0\\Project\\Content\\Audio\\GeneratedExternalSources'
+language_list = ['Chinese', 'English', 'Japanese', 'Korean']
 
 """**************写xml**************"""
 # 创建一个对象
@@ -431,6 +432,16 @@ with WaapiClient() as client:
 
     # 自动生成externalsource
     gen_external()
+
+    # 删除xml的内容
+    doc = parse("ExternalSource.xml")
+    parent_node = doc.getElementsByTagName('ExternalSourcesList')[0]
+    while parent_node.hasChildNodes():
+        parent_node.removeChild(parent_node.firstChild)
+
+    # 将删除的xml内容写入wsources
+    source_path = shutil.copy2(os.path.join(py_path, 'ExternalSource.xml'),
+                               os.path.join(py_path, 'ExternalSource.wsources'))
 
     # 清除复制的媒体资源
     shutil.rmtree("New_Media")
