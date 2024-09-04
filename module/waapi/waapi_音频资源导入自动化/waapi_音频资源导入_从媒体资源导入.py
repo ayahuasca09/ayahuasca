@@ -391,3 +391,11 @@ with WaapiClient() as client:
 
     # rnd创建撤销
     # client.call("ak.wwise.core.undo.undo")
+
+    # 清除复制的媒体资源
+    shutil.rmtree("New_Media")
+    os.mkdir("New_Media")
+    os.mkdir("New_Media/Chinese")
+    os.mkdir("New_Media/English")
+    os.mkdir("New_Media/Japanese")
+    os.mkdir("New_Media/Korean")

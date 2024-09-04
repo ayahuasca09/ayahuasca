@@ -194,7 +194,7 @@ with WaapiClient() as client:
             if media not in wwise_refer_media_list:
                 if os.path.isfile(media):
                     # 音乐不删
-                    if "Music" in media:
+                    if "Mus" or "Stin" in media:
                         if ".wav" in media:
                             pass
                         else:

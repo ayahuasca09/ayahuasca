@@ -280,7 +280,7 @@ def drop_row_by_cancel():
                                     media_info_data['MediaName'] == (media_name + '.wem')].tolist()
 
                                 for row_index in row_index_list:
-                                    media_info_data.drop(row_index,inplace=True)
+                                    media_info_data.drop(row_index, inplace=True)
                                 media_info_data.to_csv(media_info_path, index=False)
 
                                 # 删除external_cookie的内容
@@ -288,7 +288,7 @@ def drop_row_by_cancel():
                                     external_cookie_data['MediaName'] == (media_name + '.wem')].tolist()
                                 print(row_index_list)
                                 for row_index in row_index_list:
-                                    external_cookie_data.drop(row_index,inplace=True)
+                                    external_cookie_data.drop(row_index, inplace=True)
                                     external_cookie_data.to_csv(external_cookie_path, index=False)
 
 
@@ -431,3 +431,11 @@ with WaapiClient() as client:
 
     # 自动生成externalsource
     gen_external()
+
+    # 清除复制的媒体资源
+    shutil.rmtree("New_Media")
+    os.mkdir("New_Media")
+    os.mkdir("New_Media/Chinese")
+    os.mkdir("New_Media/English")
+    os.mkdir("New_Media/Japanese")
+    os.mkdir("New_Media/Korean")

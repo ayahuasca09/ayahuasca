@@ -137,6 +137,7 @@
 	"Wwise": {
 		"Root": "\\Actor-Mixer Hierarchy\\v1",
 		"Event_Root": "\\Events\\v1",
-		"WwiseProj_Root": "S:\\chen.gong_DCC_Audio\\Audio\\SilverPalace_WwiseProject"
+		"WwiseProj_Root": "S:\\chen.gong_DCC_Audio\\Audio\\SilverPalace_WwiseProject",
+		"VO_Game": "\\Actor-Mixer Hierarchy\\v1\\VO\\VO\\VO_Game"
 	}
 }

@@ -375,20 +375,22 @@ def get_descrip_and_status_column():
     second_module_column = None
     require_name_column = None
     status_column = None
-    for cell in list(sheet.rows)[0]:
-        if cell.value:
-            if 'Require Module' in str(cell.value):
-                require_module_column = cell.column
-                # print(require_module_column)
-            elif 'Second Module' in str(cell.value):
-                second_module_column = cell.column
-                # print(second_module_column)
-            elif 'Require Name' in str(cell.value):
-                require_name_column = cell.column
-                # print(require_name_column)
-            elif 'Status' in str(cell.value):
-                status_column = cell.column
-                # print(status_column)
+    if list(sheet.rows)[0]:
+        for cell in list(sheet.rows)[0]:
+            if cell.value:
+                if 'Require Module' in str(cell.value):
+                    require_module_column = cell.column
+                    # print(require_module_column)
+                elif 'Second Module' in str(cell.value):
+                    second_module_column = cell.column
+                    # print(second_module_column)
+                elif 'Require Name' in str(cell.value):
+                    require_name_column = cell.column
+                    # print(require_name_column)
+                elif 'Status' in str(cell.value):
+                    status_column = cell.column
+                    # print(status_column)
+
     return require_module_column, second_module_column, require_name_column, status_column
 
 
@@ -903,6 +905,57 @@ with WaapiClient() as client:
         delete_wwise_content()
 
 
+    # 删除语音不对应的rnd sound资源
+    def delete_wwise_content_vo_sound():
+        # Sound容器删除
+        args = {
+            "object": "%s" % sound_container['id']
+        }
+        client.call("ak.wwise.core.object.delete", args)
+        print_warning(rnd_container['name'] + ":SoundContainer已删除")
+
+        # Sound容器引用的资产删除
+        if os.path.isfile(sound_container['originalWavFilePath']):
+            os.remove(sound_container['originalWavFilePath'])
+            print_warning(sound_container['originalWavFilePath'] + "已删除")
+
+
+    # 删除语音不对应的rnd sound资源
+    def delete_or_modify_wwise_content_vo_sound():
+        for i in file_name_list:
+            if ".xlsx" in i:
+                # 拼接xlsx的路径
+                file_path_xlsx = os.path.join(py_path, i)
+                # 获取xlsx的workbook
+                wb = openpyxl.load_workbook(file_path_xlsx)
+                # 获取xlsx的所有sheet
+                sheet_names = wb.sheetnames
+                # 加载所有工作表
+                for sheet_name in sheet_names:
+                    sheet = wb[sheet_name]
+                    # 获取工作表第一行数据
+                    for cell in list(sheet.rows)[0]:
+                        if 'Sample Name' in str(cell.value):
+                            # 获取音效名下的内容
+                            for cell_sound in list(sheet.columns)[cell.column - 1]:
+                                # 空格和中文不检测
+                                if cell_sound.value != None:
+                                    if check_is_chinese(cell_sound.value) == False:
+
+                                        """事件描述"""
+                                        event_descrip = get_event_descrip()
+
+                                        # 如果音效名与rnd名相同
+                                        if sound_container['name'] == cell_sound.value:
+                                            # 如果状态标为取消的删除
+                                            for status in list(sheet.rows)[cell_sound.row - 1]:
+                                                if "cancel" == status.value:
+                                                    delete_wwise_content_vo_sound()
+                                            return
+        # 其他为在表格中搜索不到的名字
+        delete_wwise_content_vo_sound()
+
+
     """*****************主程序处理******************"""
     # 撤销开始
     client.call("ak.wwise.core.undo.beginGroup")
@@ -995,6 +1048,14 @@ with WaapiClient() as client:
 
     for rnd_container in rnd_container_list:
         delete_or_modify_wwise_content()
+
+    # 对于语音，需要查找Sound容器里的随机资源
+    # 查找所有Sound
+    sound_container_list, _, _ = find_obj(
+        {'waql': ' "%s" select descendants where type = "Sound" ' % wwise_dict['VO_Game']})
+
+    for sound_container in sound_container_list:
+        delete_or_modify_wwise_content_vo_sound()
 
     # 撤销结束
     client.call("ak.wwise.core.undo.endGroup", displayName="rnd创建撤销")
