@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="17a8a927-0db7-41d4-8f81-9181fc87e6d9" name="更改" comment="音效流程优化(媒体资源导入）：导完其他资产后清除文相应资源缓存">
+    <list default="true" id="17a8a927-0db7-41d4-8f81-9181fc87e6d9" name="更改" comment="ES流程优化：删除导入完后的资源、wsources表清空">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/ExternalSource.wsources" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/ExternalSource.wsources" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/ExternalSource.xml" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/ExternalSource.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/MediaInfoTable.csv" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/MediaInfoTable.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/SilverPalace语音ES管理表 (1).xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/SilverPalace语音ES管理表 (1).xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/waapi_语音导入.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/waapi_语音导入.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/资源导入记录表.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/资源导入记录表.xlsx" afterDir="false" />
@@ -294,14 +293,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1716955384994</updated>
-    </task>
-    <task id="LOCAL-00015" summary="音频资源导入检测">
-      <option name="closed" value="true" />
-      <created>1717746540910</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1717746540910</updated>
     </task>
     <task id="LOCAL-00016" summary="音频资源导入检测——系统名检测，json表结构修改">
       <option name="closed" value="true" />
@@ -687,7 +678,15 @@
       <option name="project" value="LOCAL" />
       <updated>1725435864873</updated>
     </task>
-    <option name="localTasksCounter" value="64" />
+    <task id="LOCAL-00064" summary="ES流程优化：删除导入完后的资源、wsources表清空">
+      <option name="closed" value="true" />
+      <created>1725443575013</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1725443575013</updated>
+    </task>
+    <option name="localTasksCounter" value="65" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -703,7 +702,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="音频资源导入检测——媒体资源导入记录表颜色改变" />
     <MESSAGE value="音频资源导入检测——媒体资源导入随机容器" />
     <MESSAGE value="音频资源导入检测——正式资源替换占位资源" />
     <MESSAGE value="音频资源导入检测——自动删除同步" />
@@ -728,6 +726,7 @@
     <MESSAGE value="ID表——修复只生成循环事件的Play和Stop的某一个" />
     <MESSAGE value="ES重命名工具" />
     <MESSAGE value="音效流程优化(媒体资源导入）：导完其他资产后清除文相应资源缓存" />
-    <option name="LAST_COMMIT_MESSAGE" value="音效流程优化(媒体资源导入）：导完其他资产后清除文相应资源缓存" />
+    <MESSAGE value="ES流程优化：删除导入完后的资源、wsources表清空" />
+    <option name="LAST_COMMIT_MESSAGE" value="ES流程优化：删除导入完后的资源、wsources表清空" />
   </component>
 </project>

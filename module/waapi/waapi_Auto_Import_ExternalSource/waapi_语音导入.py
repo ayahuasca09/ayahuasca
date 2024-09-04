@@ -136,92 +136,92 @@ def get_vo_excel_column(sheet):
     return vo_id_column, file_name_column, external_type_column, state_column
 
 
-"""写入media_info csv表"""
-
-
-def write_media_info_csv():
-    # 在media_info表中未找到该ID，则新增
-    if media_info_data[media_info_data['ExternalSourceMediaInfoId'] == vo_id].empty:
-        # 作初始化操作
-        if media_info_initial_row == 0:
-            new_data = pd.DataFrame([{
-                "Name": vo_id,
-                'ExternalSourceMediaInfoId': vo_id,
-                'MediaName': cell_sound.value + ".wem",
-                'CodecID': 4,
-                'bIsStreamed': 'TRUE',
-                'bUseDeviceMemory': "FALSE",
-                'MemoryAlignment': 0,
-                'PrefetchSize': 0
-            }])
-            new_data.to_csv(media_info_path, mode='a', header=False,
-                            index=False)
-
-        # 作新增操作
-        else:
-            global media_info_row_max
-            new_data = [vo_id,
-                        vo_id,
-                        cell_sound.value + ".wem",
-                        4,
-                        'TRUE',
-                        "FALSE",
-                        0,
-                        0
-                        ]
-            media_info_data.loc[media_info_row_max] = new_data
-            media_info_data.to_csv(media_info_path, mode='a', header=False,
-                                   index=False)
-            media_info_row_max = media_info_row_max + 1
-
-    # 在media_info表中找到该ID，则替换
-    else:
-        media_info_data[media_info_data['ExternalSourceMediaInfoId'] == vo_id] = [vo_id,
-                                                                                  vo_id, cell_sound.value + ".wem", 4,
-                                                                                  'TRUE', "FALSE", 0, 0]
-        media_info_data.to_csv(media_info_path, index=False)
-
-
-"""写入wwise_cookie csv表"""
-
-
-def write_external_cookie_csv():
-    # 在media_info表中未找到该ID，则新增
-    if external_cookie_data[external_cookie_data['MediaInfoId'] == vo_id].empty:
-        # 作初始化操作
-        if external_cookie_initial_row == 0:
-            new_data = pd.DataFrame({
-                "Name": vo_id,
-                'ExternalSourceCookie': external_sound_dict['shortId'],
-                'ExternalSourceName': external_sound_dict['name'],
-                'MediaInfoId': vo_id,
-                'MediaName': cell_sound.value + ".wem"
-            }, index=[0])
-            # index无效，但不加会报错
-            new_data.to_csv(external_cookie_path, mode='a', header=False,
-                            index=False)
-            # 作新增操作
-        else:
-            global external_cookie_row_max
-            new_data = [vo_id,
-                        external_sound_dict['shortId'],
-                        external_sound_dict['name'],
-                        vo_id,
-                        cell_sound.value + ".wem"
-                        ]
-            external_cookie_data.loc[external_cookie_row_max] = new_data
-            external_cookie_data.to_csv(external_cookie_path, mode='a', header=False,
-                                        index=False)
-            external_cookie_row_max = external_cookie_row_max + 1
-
-    # 在media_info表中找到该ID，则替换
-    else:
-        external_cookie_data[external_cookie_data['MediaInfoId'] == vo_id] = [vo_id,
-                                                                              external_sound_dict['shortId'],
-                                                                              external_sound_dict['name'],
-                                                                              vo_id,
-                                                                              cell_sound.value + ".wem"]
-        external_cookie_data.to_csv(external_cookie_path, index=False)
+# """写入media_info csv表"""
+#
+#
+# def write_media_info_csv():
+#     # 在media_info表中未找到该ID，则新增
+#     if media_info_data[media_info_data['ExternalSourceMediaInfoId'] == vo_id].empty:
+#         # 作初始化操作
+#         if media_info_initial_row == 0:
+#             new_data = pd.DataFrame([{
+#                 "Name": vo_id,
+#                 'ExternalSourceMediaInfoId': vo_id,
+#                 'MediaName': cell_sound.value + ".wem",
+#                 'CodecID': 4,
+#                 'bIsStreamed': 'TRUE',
+#                 'bUseDeviceMemory': "FALSE",
+#                 'MemoryAlignment': 0,
+#                 'PrefetchSize': 0
+#             }])
+#             new_data.to_csv(media_info_path, mode='a', header=False,
+#                             index=False)
+#
+#         # 作新增操作
+#         else:
+#             global media_info_row_max
+#             new_data = [vo_id,
+#                         vo_id,
+#                         cell_sound.value + ".wem",
+#                         4,
+#                         'TRUE',
+#                         "FALSE",
+#                         0,
+#                         0
+#                         ]
+#             media_info_data.loc[media_info_row_max] = new_data
+#             media_info_data.to_csv(media_info_path, mode='a', header=False,
+#                                    index=False)
+#             media_info_row_max = media_info_row_max + 1
+#
+#     # 在media_info表中找到该ID，则替换
+#     else:
+#         media_info_data[media_info_data['ExternalSourceMediaInfoId'] == vo_id] = [vo_id,
+#                                                                                   vo_id, cell_sound.value + ".wem", 4,
+#                                                                                   'TRUE', "FALSE", 0, 0]
+#         media_info_data.to_csv(media_info_path, index=False)
+#
+#
+# """写入wwise_cookie csv表"""
+#
+#
+# def write_external_cookie_csv():
+#     # 在media_info表中未找到该ID，则新增
+#     if external_cookie_data[external_cookie_data['MediaInfoId'] == vo_id].empty:
+#         # 作初始化操作
+#         if external_cookie_initial_row == 0:
+#             new_data = pd.DataFrame({
+#                 "Name": vo_id,
+#                 'ExternalSourceCookie': external_sound_dict['shortId'],
+#                 'ExternalSourceName': external_sound_dict['name'],
+#                 'MediaInfoId': vo_id,
+#                 'MediaName': cell_sound.value + ".wem"
+#             }, index=[0])
+#             # index无效，但不加会报错
+#             new_data.to_csv(external_cookie_path, mode='a', header=False,
+#                             index=False)
+#             # 作新增操作
+#         else:
+#             global external_cookie_row_max
+#             new_data = [vo_id,
+#                         external_sound_dict['shortId'],
+#                         external_sound_dict['name'],
+#                         vo_id,
+#                         cell_sound.value + ".wem"
+#                         ]
+#             external_cookie_data.loc[external_cookie_row_max] = new_data
+#             external_cookie_data.to_csv(external_cookie_path, mode='a', header=False,
+#                                         index=False)
+#             external_cookie_row_max = external_cookie_row_max + 1
+#
+#     # 在media_info表中找到该ID，则替换
+#     else:
+#         external_cookie_data[external_cookie_data['MediaInfoId'] == vo_id] = [vo_id,
+#                                                                               external_sound_dict['shortId'],
+#                                                                               external_sound_dict['name'],
+#                                                                               vo_id,
+#                                                                               cell_sound.value + ".wem"]
+#         external_cookie_data.to_csv(external_cookie_path, index=False)
 
 
 """删除相应的.wem文件"""
@@ -293,78 +293,10 @@ def drop_row_by_cancel():
                                     external_cookie_data.to_csv(external_cookie_path, index=False)
 
 
-# 获取媒体资源文件列表
-wav_path = os.path.join(py_path, "New_Media")
-file_wav_dict, _ = get_type_file_name_and_path('.wav', wav_path)
-# pprint(file_wav_dict)
-# {'VO_Lorin_01.wav': 'F:\\pppppy\\SP\\module\\waapi\\waapi_Auto_Import_ExternalSource\\New_Media\\VO_Lorin_01.wav',
-#  'VO_Lorin_02.wav': 'F:\\pppppy\\SP\\module\\waapi\\waapi_Auto_Import_ExternalSource\\New_Media\\VO_Lorin_02.wav',
-#  'VO_Lorin_03.wav': 'F:\\pppppy\\SP\\module\\waapi\\waapi_Auto_Import_ExternalSource\\New_Media\\VO_Lorin_03.wav',}
+"""自动化生成ES数据"""
 
 
-with WaapiClient() as client:
-    """查找对象"""
-
-
-    def find_obj(args):
-        options = {
-            'return': ['name', 'id', 'path', 'notes', 'shortId', 'parent']
-
-        }
-        obj_sub_list = client.call("ak.wwise.core.object.get", args, options=options)['return']
-        if not obj_sub_list:
-            obj_sub_id = ""
-            obj_sub_path = ""
-        else:
-            obj_sub_id = obj_sub_list[0]['id']
-            obj_sub_path = obj_sub_list[0]['path']
-        return obj_sub_list, obj_sub_id, obj_sub_path
-
-
-    """自动生成externalsource"""
-
-
-    def gen_external():
-        args = {
-            "sources": [
-                {
-                    "input": external_input_path,
-                    "platform": "Windows",
-                    "output": external_output_win_path
-                },
-                {
-                    "input": external_input_path,
-                    "platform": "Android",
-                    "output": external_output_android_path
-                },
-                {
-                    "input": external_input_path,
-                    "platform": "iOS",
-                    "output": external_output_ios_path
-                }
-            ]
-        }
-
-        gen_log = client.call("ak.wwise.core.soundbank.convertExternalSources", args)
-
-
-    # 查找External下的所有Sound
-    external_sound_list, _, _ = find_obj(
-        {'waql': ' "%s" select descendants where type = "ExternalSource" ' % vo_external_path})
-    # pprint(external_sound_list)
-    # {'id': '{2D2C454C-38BE-414D-8712-780F570DC12D}',
-    #   'name': 'vn2',
-    #   'notes': '',
-    #   'parent': {'id': '{1F7E9E8F-3BC4-484A-945F-45A3F9457BA6}',
-    #              'name': 'VO_External_NPC_2D'},
-    #   'path': '\\Actor-Mixer '
-    #           'Hierarchy\\v1\\VO\\VO\\VO_External\\VO_External\\VO_External_NPC\\VO_External_NPC_2D\\vn2',
-    #   'shortId': 560471565}
-
-    """*******************主程序*******************"""
-    # 移除标记为cancel的行
-    drop_row_by_cancel()
-
+def auto_gen_es_file(file_wav_dict, doc):
     # 查找要导入的媒体文件里有没有对应的
     for file_wav_name in file_wav_dict:
         flag = 0
@@ -411,9 +343,9 @@ with WaapiClient() as client:
                                                             row=cell_sound.row,
                                                             column=vo_id_column).value
                                                         # 写入media_info csv表
-                                                        write_media_info_csv()
-                                                        # 写入wwise_cookie表
-                                                        write_external_cookie_csv()
+                                                        # write_media_info_csv()
+                                                        # # 写入wwise_cookie表
+                                                        # write_external_cookie_csv()
                                                         break
                                     break
                 wb.save(file_path_xlsx)
@@ -442,6 +374,84 @@ with WaapiClient() as client:
     # 将删除的xml内容写入wsources
     source_path = shutil.copy2(os.path.join(py_path, 'ExternalSource.xml'),
                                os.path.join(py_path, 'ExternalSource.wsources'))
+
+
+# 获取媒体资源文件列表
+wav_path = os.path.join(py_path, "New_Media")
+
+with WaapiClient() as client:
+    """查找对象"""
+
+
+    def find_obj(args):
+        options = {
+            'return': ['name', 'id', 'path', 'notes', 'shortId', 'parent']
+
+        }
+        obj_sub_list = client.call("ak.wwise.core.object.get", args, options=options)['return']
+        if not obj_sub_list:
+            obj_sub_id = ""
+            obj_sub_path = ""
+        else:
+            obj_sub_id = obj_sub_list[0]['id']
+            obj_sub_path = obj_sub_list[0]['path']
+        return obj_sub_list, obj_sub_id, obj_sub_path
+
+
+    """自动生成externalsource"""
+
+
+    def gen_external():
+
+        args = {
+            "sources": [
+                {
+                    "input": external_input_path,
+                    "platform": "Windows",
+                    "output": os.path.join(external_output_win_path, language)
+                },
+                {
+                    "input": external_input_path,
+                    "platform": "Android",
+                    "output": os.path.join(external_output_android_path, language)
+                },
+                {
+                    "input": external_input_path,
+                    "platform": "iOS",
+                    "output": os.path.join(external_output_ios_path, language)
+                }
+            ]
+        }
+
+        gen_log = client.call("ak.wwise.core.soundbank.convertExternalSources", args)
+
+
+    # 查找External下的所有Sound
+    external_sound_list, _, _ = find_obj(
+        {'waql': ' "%s" select descendants where type = "ExternalSource" ' % vo_external_path})
+    # pprint(external_sound_list)
+    # {'id': '{2D2C454C-38BE-414D-8712-780F570DC12D}',
+    #   'name': 'vn2',
+    #   'notes': '',
+    #   'parent': {'id': '{1F7E9E8F-3BC4-484A-945F-45A3F9457BA6}',
+    #              'name': 'VO_External_NPC_2D'},
+    #   'path': '\\Actor-Mixer '
+    #           'Hierarchy\\v1\\VO\\VO\\VO_External\\VO_External\\VO_External_NPC\\VO_External_NPC_2D\\vn2',
+    #   'shortId': 560471565}
+
+    """*******************主程序*******************"""
+    # 移除标记为cancel的行
+    drop_row_by_cancel()
+
+    # 遍历每种语言
+    for language in language_list:
+        wav_language_path = os.path.join(py_path, "New_Media", language)
+        file_wav_language_dict, _ = get_type_file_name_and_path('.wav', wav_language_path)
+        # pprint(file_wav_dict)
+        # {'VO_Lorin_01.wav': 'F:\\pppppy\\SP\\module\\waapi\\waapi_Auto_Import_ExternalSource\\New_Media\\VO_Lorin_01.wav',
+        #  'VO_Lorin_02.wav': 'F:\\pppppy\\SP\\module\\waapi\\waapi_Auto_Import_ExternalSource\\New_Media\\VO_Lorin_02.wav',
+        #  'VO_Lorin_03.wav': 'F:\\pppppy\\SP\\module\\waapi\\waapi_Auto_Import_ExternalSource\\New_Media\\VO_Lorin_03.wav',}
+        auto_gen_es_file(file_wav_language_dict, doc)
 
     # 清除复制的媒体资源
     shutil.rmtree("New_Media")
