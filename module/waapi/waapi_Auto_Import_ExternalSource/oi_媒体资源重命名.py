@@ -72,7 +72,7 @@ def check_is_chinese(string):
 
 # 提取规则：只提取xlsx文件
 for i in file_name_list:
-    if ".xlsx" in i:
+    if (".xlsx" in i) and ("MediaInfoTable" not in i) and ("ExternalSourceDefaultMedia" not in i):
         # 拼接xlsx的路径
         file_path_xlsx = os.path.join(py_path, i)
         # 获取xlsx的workbook

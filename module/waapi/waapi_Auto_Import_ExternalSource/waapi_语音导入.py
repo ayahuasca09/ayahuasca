@@ -1,5 +1,6 @@
 # xml读取库
 import xml.etree.ElementTree as ET
+import openpyxl
 import shutil
 import pandas as pd
 import sys
@@ -14,6 +15,29 @@ from pprint import pprint
 
 # xml写入库
 from xml.dom.minidom import Document, parse
+
+"""Excel表获取"""
+
+
+# 打开工作簿并获取工作表
+def excel_get_sheet(path, sheetname):
+    # 打开工作簿
+    wb = openpyxl.load_workbook(path)
+    # print(wb)
+    # 获取工作表
+    sheet = wb[sheetname]
+    # print(sheet)
+    return sheet, wb
+
+
+# 获取相应的excel表
+excel_mediainfo_path = 'MediaInfoTable.xlsx'
+excel_wwisecookie_path = 'ExternalSourceDefaultMedia.xlsx'
+sheet_mediainfo, wb_mediainfo = excel_get_sheet(excel_mediainfo_path, 'Sheet1')
+sheet_wwisecookie, wb_wwisecookie = excel_get_sheet(excel_wwisecookie_path, 'Sheet1')
+# print(sheet_mediainfo)
+# print(sheet_wwisecookie)
+
 
 """获取文件所在目录"""
 py_path = ""
@@ -136,6 +160,39 @@ def get_vo_excel_column(sheet):
     return vo_id_column, file_name_column, external_type_column, state_column
 
 
+"""写入media_info excel表"""
+
+
+def write_media_info_excel(vo_id, cell_sound):
+    flag = 0
+    for cell in list(sheet_mediainfo.columns)[0]:
+        # 在media_info表中找到该ID，则替换
+        if sheet_mediainfo.cell(row=cell.row, column=1).value == vo_id:
+            flag = 1
+            # 找到则替换，id不会改变，会改变其他内容,目前只有name可能会改
+            for index, value in enumerate(list(sheet_mediainfo.rows)[0]):
+                if value == "MediaName":
+                    sheet_mediainfo.cell(row=cell.row, column=index + 1).value = cell_sound.value + ".wem"
+                break
+    # 在media_info表中未找到该ID，则新增
+    if flag == 0:
+        # 插入为空的行
+        insert_row = sheet_mediainfo.max_row + 1
+        value_dict = {
+            "Name": vo_id,
+            'ExternalSourceMediaInfoId': vo_id,
+            'MediaName': cell_sound.value + ".wem",
+            'CodecID': 4,
+            'bIsStreamed': 'TRUE',
+            'bUseDeviceMemory': "FALSE",
+            'MemoryAlignment': 0,
+            'PrefetchSize': 0
+        }
+        for cell in list(sheet_mediainfo.rows)[0]:
+            if cell.value in value_dict:
+                sheet_mediainfo.cell(row=insert_row, column=cell.column).value = value_dict[cell.value]
+
+
 # """写入media_info csv表"""
 #
 #
@@ -182,6 +239,14 @@ def get_vo_excel_column(sheet):
 #         media_info_data.to_csv(media_info_path, index=False)
 #
 #
+
+"""写入wwise_cookie excel表"""
+
+
+def write_wwise_cookie_excel(vo_id):
+    pass
+
+
 # """写入wwise_cookie csv表"""
 #
 #
@@ -296,14 +361,14 @@ def drop_row_by_cancel():
 """自动化生成ES数据"""
 
 
-def auto_gen_es_file(file_wav_dict, doc):
+def auto_gen_es_file(file_wav_dict):
     # 查找要导入的媒体文件里有没有对应的
     for file_wav_name in file_wav_dict:
         flag = 0
         # 读excel表
         # 提取规则：只提取xlsx文件
         for i in file_name_list:
-            if ".xlsx" in i:
+            if (".xlsx" in i) and ("MediaInfoTable" not in i) and ("ExternalSourceDefaultMedia" not in i):
                 # 拼接xlsx的路径
                 file_path_xlsx = os.path.join(py_path, i)
                 # 获取xlsx的workbook
@@ -342,6 +407,11 @@ def auto_gen_es_file(file_wav_dict, doc):
                                                         vo_id = sheet.cell(
                                                             row=cell_sound.row,
                                                             column=vo_id_column).value
+                                                        # 写入media_info excel表
+                                                        write_media_info_excel(vo_id, cell_sound)
+                                                        # # 写入wwise_cookie excel表
+                                                        write_wwise_cookie_excel(vo_id)
+
                                                         # 写入media_info csv表
                                                         # write_media_info_csv()
                                                         # # 写入wwise_cookie表
@@ -349,31 +419,9 @@ def auto_gen_es_file(file_wav_dict, doc):
                                                         break
                                     break
                 wb.save(file_path_xlsx)
+
         if flag == 0:
             print_error(file_wav_name + "：在语音需求表中不存在，请检查名称是否正确或在表格中补充该名字")
-
-    # xml文件写入
-    with open('ExternalSource.xml', 'w+') as f:
-        # 按照格式写入
-        f.write(doc.toprettyxml())
-        f.close()
-
-    # 复制xml为wsources
-    source_path = shutil.copy2(os.path.join(py_path, 'ExternalSource.xml'),
-                               os.path.join(py_path, 'ExternalSource.wsources'))
-
-    # 自动生成externalsource
-    gen_external()
-
-    # 删除xml的内容
-    doc = parse("ExternalSource.xml")
-    parent_node = doc.getElementsByTagName('ExternalSourcesList')[0]
-    while parent_node.hasChildNodes():
-        parent_node.removeChild(parent_node.firstChild)
-
-    # 将删除的xml内容写入wsources
-    source_path = shutil.copy2(os.path.join(py_path, 'ExternalSource.xml'),
-                               os.path.join(py_path, 'ExternalSource.wsources'))
 
 
 # 获取媒体资源文件列表
@@ -441,7 +489,7 @@ with WaapiClient() as client:
 
     """*******************主程序*******************"""
     # 移除标记为cancel的行
-    drop_row_by_cancel()
+    # drop_row_by_cancel()
 
     # 遍历每种语言
     for language in language_list:
@@ -451,12 +499,39 @@ with WaapiClient() as client:
         # {'VO_Lorin_01.wav': 'F:\\pppppy\\SP\\module\\waapi\\waapi_Auto_Import_ExternalSource\\New_Media\\VO_Lorin_01.wav',
         #  'VO_Lorin_02.wav': 'F:\\pppppy\\SP\\module\\waapi\\waapi_Auto_Import_ExternalSource\\New_Media\\VO_Lorin_02.wav',
         #  'VO_Lorin_03.wav': 'F:\\pppppy\\SP\\module\\waapi\\waapi_Auto_Import_ExternalSource\\New_Media\\VO_Lorin_03.wav',}
-        auto_gen_es_file(file_wav_language_dict, doc)
+        auto_gen_es_file(file_wav_language_dict)
+
+    # xml文件写入
+    with open('ExternalSource.xml', 'w+') as f:
+        # 按照格式写入
+        f.write(doc.toprettyxml())
+        f.close()
+
+    # 复制xml为wsources
+    source_path = shutil.copy2(os.path.join(py_path, 'ExternalSource.xml'),
+                               os.path.join(py_path, 'ExternalSource.wsources'))
+
+    # 自动生成externalsource
+    gen_external()
+
+    # 删除xml的内容
+    doc = parse("ExternalSource.xml")
+    parent_node = doc.getElementsByTagName('ExternalSourcesList')[0]
+    while parent_node.hasChildNodes():
+        parent_node.removeChild(parent_node.firstChild)
+
+    # 将删除的xml内容写入wsources
+    source_path = shutil.copy2(os.path.join(py_path, 'ExternalSource.xml'),
+                               os.path.join(py_path, 'ExternalSource.wsources'))
+
+    # 保存excel表的信息
+    wb_mediainfo.save(excel_mediainfo_path)
+    wb_wwisecookie.save(excel_wwisecookie_path)
 
     # 清除复制的媒体资源
-    shutil.rmtree("New_Media")
-    os.mkdir("New_Media")
-    os.mkdir("New_Media/Chinese")
-    os.mkdir("New_Media/English")
-    os.mkdir("New_Media/Japanese")
-    os.mkdir("New_Media/Korean")
+    # shutil.rmtree("New_Media")
+    # os.mkdir("New_Media")
+    # os.mkdir("New_Media/Chinese")
+    # os.mkdir("New_Media/English")
+    # os.mkdir("New_Media/Japanese")
+    # os.mkdir("New_Media/Korean")

@@ -4,11 +4,32 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="17a8a927-0db7-41d4-8f81-9181fc87e6d9" name="更改" comment="ES流程优化：删除导入完后的资源、wsources表清空">
+    <list default="true" id="17a8a927-0db7-41d4-8f81-9181fc87e6d9" name="更改" comment="创建ES的excel表">
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/New_Media/Chinese/VO_External_Emotion_C01_01.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/New_Media/Chinese/VO_External_Emotion_C01_02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/New_Media/Chinese/VO_External_Emotion_C01_03.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/New_Media/Chinese/VO_External_Emotion_C01_04.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/New_Media/Chinese/VO_External_Emotion_C01_05.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/New_Media/Chinese/VO_External_Emotion_C01_06.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/New_Media/Chinese/VO_External_Emotion_C01_07.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/New_Media/Chinese/VO_External_Emotion_C01_08.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/New_Media/Chinese/VO_External_Emotion_C01_09.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/New_Media/Chinese/VO_External_Emotion_C02_01.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/New_Media/Chinese/VO_External_Emotion_C02_02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/New_Media/Chinese/VO_External_Emotion_C02_03.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/New_Media/Chinese/VO_External_Emotion_C02_04.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/New_Media/Chinese/VO_External_Emotion_C02_05.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/New_Media/Chinese/VO_External_Emotion_C02_06.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/New_Media/Chinese/VO_External_Emotion_C02_07.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/New_Media/Chinese/VO_External_Emotion_C02_08.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/New_Media/Chinese/VO_External_Emotion_C02_09.wav" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/ExternalSource.wsources" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/ExternalSource.wsources" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/ExternalSource.xml" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/ExternalSource.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/ExternalSourceDefaultMedia.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/ExternalSourceDefaultMedia.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/MediaInfoTable.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/MediaInfoTable.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/SilverPalace语音ES管理表 (1).xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/SilverPalace语音ES管理表 (1).xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/oi_媒体资源重命名.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/oi_媒体资源重命名.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/waapi_语音导入.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/waapi_语音导入.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/资源导入记录表.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/资源导入记录表.xlsx" afterDir="false" />
     </list>
@@ -293,22 +314,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1716955384994</updated>
-    </task>
-    <task id="LOCAL-00016" summary="音频资源导入检测——系统名检测，json表结构修改">
-      <option name="closed" value="true" />
-      <created>1717747613139</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1717747613139</updated>
-    </task>
-    <task id="LOCAL-00017" summary="音频资源导入检测——按json配置检查测试">
-      <option name="closed" value="true" />
-      <created>1717752001839</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1717752001839</updated>
     </task>
     <task id="LOCAL-00018" summary="音频资源导入检测——字符长度检查">
       <option name="closed" value="true" />
@@ -686,7 +691,23 @@
       <option name="project" value="LOCAL" />
       <updated>1725443575013</updated>
     </task>
-    <option name="localTasksCounter" value="65" />
+    <task id="LOCAL-00065" summary="ES流程优化：分语言导入相应文件夹">
+      <option name="closed" value="true" />
+      <created>1725446729933</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1725446729933</updated>
+    </task>
+    <task id="LOCAL-00066" summary="创建ES的excel表">
+      <option name="closed" value="true" />
+      <created>1725446934330</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1725446934330</updated>
+    </task>
+    <option name="localTasksCounter" value="67" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -702,8 +723,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="音频资源导入检测——媒体资源导入随机容器" />
-    <MESSAGE value="音频资源导入检测——正式资源替换占位资源" />
     <MESSAGE value="音频资源导入检测——自动删除同步" />
     <MESSAGE value="音频资源导入检测——ue,py接入" />
     <MESSAGE value="音频资源导入检测——根据状态读取数据，拼接事件描述" />
@@ -727,6 +746,8 @@
     <MESSAGE value="ES重命名工具" />
     <MESSAGE value="音效流程优化(媒体资源导入）：导完其他资产后清除文相应资源缓存" />
     <MESSAGE value="ES流程优化：删除导入完后的资源、wsources表清空" />
-    <option name="LAST_COMMIT_MESSAGE" value="ES流程优化：删除导入完后的资源、wsources表清空" />
+    <MESSAGE value="ES流程优化：分语言导入相应文件夹" />
+    <MESSAGE value="创建ES的excel表" />
+    <option name="LAST_COMMIT_MESSAGE" value="创建ES的excel表" />
   </component>
 </project>
