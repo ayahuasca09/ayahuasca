@@ -79,16 +79,16 @@ for i in os.walk(py_path):
 # pprint("输出文件夹下的文件名：")
 file_name_list = file_names[0][2]
 
-"""读csv"""
-media_info_data = pd.read_csv(media_info_path)
-external_cookie_data = pd.read_csv(external_cookie_path)
-# 报错消除
-warnings.simplefilter(action='ignore', category=FutureWarning)
-# 新加数据
-media_info_initial_row = media_info_data.shape[0]
-media_info_row_max = media_info_data.shape[0] + 1
-external_cookie_initial_row = external_cookie_data.shape[0]
-external_cookie_row_max = external_cookie_data.shape[0] + 1
+# """读csv"""
+# media_info_data = pd.read_csv(media_info_path)
+# external_cookie_data = pd.read_csv(external_cookie_path)
+# # 报错消除
+# warnings.simplefilter(action='ignore', category=FutureWarning)
+# # 新加数据
+# media_info_initial_row = media_info_data.shape[0]
+# media_info_row_max = media_info_data.shape[0] + 1
+# external_cookie_initial_row = external_cookie_data.shape[0]
+# external_cookie_row_max = external_cookie_data.shape[0] + 1
 
 """*****************功能检测区******************"""
 
@@ -243,8 +243,35 @@ def write_media_info_excel(vo_id, cell_sound):
 """写入wwise_cookie excel表"""
 
 
-def write_wwise_cookie_excel(vo_id):
-    pass
+def write_wwise_cookie_excel(vo_id, cell_sound, external_sound_dict):
+    flag = 0
+    for cell in list(sheet_wwisecookie.columns)[0]:
+        # 在media_info表中找到该ID，则替换
+        if sheet_wwisecookie.cell(row=cell.row, column=1).value == vo_id:
+            flag = 1
+            # 找到则替换，id不会改变，会改变其他内容,目前只有name可能会改
+            for index, value in enumerate(list(sheet_wwisecookie.rows)[0]):
+                if value == "MediaName":
+                    sheet_wwisecookie.cell(row=cell.row, column=index + 1).value = cell_sound.value + ".wem"
+                elif value == "ExternalSourceCookie":
+                    sheet_wwisecookie.cell(row=cell.row, column=index + 1).value = external_sound_dict['shortId']
+                elif value == "ExternalSourceName":
+                    sheet_wwisecookie.cell(row=cell.row, column=index + 1).value = external_sound_dict['name']
+                break
+    # 在media_info表中未找到该ID，则新增
+    if flag == 0:
+        # 插入为空的行
+        insert_row = sheet_wwisecookie.max_row + 1
+        value_dict = {
+            "Name": vo_id,
+            'ExternalSourceCookie': external_sound_dict['shortId'],
+            'ExternalSourceName': external_sound_dict['name'],
+            'MediaInfoId': vo_id,
+            'MediaName': cell_sound.value + ".wem"
+        }
+        for cell in list(sheet_wwisecookie.rows)[0]:
+            if cell.value in value_dict:
+                sheet_wwisecookie.cell(row=insert_row, column=cell.column).value = value_dict[cell.value]
 
 
 # """写入wwise_cookie csv表"""
@@ -307,56 +334,70 @@ def delete_cancel_wem(media_name):
                     print_warning("wem文件删除：" + str(wem_dict[wem_name]))
 
 
-"""移除标记为cancel的行"""
+"""移除标记为cancel的所有内容"""
 
 
-def drop_row_by_cancel():
-    # 移除空白行
-    media_info_data.dropna(how='all', inplace=True)
-    media_info_data.to_csv('MediaInfoTable.csv', index=False)
-    external_cookie_data.dropna(how='all', inplace=True)
-    external_cookie_data.to_csv('ExternalSourceDefaultMedia.csv', index=False)
+def delete_cancel_content(vo_id):
+    pass
+    # 删除excel表的相应内容
+    for cell in list(sheet_mediainfo.columns)[0]:
+        # 在media_info表中找到该ID，则删除
+        if sheet_mediainfo.cell(row=cell.row, column=1).value == vo_id:
+            sheet_mediainfo.delete_rows(cell.row)
+        if sheet_wwisecookie.cell(row=cell.row, column=1).value == vo_id:
+            sheet_wwisecookie.delete_rows(cell.row)
 
-    # 读excel表
-    # 提取规则：只提取xlsx文件
-    for i in file_name_list:
-        if ".xlsx" in i:
-            # 拼接xlsx的路径
-            file_path_xlsx = os.path.join(py_path, i)
-            # 获取xlsx的workbook
-            wb = openpyxl.load_workbook(file_path_xlsx)
-            # 获取xlsx的所有sheet
-            sheet_names = wb.sheetnames
-            # 加载所有工作表
-            for sheet_name in sheet_names:
-                sheet = wb[sheet_name]
-                vo_id_column, file_name_column, external_type_column, state_column = get_vo_excel_column(sheet)
-                if state_column:
-                    # 获取状态下的内容
-                    for state in list(sheet.columns)[state_column - 1]:
-                        if state.value and state.value == "cancel":
-                            if file_name_column:
-                                # print(sheet.cell(state.row, column=vo_id_column).value)
-                                media_name = (sheet.cell(state.row, column=file_name_column).value)
-                                # 删除相应的.wem文件
-                                delete_cancel_wem(media_name)
 
-                                # 删除media_info表中的内容
-                                row_index_list = media_info_data.index[
-                                    media_info_data['MediaName'] == (media_name + '.wem')].tolist()
-
-                                for row_index in row_index_list:
-                                    media_info_data.drop(row_index, inplace=True)
-                                media_info_data.to_csv(media_info_path, index=False)
-
-                                # 删除external_cookie的内容
-                                row_index_list = external_cookie_data.index[
-                                    external_cookie_data['MediaName'] == (media_name + '.wem')].tolist()
-                                print(row_index_list)
-                                for row_index in row_index_list:
-                                    external_cookie_data.drop(row_index, inplace=True)
-                                    external_cookie_data.to_csv(external_cookie_path, index=False)
-
+# """移除标记为cancel的行"""
+#
+#
+# def drop_row_by_cancel():
+#     # 移除空白行
+#     media_info_data.dropna(how='all', inplace=True)
+#     media_info_data.to_csv('MediaInfoTable.csv', index=False)
+#     external_cookie_data.dropna(how='all', inplace=True)
+#     external_cookie_data.to_csv('ExternalSourceDefaultMedia.csv', index=False)
+#
+#     # 读excel表
+#     # 提取规则：只提取xlsx文件
+#     for i in file_name_list:
+#         if ".xlsx" in i:
+#             # 拼接xlsx的路径
+#             file_path_xlsx = os.path.join(py_path, i)
+#             # 获取xlsx的workbook
+#             wb = openpyxl.load_workbook(file_path_xlsx)
+#             # 获取xlsx的所有sheet
+#             sheet_names = wb.sheetnames
+#             # 加载所有工作表
+#             for sheet_name in sheet_names:
+#                 sheet = wb[sheet_name]
+#                 vo_id_column, file_name_column, external_type_column, state_column = get_vo_excel_column(sheet)
+#                 if state_column:
+#                     # 获取状态下的内容
+#                     for state in list(sheet.columns)[state_column - 1]:
+#                         if state.value and state.value == "cancel":
+#                             if file_name_column:
+#                                 # print(sheet.cell(state.row, column=vo_id_column).value)
+#                                 media_name = (sheet.cell(state.row, column=file_name_column).value)
+#                                 # 删除相应的.wem文件
+#                                 delete_cancel_wem(media_name)
+#
+#                                 # 删除media_info表中的内容
+#                                 row_index_list = media_info_data.index[
+#                                     media_info_data['MediaName'] == (media_name + '.wem')].tolist()
+#
+#                                 for row_index in row_index_list:
+#                                     media_info_data.drop(row_index, inplace=True)
+#                                 media_info_data.to_csv(media_info_path, index=False)
+#
+#                                 # 删除external_cookie的内容
+#                                 row_index_list = external_cookie_data.index[
+#                                     external_cookie_data['MediaName'] == (media_name + '.wem')].tolist()
+#                                 print(row_index_list)
+#                                 for row_index in row_index_list:
+#                                     external_cookie_data.drop(row_index, inplace=True)
+#                                     external_cookie_data.to_csv(external_cookie_path, index=False)
+#
 
 """自动化生成ES数据"""
 
@@ -400,7 +441,6 @@ def auto_gen_es_file(file_wav_dict):
                                                 if external_sound_dict['parent']['name'] == sheet.cell(
                                                         row=cell_sound.row,
                                                         column=external_type_column).value:
-
                                                     # pprint(external_sound_dict['shortId'])
                                                     # 查找mediainfo表的id有没有，没有则添加，有则修改内容
                                                     if vo_id_column:
@@ -410,13 +450,28 @@ def auto_gen_es_file(file_wav_dict):
                                                         # 写入media_info excel表
                                                         write_media_info_excel(vo_id, cell_sound)
                                                         # # 写入wwise_cookie excel表
-                                                        write_wwise_cookie_excel(vo_id)
+                                                        write_wwise_cookie_excel(vo_id, cell_sound, external_sound_dict)
 
                                                         # 写入media_info csv表
                                                         # write_media_info_csv()
                                                         # # 写入wwise_cookie表
                                                         # write_external_cookie_csv()
                                                         break
+                                    # 删除所有相关数据
+                                    else:
+
+                                        if vo_id_column:
+                                            vo_id = sheet.cell(
+                                                row=cell_sound.row,
+                                                column=vo_id_column).value
+                                            # 删除es表所有相关内容
+                                            delete_cancel_content(vo_id)
+                                        if file_name_column:
+                                            file_name = sheet.cell(
+                                                row=cell_sound.row,
+                                                column=file_name_column).value
+                                            delete_cancel_wem(file_name)
+
                                     break
                 wb.save(file_path_xlsx)
 
@@ -528,10 +583,20 @@ with WaapiClient() as client:
     wb_mediainfo.save(excel_mediainfo_path)
     wb_wwisecookie.save(excel_wwisecookie_path)
 
+    # 将excel转为csv
+    # 指定CSV文件名和编码格式
+    encoding = 'utf-8'
+    # media_info csv写入
+    df = pd.read_excel(excel_mediainfo_path)
+    df.to_csv(media_info_path, encoding=encoding, index=False)
+    # external_cookie csv写入
+    df = pd.read_excel(excel_wwisecookie_path)
+    df.to_csv(external_cookie_path, encoding=encoding, index=False)
+
     # 清除复制的媒体资源
-    # shutil.rmtree("New_Media")
-    # os.mkdir("New_Media")
-    # os.mkdir("New_Media/Chinese")
-    # os.mkdir("New_Media/English")
-    # os.mkdir("New_Media/Japanese")
-    # os.mkdir("New_Media/Korean")
+    shutil.rmtree("New_Media")
+    os.mkdir("New_Media")
+    os.mkdir("New_Media/Chinese")
+    os.mkdir("New_Media/English")
+    os.mkdir("New_Media/Japanese")
+    os.mkdir("New_Media/Korean")
