@@ -1,12 +1,12 @@
 {
     "commands":[
       {
-        "id": "ak.create.parent.switchcontainer",
-        "displayName": "Create Parent-Switch Container",
+        "id": "ak.create.parent.container.sfx",
+        "displayName": "Create Parent Container SFX",
         "defaultShortcut": "",
         "program": "py.exe",
         "startMode": "MultipleSelectionSingleProcessSpaceSeparated",
-        "args": "-3 ${CurrentCommandDirectory}\\..\\create-parent-switchcontainer ${id}",
+        "args": "-3 ${CurrentCommandDirectory}\\..\\create-parent-container-SFX\\__main__.py",
         "cwd": "",
         "contextMenu": {
           "basePath": "",

@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="17a8a927-0db7-41d4-8f81-9181fc87e6d9" name="更改" comment="ES使用excel替换csv生成">
-      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_命令扩展/create-parent-container/__main__.py" afterDir="false" />
+    <list default="true" id="17a8a927-0db7-41d4-8f81-9181fc87e6d9" name="更改" comment="命令扩展——生成父级文件">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_命令扩展/create-parent-switchcontainer/__main__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_命令扩展/Commands/Commands_My_List.json" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_命令扩展/Commands/Commands_My_List.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_命令扩展/create-parent-container-SFX/__main__.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_命令扩展/create-parent-container-SFX/__main__.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,6 +50,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Python.__main__ (1).executor": "Run",
     "Python.__main__.executor": "Run",
     "Python.csv_pandas测试.executor": "Run",
     "Python.excel_音效需求表音效名读取.executor": "Run",
@@ -313,14 +314,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1716955384994</updated>
-    </task>
-    <task id="LOCAL-00020" summary="音频资源导入检测——音效需求表读取">
-      <option name="closed" value="true" />
-      <created>1718076201277</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1718076201277</updated>
     </task>
     <task id="LOCAL-00021" summary="音频资源导入检测——检测方式更改">
       <option name="closed" value="true" />
@@ -706,7 +699,15 @@
       <option name="project" value="LOCAL" />
       <updated>1725607931718</updated>
     </task>
-    <option name="localTasksCounter" value="69" />
+    <task id="LOCAL-00069" summary="命令扩展——生成父级文件">
+      <option name="closed" value="true" />
+      <created>1725875454423</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1725875454423</updated>
+    </task>
+    <option name="localTasksCounter" value="70" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -722,7 +723,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="音频资源导入检测——根据状态读取数据，拼接事件描述" />
     <MESSAGE value="wwise属性自动配置——资源清理" />
     <MESSAGE value="wwise属性自动配置——媒体资源重命名" />
     <MESSAGE value="自动删除和重命名表格修改" />
@@ -747,6 +747,7 @@
     <MESSAGE value="创建ES的excel表" />
     <MESSAGE value="ES Excel MediaInfo表 信息生成测试" />
     <MESSAGE value="ES使用excel替换csv生成" />
-    <option name="LAST_COMMIT_MESSAGE" value="ES使用excel替换csv生成" />
+    <MESSAGE value="命令扩展——生成父级文件" />
+    <option name="LAST_COMMIT_MESSAGE" value="命令扩展——生成父级文件" />
   </component>
 </project>
