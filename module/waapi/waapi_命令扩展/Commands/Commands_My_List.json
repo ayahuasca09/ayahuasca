@@ -13,6 +13,20 @@
           "enabledFor": ""
         },
         "redirectOutputs": false
+      },
+      {
+        "id": "ak.create.event.for.one.object",
+        "displayName": "Create Event For One Object",
+        "defaultShortcut": "",
+        "program": "py.exe",
+        "startMode": "SingleSelectionSingleProcess",
+        "args": "-3 ${CurrentCommandDirectory}\\..\\create-event-for-one-object\\main.py",
+        "cwd": "",
+        "contextMenu": {
+          "basePath": "",
+          "enabledFor": ""
+        },
+        "redirectOutputs": false
       }
     ]
 }

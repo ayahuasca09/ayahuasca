@@ -203,8 +203,9 @@ if __name__ == '__main__':
                                                 "object": "%s" % event_dict['id']
                                             }
                                             client.call("ak.wwise.core.object.delete", args)
+                            print_log("提示：请补充对该容器的notes描述，及为其创建相应的Event")
 
-        client.call("ak.wwise.core.undo.endGroup", displayName="parent创建撤销")
+        client.call("ak.wwise.core.undo.endGroup", displayName="Parent创建撤销")
 
         print("")
         input("按任意字符结束")
