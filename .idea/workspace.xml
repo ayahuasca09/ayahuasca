@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="17a8a927-0db7-41d4-8f81-9181fc87e6d9" name="更改" comment="命令扩展——生成父级文件">
-      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_命令扩展/create-event-for-one-object/main.py" afterDir="false" />
+    <list default="true" id="17a8a927-0db7-41d4-8f81-9181fc87e6d9" name="更改" comment="事件生成：补充描述为空的条件">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_命令扩展/Commands/Commands_My_List.json" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_命令扩展/Commands/Commands_My_List.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_命令扩展/create-parent-container-SFX/__main__.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_命令扩展/create-parent-container-SFX/__main__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/ue/ue_ID表生成/Audio.csv" beforeDir="false" afterPath="$PROJECT_DIR$/module/ue/ue_ID表生成/Audio.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/ue/ue_ID表生成/Audio.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/module/ue/ue_ID表生成/Audio.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/ue/ue_ID表生成/ue_ID表生成v2.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/ue/ue_ID表生成/ue_ID表生成v2.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,49 +48,49 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Python.__main__ (1).executor": "Run",
-    "Python.__main__.executor": "Run",
-    "Python.csv_pandas测试.executor": "Run",
-    "Python.excel_音效需求表音效名读取.executor": "Run",
-    "Python.main (1).executor": "Run",
-    "Python.main.executor": "Run",
-    "Python.oi_h.executor": "Run",
-    "Python.oi_媒体资源重命名 (1).executor": "Run",
-    "Python.oi_媒体资源重命名.executor": "Run",
-    "Python.test.executor": "Run",
-    "Python.ue_ID表生成 (1).executor": "Run",
-    "Python.ue_ID表生成.executor": "Run",
-    "Python.ue_ID表生成v2.executor": "Run",
-    "Python.waapi_2023test.executor": "Run",
-    "Python.waapi_json数据解析.executor": "Run",
-    "Python.waapi_sounbank生成.executor": "Run",
-    "Python.waapi_test.executor": "Run",
-    "Python.waapi_wwise属性自动配置.executor": "Run",
-    "Python.waapi_订阅_soundbank生成数据 (1).executor": "Run",
-    "Python.waapi_订阅_soundbank生成数据打印 (1).executor": "Run",
-    "Python.waapi_订阅_接收对象名称被修改时的信息.executor": "Run",
-    "Python.waapi_语音导入 (1).executor": "Run",
-    "Python.waapi_语音导入.executor": "Run",
-    "Python.waapi_语音导入_本地UE工程测试版.executor": "Run",
-    "Python.waapi_语音导入测试.executor": "Run",
-    "Python.waapi_转码类型创建.executor": "Run",
-    "Python.waapi_音频资源导入_从媒体资源导入.executor": "Run",
-    "Python.waapi_音频资源导入_从表导入 (1).executor": "Run",
-    "Python.waapi_音频资源导入_从表导入.executor": "Run",
-    "Python.waapi_音频资源导入自动化.executor": "Run",
-    "Python.xml文件读写示例 (1).executor": "Run",
-    "Python.xml文件读写示例.executor": "Run",
-    "Python.正则测试.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "F:/pppppy/SP/module/waapi/waapi_Auto_Import_ExternalSource",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Python.__main__ (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.__main__.executor&quot;: &quot;Run&quot;,
+    &quot;Python.csv_pandas测试.executor&quot;: &quot;Run&quot;,
+    &quot;Python.excel_音效需求表音效名读取.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.oi_h.executor&quot;: &quot;Run&quot;,
+    &quot;Python.oi_媒体资源重命名 (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.oi_媒体资源重命名.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test.executor&quot;: &quot;Run&quot;,
+    &quot;Python.ue_ID表生成 (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.ue_ID表生成.executor&quot;: &quot;Run&quot;,
+    &quot;Python.ue_ID表生成v2.executor&quot;: &quot;Run&quot;,
+    &quot;Python.waapi_2023test.executor&quot;: &quot;Run&quot;,
+    &quot;Python.waapi_json数据解析.executor&quot;: &quot;Run&quot;,
+    &quot;Python.waapi_sounbank生成.executor&quot;: &quot;Run&quot;,
+    &quot;Python.waapi_test.executor&quot;: &quot;Run&quot;,
+    &quot;Python.waapi_wwise属性自动配置.executor&quot;: &quot;Run&quot;,
+    &quot;Python.waapi_订阅_soundbank生成数据 (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.waapi_订阅_soundbank生成数据打印 (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.waapi_订阅_接收对象名称被修改时的信息.executor&quot;: &quot;Run&quot;,
+    &quot;Python.waapi_语音导入 (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.waapi_语音导入.executor&quot;: &quot;Run&quot;,
+    &quot;Python.waapi_语音导入_本地UE工程测试版.executor&quot;: &quot;Run&quot;,
+    &quot;Python.waapi_语音导入测试.executor&quot;: &quot;Run&quot;,
+    &quot;Python.waapi_转码类型创建.executor&quot;: &quot;Run&quot;,
+    &quot;Python.waapi_音频资源导入_从媒体资源导入.executor&quot;: &quot;Run&quot;,
+    &quot;Python.waapi_音频资源导入_从表导入 (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.waapi_音频资源导入_从表导入.executor&quot;: &quot;Run&quot;,
+    &quot;Python.waapi_音频资源导入自动化.executor&quot;: &quot;Run&quot;,
+    &quot;Python.xml文件读写示例 (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.xml文件读写示例.executor&quot;: &quot;Run&quot;,
+    &quot;Python.正则测试.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;F:/pppppy/SP/module/waapi/waapi_Auto_Import_ExternalSource&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="F:\pppppy\SP\module\waapi\waapi_Auto_Import_ExternalSource" />
@@ -115,7 +115,7 @@
       <visibility group="运行配置" flag="true" />
     </myKeys>
   </component>
-  <component name="RunManager" selected="Python.main (1)">
+  <component name="RunManager" selected="Python.ue_ID表生成v2">
     <configuration name="__main__ (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="SP" />
       <option name="ENV_FILES" value="" />
@@ -130,28 +130,6 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/module/waapi/waapi_命令扩展/create-parent-container-SFX/__main__.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="__main__" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="SP" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/module/waapi/waapi_命令扩展/create-parent-container" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/module/waapi/waapi_命令扩展/create-parent-container/__main__.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -204,7 +182,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="waapi_语音导入" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="ue_ID表生成v2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="SP" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -213,11 +191,33 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/module/ue/ue_ID表生成" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/waapi_语音导入.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/module/ue/ue_ID表生成/ue_ID表生成v2.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="waapi_音频资源导入_从表导入" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="SP" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/waapi_音频资源导入_从表导入.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -294,11 +294,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.ue_ID表生成v2" />
+        <item itemvalue="Python.waapi_音频资源导入_从表导入" />
         <item itemvalue="Python.main (1)" />
         <item itemvalue="Python.main" />
         <item itemvalue="Python.__main__ (1)" />
-        <item itemvalue="Python.__main__" />
-        <item itemvalue="Python.waapi_语音导入" />
       </list>
     </recent_temporary>
   </component>
@@ -317,22 +317,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1716955384994</updated>
-    </task>
-    <task id="LOCAL-00022" summary="音频资源导入检测——角色命名逐个规范修改">
-      <option name="closed" value="true" />
-      <created>1718114985825</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1718114985825</updated>
-    </task>
-    <task id="LOCAL-00023" summary="音频资源导入检测——命名规范细则补充">
-      <option name="closed" value="true" />
-      <created>1718204610734</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1718204610734</updated>
     </task>
     <task id="LOCAL-00024" summary="音频资源导入检测——命名规范之sys_show">
       <option name="closed" value="true" />
@@ -710,7 +694,23 @@
       <option name="project" value="LOCAL" />
       <updated>1725878447758</updated>
     </task>
-    <option name="localTasksCounter" value="71" />
+    <task id="LOCAL-00071" summary="命令扩展——为选中容器创建事件">
+      <option name="closed" value="true" />
+      <created>1725961782184</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1725961782184</updated>
+    </task>
+    <task id="LOCAL-00072" summary="事件生成：补充描述为空的条件">
+      <option name="closed" value="true" />
+      <created>1726055161669</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1726055161669</updated>
+    </task>
+    <option name="localTasksCounter" value="73" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -726,8 +726,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="wwise属性自动配置——资源清理" />
-    <MESSAGE value="wwise属性自动配置——媒体资源重命名" />
     <MESSAGE value="自动删除和重命名表格修改" />
     <MESSAGE value="音频自动配置" />
     <MESSAGE value="xml文件写入测试" />
@@ -751,6 +749,8 @@
     <MESSAGE value="ES Excel MediaInfo表 信息生成测试" />
     <MESSAGE value="ES使用excel替换csv生成" />
     <MESSAGE value="命令扩展——生成父级文件" />
-    <option name="LAST_COMMIT_MESSAGE" value="命令扩展——生成父级文件" />
+    <MESSAGE value="命令扩展——为选中容器创建事件" />
+    <MESSAGE value="事件生成：补充描述为空的条件" />
+    <option name="LAST_COMMIT_MESSAGE" value="事件生成：补充描述为空的条件" />
   </component>
 </project>

@@ -281,7 +281,7 @@ def set_value():
 with WaapiClient() as client:
     def find_obj(args):
         options = {
-            'return': ['name', 'id', 'path', 'notes', 'IsLoopingEnabled']
+            'return': ['name', 'id', 'path', 'notes', 'IsLoopingEnabled','Inclusion']
 
         }
         obj_sub_list = client.call("ak.wwise.core.object.get", args, options=options)['return']
@@ -307,11 +307,14 @@ with WaapiClient() as client:
     event_list, event_id, _ = find_obj(
         {'waql': ' "%s" select descendants where type = "Event" ' % event_root})
     for event_dict in event_list:
-        # 获取值域范围
-        get_module_range(event_dict['name'])
-        if (range_min != 0) and (range_max != 0):
-            set_value()
-    # 如果表里找到匹配的Event
+        # 事件需要勾选才生成info信息
+        if event_dict['Inclusion']:
+            # 获取值域范围
+            get_module_range(event_dict['name'])
+            if (range_min != 0) and (range_max != 0):
+                set_value()
+
+
 
 wb.save(excel_path)
 
