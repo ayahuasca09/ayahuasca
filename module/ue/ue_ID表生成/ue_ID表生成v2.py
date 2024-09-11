@@ -78,7 +78,22 @@ event_id_config = {
         {
             "min": 15001,
             "max": 30000
-        }
+        },
+    "Set_State":
+        {
+            "min": 30001,
+            "max": 32000
+        },
+    "Set_Switch":
+        {
+            "min": 32001,
+            "max": 34000
+        },
+    "Set_Trigger":
+        {
+            "min": 34001,
+            "max": 36000
+        },
 
 }
 
@@ -150,7 +165,6 @@ def get_module_range(event_name):
             range_min = event_id_config[module_name]['min']
             range_max = event_id_config[module_name]['max']
             flag = 1
-            return
     if flag == 0:
         range_min = 0
         range_max = 0
@@ -236,14 +250,14 @@ def set_value():
             # 获取是否循环并赋值
             sheet.cell(row=cell.row, column=isloop_index).value = get_is_loop()
             break
-        elif event_dict['notes'] == sheet.cell(cell.row, column=desc_index).value:
+        elif (event_dict['notes'] == sheet.cell(cell.row, column=desc_index).value) and event_dict['notes']\
+                and sheet.cell(cell.row, column=desc_index).value:
             flag = 2
             # 事件名称复制
             sheet.cell(row=cell.row, column=audioname_index).value = event_dict['name']
             set_event_path(cell.row)
             # 获取是否循环并赋值
             sheet.cell(row=cell.row, column=isloop_index).value = get_is_loop()
-
         # 是否循环赋值
     if flag == 0:
         # 插入为空的行
