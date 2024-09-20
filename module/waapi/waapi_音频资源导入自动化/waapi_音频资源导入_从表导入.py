@@ -792,43 +792,49 @@ with WaapiClient() as client:
         event_list, _, _ = find_obj(
             {'waql': ' "%s" select descendants where type = "Event" ' %
                      wwise_dict['Event_Root']})
-        # pprint(event_list)
-        flag = 0
-        for event_dict in event_list:
-            if rnd_name in event_dict['name']:
-                # Play事件的notes重新设置
-                if event_dict['name'] == event_name:
-                    flag = 1
-                    set_obj_notes(event_dict['id'], event_descrip)
-                    # print(event_dict['name'])
-                elif event_dict['name'] == event_stop_name:
-                    flag = 2
-                    set_obj_notes(event_dict['id'], event_descrip + "停止")
-                    # print(event_dict['name'])
-            else:
-                # Play:没有重名但描述一致，判定为改名
-                if event_dict['notes'] == event_descrip:
-                    # pprint(rnd_name + "：RandomContainer已存在，将不再导入")
-                    flag = 3
-                    change_name_by_wwise_content(event_dict['id'], event_name, event_dict['name'], "Event")
-                # Stop：没有重名但描述一致，判定为改名
-                elif event_dict['notes'] == event_descrip + "停止":
-                    # pprint(rnd_name + "：RandomContainer已存在，将不再导入")
-                    flag = 4
-                    change_name_by_wwise_content(event_dict['id'], event_stop_name, event_dict['name'], "Event")
 
-        if flag == 0:
-            event_args = get_event_args(parent_id, event_name, 1, rnd_path, event_descrip)
-            client.call("ak.wwise.core.object.create", event_args)
-            # {'children': [{'id': '{26A1FB06-3908-4F55-AB8A-E67264100F18}', 'name': ''}],
-            #  'id': '{F04A7B4F-9266-4DAB-8DD2-CAF6BFD6D78A}',
-            #  'name': 'AKE_Play_Mon_Boss_Body_B01_Atk5'}
-            pprint(event_name + "事件创建")
-            if "_LP" in rnd_name:
-                event_name = "AKE_" + "Stop_" + rnd_name
-                event_args = get_event_args(parent_id, event_name, 2, rnd_path, event_descrip + "停止")
+        # 判断其random容器的父级是不是actor-mixer，如果不是就不生成event
+        rnd_parent_list, _, _ = find_obj(
+            {'waql': ' "%s" select parent where type = "ActorMixer" ' %
+                     wwise_dict['Root']})
+        if rnd_parent_list:
+            # pprint(event_list)
+            flag = 0
+            for event_dict in event_list:
+                if rnd_name in event_dict['name']:
+                    # Play事件的notes重新设置
+                    if event_dict['name'] == event_name:
+                        flag = 1
+                        set_obj_notes(event_dict['id'], event_descrip)
+                        # print(event_dict['name'])
+                    elif event_dict['name'] == event_stop_name:
+                        flag = 2
+                        set_obj_notes(event_dict['id'], event_descrip + "停止")
+                        # print(event_dict['name'])
+                else:
+                    # Play:没有重名但描述一致，判定为改名
+                    if event_dict['notes'] == event_descrip:
+                        # pprint(rnd_name + "：RandomContainer已存在，将不再导入")
+                        flag = 3
+                        change_name_by_wwise_content(event_dict['id'], event_name, event_dict['name'], "Event")
+                    # Stop：没有重名但描述一致，判定为改名
+                    elif event_dict['notes'] == event_descrip + "停止":
+                        # pprint(rnd_name + "：RandomContainer已存在，将不再导入")
+                        flag = 4
+                        change_name_by_wwise_content(event_dict['id'], event_stop_name, event_dict['name'], "Event")
+
+            if flag == 0:
+                event_args = get_event_args(parent_id, event_name, 1, rnd_path, event_descrip)
                 client.call("ak.wwise.core.object.create", event_args)
+                # {'children': [{'id': '{26A1FB06-3908-4F55-AB8A-E67264100F18}', 'name': ''}],
+                #  'id': '{F04A7B4F-9266-4DAB-8DD2-CAF6BFD6D78A}',
+                #  'name': 'AKE_Play_Mon_Boss_Body_B01_Atk5'}
                 pprint(event_name + "事件创建")
+                if "_LP" in rnd_name:
+                    event_name = "AKE_" + "Stop_" + rnd_name
+                    event_args = get_event_args(parent_id, event_name, 2, rnd_path, event_descrip + "停止")
+                    client.call("ak.wwise.core.object.create", event_args)
+                    pprint(event_name + "事件创建")
 
 
     """媒体资源导入的总流程"""

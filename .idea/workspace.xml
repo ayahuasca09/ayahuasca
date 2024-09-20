@@ -4,17 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="17a8a927-0db7-41d4-8f81-9181fc87e6d9" name="更改" comment="ID表更新">
-      <change afterPath="$PROJECT_DIR$/module/ue/ue_ID表生成/Audio_Desc.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module/ue/ue_ID表生成/Audio_Desc.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/SilverPalace战斗音频需求资源管理表 (2).xlsx" afterDir="false" />
+    <list default="true" id="17a8a927-0db7-41d4-8f81-9181fc87e6d9" name="更改" comment="ID表导表两张">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/ue/ue_ID表生成/Audio.csv" beforeDir="false" afterPath="$PROJECT_DIR$/module/ue/ue_ID表生成/Audio.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/ue/ue_ID表生成/Audio.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/module/ue/ue_ID表生成/Audio.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/ue/ue_ID表生成/ue_ID表生成v2.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/ue/ue_ID表生成/ue_ID表生成v2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/SilverPalace战斗音频需求资源管理表 (1).xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/资源导入记录表.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/资源导入记录表.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/waapi_音频资源导入_从表导入.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/waapi_音频资源导入_从表导入.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -323,14 +315,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1716955384994</updated>
-    </task>
-    <task id="LOCAL-00025" summary="音频资源导入检测——命名规范完善">
-      <option name="closed" value="true" />
-      <created>1718260482247</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1718260482247</updated>
     </task>
     <task id="LOCAL-00026" summary="音频资源导入检测——导入随机容器测试">
       <option name="closed" value="true" />
@@ -716,7 +700,15 @@
       <option name="project" value="LOCAL" />
       <updated>1726055779142</updated>
     </task>
-    <option name="localTasksCounter" value="74" />
+    <task id="LOCAL-00074" summary="ID表导表两张">
+      <option name="closed" value="true" />
+      <created>1726802116159</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1726802116159</updated>
+    </task>
+    <option name="localTasksCounter" value="75" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -732,7 +724,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="音频自动配置" />
     <MESSAGE value="xml文件写入测试" />
     <MESSAGE value="语音自动化：media_info表自动生成" />
     <MESSAGE value="语音自动化：wwise_cookie表自动生成" />
@@ -757,6 +748,7 @@
     <MESSAGE value="命令扩展——为选中容器创建事件" />
     <MESSAGE value="事件生成：补充描述为空的条件" />
     <MESSAGE value="ID表更新" />
-    <option name="LAST_COMMIT_MESSAGE" value="ID表更新" />
+    <MESSAGE value="ID表导表两张" />
+    <option name="LAST_COMMIT_MESSAGE" value="ID表导表两张" />
   </component>
 </project>
