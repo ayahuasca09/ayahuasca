@@ -1,23 +1,33 @@
 import openpyxl
 from waapi import WaapiClient
 import os
+import shutil
+import sys
 import re
 import pandas as pd
 import configparser
 import tkinter as tk
 from tkinter import messagebox
+from os.path import abspath, dirname
 from pprint import pprint
+
+# 文件所在目录
+py_path = ""
+if hasattr(sys, 'frozen'):
+    py_path = dirname(sys.executable)
+elif __file__:
+    py_path = dirname(abspath(__file__))
 
 """ID表内容写入"""
 # 获取ID表路径
 # 打开工作簿
-excel_path = "Audio.xlsx"
+excel_path = "Audio_Desc.xlsx"
 wb = openpyxl.load_workbook(excel_path)
 # 获取工作表
 sheet = wb['audio']
 
 """csv表路径"""
-csv_path = "Audio.csv"
+csv_path = "Audio_Desc.csv"
 
 """ini文件"""
 # 创建 ConfigParser 对象
@@ -233,6 +243,7 @@ def get_is_loop():
                             if sound_dict['IsLoopingEnabled']:
                                 is_loop = True
                                 break
+
     return is_loop
 
 
@@ -250,7 +261,7 @@ def set_value():
             # 获取是否循环并赋值
             sheet.cell(row=cell.row, column=isloop_index).value = get_is_loop()
             break
-        elif (event_dict['notes'] == sheet.cell(cell.row, column=desc_index).value) and event_dict['notes']\
+        elif (event_dict['notes'] == sheet.cell(cell.row, column=desc_index).value) and event_dict['notes'] \
                 and sheet.cell(cell.row, column=desc_index).value:
             flag = 2
             # 事件名称复制
@@ -281,7 +292,7 @@ def set_value():
 with WaapiClient() as client:
     def find_obj(args):
         options = {
-            'return': ['name', 'id', 'path', 'notes', 'IsLoopingEnabled','Inclusion']
+            'return': ['name', 'id', 'path', 'notes', 'IsLoopingEnabled', 'Inclusion']
 
         }
         obj_sub_list = client.call("ak.wwise.core.object.get", args, options=options)['return']
@@ -314,8 +325,6 @@ with WaapiClient() as client:
             if (range_min != 0) and (range_max != 0):
                 set_value()
 
-
-
 wb.save(excel_path)
 
 # excel转csv
@@ -323,6 +332,27 @@ df = pd.read_excel(excel_path)
 # 指定CSV文件名和编码格式
 encoding = 'utf-8'
 df.to_csv(csv_path, encoding=encoding, index=False)
+
+# 复制一份excel文件
+excel_no_desc = "Audio.xlsx"
+shutil.copy2(excel_path, excel_no_desc)
+# 删除描述列
+wb = openpyxl.load_workbook(excel_no_desc)
+# 获取工作表
+sheet = wb['audio']
+# 找到第一行中值为 "Desc" 的列
+for col in sheet.iter_cols(1, sheet.max_column):
+    if col[0].value == "Desc":
+        col_letter = col[0].column_letter
+        sheet.delete_cols(col[0].column)
+        break
+# 保存修改后的工作簿
+wb.save(excel_no_desc)
+
+# 转为csv
+csv_no_desc = "Audio.csv"
+df = pd.read_excel(excel_no_desc)
+df.to_csv(csv_no_desc, encoding=encoding, index=False)
 
 # 应用程序弹窗
 root = tk.Tk()

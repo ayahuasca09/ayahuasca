@@ -4,7 +4,8 @@ from pprint import pprint
 with WaapiClient() as client:
     def find_obj(args):
         options = {
-            'return': ['name', 'id', 'notes', 'originalWavFilePath', 'isIncluded', 'IsLoopingEnabled']
+            'return': ['name', 'id', 'notes', 'originalWavFilePath', 'isIncluded', 'IsLoopingEnabled',
+                       'musicPlaylistRoot']
 
         }
         obj_sub_list = client.call("ak.wwise.core.object.get", args, options=options)['return']
@@ -237,11 +238,37 @@ with WaapiClient() as client:
     #                         break
 
     """筛选出所有有多个随机资源的音效"""
+    # args = {
+    #     'waql': '"%s" select descendants where type= "Sound" and name=/R\d+$/ and name=/^(?!VO).*/' % (
+    #         '{5CB72D1B-8D4B-484D-8B9D-FC52BD496843}')
+    # }
+    # refer_list, refer_id = find_obj(args)
+    # # pprint(refer_list)
+    # for refer_dict in refer_list:
+    #     print(refer_dict['name'])
+
+    """查找音乐是否循环"""
+    # 先查找MusicPlaylistContainer容器
     args = {
-        'waql': '"%s" select descendants where type= "Sound" and name=/R\d+$/ and name=/^(?!VO).*/' % (
-            '{5CB72D1B-8D4B-484D-8B9D-FC52BD496843}')
+        'waql': '"%s" select descendants where type= "MusicPlaylistContainer" ' % (
+            '{E8A5F6A0-AB3E-4166-BB68-C7D7ECC92B29}')
     }
     refer_list, refer_id = find_obj(args)
     # pprint(refer_list)
     for refer_dict in refer_list:
-        print(refer_dict['name'])
+        # print(refer_dict['id'])
+        # Mus_Login
+        # Mus_Loading
+        # Mus_Map_A02_Combat_Boss_Start
+        # Mus_Map_A02_Combat_Boss_Stage1
+        pprint(refer_dict['name'])
+        args = {
+            'waql': '"%s" ' % (
+                refer_dict['musicPlaylistRoot']['id'])
+        }
+        options = {
+            'return': ['name', 'LoopCount']
+
+        }
+        obj_sub_list = client.call("ak.wwise.core.object.get", args, options=options)['return']
+        pprint(obj_sub_list)
