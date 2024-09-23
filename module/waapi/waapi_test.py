@@ -5,7 +5,7 @@ with WaapiClient() as client:
     def find_obj(args):
         options = {
             'return': ['name', 'id', 'notes', 'originalWavFilePath', 'isIncluded', 'IsLoopingEnabled',
-                       'musicPlaylistRoot']
+                       'musicPlaylistRoot', 'LoopCount', 'PlaylistItemType', 'owner', 'parent']
 
         }
         obj_sub_list = client.call("ak.wwise.core.object.get", args, options=options)['return']
@@ -248,27 +248,60 @@ with WaapiClient() as client:
     #     print(refer_dict['name'])
 
     """查找音乐是否循环"""
-    # 先查找MusicPlaylistContainer容器
-    args = {
-        'waql': '"%s" select descendants where type= "MusicPlaylistContainer" ' % (
-            '{E8A5F6A0-AB3E-4166-BB68-C7D7ECC92B29}')
-    }
-    refer_list, refer_id = find_obj(args)
-    # pprint(refer_list)
-    for refer_dict in refer_list:
-        # print(refer_dict['id'])
-        # Mus_Login
-        # Mus_Loading
-        # Mus_Map_A02_Combat_Boss_Start
-        # Mus_Map_A02_Combat_Boss_Stage1
-        pprint(refer_dict['name'])
-        args = {
-            'waql': '"%s" ' % (
-                refer_dict['musicPlaylistRoot']['id'])
-        }
-        options = {
-            'return': ['name', 'LoopCount']
+    # # 先查找MusicPlaylistContainer容器
+    # args = {
+    #     'waql': '"%s" select descendants where type= "MusicPlaylistContainer" ' % (
+    #         '{E8A5F6A0-AB3E-4166-BB68-C7D7ECC92B29}')
+    # }
+    # refer_list, refer_id = find_obj(args)
+    # # pprint(refer_list)
+    # for refer_dict in refer_list:
+    #     # print(refer_dict['id'])
+    #     # Mus_Login
+    #     # Mus_Loading
+    #     # Mus_Map_A02_Combat_Boss_Start
+    #     # Mus_Map_A02_Combat_Boss_Stage1
+    #     pprint(refer_dict['name'])
+    #     args = {
+    #         'waql': '"%s" ' % (
+    #             refer_dict['musicPlaylistRoot']['id'])
+    #     }
+    #     options = {
+    #         'return': ['name', 'LoopCount']
+    #
+    #     }
+    #     obj_sub_list = client.call("ak.wwise.core.object.get", args, options=options)['return']
+    #     pprint(obj_sub_list)
 
-        }
-        obj_sub_list = client.call("ak.wwise.core.object.get", args, options=options)['return']
-        pprint(obj_sub_list)
+    """查找音乐列表下的item是否循环"""
+    # PS：MusicPlaylistItem的根节点只有owner，
+    # MusicPlaylistItem的其他子节点只有parent，parent为根节点
+    args = {
+        'waql': 'from type MusicPlaylistItem '
+    }
+    musicplaylistitem_list, _ = find_obj(args)
+    # pprint(refer_list)
+
+    # 使用一个列表保存为loop的musicplaylist container id
+    loop_musicplaylist_container_id_list = []
+
+    # 查找为loop的、非根节点的子节点
+    for musicplaylistitem_dict in musicplaylistitem_list:
+        if (musicplaylistitem_dict['PlaylistItemType'] == 1) and (musicplaylistitem_dict['LoopCount'] == 0):
+            # pprint(musicplaylistitem_dict)
+            # print()
+            # 获取子节点的parent，即根节点
+            root_id = musicplaylistitem_dict['parent']['id']
+            # print(root_id)
+            # 获取根节点的owner，即musicplaylist容器的id
+            args = {
+                'waql': ' from object "%s" ' % root_id
+            }
+            root_list, _ = find_obj(args)
+            # pprint(root_list)
+            for root_dict in root_list:
+                # 添加非重复元素，set为去重，然后再转为list
+                loop_musicplaylist_container_id_list = list(set(loop_musicplaylist_container_id_list +
+                                                                [root_dict['owner']['id']]))
+        # 还有另一种，在根节点下为loop的情况
+    pprint(loop_musicplaylist_container_id_list)

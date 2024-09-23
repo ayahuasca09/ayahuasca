@@ -4,14 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="17a8a927-0db7-41d4-8f81-9181fc87e6d9" name="更改" comment="复杂容器的Event在&lt;waapi_音频资源导入_从表导入&gt;中还是会被生成，需要判断其random容器的父级是不是actor-mixer，如果不是就不生成">
-      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_auto_gen_state/Set设置类表.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_auto_gen_state/waapi_auto_gen_state.py" afterDir="false" />
+    <list default="true" id="17a8a927-0db7-41d4-8f81-9181fc87e6d9" name="更改" comment="Set类规则检查">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/ue/ue_ID表生成/Audio.csv" beforeDir="false" afterPath="$PROJECT_DIR$/module/ue/ue_ID表生成/Audio.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/ue/ue_ID表生成/Audio.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/module/ue/ue_ID表生成/Audio.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/ue/ue_ID表生成/Audio_Desc.csv" beforeDir="false" afterPath="$PROJECT_DIR$/module/ue/ue_ID表生成/Audio_Desc.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/ue/ue_ID表生成/Audio_Desc.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/module/ue/ue_ID表生成/Audio_Desc.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_auto_gen_state/waapi_auto_gen_state.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_auto_gen_state/waapi_auto_gen_state.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -321,14 +316,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1716955384994</updated>
-    </task>
-    <task id="LOCAL-00027" summary="音频资源导入检测——随机容器创建完善">
-      <option name="closed" value="true" />
-      <created>1718336389286</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1718336389286</updated>
     </task>
     <task id="LOCAL-00028" summary="音频资源导入检测——随机容器可以根据分类创建">
       <option name="closed" value="true" />
@@ -714,7 +701,15 @@
       <option name="project" value="LOCAL" />
       <updated>1726803978897</updated>
     </task>
-    <option name="localTasksCounter" value="76" />
+    <task id="LOCAL-00076" summary="Set类规则检查">
+      <option name="closed" value="true" />
+      <created>1727063907994</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1727063907994</updated>
+    </task>
+    <option name="localTasksCounter" value="77" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -730,7 +725,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="语音自动化：media_info表自动生成" />
     <MESSAGE value="语音自动化：wwise_cookie表自动生成" />
     <MESSAGE value="语音自动化：删除时同步删除内容" />
     <MESSAGE value="语音自动化：准备走Event的自动化" />
@@ -755,6 +749,7 @@
     <MESSAGE value="ID表更新" />
     <MESSAGE value="ID表导表两张" />
     <MESSAGE value="复杂容器的Event在&lt;waapi_音频资源导入_从表导入&gt;中还是会被生成，需要判断其random容器的父级是不是actor-mixer，如果不是就不生成" />
-    <option name="LAST_COMMIT_MESSAGE" value="复杂容器的Event在&lt;waapi_音频资源导入_从表导入&gt;中还是会被生成，需要判断其random容器的父级是不是actor-mixer，如果不是就不生成" />
+    <MESSAGE value="Set类规则检查" />
+    <option name="LAST_COMMIT_MESSAGE" value="Set类规则检查" />
   </component>
 </project>
