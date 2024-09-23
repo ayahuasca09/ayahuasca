@@ -597,3 +597,4 @@ RowName,AudioID,AudioName,AudioEvent,IsLoop
 15116,15116,AKE_Play_VO_Game_Battle_B01_12,/Script/AkAudio.AkAudioEvent'/Game/Audio/WwiseAudio/Events/v1/VO/VO_Game/VO_Game_B01/VO_Game_Battle_B01/AKE_Play_VO_Game_Battle_B01_12.AKE_Play_VO_Game_Battle_B01_12',False
 15117,15117,AKE_Play_VO_Game_Battle_B01_13,/Script/AkAudio.AkAudioEvent'/Game/Audio/WwiseAudio/Events/v1/VO/VO_Game/VO_Game_B01/VO_Game_Battle_B01/AKE_Play_VO_Game_Battle_B01_13.AKE_Play_VO_Game_Battle_B01_13',False
 13001,13001,AKE_Play_Mus_Global,/Script/AkAudio.AkAudioEvent'/Game/Audio/WwiseAudio/Events/v1/Mus/AKE_Play_Mus_Global.AKE_Play_Mus_Global',False
+13002,13002,AKE_Stop_Mus_Global,/Script/AkAudio.AkAudioEvent'/Game/Audio/WwiseAudio/Events/v1/Mus/AKE_Stop_Mus_Global.AKE_Stop_Mus_Global',False
