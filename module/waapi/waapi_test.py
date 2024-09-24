@@ -276,32 +276,46 @@ with WaapiClient() as client:
     """查找音乐列表下的item是否循环"""
     # PS：MusicPlaylistItem的根节点只有owner，
     # MusicPlaylistItem的其他子节点只有parent，parent为根节点
+    # args = {
+    #     'waql': 'from type MusicPlaylistItem '
+    # }
+    # musicplaylistitem_list, _ = find_obj(args)
+    # # pprint(refer_list)
+    #
+    # # 使用一个列表保存为loop的musicplaylist container id
+    # loop_musicplaylist_container_id_list = []
+    #
+    # # 查找为loop的、非根节点的子节点
+    # for musicplaylistitem_dict in musicplaylistitem_list:
+    #     if (musicplaylistitem_dict['PlaylistItemType'] == 1) and (musicplaylistitem_dict['LoopCount'] == 0):
+    #         # pprint(musicplaylistitem_dict)
+    #         # print()
+    #         # 获取子节点的parent，即根节点
+    #         root_id = musicplaylistitem_dict['parent']['id']
+    #         # print(root_id)
+    #         # 获取根节点的owner，即musicplaylist容器的id
+    #         args = {
+    #             'waql': ' from object "%s" ' % root_id
+    #         }
+    #         root_list, _ = find_obj(args)
+    #         # pprint(root_list)
+    #         for root_dict in root_list:
+    #             # 添加非重复元素，set为去重，然后再转为list
+    #             loop_musicplaylist_container_id_list = list(set(loop_musicplaylist_container_id_list +
+    #                                                             [root_dict['owner']['id']]))
+    #     # 还有另一种，在根节点下为loop的情况
+    # pprint(loop_musicplaylist_container_id_list)
+
+    """对象创建测试"""
     args = {
-        'waql': 'from type MusicPlaylistItem '
+        # 选择父级
+        "parent": "\\States\\Default Work Unit",
+        # 创建类型名称
+        "type": "StateGroup",
+        "name": "aaaa",
+        "notes": "哈哈哈哈",
     }
-    musicplaylistitem_list, _ = find_obj(args)
-    # pprint(refer_list)
+    state_group_object = client.call("ak.wwise.core.object.create", args)
+    print(state_group_object)
+    # {'id': '{74939776-1E08-438A-B54C-23F902054EFA}', 'name': 'aaaa'}
 
-    # 使用一个列表保存为loop的musicplaylist container id
-    loop_musicplaylist_container_id_list = []
-
-    # 查找为loop的、非根节点的子节点
-    for musicplaylistitem_dict in musicplaylistitem_list:
-        if (musicplaylistitem_dict['PlaylistItemType'] == 1) and (musicplaylistitem_dict['LoopCount'] == 0):
-            # pprint(musicplaylistitem_dict)
-            # print()
-            # 获取子节点的parent，即根节点
-            root_id = musicplaylistitem_dict['parent']['id']
-            # print(root_id)
-            # 获取根节点的owner，即musicplaylist容器的id
-            args = {
-                'waql': ' from object "%s" ' % root_id
-            }
-            root_list, _ = find_obj(args)
-            # pprint(root_list)
-            for root_dict in root_list:
-                # 添加非重复元素，set为去重，然后再转为list
-                loop_musicplaylist_container_id_list = list(set(loop_musicplaylist_container_id_list +
-                                                                [root_dict['owner']['id']]))
-        # 还有另一种，在根节点下为loop的情况
-    pprint(loop_musicplaylist_container_id_list)

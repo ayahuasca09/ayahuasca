@@ -30,6 +30,14 @@ list_state_suffix = ['State', 'Type']
 """事件描述查重列表"""
 event_desc_list = []
 
+"""创建内容的根目录"""
+state_root_path = '{ADF05AAB-970F-46B3-A5BE-471221EDBD17}'
+switch_root_path = '{E1F6B98B-D124-426E-B031-B2BDC5089C31}'
+set_state_event_path = '{4466FD27-21D5-44BB-A0F1-AF801D870945}'
+set_switch_event_path = '{F5985FEE-CE20-4C2F-9B3B-46A1EB8AB612}'
+state_event_path = '{4466FD27-21D5-44BB-A0F1-AF801D870945}'
+switch_event_path = '{F5985FEE-CE20-4C2F-9B3B-46A1EB8AB612}'
+
 """*****************功能检测区******************"""
 """检查是否为合并单元格"""
 
@@ -137,117 +145,141 @@ def check_by_length_and_word(name):
 
 with WaapiClient() as client:
     """*****************Wwise功能区******************"""
-    """创建新的随机容器"""
+
+    """警告捕获"""
 
 
-    def create_state(state_name):
-        # 查找该rnd是否已存在
+    def print_warning(warn_info):
+        print("[warning]" + warn_info)
+
+
+    """查找对象"""
+
+
+    def find_obj(args):
+        options = {
+            'return': ['name', 'id', 'path', 'notes', 'originalWavFilePath', 'type']
+
+        }
+        obj_sub_list = client.call("ak.wwise.core.object.get", args, options=options)['return']
+        if not obj_sub_list:
+            obj_sub_id = ""
+            obj_sub_path = ""
+        else:
+            obj_sub_id = obj_sub_list[0]['id']
+            obj_sub_path = obj_sub_list[0]['path']
+        return obj_sub_list, obj_sub_id, obj_sub_path
+
+
+    """设置obj的notes"""
+
+
+    def set_obj_notes(obj_id, notes_value):
+        args = {
+            'object': obj_id,
+            'value': notes_value
+        }
+        client.call("ak.wwise.core.object.setNotes", args)
+        # print_warning(obj_name + "描述更改为：" + notes_value)
+
+
+    """修改Wwise内容的名字"""
+
+
+    def change_name_by_wwise_content(obj_id, name, old_name, obj_type):
+        args = {
+            "objects": [
+                {
+
+                    "object": obj_id,
+                    "name": name,
+                }
+            ]
+        }
+        client.call("ak.wwise.core.object.set", args)
+        print_warning(old_name + "(" + obj_type + ")改名为：" + name)
+
+
+    """通用内容创建"""
+
+
+    def create_obj_content(state_group_parent_path, state_group_type, state_group_name, state_group_desc):
         flag = 0
-        # 去除随机容器数字
-        rnd_name = re.sub(r"(_R\d{2,4})$", "", media_name)
-
-        rnd_path = ""
-        rnd_container_list, rnd_id, _ = find_obj(
-            {'waql': ' "%s" select descendants where type = "RandomSequenceContainer" ' % os.path.join(
-                wwise_dict['Root'], system_name)})
-        # 找到重名的
-        for rnd_container_dict in rnd_container_list:
-            if rnd_container_dict['name'] == rnd_name:
+        state_group_id = ""
+        # 查找此state_group是否存在
+        state_group_list, _, _ = find_obj(
+            {'waql': ' "%s" select descendants where type = "%s"' % (
+                state_group_parent_path, state_group_type)})
+        # pprint(state_group_list)
+        # state_group已存在
+        for state_group_dict in state_group_list:
+            if state_group_dict['name'] == state_group_name:
                 flag = 1
-                rnd_path = rnd_container_dict['path']
-                set_obj_notes(rnd_container_dict['id'], event_descrip)
+                # 设置notes
+                set_obj_notes(state_group_dict['id'], state_group_desc)
+                state_group_id = state_group_dict['id']
                 break
-            # 没有重名但描述一致，判定为改名
-            elif rnd_container_dict['notes'] == event_descrip:
-                # pprint(rnd_name + "：RandomContainer已存在，将不再导入")
+            # 改名了但描述一致
+            elif state_group_dict['notes'] == state_group_desc:
                 flag = 2
-                rnd_path = rnd_container_dict['path'].replace(rnd_container_dict['name'], rnd_name)
-                change_name_by_wwise_content(rnd_container_dict['id'], rnd_name, rnd_container_dict['name'],
-                                             "RandContainer")
-                # Sound也要改名
-                sound_container_list, sound_container_id, _ = find_obj(
-                    {'waql': ' "%s" select children  ' % rnd_container_dict['id']})
-                for sound_cotainer_dict in sound_container_list:
-                    wav_tail = re.search(r"(_R\d{2,4})$", sound_cotainer_dict['name'])
-                    sound_name = rnd_name
-                    if wav_tail:
-                        sound_name = rnd_name + wav_tail.group()
-                    change_name_by_wwise_content(sound_cotainer_dict['id'], sound_name, sound_cotainer_dict['name'],
-                                                 "Sound")
-                    # Media路径更改
-                    new_media_path = sound_cotainer_dict['originalWavFilePath'].replace(sound_cotainer_dict['name'],
-                                                                                        sound_name)
-                    # Media重命名
-                    os.rename(sound_cotainer_dict['originalWavFilePath'],
-                              new_media_path)
-                    # 在容器中重新导入media
-                    import_media_in_rnd(new_media_path, sound_name, rnd_path)
-                    print_warning(sound_cotainer_dict['originalWavFilePath'] + "(Media)改名为：" + new_media_path)
-
-                    # 语音的话需要删除容器内的引用
-                    if system_name == "VO":
-                        sound_language_list, _, _ = find_obj(
-                            {'waql': ' "%s" select children  ' %
-                                     sound_cotainer_dict['id']})
-                        if sound_language_list:
-                            for sound_language_dict in sound_language_list:
-                                if sound_cotainer_dict['name'] in sound_language_dict['name']:
-                                    args = {
-                                        "object": "%s" % sound_language_dict['id']
-                                    }
-                                    client.call("ak.wwise.core.object.delete", args)
-                                    print_warning(
-                                        sound_language_dict['name'] + "：容器引用删除")
-
+                # 改名
+                change_name_by_wwise_content(state_group_dict['id'], state_group_name, state_group_dict['name'],
+                                             state_group_type)
+                state_group_id = state_group_dict['id']
                 break
-
+        # state_group不存在，需要创建
         # 不存在则创建
         if flag == 0:
-            # 查找所在路径
-            rnd_parent_id = find_obj_parent(rnd_name,
-                                            {
-                                                'waql': ' "%s" select descendants,this where type = "ActorMixer" ' %
-                                                        os.path.join(
-                                                            wwise_dict['Root'], system_name)})
-            if rnd_parent_id:
-
-                # 创建的rnd属性
-                args = {
-                    # 选择父级
-                    "parent": rnd_parent_id,
-                    # 创建类型机名称
-                    "type": "RandomSequenceContainer",
-                    "name": rnd_name,
-                    "notes": event_descrip,
-                    "@RandomOrSequence": 1,
-                    "@NormalOrShuffle": 1,
-                    "@RandomAvoidRepeatingCount": 1
-                }
-                rnd_container_object = client.call("ak.wwise.core.object.create", args)
-                # 查找新创建的容器的路径
-                _, _, rnd_path = find_obj(
-                    {'waql': ' "%s"  ' % rnd_container_object['id']})
-                if rnd_path:
-                    print_warning(rnd_name + "：RandContainer创建")
-                else:
-                    print_error(rnd_name + "：RandContainer未能成功创建")
-
-                # 声音容器创建及导入
-                import_sound_sfx_and_media(media_name, rnd_path)
-
-        return rnd_path, rnd_name
+            # 创建的rnd属性
+            args = {
+                # 选择父级
+                "parent": state_group_parent_path,
+                # 创建类型名称
+                "type": state_group_type,
+                "name": state_group_name,
+                "notes": state_group_desc,
+            }
+            state_group_object = client.call("ak.wwise.core.object.create", args)
+            state_group_id = state_group_object['id']
+            print_warning(state_group_object['name'] + ":" + state_group_type + "已创建")
+        return state_group_id
 
 
-    """媒体资源导入的总流程"""
+    """创建新的state/switch"""
 
 
-    def create_wwise_content(state_name, system_name):
+    def create_state_content(state_group_name, state_group_desc, state_name, state_desc):
+        # 查找该state_group_name是否已存在
+        state_group_parent_path = ''
+        state_group_type = ''
+        event_path = ''
+        if sheet_name == "State":
+            state_group_parent_path = state_root_path
+            state_group_type = "StateGroup"
+            event_path = state_event_path
+        elif sheet_name == "Switch":
+            state_group_parent_path = switch_root_path
+            state_group_type = "SwitchGroup"
+            event_path = switch_event_path
 
-        # 随机容器创建
-        rnd_path, rnd_name = create_state(state_name)
+        """state group创建"""
+        if state_group_parent_path and state_group_type:
+            state_group_id = create_obj_content(state_group_parent_path, state_group_type, state_group_name,
+                                                state_group_desc)
+            """state 创建"""
+            state_id = create_obj_content(state_group_id, sheet_name, state_name,
+                                          state_desc)
 
-        # 事件自动生成
-        create_event(rnd_name, rnd_path)
+            """event unit创建"""
+            event_parent_id = create_obj_content(event_path, "WorkUnit", state_group_name,
+                                                 state_group_desc)
+
+            """event 创建"""
+            # event命名
+            event_state_name = state_group_name.replace(suffix_name, state_name)
+            event_name = 'AKE_Set_' + sheet_name + "_" + event_state_name
+            event_id = create_obj_content(event_parent_id, "Event", event_name,
+                                          state_desc)
 
 
     """*****************主程序处理******************"""
@@ -292,7 +324,7 @@ with WaapiClient() as client:
                                         """❤❤❤state内容检查❤❤❤"""
                                         """state名称"""
                                         value = cell_sound.value
-                                        suffix_name = check_by_length_and_word(value)
+                                        check_by_length_and_word(value)
 
                                         """❤❤❤state group内容检查❤❤❤"""
                                         # 检测是否为合并单元格，是则读取合并单元格的内容
@@ -334,8 +366,7 @@ with WaapiClient() as client:
 
                                     # # 生成Wwise内容
                                     if is_pass:
-                                        # print(state_desc_value)
-                                        # create_wwise_content(cell_sound.value, system_name)
+                                        create_state_content(group_value, group_desc_value, value, state_desc_value)
 
-# 撤销结束
-client.call("ak.wwise.core.undo.endGroup", displayName="rnd创建撤销")
+    # 撤销结束
+    client.call("ak.wwise.core.undo.endGroup", displayName="rnd创建撤销")
