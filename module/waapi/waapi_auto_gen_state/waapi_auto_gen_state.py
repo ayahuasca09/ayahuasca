@@ -37,6 +37,7 @@ set_state_event_path = '{4466FD27-21D5-44BB-A0F1-AF801D870945}'
 set_switch_event_path = '{F5985FEE-CE20-4C2F-9B3B-46A1EB8AB612}'
 state_event_path = '{4466FD27-21D5-44BB-A0F1-AF801D870945}'
 switch_event_path = '{F5985FEE-CE20-4C2F-9B3B-46A1EB8AB612}'
+set_event_path = '{80A74274-275D-4554-AE98-EE0112489C5C}'
 
 """*****************功能检测区******************"""
 """检查是否为合并单元格"""
@@ -367,6 +368,52 @@ with WaapiClient() as client:
                                     # # 生成Wwise内容
                                     if is_pass:
                                         create_state_content(group_value, group_desc_value, value, state_desc_value)
+    """列表查找"""
+
+
+    def find_obj_list(obj_path, obj_type):
+        obj_list = find_obj(
+            {'waql': ' "%s" select descendants where type = "%s" ' % (obj_path, obj_type)})
+        return obj_list
+
+
+    def delete_state_and_event(obj_list):
+        for obj_dict in obj_list:
+            # 提取规则：只提取xlsx文件
+            for i in file_name_list:
+                if ".xlsx" in i:
+                    # 拼接xlsx的路径
+                    file_path_xlsx = os.path.join(py_path, i)
+                    # 获取xlsx的workbook
+                    wb = openpyxl.load_workbook(file_path_xlsx)
+                    # 获取xlsx的所有sheet
+                    sheet_names = wb.sheetnames
+                    # 加载所有工作表
+                    for sheet_name in sheet_names:
+                        sheet = wb[sheet_name]
+                        group_name, group_desc, value, value_desc = get_descrip_and_status_column()
+                        # 获取工作表第一行数据
+                        for cell in list(sheet.rows)[0]:
+                            if '值' == str(cell.value):
+                                # 获取音效名下的内容
+                                for cell_sound in list(sheet.columns)[cell.column - 1]:
+                                    # 空格和中文不检测
+                                    if cell_sound.value:
+                                        if not check_is_chinese(cell_sound.value):
+                                            """❤❤❤state内容检查❤❤❤"""
+                                            """state名称"""
+                                            value = cell_sound.value
+
+
+    """同步表中删除的内容"""
+    # Wwise中的内容列表获取
+    state_list = find_obj_list(state_root_path, "State")
+    state_group_list = find_obj_list(state_root_path, "StateGroup")
+    switch_list = find_obj_list(switch_root_path, "Switch")
+    switch_group_list = find_obj_list(switch_root_path, "SwitchGroup")
+    event_list = find_obj_list(set_event_path, "Event")
+
+    # 查找state/switch，再跟表格比对有没有，没有就删除资源及事件引用
 
     # 撤销结束
     client.call("ak.wwise.core.undo.endGroup", displayName="rnd创建撤销")

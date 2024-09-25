@@ -52,6 +52,9 @@ sheet_m, wb_m = excel_get_sheet(excel_media_import_path, 'Sheet1')
 """获取.wav文件"""
 file_wav_dict = get_type_file_name_and_path('.wav', wav_path)
 # pprint(file_wav_dict)
+#  {'Char_Skill_C1502_Ult_End.wav': 'C:\\Users\\happyelements\\Desktop\\Old\\Char_Skill_C1502_Ult_End.wav',
+#  'Char_Skill_C1502_Ult_Exp.wav': 'C:\\Users\\happyelements\\Desktop\\Old\\Char_Skill_C1502_Ult_Exp.wav'}
+
 
 """复制.wav文件的路径"""
 copy_path = r"New_Media"
@@ -90,93 +93,47 @@ with WaapiClient() as client:
     # pprint(rnd_container_list)
 
     """*****************主程序处理******************"""
+    for file_wav_name in file_wav_dict:
+        # 遍历媒体资源的名称
+        sound_name = file_wav_name.replace(".wav", '')
+        flag = 0
+        # print(sound_name)
+        # 提取规则：只提取xlsx文件
+        for i in file_name_list:
+            if ".xlsx" in i:
+                # 拼接xlsx的路径
+                file_path_xlsx = os.path.join(py_path, i)
+                # 获取xlsx的workbook
+                wb = openpyxl.load_workbook(file_path_xlsx)
+                # 获取xlsx的所有sheet
+                sheet_names = wb.sheetnames
+                # 加载所有工作表
+                for sheet_name in sheet_names:
+                    sheet = wb[sheet_name]
+                    # 获取工作表第一行数据
+                    for cell in list(sheet.rows)[0]:
+                        if 'Sample Name' in str(cell.value):
+                            # 获取音效名下的内容
+                            for cell_sound in list(sheet.columns)[cell.column - 1]:
+                                # 空格和中文不检测
+                                if cell_sound.value != None:
+                                    if check_is_chinese(cell_sound.value) == False:
+                                        """❤❤❤❤数据获取❤❤❤❤"""
+                                        """测试名称"""
+                                        new_name = cell_sound.value
+                                        old_name = sheet.cell(row=cell_sound.row, column=cell_sound.column - 1).value
+                                        is_wav_tail = re.search(r"(_R\d{2,4})$", sound_name)
+                                        no_rnd_sound_name = sound_name
+                                        if is_wav_tail:
+                                            wav_tail = is_wav_tail.group()
+                                            no_rnd_sound_name = sound_name.replace(wav_tail, "")
+                                            new_name = new_name + wav_tail
+                                        if no_rnd_sound_name == old_name:
+                                            flag = 1
+                                            shutil.copy2(file_wav_dict[file_wav_name]
+                                                         , os.path.join(copy_path, new_name+'.wav'))
+                                            break
+        if flag == 0:
+            print(file_wav_name + ":重命名失败，未找到对应的资源")
 
-    # 提取规则：只提取xlsx文件
-    for i in file_name_list:
-        if ".xlsx" in i:
-            # 拼接xlsx的路径
-            file_path_xlsx = os.path.join(py_path, i)
-            # 获取xlsx的workbook
-            wb = openpyxl.load_workbook(file_path_xlsx)
-            # 获取xlsx的所有sheet
-            sheet_names = wb.sheetnames
-            # 加载所有工作表
-            for sheet_name in sheet_names:
-                sheet = wb[sheet_name]
-                # 获取工作表第一行数据
-                for cell in list(sheet.rows)[0]:
-                    if 'Sample Name' in str(cell.value):
-                        # 获取音效名下的内容
-                        for cell_sound in list(sheet.columns)[cell.column - 1]:
-                            # 空格和中文不检测
-                            if cell_sound.value != None:
-                                if check_is_chinese(cell_sound.value) == False:
-                                    """❤❤❤❤数据获取❤❤❤❤"""
-                                    """测试名称"""
-                                    new_name = cell_sound.value
-                                    old_name = sheet.cell(row=cell_sound.row, column=cell_sound.column - 1).value
-                                    # pprint(old_name)
-                                    """资源导入记录表"""
-                                    flag = 0
-                                    for cell in list(sheet_m.columns)[1]:
-                                        if cell.value != None:
-                                            # print(cell.value)
-                                            # 如果资源表中已存在该名称
-                                            if str(cell.value) == str(new_name):
-                                                flag = 1
-                                                insert_row = cell.row
-                                                break
-                                    # 表中没有记录名字则导入
-                                    if flag == 0:
-                                        insert_row = sheet_m.max_row + 1
-                                        sheet_m.cell(row=insert_row, column=1).value = old_name
-                                        sheet_m.cell(row=insert_row, column=2).value = new_name
-                                    # 表中有名字，但没有对应的wav文件
-                                    if old_name and (old_name + '.wav' not in file_wav_dict):
-                                        # pprint(old_name + ":目前没有表中对应的wav文件")
-                                        # 为随机容器的资源
-                                        for wav_name in file_wav_dict:
-                                            if old_name in wav_name:
-                                                # 获取词缀尾部
-                                                no_wav_name = re.sub(".wav", "", wav_name)
-                                                wav_tail = re.search(r"(\d{2,4})$", no_wav_name)
-                                                if not wav_tail:
-                                                    wav_tail = re.sub(r"(_R\d{2,4})$", "", no_wav_name)
-                                                if wav_tail:
-                                                    # print(wav_tail.group())
-                                                    new_tail = "_R" + wav_tail.group()
-                                                    new_wav_name = new_name + new_tail + ".wav"
-                                                    # print(new_wav_name)
-                                                    # 文件复制
-                                                    shutil.copy2(file_wav_dict[wav_name]
-                                                                 , os.path.join(copy_path, new_wav_name))
-                                                    # 颜色修改
-                                                    for cell_color in list(sheet_m.rows)[insert_row - 1]:
-                                                        cell_color.fill = openpyxl.styles.PatternFill(
-                                                            start_color='F1FC72',
-                                                            end_color='F1FC72',
-                                                            fill_type='solid')
-                                                    sheet_m.cell(row=insert_row, column=3).value = 1
-
-                                    else:
-                                        # 有名字也有文件
-                                        if old_name:
-                                            # pprint(old_name)
-                                            sheet_m.cell(row=insert_row, column=6).value = 1
-                                            # 颜色修改
-                                            for cell_color in list(sheet_m.rows)[insert_row - 1]:
-                                                cell_color.fill = openpyxl.styles.PatternFill(start_color='88DB29',
-                                                                                              end_color='88DB29',
-                                                                                              fill_type='solid')
-                                            # 文件复制
-                                            shutil.copy2(file_wav_dict[old_name + '.wav']
-                                                         , os.path.join(copy_path, new_name + ".wav"))
-                                        # 表里没有旧名字，应该没资源
-                                        else:
-                                            sheet_m.cell(row=insert_row, column=7).value = 1
-                                            # 颜色修改
-                                            for cell_color in list(sheet_m.rows)[insert_row - 1]:
-                                                cell_color.fill = openpyxl.styles.PatternFill(start_color='BFC4D7',
-                                                                                              end_color='BFC4D7',
-                                                                                              fill_type='solid')
 wb_m.save(excel_media_import_path)
