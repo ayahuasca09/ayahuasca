@@ -39,6 +39,10 @@ state_event_path = '{4466FD27-21D5-44BB-A0F1-AF801D870945}'
 switch_event_path = '{F5985FEE-CE20-4C2F-9B3B-46A1EB8AB612}'
 set_event_path = '{80A74274-275D-4554-AE98-EE0112489C5C}'
 
+"""状态名称列表"""
+state_name_list = []
+state_group_name_list = []
+
 """*****************功能检测区******************"""
 """检查是否为合并单元格"""
 
@@ -146,6 +150,17 @@ def check_by_length_and_word(name):
 
 with WaapiClient() as client:
     """*****************Wwise功能区******************"""
+    """设置对象引用"""
+
+
+    def set_obj_refer(obj_id, refer, value):
+        args = {
+            "object": obj_id,
+            "reference": refer,
+            "value": value
+        }
+        client.call("ak.wwise.core.object.setReference", args)
+
 
     """警告捕获"""
 
@@ -159,7 +174,7 @@ with WaapiClient() as client:
 
     def find_obj(args):
         options = {
-            'return': ['name', 'id', 'path', 'notes', 'originalWavFilePath', 'type']
+            'return': ['name', 'id', 'path', 'notes', 'originalWavFilePath', 'type', 'parent']
 
         }
         obj_sub_list = client.call("ak.wwise.core.object.get", args, options=options)['return']
@@ -204,7 +219,8 @@ with WaapiClient() as client:
     """通用内容创建"""
 
 
-    def create_obj_content(state_group_parent_path, state_group_type, state_group_name, state_group_desc):
+    def create_obj_content(state_group_parent_path, state_group_type,
+                           state_group_name, state_group_desc, state_id):
         flag = 0
         state_group_id = ""
         # 查找此state_group是否存在
@@ -231,16 +247,39 @@ with WaapiClient() as client:
         # state_group不存在，需要创建
         # 不存在则创建
         if flag == 0:
-            # 创建的rnd属性
-            args = {
-                # 选择父级
-                "parent": state_group_parent_path,
-                # 创建类型名称
-                "type": state_group_type,
-                "name": state_group_name,
-                "notes": state_group_desc,
-            }
+            if state_group_type == "Event":
+                action_type = None
+                if sheet_name == "State":
+                    action_type = 22
+                elif sheet_name == "Switch":
+                    action_type = 23
+                args = {
+                    # 选择父级
+                    "parent": state_group_parent_path,
+                    # 创建类型名称
+                    "type": state_group_type,
+                    "name": state_group_name,
+                    "notes": state_group_desc,
+                    "children": [
+                        {
+                            "name": "",
+                            "type": "Action",
+                            "@ActionType": action_type,
+                            "@Target": state_id
+                        }]
+                }
+            else:
+                # 创建的rnd属性
+                args = {
+                    # 选择父级
+                    "parent": state_group_parent_path,
+                    # 创建类型名称
+                    "type": state_group_type,
+                    "name": state_group_name,
+                    "notes": state_group_desc,
+                }
             state_group_object = client.call("ak.wwise.core.object.create", args)
+            # print(state_group_object)
             state_group_id = state_group_object['id']
             print_warning(state_group_object['name'] + ":" + state_group_type + "已创建")
         return state_group_id
@@ -266,21 +305,22 @@ with WaapiClient() as client:
         """state group创建"""
         if state_group_parent_path and state_group_type:
             state_group_id = create_obj_content(state_group_parent_path, state_group_type, state_group_name,
-                                                state_group_desc)
+                                                state_group_desc, "")
             """state 创建"""
             state_id = create_obj_content(state_group_id, sheet_name, state_name,
-                                          state_desc)
+                                          state_desc, "")
 
             """event unit创建"""
             event_parent_id = create_obj_content(event_path, "WorkUnit", state_group_name,
-                                                 state_group_desc)
+                                                 state_group_desc, "")
 
             """event 创建"""
             # event命名
             event_state_name = state_group_name.replace(suffix_name, state_name)
             event_name = 'AKE_Set_' + sheet_name + "_" + event_state_name
             event_id = create_obj_content(event_parent_id, "Event", event_name,
-                                          state_desc)
+                                          state_desc, state_id)
+            # event引用设置
 
 
     """*****************主程序处理******************"""
@@ -325,6 +365,7 @@ with WaapiClient() as client:
                                         """❤❤❤state内容检查❤❤❤"""
                                         """state名称"""
                                         value = cell_sound.value
+                                        state_name_list.append(value)
                                         check_by_length_and_word(value)
 
                                         """❤❤❤state group内容检查❤❤❤"""
@@ -332,6 +373,7 @@ with WaapiClient() as client:
                                         """state group名称"""
                                         group_value = check_is_mergecell(
                                             sheet.cell(row=cell_sound.row, column=group_name))
+                                        state_group_name_list = list(set(state_group_name_list + [group_value]))
                                         if group_value:
                                             # pprint(group_value)
                                             # 分隔符的大小写和长度检查，取后缀名
@@ -368,41 +410,59 @@ with WaapiClient() as client:
                                     # # 生成Wwise内容
                                     if is_pass:
                                         create_state_content(group_value, group_desc_value, value, state_desc_value)
-    """列表查找"""
+    print()
+    """******************对象删除清理********************"""
+    """对象删除"""
+
+
+    def delete_obj(obj_id, obj_name, obj_type):
+        args = {
+            "object": "%s" % obj_id
+        }
+        client.call("ak.wwise.core.object.delete", args)
+        print_warning(obj_name + "(" + obj_type + ")" + ":已删除")
+
+
+    """对象列表查找"""
 
 
     def find_obj_list(obj_path, obj_type):
-        obj_list = find_obj(
+        obj_list, _, _ = find_obj(
             {'waql': ' "%s" select descendants where type = "%s" ' % (obj_path, obj_type)})
         return obj_list
 
 
-    def delete_state_and_event(obj_list):
-        for obj_dict in obj_list:
-            # 提取规则：只提取xlsx文件
-            for i in file_name_list:
-                if ".xlsx" in i:
-                    # 拼接xlsx的路径
-                    file_path_xlsx = os.path.join(py_path, i)
-                    # 获取xlsx的workbook
-                    wb = openpyxl.load_workbook(file_path_xlsx)
-                    # 获取xlsx的所有sheet
-                    sheet_names = wb.sheetnames
-                    # 加载所有工作表
-                    for sheet_name in sheet_names:
-                        sheet = wb[sheet_name]
-                        group_name, group_desc, value, value_desc = get_descrip_and_status_column()
-                        # 获取工作表第一行数据
-                        for cell in list(sheet.rows)[0]:
-                            if '值' == str(cell.value):
-                                # 获取音效名下的内容
-                                for cell_sound in list(sheet.columns)[cell.column - 1]:
-                                    # 空格和中文不检测
-                                    if cell_sound.value:
-                                        if not check_is_chinese(cell_sound.value):
-                                            """❤❤❤state内容检查❤❤❤"""
-                                            """state名称"""
-                                            value = cell_sound.value
+    """删除状态引用的事件"""
+
+
+    def delete_state_refer_event(state_id):
+        args = {
+            'waql': '"%s" select referencesTo' % state_id
+        }
+        refer_list, _, _ = find_obj(args)
+        # print(refer_list)
+        if refer_list:
+            # pprint(refer_list)
+            for refer_dict in refer_list:
+                if 'parent' in refer_dict:
+                    if 'AKE_Set_' in refer_dict['parent']['name']:
+                        # print(refer_dict['parent'])
+                        delete_obj(refer_dict['parent']['id'], refer_dict['parent']['name'], "Event")
+
+
+    """删除状态"""
+
+
+    def delete_state(wwise_obj_list, excel_list, obj_type):
+        for wwise_obj_dict in wwise_obj_list:
+            # pprint(wwise_obj_dict['name'])
+            if wwise_obj_dict['name'] != "None":
+                if wwise_obj_dict['name'] not in excel_list:
+                    # print(wwise_obj_dict['name'])
+                    # State引用的事件删除
+                    delete_state_refer_event(wwise_obj_dict['id'])
+                    # State删除
+                    delete_obj(wwise_obj_dict['id'], wwise_obj_dict['name'], obj_type)
 
 
     """同步表中删除的内容"""
@@ -414,6 +474,7 @@ with WaapiClient() as client:
     event_list = find_obj_list(set_event_path, "Event")
 
     # 查找state/switch，再跟表格比对有没有，没有就删除资源及事件引用
-
+    delete_state(state_list, state_name_list, "State")
+    delete_state(switch_list, state_name_list, "Switch")
     # 撤销结束
     client.call("ak.wwise.core.undo.endGroup", displayName="rnd创建撤销")

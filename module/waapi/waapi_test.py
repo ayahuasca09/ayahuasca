@@ -307,15 +307,62 @@ with WaapiClient() as client:
     # pprint(loop_musicplaylist_container_id_list)
 
     """对象创建测试"""
+    # args = {
+    #     # 选择父级
+    #     "parent": "\\States\\Default Work Unit",
+    #     # 创建类型名称
+    #     "type": "StateGroup",
+    #     "name": "aaaa",
+    #     "notes": "哈哈哈哈",
+    # }
+    # state_group_object = client.call("ak.wwise.core.object.create", args)
+    # print(state_group_object)
+    # # {'id': '{74939776-1E08-438A-B54C-23F902054EFA}', 'name': 'aaaa'}
+
+    """查找引用State的Event"""
+    # args = {
+    #     'waql': '"%s" select referencesTo' % (
+    #         '{F8D43688-5767-4CFE-9FA9-06042DA5D7FD}')
+    # }
+    # refer_list, refer_id = find_obj(args)
+    # # pprint(refer_list)
+    # # [{'id': '{23B0CE4A-3440-40BE-A83C-5571900F523A}',
+    # #   'isIncluded': True,
+    # #   'name': 'Amb_Global',
+    # #   'notes': '',
+    # #   'parent': {'id': '{446650AE-60B4-40A0-8B14-3470DBBB83B0}', 'name': 'Amb'}},
+    # #  {'id': '{1750C88C-AA43-40EC-A743-20781136AF55}',
+    # #   'isIncluded': False,
+    # #   'name': '',
+    # #   'notes': '',
+    # #   'parent': {'id': '{264BD5CA-8766-4DAE-940B-394383605B01}',
+    # #              'name': 'AKE_Set_State_Gameplay_Explore'}},
+    # #  {'id': '{FE343C56-AABE-4FFF-8000-DDEE6740E38F}',
+    # #   'isIncluded': True,
+    # #   'name': 'Set_Demo',
+    # #   'notes': '',
+    # #   'parent': {'id': '{2EFBFD40-ACE8-4E43-A8F4-24FAFA31A30E}', 'name': 'Set'}}]
+    # for refer_dict in refer_list:
+    #     if 'parent' in refer_dict:
+    #         if 'AKE_Set_' in refer_dict['parent']['name']:
+    #             print(refer_dict['parent'])
+
+    """事件创建测试"""
     args = {
         # 选择父级
-        "parent": "\\States\\Default Work Unit",
+        "parent": "{4466FD27-21D5-44BB-A0F1-AF801D870945}",
         # 创建类型名称
-        "type": "StateGroup",
-        "name": "aaaa",
-        "notes": "哈哈哈哈",
+        "type": "Event",
+        "name": "new",
+        "notes": "aaaa",
+        "children": [
+            {
+                "name": "",
+                "type": "Action",
+                "@ActionType": 22,
+                "@Target": "{AFD0E1E3-FCCA-48DB-BB40-55618E1B78B4}"
+            }]
     }
-    state_group_object = client.call("ak.wwise.core.object.create", args)
-    print(state_group_object)
-    # {'id': '{74939776-1E08-438A-B54C-23F902054EFA}', 'name': 'aaaa'}
+    aa = client.call("ak.wwise.core.object.create", args)
+    print(aa)
 
