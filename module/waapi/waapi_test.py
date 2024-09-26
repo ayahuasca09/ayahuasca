@@ -348,21 +348,20 @@ with WaapiClient() as client:
     #             print(refer_dict['parent'])
 
     """事件创建测试"""
-    args = {
-        # 选择父级
-        "parent": "{4466FD27-21D5-44BB-A0F1-AF801D870945}",
-        # 创建类型名称
-        "type": "Event",
-        "name": "new",
-        "notes": "aaaa",
-        "children": [
-            {
-                "name": "",
-                "type": "Action",
-                "@ActionType": 22,
-                "@Target": "{AFD0E1E3-FCCA-48DB-BB40-55618E1B78B4}"
-            }]
-    }
-    aa = client.call("ak.wwise.core.object.create", args)
-    print(aa)
-
+    # args = {
+    #     # 选择父级
+    #     "parent": "{4466FD27-21D5-44BB-A0F1-AF801D870945}",
+    #     # 创建类型名称
+    #     "type": "Event",
+    #     "name": "new",
+    #     "notes": "aaaa",
+    #     "children": [
+    #         {
+    #             "name": "",
+    #             "type": "Action",
+    #             "@ActionType": 22,
+    #             "@Target": "{AFD0E1E3-FCCA-48DB-BB40-55618E1B78B4}"
+    #         }]
+    # }
+    # aa = client.call("ak.wwise.core.object.create", args)
+    # print(aa)

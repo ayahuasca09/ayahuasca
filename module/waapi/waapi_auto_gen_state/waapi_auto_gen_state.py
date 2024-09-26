@@ -461,8 +461,17 @@ with WaapiClient() as client:
                     # print(wwise_obj_dict['name'])
                     # State引用的事件删除
                     delete_state_refer_event(wwise_obj_dict['id'])
-                    # State删除
+                    # State/StateGroup删除
                     delete_obj(wwise_obj_dict['id'], wwise_obj_dict['name'], obj_type)
+                    # StateGroupUnit删除
+                    """问题：WorkUnit删不了"""
+                    # if "Group" in obj_type:
+                    #     workunit_list, _, _ = find_obj(
+                    #         {'waql': ' from type WorkUnit where name = "%s"' % (
+                    #             wwise_obj_dict['name'])})
+                    #     # pprint(workunit_list)
+                    #     if workunit_list:
+                    #         delete_obj(workunit_list[0]['id'], wwise_obj_dict['name'], "WorkUnit")
 
 
     """同步表中删除的内容"""
@@ -476,5 +485,9 @@ with WaapiClient() as client:
     # 查找state/switch，再跟表格比对有没有，没有就删除资源及事件引用
     delete_state(state_list, state_name_list, "State")
     delete_state(switch_list, state_name_list, "Switch")
+
+    delete_state(state_group_list, state_group_name_list, "StateGroup")
+    delete_state(switch_group_list, state_group_name_list, "SwitchGroup")
+
     # 撤销结束
     client.call("ak.wwise.core.undo.endGroup", displayName="rnd创建撤销")
