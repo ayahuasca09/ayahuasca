@@ -33,11 +33,12 @@ event_desc_list = []
 """创建内容的根目录"""
 state_root_path = '{ADF05AAB-970F-46B3-A5BE-471221EDBD17}'
 switch_root_path = '{E1F6B98B-D124-426E-B031-B2BDC5089C31}'
+trigger_root_path = '{94BBA60A-29EF-4328-83E8-075770BF2687}'
+
 set_state_event_path = '{4466FD27-21D5-44BB-A0F1-AF801D870945}'
 set_switch_event_path = '{F5985FEE-CE20-4C2F-9B3B-46A1EB8AB612}'
-state_event_path = '{4466FD27-21D5-44BB-A0F1-AF801D870945}'
-switch_event_path = '{F5985FEE-CE20-4C2F-9B3B-46A1EB8AB612}'
 set_event_path = '{80A74274-275D-4554-AE98-EE0112489C5C}'
+set_trigger_event_path = '{EDD34B59-3938-4C22-A63D-838FD8DCD57E}'
 
 """状态名称列表"""
 state_name_list = []
@@ -253,6 +254,8 @@ with WaapiClient() as client:
                     action_type = 22
                 elif sheet_name == "Switch":
                     action_type = 23
+                elif sheet_name == "Trigger":
+                    action_type = 35
                 args = {
                     # 选择父级
                     "parent": state_group_parent_path,
@@ -296,11 +299,11 @@ with WaapiClient() as client:
         if sheet_name == "State":
             state_group_parent_path = state_root_path
             state_group_type = "StateGroup"
-            event_path = state_event_path
+            event_path = set_state_event_path
         elif sheet_name == "Switch":
             state_group_parent_path = switch_root_path
             state_group_type = "SwitchGroup"
-            event_path = switch_event_path
+            event_path = set_switch_event_path
 
         """state group创建"""
         if state_group_parent_path and state_group_type:
@@ -320,7 +323,20 @@ with WaapiClient() as client:
             event_name = 'AKE_Set_' + sheet_name + "_" + event_state_name
             event_id = create_obj_content(event_parent_id, "Event", event_name,
                                           state_desc, state_id)
-            # event引用设置
+
+
+    """创建新的trigger"""
+
+
+    def create_trigger_content(trig_name, trig_desc):
+        """trigger 创建"""
+        trigger_id = create_obj_content(trigger_root_path, sheet_name, trig_name,
+                                        trig_desc, "")
+        """event 创建"""
+        # event命名
+        event_name = 'AKE_Set_' + sheet_name + "_" + trig_name
+        event_id = create_obj_content(set_trigger_event_path, "Event", event_name,
+                                      trig_desc, trigger_id)
 
 
     """*****************主程序处理******************"""
@@ -363,53 +379,72 @@ with WaapiClient() as client:
                                         sound_name_list.append(cell_sound.value)
 
                                         """❤❤❤state内容检查❤❤❤"""
-                                        """state名称"""
+                                        """state/Trigger名称"""
                                         value = cell_sound.value
                                         state_name_list.append(value)
                                         check_by_length_and_word(value)
 
-                                        """❤❤❤state group内容检查❤❤❤"""
-                                        # 检测是否为合并单元格，是则读取合并单元格的内容
-                                        """state group名称"""
-                                        group_value = check_is_mergecell(
-                                            sheet.cell(row=cell_sound.row, column=group_name))
-                                        state_group_name_list = list(set(state_group_name_list + [group_value]))
-                                        if group_value:
-                                            # pprint(group_value)
-                                            # 分隔符的大小写和长度检查，取后缀名
-                                            suffix_name = check_by_length_and_word(group_value)
-                                            # print(suffix_name)
+                                        """state/Trigger描述"""
+                                        value_desc_value = sheet.cell(row=cell_sound.row,
+                                                                      column=value_desc).value
+                                        if value_desc_value:
+                                            if group_name:
+                                                """❤❤❤state group内容检查❤❤❤"""
+                                                # 检测是否为合并单元格，是则读取合并单元格的内容
+                                                """state group名称"""
+                                                group_value = check_is_mergecell(
+                                                    sheet.cell(row=cell_sound.row, column=group_name))
+                                                state_group_name_list = list(set(state_group_name_list + [group_value]))
+                                                if group_value:
+                                                    # pprint(group_value)
+                                                    # 分隔符的大小写和长度检查，取后缀名
+                                                    suffix_name = check_by_length_and_word(group_value)
+                                                    # print(suffix_name)
 
-                                            # 通用后缀检查
-                                            check_by_com_suffix(suffix_name)
+                                                    # 通用后缀检查
+                                                    check_by_com_suffix(suffix_name)
 
-                                            """❤❤❤描述项检查❤❤❤"""
-                                            """state group描述"""
-                                            group_desc_value = check_is_mergecell(
-                                                sheet.cell(row=cell_sound.row, column=group_desc))
-                                            if group_desc_value:
-                                                value_desc_value = sheet.cell(row=cell_sound.row,
-                                                                              column=value_desc).value
-                                                if value_desc_value:
-                                                    # print(value_desc_value)
-                                                    # 拼接Group和值的描述
-                                                    """state描述"""
-                                                    state_desc_value = group_desc_value + "_" + value_desc_value
-                                                    # print(state_desc_value)
-                                                    # state描述查重
-                                                    if state_desc_value not in event_desc_list:
-                                                        event_desc_list.append(state_desc_value)
+                                                    """❤❤❤描述项检查❤❤❤"""
+                                                    """state group描述"""
+                                                    group_desc_value = check_is_mergecell(
+                                                        sheet.cell(row=cell_sound.row, column=group_desc))
+                                                    if group_desc_value:
+                                                        # print(value_desc_value)
+                                                        # 拼接Group和值的描述
+                                                        """state描述"""
+                                                        state_desc_value = group_desc_value + "_" + value_desc_value
+                                                        # print(state_desc_value)
+                                                        # state描述查重
+                                                        if state_desc_value not in event_desc_list:
+                                                            event_desc_list.append(state_desc_value)
+                                                        else:
+                                                            print_error(state_desc_value + "：表格中有重复项描述，请检查")
+
                                                     else:
-                                                        print_error(state_desc_value + "：表格中有重复项描述，请检查")
+                                                        print_error(value + ":没有状态描述，请补充！")
+                                                else:
+                                                    print_error(group_value + ":没有状态描述，请补充！")
 
+                                                # # 生成Wwise内容
+                                                if is_pass:
+                                                    create_state_content(group_value, group_desc_value, value,
+                                                                         state_desc_value)
                                             else:
-                                                print_error(value + ":没有状态描述，请补充！")
+                                                # 走 trigger生成
+                                                if sheet_name == "Trigger":
+                                                    # print(value)
+                                                    # 检查Trigger名称是否带有Trig前缀
+                                                    if re.match(r'^Trig_', value):
+                                                        pass
+                                                    else:
+                                                        print_error(value + ":没有以Trig_开头，请修改名称格式")
+                                                    # # 生成Wwise内容
+                                                    if is_pass:
+                                                        create_trigger_content(value, value_desc_value)
+                                                        # print(value_desc_value)
                                         else:
-                                            print_error(group_value + ":没有状态描述，请补充！")
+                                            print_error(value + ":没有值描述，请补充")
 
-                                    # # 生成Wwise内容
-                                    if is_pass:
-                                        create_state_content(group_value, group_desc_value, value, state_desc_value)
     print()
     """******************对象删除清理********************"""
     """对象删除"""
@@ -481,6 +516,7 @@ with WaapiClient() as client:
     switch_list = find_obj_list(switch_root_path, "Switch")
     switch_group_list = find_obj_list(switch_root_path, "SwitchGroup")
     event_list = find_obj_list(set_event_path, "Event")
+    trigger_list = find_obj_list(trigger_root_path, "Trigger")
 
     # 查找state/switch，再跟表格比对有没有，没有就删除资源及事件引用
     delete_state(state_list, state_name_list, "State")
@@ -488,6 +524,8 @@ with WaapiClient() as client:
 
     delete_state(state_group_list, state_group_name_list, "StateGroup")
     delete_state(switch_group_list, state_group_name_list, "SwitchGroup")
+
+    delete_state(trigger_list, state_name_list, "Trigger")
 
     # 撤销结束
     client.call("ak.wwise.core.undo.endGroup", displayName="rnd创建撤销")
