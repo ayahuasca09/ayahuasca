@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="17a8a927-0db7-41d4-8f81-9181fc87e6d9" name="更改" comment="State:Group同步删除">
-      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_auto_gen_state/Set设置类表 (2).xlsx" afterDir="false" />
+    <list default="true" id="17a8a927-0db7-41d4-8f81-9181fc87e6d9" name="更改" comment="Trigger:删改同步">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_auto_gen_state/Set设置类表 (1).xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_auto_gen_state/Set设置类表 (2).xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_auto_gen_state/Set设置类表 (2).xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/module/waapi/waapi_auto_gen_state/waapi_auto_gen_state.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_auto_gen_state/waapi_auto_gen_state.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/module/waapi/waapi_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_test.py" afterDir="false" />
     </list>
@@ -341,14 +340,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1716955384994</updated>
-    </task>
-    <task id="LOCAL-00033" summary="音频资源导入检测——媒体资源导入记录表颜色改变">
-      <option name="closed" value="true" />
-      <created>1718853614083</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1718853614083</updated>
     </task>
     <task id="LOCAL-00034" summary="音频资源导入检测——媒体资源导入随机容器">
       <option name="closed" value="true" />
@@ -734,7 +725,15 @@
       <option name="project" value="LOCAL" />
       <updated>1727341907649</updated>
     </task>
-    <option name="localTasksCounter" value="82" />
+    <task id="LOCAL-00082" summary="Trigger:删改同步">
+      <option name="closed" value="true" />
+      <created>1727426385904</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1727426385904</updated>
+    </task>
+    <option name="localTasksCounter" value="83" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -750,7 +749,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="语音自动化：语音资源替换" />
     <MESSAGE value="语音自动化：在替换正式资产时，若无相应的语音文件则自动生成替补文件" />
     <MESSAGE value="语音自动化：媒体资源重命名" />
     <MESSAGE value="语音自动化：ID表生成流程准备打包" />
@@ -775,6 +773,7 @@
     <MESSAGE value="媒体重命名流程修复：未生成随机样本的重命名文件" />
     <MESSAGE value="State:Switch同步删除" />
     <MESSAGE value="State:Group同步删除" />
-    <option name="LAST_COMMIT_MESSAGE" value="State:Group同步删除" />
+    <MESSAGE value="Trigger:删改同步" />
+    <option name="LAST_COMMIT_MESSAGE" value="Trigger:删改同步" />
   </component>
 </project>

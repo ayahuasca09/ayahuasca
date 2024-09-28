@@ -368,12 +368,14 @@ with WaapiClient() as client:
 
     """WorkUnit删除测试"""
 
+    #
+    # def delete_obj(obj_id):
+    #     args = {
+    #         "object": "%s" % obj_id
+    #     }
+    #     client.call("ak.wwise.core.object.delete", args)
+    #
+    #
+    # delete_obj("{4BA35CAF-0CA1-4423-9552-44C46099DAEA}")
 
-    def delete_obj(obj_id):
-        args = {
-            "object": "%s" % obj_id
-        }
-        client.call("ak.wwise.core.object.delete", args)
 
-
-    delete_obj("{4BA35CAF-0CA1-4423-9552-44C46099DAEA}")

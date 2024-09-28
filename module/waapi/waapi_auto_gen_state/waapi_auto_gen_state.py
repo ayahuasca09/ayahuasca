@@ -40,6 +40,9 @@ set_switch_event_path = '{F5985FEE-CE20-4C2F-9B3B-46A1EB8AB612}'
 set_event_path = '{80A74274-275D-4554-AE98-EE0112489C5C}'
 set_trigger_event_path = '{EDD34B59-3938-4C22-A63D-838FD8DCD57E}'
 
+# Event的WorkUnit路径
+event_workunit_path = r"S:\chen.gong_DCC_Audio\Audio\SilverPalace_WwiseProject\Events"
+
 """状态名称列表"""
 state_name_list = []
 state_group_name_list = []
@@ -507,6 +510,11 @@ with WaapiClient() as client:
                     #     # pprint(workunit_list)
                     #     if workunit_list:
                     #         delete_obj(workunit_list[0]['id'], wwise_obj_dict['name'], "WorkUnit")
+                    """WorkUnit在文件夹中删除"""
+                    if "Group" in obj_type:
+                        group_event_workunit_path = os.path.join(event_workunit_path, wwise_obj_dict['name']+".wwu")
+                        os.remove(group_event_workunit_path)
+                        print(group_event_workunit_path)
 
 
     """同步表中删除的内容"""
