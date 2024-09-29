@@ -244,6 +244,20 @@ def get_is_loop():
                                 is_loop = True
                                 break
 
+                    # 音乐循环查询
+                    args = {
+                        'waql': '"%s" select descendants where type= "MusicPlaylistContainer" ' % (
+                            obj_dict['Target']['id'])
+                    }
+                    sound_list, _, _ = find_obj(args)
+                    # pprint(sound_list)
+                    if sound_list:
+                        for sound_dict in sound_list:
+                            if sound_dict['id'] in loop_musicplaylist_container_id_list:
+                                is_loop = True
+                                print(event_dict['name'])
+                                break
+
     return is_loop
 
 
@@ -292,7 +306,8 @@ def set_value():
 with WaapiClient() as client:
     def find_obj(args):
         options = {
-            'return': ['name', 'id', 'path', 'notes', 'IsLoopingEnabled', 'Inclusion']
+            'return': ['name', 'id', 'path', 'notes', 'IsLoopingEnabled', 'Inclusion',
+                       'musicPlaylistRoot', 'LoopCount', 'PlaylistItemType', 'owner', 'parent']
 
         }
         obj_sub_list = client.call("ak.wwise.core.object.get", args, options=options)['return']
@@ -305,7 +320,58 @@ with WaapiClient() as client:
         return obj_sub_list, obj_sub_id, obj_sub_path
 
 
+    """判定音乐是否循环"""
+
+
+    def find_music_lp_list():
+        # PS：MusicPlaylistItem的根节点只有owner，
+        # MusicPlaylistItem的其他子节点只有parent，parent为根节点
+        args = {
+            'waql': 'from type MusicPlaylistItem '
+        }
+        musicplaylistitem_list, _, _ = find_obj(args)
+        # pprint(refer_list)
+
+        # 使用一个列表保存为loop的musicplaylist container id
+        loop_musicplaylist_container_id_list = []
+
+        # 查找为loop的、非根节点的子节点
+        for musicplaylistitem_dict in musicplaylistitem_list:
+            if musicplaylistitem_dict['LoopCount'] == 0:
+                # 获取非根子节点
+                if (musicplaylistitem_dict['PlaylistItemType'] == 1):
+                    # pprint(musicplaylistitem_dict)
+                    # print()
+                    # 获取子节点的parent，即根节点
+                    root_id = musicplaylistitem_dict['parent']['id']
+                    # print(root_id)
+                    # 获取根节点的owner，即musicplaylist容器的id
+                    args = {
+                        'waql': ' from object "%s" ' % root_id
+                    }
+                    root_list, _, _ = find_obj(args)
+
+                # 获取根节点
+                else:
+                    # 获取根节点的owner，即musicplaylist容器的id
+                    args = {
+                        'waql': ' from object "%s" ' % musicplaylistitem_dict['id']
+                    }
+                    root_list, _, _ = find_obj(args)
+                    # pprint(root_list)
+                for root_dict in root_list:
+                    # 添加非重复元素，set为去重，然后再转为list
+                    # 获取的是为loop的非根子节点的父级
+                    loop_musicplaylist_container_id_list = list(
+                        set(loop_musicplaylist_container_id_list + [root_dict['owner']['id']]))
+        return loop_musicplaylist_container_id_list
+
+
     """*************主程序*************"""
+
+    # 获取为循环的音乐列表
+    loop_musicplaylist_container_id_list = find_music_lp_list()
+    # pprint(loop_musicplaylist_container_id_list)
 
     # 存放UE的Event路径
     ue_audio_path_list = []

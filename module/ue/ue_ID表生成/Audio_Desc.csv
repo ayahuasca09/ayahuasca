@@ -596,5 +596,5 @@ RowName,AudioID,AudioName,AudioEvent,Desc,IsLoop
 15115,15115,AKE_Play_VO_Game_Battle_B01_11,/Script/AkAudio.AkAudioEvent'/Game/Audio/WwiseAudio/Events/v1/VO/VO_Game/VO_Game_B01/VO_Game_Battle_B01/AKE_Play_VO_Game_Battle_B01_11.AKE_Play_VO_Game_Battle_B01_11',厄什栗boss战语音_燃烧状态_怎么？不敢过来了？那那时你为什么能牵起我的手呢？,False
 15116,15116,AKE_Play_VO_Game_Battle_B01_12,/Script/AkAudio.AkAudioEvent'/Game/Audio/WwiseAudio/Events/v1/VO/VO_Game/VO_Game_B01/VO_Game_Battle_B01/AKE_Play_VO_Game_Battle_B01_12.AKE_Play_VO_Game_Battle_B01_12',厄什栗boss战语音_踩踏QTE_给我求饶！,False
 15117,15117,AKE_Play_VO_Game_Battle_B01_13,/Script/AkAudio.AkAudioEvent'/Game/Audio/WwiseAudio/Events/v1/VO/VO_Game/VO_Game_B01/VO_Game_Battle_B01/AKE_Play_VO_Game_Battle_B01_13.AKE_Play_VO_Game_Battle_B01_13',厄什栗boss战语音_踩踏QTE触发三次以上_又来？你难道是喜欢被我这么打？真变态……,False
-13001,13001,AKE_Play_Mus_Global,/Script/AkAudio.AkAudioEvent'/Game/Audio/WwiseAudio/Events/v1/Mus/AKE_Play_Mus_Global.AKE_Play_Mus_Global',,False
+13001,13001,AKE_Play_Mus_Global,/Script/AkAudio.AkAudioEvent'/Game/Audio/WwiseAudio/Events/v1/Mus/AKE_Play_Mus_Global.AKE_Play_Mus_Global',,True
 13002,13002,AKE_Stop_Mus_Global,/Script/AkAudio.AkAudioEvent'/Game/Audio/WwiseAudio/Events/v1/Mus/AKE_Stop_Mus_Global.AKE_Stop_Mus_Global',,False

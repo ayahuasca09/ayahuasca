@@ -1,32 +1,46 @@
 {
-    "commands":[
-      {
-        "id": "ak.create.parent.container.sfx",
-        "displayName": "Create Parent Container SFX",
-        "defaultShortcut": "",
-        "program": "py.exe",
-        "startMode": "MultipleSelectionSingleProcessSpaceSeparated",
-        "args": "-3 ${CurrentCommandDirectory}\\..\\create-parent-container-SFX\\__main__.py",
-        "cwd": "",
-        "contextMenu": {
-          "basePath": "",
-          "enabledFor": ""
-        },
-        "redirectOutputs": false
+  "commands": [
+    {
+      "id": "ak.create.parent.container.sfx",
+      "displayName": "Create Parent Container SFX",
+      "defaultShortcut": "",
+      "program": "py.exe",
+      "startMode": "MultipleSelectionSingleProcessSpaceSeparated",
+      "args": "-3 ${CurrentCommandDirectory}\\..\\create-parent-container-SFX\\__main__.py",
+      "cwd": "",
+      "contextMenu": {
+        "basePath": "",
+        "enabledFor": ""
       },
-      {
-        "id": "ak.create.event.for.one.object",
-        "displayName": "Create Event For One Object",
-        "defaultShortcut": "",
-        "program": "py.exe",
-        "startMode": "SingleSelectionSingleProcess",
-        "args": "-3 ${CurrentCommandDirectory}\\..\\create-event-for-one-object\\main.py",
-        "cwd": "",
-        "contextMenu": {
-          "basePath": "",
-          "enabledFor": ""
-        },
-        "redirectOutputs": false
-      }
-    ]
+      "redirectOutputs": false
+    },
+    {
+      "id": "ak.create.event.for.one.object",
+      "displayName": "Create Event For One Object",
+      "defaultShortcut": "",
+      "program": "py.exe",
+      "startMode": "SingleSelectionSingleProcess",
+      "args": "-3 ${CurrentCommandDirectory}\\..\\create-event-for-one-object\\main.py",
+      "cwd": "",
+      "contextMenu": {
+        "basePath": "",
+        "enabledFor": ""
+      },
+      "redirectOutputs": false
+    },
+    {
+      "id": "ak.auto.set.state.or.switch",
+      "displayName": "Auto Set State Or Switch",
+      "defaultShortcut": "",
+      "program": "py.exe",
+      "startMode": "SingleSelectionSingleProcess",
+      "args": "-3 ${CurrentCommandDirectory}\\..\\auto-set-state-or-switch\\main.py",
+      "cwd": "",
+      "contextMenu": {
+        "basePath": "",
+        "enabledFor": ""
+      },
+      "redirectOutputs": false
+    }
+  ]
 }
