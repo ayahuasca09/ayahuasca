@@ -199,14 +199,15 @@ def create_id():
     global temp
     # 获取当前的最小序列
     # 记录累加的数
-    temp = range_min
+    i = range_min
     # 获取第0列
     for cell in list(sheet.columns)[0]:
-        if cell.value != None:
+        if cell.value and (type(cell.value) is int):
             # print(cell.value)
-            for i in range(range_min, range_max):
-                if cell.value == i:
-                    temp = temp + 1
+            if range_min < cell.value < range_max:
+                if cell.value > i:
+                    i = cell.value
+    temp = i + 1
 
 
 # 获取是否循环并赋值
@@ -255,7 +256,7 @@ def get_is_loop():
                         for sound_dict in sound_list:
                             if sound_dict['id'] in loop_musicplaylist_container_id_list:
                                 is_loop = True
-                                print(event_dict['name'])
+                                # print(event_dict['name'])
                                 break
 
     return is_loop
@@ -292,7 +293,6 @@ def set_value():
         sheet.cell(row=insert_row, column=rowname_index).value = temp
         # id编号赋值
         sheet.cell(row=insert_row, column=audioid_index).value = temp
-        temp = temp + 1
         # 事件名称赋值
         sheet.cell(row=insert_row, column=audioname_index).value = event_dict['name']
         # 事件描述赋值
@@ -390,6 +390,20 @@ with WaapiClient() as client:
             get_module_range(event_dict['name'])
             if (range_min != 0) and (range_max != 0):
                 set_value()
+
+    # 同步删除Wwise中没有的事件
+    # 创建Event Name列表
+    extract_key = lambda d: d['name']
+    event_name_list = list(map(extract_key, event_list))
+    # pprint(event_name_list)
+    # 获取AudioName列的内容
+    for col in sheet.iter_cols(1, sheet.max_column):
+        if col[0].value == 'AudioName':
+            # 返回该列的值（除了标题行）
+            for cell in col[1:]:
+                if cell.value not in event_name_list:
+                    sheet.delete_rows(cell.row, 1)
+                    print_warning(cell.value + "：在Wwise Event中未被找到，该ID及数据已删除")
 
 wb.save(excel_path)
 

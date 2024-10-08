@@ -186,8 +186,6 @@ RowName,AudioID,AudioName,AudioEvent,IsLoop
 3003,3003,AKE_Play_Char_Skill_C02_Atk1,/Script/AkAudio.AkAudioEvent'/Game/Audio/WwiseAudio/Events/v1/Char/Char_C02/Char_Skill_C02/AKE_Play_Char_Skill_C02_Atk1.AKE_Play_Char_Skill_C02_Atk1',False
 3004,3004,AKE_Play_Char_Skill_C02_Atk2,/Script/AkAudio.AkAudioEvent'/Game/Audio/WwiseAudio/Events/v1/Char/Char_C02/Char_Skill_C02/AKE_Play_Char_Skill_C02_Atk2.AKE_Play_Char_Skill_C02_Atk2',False
 3005,3005,AKE_Play_Char_Skill_C02_Atk3,/Script/AkAudio.AkAudioEvent'/Game/Audio/WwiseAudio/Events/v1/Char/Char_C02/Char_Skill_C02/AKE_Play_Char_Skill_C02_Atk3.AKE_Play_Char_Skill_C02_Atk3',False
-3006,3006,AKE_Play_Char_Skill_C02_Atk4,/Script/AkAudio.AkAudioEvent'/Game/Audio/WwiseAudio/Events/v1/Char/Char_C02/Char_Skill_C02/AKE_Play_Char_Skill_C02_Atk4.AKE_Play_Char_Skill_C02_Atk4',False
-3007,3007,AKE_Play_Char_Skill_C02_Atk5,/Script/AkAudio.AkAudioEvent'/Game/Audio/WwiseAudio/Events/v1/Char/Char_C02/Char_Skill_C02/AKE_Play_Char_Skill_C02_Atk5.AKE_Play_Char_Skill_C02_Atk5',False
 3008,3008,AKE_Play_Char_Skill_C02_Focus_Ready1,/Script/AkAudio.AkAudioEvent'/Game/Audio/WwiseAudio/Events/v1/Char/Char_C02/Char_Skill_C02/AKE_Play_Char_Skill_C02_Focus_Ready1.AKE_Play_Char_Skill_C02_Focus_Ready1',False
 3009,3009,AKE_Play_Char_Skill_C02_Focus_Ready2,/Script/AkAudio.AkAudioEvent'/Game/Audio/WwiseAudio/Events/v1/Char/Char_C02/Char_Skill_C02/AKE_Play_Char_Skill_C02_Focus_Ready2.AKE_Play_Char_Skill_C02_Focus_Ready2',False
 3010,3010,AKE_Play_Char_Skill_C02_Focus_Ready3,/Script/AkAudio.AkAudioEvent'/Game/Audio/WwiseAudio/Events/v1/Char/Char_C02/Char_Skill_C02/AKE_Play_Char_Skill_C02_Focus_Ready3.AKE_Play_Char_Skill_C02_Focus_Ready3',False
@@ -245,8 +243,6 @@ RowName,AudioID,AudioName,AudioEvent,IsLoop
 3062,3062,AKE_Play_Char_Skill_C02_Atk1_End,/Script/AkAudio.AkAudioEvent'/Game/Audio/WwiseAudio/Events/v1/Char/Char_C02/Char_Skill_C02/AKE_Play_Char_Skill_C02_Atk1_End.AKE_Play_Char_Skill_C02_Atk1_End',False
 3063,3063,AKE_Play_Char_Skill_C02_Atk2_End,/Script/AkAudio.AkAudioEvent'/Game/Audio/WwiseAudio/Events/v1/Char/Char_C02/Char_Skill_C02/AKE_Play_Char_Skill_C02_Atk2_End.AKE_Play_Char_Skill_C02_Atk2_End',False
 3064,3064,AKE_Play_Char_Skill_C02_Atk3_End,/Script/AkAudio.AkAudioEvent'/Game/Audio/WwiseAudio/Events/v1/Char/Char_C02/Char_Skill_C02/AKE_Play_Char_Skill_C02_Atk3_End.AKE_Play_Char_Skill_C02_Atk3_End',False
-3065,3065,AKE_Play_Char_Skill_C02_Atk4_End,/Script/AkAudio.AkAudioEvent'/Game/Audio/WwiseAudio/Events/v1/Char/Char_C02/Char_Skill_C02/AKE_Play_Char_Skill_C02_Atk4_End.AKE_Play_Char_Skill_C02_Atk4_End',False
-3066,3066,AKE_Play_Char_Skill_C02_Atk5_End,/Script/AkAudio.AkAudioEvent'/Game/Audio/WwiseAudio/Events/v1/Char/Char_C02/Char_Skill_C02/AKE_Play_Char_Skill_C02_Atk5_End.AKE_Play_Char_Skill_C02_Atk5_End',False
 3067,3067,AKE_Play_Char_Skill_C02_Focus_Atk2_2nd,/Script/AkAudio.AkAudioEvent'/Game/Audio/WwiseAudio/Events/v1/Char/Char_C02/Char_Skill_C02/AKE_Play_Char_Skill_C02_Focus_Atk2_2nd.AKE_Play_Char_Skill_C02_Focus_Atk2_2nd',False
 3068,3068,AKE_Play_Char_Skill_C02_Focus_Atk3_Start_2nd,/Script/AkAudio.AkAudioEvent'/Game/Audio/WwiseAudio/Events/v1/Char/Char_C02/Char_Skill_C02/AKE_Play_Char_Skill_C02_Focus_Atk3_Start_2nd.AKE_Play_Char_Skill_C02_Focus_Atk3_Start_2nd',False
 3069,3069,AKE_Play_Char_Skill_C02_Focus_Atk3_2nd,/Script/AkAudio.AkAudioEvent'/Game/Audio/WwiseAudio/Events/v1/Char/Char_C02/Char_Skill_C02/AKE_Play_Char_Skill_C02_Focus_Atk3_2nd.AKE_Play_Char_Skill_C02_Focus_Atk3_2nd',False
@@ -598,3 +594,7 @@ RowName,AudioID,AudioName,AudioEvent,IsLoop
 15117,15117,AKE_Play_VO_Game_Battle_B01_13,/Script/AkAudio.AkAudioEvent'/Game/Audio/WwiseAudio/Events/v1/VO/VO_Game/VO_Game_B01/VO_Game_Battle_B01/AKE_Play_VO_Game_Battle_B01_13.AKE_Play_VO_Game_Battle_B01_13',False
 13001,13001,AKE_Play_Mus_Global,/Script/AkAudio.AkAudioEvent'/Game/Audio/WwiseAudio/Events/v1/Mus/AKE_Play_Mus_Global.AKE_Play_Mus_Global',True
 13002,13002,AKE_Stop_Mus_Global,/Script/AkAudio.AkAudioEvent'/Game/Audio/WwiseAudio/Events/v1/Mus/AKE_Stop_Mus_Global.AKE_Stop_Mus_Global',False
+3210,3210,AKE_Play_Char_Skill_C02_Atk4,/Script/AkAudio.AkAudioEvent'/Game/Audio/WwiseAudio/Events/v1/Char/Char_C02/Char_Skill_C02/AKE_Play_Char_Skill_C02_Atk4.AKE_Play_Char_Skill_C02_Atk4',False
+3211,3211,AKE_Play_Char_Skill_C02_Atk5,/Script/AkAudio.AkAudioEvent'/Game/Audio/WwiseAudio/Events/v1/Char/Char_C02/Char_Skill_C02/AKE_Play_Char_Skill_C02_Atk5.AKE_Play_Char_Skill_C02_Atk5',False
+3212,3212,AKE_Play_Char_Skill_C02_Atk4_End,/Script/AkAudio.AkAudioEvent'/Game/Audio/WwiseAudio/Events/v1/Char/Char_C02/Char_Skill_C02/AKE_Play_Char_Skill_C02_Atk4_End.AKE_Play_Char_Skill_C02_Atk4_End',False
+3213,3213,AKE_Play_Char_Skill_C02_Atk5_End,/Script/AkAudio.AkAudioEvent'/Game/Audio/WwiseAudio/Events/v1/Char/Char_C02/Char_Skill_C02/AKE_Play_Char_Skill_C02_Atk5_End.AKE_Play_Char_Skill_C02_Atk5_End',False
