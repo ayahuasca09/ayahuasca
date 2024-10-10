@@ -5,7 +5,7 @@ with WaapiClient() as client:
     def find_obj(args):
         options = {
             'return': ['name', 'id', 'notes', 'originalWavFilePath', 'isIncluded', 'IsLoopingEnabled',
-                       'musicPlaylistRoot', 'LoopCount', 'PlaylistItemType', 'owner', 'parent']
+                       'musicPlaylistRoot', 'LoopCount', 'PlaylistItemType', 'owner', 'parent', 'type']
 
         }
         obj_sub_list = client.call("ak.wwise.core.object.get", args, options=options)['return']
@@ -276,45 +276,44 @@ with WaapiClient() as client:
     """查找音乐列表下的item是否循环"""
     # PS：MusicPlaylistItem的根节点只有owner，
     # MusicPlaylistItem的其他子节点只有parent，parent为根节点
-    args = {
-        'waql': 'from type MusicPlaylistItem '
-    }
-    musicplaylistitem_list, _ = find_obj(args)
-    # pprint(refer_list)
-
-    # 使用一个列表保存为loop的musicplaylist container id
-    loop_musicplaylist_container_id_list = []
-
-    # 查找为loop的、非根节点的子节点
-    for musicplaylistitem_dict in musicplaylistitem_list:
-        if musicplaylistitem_dict['LoopCount'] == 0:
-            # 获取非根子节点
-            if (musicplaylistitem_dict['PlaylistItemType'] == 1):
-                # pprint(musicplaylistitem_dict)
-                # print()
-                # 获取子节点的parent，即根节点
-                root_id = musicplaylistitem_dict['parent']['id']
-                # print(root_id)
-                # 获取根节点的owner，即musicplaylist容器的id
-                args = {
-                    'waql': ' from object "%s" ' % root_id
-                }
-                root_list, _ = find_obj(args)
-
-            # 获取根节点
-            else:
-                # 获取根节点的owner，即musicplaylist容器的id
-                args = {
-                    'waql': ' from object "%s" ' % musicplaylistitem_dict['id']
-                }
-                root_list, _ = find_obj(args)
-                # pprint(root_list)
-            for root_dict in root_list:
-                # 添加非重复元素，set为去重，然后再转为list
-                # 获取的是为loop的非根子节点的父级
-                loop_musicplaylist_container_id_list = list(
-                    set(loop_musicplaylist_container_id_list + [root_dict['owner']['id']]))
-
+    # args = {
+    #     'waql': 'from type MusicPlaylistItem '
+    # }
+    # musicplaylistitem_list, _ = find_obj(args)
+    # # pprint(refer_list)
+    #
+    # # 使用一个列表保存为loop的musicplaylist container id
+    # loop_musicplaylist_container_id_list = []
+    #
+    # # 查找为loop的、非根节点的子节点
+    # for musicplaylistitem_dict in musicplaylistitem_list:
+    #     if musicplaylistitem_dict['LoopCount'] == 0:
+    #         # 获取非根子节点
+    #         if (musicplaylistitem_dict['PlaylistItemType'] == 1):
+    #             # pprint(musicplaylistitem_dict)
+    #             # print()
+    #             # 获取子节点的parent，即根节点
+    #             root_id = musicplaylistitem_dict['parent']['id']
+    #             # print(root_id)
+    #             # 获取根节点的owner，即musicplaylist容器的id
+    #             args = {
+    #                 'waql': ' from object "%s" ' % root_id
+    #             }
+    #             root_list, _ = find_obj(args)
+    #
+    #         # 获取根节点
+    #         else:
+    #             # 获取根节点的owner，即musicplaylist容器的id
+    #             args = {
+    #                 'waql': ' from object "%s" ' % musicplaylistitem_dict['id']
+    #             }
+    #             root_list, _ = find_obj(args)
+    #             # pprint(root_list)
+    #         for root_dict in root_list:
+    #             # 添加非重复元素，set为去重，然后再转为list
+    #             # 获取的是为loop的非根子节点的父级
+    #             loop_musicplaylist_container_id_list = list(
+    #                 set(loop_musicplaylist_container_id_list + [root_dict['owner']['id']]))
 
     # 还有另一种，在根节点下为loop的情况
 
@@ -389,3 +388,66 @@ with WaapiClient() as client:
     #
     #
     # delete_obj("{4BA35CAF-0CA1-4423-9552-44C46099DAEA}")
+
+    """音乐的创建：MusicPlaylistContainer和MusicSegment创建"""
+    # args = {
+    #     "objects": [
+    #         {
+    #             "object": "\\Interactive Music Hierarchy\\Default Work Unit",
+    #             "children": [
+    #                 {
+    #                     "type": "MusicPlaylistContainer",
+    #                     "name": "MySequence",
+    #                     "children": [
+    #                         {
+    #                             "type": "MusicSegment",
+    #                             "name": "Segment1",
+    #                         }
+    #                     ],
+    #
+    #                 }
+    #             ]
+    #         }
+    #     ],
+    #     "onNameConflict": "merge",
+    #     "listMode": "replaceAll"
+    # }
+    # obj = client.call("ak.wwise.core.object.set", args)
+    # pprint(obj)
+
+    """音乐的wav导入"""
+    # args_import = {
+    #     # createNew
+    #     # useExisting：会增加一个新媒体文件但旧的不会删除
+    #     # replaceExisting:会销毁Sound，上面做的设置都无了
+    #     "importOperation": "replaceExisting",
+    #     "imports": [
+    #         {
+    #             "audioFile": "C:\\Users\\happyelements\\Desktop\\Old\\Char_Skill_C1502_Atk2.wav",
+    #             "objectPath": "\\Interactive Music Hierarchy\\Default Work Unit\\MySequence\\Segment1",
+    #             # "originalsSubFolder": system_name
+    #         }
+    #     ]
+    # }
+    #
+    # client.call("ak.wwise.core.audio.import", args_import)
+
+    # """Music Track测试"""
+    # args = {
+    #     'waql': '"%s" select referencesTo' % (
+    #         '{3EDCDC7C-06F0-497F-A386-17A192CAD68D}')
+    # }
+    # music_track, _ = find_obj(args)
+    # pprint(music_track)
+
+    # args = {
+    #     'waql': 'from type MusicClip'
+    # }
+    # music_track, _ = find_obj(args)
+    # pprint(music_track)
+
+    args = {
+        'waql': 'from type MusicTrack'
+    }
+    music_track, _ = find_obj(args)
+    pprint(music_track)
