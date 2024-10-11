@@ -5,7 +5,7 @@ with WaapiClient() as client:
     def find_obj(args):
         options = {
             'return': ['name', 'id', 'notes', 'originalWavFilePath', 'isIncluded', 'IsLoopingEnabled',
-                       'musicPlaylistRoot', 'LoopCount', 'PlaylistItemType', 'owner', 'parent', 'type']
+                       'musicPlaylistRoot', 'LoopCount', 'PlaylistItemType', 'owner', 'parent', 'type', 'Sequences']
 
         }
         obj_sub_list = client.call("ak.wwise.core.object.get", args, options=options)['return']
@@ -432,22 +432,11 @@ with WaapiClient() as client:
     #
     # client.call("ak.wwise.core.audio.import", args_import)
 
-    # """Music Track测试"""
-    # args = {
-    #     'waql': '"%s" select referencesTo' % (
-    #         '{3EDCDC7C-06F0-497F-A386-17A192CAD68D}')
-    # }
-    # music_track, _ = find_obj(args)
-    # pprint(music_track)
-
-    # args = {
-    #     'waql': 'from type MusicClip'
-    # }
-    # music_track, _ = find_obj(args)
-    # pprint(music_track)
-
+    """获取Music的Sub Track测试"""
+    # 注意，这里需要选择MusicTrack的父级，也就是Segment，然后获取的内容为Sequences
     args = {
-        'waql': 'from type MusicTrack'
+        'waql': '"%s" select descendants' % (
+            '{CF58A7CB-4A59-49EA-8735-4F6FB6817F44}')
     }
     music_track, _ = find_obj(args)
     pprint(music_track)

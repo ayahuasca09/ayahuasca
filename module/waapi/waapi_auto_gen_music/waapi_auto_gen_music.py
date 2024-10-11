@@ -253,7 +253,7 @@ with WaapiClient() as client:
                 break
             # 改名了但描述一致
             elif state_group_dict['notes'] == state_group_desc:
-                flag=2
+                flag = 2
                 # 改名
                 change_name_by_wwise_content(state_group_dict['id'], state_group_name, state_group_dict['name'],
                                              state_group_type)
@@ -280,7 +280,7 @@ with WaapiClient() as client:
         return state_group_id
 
 
-    """创建新的state/switch"""
+    """创建新的mus"""
 
 
     def create_mus_content(mus_name, mus_desc):
@@ -290,6 +290,8 @@ with WaapiClient() as client:
             if music_playlist_container_dict['name'] in mus_name:
                 mus_segment_id = create_obj_content(music_playlist_container_dict['id'], "MusicSegment", mus_name,
                                                     mus_desc)
+                create_obj_content(mus_segment_id, "MusicTrack", mus_name,
+                                   mus_desc)
 
 
     """*****************主程序处理******************"""
@@ -391,7 +393,13 @@ with WaapiClient() as client:
 
                                             """❤❤❤Stin资源名称检查❤❤❤"""
                                         elif sheet_name == "Stin":
-                                            value = check_by_re(value, r'^Stin_(.*)')
+                                            check_by_re(value, r'^Stin_(.*)')
+                                            if is_pass:
+                                                stin_segment_id = create_obj_content(stin_path,
+                                                                                     "MusicSegment", cell_sound.value,
+                                                                                     value_desc_value)
+                                                create_obj_content(stin_segment_id, "MusicTrack", cell_sound.value,
+                                                                   value_desc_value)
 
     """******************对象删除清理********************"""
     """对象删除"""
@@ -441,8 +449,7 @@ with WaapiClient() as client:
     stin_segment_list = find_obj_list(stin_path, "MusicSegment")
 
     # # 查找state/switch，再跟表格比对有没有，没有就删除资源及事件引用
-    # delete_state(mus_segment_list, mus_name_list, "MusicSegment")
-    # delete_state(stin_segment_list, mus_name_list, "MusicSegment")
+    delete_state(mus_segment_list, mus_name_list, "MusicSegment")
 
     # 撤销结束
     client.call("ak.wwise.core.undo.endGroup", displayName="rnd创建撤销")
