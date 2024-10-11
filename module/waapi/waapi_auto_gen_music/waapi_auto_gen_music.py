@@ -33,8 +33,33 @@ state_path = '{59A9E7B9-61C9-461A-A96F-4997B541A59C}'
 """music path"""
 music_path = "{E8A5F6A0-AB3E-4166-BB68-C7D7ECC92B29}"
 stin_path = "{DD48832A-AAC1-49F7-B57B-86F5FACD8FB3}"
+"""媒体资源路径"""
+original_path = r'S:\chen.gong_DCC_Audio\Audio\SilverPalace_WwiseProject\Originals\SFX'
 
 """*****************功能检测区******************"""
+"""遍历文件目录获取文件名称和路径"""
+
+
+def get_type_file_name_and_path(file_type, dir_path):
+    file_dict = {}
+    file_list = []
+    # 遍历文件夹下的所有子文件
+    # 绝对路径，子文件夹，文件名
+    for root, dirs, files in os.walk(dir_path):
+        # {'name': ['1111.akd', 'Creature Growls 4.akd', 'Sonic Salute_005_2_20.akd'],
+        #  'path': 'S:\\chen.gong_DCC_Audio\\Audio\\SilverPalace_WwiseProject\\Originals\\SFX'}
+        for file in files:
+            if file_type in file:
+                new_dict = {}
+                file_dict[file] = os.path.join(
+                    root, file)
+                new_dict[file] = os.path.join(
+                    root, file)
+                file_list.append(new_dict)
+
+    return file_dict, file_list
+
+
 """正则表达式检查字符，并输出除该检查字符之外的其他其他字符"""
 
 
@@ -156,6 +181,26 @@ def check_by_length_and_word(name):
 
 with WaapiClient() as client:
     """*****************Wwise功能区******************"""
+    """媒体资源导入"""
+
+
+    def import_media_in_track(source_path, obj_id):
+        args_import = {
+            # createNew
+            # useExisting：会增加一个新媒体文件但旧的不会删除
+            # replaceExisting:会销毁Sound，上面做的设置都无了
+            "importOperation": "replaceExisting",
+            "imports": [
+                {
+                    "audioFile": source_path,
+                    "objectPath": obj_id,
+                    "originalsSubFolder": sheet_name
+                }
+            ]
+        }
+        client.call("ak.wwise.core.audio.import", args_import)
+
+
     """设置对象引用"""
 
 
@@ -238,6 +283,7 @@ with WaapiClient() as client:
                            state_group_name, state_group_desc):
         flag = 0
         state_group_id = ""
+        state_group_path = ""
         # 查找此state_group是否存在
         state_group_list, _, _ = find_obj(
             {'waql': ' "%s" select descendants where type = "%s"' % (
@@ -250,6 +296,7 @@ with WaapiClient() as client:
                 # 设置notes
                 set_obj_notes(state_group_dict['id'], state_group_desc)
                 state_group_id = state_group_dict['id']
+                state_group_path = state_group_dict['path']
                 break
             # 改名了但描述一致
             elif state_group_dict['notes'] == state_group_desc:
@@ -258,6 +305,7 @@ with WaapiClient() as client:
                 change_name_by_wwise_content(state_group_dict['id'], state_group_name, state_group_dict['name'],
                                              state_group_type)
                 state_group_id = state_group_dict['id']
+                state_group_path = state_group_dict['path']
                 break
         # state_group不存在，需要创建
         # print(flag)
@@ -275,9 +323,28 @@ with WaapiClient() as client:
             state_group_object = client.call("ak.wwise.core.object.create", args)
             # print(state_group_object)
             state_group_id = state_group_object['id']
+            _, _, state_group_path = find_obj(
+                {'waql': ' "%s" ' % state_group_id})
             print_warning(state_group_object['name'] + ":" + state_group_type + "已创建")
 
-        return state_group_id
+        return state_group_id, state_group_path
+
+
+    """音乐资源导入"""
+
+
+    def import_media(mus_name, mus_track_path):
+        flag = 0
+        # 音乐资源导入
+        for media_info_name in media_info_dict:
+            if mus_name in media_info_name:
+                print_warning((mus_name + ":媒体资源已导入"))
+                media_path = os.path.join(py_path, media_info_dict[media_info_name])
+                import_media_in_track(media_path, mus_track_path)
+                flag = 1
+                break
+        # if flag == 0:
+        #     print_error(mus_name + ":该名称的媒体资源未找到，无法导入")
 
 
     """创建新的mus"""
@@ -288,10 +355,11 @@ with WaapiClient() as client:
         # 查找music segment的playlist container父级
         for music_playlist_container_dict in music_playlist_container_list:
             if music_playlist_container_dict['name'] in mus_name:
-                mus_segment_id = create_obj_content(music_playlist_container_dict['id'], "MusicSegment", mus_name,
-                                                    mus_desc)
-                create_obj_content(mus_segment_id, "MusicTrack", mus_name,
-                                   mus_desc)
+                mus_segment_id, _ = create_obj_content(music_playlist_container_dict['id'], "MusicSegment", mus_name,
+                                                       mus_desc)
+                mus_track_id, mus_track_path = create_obj_content(mus_segment_id, "MusicTrack", mus_name,
+                                                                  mus_desc)
+                import_media(mus_name, mus_track_path)
 
 
     """*****************主程序处理******************"""
@@ -309,6 +377,10 @@ with WaapiClient() as client:
     # 获取所有Music Playlist Container
     music_playlist_container_list = find_obj_list(music_path, "MusicPlaylistContainer")
     music_playlist_container_name_list = get_one_value_list(music_playlist_container_list, 'name')
+
+    # 获取new media的信息
+    media_info_dict, _ = get_type_file_name_and_path('.wav', 'New_Media')
+    # pprint(media_info)
 
     # pprint(music_playlist_container_name_list)
 
@@ -395,11 +467,15 @@ with WaapiClient() as client:
                                         elif sheet_name == "Stin":
                                             check_by_re(value, r'^Stin_(.*)')
                                             if is_pass:
-                                                stin_segment_id = create_obj_content(stin_path,
-                                                                                     "MusicSegment", cell_sound.value,
-                                                                                     value_desc_value)
-                                                create_obj_content(stin_segment_id, "MusicTrack", cell_sound.value,
-                                                                   value_desc_value)
+                                                stin_segment_id, _ = create_obj_content(stin_path,
+                                                                                        "MusicSegment",
+                                                                                        cell_sound.value,
+                                                                                        value_desc_value)
+                                                stin_track_id, stin_track_path = create_obj_content(stin_segment_id,
+                                                                                                    "MusicTrack",
+                                                                                                    cell_sound.value,
+                                                                                                    value_desc_value)
+                                                import_media(cell_sound.value, stin_track_path)
 
     """******************对象删除清理********************"""
     """对象删除"""
@@ -431,7 +507,7 @@ with WaapiClient() as client:
                         delete_obj(refer_dict['parent']['id'], refer_dict['parent']['name'], "Event")
 
 
-    """删除状态"""
+    """内容删除"""
 
 
     def delete_state(wwise_obj_list, excel_list, obj_type):
@@ -441,9 +517,22 @@ with WaapiClient() as client:
                 if wwise_obj_dict['name'] not in excel_list:
                     # Segment删除
                     delete_obj(wwise_obj_dict['id'], wwise_obj_dict['name'], obj_type)
+                    original_path_media = os.path.join(original_path, "Stin", wwise_obj_dict['name'], '.wav')
+                    print(original_path_media)
+                    # 媒体资源删除
+                    original_path_media = ""
+                    if "Stin" in wwise_obj_dict['name']:
+                        original_path_media = os.path.join(original_path, "Stin", wwise_obj_dict['name']+'.wav')
+
+                    elif "Mus" in wwise_obj_dict['name']:
+                        original_path_media = os.path.join(original_path, "Mus", wwise_obj_dict['name']+'.wav')
+                    if os.path.isfile(original_path_media):
+                        os.remove(original_path_media)
+                        print_warning("[文件清理]" + original_path_media + "已删除")
 
 
     """同步表中删除的内容"""
+
     # Wwise中的内容列表获取
     mus_segment_list = find_obj_list(music_path, "MusicSegment")
     stin_segment_list = find_obj_list(stin_path, "MusicSegment")
@@ -453,5 +542,9 @@ with WaapiClient() as client:
 
     # 撤销结束
     client.call("ak.wwise.core.undo.endGroup", displayName="rnd创建撤销")
+
+    # 清除复制的媒体资源
+    shutil.rmtree("New_Media")
+    os.mkdir("New_Media")
 
 # 以Music Clip为最小单位，从Music Clip找有没有表中的资源，没有才生成
