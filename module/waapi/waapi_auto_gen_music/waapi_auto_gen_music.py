@@ -33,6 +33,8 @@ state_path = '{59A9E7B9-61C9-461A-A96F-4997B541A59C}'
 """music path"""
 music_path = "{E8A5F6A0-AB3E-4166-BB68-C7D7ECC92B29}"
 stin_path = "{DD48832A-AAC1-49F7-B57B-86F5FACD8FB3}"
+trig_path = "{94BBA60A-29EF-4328-83E8-075770BF2687}"
+trig_event_path = "{EDD34B59-3938-4C22-A63D-838FD8DCD57E}"
 """媒体资源路径"""
 original_path = r'S:\chen.gong_DCC_Audio\Audio\SilverPalace_WwiseProject\Originals\SFX'
 
@@ -181,6 +183,8 @@ def check_by_length_and_word(name):
 
 with WaapiClient() as client:
     """*****************Wwise功能区******************"""
+
+
     """媒体资源导入"""
 
 
@@ -199,18 +203,6 @@ with WaapiClient() as client:
             ]
         }
         client.call("ak.wwise.core.audio.import", args_import)
-
-
-    """设置对象引用"""
-
-
-    def set_obj_refer(obj_id, refer, value):
-        args = {
-            "object": obj_id,
-            "reference": refer,
-            "value": value
-        }
-        client.call("ak.wwise.core.object.setReference", args)
 
 
     """警告捕获"""
@@ -280,7 +272,7 @@ with WaapiClient() as client:
 
 
     def create_obj_content(state_group_parent_path, state_group_type,
-                           state_group_name, state_group_desc):
+                           state_group_name, state_group_desc, state_id):
         flag = 0
         state_group_id = ""
         state_group_path = ""
@@ -311,15 +303,33 @@ with WaapiClient() as client:
         # print(flag)
         # 不存在则创建
         if flag == 0:
-            # 创建的rnd属性
-            args = {
-                # 选择父级
-                "parent": state_group_parent_path,
-                # 创建类型名称
-                "type": state_group_type,
-                "name": state_group_name,
-                "notes": state_group_desc,
-            }
+            if state_group_type == "Event":
+                # 专属trig用
+                args = {
+                    # 选择父级
+                    "parent": state_group_parent_path,
+                    # 创建类型名称
+                    "type": state_group_type,
+                    "name": state_group_name,
+                    "notes": state_group_desc,
+                    "children": [
+                        {
+                            "name": "",
+                            "type": "Action",
+                            "@ActionType": 35,
+                            "@Target": state_id
+                        }]
+                }
+            else:
+                # 创建的rnd属性
+                args = {
+                    # 选择父级
+                    "parent": state_group_parent_path,
+                    # 创建类型名称
+                    "type": state_group_type,
+                    "name": state_group_name,
+                    "notes": state_group_desc,
+                }
             state_group_object = client.call("ak.wwise.core.object.create", args)
             # print(state_group_object)
             state_group_id = state_group_object['id']
@@ -356,10 +366,41 @@ with WaapiClient() as client:
         for music_playlist_container_dict in music_playlist_container_list:
             if music_playlist_container_dict['name'] in mus_name:
                 mus_segment_id, _ = create_obj_content(music_playlist_container_dict['id'], "MusicSegment", mus_name,
-                                                       mus_desc)
+                                                       mus_desc, "")
                 mus_track_id, mus_track_path = create_obj_content(mus_segment_id, "MusicTrack", mus_name,
-                                                                  mus_desc)
+                                                                  mus_desc, "")
                 import_media(mus_name, mus_track_path)
+
+
+    """创建新的singer及trigger指派"""
+
+
+    def create_stin_content(stin_name, stin_desc):
+        stin_segment_id, _ = create_obj_content(stin_path,
+                                                "MusicSegment",
+                                                stin_name,
+                                                stin_desc, "")
+        stin_track_id, stin_track_path = create_obj_content(stin_segment_id,
+                                                            "MusicTrack",
+                                                            stin_name,
+                                                            stin_desc, "")
+        import_media(cell_sound.value, stin_track_path)
+
+        # Trig创建及指派
+        trig_name = stin_name.replace("Stin", "Trig")
+        trig_id, create_trig_path = create_obj_content(trig_path,
+                                                       "Trigger",
+                                                       trig_name,
+                                                       stin_desc, "")
+        # Event创建
+        trig_event_name = 'AKE_Set_' + trig_name
+        trig_event, _ = create_obj_content(trig_event_path,
+                                           "Event",
+                                           trig_event_name,
+                                           stin_desc, trig_id)
+
+        # Trigger指派
+
 
 
     """*****************主程序处理******************"""
@@ -467,15 +508,7 @@ with WaapiClient() as client:
                                         elif sheet_name == "Stin":
                                             check_by_re(value, r'^Stin_(.*)')
                                             if is_pass:
-                                                stin_segment_id, _ = create_obj_content(stin_path,
-                                                                                        "MusicSegment",
-                                                                                        cell_sound.value,
-                                                                                        value_desc_value)
-                                                stin_track_id, stin_track_path = create_obj_content(stin_segment_id,
-                                                                                                    "MusicTrack",
-                                                                                                    cell_sound.value,
-                                                                                                    value_desc_value)
-                                                import_media(cell_sound.value, stin_track_path)
+                                                create_stin_content(cell_sound.value, value_desc_value)
 
     """******************对象删除清理********************"""
     """对象删除"""
@@ -518,14 +551,14 @@ with WaapiClient() as client:
                     # Segment删除
                     delete_obj(wwise_obj_dict['id'], wwise_obj_dict['name'], obj_type)
                     original_path_media = os.path.join(original_path, "Stin", wwise_obj_dict['name'], '.wav')
-                    print(original_path_media)
+                    # print(original_path_media)
                     # 媒体资源删除
                     original_path_media = ""
                     if "Stin" in wwise_obj_dict['name']:
-                        original_path_media = os.path.join(original_path, "Stin", wwise_obj_dict['name']+'.wav')
+                        original_path_media = os.path.join(original_path, "Stin", wwise_obj_dict['name'] + '.wav')
 
                     elif "Mus" in wwise_obj_dict['name']:
-                        original_path_media = os.path.join(original_path, "Mus", wwise_obj_dict['name']+'.wav')
+                        original_path_media = os.path.join(original_path, "Mus", wwise_obj_dict['name'] + '.wav')
                     if os.path.isfile(original_path_media):
                         os.remove(original_path_media)
                         print_warning("[文件清理]" + original_path_media + "已删除")

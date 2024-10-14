@@ -433,10 +433,36 @@ with WaapiClient() as client:
     # client.call("ak.wwise.core.audio.import", args_import)
 
     """获取Music的Sub Track测试"""
-    # 注意，这里需要选择MusicTrack的父级，也就是Segment，然后获取的内容为Sequences
+    # # 注意，这里需要选择MusicTrack的父级，也就是Segment，然后获取的内容为Sequences
+    # args = {
+    #     'waql': '"%s" select descendants' % (
+    #         '{CF58A7CB-4A59-49EA-8735-4F6FB6817F44}')
+    # }
+    # music_track, _ = find_obj(args)
+    # pprint(music_track)
+
+    """Music的Stinger创建测试"""
+    # 仅23版可使用
     args = {
-        'waql': '"%s" select descendants' % (
-            '{CF58A7CB-4A59-49EA-8735-4F6FB6817F44}')
+        "objects": [
+            {
+                "object": "{36137DAE-C9CC-4025-BE36-C5DCA3DD80B5}",
+                "@Trigger": "\\Triggers\\Default Work Unit\\Stin_Map_A02_Combat_Boss_Trans_Piano"
+            }
+        ]
+    }
+    client.call("ak.wwise.core.object.set", args)
+
+    # args = {
+    #     "object": "{5691B17A-B70A-4575-AA75-6265F9685C5F}",
+    #     "reference": "\\Triggers\\Default Work Unit\\Stin_Map_A02_Combat_Boss_Trans_Piano",
+    #     "value": "Trigger"
+    # }
+    # client.call("ak.wwise.core.object.setReference", args)
+
+    # Stinger查找
+    args = {
+        'waql': 'from type MusicStinger'
     }
     music_track, _ = find_obj(args)
     pprint(music_track)
