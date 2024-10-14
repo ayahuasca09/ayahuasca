@@ -4,15 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="17a8a927-0db7-41d4-8f81-9181fc87e6d9" name="更改" comment="音乐资源导入自动化:stin segment及子级增删改同步">
-      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_auto_gen_music/New_Media/Char_Skill_C1502_Atk1_End_R03.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_auto_gen_music/New_Media/Char_Skill_C1502_Atk1_R02.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_auto_gen_music/New_Media/Char_Skill_C1502_Atk2.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_auto_gen_music/New_Media/Mus_Map_A02_Combat_Boss_Trans.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_auto_gen_music/New_Media/Stin_Map_A02_Combat_Boss_Trans_Piano.wav" afterDir="false" />
+    <list default="true" id="17a8a927-0db7-41d4-8f81-9181fc87e6d9" name="更改" comment="音乐资源导入自动化:媒体资源增删改同步">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_auto_gen_music/waapi_auto_gen_music.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_auto_gen_music/waapi_auto_gen_music.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_auto_gen_music/音乐资源表.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_auto_gen_music/音乐资源表.xlsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -323,14 +316,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1716955384994</updated>
-    </task>
-    <task id="LOCAL-00039" summary="音频资源导入检测——ue,py接入">
-      <option name="closed" value="true" />
-      <created>1719224479796</created>
-      <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL-00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1719224479796</updated>
     </task>
     <task id="LOCAL-00040" summary="音频资源导入检测——根据状态读取数据，拼接事件描述">
       <option name="closed" value="true" />
@@ -716,7 +701,15 @@
       <option name="project" value="LOCAL" />
       <updated>1728628704862</updated>
     </task>
-    <option name="localTasksCounter" value="88" />
+    <task id="LOCAL-00088" summary="音乐资源导入自动化:媒体资源增删改同步">
+      <option name="closed" value="true" />
+      <created>1728639582539</created>
+      <option name="number" value="00088" />
+      <option name="presentableId" value="LOCAL-00088" />
+      <option name="project" value="LOCAL" />
+      <updated>1728639582539</updated>
+    </task>
+    <option name="localTasksCounter" value="89" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -732,7 +725,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="ES重命名工具" />
     <MESSAGE value="音效流程优化(媒体资源导入）：导完其他资产后清除文相应资源缓存" />
     <MESSAGE value="ES流程优化：删除导入完后的资源、wsources表清空" />
     <MESSAGE value="ES流程优化：分语言导入相应文件夹" />
@@ -757,7 +749,8 @@
     <MESSAGE value="ID表自动化：修复ID生成有重复的问题（累加改找最大值）" />
     <MESSAGE value="音乐资源导入自动化:music segment增删改同步" />
     <MESSAGE value="音乐资源导入自动化:stin segment及子级增删改同步" />
-    <option name="LAST_COMMIT_MESSAGE" value="音乐资源导入自动化:stin segment及子级增删改同步" />
+    <MESSAGE value="音乐资源导入自动化:媒体资源增删改同步" />
+    <option name="LAST_COMMIT_MESSAGE" value="音乐资源导入自动化:媒体资源增删改同步" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
