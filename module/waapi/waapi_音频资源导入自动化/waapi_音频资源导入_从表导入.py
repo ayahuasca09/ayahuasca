@@ -168,8 +168,30 @@ def check_by_CG(name):
 
 
 def check_by_Imp(name):
-    global is_pass
-    is_pass = False
+    if name:
+        # sub
+        name = check_by_re(js_dict[system_name]['sub'] + "_", name)
+        if name:
+            # property
+            name = check_by_re(js_dict[system_name]['property'] + "_", name)
+            if name:
+                # desc1
+                name = check_by_re(js_dict[system_name]['desc1'] + "_", name)
+                if name:
+                    # desc2
+                    check_by_re(js_dict[system_name]['desc2'], name)
+                else:
+                    print_error(cell_sound.value + "：" + js_dict[system_name][
+                        'desc2'] + "有误，请检查是否添加模块名称或是否拼写有误")
+            else:
+                print_error(cell_sound.value + "：" + js_dict[system_name][
+                    'desc1'] + "有误，请检查是否添加模块名称或是否拼写有误")
+        else:
+            print_error(
+                cell_sound.value + "：" + js_dict[system_name]['property'] + "有误，请检查是否添加模块名称或是否拼写有误")
+    else:
+        print_error(
+            cell_sound.value + "：" + js_dict[system_name]['sub'] + "有误，请检查是否添加模块名称或是否拼写有误")
 
 
 """Mus类型检查"""

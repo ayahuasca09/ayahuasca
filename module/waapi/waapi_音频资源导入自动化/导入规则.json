@@ -38,9 +38,10 @@
 		"max": 7000
 	},
 	"Imp": {
-		"module": ".*",
-		"name": ".*",
-		"property": ".*",
+		"sub": "((Sword)|(Dagger)|(Handgun)|(Shotgun))",
+		"property": "((Blunt)|(Chop)|(Stab|(Shot)))",
+		"desc1": "((Flesh)|(Metal))",
+		"desc2": "((Lit)|(Mid)|(Hvy)|(Cri))",
 		"length": 20,
 		"min": 7001,
 		"max": 8000
