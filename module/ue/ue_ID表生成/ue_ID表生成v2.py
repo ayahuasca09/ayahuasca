@@ -21,13 +21,13 @@ elif __file__:
 """ID表内容写入"""
 # 获取ID表路径
 # 打开工作簿
-excel_path = "Audio_Desc.xlsx"
+excel_path = "Audio.xlsx"
 wb = openpyxl.load_workbook(excel_path)
 # 获取工作表
 sheet = wb['audio']
 
 """csv表路径"""
-csv_path = "Audio_Desc.csv"
+csv_path = "Audio.csv"
 
 """ini文件"""
 # 创建 ConfigParser 对象
@@ -413,26 +413,26 @@ df = pd.read_excel(excel_path)
 encoding = 'utf-8'
 df.to_csv(csv_path, encoding=encoding, index=False)
 
-# 复制一份excel文件
-excel_no_desc = "Audio.xlsx"
-shutil.copy2(excel_path, excel_no_desc)
-# 删除描述列
-wb = openpyxl.load_workbook(excel_no_desc)
-# 获取工作表
-sheet = wb['audio']
-# 找到第一行中值为 "Desc" 的列
-for col in sheet.iter_cols(1, sheet.max_column):
-    if col[0].value == "Desc":
-        col_letter = col[0].column_letter
-        sheet.delete_cols(col[0].column)
-        break
-# 保存修改后的工作簿
-wb.save(excel_no_desc)
+# # 复制一份excel文件
+# excel_no_desc = "Audio.xlsx"
+# # shutil.copy2(excel_path, excel_no_desc)
+# # 删除描述列
+# wb = openpyxl.load_workbook(excel_no_desc)
+# # 获取工作表
+# sheet = wb['audio']
+# # 找到第一行中值为 "Desc" 的列
+# for col in sheet.iter_cols(1, sheet.max_column):
+#     if col[0].value == "Desc":
+#         col_letter = col[0].column_letter
+#         sheet.delete_cols(col[0].column)
+#         break
+# # 保存修改后的工作簿
+# wb.save(excel_no_desc)
 
 # 转为csv
-csv_no_desc = "Audio.csv"
-df = pd.read_excel(excel_no_desc)
-df.to_csv(csv_no_desc, encoding=encoding, index=False)
+# csv_no_desc = "Audio.csv"
+# df = pd.read_excel(excel_no_desc)
+# df.to_csv(csv_no_desc, encoding=encoding, index=False)
 
 # 应用程序弹窗
 root = tk.Tk()
