@@ -35,7 +35,7 @@ wwise_vo_path = os.path.join(wwise_proj_path, "Originals", "Voices")
 # 获取Wwise的Audio根路径
 wwise_audio_root = "{5EA7BBF8-64C0-4A50-8821-A07E8BE21D68}"
 # 获取Wwise的Music路径
-wwise_music_root = "{49FED366-B530-42A8-993B-924873AAB707}"
+wwise_music_root = "{E8A5F6A0-AB3E-4166-BB68-C7D7ECC92B29}"
 
 # 转码设置的配置
 # 配置
@@ -121,7 +121,8 @@ with WaapiClient() as client:
 
     def find_obj(args):
         options = {
-            'return': ['name', 'id', 'path', 'notes', 'originalWavFilePath', 'maxDurationSource', '3DSpatialization']
+            'return': ['name', 'id', 'path', 'notes', 'originalWavFilePath', 'maxDurationSource', '3DSpatialization',
+                       'type']
 
         }
         obj_sub_list = client.call("ak.wwise.core.object.get", args, options=options)['return']
@@ -303,3 +304,14 @@ with WaapiClient() as client:
 
         # 针对lp资源的设置
         set_lp()
+
+    # 针对mus/stin处理
+    mus_list, _, _ = find_obj(
+        {'waql': ' "%s" select descendants where type = "MusicTrack" ' % wwise_music_root})
+    # pprint(mus_list)
+    # 转码需要设置为Mus
+    for mus_dict in mus_list:
+        set_conversion_type(mus_dict['id'], Music)
+        # 开流
+        set_obj_property(mus_dict['id'], "IsStreamingEnabled", True)
+        set_obj_property(mus_dict['id'], "IsZeroLatency", True)

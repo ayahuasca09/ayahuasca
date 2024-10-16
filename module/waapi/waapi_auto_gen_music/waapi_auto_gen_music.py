@@ -184,7 +184,6 @@ def check_by_length_and_word(name):
 with WaapiClient() as client:
     """*****************Wwise功能区******************"""
 
-
     """媒体资源导入"""
 
 
@@ -392,15 +391,16 @@ with WaapiClient() as client:
                                                        "Trigger",
                                                        trig_name,
                                                        stin_desc, "")
-        # Event创建
-        trig_event_name = 'AKE_Set_' + trig_name
-        trig_event, _ = create_obj_content(trig_event_path,
-                                           "Event",
-                                           trig_event_name,
-                                           stin_desc, trig_id)
-
-        # Trigger指派
-
+        """Trigger应该是直接在音乐中设置，不需要创建Event"""
+        # # Event创建
+        # trig_event_name = 'AKE_Set_' + trig_name
+        # trig_event, _ = create_obj_content(trig_event_path,
+        #                                    "Event",
+        #                                    trig_event_name,
+        #                                    stin_desc, trig_id)
+        #
+        # # Trigger指派
+        # # 23才支持
 
 
     """*****************主程序处理******************"""
@@ -543,7 +543,7 @@ with WaapiClient() as client:
     """内容删除"""
 
 
-    def delete_state(wwise_obj_list, excel_list, obj_type):
+    def delete_state(wwise_obj_list, excel_list, obj_type, trig_list):
         for wwise_obj_dict in wwise_obj_list:
             # pprint(wwise_obj_dict['name'])
             if wwise_obj_dict['name'] != "None":
@@ -556,6 +556,11 @@ with WaapiClient() as client:
                     original_path_media = ""
                     if "Stin" in wwise_obj_dict['name']:
                         original_path_media = os.path.join(original_path, "Stin", wwise_obj_dict['name'] + '.wav')
+                        # Trig删除
+                        for trig_dict in trig_list:
+                            trig_name = wwise_obj_dict['name'].replace("Stin", "Trig")
+                            if trig_dict['name'] == trig_name:
+                                delete_obj(trig_dict['id'], trig_name, "Trigger")
 
                     elif "Mus" in wwise_obj_dict['name']:
                         original_path_media = os.path.join(original_path, "Mus", wwise_obj_dict['name'] + '.wav')
@@ -569,9 +574,10 @@ with WaapiClient() as client:
     # Wwise中的内容列表获取
     mus_segment_list = find_obj_list(music_path, "MusicSegment")
     stin_segment_list = find_obj_list(stin_path, "MusicSegment")
+    trig_list = find_obj_list(trig_path, "Trigger")
 
     # # 查找state/switch，再跟表格比对有没有，没有就删除资源及事件引用
-    delete_state(mus_segment_list, mus_name_list, "MusicSegment")
+    delete_state(mus_segment_list, mus_name_list, "MusicSegment",trig_list)
 
     # 撤销结束
     client.call("ak.wwise.core.undo.endGroup", displayName="rnd创建撤销")
