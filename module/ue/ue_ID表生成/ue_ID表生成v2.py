@@ -21,19 +21,19 @@ elif __file__:
 """ID表内容写入"""
 # 获取ID表路径
 # 打开工作簿
-excel_path = "Audio.xlsx"
+excel_path = os.path.join(py_path, "Audio.xlsx")
 wb = openpyxl.load_workbook(excel_path)
 # 获取工作表
 sheet = wb['audio']
 
 """csv表路径"""
-csv_path = "Audio.csv"
+csv_path = os.path.join(py_path, "Audio.csv")
 
 """ini文件"""
 # 创建 ConfigParser 对象
 config = configparser.ConfigParser()
 # 读取 ini 文件
-config.read("Config.ini")
+config.read(os.path.join(py_path, "Config.ini"))
 
 """UE工程路径"""
 ue_audio_path = config['DEFAULT']['UE_Audio_Path']

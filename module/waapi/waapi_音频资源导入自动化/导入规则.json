@@ -38,8 +38,8 @@
 		"max": 7000
 	},
 	"Imp": {
-		"sub": "((Sword)|(Dagger)|(Handgun)|(Shotgun))",
-		"property": "((Blunt)|(Chop)|(Stab|(Shot)))",
+		"sub": "((Sword)|(Dagger)|(Handgun)|(Shotgun)|(Greatsword)|(Shield))",
+		"property": "((Blunt)|(Chop)|(Stab|(Shot)|(Punch)))",
 		"desc1": "((Flesh)|(Metal))",
 		"desc2": "((Lit)|(Mid)|(Hvy)|(Cri))",
 		"length": 20,

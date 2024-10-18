@@ -56,11 +56,11 @@ else:
     def soundbank_generated(*args, **kwargs):
 
         bankinfo_list = kwargs.get("bankInfo")
-        print("*****生成的单个SoundBank*****")
+        # print("*****生成的单个SoundBank*****")
         # pprint(bankinfo_list)
 
         for bankinfo_dict in bankinfo_list:
-            print("*****生成的单个BankInfo*****")
+            # print("*****生成的单个BankInfo*****")
             # pprint(bankinfo_dict)
             if 'Media' in bankinfo_dict:
                 for media_dict in bankinfo_dict['Media']:
@@ -71,12 +71,12 @@ else:
                         sheet.cell(row=insert_row, column=1).alignment = align
                         sheet.cell(row=insert_row, column=2).value = media_dict['ShortName']
 
-            print("*****生成的单个BankInfo结束*****")
+            # print("*****生成的单个BankInfo结束*****")
 
         # 数据解析
         # bankinfo_wem = kwargs.get("bankInfo", {}).get("Media")
 
-        print("*****生成的单个SoundBank结束*****\n")
+        # print("*****生成的单个SoundBank结束*****\n")
 
         # 执行完成后断开 WAMP 连接，当然，要是想一直监控信息也可以不断开
         client.disconnect()
@@ -87,7 +87,7 @@ else:
 
     args = {
         "soundbanks": [
-            {"name": "Stop_All"}
+            {"name": "AKE_Play_Mus_Global"}
         ],
         "writeToDisk": True,
         # "clearAudioFileCache": True
@@ -101,5 +101,5 @@ else:
     with open(json_path, 'w') as file:
         file.write(gen_log_json)
 
-wb.save(excel_path)
-os.system(excel_path)
+# wb.save(excel_path)
+# os.system(excel_path)

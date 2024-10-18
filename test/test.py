@@ -1,6 +1,7 @@
 import os
 from os.path import abspath, dirname
 import sys
+import subprocess
 
 """输出测试"""
 # print("aa")
@@ -86,3 +87,8 @@ import sys
 #     imax = 3
 #     get_imax()
 # print(imax)
+
+"""测试exe控制命令执行"""
+# command = (r"S:\Ver_1.0.0\Editor\Engine\Binaries\Win64\UnrealEditor.exe S:\Ver_1.0.0\Project\SilverPalace.uproject "
+#            r"-run=WwiseReconcileCommandlet -modes=all")
+# subprocess.run(command, capture_output=True, text=True, check=True, shell=True)

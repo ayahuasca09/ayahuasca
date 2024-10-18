@@ -385,6 +385,18 @@ with WaapiClient() as client:
     # 撤销结束
     client.call("ak.wwise.core.undo.endGroup", displayName="rnd创建撤销")
 
+    # 打包
+    args = {
+        "soundbanks": [
+            {"name": "AKE_Play_Mus_Global"}
+        ],
+        "writeToDisk": True,
+        # "clearAudioFileCache": True
+    }
+
+    gen_log = client.call("ak.wwise.core.soundbank.generate", args)
+    pprint(gen_log)
+
     # 清除复制的媒体资源
     # shutil.rmtree("New_Media")
     # os.mkdir("New_Media")
@@ -393,9 +405,9 @@ with WaapiClient() as client:
     # client.call("ak.wwise.core.undo.undo")
 
     # 清除复制的媒体资源
-    shutil.rmtree("New_Media")
-    os.mkdir("New_Media")
-    os.mkdir("New_Media/Chinese")
-    os.mkdir("New_Media/English")
-    os.mkdir("New_Media/Japanese")
-    os.mkdir("New_Media/Korean")
+    shutil.rmtree(wav_path)
+    os.mkdir(wav_path)
+    os.mkdir(os.path.join(wav_path, "Chinese"))
+    os.mkdir(os.path.join(wav_path, "English"))
+    os.mkdir(os.path.join(wav_path, "Japanese"))
+    os.mkdir(os.path.join(wav_path, "Korean"))
