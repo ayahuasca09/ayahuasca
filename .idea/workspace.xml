@@ -4,22 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="17a8a927-0db7-41d4-8f81-9181fc87e6d9" name="更改" comment="音乐配置自动化:转码开流，更新转码后的资源">
-      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源全流程生成.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/SilverPalace战斗音频需求资源管理表 (10).xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/SilverPalace语音资源管理表 (5).xlsx" afterDir="false" />
+    <list default="true" id="17a8a927-0db7-41d4-8f81-9181fc87e6d9" name="更改" comment="全流程自动化优化">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/ue/ue_ID表生成/Audio.csv" beforeDir="false" afterPath="$PROJECT_DIR$/module/ue/ue_ID表生成/Audio.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/ue/ue_ID表生成/Audio.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/module/ue/ue_ID表生成/Audio.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/ue/ue_ID表生成/ue_ID表生成v2.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/ue/ue_ID表生成/ue_ID表生成v2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_auto_gen_music/waapi_auto_gen_music.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_auto_gen_music/waapi_auto_gen_music.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/module/waapi/waapi_auto_gen_music/音乐资源表 (1).xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_auto_gen_music/音乐资源表 (1).xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_generatesoundbank/GenerateSoundbank_Log.json" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_generatesoundbank/GenerateSoundbank_Log.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_generatesoundbank/waapi_订阅_soundbank生成数据.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_generatesoundbank/waapi_订阅_soundbank生成数据.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_generatesoundbank/生成的wem文件查询.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_generatesoundbank/生成的wem文件查询.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/SilverPalace战斗音频需求资源管理表 (6).xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/SilverPalace语音资源管理表 (3).xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/waapi_音频资源导入_从媒体资源导入.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/waapi_音频资源导入_从媒体资源导入.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/导入规则.json" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/导入规则.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -131,7 +119,7 @@
       <visibility group="运行配置" flag="true" />
     </myKeys>
   </component>
-  <component name="RunManager" selected="Python.waapi_音频资源全流程生成">
+  <component name="RunManager" selected="Python.waapi_auto_gen_music">
     <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="SP" />
       <option name="ENV_FILES" value="" />
@@ -146,28 +134,6 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test/test.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="ue_ID表生成v2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="SP" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/module/ue/ue_ID表生成" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/module/ue/ue_ID表生成/ue_ID表生成v2.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -286,13 +252,35 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="waapi_auto_gen_music" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="SP" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/module/waapi/waapi_auto_gen_music" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/module/waapi/waapi_auto_gen_music/waapi_auto_gen_music.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.waapi_auto_gen_music" />
+        <item itemvalue="Python.test" />
         <item itemvalue="Python.waapi_音频资源全流程生成" />
         <item itemvalue="Python.waapi_音频资源导入_从媒体资源导入" />
         <item itemvalue="Python.waapi_订阅_soundbank生成数据" />
-        <item itemvalue="Python.test" />
-        <item itemvalue="Python.ue_ID表生成v2" />
       </list>
     </recent_temporary>
   </component>
@@ -311,14 +299,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1716955384994</updated>
-    </task>
-    <task id="LOCAL-00045" summary="音频自动配置">
-      <option name="closed" value="true" />
-      <created>1720431396003</created>
-      <option name="number" value="00045" />
-      <option name="presentableId" value="LOCAL-00045" />
-      <option name="project" value="LOCAL" />
-      <updated>1720431396003</updated>
     </task>
     <task id="LOCAL-00046" summary="音频自动配置">
       <option name="closed" value="true" />
@@ -704,7 +684,15 @@
       <option name="project" value="LOCAL" />
       <updated>1729049569886</updated>
     </task>
-    <option name="localTasksCounter" value="94" />
+    <task id="LOCAL-00094" summary="全流程自动化优化">
+      <option name="closed" value="true" />
+      <created>1729248687320</created>
+      <option name="number" value="00094" />
+      <option name="presentableId" value="LOCAL-00094" />
+      <option name="project" value="LOCAL" />
+      <updated>1729248687321</updated>
+    </task>
+    <option name="localTasksCounter" value="95" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -720,7 +708,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="ES使用excel替换csv生成" />
     <MESSAGE value="命令扩展——生成父级文件" />
     <MESSAGE value="命令扩展——为选中容器创建事件" />
     <MESSAGE value="事件生成：补充描述为空的条件" />
@@ -745,6 +732,7 @@
     <MESSAGE value="补Impact生成逻辑和导Impact资源" />
     <MESSAGE value="ID表逻辑修改" />
     <MESSAGE value="音乐配置自动化:转码开流，更新转码后的资源" />
-    <option name="LAST_COMMIT_MESSAGE" value="音乐配置自动化:转码开流，更新转码后的资源" />
+    <MESSAGE value="全流程自动化优化" />
+    <option name="LAST_COMMIT_MESSAGE" value="全流程自动化优化" />
   </component>
 </project>

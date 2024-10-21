@@ -140,8 +140,7 @@ def check_by_str_length(str1, length):
 
 
 def get_descrip_and_status_column():
-    require_module_column = None
-    second_module_column = None
+    bpm_column = None
     require_name_column = None
     status_column = None
     if list(sheet.rows)[0]:
@@ -153,8 +152,10 @@ def get_descrip_and_status_column():
                 elif '资源描述' == str(cell.value):
                     status_column = cell.column
                     # print(status_column)
+                elif 'BPM' == str(cell.value):
+                    bpm_column = cell.column
 
-    return require_name_column, status_column
+    return require_name_column, status_column, bpm_column
 
 
 """分隔符的大小写和长度检查"""
@@ -216,7 +217,7 @@ with WaapiClient() as client:
 
     def find_obj(args):
         options = {
-            'return': ['name', 'id', 'path', 'notes', 'originalWavFilePath', 'type', 'parent']
+            'return': ['name', 'id', 'path', 'notes', 'originalWavFilePath', 'type', 'parent', "Tempo"]
 
         }
         obj_sub_list = client.call("ak.wwise.core.object.get", args, options=options)['return']
@@ -248,6 +249,19 @@ with WaapiClient() as client:
         }
         client.call("ak.wwise.core.object.setNotes", args)
         # print_warning(obj_name + "描述更改为：" + notes_value)
+
+
+    """设置对象属性"""
+
+
+    def set_obj_property(obj_id, property, value):
+        args = {
+            "object": obj_id,
+            "property": property,
+            "value": value
+        }
+        client.call("ak.wwise.core.object.setProperty", args)
+        # print(name_2 + ":" + str(trigger_rate))
 
 
     """修改Wwise内容的名字"""
@@ -288,6 +302,10 @@ with WaapiClient() as client:
                 set_obj_notes(state_group_dict['id'], state_group_desc)
                 state_group_id = state_group_dict['id']
                 state_group_path = state_group_dict['path']
+                # 设置bpm
+                if "Tempo" in state_group_dict.keys():
+                    set_obj_property(state_group_dict['id'], "OverrideClockSettings", True)
+                    set_obj_property(state_group_dict['id'], "Tempo", bpm_value)
                 break
             # 改名了但描述一致
             elif state_group_dict['notes'] == state_group_desc:
@@ -356,15 +374,43 @@ with WaapiClient() as client:
         #     print_error(mus_name + ":该名称的媒体资源未找到，无法导入")
 
 
+    """找要创建的music_playlist_container的父级music_switch_container"""
+
+
+    def get_create_music_playlist_container_parent(mus_name):
+        string_list = mus_name.split('_')
+        string_list.pop()
+        new_string = '_'.join(string_list)
+        for music_switch_container_dict in music_switch_container_list:
+            if music_switch_container_dict['name'] == new_string:
+                return music_switch_container_dict['id']
+        print_error(mus_name + "：没有相应的switch_container父级，请创建")
+
+
     """创建新的mus"""
 
 
     def create_mus_content(mus_name, mus_desc):
+        flag = 0
         """music segment创建"""
         # 查找music segment的playlist container父级
         for music_playlist_container_dict in music_playlist_container_list:
             if music_playlist_container_dict['name'] in mus_name:
                 mus_segment_id, _ = create_obj_content(music_playlist_container_dict['id'], "MusicSegment", mus_name,
+                                                       mus_desc, "")
+                mus_track_id, mus_track_path = create_obj_content(mus_segment_id, "MusicTrack", mus_name,
+                                                                  mus_desc, "")
+                import_media(mus_name, mus_track_path)
+                flag = 1
+                break
+        # 没有相应的music_playlist_container，自动创建
+        if flag == 0:
+            if get_create_music_playlist_container_parent(mus_name):
+                playlist_container_parent_id = get_create_music_playlist_container_parent(mus_name)
+                playlist_container_id, _ = create_obj_content(playlist_container_parent_id, "MusicPlaylistContainer",
+                                                              mus_name,
+                                                              mus_desc, "")
+                mus_segment_id, _ = create_obj_content(playlist_container_id, "MusicSegment", mus_name,
                                                        mus_desc, "")
                 mus_track_id, mus_track_path = create_obj_content(mus_segment_id, "MusicTrack", mus_name,
                                                                   mus_desc, "")
@@ -423,6 +469,9 @@ with WaapiClient() as client:
     media_info_dict, _ = get_type_file_name_and_path('.wav', 'New_Media')
     # pprint(media_info)
 
+    # 获取音乐中的switch信息
+    music_switch_container_list = find_obj_list(music_path, "MusicSwitchContainer")
+
     # pprint(music_playlist_container_name_list)
 
     # 提取规则：只提取xlsx文件
@@ -437,7 +486,7 @@ with WaapiClient() as client:
             # 加载所有工作表
             for sheet_name in sheet_names:
                 sheet = wb[sheet_name]
-                value, value_desc = get_descrip_and_status_column()
+                value, value_desc, bpm = get_descrip_and_status_column()
                 # 获取工作表第一行数据
                 for cell in list(sheet.rows)[0]:
                     if '资源名称' == str(cell.value):
@@ -481,6 +530,10 @@ with WaapiClient() as client:
                                         """检查是否为分轨"""
                                         is_subtrack = False
 
+                                        """bpm获取"""
+                                        bpm_value = sheet.cell(row=cell_sound.row,
+                                                               column=bpm).value
+
                                         if sheet_name == "Mus":
                                             """❤❤❤Mus资源名称检查❤❤❤"""
                                             # 检查是否以Mus_开头
@@ -491,14 +544,14 @@ with WaapiClient() as client:
                                                 value = value.replace("_" + suffix_name, "")
 
                                             # 检查播放列表里是否有这个名字
-                                            flag = 0
-                                            for music_container_name in music_playlist_container_name_list:
-                                                if music_container_name in value:
-                                                    flag = 1
-                                                    break
-                                            if flag == 0:
-                                                print_error(
-                                                    cell_sound.value + "：没有相应的MusicPlaylistContainer，请在Wwise中创建")
+                                            # flag = 0
+                                            # for music_container_name in music_playlist_container_name_list:
+                                            #     if music_container_name in value:
+                                            #         flag = 1
+                                            #         break
+                                            # if flag == 0:
+                                            #     print_error(
+                                            #         cell_sound.value + "：没有相应的MusicPlaylistContainer，请在Wwise中创建")
 
                                             if is_pass:
                                                 create_mus_content(cell_sound.value,
@@ -577,7 +630,7 @@ with WaapiClient() as client:
     trig_list = find_obj_list(trig_path, "Trigger")
 
     # # 查找state/switch，再跟表格比对有没有，没有就删除资源及事件引用
-    delete_state(mus_segment_list, mus_name_list, "MusicSegment",trig_list)
+    delete_state(mus_segment_list, mus_name_list, "MusicSegment", trig_list)
 
     # 撤销结束
     client.call("ak.wwise.core.undo.endGroup", displayName="rnd创建撤销")

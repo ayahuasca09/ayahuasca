@@ -90,5 +90,20 @@ import subprocess
 
 """测试exe控制命令执行"""
 # command = (r"S:\Ver_1.0.0\Editor\Engine\Binaries\Win64\UnrealEditor.exe S:\Ver_1.0.0\Project\SilverPalace.uproject "
-#            r"-run=WwiseReconcileCommandlet -modes=all")
-# subprocess.run(command, capture_output=True, text=True, check=True, shell=True)
+# #            r"-run=WwiseReconcileCommandlet -modes=all")
+# # subprocess.run(command, capture_output=True, text=True, check=True, shell=True)
+
+"""以_分割字符串，保存为一个列表，并去除列表中的最后一个元素，组成一个新字符串"""
+# # 原始字符串
+# original_string = "这是一个_测试_字符串_示例_42"
+#
+# # 以_分割字符串并保存为列表
+# string_list = original_string.split('_')
+#
+# # 去除列表中的最后一个元素
+# string_list.pop()
+#
+# # 组成一个新字符串
+# new_string = '_'.join(string_list)
+#
+# print(new_string)
