@@ -158,6 +158,7 @@ with WaapiClient() as client:
         rnd_container_list, rnd_id, _ = find_obj(
             {'waql': ' "%s" select descendants where type = "RandomSequenceContainer" ' % os.path.join(
                 wwise_dict['Root'], system_name)})
+        # print(rnd_container_list)
         for rnd_container_dict in rnd_container_list:
             if rnd_container_dict['name'] == rnd_name:
                 # pprint(rnd_name + "：RandomContainer已存在")
