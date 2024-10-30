@@ -4,11 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="17a8a927-0db7-41d4-8f81-9181fc87e6d9" name="更改" comment="响度标准化测试">
-      <change afterPath="$PROJECT_DIR$/module/cloudfeishu/SP飞书表格读写测试.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/waapi_es音效导入.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/SilverPalace战斗音频需求资源管理表 (8).xlsx" afterDir="false" />
+    <list default="true" id="17a8a927-0db7-41d4-8f81-9181fc87e6d9" name="更改" comment="ES音效自动化流程：在线表格读取测试">
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/SilverPalace战斗音频需求资源管理表 (9).xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/使用自定义库打包测试/my_lib/exe_pak.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/使用自定义库打包测试/打包测试.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/ue/ue_ID表生成/Audio.csv" beforeDir="false" afterPath="$PROJECT_DIR$/module/ue/ue_ID表生成/Audio.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/ue/ue_ID表生成/Audio.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/module/ue/ue_ID表生成/Audio.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/ue/ue_ID表生成/ue_ID表生成v2.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/ue/ue_ID表生成/ue_ID表生成v2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/waapi_es音效导入.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/waapi_es音效导入.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/SilverPalace战斗音频需求资源管理表 (8).xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/SilverPalace语音资源管理表 (5).xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/SilverPalace语音资源管理表 (5).xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/导入规则.json" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/导入规则.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pylibrary.txt" beforeDir="false" afterPath="$PROJECT_DIR$/pylibrary.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,6 +65,7 @@
     "Python.__main__.executor": "Run",
     "Python.csv_pandas测试.executor": "Run",
     "Python.excel_音效需求表音效名读取.executor": "Run",
+    "Python.exe_pak.executor": "Run",
     "Python.main (1).executor": "Run",
     "Python.main.executor": "Run",
     "Python.oi_h.executor": "Run",
@@ -92,6 +101,7 @@
     "Python.xml文件读写示例.executor": "Run",
     "Python.响度均衡测试.executor": "Run",
     "Python.将Wwise工程的响度标准化.executor": "Run",
+    "Python.打包测试.executor": "Run",
     "Python.正则测试.executor": "Run",
     "Python.飞书表格读写测试 (1).executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -110,6 +120,7 @@
       <recent name="F:\pppppy\SP\module\xml" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\pppppy\SP\test\使用自定义库打包测试\my_lib" />
       <recent name="F:\pppppy\SP\module\xml" />
       <recent name="F:\pppppy\SP\module\waapi\waapi_音频资源导入自动化" />
       <recent name="F:\pppppy\SP\module\ue\ue_ID表生成" />
@@ -125,8 +136,8 @@
       <visibility group="运行配置" flag="true" />
     </myKeys>
   </component>
-  <component name="RunManager" selected="Python.SP飞书表格读写测试">
-    <configuration name="响度均衡测试" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.打包测试">
+    <configuration name="打包测试" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="SP" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -135,11 +146,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/module/audio" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test/使用自定义库打包测试" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/module/audio/响度均衡测试.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test/使用自定义库打包测试/打包测试.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -170,7 +181,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="将Wwise工程的响度标准化" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="exe_pak" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="SP" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -179,11 +190,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/module/audio" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test/使用自定义库打包测试" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/module/audio/将Wwise工程的响度标准化.py" />
+      <option name="SCRIPT_NAME" value="F:\pppppy\SP\test\使用自定义库打包测试\my_lib\exe_pak.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -260,11 +271,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.SP飞书表格读写测试" />
-        <item itemvalue="Python.将Wwise工程的响度标准化" />
+        <item itemvalue="Python.打包测试" />
+        <item itemvalue="Python.exe_pak" />
         <item itemvalue="Python.waapi_音频资源全流程生成" />
         <item itemvalue="Python.waapi_音频资源导入_从表导入" />
-        <item itemvalue="Python.响度均衡测试" />
+        <item itemvalue="Python.SP飞书表格读写测试" />
       </list>
     </recent_temporary>
   </component>
@@ -283,14 +294,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1716955384994</updated>
-    </task>
-    <task id="LOCAL-00048" summary="语音自动化：media_info表自动生成">
-      <option name="closed" value="true" />
-      <created>1721126543028</created>
-      <option name="number" value="00048" />
-      <option name="presentableId" value="LOCAL-00048" />
-      <option name="project" value="LOCAL" />
-      <updated>1721126543028</updated>
     </task>
     <task id="LOCAL-00049" summary="语音自动化：wwise_cookie表自动生成">
       <option name="closed" value="true" />
@@ -676,7 +679,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730168905975</updated>
     </task>
-    <option name="localTasksCounter" value="97" />
+    <task id="LOCAL-00097" summary="ES音效自动化流程：在线表格读取测试">
+      <option name="closed" value="true" />
+      <created>1730189244694</created>
+      <option name="number" value="00097" />
+      <option name="presentableId" value="LOCAL-00097" />
+      <option name="project" value="LOCAL" />
+      <updated>1730189244694</updated>
+    </task>
+    <option name="localTasksCounter" value="98" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -692,7 +703,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="事件生成：补充描述为空的条件" />
     <MESSAGE value="ID表更新" />
     <MESSAGE value="ID表导表两张" />
     <MESSAGE value="复杂容器的Event在&lt;waapi_音频资源导入_从表导入&gt;中还是会被生成，需要判断其random容器的父级是不是actor-mixer，如果不是就不生成" />
@@ -717,6 +727,7 @@
     <MESSAGE value="全流程自动化优化" />
     <MESSAGE value="音乐配置自动化:bpm，还有playlistcontainer创建" />
     <MESSAGE value="响度标准化测试" />
-    <option name="LAST_COMMIT_MESSAGE" value="响度标准化测试" />
+    <MESSAGE value="ES音效自动化流程：在线表格读取测试" />
+    <option name="LAST_COMMIT_MESSAGE" value="ES音效自动化流程：在线表格读取测试" />
   </component>
 </project>

@@ -35,9 +35,6 @@ excel_mediainfo_path = 'MediaInfoTable.xlsx'
 excel_wwisecookie_path = 'ExternalSourceDefaultMedia.xlsx'
 sheet_mediainfo, wb_mediainfo = excel_get_sheet(excel_mediainfo_path, 'Sheet1')
 sheet_wwisecookie, wb_wwisecookie = excel_get_sheet(excel_wwisecookie_path, 'Sheet1')
-# print(sheet_mediainfo)
-# print(sheet_wwisecookie)
-
 
 """获取文件所在目录"""
 py_path = ""
@@ -72,23 +69,13 @@ root.setAttribute("SchemaVersion", "1")
 # 添加载Document对象上
 doc.appendChild(root)
 
-"""获取.xlsx文件"""
-file_names = []
-for i in os.walk(py_path):
-    file_names.append(i)
-# pprint("输出文件夹下的文件名：")
-file_name_list = file_names[0][2]
+# """获取.xlsx文件"""
+# file_names = []
+# for i in os.walk(py_path):
+#     file_names.append(i)
+# # pprint("输出文件夹下的文件名：")
+# file_name_list = file_names[0][2]
 
-# """读csv"""
-# media_info_data = pd.read_csv(media_info_path)
-# external_cookie_data = pd.read_csv(external_cookie_path)
-# # 报错消除
-# warnings.simplefilter(action='ignore', category=FutureWarning)
-# # 新加数据
-# media_info_initial_row = media_info_data.shape[0]
-# media_info_row_max = media_info_data.shape[0] + 1
-# external_cookie_initial_row = external_cookie_data.shape[0]
-# external_cookie_row_max = external_cookie_data.shape[0] + 1
 
 """*****************功能检测区******************"""
 
@@ -406,74 +393,8 @@ def auto_gen_es_file(file_wav_dict):
     # 查找要导入的媒体文件里有没有对应的
     for file_wav_name in file_wav_dict:
         flag = 0
-        # 读excel表
-        # 提取规则：只提取xlsx文件
-        for i in file_name_list:
-            if (".xlsx" in i) and ("MediaInfoTable" not in i) and ("ExternalSourceDefaultMedia" not in i):
-                # 拼接xlsx的路径
-                file_path_xlsx = os.path.join(py_path, i)
-                # 获取xlsx的workbook
-                wb = openpyxl.load_workbook(file_path_xlsx)
-                # 获取xlsx的所有sheet
-                sheet_names = wb.sheetnames
-                # 加载所有工作表
-                for sheet_name in sheet_names:
-                    sheet = wb[sheet_name]
-                    vo_id_column, file_name_column, external_type_column, state_column = get_vo_excel_column(sheet)
-                    if file_name_column:
-                        # 获取音效名下的内容
-                        for cell_sound in list(sheet.columns)[file_name_column - 1]:
-                            if cell_sound.value and (cell_sound.value != "文件名"):
-                                # print(cell_sound.value)
+        # 读飞书在线表
 
-                                if cell_sound.value in file_wav_name:
-                                    if sheet.cell(row=cell_sound.row, column=state_column).value != 'cancel':
-                                        # 在表格中找到此音效才将其写入xml
-                                        xml_create_element(file_wav_dict[file_wav_name])
-                                        flag = 1
-
-                                        # 在状态处自动标记完成
-                                        sheet.cell(row=cell_sound.row, column=state_column).value = 'done'
-
-                                        # 查找Wwise中有无相应的Sound
-                                        for external_sound_dict in external_sound_list:
-                                            if external_type_column:
-                                                if external_sound_dict['parent']['name'] == sheet.cell(
-                                                        row=cell_sound.row,
-                                                        column=external_type_column).value:
-                                                    # pprint(external_sound_dict['shortId'])
-                                                    # 查找mediainfo表的id有没有，没有则添加，有则修改内容
-                                                    if vo_id_column:
-                                                        vo_id = sheet.cell(
-                                                            row=cell_sound.row,
-                                                            column=vo_id_column).value
-                                                        # 写入media_info excel表
-                                                        write_media_info_excel(vo_id, cell_sound)
-                                                        # # 写入wwise_cookie excel表
-                                                        write_wwise_cookie_excel(vo_id, cell_sound, external_sound_dict)
-
-                                                        # 写入media_info csv表
-                                                        # write_media_info_csv()
-                                                        # # 写入wwise_cookie表
-                                                        # write_external_cookie_csv()
-                                                        break
-                                    # 删除所有相关数据
-                                    else:
-
-                                        if vo_id_column:
-                                            vo_id = sheet.cell(
-                                                row=cell_sound.row,
-                                                column=vo_id_column).value
-                                            # 删除es表所有相关内容
-                                            delete_cancel_content(vo_id)
-                                        if file_name_column:
-                                            file_name = sheet.cell(
-                                                row=cell_sound.row,
-                                                column=file_name_column).value
-                                            delete_cancel_wem(file_name)
-
-                                    break
-                wb.save(file_path_xlsx)
 
         if flag == 0:
             print_error(file_wav_name + "：在语音需求表中不存在，请检查名称是否正确或在表格中补充该名字")
