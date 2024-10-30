@@ -1,8 +1,8 @@
 import config
 import os
 from pprint import pprint
-import re
-import shutil
+import sys
+from os.path import abspath, dirname
 
 """查找目录下特定后缀的文件"""
 
@@ -30,12 +30,12 @@ def find_all_files_by_type(dir_path, file_type):
 # 测试
 # find_all_files_by_type(r'F:\pppppy\SP\module\excel', '.xlsx')
 
-"""遍历文件目录获取文件名称和路径
-"""
+"""遍历文件目录获取文件名称和路径"""
 
 
 def get_type_file_name_and_path(file_type, dir_path):
     file_dict = {}
+    file_list = []
     # 遍历文件夹下的所有子文件
     # 绝对路径，子文件夹，文件名
     for root, dirs, files in os.walk(dir_path):
@@ -43,13 +43,19 @@ def get_type_file_name_and_path(file_type, dir_path):
         #  'path': 'S:\\chen.gong_DCC_Audio\\Audio\\SilverPalace_WwiseProject\\Originals\\SFX'}
         for file in files:
             if file_type in file:
+                new_dict = {}
                 file_dict[file] = os.path.join(
                     root, file)
+                new_dict[file] = os.path.join(
+                    root, file)
+                file_list.append(new_dict)
 
-    return file_dict
+    return file_dict, file_list
 
 
-# 获取\Content\Audio\GeneratedSoundBanks\Windows\Event下的json文件路径
+"""获取\Content\Audio\GeneratedSoundBanks\Windows\Event下的json文件路径"""
+
+
 def oi_get_json_filesname():
     # 含有json的文件列表
     file_json_list = []
@@ -81,6 +87,34 @@ def oi_get_json_filesname():
     return file_json_list
     # [{'name': 'Play_VO_Munin_07.json',
     #   'path': 'S:\\spgame\\Project\\Content\\Audio\\GeneratedSoundBanks\\Windows\\Event\\English\\28\\Play_VO_Munin_07.json'}]
+
+
+"""获取文件所在目录"""
+
+
+def get_py_path():
+    py_path = ""
+    if hasattr(sys, 'frozen'):
+        py_path = dirname(sys.executable)
+    elif __file__:
+        py_path = dirname(abspath(__file__))
+    return py_path
+
+
+"""log捕获"""
+
+
+def print_warning(warn_info):
+    print("[warning]" + warn_info)
+
+
+"""报错捕获"""
+
+
+def print_error(error_info):
+    global is_pass
+    is_pass = False
+    print("[error]" + error_info)
 
 
 # 调用范例

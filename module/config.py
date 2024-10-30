@@ -1,0 +1,20 @@
+"""External Source"""
+# excel表路径
+excel_mediainfo_path = 'MediaInfoTable.xlsx'
+excel_wwisecookie_path = 'ExternalSourceDefaultMedia.xlsx'
+
+# csv表路径
+csv_mediainfo_path = "MediaInfoTable.csv"
+csv_wwisecookie_path = "ExternalSourceDefaultMedia.csv"
+
+# Wwise ES路径
+vo_external_path = "\\Actor-Mixer Hierarchy\\v1\\VO\\VO\\VO_External"
+cg_external_path = "\\Actor-Mixer Hierarchy\\v1\\CG\\CG\\CG_External"
+
+# external的输入输出路径
+external_input_path = "F:\\pppppy\\SP\\module\\waapi\\waapi_Auto_Import_ExternalSource\\ExternalSource.wsources"
+external_output_win_path = 'S:\\Ver_1.0.0\\Project\\Content\\Audio\\GeneratedExternalSources\\Windows'
+external_output_android_path = 'S:\\Ver_1.0.0\\Project\\Content\\Audio\\GeneratedExternalSources\\Android'
+external_output_ios_path = 'S:\\Ver_1.0.0\\Project\\Content\\Audio\\GeneratedExternalSources\\iOS'
+external_output_path = 'S:\\Ver_1.0.0\\Project\\Content\\Audio\\GeneratedExternalSources'
+language_list = ['Chinese', 'English', 'Japanese', 'Korean']

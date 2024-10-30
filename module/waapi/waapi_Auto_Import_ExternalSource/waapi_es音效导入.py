@@ -1,60 +1,31 @@
 # xml读取库
-import xml.etree.ElementTree as ET
-import openpyxl
 import shutil
 import pandas as pd
-import sys
-from os.path import abspath, dirname
 import os
-import warnings
-import openpyxl
-from openpyxl.styles import colors
-import csv
 from waapi import WaapiClient
-from pprint import pprint
 
 # xml写入库
 from xml.dom.minidom import Document, parse
 
-"""Excel表获取"""
+# 自定义库
+import module.excel.excel_h as excel_h
+import module.config as config
+import module.oi.oi_h as oi_h
 
-
-# 打开工作簿并获取工作表
-def excel_get_sheet(path, sheetname):
-    # 打开工作簿
-    wb = openpyxl.load_workbook(path)
-    # print(wb)
-    # 获取工作表
-    sheet = wb[sheetname]
-    # print(sheet)
-    return sheet, wb
-
-
+"""****************数据获取******************"""
 # 获取相应的excel表
-excel_mediainfo_path = 'MediaInfoTable.xlsx'
-excel_wwisecookie_path = 'ExternalSourceDefaultMedia.xlsx'
-sheet_mediainfo, wb_mediainfo = excel_get_sheet(excel_mediainfo_path, 'Sheet1')
-sheet_wwisecookie, wb_wwisecookie = excel_get_sheet(excel_wwisecookie_path, 'Sheet1')
+sheet_mediainfo, wb_mediainfo = excel_h.excel_get_sheet(config.excel_mediainfo_path, 'Sheet1')
+sheet_wwisecookie, wb_wwisecookie = excel_h.excel_get_sheet(config.excel_wwisecookie_path, 'Sheet1')
 
-"""获取文件所在目录"""
-py_path = ""
-if hasattr(sys, 'frozen'):
-    py_path = dirname(sys.executable)
-elif __file__:
-    py_path = dirname(abspath(__file__))
+# 获取文件所在目录
+py_path = oi_h.get_py_path()
 
-"""*****************可变配置******************"""
-vo_external_path = "\\Actor-Mixer Hierarchy\\v1\\VO\\VO\\VO_External"
 # 获取.csv文件
-media_info_path = os.path.join(py_path, "MediaInfoTable.csv")
-external_cookie_path = os.path.join(py_path, "ExternalSourceDefaultMedia.csv")
-# external的输入输出路径
-external_input_path = "F:\\pppppy\\SP\\module\\waapi\\waapi_Auto_Import_ExternalSource\\ExternalSource.wsources"
-external_output_win_path = 'S:\\Ver_1.0.0\\Project\\Content\\Audio\\GeneratedExternalSources\\Windows'
-external_output_android_path = 'S:\\Ver_1.0.0\\Project\\Content\\Audio\\GeneratedExternalSources\\Android'
-external_output_ios_path = 'S:\\Ver_1.0.0\\Project\\Content\\Audio\\GeneratedExternalSources\\iOS'
-external_output_path = 'S:\\Ver_1.0.0\\Project\\Content\\Audio\\GeneratedExternalSources'
-language_list = ['Chinese', 'English', 'Japanese', 'Korean']
+media_info_path = os.path.join(py_path, config.csv_mediainfo_path)
+external_cookie_path = os.path.join(py_path, config.csv_wwisecookie_path)
+
+# 获取媒体资源文件列表
+wav_path = os.path.join(py_path, "New_Media")
 
 """**************写xml**************"""
 # 创建一个对象
@@ -69,53 +40,9 @@ root.setAttribute("SchemaVersion", "1")
 # 添加载Document对象上
 doc.appendChild(root)
 
-# """获取.xlsx文件"""
-# file_names = []
-# for i in os.walk(py_path):
-#     file_names.append(i)
-# # pprint("输出文件夹下的文件名：")
-# file_name_list = file_names[0][2]
-
-
 """*****************功能检测区******************"""
 
-"""报错捕获"""
-
-
-def print_warning(warn_info):
-    print("[warning]" + warn_info)
-
-
-def print_error(error_info):
-    global is_pass
-    is_pass = False
-    print("[error]" + error_info)
-
-
-"""遍历文件目录获取文件名称和路径"""
-
-
-def get_type_file_name_and_path(file_type, dir_path):
-    file_dict = {}
-    file_list = []
-    # 遍历文件夹下的所有子文件
-    # 绝对路径，子文件夹，文件名
-    for root, dirs, files in os.walk(dir_path):
-        # {'name': ['1111.akd', 'Creature Growls 4.akd', 'Sonic Salute_005_2_20.akd'],
-        #  'path': 'S:\\chen.gong_DCC_Audio\\Audio\\SilverPalace_WwiseProject\\Originals\\SFX'}
-        for file in files:
-            if file_type in file:
-                new_dict = {}
-                file_dict[file] = os.path.join(
-                    root, file)
-                new_dict[file] = os.path.join(
-                    root, file)
-                file_list.append(new_dict)
-
-    return file_dict, file_list
-
-
-"""创建子节点"""
+"""xml创建元素"""
 
 
 def xml_create_element(media_path):
@@ -123,28 +50,6 @@ def xml_create_element(media_path):
     source.setAttribute("Path", media_path)
     source.setAttribute("Conversion", "VO")
     root.appendChild(source)
-
-
-"""获取语音需求表每列的内容"""
-
-
-def get_vo_excel_column(sheet):
-    # 语音ID
-    vo_id_column = None
-    # 文件名
-    file_name_column = None
-    external_type_column = None
-    state_column = None
-    for cell in list(sheet.rows)[0]:
-        if '文件名' in str(cell.value):
-            file_name_column = cell.column
-        elif '语音ID' in str(cell.value):
-            vo_id_column = cell.column
-        elif 'External_Type' in str(cell.value):
-            external_type_column = cell.column
-        elif 'State' in str(cell.value):
-            state_column = cell.column
-    return vo_id_column, file_name_column, external_type_column, state_column
 
 
 """写入media_info excel表"""
@@ -180,53 +85,6 @@ def write_media_info_excel(vo_id, cell_sound):
                 sheet_mediainfo.cell(row=insert_row, column=cell.column).value = value_dict[cell.value]
 
 
-# """写入media_info csv表"""
-#
-#
-# def write_media_info_csv():
-#     # 在media_info表中未找到该ID，则新增
-#     if media_info_data[media_info_data['ExternalSourceMediaInfoId'] == vo_id].empty:
-#         # 作初始化操作
-#         if media_info_initial_row == 0:
-#             new_data = pd.DataFrame([{
-#                 "Name": vo_id,
-#                 'ExternalSourceMediaInfoId': vo_id,
-#                 'MediaName': cell_sound.value + ".wem",
-#                 'CodecID': 4,
-#                 'bIsStreamed': 'TRUE',
-#                 'bUseDeviceMemory': "FALSE",
-#                 'MemoryAlignment': 0,
-#                 'PrefetchSize': 0
-#             }])
-#             new_data.to_csv(media_info_path, mode='a', header=False,
-#                             index=False)
-#
-#         # 作新增操作
-#         else:
-#             global media_info_row_max
-#             new_data = [vo_id,
-#                         vo_id,
-#                         cell_sound.value + ".wem",
-#                         4,
-#                         'TRUE',
-#                         "FALSE",
-#                         0,
-#                         0
-#                         ]
-#             media_info_data.loc[media_info_row_max] = new_data
-#             media_info_data.to_csv(media_info_path, mode='a', header=False,
-#                                    index=False)
-#             media_info_row_max = media_info_row_max + 1
-#
-#     # 在media_info表中找到该ID，则替换
-#     else:
-#         media_info_data[media_info_data['ExternalSourceMediaInfoId'] == vo_id] = [vo_id,
-#                                                                                   vo_id, cell_sound.value + ".wem", 4,
-#                                                                                   'TRUE', "FALSE", 0, 0]
-#         media_info_data.to_csv(media_info_path, index=False)
-#
-#
-
 """写入wwise_cookie excel表"""
 
 
@@ -261,53 +119,11 @@ def write_wwise_cookie_excel(vo_id, cell_sound, external_sound_dict):
                 sheet_wwisecookie.cell(row=insert_row, column=cell.column).value = value_dict[cell.value]
 
 
-# """写入wwise_cookie csv表"""
-#
-#
-# def write_external_cookie_csv():
-#     # 在media_info表中未找到该ID，则新增
-#     if external_cookie_data[external_cookie_data['MediaInfoId'] == vo_id].empty:
-#         # 作初始化操作
-#         if external_cookie_initial_row == 0:
-#             new_data = pd.DataFrame({
-#                 "Name": vo_id,
-#                 'ExternalSourceCookie': external_sound_dict['shortId'],
-#                 'ExternalSourceName': external_sound_dict['name'],
-#                 'MediaInfoId': vo_id,
-#                 'MediaName': cell_sound.value + ".wem"
-#             }, index=[0])
-#             # index无效，但不加会报错
-#             new_data.to_csv(external_cookie_path, mode='a', header=False,
-#                             index=False)
-#             # 作新增操作
-#         else:
-#             global external_cookie_row_max
-#             new_data = [vo_id,
-#                         external_sound_dict['shortId'],
-#                         external_sound_dict['name'],
-#                         vo_id,
-#                         cell_sound.value + ".wem"
-#                         ]
-#             external_cookie_data.loc[external_cookie_row_max] = new_data
-#             external_cookie_data.to_csv(external_cookie_path, mode='a', header=False,
-#                                         index=False)
-#             external_cookie_row_max = external_cookie_row_max + 1
-#
-#     # 在media_info表中找到该ID，则替换
-#     else:
-#         external_cookie_data[external_cookie_data['MediaInfoId'] == vo_id] = [vo_id,
-#                                                                               external_sound_dict['shortId'],
-#                                                                               external_sound_dict['name'],
-#                                                                               vo_id,
-#                                                                               cell_sound.value + ".wem"]
-#         external_cookie_data.to_csv(external_cookie_path, index=False)
-
-
 """删除相应的.wem文件"""
 
 
 def delete_cancel_wem(media_name):
-    _, wem_list = get_type_file_name_and_path('.wem', external_output_path)
+    _, wem_list = oi_h.get_type_file_name_and_path('.wem', config.external_output_path)
     # [{'VO_C01_15_World.wem': 'S:\\Ver_1.0.0\\Project\\Content\\Audio\\GeneratedExternalSources\\Android\\VO_C01_15_World.wem'},
     #  {'VO_C01_33_Battle.wem': 'S:\\Ver_1.0.0\\Project\\Content\\Audio\\GeneratedExternalSources\\Android\\VO_C01_33_Battle.wem'},
     #  {'VO_C02_06_Menu.wem': 'S:\\Ver_1.0.0\\Project\\Content\\Audio\\GeneratedExternalSources\\Android\\VO_C02_06_Menu.wem'},
@@ -318,7 +134,7 @@ def delete_cancel_wem(media_name):
             if media_name in wem_name:
                 if os.path.isfile(wem_dict[wem_name]):
                     os.remove(wem_dict[wem_name])
-                    print_warning("wem文件删除：" + str(wem_dict[wem_name]))
+                    oi_h.print_warning("wem文件删除：" + str(wem_dict[wem_name]))
 
 
 """移除标记为cancel的所有内容"""
@@ -335,57 +151,6 @@ def delete_cancel_content(vo_id):
             sheet_wwisecookie.delete_rows(cell.row)
 
 
-# """移除标记为cancel的行"""
-#
-#
-# def drop_row_by_cancel():
-#     # 移除空白行
-#     media_info_data.dropna(how='all', inplace=True)
-#     media_info_data.to_csv('MediaInfoTable.csv', index=False)
-#     external_cookie_data.dropna(how='all', inplace=True)
-#     external_cookie_data.to_csv('ExternalSourceDefaultMedia.csv', index=False)
-#
-#     # 读excel表
-#     # 提取规则：只提取xlsx文件
-#     for i in file_name_list:
-#         if ".xlsx" in i:
-#             # 拼接xlsx的路径
-#             file_path_xlsx = os.path.join(py_path, i)
-#             # 获取xlsx的workbook
-#             wb = openpyxl.load_workbook(file_path_xlsx)
-#             # 获取xlsx的所有sheet
-#             sheet_names = wb.sheetnames
-#             # 加载所有工作表
-#             for sheet_name in sheet_names:
-#                 sheet = wb[sheet_name]
-#                 vo_id_column, file_name_column, external_type_column, state_column = get_vo_excel_column(sheet)
-#                 if state_column:
-#                     # 获取状态下的内容
-#                     for state in list(sheet.columns)[state_column - 1]:
-#                         if state.value and state.value == "cancel":
-#                             if file_name_column:
-#                                 # print(sheet.cell(state.row, column=vo_id_column).value)
-#                                 media_name = (sheet.cell(state.row, column=file_name_column).value)
-#                                 # 删除相应的.wem文件
-#                                 delete_cancel_wem(media_name)
-#
-#                                 # 删除media_info表中的内容
-#                                 row_index_list = media_info_data.index[
-#                                     media_info_data['MediaName'] == (media_name + '.wem')].tolist()
-#
-#                                 for row_index in row_index_list:
-#                                     media_info_data.drop(row_index, inplace=True)
-#                                 media_info_data.to_csv(media_info_path, index=False)
-#
-#                                 # 删除external_cookie的内容
-#                                 row_index_list = external_cookie_data.index[
-#                                     external_cookie_data['MediaName'] == (media_name + '.wem')].tolist()
-#                                 print(row_index_list)
-#                                 for row_index in row_index_list:
-#                                     external_cookie_data.drop(row_index, inplace=True)
-#                                     external_cookie_data.to_csv(external_cookie_path, index=False)
-#
-
 """自动化生成ES数据"""
 
 
@@ -395,13 +160,9 @@ def auto_gen_es_file(file_wav_dict):
         flag = 0
         # 读飞书在线表
 
-
         if flag == 0:
-            print_error(file_wav_name + "：在语音需求表中不存在，请检查名称是否正确或在表格中补充该名字")
+            oi_h.print_error(file_wav_name + "：在语音需求表中不存在，请检查名称是否正确或在表格中补充该名字")
 
-
-# 获取媒体资源文件列表
-wav_path = os.path.join(py_path, "New_Media")
 
 with WaapiClient() as client:
     """查找对象"""
@@ -430,19 +191,19 @@ with WaapiClient() as client:
         args = {
             "sources": [
                 {
-                    "input": external_input_path,
+                    "input": config.external_input_path,
                     "platform": "Windows",
-                    "output": os.path.join(external_output_win_path, language)
+                    "output": os.path.join(config.external_output_win_path, language)
                 },
                 {
-                    "input": external_input_path,
+                    "input": config.external_input_path,
                     "platform": "Android",
-                    "output": os.path.join(external_output_android_path, language)
+                    "output": os.path.join(config.external_output_android_path, language)
                 },
                 {
-                    "input": external_input_path,
+                    "input": config.external_input_path,
                     "platform": "iOS",
-                    "output": os.path.join(external_output_ios_path, language)
+                    "output": os.path.join(config.external_output_ios_path, language)
                 }
             ]
         }
@@ -452,7 +213,7 @@ with WaapiClient() as client:
 
     # 查找External下的所有Sound
     external_sound_list, _, _ = find_obj(
-        {'waql': ' "%s" select descendants where type = "ExternalSource" ' % vo_external_path})
+        {'waql': ' "%s" select descendants where type = "ExternalSource" ' % config.vo_external_path})
     # pprint(external_sound_list)
     # {'id': '{2D2C454C-38BE-414D-8712-780F570DC12D}',
     #   'name': 'vn2',
@@ -468,9 +229,9 @@ with WaapiClient() as client:
     # drop_row_by_cancel()
 
     # 遍历每种语言
-    for language in language_list:
+    for language in config.language_list:
         wav_language_path = os.path.join(py_path, "New_Media", language)
-        file_wav_language_dict, _ = get_type_file_name_and_path('.wav', wav_language_path)
+        file_wav_language_dict, _ = oi_h.get_type_file_name_and_path('.wav', wav_language_path)
         # pprint(file_wav_dict)
         # {'VO_Lorin_01.wav': 'F:\\pppppy\\SP\\module\\waapi\\waapi_Auto_Import_ExternalSource\\New_Media\\VO_Lorin_01.wav',
         #  'VO_Lorin_02.wav': 'F:\\pppppy\\SP\\module\\waapi\\waapi_Auto_Import_ExternalSource\\New_Media\\VO_Lorin_02.wav',
@@ -501,17 +262,17 @@ with WaapiClient() as client:
                                os.path.join(py_path, 'ExternalSource.wsources'))
 
     # 保存excel表的信息
-    wb_mediainfo.save(excel_mediainfo_path)
-    wb_wwisecookie.save(excel_wwisecookie_path)
+    wb_mediainfo.save(config.excel_mediainfo_path)
+    wb_wwisecookie.save(config.excel_wwisecookie_path)
 
     # 将excel转为csv
     # 指定CSV文件名和编码格式
     encoding = 'utf-8'
     # media_info csv写入
-    df = pd.read_excel(excel_mediainfo_path)
+    df = pd.read_excel(config.excel_mediainfo_path)
     df.to_csv(media_info_path, encoding=encoding, index=False)
     # external_cookie csv写入
-    df = pd.read_excel(excel_wwisecookie_path)
+    df = pd.read_excel(config.excel_wwisecookie_path)
     df.to_csv(external_cookie_path, encoding=encoding, index=False)
 
     # 清除复制的媒体资源
