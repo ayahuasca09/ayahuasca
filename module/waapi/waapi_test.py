@@ -1,6 +1,17 @@
 from waapi import WaapiClient, CannotConnectToWaapiException
 from pprint import pprint
 
+import waapi_h
+import module.config as config
+
+"""跨脚本调用测试"""
+# args = {
+#     'waql': '$ "\\Events" select descendants where type = "Event" '
+# }
+# obj_sub_list, obj_sub_id, obj_sub_path = waapi_h.find_obj(args)
+# print(obj_sub_list)
+
+
 with WaapiClient() as client:
     def find_obj(args):
         options = {
@@ -14,6 +25,9 @@ with WaapiClient() as client:
         else:
             obj_sub_id = obj_sub_list[0]['id']
         return obj_sub_list, obj_sub_id
+
+
+    # obj_sub_list = client.call("ak.wwise.core.object.get", args, options=config.options)['return']
 
 
     """soundbank生成测试"""
@@ -443,26 +457,26 @@ with WaapiClient() as client:
 
     """Music的Stinger创建测试"""
     # 仅23版可使用
-    args = {
-        "objects": [
-            {
-                "object": "{36137DAE-C9CC-4025-BE36-C5DCA3DD80B5}",
-                "@Trigger": "\\Triggers\\Default Work Unit\\Stin_Map_A02_Combat_Boss_Trans_Piano"
-            }
-        ]
-    }
-    client.call("ak.wwise.core.object.set", args)
-
     # args = {
-    #     "object": "{5691B17A-B70A-4575-AA75-6265F9685C5F}",
-    #     "reference": "\\Triggers\\Default Work Unit\\Stin_Map_A02_Combat_Boss_Trans_Piano",
-    #     "value": "Trigger"
+    #     "objects": [
+    #         {
+    #             "object": "{36137DAE-C9CC-4025-BE36-C5DCA3DD80B5}",
+    #             "@Trigger": "\\Triggers\\Default Work Unit\\Stin_Map_A02_Combat_Boss_Trans_Piano"
+    #         }
+    #     ]
     # }
-    # client.call("ak.wwise.core.object.setReference", args)
-
-    # Stinger查找
-    args = {
-        'waql': 'from type MusicStinger'
-    }
-    music_track, _ = find_obj(args)
-    pprint(music_track)
+    # client.call("ak.wwise.core.object.set", args)
+    #
+    # # args = {
+    # #     "object": "{5691B17A-B70A-4575-AA75-6265F9685C5F}",
+    # #     "reference": "\\Triggers\\Default Work Unit\\Stin_Map_A02_Combat_Boss_Trans_Piano",
+    # #     "value": "Trigger"
+    # # }
+    # # client.call("ak.wwise.core.object.setReference", args)
+    #
+    # # Stinger查找
+    # args = {
+    #     'waql': 'from type MusicStinger'
+    # }
+    # music_track, _ = find_obj(args)
+    # pprint(music_track)
