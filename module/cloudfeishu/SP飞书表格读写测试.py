@@ -46,6 +46,7 @@ title_name = "文件名"
 def get_sheet_info(column_letter, row_index):
     url = f"{sheets_base_url}/{excel_id}/values/{sheet_id}!{column_letter}{row_index + 1}:{column_letter}{row_index + 1}"
     ret = requests.get(url, headers=header)
+    data = ret.json()
     # print(ret.text)
     # pprint(ret.json())
     # {'code': 0,
@@ -101,6 +102,7 @@ sheet_all_url = f"{sheets_base_url}/{excel_id}/values/{sheet_id}!A:Z"
 ret = requests.get(sheet_all_url, headers=header)
 # print(ret.text)
 data = ret.json()
+# pprint(data)
 
 # 如果响应成功code会返回0
 if data["code"] == 0:
@@ -127,3 +129,14 @@ if data["code"] == 0:
         print("未找到" + title_name)
 else:
     print("读取" + sheet_id + "失败:", data["msg"])
+
+# 获取表格ID
+url = f"https://open.feishu.cn/open-apis/sheets/v3/spreadsheets/{excel_id}/sheets/query"
+
+response = requests.get(url, headers=header)
+sheets_info = response.json()
+# 是一整个列表的信息
+sheet_list = sheets_info["data"]["sheets"]
+pprint(sheets_info)
+# for sheet in sheet_list:
+#     pprint(sheet['sheet_id'])

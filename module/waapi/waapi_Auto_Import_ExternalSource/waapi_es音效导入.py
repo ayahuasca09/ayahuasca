@@ -15,6 +15,7 @@ import module.excel.excel_h as excel_h
 import module.config as config
 import module.oi.oi_h as oi_h
 import module.waapi.waapi_h as waapi_h
+import module.cloudfeishu.cloudfeishu_h as cloudfeishu_h
 
 """****************数据获取******************"""
 # 获取相应的excel表
@@ -34,6 +35,13 @@ external_cookie_path = os.path.join(py_path, config.csv_wwisecookie_path)
 
 # 获取媒体资源文件列表
 wav_path = os.path.join(py_path, "New_Media")
+
+# 获取各表token
+excel_es_vo_token = config.excel_es_vo_token
+excel_es_sfx_token = config.excel_es_sfx_token
+
+# excel表标题列
+excel_es_title_list = config.excel_es_title_list
 
 """**************写xml**************"""
 # 创建一个对象
@@ -162,11 +170,29 @@ def delete_cancel_content(vo_id):
 """自动化生成ES数据"""
 
 
-def auto_gen_es_file(file_wav_dict):
+def auto_gen_es_file(file_wav_dict, wiki_token):
+    sheet_id_list, _, excel_id = cloudfeishu_h.get_sheet_id_list(wiki_token)
+    # print(sheet_id_list)
     # 查找要导入的媒体文件里有没有对应的
     for file_wav_name in file_wav_dict:
         flag = 0
         # 读飞书在线表
+        for sheet_id in sheet_id_list:
+            # 获取表格的标题列及表格数据
+            title_colunmn_dict, values = cloudfeishu_h.get_sheet_title_column(wiki_token, sheet_id, excel_es_title_list)
+            # print(title_colunmn_dict)
+            # {'文件名': 2, 'External_Type': 8}
+
+            # 遍历文件名列
+            if '文件名' in title_colunmn_dict.keys():
+                for row_index in range(1, len(values)):
+                    column_letter = cloudfeishu_h.col_index_to_letter(title_colunmn_dict['文件名'])
+                    # 读取测试
+                    file_name = cloudfeishu_h.get_sheet_row_and_column_value(column_letter, row_index, excel_id,
+                                                                             sheet_id)
+                    if file_name in file_wav_name:
+                        flag = 1
+                        # print(file_wav_name)
 
         if flag == 0:
             oi_h.print_error(file_wav_name + "：在语音需求表中不存在，请检查名称是否正确或在表格中补充该名字")
@@ -220,11 +246,12 @@ with WaapiClient() as client:
     for language in config.language_list:
         wav_language_path = os.path.join(py_path, "New_Media", language)
         file_wav_language_dict, _ = oi_h.get_type_file_name_and_path('.wav', wav_language_path)
-        auto_gen_es_file(file_wav_language_dict)
+        auto_gen_es_file(file_wav_language_dict, excel_es_vo_token)
 
     # 音效ES生成
     wav_path = os.path.join(py_path, "New_Media", "SFX")
     file_wav_dict, _ = oi_h.get_type_file_name_and_path('.wav', wav_path)
+
     # pprint(file_wav_dict)
 
     # # xml文件写入

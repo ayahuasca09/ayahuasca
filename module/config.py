@@ -3,6 +3,9 @@
 excel_mediainfo_path = 'MediaInfoTable.xlsx'
 excel_wwisecookie_path = 'ExternalSourceDefaultMedia.xlsx'
 
+# excel表标题列
+excel_es_title_list = ["文件名", "External_Type"]
+
 # csv表路径
 csv_mediainfo_path = "MediaInfoTable.csv"
 csv_wwisecookie_path = "ExternalSourceDefaultMedia.csv"
@@ -31,3 +34,13 @@ options = {
                'Sequences', 'path', 'shortId']
 
 }
+
+"""cloudfeishu"""
+# 需要先申请应用程序
+app_id = "cli_a67dd70d527bd013"
+app_secret = "kw5O5VboETIgZERiNe39ebqL72kzbruu"
+
+# ES语音表token
+excel_es_vo_token = "PVNYwZbdVi1LMhkhvbVch4cJn4C"
+# ES音效表token
+excel_es_sfx_token = "AsW4wmAbQiIHeLkI2cscdN0Ln3e"
