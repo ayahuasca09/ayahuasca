@@ -133,3 +133,57 @@ def get_sheet_row_and_column_value(column_letter, row_index, excel_id, sheet_id)
     value = data['data']['valueRange']['values'][0][0]
     # print(value)
     return value
+
+
+"""获取标题列下的某行的值"""
+
+
+def get_title_row_and_column_value(title_name, title_colunmn_dict, row_index, excel_id, sheet_id):
+    file_name = ""
+    if title_name in title_colunmn_dict.keys():
+        # 为防止过界
+        column_letter = col_index_to_letter(title_colunmn_dict[title_name])
+        # 读取测试
+        file_name = get_sheet_row_and_column_value(column_letter, row_index,
+                                                   excel_id,
+                                                   sheet_id)
+    else:
+        oi_h.print_error(title_name + ":标题列不存在，请检查表格中是否有该标题的列表")
+    return file_name
+
+
+"""将在线表转list处理"""
+
+
+# list保存的每一行为dict，dict为每行所需列的数据
+# wiki_token_list：可以放多个云文档excel的id
+# need_title_list:所需的标题列，会保存这些标题下的数据
+def convert_sheet_to_list(wiki_token_list, need_title_list):
+    # 将所需要的表格数据转为一个list，每一个dict存取每行所需的数据
+    sheet_list = []
+    for wiki_token in wiki_token_list:
+        sheet_id_list, _, excel_id = get_sheet_id_list(wiki_token)
+
+        # 读飞书在线表
+        for sheet_id in sheet_id_list:
+            # 获取表格的标题列及表格数据
+            title_colunmn_dict, values = get_sheet_title_column(wiki_token, sheet_id, need_title_list)
+            # print(title_colunmn_dict)
+            # {'文件名': 2, 'External_Type': 8}
+
+            # 遍历列
+            for row_index in range(1, len(values)):
+                # 每行所需要的数据
+                every_row_content_dict = {}
+                # 获取每行数据
+                for title_name in need_title_list:
+                    every_row_content_dict[title_name] = get_title_row_and_column_value(title_name,
+                                                                                        title_colunmn_dict,
+                                                                                        row_index,
+                                                                                        excel_id,
+                                                                                        sheet_id)
+                # 若为cancel的则不加入
+                if every_row_content_dict['State'] != 'cancel':
+                    sheet_list.append(every_row_content_dict)
+
+    return sheet_list

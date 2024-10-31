@@ -4,16 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="17a8a927-0db7-41d4-8f81-9181fc87e6d9" name="更改" comment="结构优化">
-      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/New_Media/SFX/Stin_Test.wav" afterDir="false" />
+    <list default="true" id="17a8a927-0db7-41d4-8f81-9181fc87e6d9" name="更改" comment="ES语音在线表读取">
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/New_Media/Chinese/VO_External_Emotion_C01_05.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/SilverPalace战斗音频需求资源管理表 (12).xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/cloudfeishu/SP飞书表格读写测试.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/cloudfeishu/SP飞书表格读写测试.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/module/cloudfeishu/cloudfeishu_h.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/cloudfeishu/cloudfeishu_h.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/module/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/ue/ue_ID表生成/Audio.csv" beforeDir="false" afterPath="$PROJECT_DIR$/module/ue/ue_ID表生成/Audio.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/ue/ue_ID表生成/Audio.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/module/ue/ue_ID表生成/Audio.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/waapi_es音效导入.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/waapi_es音效导入.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/SilverPalace战斗音频需求资源管理表 (9).xlsx" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -294,14 +291,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1716955384994</updated>
-    </task>
-    <task id="LOCAL-00052" summary="语音自动化：命名规范检查">
-      <option name="closed" value="true" />
-      <created>1721902990061</created>
-      <option name="number" value="00052" />
-      <option name="presentableId" value="LOCAL-00052" />
-      <option name="project" value="LOCAL" />
-      <updated>1721902990061</updated>
     </task>
     <task id="LOCAL-00053" summary="语音自动化：语音资源导入">
       <option name="closed" value="true" />
@@ -687,7 +676,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730282191075</updated>
     </task>
-    <option name="localTasksCounter" value="101" />
+    <task id="LOCAL-00101" summary="ES语音在线表读取">
+      <option name="closed" value="true" />
+      <created>1730371631972</created>
+      <option name="number" value="00101" />
+      <option name="presentableId" value="LOCAL-00101" />
+      <option name="project" value="LOCAL" />
+      <updated>1730371631972</updated>
+    </task>
+    <option name="localTasksCounter" value="102" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -703,7 +700,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="复杂容器的Event在&lt;waapi_音频资源导入_从表导入&gt;中还是会被生成，需要判断其random容器的父级是不是actor-mixer，如果不是就不生成" />
     <MESSAGE value="Set类规则检查" />
     <MESSAGE value="处理音乐循环判断：非根子节点" />
     <MESSAGE value="规划switch,state表及自动化生成:创建和修改同步" />
@@ -728,6 +724,7 @@
     <MESSAGE value="ES音效自动化流程：在线表格读取测试" />
     <MESSAGE value="打包测试" />
     <MESSAGE value="结构优化" />
-    <option name="LAST_COMMIT_MESSAGE" value="结构优化" />
+    <MESSAGE value="ES语音在线表读取" />
+    <option name="LAST_COMMIT_MESSAGE" value="ES语音在线表读取" />
   </component>
 </project>
