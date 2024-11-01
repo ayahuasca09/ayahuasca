@@ -225,6 +225,8 @@ def auto_gen_es_file(file_wav_dict):
                                                 # # 写入wwise_cookie excel表
                                                 write_wwise_cookie_excel(vo_id, cell_sound, external_sound_dict)
 
+                                                oi_h.print_error(file_wav_name)
+
                                                 break
                                     # 删除所有相关数据
                                     else:
@@ -309,7 +311,7 @@ with WaapiClient() as client:
             # 按照格式写入
             f.write(doc.toprettyxml())
             f.close()
-        pprint(doc.toprettyxml())
+        # pprint(doc.toprettyxml())
         # 复制xml为wsources
         shutil.copy2(os.path.join(py_path, config.es_xml_path),
                      os.path.join(py_path, config.es_wsources_path))
