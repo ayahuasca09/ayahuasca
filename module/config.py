@@ -1,10 +1,13 @@
+"""Wwise"""
+wwise_sfx_path = "\\Actor-Mixer Hierarchy\\v1"
+
 """External Source"""
 # excel表路径
 excel_mediainfo_path = 'MediaInfoTable.xlsx'
 excel_wwisecookie_path = 'ExternalSourceDefaultMedia.xlsx'
 
 # excel表标题列
-excel_es_title_list = ["文件名", "External_Type", "State"]
+excel_es_title_list = ["文件名", "External_Type", "State", "剧情ID"]
 
 # csv表路径
 csv_mediainfo_path = "MediaInfoTable.csv"
@@ -24,7 +27,7 @@ external_output_win_path = 'S:\\Ver_1.0.0\\Project\\Content\\Audio\\GeneratedExt
 external_output_android_path = 'S:\\Ver_1.0.0\\Project\\Content\\Audio\\GeneratedExternalSources\\Android'
 external_output_ios_path = 'S:\\Ver_1.0.0\\Project\\Content\\Audio\\GeneratedExternalSources\\iOS'
 external_output_path = 'S:\\Ver_1.0.0\\Project\\Content\\Audio\\GeneratedExternalSources'
-language_list = ['Chinese', 'English', 'Japanese', 'Korean']
+language_list = ['Chinese', 'English', 'Japanese', 'Korean', "SFX"]
 
 """WAAPI查询"""
 # 查询结果返回值

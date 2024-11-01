@@ -1,6 +1,5 @@
 # xml读取库
 import xml.etree.ElementTree as ET
-import openpyxl
 import shutil
 import pandas as pd
 import sys

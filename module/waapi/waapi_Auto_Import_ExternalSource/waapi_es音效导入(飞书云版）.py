@@ -185,6 +185,8 @@ def auto_gen_es_file(file_wav_dict, list_es):
         flag = 0
         for dict_es in list_es:
             if dict_es['文件名'] in file_wav_name:
+                # 在表格中找到此音效才将其写入xml
+                xml_create_element(file_wav_dict[file_wav_name])
                 flag = 1
                 # print(file_wav_name)
                 break
