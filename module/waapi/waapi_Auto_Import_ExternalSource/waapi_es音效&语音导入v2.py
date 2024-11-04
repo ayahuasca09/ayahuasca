@@ -328,6 +328,12 @@ with WaapiClient() as client:
         shutil.copy2(os.path.join(py_path, config.es_xml_path),
                      os.path.join(py_path, config.es_wsources_path))
 
+    # 删除xml的内容
+    doc = parse(config.es_xml_path)
+    parent_node = doc.getElementsByTagName('ExternalSourcesList')[0]
+    while parent_node.hasChildNodes():
+        parent_node.removeChild(parent_node.firstChild)
+
     # 保存excel表的信息
     wb_mediainfo.save(config.excel_mediainfo_path)
     wb_wwisecookie.save(config.excel_wwisecookie_path)
