@@ -1,5 +1,6 @@
 """Wwise"""
 wwise_sfx_path = "\\Actor-Mixer Hierarchy\\v1"
+wwise_event_path = "\\Events\\v1"
 
 """External Source"""
 # excel表路径
@@ -34,7 +35,7 @@ language_list = ['Chinese', 'English', 'Japanese', 'Korean', "SFX"]
 options = {
     'return': ['name', 'id', 'notes', 'originalWavFilePath', 'isIncluded', 'IsLoopingEnabled',
                'musicPlaylistRoot', 'LoopCount', 'PlaylistItemType', 'owner', 'parent', 'type',
-               'Sequences', 'path', 'shortId']
+               'Sequences', 'path', 'shortId', 'Inclusion', 'Target', 'ActionType']
 
 }
 
@@ -47,3 +48,79 @@ app_secret = "kw5O5VboETIgZERiNe39ebqL72kzbruu"
 excel_es_vo_token_list = ["O90kwkWAdiDw9Lkv31GcZQwOnoh"]
 # ES音效表token
 excel_es_sfx_token_list = ["AsW4wmAbQiIHeLkI2cscdN0Ln3e"]
+
+"""DT Audio"""
+excel_dcc_dt_audio_path = r"S:\chen.gong_DCC_Audio\Audio\Config\Audio.xlsx"
+excel_dt_audio_path = "Audio.xlsx"
+dt_audio_sheet_name = "audio"
+csv_dt_audio_path = "Audio.csv"
+rowname_index = 1
+audioid_index = 2
+audioname_index = 3
+audioevent_index = 4
+desc_index = 5
+isloop_index = 6
+
+event_id_config = {
+    "Amb":
+        {
+            "min": 1,
+            "max": 3000
+        },
+    "Char":
+        {
+            "min": 3001,
+            "max": 7000
+        },
+    "Imp":
+        {
+            "min": 7001,
+            "max": 8000
+        },
+    "Mon":
+        {
+            "min": 8001,
+            "max": 13000
+        },
+    "Mus":
+        {
+            "min": 13001,
+            "max": 14000
+        },
+    "Sys":
+        {
+            "min": 14001,
+            "max": 15000
+        },
+    "VO":
+        {
+            "min": 15001,
+            "max": 30000
+        },
+    "Set_State":
+        {
+            "min": 30001,
+            "max": 32000
+        },
+    "Set_Switch":
+        {
+            "min": 32001,
+            "max": 34000
+        },
+    "Set_Trigger":
+        {
+            "min": 34001,
+            "max": 36000
+        },
+    "CG":
+        {
+            "min": 36001,
+            "max": 40000
+        },
+
+}
+
+"""UE"""
+ue_event_path = r"S:\Ver_1.0.0\Project\Content\Audio\WwiseAudio\Events\v1"
+# GE路径
+ue_ge_path = r'S:\Ver_1.0.0\Project\Content\SPSkill'

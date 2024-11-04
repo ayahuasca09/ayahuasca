@@ -9,6 +9,6 @@ command = (r"S:\Ver_1.0.0\Editor\Engine\Binaries\Win64\UnrealEditor.exe S:\Ver_1
 subprocess.run(command, capture_output=True, text=True, check=True, shell=True)
 
 # 生成id表
-subprocess.run(['python', r"F:\pppppy\SP\module\ue\ue_ID表生成\ue_ID表生成v2.py"])
+subprocess.run(['python', r"F:\pppppy\SP\module\ue\ue_ID表生成\ue_ID表生成v3.py"])
 
 # 在ue中导入数据表

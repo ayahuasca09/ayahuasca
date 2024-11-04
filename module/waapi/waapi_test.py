@@ -480,3 +480,10 @@ with WaapiClient() as client:
     # }
     # music_track, _ = find_obj(args)
     # pprint(music_track)
+
+    """调用头文件的waql_from_type获取"""
+    # obj_list = client.call("ak.wwise.core.object.get",
+    #                        waapi_h.waql_from_type("Event"),
+    #                        options=config.options)['return']
+    # musicplaylistitem_list, _, _ = waapi_h.find_obj(obj_list)
+    # pprint(musicplaylistitem_list)
