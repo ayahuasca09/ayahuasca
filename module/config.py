@@ -1,6 +1,10 @@
 """Wwise"""
 wwise_sfx_path = "\\Actor-Mixer Hierarchy\\v1"
 wwise_event_path = "\\Events\\v1"
+# 语音媒体资源的路径
+wwise_vo_media_path = r'S:\chen.gong_DCC_Audio\Audio\SilverPalace_WwiseProject\Originals\Voices'
+# Wwise工程路径
+wwise_proj_path = r"S:\\chen.gong_DCC_Audio\\Audio\\SilverPalace_WwiseProject"
 
 """External Source"""
 # excel表路径
@@ -67,8 +71,6 @@ FadeDuration_index = 7
 FadeCurveNum_index = 8
 ObjectType_index = 9
 
-
-
 event_id_config = {
     "Amb":
         {
@@ -132,3 +134,11 @@ event_id_config = {
 ue_event_path = r"S:\Ver_1.0.0\Project\Content\Audio\WwiseAudio\Events\v1"
 # GE路径
 ue_ge_path = r'S:\Ver_1.0.0\Project\Content\SPSkill'
+
+"""资源导入"""
+# 导入规则json
+check_name_json = '导入规则.json'
+# 状态列表
+status_list = ['占位', '临时资源', 'to do', 'in progress', 'done']
+# 要删除的状态列表
+del_status_list = ['占位', '临时资源', 'to do', 'in progress', 'done', 'cancel']

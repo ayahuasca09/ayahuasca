@@ -3,6 +3,12 @@ import os
 from pprint import pprint
 import sys
 from os.path import abspath, dirname
+import re
+import module.excel.excel_h as excel_h
+import module.waapi.waapi_h as waapi_h
+import module.json.json_h as json_h
+
+is_pass = True
 
 """查找目录下特定后缀的文件"""
 
@@ -53,7 +59,7 @@ def get_type_file_name_and_path(file_type, dir_path):
     return file_dict, file_list
 
 
-"""获取\Content\Audio\GeneratedSoundBanks\Windows\Event下的json文件路径"""
+r"""获取Content\Audio\GeneratedSoundBanks\Windows\Event下的json文件路径"""
 
 
 def oi_get_json_filesname():
@@ -115,6 +121,91 @@ def print_error(error_info):
     global is_pass
     is_pass = False
     print("[error]" + error_info)
+
+
+"""检测字符串是否含有中文"""
+
+
+def check_is_chinese(string):
+    for ch in string:
+        if u'\u4e00' <= ch <= u'\u9fff':
+            return True
+    return False
+
+
+"""字符串长度检查"""
+
+
+def check_by_str_length(str1, length, name):
+    if len(str1) > length:
+        if "_" in str1:
+            print_error(name + "：描述后缀名过长，限制字符数为" + str(length))
+        else:
+            print_error(name + "：通过_切分的某个单词过长，每个单词长度不应超过10个字符，需要再拆分")
+
+
+"""分隔符的大小写和长度检查"""
+
+
+def check_by_length_and_word(name):
+    # pprint(cell_sound.value)
+    word_list = name.split("_")
+    is_title = True
+    for word in word_list:
+        """判定_的每个都不能超过10个"""
+        check_by_str_length(word, 10, name)
+        """判定_的每个开头必须大写"""
+        if len(word) > 0:
+            # 只需要检查第一个字符，因为istitle会导致检查字符串只能首字母大写
+            if word[0].istitle() == False and word[0].isdigit() == False:
+                is_title = False
+                break
+    if is_title == False:
+        print_error(name + "：通过”_“分隔的每个单词开头都需要大写")
+    if word_list:
+        return word_list[0]
+    else:
+        return None
+
+
+"""检查LP是否在末尾"""
+
+
+def check_LP_in_last(name):
+    if "LP" in name:
+        # print("LP")
+        # .*代表所有字符 _LP$代表以_LP结尾
+        pattern = r".*_LP$"
+        result = re.match(pattern, name)
+        if result:
+            new_name = re.sub(r"_LP$", "", name)
+            return new_name
+        else:
+            print_error(name + "：_LP应放在最末尾")
+    else:
+        return name
+
+
+"""音频命名规范基础检查"""
+
+
+def check_name_all(name):
+    global is_pass
+    is_pass = True
+    first_name = check_by_length_and_word(name)
+    no_LP_name = check_LP_in_last(name)
+    return first_name, no_LP_name, is_pass
+
+
+"""检查名称是否为随机"""
+
+
+def check_is_random(name):
+    is_random = re.search(r"(_R\d{2,4})$", name)
+    if is_random:
+        return True
+    else:
+        return False
 
 
 # 调用范例

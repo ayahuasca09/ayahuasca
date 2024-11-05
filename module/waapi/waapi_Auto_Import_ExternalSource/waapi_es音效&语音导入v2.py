@@ -76,11 +76,9 @@ def write_media_info_excel(vo_id, cell_sound):
         # 在media_info表中找到该ID，则替换
         if sheet_mediainfo.cell(row=cell.row, column=1).value == vo_id:
             flag = 1
-            # 找到则替换，id不会改变，会改变其他内容,目前只有name可能会改
-            for index, value in enumerate(list(sheet_mediainfo.rows)[0]):
-                if value == "MediaName":
-                    sheet_mediainfo.cell(row=cell.row, column=index + 1).value = cell_sound.value + ".wem"
-                break
+            sheet_mediainfo.cell(row=cell.row,
+                                 column=mediainfo_title_dict['MediaName']).value = cell_sound.value + ".wem"
+
     # 在media_info表中未找到该ID，则新增
     if flag == 0:
         # 插入为空的行
@@ -109,15 +107,13 @@ def write_wwise_cookie_excel(vo_id, cell_sound, external_sound_dict):
         # 在media_info表中找到该ID，则替换
         if sheet_wwisecookie.cell(row=cell.row, column=1).value == vo_id:
             flag = 1
-            # 找到则替换，id不会改变，会改变其他内容,目前只有name可能会改
-            for index, value in enumerate(list(sheet_wwisecookie.rows)[0]):
-                if value == "MediaName":
-                    sheet_wwisecookie.cell(row=cell.row, column=index + 1).value = cell_sound.value + ".wem"
-                elif value == "ExternalSourceCookie":
-                    sheet_wwisecookie.cell(row=cell.row, column=index + 1).value = external_sound_dict['shortId']
-                elif value == "ExternalSourceName":
-                    sheet_wwisecookie.cell(row=cell.row, column=index + 1).value = external_sound_dict['name']
-                break
+            sheet_wwisecookie.cell(row=cell.row,
+                                   column=wwisecookie_title_dict["MediaName"]).value = cell_sound.value + ".wem"
+            sheet_wwisecookie.cell(row=cell.row, column=wwisecookie_title_dict["ExternalSourceCookie"]).value = \
+            external_sound_dict['shortId']
+            sheet_wwisecookie.cell(row=cell.row, column=wwisecookie_title_dict["ExternalSourceName"]).value = \
+            external_sound_dict['name']
+
     # 在media_info表中未找到该ID，则新增
     if flag == 0:
         # 插入为空的行
@@ -224,7 +220,7 @@ def auto_gen_es_file(file_wav_dict):
                                                 # # 写入wwise_cookie excel表
                                                 write_wwise_cookie_excel(vo_id, cell_sound, external_sound_dict)
 
-                                                oi_h.print_error(file_wav_name)
+                                                oi_h.print_warning(file_wav_name + "：已导入")
 
                                                 break
                                     # 删除所有相关数据
@@ -298,6 +294,10 @@ with WaapiClient() as client:
     external_sound_list = external_vo_list + external_sfx_list
 
     """*******************主程序*******************"""
+    mediainfo_title_dict = excel_h.excel_get_all_sheet_title_column(sheet_mediainfo)
+    wwisecookie_title_dict = excel_h.excel_get_all_sheet_title_column(sheet_wwisecookie)
+    # pprint(mediainfo_title_list)
+    # pprint(wwisecookie_title_list)
 
     # 语音ES生成
     for language in config.language_list:
@@ -347,7 +347,7 @@ with WaapiClient() as client:
     df = pd.read_excel(config.excel_wwisecookie_path)
     df.to_csv(external_cookie_path, encoding=encoding, index=False)
 
-    # 清除复制的媒体资源
+    # # 清除复制的媒体资源
     shutil.rmtree("New_Media")
     os.mkdir("New_Media")
     os.mkdir("New_Media/Chinese")

@@ -39,3 +39,12 @@ def json_get_wwise_info(path):
 def find_specific_classname(json_data, value, key):
     # 使用列表推导式查找所有符合条件的字典
     return [item for item in json_data if item.get(key) == value]
+
+
+"""json文件读取"""
+
+
+def read_json_file(path):
+    with open(path, 'r', encoding='UTF-8') as jsfile:
+        js_dict = json.load(jsfile)
+    return js_dict
