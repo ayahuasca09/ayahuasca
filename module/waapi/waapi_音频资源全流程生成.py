@@ -11,4 +11,7 @@ subprocess.run(command, capture_output=True, text=True, check=True, shell=True)
 # 生成id表
 subprocess.run(['python', r"F:\pppppy\SP\module\ue\ue_ID表生成\ue_ID表生成v3.py"])
 
+# dcc audio表数据生成
+subprocess.run(['python', r"F:\pppppy\SP\module\ue\ue_ID表生成\DCC表的引用路径生成.py"])
+
 # 在ue中导入数据表

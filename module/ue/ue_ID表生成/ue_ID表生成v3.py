@@ -1,6 +1,5 @@
 from waapi import WaapiClient
 import os
-import json
 import sys
 import re
 import pandas as pd
@@ -197,25 +196,65 @@ def set_value():
 
 
 def copy_to_dcc_audio():
+    """dcc audio表默认值填充"""
+    # 遍历每一行（跳过标题行）
+    for row in sheet_dcc.iter_rows(min_row=2):  # 假设第一行是标题行
+        # 获取第7列、第8列和第9列的单元格
+        cell_col7 = row[config.FadeDuration_index - 1]  # 第7列
+        cell_col8 = row[config.FadeCurveNum_index - 1]  # 第8列
+        cell_col9 = row[config.ObjectType_index - 1]  # 第9列
+
+        # 填充第7列的空值为1000
+        if cell_col7.value is None:
+            cell_col7.value = 1000
+
+        # 填充第8列的空值为0
+        if cell_col8.value is None:
+            cell_col8.value = 0
+
+        # 填充第9列的空值为0
+        if cell_col9.value is None:
+            cell_col9.value = 0
+
+    """先从dcc复制手动配置项到audio表"""
+    # 创建一个字典来存储目标表（表2）第一列的值及其对应行的第7至9列数据
+    excel2_data = {}
+
+    # 遍历dcc的第一列，存储第7至9列的数据
+    for row in sheet_dcc.iter_rows(min_row=2, max_row=sheet_dcc.max_row, max_col=config.ObjectType_index,
+                                   values_only=True):
+        key = row[0]  # 第一列的值作为键
+        values = row[6:9]  # 获取第7到第9列的数据
+        excel2_data[key] = values
+    # pprint(excel2_data)
+
+    # 遍历audio的第一列，若找到相等的值，则复制数据
+    # 遍历 Excel1 的第一列，复制数据
+    for row in sheet.iter_rows(min_row=2, max_col=1):
+        key = row[0].value
+        # print(key)
+        if key in excel2_data:
+            # 如果在 Excel2 中找到了匹配的键，复制数据
+            for i, value in enumerate(excel2_data[key], start=config.FadeDuration_index):
+                sheet.cell(row=row[0].row, column=i, value=value)
+    # 保存原工作簿
+    wb.save(excel_path)
+
+    """再从audio表获取数据复制到dcc"""
+
     # 清空目标工作表的内容
     for row in sheet_dcc.iter_rows(min_row=2, max_row=sheet_dcc.max_row):
         for cell in row:
             cell.value = None
 
-    # 复制第1到第8列
-    for row_idx, row in enumerate(sheet.iter_rows(min_col=1, max_col=8, values_only=True), start=1):
+    # 复制所有到dcc
+    for row_idx, row in enumerate(
+            sheet.iter_rows(min_col=1, max_col=config.ObjectType_index, values_only=True), start=1):
         for col_idx, value in enumerate(row, start=1):
             sheet_dcc.cell(row=row_idx, column=col_idx, value=value)
 
     # 保存目标工作簿
     wb_dcc.save(config.excel_dcc_dt_audio_path)
-
-
-"""查找ID的引用路径"""
-
-
-def find_ID_refer_path():
-    pass
 
 
 """从Wwise读Event_Info"""
@@ -317,9 +356,6 @@ df.to_csv(csv_path, encoding=encoding, index=False)
 # 将表内容同步到dcc下的Audio表中
 sheet_dcc, wb_dcc = excel_h.excel_get_sheet(config.excel_dcc_dt_audio_path, config.dt_audio_sheet_name)
 copy_to_dcc_audio()
-
-# 查找ID的引用路径
-find_ID_refer_path()
 
 # 应用程序弹窗
 root = tk.Tk()

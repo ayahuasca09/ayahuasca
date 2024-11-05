@@ -31,6 +31,18 @@ def excel_get_sheet_title_column(sheet, title_list):
     return title_colunmn_dict
 
 
+"""获取表头所有数据所在列"""
+
+
+def excel_get_all_sheet_title_column(sheet):
+    # 标题所在列的字典映射
+    title_colunmn_dict = {}
+    # 遍历第一行
+    for cell in list(sheet.rows)[0]:
+        title_colunmn_dict[cell.value] = cell.column
+    return title_colunmn_dict
+
+
 """获取当前目录下要遍历的表路径列表"""
 
 

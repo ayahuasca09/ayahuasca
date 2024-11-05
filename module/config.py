@@ -54,12 +54,20 @@ excel_dcc_dt_audio_path = r"S:\chen.gong_DCC_Audio\Audio\Config\Audio.xlsx"
 excel_dt_audio_path = "Audio.xlsx"
 dt_audio_sheet_name = "audio"
 csv_dt_audio_path = "Audio.csv"
+# 自动生成
 rowname_index = 1
 audioid_index = 2
 audioname_index = 3
 audioevent_index = 4
 desc_index = 5
 isloop_index = 6
+
+# 手动配置
+FadeDuration_index = 7
+FadeCurveNum_index = 8
+ObjectType_index = 9
+
+
 
 event_id_config = {
     "Amb":
