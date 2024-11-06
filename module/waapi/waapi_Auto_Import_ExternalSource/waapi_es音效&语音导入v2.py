@@ -155,15 +155,16 @@ def delete_cancel_wem(media_name):
 """移除标记为cancel的所有内容"""
 
 
-def delete_cancel_content(vo_id):
-    pass
+def delete_cancel_content(file_name):
     # 删除excel表的相应内容
     for cell in list(sheet_mediainfo.columns)[0]:
         # 在media_info表中找到该ID，则删除
-        if sheet_mediainfo.cell(row=cell.row, column=1).value == vo_id:
+        if file_name in sheet_mediainfo.cell(row=cell.row, column=mediainfo_title_dict['MediaName']).value:
             sheet_mediainfo.delete_rows(cell.row)
-        if sheet_wwisecookie.cell(row=cell.row, column=1).value == vo_id:
+            oi_h.print_warning(file_name + ":在mediainfo中删除相关信息")
+        if file_name in sheet_wwisecookie.cell(row=cell.row, column=wwisecookie_title_dict["MediaName"]).value:
             sheet_wwisecookie.delete_rows(cell.row)
+            oi_h.print_warning(file_name + ":在wwisecookie中删除相关信息")
 
 
 """检查是否以CG_External_或VO_External_开头"""
@@ -207,6 +208,7 @@ def check_name():
                                     is_pass = False
                                     oi_h.print_error(
                                         cell_sound.value + "：请检查名称是否以CG_External_或VO_External_开头")
+
     return is_pass
 
 
@@ -220,6 +222,7 @@ def auto_gen_es_file(file_wav_dict):
         # 读excel表
         # 提取规则：只提取xlsx文件
         for i in file_name_list:
+            # print(i)
             if (".xlsx" in i) and ("MediaInfoTable" not in i) and ("ExternalSourceDefaultMedia" not in i):
                 # 拼接xlsx的路径
                 file_path_xlsx = os.path.join(py_path, i)
@@ -251,7 +254,7 @@ def auto_gen_es_file(file_wav_dict):
                                         sheet.cell(row=cell_sound.row,
                                                    column=excel_h.sheet_title_column("State",
                                                                                      title_colunmn_dict)).value = 'done'
-
+                                        is_wwise_have = 0
                                         # 查找Wwise中有无相应的Sound
                                         for external_sound_dict in external_sound_list:
                                             if external_sound_dict['parent']['name'] == sheet.cell(
@@ -260,32 +263,28 @@ def auto_gen_es_file(file_wav_dict):
                                                                                       title_colunmn_dict)).value:
                                                 # pprint(external_sound_dict['shortId'])
                                                 # 查找mediainfo表的id有没有，没有则添加，有则修改内容
-                                                vo_id = sheet.cell(
-                                                    row=cell_sound.row,
-                                                    column=excel_h.sheet_title_column("剧情ID",
-                                                                                      title_colunmn_dict)).value
+                                                vo_id = excel_h.create_id(config.es_id_config, i, sheet_mediainfo)
+
                                                 # 写入media_info excel表
                                                 write_media_info_excel(vo_id, cell_sound)
                                                 # # 写入wwise_cookie excel表
                                                 write_wwise_cookie_excel(vo_id, cell_sound, external_sound_dict)
 
                                                 oi_h.print_warning(file_wav_name + "：已导入")
-
+                                                is_wwise_have = 1
                                                 break
+                                        if is_wwise_have == 0:
+                                            oi_h.print_error(
+                                                file_wav_name + "：在Wwise中未建立相应容器，请检查填写是否正确或Wwise中容器是否存在")
+
                                     # 删除所有相关数据
                                     else:
-
-                                        vo_id = sheet.cell(
-                                            row=cell_sound.row,
-                                            column=excel_h.sheet_title_column("剧情ID",
-                                                                              title_colunmn_dict)).value
-                                        # 删除es表所有相关内容
-                                        delete_cancel_content(vo_id)
-
                                         file_name = sheet.cell(
                                             row=cell_sound.row,
                                             column=excel_h.sheet_title_column("文件名",
                                                                               title_colunmn_dict)).value
+                                        # 删除es表所有相关内容
+                                        delete_cancel_content(file_name)
                                         delete_cancel_wem(file_name)
 
                                     break
@@ -348,6 +347,7 @@ with WaapiClient() as client:
     # pprint(mediainfo_title_list)
     # pprint(wwisecookie_title_list)
 
+    # print(check_name())
     # 命名规范检查
     if check_name():
         # 语音ES生成
@@ -400,8 +400,6 @@ with WaapiClient() as client:
     # else:
     #     print(1)
 
-
-
     # # 清除复制的媒体资源
     shutil.rmtree("New_Media")
     os.mkdir("New_Media")
@@ -409,3 +407,4 @@ with WaapiClient() as client:
     os.mkdir("New_Media/English")
     os.mkdir("New_Media/Japanese")
     os.mkdir("New_Media/Korean")
+    os.mkdir("New_Media/SFX")

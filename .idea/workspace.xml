@@ -4,16 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="17a8a927-0db7-41d4-8f81-9181fc87e6d9" name="更改" comment="修复数据更改时ES资源表未同步的问题">
-      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/SilverPalace语音ES管理表 (4).xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/SilverPalace战斗音频需求资源管理表 (16).xlsx" afterDir="false" />
+    <list default="true" id="17a8a927-0db7-41d4-8f81-9181fc87e6d9" name="更改" comment="新增命名规范检测">
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_auto_gen_music/游戏音乐资源表.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_auto_gen_state/State_Switch资源表.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/excel/excel_h.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/excel/excel_h.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/oi/oi_h.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/oi/oi_h.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/module/ue/ue_ID表生成/Audio.csv" beforeDir="false" afterPath="$PROJECT_DIR$/module/ue/ue_ID表生成/Audio.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/module/ue/ue_ID表生成/Audio.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/module/ue/ue_ID表生成/Audio.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/ue/ue_ID表生成/ue_ID表生成v3.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/ue/ue_ID表生成/ue_ID表生成v3.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/ExternalSourceDefaultMedia.csv" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/ExternalSourceDefaultMedia.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/ExternalSourceDefaultMedia.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/ExternalSourceDefaultMedia.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/MediaInfoTable.csv" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/MediaInfoTable.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/MediaInfoTable.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/MediaInfoTable.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/SilverPalace语音ES管理表 (4).xlsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/waapi_es音效&amp;语音导入v2.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/waapi_es音效&amp;语音导入v2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_auto_gen_state/State_Switch资源表 (1).xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/资源导入记录表.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/资源导入记录表.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_auto_gen_music/waapi_auto_gen_music.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_auto_gen_music/waapi_auto_gen_music.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_auto_gen_music/音乐资源表 (1).xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/SilverPalace战斗音频需求资源管理表 (16).xlsx" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -164,6 +175,28 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="excel_h" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="SP" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/module/excel" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/module/excel/excel_h.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="ue_ID表生成v3" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="SP" />
       <option name="ENV_FILES" value="" />
@@ -230,28 +263,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="waapi_音频资源导入_从表导入v2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="SP" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/waapi_音频资源导入_从表导入v2.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="waapi_es音效&amp;语音导入v2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="SP" />
       <option name="ENV_FILES" value="" />
@@ -277,10 +288,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.waapi_es音效&amp;语音导入v2" />
+        <item itemvalue="Python.excel_h" />
         <item itemvalue="Python.waapi_音频资源全流程生成" />
         <item itemvalue="Python.waapi_音频资源导入_从表导入" />
         <item itemvalue="Python.ue_ID表生成v3" />
-        <item itemvalue="Python.waapi_音频资源导入_从表导入v2" />
       </list>
     </recent_temporary>
   </component>
@@ -299,14 +310,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1716955384994</updated>
-    </task>
-    <task id="LOCAL-00060" summary="更新">
-      <option name="closed" value="true" />
-      <created>1724052327752</created>
-      <option name="number" value="00060" />
-      <option name="presentableId" value="LOCAL-00060" />
-      <option name="project" value="LOCAL" />
-      <updated>1724052327752</updated>
     </task>
     <task id="LOCAL-00061" summary="ID表——修复只生成循环事件的Play和Stop的某一个">
       <option name="closed" value="true" />
@@ -692,7 +695,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730803587879</updated>
     </task>
-    <option name="localTasksCounter" value="109" />
+    <task id="LOCAL-00109" summary="新增命名规范检测">
+      <option name="closed" value="true" />
+      <created>1730866741536</created>
+      <option name="number" value="00109" />
+      <option name="presentableId" value="LOCAL-00109" />
+      <option name="project" value="LOCAL" />
+      <updated>1730866741536</updated>
+    </task>
+    <option name="localTasksCounter" value="110" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -708,7 +719,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Trigger:删改同步" />
     <MESSAGE value="Set类：删除WorkUnit同步" />
     <MESSAGE value="为音乐添加循环事件检查：循环检查写到id表" />
     <MESSAGE value="ID表自动化：修复ID生成有重复的问题（累加改找最大值）" />
@@ -733,6 +743,7 @@
     <MESSAGE value="ID表复制到DCC" />
     <MESSAGE value="将ID的引用写入DCC Audio表" />
     <MESSAGE value="修复数据更改时ES资源表未同步的问题" />
-    <option name="LAST_COMMIT_MESSAGE" value="修复数据更改时ES资源表未同步的问题" />
+    <MESSAGE value="新增命名规范检测" />
+    <option name="LAST_COMMIT_MESSAGE" value="新增命名规范检测" />
   </component>
 </project>

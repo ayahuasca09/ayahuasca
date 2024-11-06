@@ -1,8 +1,8 @@
-import config
 import openpyxl
 from pprint import pprint
 import os
 import module.oi.oi_h as oi_h
+import module.config as config
 
 """打开工作簿并获取工作表"""
 
@@ -68,3 +68,69 @@ def sheet_title_column(title_name, title_colunmn_dict):
         oi_h.print_error(title_name + ":标题列不存在，请检查表格中是否有该标题的列表")
 
     return title_colunmn
+
+
+"""遍历第n列内容并生成列表,列表生成的是单列"""
+
+
+def get_colunmn_one_list(column_index, sheet):
+    # 初始化列表
+    column_data = []
+
+    # 遍历第 8 列，从第二行开始
+    for row in sheet.iter_rows(min_row=2, min_col=column_index, max_col=column_index, values_only=True):
+        # row 是一个元组，只有一个元素
+        if row not in column_data:
+            column_data.append(row[0])
+
+    return column_data
+
+
+"""遍历第n列内容并生成列表,列表生成的是元组"""
+
+
+def get_colunmn_multi_list(column_min, column_max, sheet):
+    # 初始化列表
+    column_data = []
+
+    # 遍历第 8 列，从第二行开始
+    for row in sheet.iter_rows(min_row=2, min_col=column_min, max_col=column_max, values_only=True):
+        # row 是一个元组，只有一个元素
+        if row not in column_data:
+            column_data.append(row)
+
+    return column_data
+
+
+# 测试
+# sheet, wb = excel_get_sheet(r"F:\pppppy\SP\module\waapi\waapi_Auto_Import_ExternalSource\MediaInfoTable.xlsx", "Sheet1")
+# column_data = get_colunmn_one_list(1, sheet)
+# print(column_data)
+
+"""创建表格ID"""
+
+
+# id_list：获取当前id表中的所有id
+# id_type_dict:获取当前类型的id区间段列表
+# id_type_name：要获取的区间段类型
+# id_sheet：id表的sheet
+def create_id(id_type_dict, id_type_name, id_sheet):
+    # 获取目前已有的ID列表
+    id_list = get_colunmn_one_list(1, id_sheet)
+    for id_type in id_type_dict:
+        if id_type in id_type_name:
+            # print(id_type)
+            id_min = id_type_dict[id_type]['min']
+            id_max = id_type_dict[id_type]['max']
+            for i in range(id_min, id_max):
+                if i not in id_list:
+                    return i
+
+
+# 测试
+# sheet_mediainfo, wb_mediainfo = excel_get_sheet(
+#     r"F:\pppppy\SP\module\waapi\waapi_Auto_Import_ExternalSource\MediaInfoTable.xlsx", 'Sheet1')
+# id_l = create_id(config.es_id_config,
+#                  r"F:\pppppy\SP\module\waapi\waapi_Auto_Import_ExternalSource\B类（LevelSequence）剧情语音.xlsx",
+#                  sheet_mediainfo)
+# print(id_l)

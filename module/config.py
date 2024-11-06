@@ -34,6 +34,39 @@ external_output_ios_path = 'S:\\Ver_1.0.0\\Project\\Content\\Audio\\GeneratedExt
 external_output_path = 'S:\\Ver_1.0.0\\Project\\Content\\Audio\\GeneratedExternalSources'
 language_list = ['Chinese', 'English', 'Japanese', 'Korean', "SFX"]
 
+es_id_config = {
+    "B类（LevelSequence）剧情音效":
+        {
+            "min": 1,
+            "max": 5000
+        },
+    "B类（LevelSequence）剧情语音":
+        {
+            "min": 50001,
+            "max": 60000
+        },
+    "C类（操控演员表演，接管镜头）剧情音效":
+        {
+            "min": 5001,
+            "max": 10000
+        },
+    "C类（操控演员表演，接管镜头）剧情语音":
+        {
+            "min": 60001,
+            "max": 70000
+        },
+    "D类（操控演员表演，不接管镜头）剧情音效":
+        {
+            "min": 10001,
+            "max": 15000
+        },
+    "D类（操控演员表演，不接管镜头）剧情语音":
+        {
+            "min": 70001,
+            "max": 80000
+        }
+}
+
 """WAAPI查询"""
 # 查询结果返回值
 options = {

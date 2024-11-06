@@ -1,4 +1,4 @@
-import config
+import module.config as config
 import os
 from pprint import pprint
 import sys

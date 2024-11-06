@@ -303,7 +303,7 @@ with WaapiClient() as client:
                 state_group_id = state_group_dict['id']
                 state_group_path = state_group_dict['path']
                 # 设置bpm
-                if "Tempo" in state_group_dict.keys():
+                if (state_group_dict['type'] == "MusicSegment") and bpm_value and bpm_value != 0:
                     set_obj_property(state_group_dict['id'], "OverrideClockSettings", True)
                     set_obj_property(state_group_dict['id'], "Tempo", bpm_value)
                 break

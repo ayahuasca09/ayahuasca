@@ -347,15 +347,15 @@ with WaapiClient() as client:
 
 wb.save(excel_path)
 
+# 将表内容同步到dcc下的Audio表中
+sheet_dcc, wb_dcc = excel_h.excel_get_sheet(config.excel_dcc_dt_audio_path, config.dt_audio_sheet_name)
+copy_to_dcc_audio()
+
 # excel转csv
 df = pd.read_excel(excel_path)
 # 指定CSV文件名和编码格式
 encoding = 'utf-8'
 df.to_csv(csv_path, encoding=encoding, index=False)
-
-# 将表内容同步到dcc下的Audio表中
-sheet_dcc, wb_dcc = excel_h.excel_get_sheet(config.excel_dcc_dt_audio_path, config.dt_audio_sheet_name)
-copy_to_dcc_audio()
 
 # 应用程序弹窗
 root = tk.Tk()

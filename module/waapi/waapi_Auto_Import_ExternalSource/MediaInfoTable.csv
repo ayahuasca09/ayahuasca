@@ -20,7 +20,4 @@ Name,ExternalSourceMediaInfoId,MediaName,CodecID,bIsStreamed,bUseDeviceMemory,Me
 16,16,VO_External_Emotion_C02_07.wem,4,True,False,0,0
 17,17,VO_External_Emotion_C02_08.wem,4,True,False,0,0
 18,18,VO_External_Emotion_C02_09.wem,4,True,False,0,0
-100,100,Chapter001A_Act001a_PL_S_Sec001F.wem,4,True,False,0,0
-101,101,Chapter001A_Act001a_PL_S_Sec002F.wem,4,True,False,0,0
-102,102,Chapter001A_Act001a_PL_S_Sec003F.wem,4,True,False,0,0
-103,103,Chapter001A_Act001a_PL_S_Sec004F.wem,4,True,False,0,0
+19,19,CG_External_Map_A02_Combat_Boss_Start.wem,4,True,False,0,0
