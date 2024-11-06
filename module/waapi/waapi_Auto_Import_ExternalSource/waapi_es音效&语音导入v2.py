@@ -7,6 +7,7 @@ from pprint import pprint
 import sys
 from os.path import abspath, dirname
 import openpyxl
+import re
 
 # xml写入库
 from xml.dom.minidom import Document, parse
@@ -63,7 +64,10 @@ doc.appendChild(root)
 def xml_create_element(media_path):
     source = doc.createElement("Source")
     source.setAttribute("Path", media_path)
-    source.setAttribute("Conversion", "VO")
+    if "CG" in media_path:
+        source.setAttribute("Conversion", "CG")
+    elif "VO" in media_path:
+        source.setAttribute("Conversion", "VO")
     root.appendChild(source)
 
 
@@ -110,9 +114,9 @@ def write_wwise_cookie_excel(vo_id, cell_sound, external_sound_dict):
             sheet_wwisecookie.cell(row=cell.row,
                                    column=wwisecookie_title_dict["MediaName"]).value = cell_sound.value + ".wem"
             sheet_wwisecookie.cell(row=cell.row, column=wwisecookie_title_dict["ExternalSourceCookie"]).value = \
-            external_sound_dict['shortId']
+                external_sound_dict['shortId']
             sheet_wwisecookie.cell(row=cell.row, column=wwisecookie_title_dict["ExternalSourceName"]).value = \
-            external_sound_dict['name']
+                external_sound_dict['name']
 
     # 在media_info表中未找到该ID，则新增
     if flag == 0:
@@ -162,6 +166,50 @@ def delete_cancel_content(vo_id):
             sheet_wwisecookie.delete_rows(cell.row)
 
 
+"""检查是否以CG_External_或VO_External_开头"""
+
+
+# 返回值为True或False
+
+def check_prefix(string):
+    pattern = r'^(CG_External_|VO_External_)'
+    return re.match(pattern, string) is not None
+
+
+"""资源命名规范检查"""
+
+
+def check_name():
+    is_pass = True
+    for i in file_name_list:
+        if (".xlsx" in i) and ("MediaInfoTable" not in i) and ("ExternalSourceDefaultMedia" not in i):
+            # 拼接xlsx的路径
+            file_path_xlsx = os.path.join(py_path, i)
+            # 获取xlsx的workbook
+            wb = openpyxl.load_workbook(file_path_xlsx)
+            # 获取xlsx的所有sheet
+            sheet_names = wb.sheetnames
+            # 加载所有工作表
+            for sheet_name in sheet_names:
+                sheet = wb[sheet_name]
+
+                title_colunmn_dict = excel_h.excel_get_sheet_title_column(sheet, excel_es_title_list)
+                if title_colunmn_dict:
+                    # 获取音效名下的内容
+                    for cell_sound in list(sheet.columns)[
+                        excel_h.sheet_title_column("文件名", title_colunmn_dict) - 1]:
+                        if cell_sound.value and (cell_sound.value != "文件名"):
+                            """资源命名规范检查"""
+                            _, _, is_pass = oi_h.check_name_all(cell_sound.value)
+                            if is_pass:
+                                # 检查是否以CG_External_或VO_External_开头
+                                if not check_prefix(cell_sound.value):
+                                    is_pass = False
+                                    oi_h.print_error(
+                                        cell_sound.value + "：请检查名称是否以CG_External_或VO_External_开头")
+    return is_pass
+
+
 """自动化生成ES数据"""
 
 
@@ -189,8 +237,8 @@ def auto_gen_es_file(file_wav_dict):
                         for cell_sound in list(sheet.columns)[
                             excel_h.sheet_title_column("文件名", title_colunmn_dict) - 1]:
                             if cell_sound.value and (cell_sound.value != "文件名"):
-                                # print(cell_sound.value)
 
+                                """查找文件"""
                                 if cell_sound.value in file_wav_name:
                                     flag = 1
                                     if sheet.cell(row=cell_sound.row, column=excel_h.sheet_title_column("State",
@@ -200,8 +248,9 @@ def auto_gen_es_file(file_wav_dict):
                                         xml_create_element(file_wav_dict[file_wav_name])
 
                                         # 在状态处自动标记完成
-                                        sheet.cell(row=cell_sound.row, column=excel_h.sheet_title_column("State",
-                                                                                                         title_colunmn_dict)).value = 'done'
+                                        sheet.cell(row=cell_sound.row,
+                                                   column=excel_h.sheet_title_column("State",
+                                                                                     title_colunmn_dict)).value = 'done'
 
                                         # 查找Wwise中有无相应的Sound
                                         for external_sound_dict in external_sound_list:
@@ -299,53 +348,59 @@ with WaapiClient() as client:
     # pprint(mediainfo_title_list)
     # pprint(wwisecookie_title_list)
 
-    # 语音ES生成
-    for language in config.language_list:
-        wav_language_path = os.path.join(py_path, "New_Media", language)
-        file_wav_language_dict, _ = oi_h.get_type_file_name_and_path('.wav', wav_language_path)
-        auto_gen_es_file(file_wav_language_dict)
-        # # xml文件写入
-        # pprint(file_wav_dict)
-        with open(config.es_xml_path, 'w+') as f:
-            # 按照格式写入
-            f.write(doc.toprettyxml())
-            f.close()
-        # pprint(doc.toprettyxml())
-        # 复制xml为wsources
-        shutil.copy2(os.path.join(py_path, config.es_xml_path),
-                     os.path.join(py_path, config.es_wsources_path))
+    # 命名规范检查
+    if check_name():
+        # 语音ES生成
+        for language in config.language_list:
+            wav_language_path = os.path.join(py_path, "New_Media", language)
+            file_wav_language_dict, _ = oi_h.get_type_file_name_and_path('.wav', wav_language_path)
+            auto_gen_es_file(file_wav_language_dict)
+            # # xml文件写入
+            # pprint(file_wav_dict)
+            with open(config.es_xml_path, 'w+') as f:
+                # 按照格式写入
+                f.write(doc.toprettyxml())
+                f.close()
+            # pprint(doc.toprettyxml())
+            # 复制xml为wsources
+            shutil.copy2(os.path.join(py_path, config.es_xml_path),
+                         os.path.join(py_path, config.es_wsources_path))
 
-        gen_external(language)
+            gen_external(language)
 
-        # 初始化xml
-        doc = Document()
-        root = doc.createElement("ExternalSourcesList")
-        root.setAttribute("SchemaVersion", "1")
-        doc.appendChild(root)
+            # 初始化xml
+            doc = Document()
+            root = doc.createElement("ExternalSourcesList")
+            root.setAttribute("SchemaVersion", "1")
+            doc.appendChild(root)
 
-        # 将删除的xml内容写入wsources
-        shutil.copy2(os.path.join(py_path, config.es_xml_path),
-                     os.path.join(py_path, config.es_wsources_path))
+            # 将删除的xml内容写入wsources
+            shutil.copy2(os.path.join(py_path, config.es_xml_path),
+                         os.path.join(py_path, config.es_wsources_path))
 
-    # 删除xml的内容
-    doc = parse(config.es_xml_path)
-    parent_node = doc.getElementsByTagName('ExternalSourcesList')[0]
-    while parent_node.hasChildNodes():
-        parent_node.removeChild(parent_node.firstChild)
+        # 删除xml的内容
+        doc = parse(config.es_xml_path)
+        parent_node = doc.getElementsByTagName('ExternalSourcesList')[0]
+        while parent_node.hasChildNodes():
+            parent_node.removeChild(parent_node.firstChild)
 
-    # 保存excel表的信息
-    wb_mediainfo.save(config.excel_mediainfo_path)
-    wb_wwisecookie.save(config.excel_wwisecookie_path)
-    #
-    # 将excel转为csv
-    # 指定CSV文件名和编码格式
-    encoding = 'utf-8'
-    # media_info csv写入
-    df = pd.read_excel(config.excel_mediainfo_path)
-    df.to_csv(media_info_path, encoding=encoding, index=False)
-    # external_cookie csv写入
-    df = pd.read_excel(config.excel_wwisecookie_path)
-    df.to_csv(external_cookie_path, encoding=encoding, index=False)
+        # 保存excel表的信息
+        wb_mediainfo.save(config.excel_mediainfo_path)
+        wb_wwisecookie.save(config.excel_wwisecookie_path)
+        #
+        # 将excel转为csv
+        # 指定CSV文件名和编码格式
+        encoding = 'utf-8'
+        # media_info csv写入
+        df = pd.read_excel(config.excel_mediainfo_path)
+        df.to_csv(media_info_path, encoding=encoding, index=False)
+        # external_cookie csv写入
+        df = pd.read_excel(config.excel_wwisecookie_path)
+        df.to_csv(external_cookie_path, encoding=encoding, index=False)
+    # else:
+    #     print(1)
+
+
 
     # # 清除复制的媒体资源
     shutil.rmtree("New_Media")
