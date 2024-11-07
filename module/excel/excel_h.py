@@ -134,3 +134,67 @@ def create_id(id_type_dict, id_type_name, id_sheet):
 #                  r"F:\pppppy\SP\module\waapi\waapi_Auto_Import_ExternalSource\B类（LevelSequence）剧情语音.xlsx",
 #                  sheet_mediainfo)
 # print(id_l)
+
+
+"""将表1的多列复制到表二的多列"""
+
+
+# source_columns_list：源需要复制的列的索引列表
+# target_columns_list：目标需要复制的列的索引列表
+
+def copy_excel1_to_excel2_n_column(sheet1, sheet2, wb2, source_columns_list, target_columns_list, excel2_path):
+    # 定义源列和目标列的对应关系
+
+    # 遍历每一行并复制指定列
+    for row in sheet1.iter_rows(min_row=1, max_row=sheet1.max_row):
+        for src_col, tgt_col in zip(source_columns_list, target_columns_list):
+            sheet2.cell(row=row[0].row, column=tgt_col).value = row[src_col - 1].value
+
+    # 保存目标 Excel 文件
+    wb2.save(excel2_path)
+
+
+# 获取.csv文件
+csv_mediainfo_path = os.path.join(py_path, config.csv_mediainfo_path)
+csv_wwisecookie_path = os.path.join(py_path, config.csv_wwisecookie_path)
+csv_DT_AudioPlotInfo_path = os.path.join(py_path, config.csv_DT_AudioPlotInfo_path)
+csv_DT_AudioPlotSoundInfo_path = os.path.join(py_path, config.csv_DT_AudioPlotSoundInfo_path)
+
+# 获取.xlsx文件
+excel_mediainfo_path = os.path.join(py_path, config.excel_mediainfo_path)
+excel_wwisecookie_path = os.path.join(py_path, config.excel_wwisecookie_path)
+excel_DT_AudioPlotInfo_path = os.path.join(py_path, config.excel_DT_AudioPlotInfo_path)
+excel_DT_AudioPlotSoundInfo_path = os.path.join(py_path, config.excel_DT_AudioPlotSoundInfo_path)
+
+# 获取相应的excel表信息
+sheet_mediainfo, wb_mediainfo = excel_h.excel_get_sheet(excel_mediainfo_path, 'Sheet1')
+sheet_wwisecookie, wb_wwisecookie = excel_h.excel_get_sheet(excel_wwisecookie_path, 'Sheet1')
+sheet_DT_AudioPlotInfo, wb_DT_AudioPlotInfo = excel_h.excel_get_sheet(excel_DT_AudioPlotInfo_path, 'Sheet1')
+sheet_DT_AudioPlotSoundInfo, wb_DT_AudioPlotSoundInfo = excel_h.excel_get_sheet(excel_DT_AudioPlotSoundInfo_path,
+                                                                                'Sheet1')
+
+# 获取媒体资源文件列表
+wav_path = os.path.join(py_path, "New_Media")
+
+# excel表标题列
+excel_es_title_list = config.excel_es_title_list
+
+# 获取当前目录下要遍历的表路径列表
+file_name_list = excel_h.excel_get_path_list(os.path.join(py_path, "Excel"))
+
+# 标题列索引获取
+mediainfo_title_dict = excel_h.excel_get_all_sheet_title_column(sheet_mediainfo)
+wwisecookie_title_dict = excel_h.excel_get_all_sheet_title_column(sheet_wwisecookie)
+DT_AudioPlotInfo_title_dict = excel_h.excel_get_all_sheet_title_column(sheet_DT_AudioPlotInfo)
+DT_AudioPlotSoundInfo_dict = excel_h.excel_get_all_sheet_title_column(sheet_DT_AudioPlotSoundInfo)
+
+# 复制列
+copy_wwisecookie_list = [wwisecookie_title_dict['MediaInfoId'], wwisecookie_title_dict['MediaInfoId'],
+                         wwisecookie_title_dict['ExternalSourceName'], wwisecookie_title_dict['MediaInfoId']]
+copy_DT_AudioPlotInfo_list = [DT_AudioPlotSoundInfo_dict['Row'], DT_AudioPlotSoundInfo_dict['PlotID'],
+                              DT_AudioPlotSoundInfo_dict['Extern Source Name'],
+                              DT_AudioPlotSoundInfo_dict['Extern Source ID']]
+
+copy_DT_AudioPlotSoundInfo_list = copy_DT_AudioPlotInfo_list
+
+_, wem_list = oi_h.get_type_file_name_and_path('.wem', config.external_output_path)

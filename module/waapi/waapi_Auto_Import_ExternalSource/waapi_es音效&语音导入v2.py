@@ -43,6 +43,9 @@ excel_DT_AudioPlotSoundInfo_path = os.path.join(py_path, config.excel_DT_AudioPl
 # 获取相应的excel表信息
 sheet_mediainfo, wb_mediainfo = excel_h.excel_get_sheet(excel_mediainfo_path, 'Sheet1')
 sheet_wwisecookie, wb_wwisecookie = excel_h.excel_get_sheet(excel_wwisecookie_path, 'Sheet1')
+sheet_DT_AudioPlotInfo, wb_DT_AudioPlotInfo = excel_h.excel_get_sheet(excel_DT_AudioPlotInfo_path, 'Sheet1')
+sheet_DT_AudioPlotSoundInfo, wb_DT_AudioPlotSoundInfo = excel_h.excel_get_sheet(excel_DT_AudioPlotSoundInfo_path,
+                                                                                'Sheet1')
 
 # 获取媒体资源文件列表
 wav_path = os.path.join(py_path, "New_Media")
@@ -52,6 +55,23 @@ excel_es_title_list = config.excel_es_title_list
 
 # 获取当前目录下要遍历的表路径列表
 file_name_list = excel_h.excel_get_path_list(os.path.join(py_path, "Excel"))
+
+# 标题列索引获取
+mediainfo_title_dict = excel_h.excel_get_all_sheet_title_column(sheet_mediainfo)
+wwisecookie_title_dict = excel_h.excel_get_all_sheet_title_column(sheet_wwisecookie)
+DT_AudioPlotInfo_title_dict = excel_h.excel_get_all_sheet_title_column(sheet_DT_AudioPlotInfo)
+DT_AudioPlotSoundInfo_dict = excel_h.excel_get_all_sheet_title_column(sheet_DT_AudioPlotSoundInfo)
+
+# 复制列
+copy_wwisecookie_list = [wwisecookie_title_dict['MediaInfoId'], wwisecookie_title_dict['MediaInfoId'],
+                         wwisecookie_title_dict['ExternalSourceName'], wwisecookie_title_dict['MediaInfoId']]
+copy_DT_AudioPlotInfo_list = [DT_AudioPlotSoundInfo_dict['Row'], DT_AudioPlotSoundInfo_dict['PlotID'],
+                              DT_AudioPlotSoundInfo_dict['Extern Source Name'],
+                              DT_AudioPlotSoundInfo_dict['Extern Source ID']]
+
+copy_DT_AudioPlotSoundInfo_list = copy_DT_AudioPlotInfo_list
+
+_, wem_list = oi_h.get_type_file_name_and_path('.wem', config.external_output_path)
 
 """**************写xml**************"""
 # 创建一个对象
@@ -363,12 +383,6 @@ with WaapiClient() as client:
     external_sound_list = external_vo_list + external_sfx_list
 
     """*******************主程序*******************"""
-    mediainfo_title_dict = excel_h.excel_get_all_sheet_title_column(sheet_mediainfo)
-    wwisecookie_title_dict = excel_h.excel_get_all_sheet_title_column(sheet_wwisecookie)
-    # pprint(mediainfo_title_list)
-    # pprint(wwisecookie_title_list)
-
-    _, wem_list = oi_h.get_type_file_name_and_path('.wem', config.external_output_path)
 
     # 命名规范检查
     if check_name():
@@ -409,7 +423,20 @@ with WaapiClient() as client:
         # 保存excel表的信息
         wb_mediainfo.save(excel_mediainfo_path)
         wb_wwisecookie.save(excel_wwisecookie_path)
-        #
+
+        # 复制资源表的信息到剧情ID表
+        # 遍历每一行并复制符合条件的行
+        for row in sheet_wwisecookie.iter_rows(min_row=1, max_row=sheet_wwisecookie.max_row):
+            # 检查第 1 列的值是否在 1 到 50000 之间
+            first_col_value = row[0].value
+            if isinstance(first_col_value, (int, float)) and 1 <= first_col_value <= 50000:
+                for src_col, tgt_col in zip(copy_wwisecookie_list, copy_DT_AudioPlotInfo_list):
+                    sheet_DT_AudioPlotSoundInfo.cell(row=row[0].row, column=tgt_col).value = row[src_col - 1].value
+
+        # 保存目标 Excel 文件
+        wb_DT_AudioPlotSoundInfo.save(excel_DT_AudioPlotSoundInfo_path)
+        wb_DT_AudioPlotInfo.save(excel_DT_AudioPlotInfo_path)
+
         # 将excel转为csv
         # 指定CSV文件名和编码格式
         csv_h.excel_to_csv(excel_mediainfo_path, csv_mediainfo_path)
