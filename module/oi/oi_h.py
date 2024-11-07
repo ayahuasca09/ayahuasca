@@ -121,6 +121,7 @@ def print_error(error_info):
     global is_pass
     is_pass = False
     print("[error]" + error_info)
+    return False
 
 
 """检测字符串是否含有中文"""
