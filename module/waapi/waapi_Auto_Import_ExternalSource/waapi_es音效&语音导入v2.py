@@ -41,7 +41,7 @@ wav_path = os.path.join(py_path, "New_Media")
 excel_es_title_list = config.excel_es_title_list
 
 # 获取当前目录下要遍历的表路径列表
-file_name_list = excel_h.excel_get_path_list(py_path)
+file_name_list = excel_h.excel_get_path_list(os.path.join(py_path, "Excel"))
 
 """**************写xml**************"""
 # 创建一个对象
@@ -193,7 +193,7 @@ def check_name():
     for i in file_name_list:
         if (".xlsx" in i) and ("MediaInfoTable" not in i) and ("ExternalSourceDefaultMedia" not in i):
             # 拼接xlsx的路径
-            file_path_xlsx = os.path.join(py_path, i)
+            file_path_xlsx = os.path.join(os.path.join(py_path, "Excel"), i)
             # 获取xlsx的workbook
             wb = openpyxl.load_workbook(file_path_xlsx)
             # 获取xlsx的所有sheet
@@ -228,8 +228,9 @@ def check_name():
                                             cell_sound.value + "：在表中有重复，请检查")
     # 文件清理
     delete_cancel_content(table_name_list)
+    # pprint(table_name_list)
 
-    return is_pass, table_name_list
+    return is_pass
 
 
 """自动化生成ES数据"""
@@ -245,7 +246,7 @@ def auto_gen_es_file(file_wav_dict):
             # print(i)
             if (".xlsx" in i) and ("MediaInfoTable" not in i) and ("ExternalSourceDefaultMedia" not in i):
                 # 拼接xlsx的路径
-                file_path_xlsx = os.path.join(py_path, i)
+                file_path_xlsx = os.path.join(os.path.join(py_path, "Excel"), i)
                 # 获取xlsx的workbook
                 wb = openpyxl.load_workbook(file_path_xlsx)
                 # 获取xlsx的所有sheet
@@ -359,12 +360,8 @@ with WaapiClient() as client:
 
     _, wem_list = oi_h.get_type_file_name_and_path('.wem', config.external_output_path)
 
-    # print(check_name())
-    is_pass, table_name_list = check_name()
-
-    # pprint(table_name_list)
     # 命名规范检查
-    if is_pass:
+    if check_name():
         # 语音ES生成
         for language in config.language_list:
             wav_language_path = os.path.join(py_path, "New_Media", language)
