@@ -10,6 +10,8 @@ wwise_proj_path = r"S:\\chen.gong_DCC_Audio\\Audio\\SilverPalace_WwiseProject"
 # excel表路径
 excel_mediainfo_path = 'MediaInfoTable.xlsx'
 excel_wwisecookie_path = 'ExternalSourceDefaultMedia.xlsx'
+excel_DT_AudioPlotInfo_path = "DT_AudioPlotInfo.xlsx"
+excel_DT_AudioPlotSoundInfo_path = "DT_AudioPlotSoundInfo.xlsx"
 
 # excel表标题列
 excel_es_title_list = ["文件名", "External_Type", "State", "剧情ID"]
@@ -17,6 +19,8 @@ excel_es_title_list = ["文件名", "External_Type", "State", "剧情ID"]
 # csv表路径
 csv_mediainfo_path = "MediaInfoTable.csv"
 csv_wwisecookie_path = "ExternalSourceDefaultMedia.csv"
+csv_DT_AudioPlotInfo_path = "DT_AudioPlotInfo.csv"
+csv_DT_AudioPlotSoundInfo_path = "DT_AudioPlotSoundInfo.csv"
 
 # Wwise ES路径
 vo_external_path = "\\Actor-Mixer Hierarchy\\v1\\VO\\VO\\VO_External"

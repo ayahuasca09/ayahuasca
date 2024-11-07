@@ -17,11 +17,9 @@ import module.excel.excel_h as excel_h
 import module.config as config
 import module.oi.oi_h as oi_h
 import module.waapi.waapi_h as waapi_h
+import module.csv.csv_h as csv_h
 
 """****************数据获取******************"""
-# 获取相应的excel表
-sheet_mediainfo, wb_mediainfo = excel_h.excel_get_sheet(config.excel_mediainfo_path, 'Sheet1')
-sheet_wwisecookie, wb_wwisecookie = excel_h.excel_get_sheet(config.excel_wwisecookie_path, 'Sheet1')
 
 # 获取文件所在目录
 py_path = ""
@@ -31,8 +29,20 @@ elif __file__:
     py_path = dirname(abspath(__file__))
 
 # 获取.csv文件
-media_info_path = os.path.join(py_path, config.csv_mediainfo_path)
-external_cookie_path = os.path.join(py_path, config.csv_wwisecookie_path)
+csv_mediainfo_path = os.path.join(py_path, config.csv_mediainfo_path)
+csv_wwisecookie_path = os.path.join(py_path, config.csv_wwisecookie_path)
+csv_DT_AudioPlotInfo_path = os.path.join(py_path, config.csv_DT_AudioPlotInfo_path)
+csv_DT_AudioPlotSoundInfo_path = os.path.join(py_path, config.csv_DT_AudioPlotSoundInfo_path)
+
+# 获取.xlsx文件
+excel_mediainfo_path = os.path.join(py_path, config.excel_mediainfo_path)
+excel_wwisecookie_path = os.path.join(py_path, config.excel_wwisecookie_path)
+excel_DT_AudioPlotInfo_path = os.path.join(py_path, config.excel_DT_AudioPlotInfo_path)
+excel_DT_AudioPlotSoundInfo_path = os.path.join(py_path, config.excel_DT_AudioPlotSoundInfo_path)
+
+# 获取相应的excel表信息
+sheet_mediainfo, wb_mediainfo = excel_h.excel_get_sheet(excel_mediainfo_path, 'Sheet1')
+sheet_wwisecookie, wb_wwisecookie = excel_h.excel_get_sheet(excel_wwisecookie_path, 'Sheet1')
 
 # 获取媒体资源文件列表
 wav_path = os.path.join(py_path, "New_Media")
@@ -397,18 +407,16 @@ with WaapiClient() as client:
             parent_node.removeChild(parent_node.firstChild)
 
         # 保存excel表的信息
-        wb_mediainfo.save(config.excel_mediainfo_path)
-        wb_wwisecookie.save(config.excel_wwisecookie_path)
+        wb_mediainfo.save(excel_mediainfo_path)
+        wb_wwisecookie.save(excel_wwisecookie_path)
         #
         # 将excel转为csv
         # 指定CSV文件名和编码格式
-        encoding = 'utf-8'
-        # media_info csv写入
-        df = pd.read_excel(config.excel_mediainfo_path)
-        df.to_csv(media_info_path, encoding=encoding, index=False)
-        # external_cookie csv写入
-        df = pd.read_excel(config.excel_wwisecookie_path)
-        df.to_csv(external_cookie_path, encoding=encoding, index=False)
+        csv_h.excel_to_csv(excel_mediainfo_path, csv_mediainfo_path)
+        csv_h.excel_to_csv(excel_wwisecookie_path, csv_wwisecookie_path)
+        csv_h.excel_to_csv(excel_DT_AudioPlotInfo_path, csv_DT_AudioPlotInfo_path)
+        csv_h.excel_to_csv(excel_DT_AudioPlotSoundInfo_path, csv_DT_AudioPlotSoundInfo_path)
+
     # else:
     #     print(1)
 
