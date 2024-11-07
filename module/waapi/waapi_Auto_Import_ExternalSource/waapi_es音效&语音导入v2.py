@@ -69,6 +69,13 @@ copy_DT_AudioPlotInfo_list = [DT_AudioPlotSoundInfo_dict['Row'], DT_AudioPlotSou
                               DT_AudioPlotSoundInfo_dict['Extern Source Name'],
                               DT_AudioPlotSoundInfo_dict['Extern Source ID']]
 
+copy_dict = {
+    DT_AudioPlotSoundInfo_dict['Row']: wwisecookie_title_dict['MediaInfoId'],
+    DT_AudioPlotSoundInfo_dict['PlotID']: wwisecookie_title_dict['MediaInfoId'],
+    DT_AudioPlotSoundInfo_dict['Extern Source Name']: wwisecookie_title_dict['ExternalSourceName'],
+    DT_AudioPlotSoundInfo_dict['Extern Source ID']: wwisecookie_title_dict['MediaInfoId']
+}
+
 copy_DT_AudioPlotSoundInfo_list = copy_DT_AudioPlotInfo_list
 
 _, wem_list = oi_h.get_type_file_name_and_path('.wem', config.external_output_path)
@@ -336,7 +343,7 @@ def auto_gen_es_file(file_wav_dict):
             oi_h.print_error(file_wav_name + "：在语音需求表中不存在，请检查名称是否正确或在表格中补充该名字")
 
 
-with WaapiClient() as client:
+with (WaapiClient() as client):
     """自动生成externalsource"""
 
 
@@ -426,12 +433,33 @@ with WaapiClient() as client:
 
         # 复制资源表的信息到剧情ID表
         # 遍历每一行并复制符合条件的行
-        for row in sheet_wwisecookie.iter_rows(min_row=1, max_row=sheet_wwisecookie.max_row):
-            # 检查第 1 列的值是否在 1 到 50000 之间
-            first_col_value = row[0].value
-            if isinstance(first_col_value, (int, float)) and 1 <= first_col_value <= 50000:
-                for src_col, tgt_col in zip(copy_wwisecookie_list, copy_DT_AudioPlotInfo_list):
-                    sheet_DT_AudioPlotSoundInfo.cell(row=row[0].row, column=tgt_col).value = row[src_col - 1].value
+        sheet_DT_AudioPlotSoundInfo_row_index = 2
+        sheet_DT_AudioPlotInfo_row_index = 2
+        for row in sheet_wwisecookie.iter_rows(min_row=2, max_row=sheet_wwisecookie.max_row):
+            # 获取id的值是否在 1 到 50000 之间
+            col_value = row[wwisecookie_title_dict['MediaInfoId'] - 1].value
+            row_index = row[wwisecookie_title_dict['MediaInfoId'] - 1].row
+
+            if col_value:
+
+                if 1 <= col_value <= 50000:
+
+                    for target_index in copy_dict:
+                        sheet_DT_AudioPlotSoundInfo.cell(row=sheet_DT_AudioPlotSoundInfo_row_index,
+                                                         column=target_index).value = sheet_wwisecookie.cell(
+                            row=row_index, column=copy_dict[
+                                target_index]).value
+                    sheet_DT_AudioPlotSoundInfo_row_index += 1
+
+                elif col_value > 50000:
+                    # print(col_value)
+
+                    for target_index in copy_dict:
+                        sheet_DT_AudioPlotInfo.cell(row=sheet_DT_AudioPlotInfo_row_index,
+                                                    column=target_index).value = sheet_wwisecookie.cell(
+                            row=row_index, column=copy_dict[
+                                target_index]).value
+                    sheet_DT_AudioPlotInfo_row_index += 1
 
         # 保存目标 Excel 文件
         wb_DT_AudioPlotSoundInfo.save(excel_DT_AudioPlotSoundInfo_path)
