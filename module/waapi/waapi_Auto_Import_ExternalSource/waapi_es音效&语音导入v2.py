@@ -108,67 +108,66 @@ def xml_create_element(media_path):
     root.appendChild(source)
 
 
+"""写入excel_DT_AudioPlotInfo_path表"""
+
+
+def write_dt_excel(vo_id, cell_sound, dt_sheet, cell_es_type):
+    if cell_es_type in config.es_event_id_dict:
+        event_id = config.es_event_id_dict[cell_es_type]
+        # 插入为空的行
+        insert_row = dt_sheet.max_row + 1
+        value_dict = {
+            "Row": vo_id,
+            'PlotID': vo_id,
+            'Extern Source Name': cell_sound.value + ".wem",
+            'Extern Source ID': vo_id,
+            'Event ID': event_id,
+
+        }
+        for cell in list(dt_sheet.rows)[0]:
+            if cell.value in value_dict:
+                dt_sheet.cell(row=insert_row, column=cell.column).value = value_dict[cell.value]
+    else:
+        oi_h.print_error(cell_sound + ":ES Type请映射请补充在config")
+
+
 """写入media_info excel表"""
 
 
 def write_media_info_excel(vo_id, cell_sound):
-    flag = 0
-    for cell in list(sheet_mediainfo.columns)[0]:
-        # 在media_info表中找到该ID，则替换
-        if sheet_mediainfo.cell(row=cell.row, column=1).value == vo_id:
-            flag = 1
-            sheet_mediainfo.cell(row=cell.row,
-                                 column=mediainfo_title_dict['MediaName']).value = cell_sound.value + ".wem"
-
-    # 在media_info表中未找到该ID，则新增
-    if flag == 0:
-        # 插入为空的行
-        insert_row = sheet_mediainfo.max_row + 1
-        value_dict = {
-            "Name": vo_id,
-            'ExternalSourceMediaInfoId': vo_id,
-            'MediaName': cell_sound.value + ".wem",
-            'CodecID': 4,
-            'bIsStreamed': 'TRUE',
-            'bUseDeviceMemory': "FALSE",
-            'MemoryAlignment': 0,
-            'PrefetchSize': 0
-        }
-        for cell in list(sheet_mediainfo.rows)[0]:
-            if cell.value in value_dict:
-                sheet_mediainfo.cell(row=insert_row, column=cell.column).value = value_dict[cell.value]
+    # 插入为空的行
+    insert_row = sheet_mediainfo.max_row + 1
+    value_dict = {
+        "Name": vo_id,
+        'ExternalSourceMediaInfoId': vo_id,
+        'MediaName': cell_sound.value + ".wem",
+        'CodecID': 4,
+        'bIsStreamed': 'TRUE',
+        'bUseDeviceMemory': "FALSE",
+        'MemoryAlignment': 0,
+        'PrefetchSize': 0
+    }
+    for cell in list(sheet_mediainfo.rows)[0]:
+        if cell.value in value_dict:
+            sheet_mediainfo.cell(row=insert_row, column=cell.column).value = value_dict[cell.value]
 
 
 """写入wwise_cookie excel表"""
 
 
 def write_wwise_cookie_excel(vo_id, cell_sound, external_sound_dict):
-    flag = 0
-    for cell in list(sheet_wwisecookie.columns)[0]:
-        # 在media_info表中找到该ID，则替换
-        if sheet_wwisecookie.cell(row=cell.row, column=1).value == vo_id:
-            flag = 1
-            sheet_wwisecookie.cell(row=cell.row,
-                                   column=wwisecookie_title_dict["MediaName"]).value = cell_sound.value + ".wem"
-            sheet_wwisecookie.cell(row=cell.row, column=wwisecookie_title_dict["ExternalSourceCookie"]).value = \
-                external_sound_dict['shortId']
-            sheet_wwisecookie.cell(row=cell.row, column=wwisecookie_title_dict["ExternalSourceName"]).value = \
-                external_sound_dict['name']
-
-    # 在media_info表中未找到该ID，则新增
-    if flag == 0:
-        # 插入为空的行
-        insert_row = sheet_wwisecookie.max_row + 1
-        value_dict = {
-            "Name": vo_id,
-            'ExternalSourceCookie': external_sound_dict['shortId'],
-            'ExternalSourceName': external_sound_dict['name'],
-            'MediaInfoId': vo_id,
-            'MediaName': cell_sound.value + ".wem"
-        }
-        for cell in list(sheet_wwisecookie.rows)[0]:
-            if cell.value in value_dict:
-                sheet_wwisecookie.cell(row=insert_row, column=cell.column).value = value_dict[cell.value]
+    # 插入为空的行
+    insert_row = sheet_wwisecookie.max_row + 1
+    value_dict = {
+        "Name": vo_id,
+        'ExternalSourceCookie': external_sound_dict['shortId'],
+        'ExternalSourceName': external_sound_dict['name'],
+        'MediaInfoId': vo_id,
+        'MediaName': cell_sound.value + ".wem"
+    }
+    for cell in list(sheet_wwisecookie.rows)[0]:
+        if cell.value in value_dict:
+            sheet_wwisecookie.cell(row=insert_row, column=cell.column).value = value_dict[cell.value]
 
 
 """删除相应的.wem文件"""
@@ -280,7 +279,7 @@ def auto_gen_es_file(file_wav_dict):
         # 读excel表
         # 提取规则：只提取xlsx文件
         for i in file_name_list:
-            # print(i)
+
             if (".xlsx" in i) and ("MediaInfoTable" not in i) and ("ExternalSourceDefaultMedia" not in i):
                 # 拼接xlsx的路径
                 file_path_xlsx = os.path.join(os.path.join(py_path, "Excel"), i)
@@ -315,10 +314,11 @@ def auto_gen_es_file(file_wav_dict):
                                         is_wwise_have = 0
                                         # 查找Wwise中有无相应的Sound
                                         for external_sound_dict in external_sound_list:
-                                            if external_sound_dict['parent']['name'] == sheet.cell(
-                                                    row=cell_sound.row,
-                                                    column=excel_h.sheet_title_column("External_Type",
-                                                                                      title_colunmn_dict)).value:
+                                            cell_es_type = sheet.cell(
+                                                row=cell_sound.row,
+                                                column=excel_h.sheet_title_column("External_Type",
+                                                                                  title_colunmn_dict)).value
+                                            if external_sound_dict['parent']['name'] == cell_es_type:
                                                 # pprint(external_sound_dict['shortId'])
                                                 # 查找mediainfo表的id有没有，没有则添加，有则修改内容
                                                 vo_id = excel_h.create_id(config.es_id_config, i, sheet_mediainfo)
@@ -327,6 +327,14 @@ def auto_gen_es_file(file_wav_dict):
                                                 write_media_info_excel(vo_id, cell_sound)
                                                 # # 写入wwise_cookie excel表
                                                 write_wwise_cookie_excel(vo_id, cell_sound, external_sound_dict)
+
+                                                # 写入dt excel表
+                                                if 0 < vo_id <= 50000:
+                                                    write_dt_excel(vo_id, cell_sound, sheet_DT_AudioPlotSoundInfo,
+                                                                   cell_es_type)
+                                                elif vo_id > 50000:
+                                                    write_dt_excel(vo_id, cell_sound, sheet_DT_AudioPlotInfo,
+                                                                   cell_es_type)
 
                                                 oi_h.print_warning(file_wav_name + "：已导入")
                                                 is_wwise_have = 1
@@ -430,43 +438,10 @@ with (WaapiClient() as client):
         # 保存excel表的信息
         wb_mediainfo.save(excel_mediainfo_path)
         wb_wwisecookie.save(excel_wwisecookie_path)
-
-        # 复制资源表的信息到剧情ID表
-        # 遍历每一行并复制符合条件的行
-        sheet_DT_AudioPlotSoundInfo_row_index = 2
-        sheet_DT_AudioPlotInfo_row_index = 2
-        for row in sheet_wwisecookie.iter_rows(min_row=2, max_row=sheet_wwisecookie.max_row):
-            # 获取id的值是否在 1 到 50000 之间
-            col_value = row[wwisecookie_title_dict['MediaInfoId'] - 1].value
-            row_index = row[wwisecookie_title_dict['MediaInfoId'] - 1].row
-
-            if col_value:
-
-                if 1 <= col_value <= 50000:
-
-                    for target_index in copy_dict:
-                        sheet_DT_AudioPlotSoundInfo.cell(row=sheet_DT_AudioPlotSoundInfo_row_index,
-                                                         column=target_index).value = sheet_wwisecookie.cell(
-                            row=row_index, column=copy_dict[
-                                target_index]).value
-                    sheet_DT_AudioPlotSoundInfo_row_index += 1
-
-                elif col_value > 50000:
-                    # print(col_value)
-
-                    for target_index in copy_dict:
-                        sheet_DT_AudioPlotInfo.cell(row=sheet_DT_AudioPlotInfo_row_index,
-                                                    column=target_index).value = sheet_wwisecookie.cell(
-                            row=row_index, column=copy_dict[
-                                target_index]).value
-                    sheet_DT_AudioPlotInfo_row_index += 1
-
-        # 保存目标 Excel 文件
         wb_DT_AudioPlotSoundInfo.save(excel_DT_AudioPlotSoundInfo_path)
         wb_DT_AudioPlotInfo.save(excel_DT_AudioPlotInfo_path)
 
         # 将excel转为csv
-        # 指定CSV文件名和编码格式
         csv_h.excel_to_csv(excel_mediainfo_path, csv_mediainfo_path)
         csv_h.excel_to_csv(excel_wwisecookie_path, csv_wwisecookie_path)
         csv_h.excel_to_csv(excel_DT_AudioPlotInfo_path, csv_DT_AudioPlotInfo_path)
@@ -475,7 +450,7 @@ with (WaapiClient() as client):
     # else:
     #     print(1)
 
-    # # 清除复制的媒体资源
+    # 清除复制的媒体资源
     shutil.rmtree("New_Media")
     os.mkdir("New_Media")
     os.mkdir("New_Media/Chinese")

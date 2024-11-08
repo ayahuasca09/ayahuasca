@@ -4,17 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="17a8a927-0db7-41d4-8f81-9181fc87e6d9" name="更改" comment="ES自动化：剧情表自动化生成">
+    <list default="true" id="17a8a927-0db7-41d4-8f81-9181fc87e6d9" name="更改" comment="ES自动化：新增命名规范检测、转码设置根据CG和VO区分、相应ID表自动化生成">
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/SilverPalace战斗音频需求资源管理表 (1).xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/excel/excel_h.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/excel/excel_h.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/ue/ue_ID表生成/Audio.csv" beforeDir="false" afterPath="$PROJECT_DIR$/module/ue/ue_ID表生成/Audio.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/ue/ue_ID表生成/Audio.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/module/ue/ue_ID表生成/Audio.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/DT_AudioPlotInfo.csv" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/DT_AudioPlotInfo.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/DT_AudioPlotInfo.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/DT_AudioPlotInfo.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/DT_AudioPlotSoundInfo.csv" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/DT_AudioPlotSoundInfo.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/DT_AudioPlotSoundInfo.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/DT_AudioPlotSoundInfo.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/Excel/B类（LevelSequence）剧情语音.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/Excel/B类（LevelSequence）剧情语音.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/Excel/B类（LevelSequence）剧情音效.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/Excel/B类（LevelSequence）剧情音效.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/ExternalSource.wsources" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/ExternalSource.wsources" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/ExternalSource.xml" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/ExternalSource.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/ExternalSourceDefaultMedia.csv" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/ExternalSourceDefaultMedia.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/ExternalSourceDefaultMedia.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/ExternalSourceDefaultMedia.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/MediaInfoTable.csv" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/MediaInfoTable.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/MediaInfoTable.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/MediaInfoTable.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/waapi_es音效&amp;语音导入v2.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/waapi_es音效&amp;语音导入v2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/SilverPalace战斗音频需求资源管理表.xlsx" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -279,8 +288,8 @@
       <list>
         <item itemvalue="Python.waapi_es音效&amp;语音导入v2" />
         <item itemvalue="Python.waapi_音频资源全流程生成" />
-        <item itemvalue="Python.waapi_音频资源导入_从媒体资源导入" />
         <item itemvalue="Python.waapi_音频资源导入_从表导入" />
+        <item itemvalue="Python.waapi_音频资源导入_从媒体资源导入" />
         <item itemvalue="Python.waapi_wwise属性自动配置" />
       </list>
     </recent_temporary>
@@ -300,14 +309,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1716955384994</updated>
-    </task>
-    <task id="LOCAL-00066" summary="创建ES的excel表">
-      <option name="closed" value="true" />
-      <created>1725446934330</created>
-      <option name="number" value="00066" />
-      <option name="presentableId" value="LOCAL-00066" />
-      <option name="project" value="LOCAL" />
-      <updated>1725446934330</updated>
     </task>
     <task id="LOCAL-00067" summary="ES Excel MediaInfo表 信息生成测试">
       <option name="closed" value="true" />
@@ -693,7 +694,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730970986895</updated>
     </task>
-    <option name="localTasksCounter" value="115" />
+    <task id="LOCAL-00115" summary="ES自动化：新增命名规范检测、转码设置根据CG和VO区分、相应ID表自动化生成">
+      <option name="closed" value="true" />
+      <created>1730983496604</created>
+      <option name="number" value="00115" />
+      <option name="presentableId" value="LOCAL-00115" />
+      <option name="project" value="LOCAL" />
+      <updated>1730983496604</updated>
+    </task>
+    <option name="localTasksCounter" value="116" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -709,7 +718,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="音乐资源导入自动化:music segment增删改同步" />
     <MESSAGE value="音乐资源导入自动化:stin segment及子级增删改同步" />
     <MESSAGE value="音乐资源导入自动化:媒体资源增删改同步" />
     <MESSAGE value="自动化音效：修复部分Event无法生成的问题" />
@@ -734,6 +742,7 @@
     <MESSAGE value="ES自动化：id表规划" />
     <MESSAGE value="ES自动化：删除同步" />
     <MESSAGE value="ES自动化：剧情表自动化生成" />
-    <option name="LAST_COMMIT_MESSAGE" value="ES自动化：剧情表自动化生成" />
+    <MESSAGE value="ES自动化：新增命名规范检测、转码设置根据CG和VO区分、相应ID表自动化生成" />
+    <option name="LAST_COMMIT_MESSAGE" value="ES自动化：新增命名规范检测、转码设置根据CG和VO区分、相应ID表自动化生成" />
   </component>
 </project>

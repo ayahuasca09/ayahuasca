@@ -71,6 +71,11 @@ es_id_config = {
         }
 }
 
+es_event_id_dict = {
+    "CG_External_1P_2D": 36003,
+    "VO_External_1P_2D": 15001
+}
+
 """WAAPI查询"""
 # 查询结果返回值
 options = {
