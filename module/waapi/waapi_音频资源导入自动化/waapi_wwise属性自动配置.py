@@ -315,3 +315,15 @@ with WaapiClient() as client:
         # 开流
         set_obj_property(mus_dict['id'], "IsStreamingEnabled", True)
         set_obj_property(mus_dict['id'], "IsZeroLatency", True)
+
+    # 打包
+    args = {
+        "soundbanks": [
+            {"name": "AKE_Play_Mus_Global"}
+        ],
+        "writeToDisk": True,
+        # "clearAudioFileCache": True
+    }
+
+    gen_log = client.call("ak.wwise.core.soundbank.generate", args)
+    pprint(gen_log)

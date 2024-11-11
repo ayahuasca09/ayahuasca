@@ -386,17 +386,17 @@ with WaapiClient() as client:
     # 撤销结束
     client.call("ak.wwise.core.undo.endGroup", displayName="rnd创建撤销")
 
-    # 打包
-    args = {
-        "soundbanks": [
-            {"name": "AKE_Play_Mus_Global"}
-        ],
-        "writeToDisk": True,
-        # "clearAudioFileCache": True
-    }
-
-    gen_log = client.call("ak.wwise.core.soundbank.generate", args)
-    pprint(gen_log)
+    # # 打包
+    # args = {
+    #     "soundbanks": [
+    #         {"name": "AKE_Play_Mus_Global"}
+    #     ],
+    #     "writeToDisk": True,
+    #     # "clearAudioFileCache": True
+    # }
+    #
+    # gen_log = client.call("ak.wwise.core.soundbank.generate", args)
+    # pprint(gen_log)
 
     # 清除复制的媒体资源
     # shutil.rmtree("New_Media")

@@ -3,6 +3,9 @@ import subprocess
 # 媒体资源替换及generated soundbank
 subprocess.run(['python', r"F:\pppppy\SP\module\waapi\waapi_音频资源导入自动化\waapi_音频资源导入_从媒体资源导入.py"])
 
+# Wwise属性自动设置
+subprocess.run(['python', r"F:\pppppy\SP\module\waapi\waapi_音频资源导入自动化\waapi_wwise属性自动配置.py"])
+
 # reconcile 同步UE资产
 command = (r"S:\Ver_1.0.0\Editor\Engine\Binaries\Win64\UnrealEditor.exe S:\Ver_1.0.0\Project\SilverPalace.uproject "
            r"-run=WwiseReconcileCommandlet -modes=all")
