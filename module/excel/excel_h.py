@@ -1,8 +1,6 @@
 import openpyxl
-from pprint import pprint
 import os
 import module.oi.oi_h as oi_h
-import module.config as config
 
 """打开工作簿并获取工作表"""
 

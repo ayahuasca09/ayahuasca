@@ -1,7 +1,6 @@
 import openpyxl
 from waapi import WaapiClient
 import os
-import shutil
 import sys
 import re
 import pandas as pd
@@ -9,13 +8,9 @@ import configparser
 import tkinter as tk
 from tkinter import messagebox
 from os.path import abspath, dirname
-from pprint import pprint
 
 # 自定义库
-import module.excel.excel_h as excel_h
-import module.config as config
-import module.oi.oi_h as oi_h
-import module.waapi.waapi_h as waapi_h
+import config as config
 
 # 文件所在目录
 py_path = ""

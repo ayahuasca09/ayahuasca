@@ -1,8 +1,7 @@
 import requests
 import json
-from pprint import pprint
 import time
-import module.config as config
+import config as config
 import module.oi.oi_h as oi_h
 
 url = "https://open.feishu.cn/open-apis/auth/v3/tenant_access_token/internal/"

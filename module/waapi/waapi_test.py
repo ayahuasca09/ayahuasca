@@ -1,8 +1,4 @@
-from waapi import WaapiClient, CannotConnectToWaapiException
-from pprint import pprint
-
-import waapi_h
-import module.config as config
+from waapi import WaapiClient
 
 """跨脚本调用测试"""
 # args = {

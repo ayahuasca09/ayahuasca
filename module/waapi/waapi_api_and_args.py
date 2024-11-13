@@ -1,7 +1,5 @@
-from waapi import WaapiClient, CannotConnectToWaapiException
-from pprint import pprint
-import json
-import module.config as config
+from waapi import WaapiClient
+import config as config
 import module.waapi.waapi_h as waapi_h
 
 args = {}

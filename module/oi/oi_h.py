@@ -1,12 +1,9 @@
-import module.config as config
+import config as config
 import os
 from pprint import pprint
 import sys
 from os.path import abspath, dirname
 import re
-import module.excel.excel_h as excel_h
-import module.waapi.waapi_h as waapi_h
-import module.json.json_h as json_h
 
 is_pass = True
 

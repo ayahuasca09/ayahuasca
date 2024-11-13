@@ -31,7 +31,7 @@ es_xml_path = 'ExternalSource.xml'
 es_wsources_path = 'ExternalSource.wsources'
 
 # external的输入输出路径
-external_input_path = "F:\\pppppy\\SP\\module\\waapi\\waapi_Auto_Import_ExternalSource\\ExternalSource.wsources"
+external_input_path = "/module/waapi/waapi_Auto_Import_ExternalSource/ExternalSource.wsources"
 external_output_win_path = 'S:\\Ver_1.0.0\\Project\\Content\\Audio\\GeneratedExternalSources\\Windows'
 external_output_android_path = 'S:\\Ver_1.0.0\\Project\\Content\\Audio\\GeneratedExternalSources\\Android'
 external_output_ios_path = 'S:\\Ver_1.0.0\\Project\\Content\\Audio\\GeneratedExternalSources\\iOS'

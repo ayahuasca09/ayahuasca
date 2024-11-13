@@ -1,5 +1,4 @@
 import openpyxl
-import json
 import sys
 from os.path import abspath, dirname
 import os
@@ -10,9 +9,8 @@ import shutil
 from openpyxl.cell import MergedCell
 
 import module.excel.excel_h as excel_h
-import module.config as config
+import config as config
 import module.oi.oi_h as oi_h
-import module.waapi.waapi_h as waapi_h
 import module.json.json_h as json_h
 
 # 文件所在目录

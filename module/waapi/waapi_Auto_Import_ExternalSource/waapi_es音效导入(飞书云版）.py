@@ -1,18 +1,15 @@
 # xml读取库
-import shutil
-import pandas as pd
 import os
 from waapi import WaapiClient
-from pprint import pprint
 import sys
 from os.path import abspath, dirname
 
 # xml写入库
-from xml.dom.minidom import Document, parse
+from xml.dom.minidom import Document
 
 # 自定义库
 import module.excel.excel_h as excel_h
-import module.config as config
+import config as config
 import module.oi.oi_h as oi_h
 import module.waapi.waapi_h as waapi_h
 import module.cloudfeishu.cloudfeishu_h as cloudfeishu_h

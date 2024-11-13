@@ -5,13 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="17a8a927-0db7-41d4-8f81-9181fc87e6d9" name="更改" comment="全流程自动化：配置自动化">
-      <change afterPath="$PROJECT_DIR$/module/ue/ue_csv表导入datatable/ue_csv表导入datatable.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/cloudfeishu/downloaded_file.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_auto_gen_state/State_Switch资源表 (2).xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/module/cloudfeishu/cloudfeishu_h.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/cloudfeishu/cloudfeishu_h.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/ue/ue_ID表生成/Audio.csv" beforeDir="false" afterPath="$PROJECT_DIR$/module/ue/ue_ID表生成/Audio.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/excel/excel_h.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/excel/excel_h.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/oi/oi_h.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/oi/oi_h.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/module/ue/ue_ID表生成/Audio.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/module/ue/ue_ID表生成/Audio.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_auto_gen_state/State_Switch资源表.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/ue/ue_ID表生成/DCC表的引用路径生成.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/ue/ue_ID表生成/DCC表的引用路径生成.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/ue/ue_ID表生成/ue_ID表生成v2.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/ue/ue_ID表生成/ue_ID表生成v2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/ue/ue_ID表生成/ue_ID表生成v3.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/ue/ue_ID表生成/ue_ID表生成v3.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/waapi_es音效&amp;语音导入v2.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/waapi_es音效&amp;语音导入v2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/waapi_es音效导入(飞书云版）.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/waapi_es音效导入(飞书云版）.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_api_and_args.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_api_and_args.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/waapi_音频资源导入_从表导入v2.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/waapi_音频资源导入_从表导入v2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/快捷粘贴.py" beforeDir="false" afterPath="$PROJECT_DIR$/快捷粘贴.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,11 +134,11 @@
       <recent name="F:\pppppy\SP\module\xml" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\pppppy\SP" />
       <recent name="F:\pppppy\SP\test\使用自定义库打包测试\my_lib" />
       <recent name="F:\pppppy\SP\module\xml" />
       <recent name="F:\pppppy\SP\module\waapi\waapi_音频资源导入自动化" />
       <recent name="F:\pppppy\SP\module\ue\ue_ID表生成" />
-      <recent name="F:\pppppy\SP\module\waapi\waapi_generatesoundbank" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -297,14 +308,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1716955384994</updated>
-    </task>
-    <task id="LOCAL-00069" summary="命令扩展——生成父级文件">
-      <option name="closed" value="true" />
-      <created>1725875454423</created>
-      <option name="number" value="00069" />
-      <option name="presentableId" value="LOCAL-00069" />
-      <option name="project" value="LOCAL" />
-      <updated>1725875454423</updated>
     </task>
     <task id="LOCAL-00070" summary="命令扩展——生成父级文件">
       <option name="closed" value="true" />
@@ -690,7 +693,15 @@
       <option name="project" value="LOCAL" />
       <updated>1731309721306</updated>
     </task>
-    <option name="localTasksCounter" value="118" />
+    <task id="LOCAL-00118" summary="全流程自动化：配置自动化">
+      <option name="closed" value="true" />
+      <created>1731469877737</created>
+      <option name="number" value="00118" />
+      <option name="presentableId" value="LOCAL-00118" />
+      <option name="project" value="LOCAL" />
+      <updated>1731469877737</updated>
+    </task>
+    <option name="localTasksCounter" value="119" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

@@ -1,20 +1,10 @@
-from waapi import WaapiClient
-import os
-import sys
 import re
-import pandas as pd
-import tkinter as tk
-from tkinter import messagebox
-from os.path import abspath, dirname
-from pprint import pprint
 import json
 
 # 自定义库
 import module.excel.excel_h as excel_h
-import module.config as config
+import config as config
 import module.oi.oi_h as oi_h
-import module.waapi.waapi_h as waapi_h
-import module.json.json_h as json_h
 
 """**********************数据获取*************************"""
 sheet, wb = excel_h.excel_get_sheet(config.excel_dcc_dt_audio_path, config.dt_audio_sheet_name)
