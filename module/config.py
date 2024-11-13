@@ -90,8 +90,9 @@ options = {
 app_id = "cli_a67dd70d527bd013"
 app_secret = "kw5O5VboETIgZERiNe39ebqL72kzbruu"
 
+# wiki token
 # ES语音表token
-excel_es_vo_token_list = ["O90kwkWAdiDw9Lkv31GcZQwOnoh"]
+excel_es_vo_token_list = ["PVNYwZbdVi1LMhkhvbVch4cJn4C"]
 # ES音效表token
 excel_es_sfx_token_list = ["AsW4wmAbQiIHeLkI2cscdN0Ln3e"]
 

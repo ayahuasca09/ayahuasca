@@ -1,6 +1,7 @@
 import requests
 import json
 from pprint import pprint
+import time
 import module.config as config
 import module.oi.oi_h as oi_h
 
@@ -187,3 +188,42 @@ def convert_sheet_to_list(wiki_token_list, need_title_list):
                     sheet_list.append(every_row_content_dict)
 
     return sheet_list
+
+
+"""下载云文档"""
+
+
+def download_cloud_sheet(wiki_token, sheet_save_path):
+    access_token = get_access_id()
+
+    # 创建导出任务
+    url1 = "https://open.feishu.cn/open-apis/drive/v1/export_tasks"
+    headers = {"Content-Type": "application/json", "Authorization": "Bearer " + str(access_token)}  # 请求头
+    payload1 = json.dumps({
+        "file_extension": "xlsx",
+        "token": wiki_token,
+        "type": "sheet"
+    })
+    response = requests.request("POST", url=url1, data=payload1, headers=headers)
+    print("1:" + response.json()["msg"])
+    ticket = response.json()["data"]["ticket"]
+    print("2:" + ticket)
+    time.sleep(5)
+    # 查看导出任务结果
+    url2 = "https://open.feishu.cn/open-apis/drive/v1/export_tasks/" + ticket + "?token=" + wiki_token
+    headers2 = {'Authorization': 'Bearer ' + str(access_token)}  # 请求头
+    response = requests.request("GET", url2, headers=headers2)
+    file_token = response.json()["data"]["result"]["file_token"]
+    # file_token=token
+    # pprint(response.json())
+    print("3:" + file_token)
+    # 下载文件
+    url = "https://open.feishu.cn/open-apis/drive/v1/export_tasks/file/" + file_token + "/download"
+    payload = ''
+    response = requests.request("GET", url, headers=headers, data=payload)
+    if response.status_code == 200:
+        with open(sheet_save_path, "wb") as f:
+            f.write(response.content)
+        print("下载成功")
+    else:
+        print(f"下载失败: {response.status_code}, {response.text}")
