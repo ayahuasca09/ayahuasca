@@ -2,6 +2,8 @@ import os
 from os.path import abspath, dirname
 import sys
 import subprocess
+import openpyxl
+import re
 
 """输出测试"""
 # print("aa")
@@ -107,3 +109,35 @@ import subprocess
 # new_string = '_'.join(string_list)
 #
 # print(new_string)
+
+"""表格中的正则表达式提取测试"""
+
+# 打开 Excel 文件
+workbook = openpyxl.load_workbook(r"F:\pppppy\SP\files\工作簿1.xlsx")
+
+# 选择工作表（假设是第一个工作表）
+sheet = workbook.active
+
+# 获取第一行第一列的值
+pattern_value = sheet.cell(row=1, column=1).value
+
+# 打印模式
+print(f"Pattern from Excel: {pattern_value}")
+
+# 将双反斜杠替换为单反斜杠
+pattern_value = pattern_value.replace('\\\\', '\\')
+
+# 编译正则表达式模式
+try:
+    pattern = re.compile(pattern_value)
+except re.error as e:
+    print(f"Invalid regex pattern: {e}")
+    exit(1)
+
+# 检查字符串 "C01" 是否匹配
+match = pattern.fullmatch("C01")
+
+if match:
+    print("字符串 'C01' 匹配模式。")
+else:
+    print("字符串 'C01' 不匹配模式。")

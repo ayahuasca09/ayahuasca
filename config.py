@@ -1,3 +1,28 @@
+from os.path import abspath, dirname
+import sys
+import os
+
+"""获取py的根路径"""
+
+
+def get_py_path():
+    py_path = ""
+    if hasattr(sys, 'frozen'):
+        py_path = dirname(sys.executable)
+    elif __file__:
+        py_path = dirname(abspath(__file__))
+    return py_path
+
+
+"""获取主目录下的文件"""
+
+
+def get_py_file_path(script_name):
+    py_file_path = os.path.join(
+        get_py_path(), "files", script_name)
+    return py_file_path
+
+
 """Wwise"""
 wwise_sfx_path = "\\Actor-Mixer Hierarchy\\v1"
 wwise_event_path = "\\Events\\v1"
@@ -95,6 +120,8 @@ app_secret = "kw5O5VboETIgZERiNe39ebqL72kzbruu"
 excel_es_vo_token_list = ["PVNYwZbdVi1LMhkhvbVch4cJn4C"]
 # ES音效表token
 excel_es_sfx_token_list = ["AsW4wmAbQiIHeLkI2cscdN0Ln3e"]
+# 音频资源命名配置token
+check_name_token = "K2Cfwl44XiMe6Wkhi7AcJ0fGnVb"
 
 """DT Audio"""
 excel_dcc_dt_audio_path = r"S:\chen.gong_DCC_Audio\Audio\Config\Audio.xlsx"
@@ -185,3 +212,6 @@ check_name_json = '导入规则.json'
 status_list = ['占位', '临时资源', 'to do', 'in progress', 'done']
 # 要删除的状态列表
 del_status_list = ['占位', '临时资源', 'to do', 'in progress', 'done', 'cancel']
+
+"""命名规范检查"""
+excel_check_name = '命名规范检查表.xlsx'

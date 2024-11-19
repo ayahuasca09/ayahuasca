@@ -194,22 +194,22 @@ def convert_sheet_to_list(wiki_token_list, need_title_list):
 
 def download_cloud_sheet(wiki_token, sheet_save_path):
     access_token = get_access_id()
-
+    token = get_excel_token(wiki_token)
     # 创建导出任务
     url1 = "https://open.feishu.cn/open-apis/drive/v1/export_tasks"
     headers = {"Content-Type": "application/json", "Authorization": "Bearer " + str(access_token)}  # 请求头
     payload1 = json.dumps({
         "file_extension": "xlsx",
-        "token": wiki_token,
+        "token": token,
         "type": "sheet"
     })
     response = requests.request("POST", url=url1, data=payload1, headers=headers)
     print("1:" + response.json()["msg"])
     ticket = response.json()["data"]["ticket"]
     print("2:" + ticket)
-    time.sleep(5)
+    time.sleep(1)
     # 查看导出任务结果
-    url2 = "https://open.feishu.cn/open-apis/drive/v1/export_tasks/" + ticket + "?token=" + wiki_token
+    url2 = "https://open.feishu.cn/open-apis/drive/v1/export_tasks/" + ticket + "?token=" + token
     headers2 = {'Authorization': 'Bearer ' + str(access_token)}  # 请求头
     response = requests.request("GET", url2, headers=headers2)
     file_token = response.json()["data"]["result"]["file_token"]

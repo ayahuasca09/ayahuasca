@@ -1,4 +1,5 @@
 from waapi import WaapiClient
+from pprint import pprint
 
 """跨脚本调用测试"""
 # args = {
@@ -24,7 +25,6 @@ with WaapiClient() as client:
 
 
     # obj_sub_list = client.call("ak.wwise.core.object.get", args, options=config.options)['return']
-
 
     """soundbank生成测试"""
     # args = {
@@ -483,3 +483,11 @@ with WaapiClient() as client:
     #                        options=config.options)['return']
     # musicplaylistitem_list, _, _ = waapi_h.find_obj(obj_list)
     # pprint(musicplaylistitem_list)
+
+    """查找Amb"""
+    args = {
+        'waql': ' "{23B0CE4A-3440-40BE-A83C-5571900F523A}" select descendants where type = "RandomSequenceContainer" '}
+    obj_sub_list, obj_sub_id = find_obj(args)
+    extract_key = lambda d: d['id']
+    amb_2d_list = list(map(extract_key, obj_sub_list))
+    pprint(amb_2d_list)

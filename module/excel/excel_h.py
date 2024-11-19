@@ -8,9 +8,12 @@ import module.oi.oi_h as oi_h
 def excel_get_sheet(path, sheetname):
     # 打开工作簿
     wb = openpyxl.load_workbook(path)
+    sheet = None
     # print(wb)
-    # 获取工作表
-    sheet = wb[sheetname]
+    if sheetname:
+        # 获取工作表
+        sheet = wb[sheetname]
+
     # print(sheet)
     return sheet, wb
 
@@ -150,5 +153,3 @@ def copy_excel1_to_excel2_n_column(sheet1, sheet2, wb2, source_columns_list, tar
 
     # 保存目标 Excel 文件
     wb2.save(excel2_path)
-
-

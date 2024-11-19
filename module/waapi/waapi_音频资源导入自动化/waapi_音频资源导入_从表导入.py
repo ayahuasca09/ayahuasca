@@ -1075,8 +1075,18 @@ with WaapiClient() as client:
     event_list, event_id, _ = find_obj(
         {'waql': ' "%s" select descendants where type = "Event" ' % wwise_dict['Event_Root']})
 
+    # 查找Amb_Global的内容，不删除
+    obj_sub_list, _, _ = find_obj(
+        {
+            'waql': ' "{23B0CE4A-3440-40BE-A83C-5571900F523A}" select descendants where type = "RandomSequenceContainer" '})
+    extract_key = lambda d: d['id']
+    amb_2d_list = list(map(extract_key, obj_sub_list))
+    # pprint(amb_2d_list)
+
     for rnd_container in rnd_container_list:
-        delete_or_modify_wwise_content()
+        if rnd_container['id'] not in amb_2d_list:
+            delete_or_modify_wwise_content()
+
 
     # 对于语音，需要查找Sound容器里的随机资源
     # 查找所有Sound
