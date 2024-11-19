@@ -122,6 +122,8 @@ excel_es_vo_token_list = ["PVNYwZbdVi1LMhkhvbVch4cJn4C"]
 excel_es_sfx_token_list = ["AsW4wmAbQiIHeLkI2cscdN0Ln3e"]
 # 音频资源命名配置token
 check_name_token = "K2Cfwl44XiMe6Wkhi7AcJ0fGnVb"
+# 音效语音表
+excel_media_token_list = ["TcbAwUoNriYh0Rk8gG0clcNCnTh", "CatewGc9miJplrkKVi2cvBd5nMb", "XXq2wK5dbiH7lWkbw36ciHK4nCc"]
 
 """DT Audio"""
 excel_dcc_dt_audio_path = r"S:\chen.gong_DCC_Audio\Audio\Config\Audio.xlsx"
@@ -215,3 +217,5 @@ del_status_list = ['占位', '临时资源', 'to do', 'in progress', 'done', 'ca
 
 """命名规范检查"""
 excel_check_name = '命名规范检查表.xlsx'
+
+"""媒体资源占位生成"""

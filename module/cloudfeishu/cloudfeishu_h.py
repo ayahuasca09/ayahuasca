@@ -3,6 +3,7 @@ import json
 import time
 import config as config
 import module.oi.oi_h as oi_h
+from pprint import pprint
 
 url = "https://open.feishu.cn/open-apis/auth/v3/tenant_access_token/internal/"
 sheets_base_url = "https://open.feishu.cn/open-apis/sheets/v2/spreadsheets"
@@ -39,15 +40,16 @@ def get_excel_token(wiki_token):
     url = f"https://open.feishu.cn/open-apis/wiki/v2/spaces/get_node?token={wiki_token}"
     response = requests.get(url, headers=get_header())
     node_info = response.json()
+    excel_name = node_info["data"]["node"]["title"]
     token = node_info["data"]["node"]["obj_token"]
-    return token
+    return token, excel_name
 
 
 """获取表格ID"""
 
 
 def get_sheet_id_list(wiki_token):
-    excel_id = get_excel_token(wiki_token)
+    excel_id, _ = get_excel_token(wiki_token)
     url = f"https://open.feishu.cn/open-apis/sheets/v3/spreadsheets/{excel_id}/sheets/query"
 
     response = requests.get(url, headers=get_header())
@@ -66,7 +68,8 @@ def get_sheet_id_list(wiki_token):
 
 
 def get_sheet_all_content(wiki_token, sheet_id):
-    sheet_all_url = f"{sheets_base_url}/{get_excel_token(wiki_token)}/values/{sheet_id}!A:Z"
+    excel_id, _ = get_excel_token(wiki_token)
+    sheet_all_url = f"{sheets_base_url}/{excel_id}/values/{sheet_id}!A:Z"
     ret = requests.get(sheet_all_url, headers=get_header())
     # print(ret.text)
     data = ret.json()
@@ -194,7 +197,7 @@ def convert_sheet_to_list(wiki_token_list, need_title_list):
 
 def download_cloud_sheet(wiki_token, sheet_save_path):
     access_token = get_access_id()
-    token = get_excel_token(wiki_token)
+    token, _ = get_excel_token(wiki_token)
     # 创建导出任务
     url1 = "https://open.feishu.cn/open-apis/drive/v1/export_tasks"
     headers = {"Content-Type": "application/json", "Authorization": "Bearer " + str(access_token)}  # 请求头
@@ -207,7 +210,7 @@ def download_cloud_sheet(wiki_token, sheet_save_path):
     print("1:" + response.json()["msg"])
     ticket = response.json()["data"]["ticket"]
     print("2:" + ticket)
-    time.sleep(1)
+    time.sleep(3)
     # 查看导出任务结果
     url2 = "https://open.feishu.cn/open-apis/drive/v1/export_tasks/" + ticket + "?token=" + token
     headers2 = {'Authorization': 'Bearer ' + str(access_token)}  # 请求头
@@ -226,3 +229,4 @@ def download_cloud_sheet(wiki_token, sheet_save_path):
         print("下载成功")
     else:
         print(f"下载失败: {response.status_code}, {response.text}")
+
