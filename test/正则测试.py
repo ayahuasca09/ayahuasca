@@ -67,20 +67,38 @@ pattern = r"_LP$"
 #     print("aaaa")
 
 """替换资源路径为UE路径测试"""
-aa = (r"S:\Ver_1.0.0\Project\Content"
-      r"\Audio\WwiseAudio\Events\v1\VO\VO_Game\VO_Game_C01\VO_Game_Battle_C01\AKE_Play_VO_Game_Battle_C01_01.uasset")
-# 获取从\Audio开始的内容
-result = re.search('(?<=\\\\Content).*', aa).group()
-# \Audio\WwiseAudio\Events\v1\VO\VO_Game\VO_Game_C01\VO_Game_Battle_C01\AKE_Play_VO_Game_Battle_C01_01.uasset
-# /替换\
-result = result.replace("\\", "/")
-# /Audio/WwiseAudio/Events/v1/VO/VO_Game/VO_Game_C01/VO_Game_Battle_C01/AKE_Play_VO_Game_Battle_C01_01.uasset
-# 去除.uasset
-result = result.replace(".uasset", "")
-# /Audio/WwiseAudio/Events/v1/VO/VO_Game/VO_Game_C01/VO_Game_Battle_C01/AKE_Play_VO_Game_Battle_C01_01
-# 获取后缀
-result_list = result.split("/")
-# 拼接字符串
-if result_list[-1]:
-    result = '/Script/AkAudio.AkAudioEvent\'/Game' + result + "." + result_list[-1]+'\''
-print(result)
+# aa = (r"S:\Ver_1.0.0\Project\Content"
+#       r"\Audio\WwiseAudio\Events\v1\VO\VO_Game\VO_Game_C01\VO_Game_Battle_C01\AKE_Play_VO_Game_Battle_C01_01.uasset")
+# # 获取从\Audio开始的内容
+# result = re.search('(?<=\\\\Content).*', aa).group()
+# # \Audio\WwiseAudio\Events\v1\VO\VO_Game\VO_Game_C01\VO_Game_Battle_C01\AKE_Play_VO_Game_Battle_C01_01.uasset
+# # /替换\
+# result = result.replace("\\", "/")
+# # /Audio/WwiseAudio/Events/v1/VO/VO_Game/VO_Game_C01/VO_Game_Battle_C01/AKE_Play_VO_Game_Battle_C01_01.uasset
+# # 去除.uasset
+# result = result.replace(".uasset", "")
+# # /Audio/WwiseAudio/Events/v1/VO/VO_Game/VO_Game_C01/VO_Game_Battle_C01/AKE_Play_VO_Game_Battle_C01_01
+# # 获取后缀
+# result_list = result.split("/")
+# # 拼接字符串
+# if result_list[-1]:
+#     result = '/Script/AkAudio.AkAudioEvent\'/Game' + result + "." + result_list[-1]+'\''
+# print(result)
+
+"""检测正则表达式的pattern是否正确"""
+
+
+def is_valid_regex(pattern):
+    try:
+        re.compile(pattern)
+        return True, None
+    except re.error as e:
+        print(f"正则表达式不合规。错误信息: {str(e)}")
+        return False
+
+
+# 示例用法
+pattern = r"(\d{3})-(\d{3})-(\d{4})"  # 示例正则表达式
+
+if (is_valid_regex(pattern)):
+    pass

@@ -217,5 +217,9 @@ del_status_list = ['占位', '临时资源', 'to do', 'in progress', 'done', 'ca
 
 """命名规范检查"""
 excel_check_name = '命名规范检查表.xlsx'
+# 单个字符串长度限制
+one_word_len = 10
+# 根据_分段的word数限制
+word_list_len = 7
 
 """媒体资源占位生成"""

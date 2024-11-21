@@ -153,7 +153,7 @@ def check_is_random():
 
 def check_by_Amb(name):
     global is_pass
-    is_pass = False
+    # is_pass = False
 
 
 """CG类型检查"""
@@ -1086,7 +1086,6 @@ with WaapiClient() as client:
     for rnd_container in rnd_container_list:
         if rnd_container['id'] not in amb_2d_list:
             delete_or_modify_wwise_content()
-
 
     # 对于语音，需要查找Sound容器里的随机资源
     # 查找所有Sound
