@@ -12,6 +12,7 @@ import module.cloudfeishu.cloudfeishu_h as cloudfeishu_h
 import module.oi.oi_h as oi_h
 import config
 import module.excel.excel_h as excel_h
+import module.waapi.waapi_h as waapi_h
 from pathlib import Path
 import 命名规范检查
 
@@ -43,6 +44,36 @@ audio_unit_list = []
 event_unit_list = []
 
 """*****************功能检测区******************"""
+
+"""获取最长共同前缀"""
+
+
+def longest_common_prefix(s1, s2):
+    """Helper function to find the longest common prefix of two strings."""
+    min_length = min(len(s1), len(s2))
+    for i in range(min_length):
+        if s1[i] != s2[i]:
+            return s1[:i]
+    return s1[:min_length]
+
+
+"""在字典中查找最长共同前缀的值，且字典值长度需小于target"""
+
+
+def find_longest_prefix_key(target, dictionary):
+    max_prefix_length = 0
+    best_key = None
+
+    for key in dictionary.keys():
+        if len(key) < len(target):
+            prefix = longest_common_prefix(target, key)
+            if len(prefix) > max_prefix_length:
+                max_prefix_length = len(prefix)
+                best_key = key
+
+    return best_key
+
+
 """获取表格中的事件描述和状态所在的列"""
 
 
@@ -77,8 +108,30 @@ def get_descrip_and_status_column():
 
 with WaapiClient() as client:
     """*****************Wwise功能区******************"""
+    """获取Wwise中的Unit列表"""
+
+
+    def get_wwise_type_list(root_path, type):
+        # 获取Wwise所有的Audio Unit
+        wwise_audio_unit_all_list = client.call("ak.wwise.core.object.get",
+                                                waapi_h.waql_by_type(type, root_path),
+                                                options=config.options)['return']
+        wwise_audio_unit_name_dict = {item['name']: item['id'] for item in wwise_audio_unit_all_list}
+        # pprint(wwise_audio_unit_name_dict)
+        # {'Amb': '{4BB49221-4DC1-4A05-A57C-3D42FA570675}',
+        #  'Amb_A01': '{415AC456-D390-43D5-A09E-B5D30B253D76}',
+        #  'CG': '{BBB332B4-C230-4D60-9ABA-91A36D968C11}'}
+        return wwise_audio_unit_name_dict
+
 
     """*****************主程序处理******************"""
+
+    # 获取Wwise所有的Event Unit
+    wwise_event_unit_all_list = client.call("ak.wwise.core.object.get",
+                                            waapi_h.waql_by_type("WorkUnit", config.wwise_event_path),
+                                            options=config.options)['return']
+    wwise_event_unit_name_dict = {item['name']: item['id'] for item in wwise_event_unit_all_list}
+    # pprint(wwise_event_unit_name_dict)
 
     # 记录所有资源名称
     sound_name_list = []
@@ -108,8 +161,17 @@ with WaapiClient() as client:
                                     # pprint(cell_sound.value)
                                     pass
 
-# # unit列表长度排序
-audio_unit_list.sort(key=len)
-event_unit_list.sort(key=len)
-pprint(audio_unit_list)
-pprint(event_unit_list)
+    """*****************work unit创建******************"""
+    # 对列表进行排序
+    audio_unit_list.sort(key=len)
+    event_unit_list.sort(key=len)
+
+    # 查找Wwise中是否有该unit
+    for audio_unit in audio_unit_list:
+        wwise_audio_unit_name_dict = get_wwise_type_list(config.wwise_sfx_path, "ActorMixer")
+        # 若Wwise中无相应Unit则需要创建
+        if audio_unit not in wwise_audio_unit_name_dict:
+            # 查找该unit需要放的父级是谁
+            audio_unit_parent = find_longest_prefix_key(audio_unit, wwise_audio_unit_name_dict)
+            # print(audio_unit)
+            # print(audio_unit_parent)
