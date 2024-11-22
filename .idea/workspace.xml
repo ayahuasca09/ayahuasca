@@ -4,11 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="17a8a927-0db7-41d4-8f81-9181fc87e6d9" name="更改" comment="全流程自动化：导入表的命名规范检查及unit收集">
-      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_auto_gen_music/游戏音乐资源表 (7).xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/SilverPalace音频需求资源管理表 (5).xlsx" afterDir="false" />
+    <list default="true" id="17a8a927-0db7-41d4-8f81-9181fc87e6d9" name="更改" comment="全流程自动化：准备创建unit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/媒体资源占位生成/SilverPalace战斗音频需求资源管理表 .xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/files/媒体资源占位生成/SilverPalace战斗音频需求资源管理表 .xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/媒体资源占位生成/SilverPalace语音资源管理表.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/files/媒体资源占位生成/SilverPalace语音资源管理表.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/媒体资源占位生成/SilverPalace音频需求资源管理表.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/files/媒体资源占位生成/SilverPalace音频需求资源管理表.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/func/命名规范检查.py" beforeDir="false" afterPath="$PROJECT_DIR$/func/命名规范检查.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/func/媒体资源占位生成.py" beforeDir="false" afterPath="$PROJECT_DIR$/func/媒体资源占位生成.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_h.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_h.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -252,8 +255,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.媒体资源占位生成" />
-        <item itemvalue="Python.正则测试" />
         <item itemvalue="Python.命名规范检查" />
+        <item itemvalue="Python.正则测试" />
         <item itemvalue="Python.waapi_auto_gen_music" />
         <item itemvalue="Python.waapi_音频资源全流程生成" />
       </list>
@@ -274,14 +277,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1716955384994</updated>
-    </task>
-    <task id="LOCAL-00073" summary="ID表更新">
-      <option name="closed" value="true" />
-      <created>1726055779142</created>
-      <option name="number" value="00073" />
-      <option name="presentableId" value="LOCAL-00073" />
-      <option name="project" value="LOCAL" />
-      <updated>1726055779142</updated>
     </task>
     <task id="LOCAL-00074" summary="ID表导表两张">
       <option name="closed" value="true" />
@@ -667,7 +662,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732175053589</updated>
     </task>
-    <option name="localTasksCounter" value="122" />
+    <task id="LOCAL-00122" summary="全流程自动化：准备创建unit">
+      <option name="closed" value="true" />
+      <created>1732184324760</created>
+      <option name="number" value="00122" />
+      <option name="presentableId" value="LOCAL-00122" />
+      <option name="project" value="LOCAL" />
+      <updated>1732184324760</updated>
+    </task>
+    <option name="localTasksCounter" value="123" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -683,7 +686,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="ID表逻辑修改" />
     <MESSAGE value="音乐配置自动化:转码开流，更新转码后的资源" />
     <MESSAGE value="全流程自动化优化" />
     <MESSAGE value="音乐配置自动化:bpm，还有playlistcontainer创建" />
@@ -708,6 +710,7 @@
     <MESSAGE value="全流程自动化：event和audio的unit收集" />
     <MESSAGE value="全流程自动化：导入表的命名规范检查" />
     <MESSAGE value="全流程自动化：导入表的命名规范检查及unit收集" />
-    <option name="LAST_COMMIT_MESSAGE" value="全流程自动化：导入表的命名规范检查及unit收集" />
+    <MESSAGE value="全流程自动化：准备创建unit" />
+    <option name="LAST_COMMIT_MESSAGE" value="全流程自动化：准备创建unit" />
   </component>
 </project>

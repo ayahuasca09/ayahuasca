@@ -42,8 +42,27 @@ file_name_list = excel_h.excel_get_path_list(root_path)
 """收集unit的路径"""
 audio_unit_list = []
 event_unit_list = []
+audio_mixer_list = []
 
 """*****************功能检测区******************"""
+"""获取event_unit_list中缺失的unit"""
+
+
+# 遍历 `list1`：对于 `list1` 中的每个元素，将其用下划线分隔，并转换为集合 `parts1`。
+# 遍历 `list2`：对于 `list2` 中的每个元素，同样进行分隔并转换为集合 `parts2`。
+# 检查子集关系：使用 `issubset` 方法检查 `parts1` 是否是 `parts2` 的子集。
+# 更新结果列表：如果 `parts1` 是 `parts2` 的子集，则将 `list2` 中的该元素添加到 `result` 列表中。
+# 输出结果：最终输出更新后的列表 `result`。
+def get_missing_event_unit(list1, list2):
+    for element1 in list1[:]:  # 使用 list1[:] 复制列表以避免修改时的迭代问题
+        parts1 = set(element1.split('_'))
+        for element2 in list2:
+            parts2 = set(element2.split('_'))
+            if parts1.issubset(parts2):  # 检查是否有共同元素
+                if element2 not in list1:
+                    list1.append(element2)
+                break  # 如果已经匹配到一个，跳出内层循环
+
 
 """获取最长共同前缀"""
 
@@ -65,11 +84,12 @@ def find_longest_prefix_key(target, dictionary):
     best_key = None
 
     for key in dictionary.keys():
-        if len(key) < len(target):
-            prefix = longest_common_prefix(target, key)
-            if len(prefix) > max_prefix_length:
-                max_prefix_length = len(prefix)
-                best_key = key
+        if key in target:
+            if len(key) < len(target):
+                prefix = longest_common_prefix(target, key)
+                if len(prefix) > max_prefix_length:
+                    max_prefix_length = len(prefix)
+                    best_key = key
 
     return best_key
 
@@ -124,6 +144,75 @@ with WaapiClient() as client:
         return wwise_audio_unit_name_dict
 
 
+    """obj创建"""
+
+
+    def create_wwise_obj(type, parent, name, notes):
+        unit_object = client.call("ak.wwise.core.object.create",
+                                  waapi_h.args_object_create(parent,
+                                                             type, name, notes))
+        oi_h.print_warning(name + "：" + type + "已创建")
+        return unit_object
+
+
+    """eventunit结构创建"""
+
+
+    def create_wwise_event_unit(audio_unit_list, event_unit_list):
+        unit_object = {}
+        # 查找Event中是否有该unit（第一层级）
+        for audio_unit in event_unit_list:
+            wwise_audio_unit_name_dict = get_wwise_type_list(config.wwise_event_path, "WorkUnit")
+            # 若Wwise中无相应Unit则需要创建
+            if audio_unit not in wwise_audio_unit_name_dict:
+                # 查找该unit需要放的父级是谁
+                audio_unit_parent = find_longest_prefix_key(audio_unit, wwise_audio_unit_name_dict)
+                # WorkUnit创建
+                unit_object = create_wwise_obj("WorkUnit",
+                                               wwise_audio_unit_name_dict[audio_unit_parent], audio_unit, "")
+
+        # 查找Event中是否有该unit（第二层级）
+        for audio_unit in audio_unit_list:
+            wwise_audio_unit_name_dict = get_wwise_type_list(config.wwise_event_path, "WorkUnit")
+            # 若Wwise中无相应Unit则需要创建
+            if audio_unit not in wwise_audio_unit_name_dict:
+                # 查找该unit需要放的父级是谁
+                audio_unit_parent = find_longest_prefix_key(audio_unit, wwise_audio_unit_name_dict)
+                # WorkUnit创建
+                unit_object = create_wwise_obj("WorkUnit",
+                                               wwise_audio_unit_name_dict[audio_unit_parent], audio_unit, "")
+
+
+    """audiounit结构创建"""
+
+
+    # 有2种方式
+    # 1：audio下，unit和actormixer都需要创建
+    # 2：audio下，只需要创建actormixer
+    def create_wwise_audio_unit(unit_list, flag):
+        # 查找Wwise中是否有该unit
+        for audio_unit in unit_list:
+            wwise_audio_unit_name_dict = get_wwise_type_list(config.wwise_sfx_path, "ActorMixer")
+            # 若Wwise中无相应Unit则需要创建
+            if audio_unit not in wwise_audio_unit_name_dict:
+                # 查找该unit需要放的父级是谁
+                audio_unit_parent = find_longest_prefix_key(audio_unit, wwise_audio_unit_name_dict)
+                # 2：audio下，只需要创建actormixer
+                if flag == 2:
+                    # ActorMixer创建
+                    unit_object = create_wwise_obj("ActorMixer",
+                                                   wwise_audio_unit_name_dict[audio_unit_parent], audio_unit, "")
+                elif flag == 1:
+                    # WorkUnit创建
+                    unit_object = create_wwise_obj("WorkUnit",
+                                                   wwise_audio_unit_name_dict[audio_unit_parent], audio_unit, "")
+                    # 1：audio下，unit和actormixer都需要创建
+                    if unit_object:
+                        # ActorMixer创建
+                        unit_object = create_wwise_obj("ActorMixer",
+                                                       unit_object['id'], audio_unit, "")
+
+
     """*****************主程序处理******************"""
 
     # 获取Wwise所有的Event Unit
@@ -156,7 +245,8 @@ with WaapiClient() as client:
                             if sheet.cell(row=cell_sound.row,
                                           column=status_column).value in config.status_list:
                                 # pprint(cell_sound.value)
-                                if 命名规范检查.check_basic(cell_sound.value, audio_unit_list, event_unit_list):
+                                if 命名规范检查.check_basic(cell_sound.value, audio_unit_list, event_unit_list,
+                                                            audio_mixer_list):
                                     # 通过命名规范检查
                                     # pprint(cell_sound.value)
                                     pass
@@ -165,13 +255,23 @@ with WaapiClient() as client:
     # 对列表进行排序
     audio_unit_list.sort(key=len)
     event_unit_list.sort(key=len)
+    audio_mixer_list.sort(key=len)
 
-    # 查找Wwise中是否有该unit
-    for audio_unit in audio_unit_list:
-        wwise_audio_unit_name_dict = get_wwise_type_list(config.wwise_sfx_path, "ActorMixer")
-        # 若Wwise中无相应Unit则需要创建
-        if audio_unit not in wwise_audio_unit_name_dict:
-            # 查找该unit需要放的父级是谁
-            audio_unit_parent = find_longest_prefix_key(audio_unit, wwise_audio_unit_name_dict)
-            # print(audio_unit)
-            # print(audio_unit_parent)
+    # 获取event_unit_list中缺失的unit
+    get_missing_event_unit(event_unit_list, audio_unit_list)
+
+    # # 1：audio下，unit和actormixer都需要创建
+    # create_wwise_audio_unit(audio_unit_list, 1)
+    # # event下，unit创建
+    # create_wwise_event_unit(audio_unit_list, event_unit_list)
+    pprint("audio_unit_list：")
+    pprint(audio_unit_list)
+    print()
+
+    pprint("event_unit_list：")
+    pprint(event_unit_list)
+    print()
+
+    pprint("audio_mixer_list：")
+    pprint(audio_mixer_list)
+
