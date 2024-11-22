@@ -245,6 +245,7 @@ with WaapiClient() as client:
                             if sheet.cell(row=cell_sound.row,
                                           column=status_column).value in config.status_list:
                                 # pprint(cell_sound.value)
+
                                 if 命名规范检查.check_basic(cell_sound.value, audio_unit_list, event_unit_list,
                                                             audio_mixer_list):
                                     # 通过命名规范检查

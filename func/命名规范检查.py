@@ -135,24 +135,27 @@ def check_basic(media_name, audio_unit_list, event_unit_list, audio_mixer_list):
 
 
 def check_by_re(pattern, name, media_name):
-    # pprint(media_name)
-    # pprint(name + ":" + pattern)
-    global is_pass
-    if pattern == "GenTable":
-        is_pass = True
-        # print(media_name)
-        # print(check_by_gentable(name, media_name))
-
-        return check_by_gentable(name, media_name)
-
-    is_pass = False
-    # 将双反斜杠替换为单反斜杠
-    pattern = pattern.replace('\\\\', '\\')
-    if is_valid_regex(pattern):
-        result = re.search(pattern, name)
-        if result:
+    if pattern:
+        # pprint(media_name)
+        # pprint(name + ":" + pattern)
+        global is_pass
+        if pattern == "GenTable":
             is_pass = True
-            return is_pass
+            # print(media_name)
+            # print(check_by_gentable(name, media_name))
+
+            return check_by_gentable(name, media_name)
+
+        is_pass = False
+        # 将双反斜杠替换为单反斜杠
+        pattern = pattern.replace('\\\\', '\\')
+        if is_valid_regex(pattern):
+            result = re.search(pattern, name)
+            if result:
+                is_pass = True
+                return is_pass
+    # else:
+    #     pprint(media_name + "：" + name + "的正则表达式" + pattern + "为空")
 
 
 """log捕获"""
@@ -362,11 +365,13 @@ def check_by_wb(media_name, audio_unit_list, event_unit_list, audio_mixer_list):
             check_cell = None
             for row in sheet.iter_rows(min_row=1, max_col=1, max_row=sheet.max_row):
                 for cell in row:
-                    if check_is_chinese(cell.value):
-                        break
-                    if check_by_re(cell.value, media_name_list[1], media_name):
-                        check_cell = cell
-                        break
+                    if cell.value:
+                        if check_is_chinese(cell.value):
+                            break
+                        elif check_by_re(cell.value, media_name_list[1], media_name):
+                            check_cell = cell
+                            break
+
             if check_cell:
                 event_begin_name = check_event_unit(media_name_list[0], media_name_list[1], check_cell,
                                                     event_unit_list)
@@ -381,7 +386,7 @@ def check_by_wb(media_name, audio_unit_list, event_unit_list, audio_mixer_list):
                 # 从第2列开始遍历该行的每一列
                 # print(media_name)
                 for cell in sheet[check_cell.row]:
-                    if cell.column != 1:
+                    if cell.column != 1 and cell.value:
                         # print(cell.value)
                         if len(media_name_list) > cell.column:
                             # print(cell.value)
