@@ -135,14 +135,24 @@ def check_basic(media_name, audio_unit_list, event_unit_list, audio_mixer_list):
 
 
 def check_by_re(pattern, name, media_name):
+    # pprint(media_name)
+    # pprint(name + ":" + pattern)
+    global is_pass
+    if pattern == "GenTable":
+        is_pass = True
+        # print(media_name)
+        # print(check_by_gentable(name, media_name))
+
+        return check_by_gentable(name, media_name)
+
+    is_pass = False
     # 将双反斜杠替换为单反斜杠
     pattern = pattern.replace('\\\\', '\\')
     if is_valid_regex(pattern):
         result = re.search(pattern, name)
-        if result == None:
-            print_error(media_name + "：请检查" + pattern + "是否拼写错误或未添加到列表中")
-        # else:
-        #     print(name)
+        if result:
+            is_pass = True
+            return is_pass
 
 
 """log捕获"""
@@ -214,6 +224,26 @@ def get_audio_unit_list():
 
 # pprint(get_audio_unit_list())
 
+"""Audio Mixer检测"""
+
+
+def check_audio_mixer(begin_name, end_name, cell, audio_mixer_list):
+    if end_name:
+        # 表格内容获取
+        if cell:
+            fill = cell.fill
+            if fill.fill_type == 'solid':
+                begin_name += "_" + end_name
+                if fill.start_color.index == first_column_data[1]:
+                    if begin_name not in audio_mixer_list:
+                        audio_mixer_list.append(begin_name)
+
+                elif fill.start_color.index == first_column_data[3]:
+                    if begin_name not in audio_mixer_list:
+                        audio_mixer_list.append(begin_name)
+
+    return begin_name
+
 
 """Audio Unit检测"""
 
@@ -224,56 +254,74 @@ def get_audio_unit_list():
 # cell：规范检查表单元格是否有标注，例如填色或颜色
 # audio_unit_list：资源表中用来收集unit的名字
 
-def check_audio_unit(begin_name, sheet, end_name, cell, audio_unit_list, audio_mixer_list):
-    unit_name = begin_name
-    if begin_name:
-        # 表格名称获取
-        if sheet.sheet_properties.tabColor:
-            # upper：字符串转大写
-            if sheet.sheet_properties.tabColor.rgb.upper() == first_column_data[1]:
-                if unit_name not in audio_unit_list:
-                    audio_unit_list.append(unit_name)
-                    audio_mixer_list.append(unit_name)
-
-    if end_name:
+def check_audio_unit(begin_name, end_name, cell, audio_unit_list):
+    if end_name and begin_name:
         # 表格内容获取
-        fill = cell.fill
-        if fill.fill_type == 'solid':
-            unit_name += "_" + end_name
-            if fill.start_color.index == first_column_data[1]:
-                if unit_name not in audio_unit_list:
-                    audio_unit_list.append(unit_name)
-                if unit_name not in audio_mixer_list:
-                    audio_mixer_list.append(unit_name)
+        if cell:
+            fill = cell.fill
+            if fill.fill_type == 'solid':
+                begin_name += "_" + end_name
+                if fill.start_color.index == first_column_data[1]:
+                    # print(unit_name)
+                    if begin_name not in audio_unit_list:
+                        audio_unit_list.append(begin_name)
 
-            elif fill.start_color.index == first_column_data[3]:
-                if unit_name not in audio_mixer_list:
-                    audio_mixer_list.append(unit_name)
-
-    return unit_name
+    return begin_name
 
 
 """Event Unit检测"""
 
 
-def check_event_unit(begin_name, sheet, end_name, cell, event_unit_list):
-    unit_name = begin_name
-    if begin_name:
-        # 表格名称获取
-        if sheet.sheet_properties.tabColor:
-            # upper：字符串转大写
-            if sheet.sheet_properties.tabColor.rgb.upper() == first_column_data[1]:
-                if unit_name not in event_unit_list:
-                    event_unit_list.append(unit_name)
-    if end_name:
-        # 表格内容获取
-        font_color = cell.font.color.rgb
-        if font_color == first_column_data[2]:
-            unit_name += "_" + end_name
-            if unit_name not in event_unit_list:
-                event_unit_list.append(unit_name)
+def check_event_unit(begin_name, end_name, cell, event_unit_list):
+    if begin_name and end_name:
+        if cell is not None and cell.font is not None and cell.font.color is not None:
+            # 表格内容获取
+            font_color = cell.font.color.rgb
+            if font_color == first_column_data[2]:
+                begin_name += "_" + end_name
+                if begin_name not in event_unit_list:
+                    event_unit_list.append(begin_name)
 
-    return unit_name
+    return begin_name
+
+
+"""通用词汇表检查"""
+
+
+def check_by_gentable(media_name_check_word, media_name):
+    global is_pass
+    sheet = wb['GenTable']
+    return_word = ""
+    # 获取最大行和最大列
+    max_row = sheet.max_row
+    max_column = sheet.max_column
+    flag = 0
+
+    # 检查第一列中有没有，有则直接通过
+    for cell in sheet['A']:
+        if media_name_check_word == cell.value:
+            return True
+
+            # 从第二行第二列开始遍历
+    for row in range(2, max_row + 1):
+        for col in range(2, max_column + 1):
+            # 获取单元格的值
+            cell_value = sheet.cell(row=row, column=col).value
+            if cell_value:
+                if not check_is_chinese(cell_value):
+                    if cell_value == media_name_check_word:
+                        flag = 1
+                        if sheet.cell(row=row, column=1).value == "*":
+                            return True
+                        else:
+                            print_error(media_name + "：" + media_name_check_word + "需要替换为" + sheet.cell(row=row,
+                                                                                                             column=1).value + "(" + sheet.cell(
+                                row=row - 1,
+                                column=1).value + ")")
+                            # print(cell_value)
+                            break
+    if flag == 0:
+        print_error(media_name_check_word + "：需要添加到通用词汇表中")
 
 
 """命名规范表检查"""
@@ -296,61 +344,67 @@ def check_by_wb(media_name, audio_unit_list, event_unit_list, audio_mixer_list):
             sys_name_flag = 1
 
             sheet = wb[sheet_name]
-            event_begin_name = check_event_unit(media_name_list[0], sheet, "", None, event_unit_list)
-            audio_begin_name = check_audio_unit(media_name_list[0], sheet, "", None, audio_unit_list, audio_mixer_list)
+            if sheet.sheet_properties.tabColor:
+                # upper：字符串转大写
+                if sheet.sheet_properties.tabColor.rgb.upper() == first_column_data[1]:
+                    if media_name_list[0] not in audio_unit_list:
+                        audio_unit_list.append(media_name_list[0])
+                    if media_name_list[0] not in event_unit_list:
+                        event_unit_list.append(media_name_list[0])
+                    if media_name_list[0] not in audio_mixer_list:
+                        audio_mixer_list.append(media_name_list[0])
+
             # 获取列数
             max_column = sheet.max_column
             # print(max_column)
+            """第一列索引获取"""
             # 遍历列
-            flag = 0
-            check_row = ""
+            check_cell = None
             for row in sheet.iter_rows(min_row=1, max_col=1, max_row=sheet.max_row):
                 for cell in row:
                     if check_is_chinese(cell.value):
                         break
-                    # 检查是哪一行的规则
-                    # 检查是否带*，带*需要跳过
-                    elif cell.value == "*":
-                        flag = 2
-                        is_pass = True
+                    if check_by_re(cell.value, media_name_list[1], media_name):
+                        check_cell = cell
                         break
-                    elif cell.value == media_name_list[1]:
-                        check_row = cell.row
-                        event_begin_name = check_event_unit(media_name_list[0], sheet, media_name_list[1], cell,
-                                                            event_unit_list)
-                        audio_begin_name = check_audio_unit(media_name_list[0], sheet, media_name_list[1], cell,
-                                                            audio_unit_list,
-                                                            audio_mixer_list)
-                        flag = 1
-                        break
-            # print(media_name)
-            # print(is_pass)
-            # 遍历选中规则的行
-            if flag == 1 and check_row:
-                for i in range(2, sheet.max_column + 1):
-                    if len(media_name_list) > i:
-                        # 为*则跳过检查
-                        if sheet.cell(row=check_row,
-                                      column=i).value != "*":
-                            is_pass = True
-                            check_by_re(sheet.cell(row=check_row,
-                                                   column=i).value, media_name_list[i], media_name)
-                            if is_pass:
-                                event_begin_name = check_event_unit(event_begin_name, sheet, media_name_list[i],
-                                                                    sheet.cell(row=check_row,
-                                                                               column=i),
+            if check_cell:
+                event_begin_name = check_event_unit(media_name_list[0], media_name_list[1], check_cell,
+                                                    event_unit_list)
+                audio_begin_name = check_audio_unit(media_name_list[0], media_name_list[1], check_cell,
+                                                    audio_unit_list)
+                mixer_begin_name = check_audio_mixer(media_name_list[0], media_name_list[1], check_cell,
+                                                     audio_mixer_list)
+                # pprint(media_name)
+                # pprint(check_cell.value)
+                """其他列数据检查"""
+                # 遍历选中规则的行
+                # 从第2列开始遍历该行的每一列
+                # print(media_name)
+                for cell in sheet[check_cell.row]:
+                    if cell.column != 1:
+                        # print(cell.value)
+                        if len(media_name_list) > cell.column:
+                            # print(cell.value)
+                            # print(media_name_list[cell.column])
+                            if check_by_re(cell.value, media_name_list[cell.column], media_name):
+                                event_begin_name = check_event_unit(event_begin_name,
+                                                                    media_name_list[cell.column],
+                                                                    cell,
                                                                     event_unit_list)
-                                audio_begin_name = check_audio_unit(audio_begin_name, sheet, media_name_list[i],
-                                                                    sheet.cell(row=check_row,
-                                                                               column=i),
-                                                                    audio_unit_list,
-                                                                    audio_mixer_list)
+                                audio_begin_name = check_audio_unit(audio_begin_name,
+                                                                    media_name_list[cell.column],
+                                                                    cell,
+                                                                    audio_unit_list)
+                                mixer_begin_name = check_audio_mixer(mixer_begin_name,
+                                                                     media_name_list[cell.column],
+                                                                     cell,
+                                                                     audio_mixer_list)
+                            else:
+                                print_error(media_name + "：" + media_name_list[cell.column] + "未通过" + cell.value)
 
-                        # else:
-                        #     print(is_pass)
 
 
-            elif flag == 0:
+            else:
                 print_error(media_name + "：" + media_name_list[1] + "未找到，请检查命名是否正确")
 
             break
@@ -362,15 +416,26 @@ def check_by_wb(media_name, audio_unit_list, event_unit_list, audio_mixer_list):
 # 检查命名规范测试
 # audio_unit_list = []
 # event_unit_list = []
-# name_list = ['Char_Skill_C01_Counter', 'Char_Skill_C01_Execution1_Stand', 'Char_Skill_C01_Execution2_Stand',
+# audio_mixer_list = []
+# name_list = ['Char_Skill_C01_Counter', 'Amb_A01_MgSt_Crowd_Street_Day_LP', 'Imp_Greatsword_Chop_Flesh_Hvy',
+#              'Char_Skill_C01_Execution2_Stand',
 #              'Char_Skill_C01_Strafe_Exit']
 # for name in name_list:
-#     if check_by_wb(name, audio_unit_list, event_unit_list):
-#         print(name)
-
+#     if check_by_wb(name, audio_unit_list, event_unit_list, audio_mixer_list):
+#         # print(name)
+#         pass
 #
 # # unit列表长度排序
 # audio_unit_list.sort(key=len)
 # event_unit_list.sort(key=len)
+#
+# pprint("audio_unit_list：")
 # pprint(audio_unit_list)
+# print()
+#
+# pprint("event_unit_list：")
 # pprint(event_unit_list)
+# print()
+#
+# pprint("audio_mixer_list：")
+# pprint(audio_mixer_list)

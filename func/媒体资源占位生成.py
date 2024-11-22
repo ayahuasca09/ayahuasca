@@ -264,6 +264,7 @@ with WaapiClient() as client:
     # create_wwise_audio_unit(audio_unit_list, 1)
     # # event下，unit创建
     # create_wwise_event_unit(audio_unit_list, event_unit_list)
+
     pprint("audio_unit_list：")
     pprint(audio_unit_list)
     print()
@@ -274,4 +275,3 @@ with WaapiClient() as client:
 
     pprint("audio_mixer_list：")
     pprint(audio_mixer_list)
-

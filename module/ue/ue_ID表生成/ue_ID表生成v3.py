@@ -300,8 +300,11 @@ with WaapiClient() as client:
                 for root_dict in root_list:
                     # 添加非重复元素，set为去重，然后再转为list
                     # 获取的是为loop的非根子节点的父级
-                    loop_musicplaylist_container_id_list = list(
-                        set(loop_musicplaylist_container_id_list + [root_dict['owner']['id']]))
+                    if 'owner' in root_dict:
+                        owner_id = root_dict['owner']['id']
+                        loop_musicplaylist_container_id_list = list(
+                            set(loop_musicplaylist_container_id_list + [owner_id]))
+
         return loop_musicplaylist_container_id_list
 
 
