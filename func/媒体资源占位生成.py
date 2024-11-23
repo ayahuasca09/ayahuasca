@@ -45,6 +45,30 @@ event_unit_list = []
 audio_mixer_list = []
 
 """*****************功能检测区******************"""
+"""event结构找父级测试"""
+
+
+# python检查 `list1` 中每个以“_”拆分后的字符串组成的列表的所有元素是否全部存在于 `list2` 中某个以“_”拆分后的字符串组成的列表中,
+# 若存在，则继续判断选出“list1”中最长的字符串，与“list2”的字符串生成一字典
+# 将list2改为dict2的键
+def find_event_parent_match(dict1, string):
+    # 将字符串拆分为列表
+    string_list = string.split('_')
+
+    # 过滤符合条件的键
+    valid_keys = [
+        key for key in dict1.keys()
+        if all(part in string_list for part in key.split('_'))
+    ]
+
+    if valid_keys:
+        # 找出最长的键
+        longest_key = max(valid_keys, key=len)
+        return longest_key
+    else:
+        return None
+
+
 """获取event_unit_list中缺失的unit"""
 
 
@@ -158,29 +182,23 @@ with WaapiClient() as client:
     """eventunit结构创建"""
 
 
-    def create_wwise_event_unit(audio_unit_list, event_unit_list):
+    def create_wwise_event_unit(event_unit_list):
         unit_object = {}
         # 查找Event中是否有该unit（第一层级）
         for audio_unit in event_unit_list:
             wwise_audio_unit_name_dict = get_wwise_type_list(config.wwise_event_path, "WorkUnit")
             # 若Wwise中无相应Unit则需要创建
             if audio_unit not in wwise_audio_unit_name_dict:
-                # 查找该unit需要放的父级是谁
-                audio_unit_parent = find_longest_prefix_key(audio_unit, wwise_audio_unit_name_dict)
-                # WorkUnit创建
-                unit_object = create_wwise_obj("WorkUnit",
-                                               wwise_audio_unit_name_dict[audio_unit_parent], audio_unit, "")
-
-        # 查找Event中是否有该unit（第二层级）
-        for audio_unit in audio_unit_list:
-            wwise_audio_unit_name_dict = get_wwise_type_list(config.wwise_event_path, "WorkUnit")
-            # 若Wwise中无相应Unit则需要创建
-            if audio_unit not in wwise_audio_unit_name_dict:
-                # 查找该unit需要放的父级是谁
-                audio_unit_parent = find_longest_prefix_key(audio_unit, wwise_audio_unit_name_dict)
-                # WorkUnit创建
-                unit_object = create_wwise_obj("WorkUnit",
-                                               wwise_audio_unit_name_dict[audio_unit_parent], audio_unit, "")
+                event_unit_parent = find_event_parent_match(wwise_audio_unit_name_dict, audio_unit)
+                if event_unit_parent:
+                    # print(audio_unit + ":" + event_unit_parent)
+                    # WorkUnit创建
+                    unit_object = create_wwise_obj("WorkUnit",
+                                                   wwise_audio_unit_name_dict[event_unit_parent], audio_unit, "")
+                # 若未找到父级则在根目录创建
+                else:
+                    unit_object = create_wwise_obj("WorkUnit",
+                                                   config.wwise_event_path, audio_unit, "")
 
 
     """audiounit结构创建"""
@@ -197,20 +215,27 @@ with WaapiClient() as client:
             if audio_unit not in wwise_audio_unit_name_dict:
                 # 查找该unit需要放的父级是谁
                 audio_unit_parent = find_longest_prefix_key(audio_unit, wwise_audio_unit_name_dict)
-                # 2：audio下，只需要创建actormixer
-                if flag == 2:
-                    # ActorMixer创建
-                    unit_object = create_wwise_obj("ActorMixer",
-                                                   wwise_audio_unit_name_dict[audio_unit_parent], audio_unit, "")
-                elif flag == 1:
-                    # WorkUnit创建
-                    unit_object = create_wwise_obj("WorkUnit",
-                                                   wwise_audio_unit_name_dict[audio_unit_parent], audio_unit, "")
-                    # 1：audio下，unit和actormixer都需要创建
-                    if unit_object:
+                # 根目录创建
+                if not audio_unit_parent:
+                    # print(audio_unit)
+                    audio_unit_parent_obj = create_wwise_obj("WorkUnit",
+                                                             config.wwise_sfx_path, audio_unit, "")
+                    audio_unit_parent = audio_unit_parent_obj['id']
+                else:
+                    # 2：audio下，只需要创建actormixer
+                    if flag == 2:
                         # ActorMixer创建
                         unit_object = create_wwise_obj("ActorMixer",
-                                                       unit_object['id'], audio_unit, "")
+                                                       wwise_audio_unit_name_dict[audio_unit_parent], audio_unit, "")
+                    elif flag == 1:
+                        # WorkUnit创建
+                        unit_object = create_wwise_obj("WorkUnit",
+                                                       wwise_audio_unit_name_dict[audio_unit_parent], audio_unit, "")
+                        # 1：audio下，unit和actormixer都需要创建
+                        if unit_object:
+                            # ActorMixer创建
+                            unit_object = create_wwise_obj("ActorMixer",
+                                                           unit_object['id'], audio_unit, "")
 
 
     """*****************主程序处理******************"""
@@ -263,17 +288,19 @@ with WaapiClient() as client:
     get_missing_event_unit(event_unit_list, audio_unit_list)
 
     # # 1：audio下，unit和actormixer都需要创建
-    # create_wwise_audio_unit(audio_unit_list, 1)
+    create_wwise_audio_unit(audio_unit_list, 1)
     # # event下，unit创建
-    # create_wwise_event_unit(audio_unit_list, event_unit_list)
+    create_wwise_event_unit(event_unit_list)
+    # 2：audio下，只需要创建actormixer
+    create_wwise_audio_unit(audio_mixer_list, 2)
 
-    pprint("audio_unit_list：")
-    pprint(audio_unit_list)
-    print()
-
-    pprint("event_unit_list：")
-    pprint(event_unit_list)
-    print()
-
-    pprint("audio_mixer_list：")
-    pprint(audio_mixer_list)
+    # pprint("audio_unit_list：")
+    # pprint(audio_unit_list)
+    # print()
+    #
+    # pprint("event_unit_list：")
+    # pprint(event_unit_list)
+    # print()
+    #
+    # pprint("audio_mixer_list：")
+    # pprint(audio_mixer_list)

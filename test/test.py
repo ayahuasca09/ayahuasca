@@ -112,32 +112,67 @@ import re
 
 """表格中的正则表达式提取测试"""
 
-# 打开 Excel 文件
-workbook = openpyxl.load_workbook(r"F:\pppppy\SP\files\工作簿1.xlsx")
+# # 打开 Excel 文件
+# workbook = openpyxl.load_workbook(r"F:\pppppy\SP\files\工作簿1.xlsx")
+#
+# # 选择工作表（假设是第一个工作表）
+# sheet = workbook.active
+#
+# # 获取第一行第一列的值
+# pattern_value = sheet.cell(row=1, column=1).value
+#
+# # 打印模式
+# print(f"Pattern from Excel: {pattern_value}")
+#
+# # 将双反斜杠替换为单反斜杠
+# pattern_value = pattern_value.replace('\\\\', '\\')
+#
+# # 编译正则表达式模式
+# try:
+#     pattern = re.compile(pattern_value)
+# except re.error as e:
+#     print(f"Invalid regex pattern: {e}")
+#     exit(1)
+#
+# # 检查字符串 "C01" 是否匹配
+# match = pattern.fullmatch("C01")
+#
+# if match:
+#     print("字符串 'C01' 匹配模式。")
+# else:
+#     print("字符串 'C01' 不匹配模式。")
 
-# 选择工作表（假设是第一个工作表）
-sheet = workbook.active
 
-# 获取第一行第一列的值
-pattern_value = sheet.cell(row=1, column=1).value
+"""event结构找父级测试"""
 
-# 打印模式
-print(f"Pattern from Excel: {pattern_value}")
 
-# 将双反斜杠替换为单反斜杠
-pattern_value = pattern_value.replace('\\\\', '\\')
+def find_longest_key_in_dict(dict1, string):
+    # 将字符串拆分为列表
+    string_list = string.split('_')
 
-# 编译正则表达式模式
-try:
-    pattern = re.compile(pattern_value)
-except re.error as e:
-    print(f"Invalid regex pattern: {e}")
-    exit(1)
+    # 过滤符合条件的键
+    valid_keys = [
+        key for key in dict1.keys()
+        if all(part in string_list for part in key.split('_'))
+    ]
 
-# 检查字符串 "C01" 是否匹配
-match = pattern.fullmatch("C01")
+    if valid_keys:
+        # 找出最长的键
+        longest_key = max(valid_keys, key=len)
+        return longest_key
+    else:
+        return None
 
-if match:
-    print("字符串 'C01' 匹配模式。")
-else:
-    print("字符串 'C01' 不匹配模式。")
+
+# 示例字典和字符串
+dict1 = {
+    'key_one': 1,
+    'key_two': 2,
+    'key_three': 3
+}
+
+string = 'key_one_key_two_key_three_key_four'
+
+# 调用函数并打印结果
+longest_key = find_longest_key_in_dict(dict1, string)
+print(longest_key)

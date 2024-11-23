@@ -87,18 +87,18 @@ pattern = r"_LP$"
 
 """检测正则表达式的pattern是否正确"""
 
-
-def is_valid_regex(pattern):
-    try:
-        re.compile(pattern)
-        return True, None
-    except re.error as e:
-        print(f"正则表达式不合规。错误信息: {str(e)}")
-        return False
-
-
-# 示例用法
-pattern = r"(\d{3})-(\d{3})-(\d{4})"  # 示例正则表达式
-
-if (is_valid_regex(pattern)):
-    pass
+#
+# def is_valid_regex(pattern):
+#     try:
+#         re.compile(pattern)
+#         return True, None
+#     except re.error as e:
+#         print(f"正则表达式不合规。错误信息: {str(e)}")
+#         return False
+#
+#
+# # 示例用法
+# pattern = r"(\d{3})-(\d{3})-(\d{4})"  # 示例正则表达式
+#
+# if (is_valid_regex(pattern)):
+#     pass
