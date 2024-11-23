@@ -237,6 +237,7 @@ with WaapiClient() as client:
             # 加载所有工作表
             for sheet_name in sheet_names:
                 sheet = wb[sheet_name]
+                word_list_len = sheet.max_column
 
                 require_module_column, second_module_column, require_name_column, status_column, sample_name_column = get_descrip_and_status_column()
                 if sample_name_column:
@@ -247,7 +248,7 @@ with WaapiClient() as client:
                                 # pprint(cell_sound.value)
 
                                 if 命名规范检查.check_basic(cell_sound.value, audio_unit_list, event_unit_list,
-                                                            audio_mixer_list):
+                                                            audio_mixer_list, word_list_len):
                                     # 通过命名规范检查
                                     # pprint(cell_sound.value)
                                     pass

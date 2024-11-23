@@ -76,10 +76,10 @@ def is_valid_regex(pattern):
 """分隔符的大小写和长度检查"""
 
 
-def check_by_length_and_word(name):
+def check_by_length_and_word(name, word_list_len):
     # pprint(cell_sound.value)
     word_list = name.split("_")
-    if len(word_list) <= config.word_list_len:
+    if len(word_list) <= word_list_len:
         is_title = True
         for word in word_list:
             """判定_的每个都不能超过10个"""
@@ -115,13 +115,13 @@ def check_by_str_length(str1, length, name):
 """基础规范检查"""
 
 
-def check_basic(media_name, audio_unit_list, event_unit_list, audio_mixer_list):
+def check_basic(media_name, audio_unit_list, event_unit_list, audio_mixer_list, word_list_len):
     global is_pass
     # 检查是否为空
     if media_name:
         # 检查是否中文
         if not check_is_chinese(media_name):
-            check_by_length_and_word(media_name)
+            check_by_length_and_word(media_name, word_list_len)
             check_by_wb(media_name, audio_unit_list, event_unit_list, audio_mixer_list)
         else:
             is_pass = False
@@ -298,14 +298,16 @@ def check_by_gentable(media_name_check_word, media_name):
     # 获取最大行和最大列
     max_row = sheet.max_row
     max_column = sheet.max_column
-    flag = 0
 
     # 检查第一列中有没有，有则直接通过
     for cell in sheet['A']:
         if media_name_check_word == cell.value:
             return True
 
-            # 从第二行第二列开始遍历
+    # 查找除第一列之外还有没有别的列含有
+    flag = 0
+
+    # 从第二行第二列开始遍历
     for row in range(2, max_row + 1):
         for col in range(2, max_column + 1):
             # 获取单元格的值
@@ -314,7 +316,7 @@ def check_by_gentable(media_name_check_word, media_name):
                 if not check_is_chinese(cell_value):
                     if cell_value == media_name_check_word:
                         flag = 1
-                        if sheet.cell(row=row, column=1).value == "*":
+                        if sheet.cell(row=row, column=1).value == ".*":
                             return True
                         else:
                             print_error(media_name + "：" + media_name_check_word + "需要替换为" + sheet.cell(row=row,
@@ -324,7 +326,8 @@ def check_by_gentable(media_name_check_word, media_name):
                             # print(cell_value)
                             break
     if flag == 0:
-        print_error(media_name_check_word + "：需要添加到通用词汇表中")
+        return True
+        # print_error(media_name_check_word + "：需要添加到通用词汇表中")
 
 
 """命名规范表检查"""
