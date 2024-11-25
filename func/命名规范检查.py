@@ -275,13 +275,30 @@ def check_audio_unit(begin_name, end_name, cell, audio_unit_list):
 """Event Unit检测"""
 
 
-def check_event_unit(begin_name, end_name, cell, event_unit_list):
+def check_event_unit(begin_name, end_name, cell, event_unit_list, sheet):
     if begin_name and end_name:
         if cell is not None and cell.font is not None and cell.font.color is not None:
             # 表格内容获取
             font_color = cell.font.color.rgb
             if font_color == first_column_data[2]:
-                begin_name += "_" + end_name
+                # 它右边的单元格如果也会灰色， 则不加
+                flag = 0
+                # cell_right = sheet.cell(row=cell.row, column=cell.column + 1)
+                # if cell_right is not None and cell_right.font is not None and cell_right.font.color is not None:
+                #     right_font_color = cell_right.font.color.rgb
+                #     if right_font_color == first_column_data[2]:
+                #         flag = 1
+                # 它左边的单元格如果也会灰色， 则不加
+                if cell.column > 1:
+                    cell_left = sheet.cell(row=cell.row, column=cell.column - 1)
+                    if cell_left is not None and cell_left.font is not None and cell_left.font.color is not None:
+                        left_font_color = cell_left.font.color.rgb
+                        if left_font_color == first_column_data[2]:
+                            flag = 1
+
+                if flag == 0:
+                    begin_name += "_" + end_name
+
                 if begin_name not in event_unit_list:
                     event_unit_list.append(begin_name)
 
@@ -377,7 +394,7 @@ def check_by_wb(media_name, audio_unit_list, event_unit_list, audio_mixer_list):
 
             if check_cell:
                 event_begin_name = check_event_unit(media_name_list[0], media_name_list[1], check_cell,
-                                                    event_unit_list)
+                                                    event_unit_list, sheet)
                 audio_begin_name = check_audio_unit(media_name_list[0], media_name_list[1], check_cell,
                                                     audio_unit_list)
                 mixer_begin_name = check_audio_mixer(media_name_list[0], media_name_list[1], check_cell,
@@ -398,7 +415,7 @@ def check_by_wb(media_name, audio_unit_list, event_unit_list, audio_mixer_list):
                                 event_begin_name = check_event_unit(event_begin_name,
                                                                     media_name_list[cell.column],
                                                                     cell,
-                                                                    event_unit_list)
+                                                                    event_unit_list, sheet)
                                 audio_begin_name = check_audio_unit(audio_begin_name,
                                                                     media_name_list[cell.column],
                                                                     cell,

@@ -80,12 +80,15 @@ def find_event_parent_match(dict1, string):
 def get_missing_event_unit(list1, list2):
     for element1 in list1[:]:  # 使用 list1[:] 复制列表以避免修改时的迭代问题
         parts1 = set(element1.split('_'))
-        for element2 in list2:
-            parts2 = set(element2.split('_'))
-            if parts1.issubset(parts2):  # 检查是否有共同元素
-                if element2 not in list1:
-                    list1.append(element2)
-                break  # 如果已经匹配到一个，跳出内层循环
+        world_list1 = element1.split('_')
+        # 至少要有两层_的才运算
+        if len(world_list1) > 1:
+            for element2 in list2:
+                parts2 = set(element2.split('_'))
+                if parts1.issubset(parts2):  # 检查是否有共同元素
+                    if element2 not in list1:
+                        list1.append(element2)
+                    # break  # 如果已经匹配到一个，跳出内层循环
 
 
 """获取最长共同前缀"""
@@ -287,6 +290,7 @@ with WaapiClient() as client:
     # 获取event_unit_list中缺失的unit
     get_missing_event_unit(event_unit_list, audio_unit_list)
 
+
     # # 1：audio下，unit和actormixer都需要创建
     create_wwise_audio_unit(audio_unit_list, 1)
     # # event下，unit创建
@@ -297,7 +301,7 @@ with WaapiClient() as client:
     # pprint("audio_unit_list：")
     # pprint(audio_unit_list)
     # print()
-    #
+
     # pprint("event_unit_list：")
     # pprint(event_unit_list)
     # print()
