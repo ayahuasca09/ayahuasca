@@ -6,6 +6,7 @@ import pandas as pd
 import tkinter as tk
 from tkinter import messagebox
 from os.path import abspath, dirname
+import openpyxl
 
 # 自定义库
 import module.excel.excel_h as excel_h
@@ -199,6 +200,7 @@ def set_value():
 def copy_to_dcc_audio():
     # 获取xlsx的所有sheet的list
     sheet_names = wb_dcc.sheetnames
+    # print(sheet_names)
     # 加载所有工作表
     # sheet = wb_dcc[sheet_name]
 
@@ -276,6 +278,7 @@ def copy_to_dcc_audio():
     # 遍历audio_sheet的所有行
     for row in sheet.iter_rows(min_row=2, values_only=True):  # 从第二行开始，假设第一行是标题
         first_column_value = row[2]  # 获取第3列，即Event名称的值
+        first_column_value = first_column_value.replace("AKE_", "")
 
         # 检查名称中是否包含目标字符串
         for keyword, target_sheet in sheet_mapping.items():
@@ -283,6 +286,7 @@ def copy_to_dcc_audio():
                 # 复制整行到目标表中
                 target_sheet.append(row)
                 break  # 找到一个匹配后就跳出，避免重复复制
+                # print(keyword+"："+first_column_value)
 
     # 保存目标工作簿
     wb_dcc.save(config.excel_dcc_dt_audio_page_path)
@@ -382,7 +386,8 @@ with WaapiClient() as client:
 wb.save(excel_path)
 
 # 将表内容同步到dcc下的Audio表中
-_, wb_dcc = excel_h.excel_get_sheet(config.excel_dcc_dt_audio_page_path, config.dt_audio_sheet_name)
+wb_dcc = openpyxl.load_workbook(config.excel_dcc_dt_audio_page_path)
+
 copy_to_dcc_audio()
 
 # excel转csv

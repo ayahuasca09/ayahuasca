@@ -5,16 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="17a8a927-0db7-41d4-8f81-9181fc87e6d9" name="更改" comment="ID表更新">
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/SilverPalace音频需求资源管理表 (8).xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/媒体资源占位生成/SilverPalace战斗音频需求资源管理表 .xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/files/媒体资源占位生成/SilverPalace战斗音频需求资源管理表 .xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/媒体资源占位生成/SilverPalace语音资源管理表.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/files/媒体资源占位生成/SilverPalace语音资源管理表.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/媒体资源占位生成/SilverPalace音频需求资源管理表.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/files/媒体资源占位生成/SilverPalace音频需求资源管理表.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/func/媒体资源占位生成.py" beforeDir="false" afterPath="$PROJECT_DIR$/func/媒体资源占位生成.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/module/ue/ue_ID表生成/Audio.csv" beforeDir="false" afterPath="$PROJECT_DIR$/module/ue/ue_ID表生成/Audio.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/module/ue/ue_ID表生成/Audio.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/module/ue/ue_ID表生成/Audio.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/module/ue/ue_ID表生成/ue_ID表生成v4.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/ue/ue_ID表生成/ue_ID表生成v4.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/导入规则.json" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/导入规则.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_auto_gen_music/游戏音乐资源表 (8).xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/SilverPalace语音资源管理表 (8).xlsx" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,6 +76,7 @@
     "Python.ue_ID表生成.executor": "Run",
     "Python.ue_ID表生成v2.executor": "Run",
     "Python.ue_ID表生成v3.executor": "Run",
+    "Python.ue_ID表生成v4.executor": "Run",
     "Python.waapi_2023test.executor": "Run",
     "Python.waapi_auto_gen_music.executor": "Run",
     "Python.waapi_auto_gen_state.executor": "Run",
@@ -167,7 +166,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="媒体资源占位生成" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="ue_ID表生成v4" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="SP" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -176,11 +175,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/func" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/module/ue/ue_ID表生成" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/func/媒体资源占位生成.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/module/ue/ue_ID表生成/ue_ID表生成v4.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -302,10 +301,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.waapi_音频资源全流程生成" />
-        <item itemvalue="Python.waapi_音频资源导入_从表导入" />
-        <item itemvalue="Python.waapi_音频资源导入_从媒体资源导入" />
-        <item itemvalue="Python.媒体资源占位生成" />
         <item itemvalue="Python.waapi_auto_gen_music" />
+        <item itemvalue="Python.waapi_音频资源导入_从媒体资源导入" />
+        <item itemvalue="Python.waapi_音频资源导入_从表导入" />
+        <item itemvalue="Python.ue_ID表生成v4" />
       </list>
     </recent_temporary>
   </component>
@@ -324,14 +323,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1716955384994</updated>
-    </task>
-    <task id="LOCAL-00081" summary="State:Group同步删除">
-      <option name="closed" value="true" />
-      <created>1727341907649</created>
-      <option name="number" value="00081" />
-      <option name="presentableId" value="LOCAL-00081" />
-      <option name="project" value="LOCAL" />
-      <updated>1727341907649</updated>
     </task>
     <task id="LOCAL-00082" summary="Trigger:删改同步">
       <option name="closed" value="true" />
@@ -717,7 +708,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732602656748</updated>
     </task>
-    <option name="localTasksCounter" value="130" />
+    <task id="LOCAL-00130" summary="ID表更新">
+      <option name="closed" value="true" />
+      <created>1732611020517</created>
+      <option name="number" value="00130" />
+      <option name="presentableId" value="LOCAL-00130" />
+      <option name="project" value="LOCAL" />
+      <updated>1732611020517</updated>
+    </task>
+    <option name="localTasksCounter" value="131" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

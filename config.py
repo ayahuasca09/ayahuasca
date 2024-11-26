@@ -128,7 +128,7 @@ excel_media_token_list = ["TcbAwUoNriYh0Rk8gG0clcNCnTh", "CatewGc9miJplrkKVi2cvB
 """DT Audio"""
 excel_dcc_dt_audio_path = r"S:\chen.gong_DCC_Audio\Audio\Config\Audio.xlsx"
 # 分页版dcc表
-excel_dcc_dt_audio_page_path = r"S:\chen.gong_DCC_Audio\Audio\Config\Audio.xlsx"
+excel_dcc_dt_audio_page_path = r"S:\chen.gong_DCC_Audio\Audio\Config\Audio_Page.xlsx"
 excel_dt_audio_path = "Audio.xlsx"
 dt_audio_sheet_name = "audio"
 csv_dt_audio_path = "Audio.csv"
