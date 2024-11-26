@@ -30,14 +30,14 @@ file_name_list = excel_h.excel_get_path_list(root_path)
 
 """在线表获取"""
 # 规范检查表
-# for excel_media_token in config.excel_media_token_list:
-#     _, excel_name = cloudfeishu_h.get_excel_token(excel_media_token)
-#     # pprint(excel_name)
-#     for file_name in file_name_list:
-#         if excel_name in file_name:
-#             print(excel_name)
-#             cloudfeishu_h.download_cloud_sheet(excel_media_token, os.path.join(root_path, file_name))
-#             break
+for excel_media_token in config.excel_media_token_list:
+    _, excel_name = cloudfeishu_h.get_excel_token(excel_media_token)
+    # pprint(excel_name)
+    for file_name in file_name_list:
+        if excel_name in file_name:
+            print(excel_name)
+            cloudfeishu_h.download_cloud_sheet(excel_media_token, os.path.join(root_path, file_name))
+            break
 
 """收集unit的路径"""
 audio_unit_list = []
@@ -81,8 +81,16 @@ def get_missing_event_unit(list1, list2):
     for element1 in list1[:]:  # 使用 list1[:] 复制列表以避免修改时的迭代问题
         parts1 = set(element1.split('_'))
         world_list1 = element1.split('_')
+        flag = 0
         # 至少要有两层_的才运算
         if len(world_list1) > 1:
+            # 若为怪物，至少要三层_才运算
+            if ("Mon_Mob" in element1) or ("Mon_Boss" in element1) or ("VO_Game" in element1):
+                if len(world_list1) > 2:
+                    flag = 1
+            else:
+                flag = 1
+        if flag == 1:
             for element2 in list2:
                 parts2 = set(element2.split('_'))
                 if parts1.issubset(parts2):  # 检查是否有共同元素
@@ -290,7 +298,6 @@ with WaapiClient() as client:
     # 获取event_unit_list中缺失的unit
     get_missing_event_unit(event_unit_list, audio_unit_list)
 
-
     # # 1：audio下，unit和actormixer都需要创建
     create_wwise_audio_unit(audio_unit_list, 1)
     # # event下，unit创建
@@ -302,9 +309,9 @@ with WaapiClient() as client:
     # pprint(audio_unit_list)
     # print()
 
-    # pprint("event_unit_list：")
-    # pprint(event_unit_list)
-    # print()
+    pprint("event_unit_list：")
+    pprint(event_unit_list)
+    print()
     #
     # pprint("audio_mixer_list：")
     # pprint(audio_mixer_list)

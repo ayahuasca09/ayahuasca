@@ -101,7 +101,8 @@
         "property2": "Def",
         "property3": "((Enter_Pose\\d*)|(Exit_Pose\\d*)|(Idle_Pose\\d*))",
         "length": 10
-      }
+      },
+      "UI": {}
     },
     "name": ".*",
     "property": ".*",

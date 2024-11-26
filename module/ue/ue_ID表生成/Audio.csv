@@ -686,3 +686,5 @@ Row,AudioID,AudioName,AudioEvent,Desc,IsLoop,FadeDuration,FadeCurveNum,ObjectTyp
 11,11,AKE_Play_Amb_A01_MgSt_Bird04,/Script/AkAudio.AkAudioEvent'/Game/Audio/WwiseAudio/Events/v1/Amb/Amb_A01/AKE_Play_Amb_A01_MgSt_Bird04.AKE_Play_Amb_A01_MgSt_Bird04',爵区（A01）_莫戈街_Bird04,False,1000,0,0
 12,12,AKE_Play_Amb_A01_MgSt_Bird05,/Script/AkAudio.AkAudioEvent'/Game/Audio/WwiseAudio/Events/v1/Amb/Amb_A01/AKE_Play_Amb_A01_MgSt_Bird05.AKE_Play_Amb_A01_MgSt_Bird05',爵区（A01）_莫戈街_Bird05,False,1000,0,0
 13,13,AKE_Play_Amb_A01_MgSt_Bird06,/Script/AkAudio.AkAudioEvent'/Game/Audio/WwiseAudio/Events/v1/Amb/Amb_A01/AKE_Play_Amb_A01_MgSt_Bird06.AKE_Play_Amb_A01_MgSt_Bird06',爵区（A01）_莫戈街_Bird06,False,1000,0,0
+14125,14125,AKE_Play_Sys_UI_Gen_Click,/Script/AkAudio.AkAudioEvent'/Game/Audio/WwiseAudio/Events/v1/Sys/Sys_UI/Sys_UI_Gen/AKE_Play_Sys_UI_Gen_Click.AKE_Play_Sys_UI_Gen_Click',通用按键_通用点击,False,1000,0,0
+14126,14126,AKE_Play_Sys_UI_Gen_Exit,/Script/AkAudio.AkAudioEvent'/Game/Audio/WwiseAudio/Events/v1/Sys/Sys_UI/Sys_UI_Gen/AKE_Play_Sys_UI_Gen_Exit.AKE_Play_Sys_UI_Gen_Exit',通用按键_通用退出,False,1000,0,0
