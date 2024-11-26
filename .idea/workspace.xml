@@ -5,14 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="17a8a927-0db7-41d4-8f81-9181fc87e6d9" name="更改" comment="ID表更新">
-      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/SilverPalace音频需求资源管理表 (8).xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_auto_gen_music/游戏音乐资源表 (11).xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/SilverPalace语音资源管理表 (2).xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/ue/ue_ID表生成/Audio.csv" beforeDir="false" afterPath="$PROJECT_DIR$/module/ue/ue_ID表生成/Audio.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/module/ue/ue_ID表生成/Audio.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/module/ue/ue_ID表生成/Audio.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/module/ue/ue_ID表生成/ue_ID表生成v4.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/ue/ue_ID表生成/ue_ID表生成v4.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_auto_gen_music/游戏音乐资源表 (8).xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/SilverPalace语音资源管理表 (8).xlsx" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -143,7 +140,7 @@
       <visibility group="运行配置" flag="true" />
     </myKeys>
   </component>
-  <component name="RunManager" selected="Python.waapi_音频资源全流程生成">
+  <component name="RunManager" selected="Python.ue_ID表生成v4">
     <configuration name="媒体资源占位生成" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="SP" />
       <option name="ENV_FILES" value="" />
@@ -300,11 +297,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.ue_ID表生成v4" />
         <item itemvalue="Python.waapi_音频资源全流程生成" />
         <item itemvalue="Python.waapi_auto_gen_music" />
         <item itemvalue="Python.waapi_音频资源导入_从媒体资源导入" />
         <item itemvalue="Python.waapi_音频资源导入_从表导入" />
-        <item itemvalue="Python.ue_ID表生成v4" />
       </list>
     </recent_temporary>
   </component>
@@ -323,14 +320,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1716955384994</updated>
-    </task>
-    <task id="LOCAL-00082" summary="Trigger:删改同步">
-      <option name="closed" value="true" />
-      <created>1727426385904</created>
-      <option name="number" value="00082" />
-      <option name="presentableId" value="LOCAL-00082" />
-      <option name="project" value="LOCAL" />
-      <updated>1727426385904</updated>
     </task>
     <task id="LOCAL-00083" summary="Set类：删除WorkUnit同步">
       <option name="closed" value="true" />
@@ -716,7 +705,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732611020517</updated>
     </task>
-    <option name="localTasksCounter" value="131" />
+    <task id="LOCAL-00131" summary="ID表更新">
+      <option name="closed" value="true" />
+      <created>1732623750415</created>
+      <option name="number" value="00131" />
+      <option name="presentableId" value="LOCAL-00131" />
+      <option name="project" value="LOCAL" />
+      <updated>1732623750415</updated>
+    </task>
+    <option name="localTasksCounter" value="132" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
