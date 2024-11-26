@@ -126,7 +126,7 @@ check_name_token = "K2Cfwl44XiMe6Wkhi7AcJ0fGnVb"
 excel_media_token_list = ["TcbAwUoNriYh0Rk8gG0clcNCnTh", "CatewGc9miJplrkKVi2cvBd5nMb", "XXq2wK5dbiH7lWkbw36ciHK4nCc"]
 
 """DT Audio"""
-excel_dcc_dt_audio_path = r"S:\chen.gong_DCC_Audio\Audio\Config\Audio.xlsx"
+excel_dcc_dt_audio_path = r"S:\chen.gong_DCC_Audio\Audio\Config\Audio1.xlsx"
 excel_dt_audio_path = "Audio.xlsx"
 dt_audio_sheet_name = "audio"
 csv_dt_audio_path = "Audio.csv"
