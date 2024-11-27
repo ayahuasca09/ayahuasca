@@ -20,6 +20,44 @@ excel_plot_path_dict, _ = oi_h.get_type_file_name_and_path(excel_type, config.ex
 # pprint(excel_plot_path_dict)
 
 """*****************功能函数**********************"""
+"""查找使用世界表的ID的引用路径"""
+
+
+# wb_path：工作簿路径
+# title_row_index：要查找的标题所在的行
+# title_name：要查找的标题名称
+
+
+def find_excel_ID_refer_path(wb_path, title_row_index, title_name):
+    # 存储id所在的引用映射路径
+    id_refer_dict = {}
+    warnings.filterwarnings("ignore", category=UserWarning, module='openpyxl')
+    wb = openpyxl.load_workbook(wb_path)
+    # 加载所有工作表
+    for sheet_name in wb.sheetnames:
+        sheet = wb[sheet_name]
+        column_index = 0
+        for cell in sheet[title_row_index]:
+            if cell.value == title_name:
+                # 需要遍历的列的索引
+                column_index = cell.column
+                # 遍历第索引列的内容
+                for row in sheet.iter_cols(min_col=column_index, max_col=column_index, min_row=5,
+                                           max_row=sheet.max_row):
+                    for row_cell in row:
+                        if row_cell.value:
+                            if row_cell.value != 0 and row_cell.value != "0":
+                                if row_cell.value not in id_refer_dict:
+                                    id_refer_dict[row_cell.value] = wb_path
+                                # print(row_cell.value)
+
+                # print(str(column_index) + "：" + excel_plot_name)
+                break
+        # pprint(id_refer_dict)
+
+    return id_refer_dict
+
+
 """查找使用剧情表的ID的引用路径"""
 
 
@@ -125,6 +163,20 @@ ge_id_refer_dict = find_GE_ID_refer_path(config.ue_ge_path)
 #  195: ('state1', 'CandlemanMeleeCharSkin'),}
 plot_id_refer_dict = find_plot_ID_refer_path(excel_plot_path_dict)
 # pprint(plot_id_refer_dict)
+world_id_refer_dict = find_excel_ID_refer_path(config.excel_world_path, 5, "地图背景音乐的ID")
+# pprint(world_id_refer_dict)
+show_id_refer_dict = find_excel_ID_refer_path(config.excel_show_path, 5, "音频事件id")
+# pprint(show_id_refer_dict)
+combat_boss_id_refer_dict_1 = find_excel_ID_refer_path(config.excel_combat_path, 5, "入战前音频")
+combat_boss_id_refer_dict_2 = find_excel_ID_refer_path(config.excel_combat_path, 5, "战斗中音频")
+combat_boss_id_refer_dict_3 = find_excel_ID_refer_path(config.excel_combat_path, 5, "出战前音频")
+combat_id_refer_dict_1 = find_excel_ID_refer_path(config.excel_combat_path, 5, "低音频烈度音频ID")
+combat_id_refer_dict_2 = find_excel_ID_refer_path(config.excel_combat_path, 5, "中音频烈度音频ID")
+combat_id_refer_dict_3 = find_excel_ID_refer_path(config.excel_combat_path, 5, "高音频烈度音频ID")
+# 合并字典
+combat_id_refer_dict = combat_boss_id_refer_dict_1 | combat_boss_id_refer_dict_2 | combat_boss_id_refer_dict_3 | combat_id_refer_dict_1 | combat_id_refer_dict_2 | combat_id_refer_dict_3
+# pprint(combat_id_refer_dict)
+a3d_id_refer_dict = find_excel_ID_refer_path(config.excel_3d_path, 5, "eventID")
 
 sheet_names = wb_dcc.sheetnames
 # 加载所有工作表
@@ -148,5 +200,9 @@ for sheet_name in sheet_names:
                 sheet_dcc.cell(row=row, column=title_colunmn_dict['配置方式']).value = 'GE'
         # 剧情索引检查
         set_config_type_and_path(first_col_value, '剧情', plot_id_refer_dict)
+        set_config_type_and_path(first_col_value, '大世界状态', world_id_refer_dict)
+        set_config_type_and_path(first_col_value, '角色展示界面', show_id_refer_dict)
+        set_config_type_and_path(first_col_value, '战斗状态', combat_id_refer_dict)
+        set_config_type_and_path(first_col_value, '场景声源', a3d_id_refer_dict)
 
 wb_dcc.save(config.excel_dcc_dt_audio_page_path)
