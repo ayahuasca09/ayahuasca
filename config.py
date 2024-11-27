@@ -202,7 +202,7 @@ event_id_config = {
             "max": 40000
         },
     "Item":
-{
+        {
             "min": 40001,
             "max": 42000
         }
@@ -230,3 +230,15 @@ one_word_len = 10
 word_list_len = 7
 
 """媒体资源占位生成"""
+
+"""DCC表的引用路径生成v2"""
+# 剧情表路径
+excel_plot_path = r'S:\Ver_1.0.0\Project\Designer\Excel\Scenario\ScenarioInstance'
+# 大世界表路径
+excel_world_path = r"S:\Ver_1.0.0\Project\Designer\Excel\WorldRegion\P_MapData.xlsx"
+# 角色展示表路径
+excel_show_path = r"S:\Ver_1.0.0\Project\Designer\Excel\Character\C_CharacterTable.xlsx"
+# 战斗状态表路径
+excel_combat_path = r"S:\Ver_1.0.0\Project\Designer\Excel\BattleField\C_BattleFieldSystem.xlsx"
+# 3D点声源表路径
+excel_3d_path = r"S:\Ver_1.0.0\Project\Designer\Excel\Audio\P_Audio3D.xlsx"
