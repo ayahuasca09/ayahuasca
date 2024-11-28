@@ -8,6 +8,7 @@ import re
 from waapi import WaapiClient
 import shutil
 from openpyxl.cell import MergedCell
+import module.audio.audio_h as audio_h
 
 # 文件所在目录
 py_path = ""
@@ -90,6 +91,17 @@ def get_all_media_path(media_path):
 
 with WaapiClient() as client:
     """*****************Wwise功能区******************"""
+    """设置新的占位Sound资源超越父级为灰色"""
+
+
+    def set_sound_color_default(obj_id):
+        args_property = {
+            "object": obj_id,
+            "property": "OverrideColor",
+            "value": False,
+        }
+        client.call("ak.wwise.core.object.setProperty", args_property)
+
 
     """设置对象引用"""
 
@@ -288,6 +300,18 @@ with WaapiClient() as client:
             # print(sound_dict['name'])
 
 
+    """检测是否静音：若非静音则跟随父级颜色"""
+
+
+    def check_is_silence():
+        if 'originalWavFilePath' in sound_dict:
+            # pprint(sound_dict['originalWavFilePath'])
+            if not audio_h.is_silent(sound_dict['originalWavFilePath'], silence_threshold=-50.0):
+                set_sound_color_default(sound_dict['id'])
+            # else:
+            #     print(sound_dict['name'])
+
+
     """*****************主程序处理******************"""
     # 不需要的文件清理
     clear_file()
@@ -304,6 +328,9 @@ with WaapiClient() as client:
 
         # 针对lp资源的设置
         set_lp()
+
+        # 检测是否静音：若非静音则跟随父级颜色
+        check_is_silence()
 
     # 针对mus/stin处理
     mus_list, _, _ = find_obj(

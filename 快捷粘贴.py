@@ -6,3 +6,4 @@ import module.waapi.waapi_h as waapi_h
 import module.cloudfeishu.cloudfeishu_h as cloudfeishu_h
 import main
 from pprint import pprint
+import module.audio.audio_h as audio_h
