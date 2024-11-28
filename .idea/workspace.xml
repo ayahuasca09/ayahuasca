@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="17a8a927-0db7-41d4-8f81-9181fc87e6d9" name="更改" comment="ID表自动化：剧情索引查找">
-      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_auto_gen_music/剧情音乐资源表 (1).xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_auto_gen_music/游戏音乐资源表 (12).xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_auto_gen_state/State_Switch资源表 (9).xlsx" afterDir="false" />
+    <list default="true" id="17a8a927-0db7-41d4-8f81-9181fc87e6d9" name="更改" comment="ID表自动化：所有配置索引查找">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/ue/ue_ID表生成/DCC表的引用路径生成v2.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/ue/ue_ID表生成/DCC表的引用路径生成v2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/excel/excel_h.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/excel/excel_h.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_auto_gen_music/waapi_auto_gen_music.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_auto_gen_music/waapi_auto_gen_music.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_auto_gen_music/游戏音乐资源表 (12).xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_auto_gen_music/游戏音乐资源表 (12).xlsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -141,7 +140,7 @@
       <visibility group="运行配置" flag="true" />
     </myKeys>
   </component>
-  <component name="RunManager" selected="Python.waapi_音频资源全流程生成">
+  <component name="RunManager" selected="Python.waapi_auto_gen_music">
     <configuration name="DCC表的引用路径生成v2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="SP" />
       <option name="ENV_FILES" value="" />
@@ -298,9 +297,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.waapi_auto_gen_music" />
         <item itemvalue="Python.waapi_音频资源全流程生成" />
         <item itemvalue="Python.DCC表的引用路径生成v2" />
-        <item itemvalue="Python.waapi_auto_gen_music" />
         <item itemvalue="Python.waapi_auto_gen_state" />
         <item itemvalue="Python.waapi_音频资源导入_从媒体资源导入" />
       </list>
@@ -321,14 +320,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1716955384994</updated>
-    </task>
-    <task id="LOCAL-00085" summary="ID表自动化：修复ID生成有重复的问题（累加改找最大值）">
-      <option name="closed" value="true" />
-      <created>1728357550882</created>
-      <option name="number" value="00085" />
-      <option name="presentableId" value="LOCAL-00085" />
-      <option name="project" value="LOCAL" />
-      <updated>1728357550882</updated>
     </task>
     <task id="LOCAL-00086" summary="音乐资源导入自动化:music segment增删改同步">
       <option name="closed" value="true" />
@@ -714,7 +705,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732702516495</updated>
     </task>
-    <option name="localTasksCounter" value="134" />
+    <task id="LOCAL-00134" summary="ID表自动化：所有配置索引查找">
+      <option name="closed" value="true" />
+      <created>1732708771538</created>
+      <option name="number" value="00134" />
+      <option name="presentableId" value="LOCAL-00134" />
+      <option name="project" value="LOCAL" />
+      <updated>1732708771538</updated>
+    </task>
+    <option name="localTasksCounter" value="135" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -730,7 +729,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="ES音效自动化流程：数据转list" />
     <MESSAGE value="ES音效自动化流程" />
     <MESSAGE value="更新" />
     <MESSAGE value="ID表复制到DCC" />
@@ -755,6 +753,7 @@
     <MESSAGE value="ID表更新" />
     <MESSAGE value="ID表自动化：分页" />
     <MESSAGE value="ID表自动化：剧情索引查找" />
-    <option name="LAST_COMMIT_MESSAGE" value="ID表自动化：剧情索引查找" />
+    <MESSAGE value="ID表自动化：所有配置索引查找" />
+    <option name="LAST_COMMIT_MESSAGE" value="ID表自动化：所有配置索引查找" />
   </component>
 </project>

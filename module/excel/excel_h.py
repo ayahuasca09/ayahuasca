@@ -1,6 +1,20 @@
 import openpyxl
 import os
 import module.oi.oi_h as oi_h
+from openpyxl.cell import MergedCell
+
+"""合并单元格检查"""
+
+
+def check_is_mergecell(cell, sheet):
+    if isinstance(cell, MergedCell):  # 判断该单元格是否为合并单元格
+        for merged_range in sheet.merged_cells.ranges:  # 循环查找该单元格所属的合并区域
+            if cell.coordinate in merged_range:
+                # 获取合并区域左上角的单元格作为该单元格的值返回
+                cell = sheet.cell(row=merged_range.min_row, column=merged_range.min_col)
+                break
+    return cell.value
+
 
 """打开工作簿并获取工作表"""
 

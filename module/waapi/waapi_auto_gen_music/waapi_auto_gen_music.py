@@ -8,6 +8,7 @@ import re
 from waapi import WaapiClient
 import shutil
 from openpyxl.cell import MergedCell
+import module.excel.excel_h as excel_h
 
 # 文件所在目录
 py_path = ""
@@ -93,17 +94,7 @@ def get_one_value_list(dict_list, dict_key):
     return result
 
 
-"""检查是否为合并单元格"""
 
-
-def check_is_mergecell(cell):
-    if isinstance(cell, MergedCell):  # 判断该单元格是否为合并单元格
-        for merged_range in sheet.merged_cells.ranges:  # 循环查找该单元格所属的合并区域
-            if cell.coordinate in merged_range:
-                # 获取合并区域左上角的单元格作为该单元格的值返回
-                cell = sheet.cell(row=merged_range.min_row, column=merged_range.min_col)
-                break
-    return cell.value
 
 
 """报错捕获"""
@@ -531,8 +522,10 @@ with WaapiClient() as client:
                                         is_subtrack = False
 
                                         """bpm获取"""
-                                        bpm_value = sheet.cell(row=cell_sound.row,
-                                                               column=bpm).value
+                                        bpm_value =excel_h.check_is_mergecell(sheet.cell(row=cell_sound.row,
+                                                               column=bpm), sheet)
+                                        # bpm_value = sheet.cell(row=cell_sound.row,
+                                        #                        column=bpm).value
 
                                         if sheet_name == "Mus":
                                             """❤❤❤Mus资源名称检查❤❤❤"""
