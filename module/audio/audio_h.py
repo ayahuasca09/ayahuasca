@@ -25,3 +25,15 @@ def is_silent(audio_path, silence_threshold=-50.0):
     max_db = 20 * np.log10(max_amplitude / float(audio_segment.max_possible_amplitude))
 
     return max_db < silence_threshold
+
+
+# 将mp3转wav
+def convert_mp3_to_wav(audio_path):
+    # 加载 MP3 文件
+    audio = AudioSegment.from_mp3(audio_path)
+
+    # 导出为 WAV 文件
+    audio.export("output.wav", format="wav")
+
+
+# convert_mp3_to_wav('Sakura VIP.mp3')

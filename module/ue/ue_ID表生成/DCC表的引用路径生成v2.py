@@ -101,7 +101,7 @@ def find_GE_ID_refer_path(json_path):
     id_refer_dict = {}
     # pprint(file_dict)
     for json_name in file_dict:
-        with open(file_dict[json_name], 'r') as jsfile:
+        with open(file_dict[json_name], 'r', encoding='utf-8') as jsfile:
             # 这是json转换后的dict，可在python里处理了
             js_dict = json.load(jsfile)
             if "taskConfigData" in js_dict:
@@ -204,5 +204,7 @@ for sheet_name in sheet_names:
         set_config_type_and_path(first_col_value, '角色展示界面', show_id_refer_dict)
         set_config_type_and_path(first_col_value, '战斗状态', combat_id_refer_dict)
         set_config_type_and_path(first_col_value, '场景声源', a3d_id_refer_dict)
+        set_config_type_and_path(first_col_value, '程序写死', config.logic_id_refer_dict)
+        set_config_type_and_path(first_col_value, '天气系统', config.time_id_refer_dict)
 
 wb_dcc.save(config.excel_dcc_dt_audio_page_path)

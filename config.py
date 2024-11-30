@@ -242,3 +242,24 @@ excel_show_path = r"S:\Ver_1.0.0\Project\Designer\Excel\Character\C_CharacterTab
 excel_combat_path = r"S:\Ver_1.0.0\Project\Designer\Excel\BattleField\C_BattleFieldSystem.xlsx"
 # 3D点声源表路径
 excel_3d_path = r"S:\Ver_1.0.0\Project\Designer\Excel\Audio\P_Audio3D.xlsx"
+# 程序写死的dict
+logic_id_refer_dict = {
+    "13003": "黄建泉写死",
+    "13002": "施博文写死"
+}
+# 天气系统dict
+time_id_refer_dict = {
+    "30033": "在UE找DT_SPTODMatrix",
+    "30034": "在UE找DT_SPTODMatrix",
+    "30035": "在UE找DT_SPTODMatrix",
+    "30036": "在UE找DT_SPTODMatrix",
+    "30037": "在UE找DT_SPTODMatrix",
+    "30038": "在UE找DT_SPTODMatrix",
+    "30039": "在UE找DT_SPTODMatrix",
+    "30040": "在UE找DT_SPTODMatrix",
+    "30041": "在UE找DT_SPTODMatrix",
+    "30042": "在UE找DT_SPTODMatrix",
+    "30043": "在UE找DT_SPTODMatrix",
+    "30044": "在UE找DT_SPTODMatrix",
+
+}

@@ -134,7 +134,7 @@ with WaapiClient() as client:
     def find_obj(args):
         options = {
             'return': ['name', 'id', 'path', 'notes', 'originalWavFilePath', 'maxDurationSource', '3DSpatialization',
-                       'type']
+                       'type', 'IsLoopingEnabled']
 
         }
         obj_sub_list = client.call("ak.wwise.core.object.get", args, options=options)['return']
@@ -290,14 +290,37 @@ with WaapiClient() as client:
     """针对LP的处理"""
 
 
+    # 不管是否为循环音效，应该是长音效才开流
+
     def set_lp():
-        # 语音
-        if re.search(r"(_LP)$", sound_dict['name']):
+        # 需要去除随机后缀
+        no_random_name = re.sub(r"(_R\d{2,4})$", "", sound_dict['name'])
+        # 带LP后缀的处理
+        if re.search(r"(_LP)$", no_random_name):
             set_obj_property(sound_dict['id'], "IsLoopingEnabled", True)
-            set_obj_property(sound_dict['id'], "IsStreamingEnabled", True)
-            set_obj_property(sound_dict['id'], "IsNonCachable", False)
-            set_obj_property(sound_dict['id'], "IsZeroLatency", True)
-            # print(sound_dict['name'])
+        # 针对流的处理
+        if 'maxDurationSource' in sound_dict:
+            if 'trimmedDuration' in sound_dict['maxDurationSource']:
+                sound_duration = sound_dict['maxDurationSource']['trimmedDuration']
+                # 长音效开流
+                if sound_duration > 5:
+                    set_obj_property(sound_dict['id'], "IsStreamingEnabled", True)
+
+                    # 环境声不需要零延迟
+                    if "Amb" in sound_dict['name']:
+                        set_obj_property(sound_dict['id'], "IsZeroLatency", False)
+                    else:
+                        set_obj_property(sound_dict['id'], "IsZeroLatency", True)
+                    # 循环声需要缓存，其他不需要
+                    if 'IsLoopingEnabled' in sound_dict:
+                        if sound_dict['IsLoopingEnabled']:
+                            set_obj_property(sound_dict['id'], "IsNonCachable", False)
+                        else:
+                            set_obj_property(sound_dict['id'], "IsNonCachable", True)
+                    else:
+                        set_obj_property(sound_dict['id'], "IsNonCachable", True)
+
+        # print(sound_dict['name'])
 
 
     """检测是否静音：若非静音则跟随父级颜色"""
