@@ -30,6 +30,10 @@ wwise_event_path = "\\Events\\v1"
 wwise_vo_media_path = r'S:\chen.gong_DCC_Audio\Audio\SilverPalace_WwiseProject\Originals\Voices'
 # Wwise工程路径
 wwise_proj_path = r"S:\\chen.gong_DCC_Audio\\Audio\\SilverPalace_WwiseProject"
+# State的路径
+wwise_state_path = '\\States\\Default Work Unit'
+# State Bank的路径
+wwise_state_bank_path = '\\SoundBanks\\Set\\Set_State'
 
 """External Source"""
 # excel表路径
@@ -106,7 +110,7 @@ es_event_id_dict = {
 options = {
     'return': ['name', 'id', 'notes', 'originalWavFilePath', 'isIncluded', 'IsLoopingEnabled',
                'musicPlaylistRoot', 'LoopCount', 'PlaylistItemType', 'owner', 'parent', 'type',
-               'Sequences', 'path', 'shortId', 'Inclusion', 'Target', 'ActionType']
+               'Sequences', 'path', 'shortId', 'Inclusion', 'Target', 'ActionType', "Color", 'maxDurationSource']
 
 }
 
@@ -124,14 +128,20 @@ excel_es_sfx_token_list = ["AsW4wmAbQiIHeLkI2cscdN0Ln3e"]
 check_name_token = "K2Cfwl44XiMe6Wkhi7AcJ0fGnVb"
 # 音效语音表
 excel_media_token_list = ["TcbAwUoNriYh0Rk8gG0clcNCnTh", "CatewGc9miJplrkKVi2cvBd5nMb", "XXq2wK5dbiH7lWkbw36ciHK4nCc"]
+# Wwise属性配置表token
+property_config_token = "Uj2owpIpXiNCROkHUVxcp2H9nQc"
 
-"""DT Audio"""
+"""ID表生成"""
 excel_dcc_dt_audio_path = r"S:\chen.gong_DCC_Audio\Audio\Config\Audio.xlsx"
 # 分页版dcc表
 excel_dcc_dt_audio_page_path = r"S:\chen.gong_DCC_Audio\Audio\Config\Audio_Page.xlsx"
 excel_dt_audio_path = "Audio.xlsx"
 dt_audio_sheet_name = "audio"
 csv_dt_audio_path = "Audio.csv"
+
+# ID表中的长音效配置
+long_sound_time = 7
+
 # 自动生成
 rowname_index = 1
 audioid_index = 2
@@ -144,6 +154,7 @@ isloop_index = 6
 FadeDuration_index = 7
 FadeCurveNum_index = 8
 ObjectType_index = 9
+HoldEventType_index = 10
 
 event_id_config = {
     "Amb":
@@ -244,8 +255,8 @@ excel_combat_path = r"S:\Ver_1.0.0\Project\Designer\Excel\BattleField\C_BattleFi
 excel_3d_path = r"S:\Ver_1.0.0\Project\Designer\Excel\Audio\P_Audio3D.xlsx"
 # 程序写死的dict
 logic_id_refer_dict = {
-    "13003": "黄建泉写死",
-    "13002": "施博文写死"
+    "13003": "包磊写死",
+    "13001": "施博文写死"
 }
 # 天气系统dict
 time_id_refer_dict = {
@@ -263,3 +274,7 @@ time_id_refer_dict = {
     "30044": "在UE找DT_SPTODMatrix",
 
 }
+
+"""Wwise属性配置"""
+# 属性配置表
+excel_config_path = "Wwise属性配置表.xlsx"

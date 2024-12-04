@@ -29,6 +29,16 @@ def waql_from_id(waql_id):
     return {'waql': 'from object  "%s" ' % waql_id}
 
 
+# 查找引用
+def waql_find_refer(waql_id):
+    return {'waql': '"%s" select referencesTo' % waql_id}
+
+
+# 查找子级
+def waql_find_children(waql_id):
+    return {'waql': '"%s" select children' % waql_id}
+
+
 """args模板"""
 
 
@@ -40,9 +50,30 @@ def args_object_create(parent, type, name, notes):
         # 创建类型名称
         "type": type,
         "name": name,
-        "notes": notes
+        "notes": notes,
+        "onNameConflict": "replace"
     }
     return args
 
+
 # unit_object = client.call("ak.wwise.core.object.create", args)
 #             # {'id': '{70821958-7177-49F5-A442-D0026B5C47C4}', 'name': 'Char_Mov_Gen_SHeel'}
+
+# 创建bank的模板
+def args_bank_create(bank_path, obj_path):
+    args = {
+        "soundbank": bank_path,
+        "operation": "add",
+        "inclusions": [
+            {
+                # 此处为 Just_a_Bank 内要放入的内容，filter 是要把哪些数据放进 SoundBank
+                "object": obj_path,
+                "filter": [
+                    "events",
+                    "structures",
+                    "media"
+                ]
+            }
+        ]
+    }
+    return args

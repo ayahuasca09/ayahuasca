@@ -30,6 +30,9 @@
       },
       "Shout": {
         "property": ".*"
+      },
+      "Other": {
+        "property": ".*"
       }
     },
     "name": "((C\\d{2,4})|Gen)",

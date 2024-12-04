@@ -485,9 +485,24 @@ with WaapiClient() as client:
     # pprint(musicplaylistitem_list)
 
     """查找Amb"""
+    # args = {
+    #     'waql': ' "{23B0CE4A-3440-40BE-A83C-5571900F523A}" select descendants where type = "RandomSequenceContainer" '}
+    # obj_sub_list, obj_sub_id = find_obj(args)
+    # extract_key = lambda d: d['id']
+    # amb_2d_list = list(map(extract_key, obj_sub_list))
+    # pprint(amb_2d_list)
+
+    """获取选中对象的属性"""
+    """获取选中对象的打包流媒体的路径"""
+    objects_list = client.call("ak.wwise.ui.getSelectedObjects")['objects']
+    obj_id = objects_list[0]['id']
+    print(obj_id)
     args = {
-        'waql': ' "{23B0CE4A-3440-40BE-A83C-5571900F523A}" select descendants where type = "RandomSequenceContainer" '}
-    obj_sub_list, obj_sub_id = find_obj(args)
-    extract_key = lambda d: d['id']
-    amb_2d_list = list(map(extract_key, obj_sub_list))
-    pprint(amb_2d_list)
+        'waql': '"%s"' % obj_id
+    }
+    options = {
+        'return': ['name', 'Color']
+    }
+    # 存储了所有Event的单元结构
+    wwise_info_list = client.call("ak.wwise.core.object.get", args, options=options)['return']
+    pprint(wwise_info_list)
