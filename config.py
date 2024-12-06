@@ -34,6 +34,8 @@ wwise_proj_path = r"S:\\chen.gong_DCC_Audio\\Audio\\SilverPalace_WwiseProject"
 wwise_state_path = '\\States\\Default Work Unit'
 # State Bank的路径
 wwise_state_bank_path = '\\SoundBanks\\Set\\Set_State'
+# Event的实体路径
+wwise_event_workunit_path = r"S:\chen.gong_DCC_Audio\Audio\SilverPalace_WwiseProject\Events"
 
 """External Source"""
 # excel表路径
@@ -130,6 +132,8 @@ check_name_token = "K2Cfwl44XiMe6Wkhi7AcJ0fGnVb"
 excel_media_token_list = ["TcbAwUoNriYh0Rk8gG0clcNCnTh", "CatewGc9miJplrkKVi2cvBd5nMb", "XXq2wK5dbiH7lWkbw36ciHK4nCc"]
 # Wwise属性配置表token
 property_config_token = "Uj2owpIpXiNCROkHUVxcp2H9nQc"
+# State/Switch表token
+state_sheet_token = "QE2ywINT9iLxS4kSTNTcXNK4nCh"
 
 """ID表生成"""
 excel_dcc_dt_audio_path = r"S:\chen.gong_DCC_Audio\Audio\Config\Audio.xlsx"
@@ -278,3 +282,9 @@ time_id_refer_dict = {
 """Wwise属性配置"""
 # 属性配置表
 excel_config_path = "Wwise属性配置表.xlsx"
+
+"""State和Switch创建"""
+# State/Switch表
+excel_state_path = "State和Switch创建表.xlsx"
+# 状态类通用后缀列表
+list_state_suffix = ['State', 'Type']

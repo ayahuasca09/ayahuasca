@@ -1078,7 +1078,7 @@ with WaapiClient() as client:
     # 查找Amb_Global的内容，不删除
     obj_sub_list, _, _ = find_obj(
         {
-            'waql': ' "{23B0CE4A-3440-40BE-A83C-5571900F523A}" select descendants where type = "RandomSequenceContainer" '})
+            'waql': ' "{8B09C109-84EA-448C-BDF9-C7E371E6375C}" select descendants where type = "RandomSequenceContainer" '})
     extract_key = lambda d: d['id']
     amb_2d_list = list(map(extract_key, obj_sub_list))
     # pprint(amb_2d_list)
