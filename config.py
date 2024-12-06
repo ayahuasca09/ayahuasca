@@ -36,6 +36,8 @@ wwise_state_path = '\\States\\Default Work Unit'
 wwise_state_bank_path = '\\SoundBanks\\Set\\Set_State'
 # Event的实体路径
 wwise_event_workunit_path = r"S:\chen.gong_DCC_Audio\Audio\SilverPalace_WwiseProject\Events"
+# Bus根路径
+wwise_bus_path = "\\Master-Mixer Hierarchy\\v1\\Master Audio Bus"
 
 """External Source"""
 # excel表路径
@@ -134,6 +136,8 @@ excel_media_token_list = ["TcbAwUoNriYh0Rk8gG0clcNCnTh", "CatewGc9miJplrkKVi2cvB
 property_config_token = "Uj2owpIpXiNCROkHUVxcp2H9nQc"
 # State/Switch表token
 state_sheet_token = "QE2ywINT9iLxS4kSTNTcXNK4nCh"
+# Bus资源表token
+bus_sheet_token = "F0ApwYVFViCQ6SkammRcs9cGnIh"
 
 """ID表生成"""
 excel_dcc_dt_audio_path = r"S:\chen.gong_DCC_Audio\Audio\Config\Audio.xlsx"
@@ -288,3 +292,8 @@ excel_config_path = "Wwise属性配置表.xlsx"
 excel_state_path = "State和Switch创建表.xlsx"
 # 状态类通用后缀列表
 list_state_suffix = ['State', 'Type']
+
+"""Bus自动化"""
+excel_bus_path = "Bus资源表.xlsx"
+# 需要排除颜色设置的列表及以Aux开头的
+bus_no_color_list = ['Audio Objects', 'Auxiliary', 'Main Mix', 'SFX']

@@ -7,6 +7,43 @@ import re
 
 is_pass = True
 
+"""建单正则匹配"""
+
+
+def check_by_re(pattern, s):
+    return re.match(pattern, s) is not None
+
+
+"""获取最长共同前缀"""
+
+
+def longest_common_prefix(s1, s2):
+    """Helper function to find the longest common prefix of two strings."""
+    min_length = min(len(s1), len(s2))
+    for i in range(min_length):
+        if s1[i] != s2[i]:
+            return s1[:i]
+    return s1[:min_length]
+
+
+"""在字典中查找最长共同前缀的值，且字典值长度需小于target"""
+
+
+def find_longest_prefix_key(target, dictionary):
+    max_prefix_length = 0
+    best_key = None
+
+    for key in dictionary.keys():
+        if key in target:
+            if len(key) < len(target):
+                prefix = longest_common_prefix(target, key)
+                if len(prefix) > max_prefix_length:
+                    max_prefix_length = len(prefix)
+                    best_key = key
+
+    return best_key
+
+
 """查找目录下特定后缀的文件"""
 
 
