@@ -56,6 +56,23 @@ def args_object_create(parent, type, name, notes):
     return args
 
 
+# 创建rnd的模板
+def args_rnd_create(parent, type, name, notes):
+    args = {
+        # 选择父级
+        "parent": parent,
+        # 创建类型名称
+        "type": type,
+        "name": name,
+        "notes": notes,
+        "onNameConflict": "replace",
+        "@RandomOrSequence": 1,
+        "@NormalOrShuffle": 1,
+        "@RandomAvoidRepeatingCount": 1
+    }
+    return args
+
+
 # unit_object = client.call("ak.wwise.core.object.create", args)
 #             # {'id': '{70821958-7177-49F5-A442-D0026B5C47C4}', 'name': 'Char_Mov_Gen_SHeel'}
 

@@ -4,26 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="17a8a927-0db7-41d4-8f81-9181fc87e6d9" name="更改" comment="Bus自动化生成">
-      <change afterPath="$PROJECT_DIR$/files/Bus自动化/Bus资源表.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/files/Mus自动化/Mus结构表.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/files/Mus自动化/剧情音乐资源表.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/files/Mus自动化/游戏音乐资源表.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/Amb自动化.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/Mus自动化.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/SilverPalace战斗音频需求资源管理表 (11).xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/SilverPalace语音资源管理表 (5).xlsx" afterDir="false" />
+    <list default="true" id="17a8a927-0db7-41d4-8f81-9181fc87e6d9" name="更改" comment="Mus自动化生成">
+      <change afterPath="$PROJECT_DIR$/files/Amb自动化/全局环境音效表.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/Wwise属性配置/Wwise属性配置表.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/files/Wwise属性配置/Wwise属性配置表.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/func/Bus自动化.py" beforeDir="false" afterPath="$PROJECT_DIR$/func/Bus自动化.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/func/State和Switch创建.py" beforeDir="false" afterPath="$PROJECT_DIR$/func/State和Switch创建.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/excel/excel_h.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/excel/excel_h.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/ue/ue_ID表生成/Audio.csv" beforeDir="false" afterPath="$PROJECT_DIR$/module/ue/ue_ID表生成/Audio.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/ue/ue_ID表生成/Audio.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/module/ue/ue_ID表生成/Audio.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_auto_gen_music/waapi_auto_gen_music.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_auto_gen_music/waapi_auto_gen_music.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/SilverPalace战斗音频需求资源管理表 (10).xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/SilverPalace语音资源管理表 (3).xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/func/Amb自动化.py" beforeDir="false" afterPath="$PROJECT_DIR$/func/Amb自动化.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_h.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_h.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,6 +52,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Python.Amb自动化.executor": "Run",
     "Python.Bus自动化.executor": "Run",
     "Python.DCC表的引用路径生成.executor": "Run",
     "Python.DCC表的引用路径生成v2.executor": "Run",
@@ -298,14 +285,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1716955384994</updated>
-    </task>
-    <task id="LOCAL-00092" summary="ID表逻辑修改">
-      <option name="closed" value="true" />
-      <created>1728975497408</created>
-      <option name="number" value="00092" />
-      <option name="presentableId" value="LOCAL-00092" />
-      <option name="project" value="LOCAL" />
-      <updated>1728975497408</updated>
     </task>
     <task id="LOCAL-00093" summary="音乐配置自动化:转码开流，更新转码后的资源">
       <option name="closed" value="true" />
@@ -691,7 +670,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733477913421</updated>
     </task>
-    <option name="localTasksCounter" value="141" />
+    <task id="LOCAL-00141" summary="Mus自动化生成">
+      <option name="closed" value="true" />
+      <created>1733838536356</created>
+      <option name="number" value="00141" />
+      <option name="presentableId" value="LOCAL-00141" />
+      <option name="project" value="LOCAL" />
+      <updated>1733838536356</updated>
+    </task>
+    <option name="localTasksCounter" value="142" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -707,7 +694,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="ES自动化：id表规划" />
     <MESSAGE value="ES自动化：删除同步" />
     <MESSAGE value="ES自动化：剧情表自动化生成" />
     <MESSAGE value="ES自动化：新增命名规范检测、转码设置根据CG和VO区分、相应ID表自动化生成" />
@@ -732,6 +718,7 @@
     <MESSAGE value="State bank自动化：内容指派、ID表生成" />
     <MESSAGE value="State bank自动化：state表填写并赋值" />
     <MESSAGE value="Bus自动化生成" />
-    <option name="LAST_COMMIT_MESSAGE" value="Bus自动化生成" />
+    <MESSAGE value="Mus自动化生成" />
+    <option name="LAST_COMMIT_MESSAGE" value="Mus自动化生成" />
   </component>
 </project>
