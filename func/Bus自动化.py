@@ -133,7 +133,7 @@ with WaapiClient() as client:
             bus_name = None
             # 遍历每一列
             for cell in row:
-                cell_value = excel_h.check_is_mergecell(cell, sheet)
+                cell_value, _ = excel_h.check_is_mergecell(cell, sheet)
                 if cell_value:
                     is_unit = False
                     # print(cell_value)
@@ -177,6 +177,6 @@ with WaapiClient() as client:
             for bus_have_name in bus_have_dict:
                 if bus_have_name not in bus_create_list:
                     if (bus_have_name not in config.bus_no_color_list) and (
-                    not oi_h.check_by_re(r'^Aux', bus_have_name)):
+                            not oi_h.check_by_re(r'^Aux', bus_have_name)):
                         set_obj_property(bus_have_dict[bus_have_name], "OverrideColor", True)
                         set_obj_property(bus_have_dict[bus_have_name], "Color", 0)

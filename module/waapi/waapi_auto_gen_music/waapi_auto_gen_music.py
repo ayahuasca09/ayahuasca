@@ -94,9 +94,6 @@ def get_one_value_list(dict_list, dict_key):
     return result
 
 
-
-
-
 """报错捕获"""
 
 
@@ -522,8 +519,8 @@ with WaapiClient() as client:
                                         is_subtrack = False
 
                                         """bpm获取"""
-                                        bpm_value =excel_h.check_is_mergecell(sheet.cell(row=cell_sound.row,
-                                                               column=bpm), sheet)
+                                        bpm_value, _ = excel_h.check_is_mergecell(sheet.cell(row=cell_sound.row,
+                                                                                             column=bpm), sheet)
                                         # bpm_value = sheet.cell(row=cell_sound.row,
                                         #                        column=bpm).value
 

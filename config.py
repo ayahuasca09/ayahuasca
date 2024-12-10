@@ -38,7 +38,14 @@ wwise_state_bank_path = '\\SoundBanks\\Set\\Set_State'
 wwise_event_workunit_path = r"S:\chen.gong_DCC_Audio\Audio\SilverPalace_WwiseProject\Events"
 # Bus根路径
 wwise_bus_path = "\\Master-Mixer Hierarchy\\v1\\Master Audio Bus"
-
+# State Music路径
+wwise_mus_state_path = "\\Interactive Music Hierarchy\\v1\\Mus"
+# State Amb路径
+wwise_amb_state_path = "\\Actor-Mixer Hierarchy\\v1\\Amb"
+# Mus_Global路径
+wwise_mus_global_path = "\\Interactive Music Hierarchy\\v1\\Mus\\Mus_Global"
+# Amb_Global路径
+wwise_amb_global_path = "\\Actor-Mixer Hierarchy\\v1\\Amb\\Amb\\Amb_Global\\Amb_Global\\Amb_Global_Area\\Amb_Global_Area\\Amb_Global_Area"
 """External Source"""
 # excel表路径
 excel_mediainfo_path = 'MediaInfoTable.xlsx'
@@ -138,6 +145,12 @@ property_config_token = "Uj2owpIpXiNCROkHUVxcp2H9nQc"
 state_sheet_token = "QE2ywINT9iLxS4kSTNTcXNK4nCh"
 # Bus资源表token
 bus_sheet_token = "F0ApwYVFViCQ6SkammRcs9cGnIh"
+# Mus结构表token
+mus_config_token = "OA69weFjaiNq13knGSVcNzV5n2d"
+# Mus资源表token
+mus_sheet_token_list = ["OcV8wP6cmi78GtkuR2UcM4bEnTe", "YDHHwNt61idv0SkhFMbcWNzXn4f", "OA69weFjaiNq13knGSVcNzV5n2d"]
+# Amb资源表
+amb_sheet_token = "AaZuw0vlWiyLCrkgxr6c6wqonmh"
 
 """ID表生成"""
 excel_dcc_dt_audio_path = r"S:\chen.gong_DCC_Audio\Audio\Config\Audio.xlsx"
@@ -297,3 +310,9 @@ list_state_suffix = ['State', 'Type']
 excel_bus_path = "Bus资源表.xlsx"
 # 需要排除颜色设置的列表及以Aux开头的
 bus_no_color_list = ['Audio Objects', 'Auxiliary', 'Main Mix', 'SFX']
+
+"""Mus自动化"""
+excel_mus_config_path = "Mus结构表.xlsx"
+
+"""Amb自动化"""
+excel_amb_config_path = "全局环境音效表.xlsx"

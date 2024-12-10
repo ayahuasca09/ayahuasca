@@ -351,20 +351,6 @@ with WaapiClient() as client:
                 set_obj_property(event_id, "OverrideColor", False)
 
 
-    """创建新的trigger"""
-
-
-    def create_trigger_content(trig_name, trig_desc):
-        """trigger 创建"""
-        trigger_id = create_obj_content(trigger_root_path, sheet_name, trig_name,
-                                        trig_desc, "")
-        """event 创建"""
-        # event命名
-        event_name = 'AKE_Set_' + sheet_name + "_" + trig_name
-        event_id = create_obj_content(set_trigger_event_path, "Event", event_name,
-                                      trig_desc, trigger_id)
-
-
     """*****************主程序处理******************"""
     # 撤销开始
     client.call("ak.wwise.core.undo.beginGroup")
@@ -412,7 +398,7 @@ with WaapiClient() as client:
                                         """❤❤❤state group内容检查❤❤❤"""
                                         # 检测是否为合并单元格，是则读取合并单元格的内容
                                         """state group名称"""
-                                        group_value = excel_h.check_is_mergecell(
+                                        group_value,_ = excel_h.check_is_mergecell(
                                             sheet.cell(row=cell_sound.row, column=group_name), sheet)
                                         state_group_name_list = list(set(state_group_name_list + [group_value]))
                                         if group_value:
@@ -426,7 +412,7 @@ with WaapiClient() as client:
 
                                             """❤❤❤描述项检查❤❤❤"""
                                             """state group描述"""
-                                            group_desc_value = excel_h.check_is_mergecell(
+                                            group_desc_value,_ = excel_h.check_is_mergecell(
                                                 sheet.cell(row=cell_sound.row, column=group_desc), sheet)
                                             if group_desc_value:
                                                 # print(value_desc_value)
@@ -441,7 +427,7 @@ with WaapiClient() as client:
                                                     print_error(state_desc_value + "：表格中有重复项描述，请检查")
 
                                                 """是否创建Bank读取"""
-                                                is_bank_value = excel_h.check_is_mergecell(
+                                                is_bank_value,_ = excel_h.check_is_mergecell(
                                                     sheet.cell(row=cell_sound.row, column=is_bank_column), sheet)
 
 
