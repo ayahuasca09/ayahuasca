@@ -91,6 +91,15 @@ def get_all_media_path(media_path):
 
 with WaapiClient() as client:
     """*****************Wwise功能区******************"""
+    # 设置对象引用
+    def set_obj_refer(obj_id, refer, value):
+        args = {
+            "object": obj_id,
+            "reference": refer,
+            "value": value
+        }
+        client.call("ak.wwise.core.object.setReference", args)
+
     """设置新的占位Sound资源超越父级为灰色"""
 
 
@@ -102,17 +111,6 @@ with WaapiClient() as client:
         }
         client.call("ak.wwise.core.object.setProperty", args_property)
 
-
-    """设置对象引用"""
-
-
-    def set_obj_refer(obj_id, refer, value):
-        args = {
-            "object": obj_id,
-            "reference": refer,
-            "value": value
-        }
-        client.call("ak.wwise.core.object.setReference", args)
 
 
     """设置对象属性"""

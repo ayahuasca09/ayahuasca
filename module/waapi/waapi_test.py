@@ -501,7 +501,7 @@ with WaapiClient() as client:
         'waql': '"%s"' % obj_id
     }
     options = {
-        'return': ['name', 'Color']
+        'return': ['name', 'Color', 'maxDurationSource']
     }
     # 存储了所有Event的单元结构
     wwise_info_list = client.call("ak.wwise.core.object.get", args, options=options)['return']

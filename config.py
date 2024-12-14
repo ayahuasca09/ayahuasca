@@ -41,7 +41,7 @@ wwise_bus_path = "\\Master-Mixer Hierarchy\\v1\\Master Audio Bus"
 # State Music路径
 wwise_mus_state_path = "\\Interactive Music Hierarchy\\v1\\Mus"
 # State Amb路径
-wwise_amb_state_path = "\\Actor-Mixer Hierarchy\\v1\\Amb\\Amb\\Amb_Global\\Amb_Global\\Amb_Global_Area"
+# wwise_amb_state_path = "\\Actor-Mixer Hierarchy\\v1\\Amb\\Amb\\Amb_Global\\Amb_Global\\Amb_Global_Area"
 # Mus_Global路径
 wwise_mus_global_path = "\\Interactive Music Hierarchy\\v1\\Mus\\Mus_Global"
 # Amb_Global路径
@@ -162,7 +162,7 @@ dt_audio_sheet_name = "audio"
 csv_dt_audio_path = "Audio.csv"
 
 # ID表中的长音效配置
-long_sound_time = 7
+long_sound_time = 5
 
 # 自动生成
 rowname_index = 1
@@ -319,3 +319,9 @@ excel_mus_config_path = "Mus结构表.xlsx"
 excel_amb_config_path = "全局环境音效表.xlsx"
 sheet_amb_config = "Amb框架结构"
 sheet_amb_media = "Amb"
+# 结构与环境音效映射字典
+amb_state_dict = {
+    "Amb_Map": "Map_Type",
+    "Amb_System": "System_Type"
+
+}

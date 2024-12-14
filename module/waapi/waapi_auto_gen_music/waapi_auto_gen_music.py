@@ -352,10 +352,11 @@ with WaapiClient() as client:
         flag = 0
         # 音乐资源导入
         for media_info_name in media_info_dict:
-            if mus_name in media_info_name:
-                print_warning((mus_name + ":媒体资源已导入"))
+            check_name = media_info_name.replace(".wav", "")
+            if mus_name == check_name:
                 media_path = os.path.join(py_path, media_info_dict[media_info_name])
                 import_media_in_track(media_path, mus_track_path)
+                print_warning((mus_name + ":媒体资源已导入"))
                 flag = 1
                 break
         # if flag == 0:
