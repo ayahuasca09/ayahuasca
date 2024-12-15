@@ -346,22 +346,6 @@ with WaapiClient() as client:
     # 记录所有资源名称
     sound_name_list = []
 
-    # 获取所有State名称列表
-    # state_list = find_obj_list(state_path, "State")
-    # state_name_list = get_one_value_list(state_list, 'name')
-    # pprint(state_name_list)
-    #
-    # # 获取所有Music Playlist Container
-    # music_playlist_container_list = find_obj_list(music_path, "MusicPlaylistContainer")
-    # music_playlist_container_name_list = get_one_value_list(music_playlist_container_list, 'name')
-    #
-    # # 获取new media的信息
-    # media_info_dict, _ = get_type_file_name_and_path('.wav', 'New_Media')
-    # # pprint(media_info)
-    #
-    # # 获取音乐中的switch信息
-    # music_switch_container_list = find_obj_list(music_path, "MusicSwitchContainer")
-
     """查找对象"""
 
 
@@ -527,6 +511,12 @@ with WaapiClient() as client:
                     for cell in list(sheet.columns)[value - 1]:
                         if (cell.value) and (not 命名规范检查.check_is_chinese(cell.value)) and (
                                 cell.value != "Mus_Login"):
+                            """名称查重"""
+                            if cell.value not in mus_name_list:
+                                mus_name_list.append(cell.value)
+                            else:
+                                oi_h.print_error(cell.value + "：表格中有重复项描述，请检查")
+
                             # pprint(cell.value)
                             """资源描述"""
                             value_desc_value = sheet.cell(row=cell.row,
@@ -549,3 +539,13 @@ with WaapiClient() as client:
                             """音频资源创建"""
                             create_mus_content(cell.value,
                                                value_desc_value)
+
+    """同步表中删除的内容"""
+    musegment_have_dict = get_wwise_type_list(config.wwise_mus_global_path, "MusicSegment")
+
+    # 查找state/switch，再跟表格比对有没有，没有就删除资源及事件引用
+    delete_check(musegment_have_dict, mus_name_list, "MusicSegment")
+
+    # 清除复制的媒体资源
+    shutil.rmtree(os.path.join(root_path, 'New_Media'))
+    os.mkdir(os.path.join(root_path, 'New_Media'))
