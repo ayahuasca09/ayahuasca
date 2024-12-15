@@ -39,13 +39,22 @@ wwise_event_workunit_path = r"S:\chen.gong_DCC_Audio\Audio\SilverPalace_WwisePro
 # Bus根路径
 wwise_bus_path = "\\Master-Mixer Hierarchy\\v1\\Master Audio Bus"
 # State Music路径
-wwise_mus_state_path = "\\Interactive Music Hierarchy\\v1\\Mus"
+# wwise_mus_state_path = "\\Interactive Music Hierarchy\\v1\\Mus"
 # State Amb路径
 # wwise_amb_state_path = "\\Actor-Mixer Hierarchy\\v1\\Amb\\Amb\\Amb_Global\\Amb_Global\\Amb_Global_Area"
 # Mus_Global路径
 wwise_mus_global_path = "\\Interactive Music Hierarchy\\v1\\Mus\\Mus_Global"
 # Amb_Global路径
 wwise_amb_global_path = "\\Actor-Mixer Hierarchy\\v1\\Amb\\Amb\\Amb_Global\\Amb_Global\\Amb_Global_Area\\Amb_Global_Area\\Amb_Global_Area"
+"""state folder path"""
+state_path = '{59A9E7B9-61C9-461A-A96F-4997B541A59C}'
+"""music path"""
+music_path = "{E8A5F6A0-AB3E-4166-BB68-C7D7ECC92B29}"
+stin_path = "{DD48832A-AAC1-49F7-B57B-86F5FACD8FB3}"
+trig_path = "{94BBA60A-29EF-4328-83E8-075770BF2687}"
+trig_event_path = "{EDD34B59-3938-4C22-A63D-838FD8DCD57E}"
+"""媒体资源路径"""
+original_path = r'S:\chen.gong_DCC_Audio\Audio\SilverPalace_WwiseProject\Originals\SFX'
 
 """External Source"""
 # excel表路径

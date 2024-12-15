@@ -94,3 +94,23 @@ def args_bank_create(bank_path, obj_path):
         ]
     }
     return args
+
+
+# 媒体资源导入的模板
+def args_sfx_create(source_path, obj_id, sub_path):
+    args = {
+        # createNew
+        # useExisting：会增加一个新媒体文件但旧的不会删除
+        # replaceExisting:会销毁Sound，上面做的设置都无了
+        "importOperation": "replaceExisting",
+        "imports": [
+            {
+                "audioFile": source_path,
+                "objectPath": obj_id,
+                "originalsSubFolder": sub_path
+            }
+        ]
+    }
+    return args
+
+# client.call("ak.wwise.core.audio.import", args_import)

@@ -14,6 +14,7 @@ import config
 import module.excel.excel_h as excel_h
 import module.waapi.waapi_h as waapi_h
 from pathlib import Path
+import 命名规范检查
 
 """根目录获取"""
 # 获取当前脚本的文件名及路径
@@ -46,10 +47,43 @@ unit_create_list = []
 # playlist创建列表
 playlist_create_list = []
 
+"""音乐资源名称列表"""
+mus_name_list = []
+value_desc_list = []
+
+"""Mus媒体资源名称及文件夹映射"""
+media_info_dict, _ = oi_h.get_type_file_name_and_path('.wav', os.path.join(root_path, 'New_Media'))
+# pprint(media_info_dict)
+
 """*****************功能检测区******************"""
 
 with WaapiClient() as client:
     """*****************Wwise功能区******************"""
+    """设置obj的notes"""
+
+
+    def set_obj_notes(obj_id, notes_value):
+        args = {
+            'object': obj_id,
+            'value': notes_value
+        }
+        client.call("ak.wwise.core.object.setNotes", args)
+        # print_warning(obj_name + "描述更改为：" + notes_value)
+
+
+    """设置对象属性"""
+
+
+    def set_obj_property(obj_id, property, value):
+        args = {
+            "object": obj_id,
+            "property": property,
+            "value": value
+        }
+        client.call("ak.wwise.core.object.setProperty", args)
+        # print(name_2 + ":" + str(trigger_rate))
+
+
     """obj创建"""
 
 
@@ -88,9 +122,9 @@ with WaapiClient() as client:
         # unit创建
         for mus_name in unit_list:
             # 查找已有unit列表
-            unit_have_dict = get_wwise_type_list(config.wwise_mus_state_path, "WorkUnit")
-            playlist_have_dict = get_wwise_type_list(config.wwise_mus_state_path, "MusicPlaylistContainer")
-            switch_have_dict = get_wwise_type_list(config.wwise_mus_state_path, "MusicSwitchContainer")
+            unit_have_dict = get_wwise_type_list(config.wwise_mus_global_path, "WorkUnit")
+            playlist_have_dict = get_wwise_type_list(config.wwise_mus_global_path, "MusicPlaylistContainer")
+            switch_have_dict = get_wwise_type_list(config.wwise_mus_global_path, "MusicSwitchContainer")
             # pprint(unit_have_dict)
             # Wwise里没有unit的的
             if mus_name not in unit_have_dict:
@@ -103,7 +137,7 @@ with WaapiClient() as client:
                                                    "")
                 else:
                     # t5apprint(playlist_list)
-                    unit_have_dict = get_wwise_type_list(config.wwise_mus_state_path, "WorkUnit")
+                    unit_have_dict = get_wwise_type_list(config.wwise_mus_global_path, "WorkUnit")
                     unit_parent = oi_h.find_longest_prefix_key(mus_name, unit_have_dict)
                     if mus_name in switch_list:
                         if mus_name not in switch_have_dict:
@@ -134,8 +168,8 @@ with WaapiClient() as client:
 
         # switch创建
         for mus_name in switch_list:
-            unit_have_dict = get_wwise_type_list(config.wwise_mus_state_path, "WorkUnit")
-            switch_have_dict = get_wwise_type_list(config.wwise_mus_state_path, "MusicSwitchContainer")
+            unit_have_dict = get_wwise_type_list(config.wwise_mus_global_path, "WorkUnit")
+            switch_have_dict = get_wwise_type_list(config.wwise_mus_global_path, "MusicSwitchContainer")
 
             if mus_name not in switch_have_dict:
                 # 找到的父级为unit
@@ -159,15 +193,21 @@ with WaapiClient() as client:
                                                      "")
         # playlist创建
         for mus_name in playlist_list:
-            unit_have_dict = get_wwise_type_list(config.wwise_mus_state_path, "WorkUnit")
-            switch_have_dict = get_wwise_type_list(config.wwise_mus_state_path, "MusicSwitchContainer")
-            playlist_have_dict = get_wwise_type_list(config.wwise_mus_state_path, "MusicPlaylistContainer")
+            unit_have_dict = get_wwise_type_list(config.wwise_mus_global_path, "WorkUnit")
+            switch_have_dict = get_wwise_type_list(config.wwise_mus_global_path, "MusicSwitchContainer")
+            playlist_have_dict = get_wwise_type_list(config.wwise_mus_global_path, "MusicPlaylistContainer")
             if mus_name not in playlist_have_dict:
+                # print(mus_name)
                 # 找到的父级为unit
                 unit_parent_1 = oi_h.find_longest_prefix_key(mus_name, unit_have_dict)
                 unit_parent_2 = oi_h.find_longest_prefix_key(mus_name, switch_have_dict)
                 parent_id = None
+                # 前缀找不到尝试找同名的
+                if not unit_parent_1:
+                    if mus_name in unit_have_dict:
+                        parent_id = unit_have_dict[mus_name]
                 if unit_parent_1:
+
                     if unit_parent_2:
                         if len(unit_parent_2) > len(unit_parent_1):
                             parent_id = switch_have_dict[unit_parent_2]
@@ -244,3 +284,268 @@ with WaapiClient() as client:
     # pprint(playlist_create_list)
     # pprint(unit_create_list)
     create_wwise_mus(unit_create_list, playlist_create_list, switch_create_list)
+
+    """******************对象删除清理********************"""
+    """对象删除"""
+
+
+    def delete_obj(obj_id, obj_name, obj_type):
+        args = {
+            "object": "%s" % obj_id
+        }
+        client.call("ak.wwise.core.object.delete", args)
+        oi_h.print_warning(obj_name + "(" + obj_type + ")" + ":已删除")
+
+
+    """删除状态"""
+
+
+    def delete_check(wwise_obj_dict, excel_list, obj_type):
+        for wwise_obj in wwise_obj_dict:
+            # pprint(wwise_obj_dict['name'])
+            if wwise_obj not in excel_list:
+                # State/StateGroup删除
+                delete_obj(wwise_obj_dict[wwise_obj], wwise_obj, obj_type)
+                # StateGroupUnit删除
+
+
+    unit_have_dict = get_wwise_type_list(config.wwise_mus_global_path, "WorkUnit")
+    switch_have_dict = get_wwise_type_list(config.wwise_mus_global_path, "MusicSwitchContainer")
+    playlist_have_dict = get_wwise_type_list(config.wwise_mus_global_path, "MusicPlaylistContainer")
+
+    # 查找state/switch，再跟表格比对有没有，没有就删除资源及事件引用
+    delete_check(switch_have_dict, switch_create_list, "SwitchContainer")
+    delete_check(playlist_have_dict, playlist_create_list, "MusicPlaylistContainer")
+    delete_check(unit_have_dict, unit_create_list, "WorkUnit")
+
+    oi_h.print_warning("结构已自动创建完成，请手动指派State")
+
+    """******************音频资源导入********************"""
+    """获取表格中的事件描述和状态所在的列"""
+
+
+    def get_descrip_and_status_column():
+        bpm_column = None
+        require_name_column = None
+        status_column = None
+        if list(sheet.rows)[0]:
+            for cell in list(sheet.rows)[0]:
+                if cell.value:
+                    if '资源名称' == str(cell.value):
+                        require_name_column = cell.column
+                        # print(require_name_column)
+                    elif '资源描述' == str(cell.value):
+                        status_column = cell.column
+                        # print(status_column)
+                    elif 'BPM' == str(cell.value):
+                        bpm_column = cell.column
+
+        return require_name_column, status_column, bpm_column
+
+
+    # 记录所有资源名称
+    sound_name_list = []
+
+    # 获取所有State名称列表
+    # state_list = find_obj_list(state_path, "State")
+    # state_name_list = get_one_value_list(state_list, 'name')
+    # pprint(state_name_list)
+    #
+    # # 获取所有Music Playlist Container
+    # music_playlist_container_list = find_obj_list(music_path, "MusicPlaylistContainer")
+    # music_playlist_container_name_list = get_one_value_list(music_playlist_container_list, 'name')
+    #
+    # # 获取new media的信息
+    # media_info_dict, _ = get_type_file_name_and_path('.wav', 'New_Media')
+    # # pprint(media_info)
+    #
+    # # 获取音乐中的switch信息
+    # music_switch_container_list = find_obj_list(music_path, "MusicSwitchContainer")
+
+    """查找对象"""
+
+
+    def find_obj(args):
+        options = {
+            'return': ['name', 'id', 'path', 'notes', 'originalWavFilePath', 'type', 'parent', "Tempo"]
+
+        }
+        obj_sub_list = client.call("ak.wwise.core.object.get", args, options=options)['return']
+        if not obj_sub_list:
+            obj_sub_id = ""
+            obj_sub_path = ""
+        else:
+            obj_sub_id = obj_sub_list[0]['id']
+            obj_sub_path = obj_sub_list[0]['path']
+        return obj_sub_list, obj_sub_id, obj_sub_path
+
+
+    """修改Wwise内容的名字"""
+
+
+    def change_name_by_wwise_content(obj_id, name, old_name, obj_type):
+        args = {
+            "objects": [
+                {
+
+                    "object": obj_id,
+                    "name": name,
+                }
+            ]
+        }
+        client.call("ak.wwise.core.object.set", args)
+        oi_h.print_warning(old_name + "(" + obj_type + ")改名为：" + name)
+
+
+    """通用内容创建"""
+
+
+    def create_obj_content(state_group_parent_path, state_group_type,
+                           state_group_name, state_group_desc, state_id):
+        flag = 0
+        state_group_id = ""
+        state_group_path = ""
+        state_group_list = client.call("ak.wwise.core.object.get",
+                                       waapi_h.waql_by_type(state_group_type, state_group_parent_path),
+                                       options=config.options)['return']
+        # state_group已存在
+        for state_group_dict in state_group_list:
+            if state_group_dict['name'] == state_group_name:
+                flag = 1
+                # 设置notes
+                set_obj_notes(state_group_dict['id'], state_group_desc)
+                state_group_id = state_group_dict['id']
+                state_group_path = state_group_dict['path']
+                # 设置bpm
+                if (state_group_dict['type'] == "MusicSegment") and bpm_value and bpm_value != 0:
+                    set_obj_property(state_group_dict['id'], "OverrideClockSettings", True)
+                    set_obj_property(state_group_dict['id'], "Tempo", bpm_value)
+                break
+            # 改名了但描述一致
+            elif state_group_dict['notes'] == state_group_desc:
+                flag = 2
+                # 改名
+                change_name_by_wwise_content(state_group_dict['id'], state_group_name, state_group_dict['name'],
+                                             state_group_type)
+                state_group_id = state_group_dict['id']
+                state_group_path = state_group_dict['path']
+                break
+        # state_group不存在，需要创建
+        # print(flag)
+        # 不存在则创建
+        if flag == 0:
+            if state_group_type == "Event":
+                # 专属trig用
+                args = {
+                    # 选择父级
+                    "parent": state_group_parent_path,
+                    # 创建类型名称
+                    "type": state_group_type,
+                    "name": state_group_name,
+                    "notes": state_group_desc,
+                    "children": [
+                        {
+                            "name": "",
+                            "type": "Action",
+                            "@ActionType": 35,
+                            "@Target": state_id
+                        }]
+                }
+            else:
+                # 创建的rnd属性
+                args = {
+                    # 选择父级
+                    "parent": state_group_parent_path,
+                    # 创建类型名称
+                    "type": state_group_type,
+                    "name": state_group_name,
+                    "notes": state_group_desc,
+                }
+            state_group_object = client.call("ak.wwise.core.object.create", args)
+            # print(state_group_object)
+            state_group_id = state_group_object['id']
+            _, _, state_group_path = find_obj(
+                {'waql': ' "%s" ' % state_group_id})
+            oi_h.print_warning(state_group_object['name'] + ":" + state_group_type + "已创建")
+
+        return state_group_id, state_group_path
+
+
+    """音乐资源导入"""
+
+
+    def import_media(mus_name, mus_track_path):
+        flag = 0
+        # 音乐资源导入
+        for media_info_name in media_info_dict:
+            check_name = media_info_name.replace(".wav", "")
+            if mus_name == check_name:
+                media_path = media_info_dict[media_info_name]
+                # import_media_in_track(media_path, mus_track_path)
+                client.call("ak.wwise.core.audio.import",
+                            waapi_h.args_sfx_create(media_path, mus_track_path, sheet_name))
+                oi_h.print_warning((mus_name + ":媒体资源已导入"))
+                flag = 1
+                break
+        # if flag == 0:
+        #     print_error(mus_name + ":该名称的媒体资源未找到，无法导入")
+
+
+    """创建新的mus"""
+
+
+    def create_mus_content(mus_name, mus_desc):
+        flag = 0
+        for playlist_have_name in playlist_have_dict:
+            if playlist_have_name in mus_name:
+                mus_segment_id, _ = create_obj_content(playlist_have_dict[playlist_have_name], "MusicSegment", mus_name,
+                                                       mus_desc, "")
+                mus_track_id, mus_track_path = create_obj_content(mus_segment_id, "MusicTrack", mus_name,
+                                                                  mus_desc, "")
+                import_media(mus_name, mus_track_path)
+                flag = 1
+                break
+        if flag == 0:
+            oi_h.print_error(mus_name + "：无相应前缀的playlist父级，请检查命名是否有误或先创建结构")
+
+
+    # 提取规则：只提取xlsx文件
+    for i in file_name_list:
+        if ".xlsx" in i:
+            # 拼接xlsx的路径
+            file_path_xlsx = os.path.join(root_path, i)
+            # 获取xlsx的workbook
+            wb = openpyxl.load_workbook(file_path_xlsx)
+            # 获取xlsx的所有sheet
+            sheet_names = wb.sheetnames
+            # 加载所有工作表
+            for sheet_name in sheet_names:
+                sheet = wb[sheet_name]
+                word_list_len = sheet.max_column
+                value, value_desc, bpm = get_descrip_and_status_column()
+                if value:
+                    for cell in list(sheet.columns)[value - 1]:
+                        if (cell.value) and (not 命名规范检查.check_is_chinese(cell.value)) and (
+                                cell.value != "Mus_Login"):
+                            # pprint(cell.value)
+                            """资源描述"""
+                            value_desc_value = sheet.cell(row=cell.row,
+                                                          column=value_desc).value
+                            """资源描述检查"""
+                            if value_desc_value:
+                                if value_desc_value not in value_desc_list:
+                                    value_desc_list.append(value_desc_value)
+                                else:
+                                    oi_h.print_error(value_desc_value + "：表格中有重复项描述，请检查")
+                            else:
+                                oi_h.print_error(cell.value + "：描述不能为空，请补充")
+
+                            """检查是否为分轨"""
+                            is_subtrack = False
+
+                            """bpm获取"""
+                            bpm_value, _ = excel_h.check_is_mergecell(sheet.cell(row=cell.row,
+                                                                                 column=bpm), sheet)
+                            """音频资源创建"""
+                            create_mus_content(cell.value,
+                                               value_desc_value)

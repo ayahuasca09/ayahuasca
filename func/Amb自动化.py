@@ -275,8 +275,6 @@ with WaapiClient() as client:
     delete_check(switch_dict, switch_create_list, "SwitchContainer")
     delete_check(rnd_dict, rnd_create_list, "RandomSequenceContainer")
 
-    # 撤销结束
-    client.call("ak.wwise.core.undo.endGroup", displayName="rnd创建撤销")
 
     """******************Switch/State指派********************"""
     # 获取switch容器
@@ -319,3 +317,6 @@ with WaapiClient() as client:
                 #             if state_children_dict[state_children] not in have_state_assign_list:
                 #                 set_switch_child(switch_children_dict[switch_children],
                 #                                  state_children_dict[state_children])
+
+        # 撤销结束
+        client.call("ak.wwise.core.undo.endGroup", displayName="rnd创建撤销")
