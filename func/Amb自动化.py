@@ -14,6 +14,7 @@ import config
 import module.excel.excel_h as excel_h
 import module.waapi.waapi_h as waapi_h
 from pathlib import Path
+import 命名规范检查
 
 """根目录获取"""
 # 获取当前脚本的文件名及路径
@@ -39,6 +40,9 @@ excel_amb_path = os.path.join(root_path, config.excel_amb_config_path)
 # check_name_token = config.amb_sheet_token
 # cloudfeishu_h.download_cloud_sheet(check_name_token, excel_amb_path)
 
+"""amb媒体资源名称及文件夹映射"""
+media_info_dict, _ = oi_h.get_type_file_name_and_path('.wav', os.path.join(root_path, 'New_Media'))
+
 """功能数据初始化"""
 # switch创建列表
 switch_create_list = []
@@ -51,6 +55,18 @@ rnd_create_list = []
 
 with WaapiClient() as client:
     """*****************Wwise功能区******************"""
+    """设置obj的notes"""
+
+
+    def set_obj_notes(obj_id, notes_value):
+        args = {
+            'object': obj_id,
+            'value': notes_value
+        }
+        client.call("ak.wwise.core.object.setNotes", args)
+        # print_warning(obj_name + "描述更改为：" + notes_value)
+
+
     """设置对象属性"""
 
 
@@ -228,13 +244,14 @@ with WaapiClient() as client:
 
     """*****************主程序处理******************"""
     # 撤销开始
-    client.call("ak.wwise.core.undo.beginGroup")
+    # client.call("ak.wwise.core.undo.beginGroup")
 
     """环境音结构创建"""
 
     # 获取xlsx的workbook
     wb = openpyxl.load_workbook(excel_amb_path)
     amb_config_sheet = wb[config.sheet_amb_config]
+    amb_media_sheet = wb[config.sheet_amb_media]
     get_create_amb_name_list()
     switch_create_list.sort(key=len)
     rnd_create_list.sort(key=len)
@@ -274,7 +291,6 @@ with WaapiClient() as client:
     # 查找state/switch，再跟表格比对有没有，没有就删除资源及事件引用
     delete_check(switch_dict, switch_create_list, "SwitchContainer")
     delete_check(rnd_dict, rnd_create_list, "RandomSequenceContainer")
-
 
     """******************Switch/State指派********************"""
     # 获取switch容器
@@ -319,4 +335,189 @@ with WaapiClient() as client:
                 #                                  state_children_dict[state_children])
 
         # 撤销结束
-        client.call("ak.wwise.core.undo.endGroup", displayName="rnd创建撤销")
+        # client.call("ak.wwise.core.undo.endGroup", displayName="rnd创建撤销")
+
+        """******************音频资源导入********************"""
+        """修改Wwise内容的名字"""
+
+
+        def change_name_by_wwise_content(obj_id, name, old_name, obj_type):
+            args = {
+                "objects": [
+                    {
+
+                        "object": obj_id,
+                        "name": name,
+                    }
+                ]
+            }
+            client.call("ak.wwise.core.object.set", args)
+            oi_h.print_warning(old_name + "(" + obj_type + ")改名为：" + name)
+
+
+        """获取表格中的事件描述和状态所在的列"""
+
+
+        def get_descrip_and_status_column():
+            pos_column = None
+            require_name_column = None
+            status_column = None
+            if list(amb_config_sheet.rows)[0]:
+                for cell in list(amb_media_sheet.rows)[0]:
+                    if cell.value:
+                        if '资源名称' == str(cell.value):
+                            require_name_column = cell.column
+                            # print(require_name_column)
+                        elif '资源描述' == str(cell.value):
+                            status_column = cell.column
+                            # print(status_column)
+
+            return require_name_column, status_column
+
+
+        """查找对象"""
+
+
+        def find_obj(args):
+            options = {
+                'return': ['name', 'id', 'path', 'notes', 'originalWavFilePath', 'type', 'parent', "Tempo"]
+
+            }
+            obj_sub_list = client.call("ak.wwise.core.object.get", args, options=options)['return']
+            if not obj_sub_list:
+                obj_sub_id = ""
+                obj_sub_path = ""
+            else:
+                obj_sub_id = obj_sub_list[0]['id']
+                obj_sub_path = obj_sub_list[0]['path']
+            return obj_sub_list, obj_sub_id, obj_sub_path
+
+
+        """通用内容创建"""
+
+
+        def create_obj_content(obj_parent_path, obj_type,
+                               obj_name, obj_desc, obj_id):
+            flag = 0
+            obj_id = ""
+            obj_path = ""
+            obj_list = client.call("ak.wwise.core.object.get",
+                                   waapi_h.waql_by_type(obj_type, obj_parent_path),
+                                   options=config.options)['return']
+            # obj已存在
+            for obj_dict in obj_list:
+                if obj_dict['name'] == obj_name:
+                    flag = 1
+                    # 设置notes
+                    set_obj_notes(obj_dict['id'], obj_desc)
+                    obj_id = obj_dict['id']
+                    obj_path = obj_dict['path']
+                    break
+                # 改名了但描述一致
+                elif obj_dict['notes'] == obj_desc:
+                    flag = 2
+                    # 改名
+                    change_name_by_wwise_content(obj_dict['id'], obj_name, obj_dict['name'],
+                                                 obj_type)
+                    obj_id = obj_dict['id']
+                    obj_path = obj_dict['path']
+                    break
+            # obj不存在，需要创建
+            # print(flag)
+            # 不存在则创建
+            if flag == 0:
+                # 创建的rnd属性
+                args = {
+                    # 选择父级
+                    "parent": obj_parent_path,
+                    # 创建类型名称
+                    "type": obj_type,
+                    "name": obj_name,
+                    "notes": obj_desc,
+                }
+                obj_object = client.call("ak.wwise.core.object.create", args)
+                # print(obj_object)
+                obj_id = obj_object['id']
+                _, _, obj_path = find_obj(
+                    {'waql': ' "%s" ' % obj_id})
+                oi_h.print_warning(obj_object['name'] + ":" + obj_type + "已创建")
+
+            return obj_id, obj_path
+
+
+        """音乐资源导入"""
+
+
+        def import_media(amb_name, rnd_path):
+            flag = 0
+            # 音乐资源导入
+            for media_info_name in media_info_dict:
+                # check_name = media_info_name.replace(".wav", "")
+                if amb_name in media_info_name:
+                    media_path = media_info_dict[media_info_name]
+                    # import_media_in_track(media_path, amb_track_path)
+                    client.call("ak.wwise.core.audio.import",
+                                waapi_h.args_sfx_create(media_path, rnd_path, amb_name, "Amb"))
+                    oi_h.print_warning((amb_name + ":媒体资源已导入"))
+                    flag = 1
+                    break
+
+
+        """创建新的amb"""
+
+
+        def create_amb_content(amb_name, amb_desc):
+            flag = 0
+            for rnd_name in rnd_dict:
+                if rnd_name in amb_name:
+                    amb_sound_id, _ = create_obj_content(rnd_dict[rnd_name], "Sound",
+                                                         amb_name,
+                                                         amb_desc, "")
+                    _, _, obj_path = find_obj(
+                        {'waql': ' "%s" ' % rnd_dict[rnd_name]})
+                    import_media(amb_name, obj_path)
+                    flag = 1
+                    break
+            if flag == 0:
+                oi_h.print_error(amb_name + "：无相应前缀的rnd父级，请检查命名是否有误或先创建结构")
+
+
+        amb_name_list = []
+        value_desc_list = []
+
+        value, value_desc = get_descrip_and_status_column()
+        if value:
+            for cell in list(amb_media_sheet.columns)[value - 1]:
+                if (cell.value) and (not 命名规范检查.check_is_chinese(cell.value)):
+                    """名称查重"""
+                    if cell.value not in amb_name_list:
+                        amb_name_list.append(cell.value)
+                        # pprint(cell.value)
+                        """资源描述"""
+                        value_desc_value = amb_media_sheet.cell(row=cell.row,
+                                                                column=value_desc).value
+                        """资源描述检查"""
+                        if value_desc_value:
+                            if value_desc_value not in value_desc_list:
+                                value_desc_list.append(value_desc_value)
+
+                                """音频资源创建"""
+                                create_amb_content(cell.value,
+                                                   value_desc_value)
+
+                            else:
+                                oi_h.print_error(value_desc_value + "：表格中有重复项描述，请检查")
+                        else:
+                            oi_h.print_error(cell.value + "：描述不能为空，请补充")
+                    else:
+                        oi_h.print_error(cell.value + "：表格中有重复项描述，请检查")
+
+    """同步表中删除的内容"""
+    sound_have_dict = get_wwise_type_list(config.wwise_amb_global_path, "Sound")
+
+    # 查找state/switch，再跟表格比对有没有，没有就删除资源及事件引用
+    delete_check(sound_have_dict, amb_name_list, "Sound")
+
+    # 清除复制的媒体资源
+    shutil.rmtree(os.path.join(root_path, 'New_Media'))
+    os.mkdir(os.path.join(root_path, 'New_Media'))

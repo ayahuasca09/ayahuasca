@@ -96,8 +96,8 @@ def args_bank_create(bank_path, obj_path):
     return args
 
 
-# 媒体资源导入的模板
-def args_sfx_create(source_path, obj_id, sub_path):
+# 音乐媒体资源导入的模板
+def args_mus_create(source_path, obj_id, sub_path):
     args = {
         # createNew
         # useExisting：会增加一个新媒体文件但旧的不会删除
@@ -108,6 +108,28 @@ def args_sfx_create(source_path, obj_id, sub_path):
                 "audioFile": source_path,
                 "objectPath": obj_id,
                 "originalsSubFolder": sub_path
+            }
+        ]
+    }
+    return args
+
+
+# client.call("ak.wwise.core.audio.import", args_import)
+
+# sfx媒体资源导入的模板
+def args_sfx_create(source_path, rnd_path, media_name, sub_path):
+    args = {
+        "importOperation": "replaceExisting",
+        "default": {
+            "importLanguage": "SFX"
+        },
+        "imports": [
+            {
+                "audioFile": source_path,
+                "objectPath": rnd_path + '\\<Sound SFX>' + media_name,
+                "originalsSubFolder": sub_path
+                #                                                         名为Test 0的顺序容器            名为My SFX 0 的音效
+                # "objectPath": "\\Actor-Mixer Hierarchy\\Default Work Unit\\<Sequence Container>Test 0\\<Sound SFX>My SFX 0"
             }
         ]
     }

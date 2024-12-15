@@ -514,31 +514,27 @@ with WaapiClient() as client:
                             """名称查重"""
                             if cell.value not in mus_name_list:
                                 mus_name_list.append(cell.value)
+                                # pprint(cell.value)
+                                """资源描述"""
+                                value_desc_value = sheet.cell(row=cell.row,
+                                                              column=value_desc).value
+                                """资源描述检查"""
+                                if value_desc_value:
+                                    if value_desc_value not in value_desc_list:
+                                        value_desc_list.append(value_desc_value)
+                                        """bpm获取"""
+                                        bpm_value, _ = excel_h.check_is_mergecell(sheet.cell(row=cell.row,
+                                                                                             column=bpm), sheet)
+                                        """音频资源创建"""
+                                        create_mus_content(cell.value,
+                                                           value_desc_value)
+                                    else:
+                                        oi_h.print_error(value_desc_value + "：表格中有重复项描述，请检查")
+                                else:
+                                    oi_h.print_error(cell.value + "：描述不能为空，请补充")
+
                             else:
                                 oi_h.print_error(cell.value + "：表格中有重复项描述，请检查")
-
-                            # pprint(cell.value)
-                            """资源描述"""
-                            value_desc_value = sheet.cell(row=cell.row,
-                                                          column=value_desc).value
-                            """资源描述检查"""
-                            if value_desc_value:
-                                if value_desc_value not in value_desc_list:
-                                    value_desc_list.append(value_desc_value)
-                                else:
-                                    oi_h.print_error(value_desc_value + "：表格中有重复项描述，请检查")
-                            else:
-                                oi_h.print_error(cell.value + "：描述不能为空，请补充")
-
-                            """检查是否为分轨"""
-                            is_subtrack = False
-
-                            """bpm获取"""
-                            bpm_value, _ = excel_h.check_is_mergecell(sheet.cell(row=cell.row,
-                                                                                 column=bpm), sheet)
-                            """音频资源创建"""
-                            create_mus_content(cell.value,
-                                               value_desc_value)
 
     """同步表中删除的内容"""
     musegment_have_dict = get_wwise_type_list(config.wwise_mus_global_path, "MusicSegment")
