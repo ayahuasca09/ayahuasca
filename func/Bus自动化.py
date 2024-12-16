@@ -81,6 +81,28 @@ with WaapiClient() as client:
         return wwise_bus_name_name_dict
 
 
+    """obj子级创建"""
+
+
+    # obj_type：要创建的对象类型
+    # parent_type：对象父级类型
+    # obj_list：要创建对象的名称列表
+    # have_obj_path：查找已有对象wwise路径
+
+    def create_wwise_sub_obj(obj_type, parent_type, obj_list, have_obj_path):
+        for obj_name in obj_list:
+            bus_have_dict = get_wwise_type_list(have_obj_path, parent_type)
+            aux_parent = oi_h.find_longest_prefix_key(obj_name, bus_have_dict)
+            if aux_parent:
+                create_wwise_obj(obj_type,
+                                 bus_have_dict[aux_parent], obj_name,
+                                 bus_config_dict[obj_name][value_desc_column - 2])
+
+                # print(bus_config_dict[obj_name][value_desc_column - 2])
+            else:
+                oi_h.print_error(obj_name + "：无相应父级，请检查命名是否正确或先创建父级bus")
+
+
     """Bus创建"""
 
 
@@ -223,6 +245,21 @@ with WaapiClient() as client:
         return require_name_column, status_column, duck_column, aux_column, state_column, break_column
 
 
+    """获取每行bus的配置，将bus名存为字典的键，将配置存为元组"""
+
+
+    def get_sub_bus_config():
+        for row in sheet.iter_rows(min_row=1, max_row=sheet.max_row, min_col=1, max_col=sheet.max_column,
+                                   values_only=True):
+
+            if row[0] and (
+                    not 命名规范检查.check_is_chinese(row[0])) and 命名规范检查.check_by_length_and_word_bool(
+                row[0], 10):
+                key = row[0]
+                if key not in bus_config_dict:
+                    bus_config_dict[key] = row[1:]
+
+
     """*****************主程序处理******************"""
 
     # bus结构创建
@@ -246,10 +283,14 @@ with WaapiClient() as client:
                 set_obj_property(bus_have_dict[bus_have_name], "OverrideColor", True)
                 set_obj_property(bus_have_dict[bus_have_name], "Color", 0)
 
-    # 用于记录要创建的子bus名称
+    # 用于记录要创建的子bus名称及属性
     bus_name_list = []
-    # 用于记录要创建的子aux名称
+    # 用于记录要创建的子aux名称及属性
     aux_name_list = []
+
+    # 所有Bus的配置
+    bus_config_dict = {}
+
     # 资源描述列表
     value_desc_list = []
     aux_have_dict = get_wwise_type_list(config.wwise_bus_path, "AuxBus")
@@ -258,9 +299,17 @@ with WaapiClient() as client:
     if wb["Bus创建"]:
         sheet = wb["Bus创建"]
         require_name_column, value_desc_column, duck_column, aux_column, state_column, break_column = get_descrip_and_status_column()
+        get_sub_bus_config()
+        # 配置获取
         get_create_sub_bus_name_list()
-        pprint(bus_name_list)
-        pprint(aux_name_list)
+        bus_name_list.sort(key=len)
+        aux_name_list.sort(key=len)
+        # 子bus创建
+        create_wwise_sub_obj("AuxBus", "Bus", aux_name_list, config.wwise_bus_path)
+        create_wwise_sub_obj("Bus", "Bus", bus_name_list, config.wwise_bus_path)
+        # pprint(bus_name_list)
+        # pprint(aux_name_list)
+        # pprint(bus_config_dict)
 
     # """同步表中删除的内容"""
     # """对象删除"""
