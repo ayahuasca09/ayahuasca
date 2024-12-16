@@ -319,7 +319,7 @@ list_state_suffix = ['State', 'Type']
 """Bus自动化"""
 excel_bus_path = "Bus资源表.xlsx"
 # 需要排除颜色设置的列表及以Aux开头的
-bus_no_color_list = ['Audio Objects', 'Auxiliary', 'Main Mix', 'SFX']
+bus_no_color_list = ['Audio Objects', 'Auxiliary', 'Main Mix', 'SFX', 'Passthrough Mix']
 
 """Mus自动化"""
 excel_mus_config_path = "Mus结构表.xlsx"

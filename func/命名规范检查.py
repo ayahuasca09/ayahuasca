@@ -101,6 +101,29 @@ def check_by_length_and_word(name, word_list_len):
         return None
 
 
+"""分隔符的大小写和长度检查返回bool"""
+
+
+def check_by_length_and_word_bool(name, word_list_len):
+    word_list = name.split("_")
+    if len(word_list) <= word_list_len:
+        for word in word_list:
+            """判定_的每个都不能超过10个"""
+            if not check_by_str_length(word, config.one_word_len, name):
+                return False
+            """判定_的每个开头必须大写"""
+            if len(word) > 0:
+                # 只需要检查第一个字符，因为istitle会导致检查字符串只能首字母大写
+                if word[0].istitle() == False and word[0].isdigit() == False:
+                    is_title = False
+                    print_error(name + "：通过”_“分隔的每个单词开头都需要大写")
+                    return False
+    else:
+        print_error(name + "：通过”_“分隔的单词个数不能超过" + str(config.word_list_len))
+        return False
+    return True
+
+
 """字符串长度检查"""
 
 
@@ -110,6 +133,9 @@ def check_by_str_length(str1, length, name):
             print_error(name + "：描述后缀名过长，限制字符数为" + str(length))
         else:
             print_error(name + "：通过_切分的某个单词过长，每个单词长度不应超过10个字符，需要再拆分")
+        return False
+    return True
+
 
 
 """基础规范检查"""
@@ -129,7 +155,6 @@ def check_basic(media_name, audio_unit_list, event_unit_list, audio_mixer_list, 
         is_pass = False
 
     return is_pass
-
 
 
 """正则匹配"""
