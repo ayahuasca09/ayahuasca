@@ -347,7 +347,9 @@ with WaapiClient() as client:
 
     def state_event_bank(event_dict):
         # 通过获取事件的颜色：3进行标记1，即状态标记
-        if event_dict['Color'] == 3:
+        # if event_dict['Color'] == 3:
+        #     return 1
+        if "Set_State" in event_dict['name']:
             return 1
         else:
             return is_long_sound(event_dict)

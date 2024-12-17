@@ -18,7 +18,7 @@
   "Char": {
     "module": {
       "Skill": {
-        "property": "((Atk\\d*)|(Hook)|(SkyAtk)|(Battle)|(Dodge)|(Counter)|(Execu\\d*)|(Focus)|(Gen)|(Hit)|(Death)|(Strafe)|(Ult))"
+        "property": "((Expose)|(Atk\\d*)|(Hook)|(SkyAtk)|(Battle)|(Dodge)|(Counter)|(Execu\\d*)|(Focus)|(Gen)|(Hit)|(Death)|(Strafe)|(Ult))"
       },
       "Foley": {
         "property": ".*"
