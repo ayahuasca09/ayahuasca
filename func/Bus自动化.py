@@ -103,6 +103,27 @@ with WaapiClient() as client:
                 oi_h.print_error(obj_name + "：无相应父级，请检查命名是否正确或先创建父级bus")
 
 
+    """obj子级创建"""
+
+
+    # obj_type：要创建的对象类型
+    # parent_type：对象父级类型
+    # obj_list：要创建对象的名称列表
+    # have_obj_path：查找已有对象wwise路径
+
+    def create_wwise_obj_by_excel(obj_type, parent_type, obj_name, have_obj_path, desc_value):
+        bus_have_dict = get_wwise_type_list(have_obj_path, parent_type)
+        aux_parent = oi_h.find_longest_prefix_key(obj_name, bus_have_dict)
+        if aux_parent:
+            create_wwise_obj(obj_type,
+                             bus_have_dict[aux_parent], obj_name,
+                             desc_value)
+
+            # print(bus_config_dict[obj_name][value_desc_column - 2])
+        else:
+            oi_h.print_error(obj_name + "：无相应父级，请检查命名是否正确或先创建父级bus")
+
+
     """Bus创建"""
 
 
@@ -176,6 +197,19 @@ with WaapiClient() as client:
 
             # print()
 
+    """创建Ducking所需要的内容"""
+    def set_ducking():
+        if duck_column:
+            for cell in list(sheet.columns)[duck_column - 1]:
+                if cell.value not in ducking_name_list:
+                    if cell.value not in aux_have_dict:
+                        # aux_name_list.append(cell.value)
+                        # 对象创建
+                        create_wwise_obj_by_excel("AuxBus", "Bus", cell.value,
+                                                  config.wwise_bus_path, value_desc_value)
+                else:
+                    oi_h.print_error(cell.value + "：有共同作用对象，需要发送aux bus")
+
 
     """获取需要创建的Bus列表"""
 
@@ -200,14 +234,20 @@ with WaapiClient() as client:
                                 if "Aux" in cell.value:
                                     if cell.value not in aux_name_list:
                                         if cell.value not in aux_have_dict:
-                                            aux_name_list.append(cell.value)
+                                            # aux_name_list.append(cell.value)
+                                            # 对象创建
+                                            create_wwise_obj_by_excel("AuxBus", "Bus", cell.value,
+                                                                      config.wwise_bus_path, value_desc_value)
                                     else:
                                         oi_h.print_error(value_desc_value + "：表格中有重复项描述，请检查")
 
                                 else:
                                     if cell.value not in bus_name_list:
                                         if cell.value not in bus_have_dict:
-                                            bus_name_list.append(cell.value)
+                                            # bus_name_list.append(cell.value)
+                                            # 对象创建
+                                            create_wwise_obj_by_excel("Bus", "Bus", cell.value,
+                                                                      config.wwise_bus_path, value_desc_value)
                                     else:
                                         oi_h.print_error(value_desc_value + "：表格中有重复项描述，请检查")
 
@@ -245,20 +285,39 @@ with WaapiClient() as client:
         return require_name_column, status_column, duck_column, aux_column, state_column, break_column
 
 
-    """获取每行bus的配置，将bus名存为字典的键，将配置存为元组"""
-
-
-    def get_sub_bus_config():
-        for row in sheet.iter_rows(min_row=1, max_row=sheet.max_row, min_col=1, max_col=sheet.max_column,
-                                   values_only=True):
-
-            if row[0] and (
-                    not 命名规范检查.check_is_chinese(row[0])) and 命名规范检查.check_by_length_and_word_bool(
-                row[0], 10):
-                key = row[0]
-                if key not in bus_config_dict:
-                    bus_config_dict[key] = row[1:]
-
+    # """获取每行bus的配置，将bus名存为字典的键，将配置存为元组"""
+    #
+    #
+    # def get_sub_bus_config():
+    #     for row in sheet.iter_rows(min_row=1, max_row=sheet.max_row, min_col=1, max_col=sheet.max_column,
+    #                                values_only=True):
+    #
+    #         if row[0] and (
+    #                 not 命名规范检查.check_is_chinese(row[0])) and 命名规范检查.check_by_length_and_word_bool(
+    #             row[0], 10):
+    #             key = row[0]
+    #             # if key not in bus_config_dict:
+    #             #     bus_config_dict[key] = row[1:]
+    #
+    #             # openpyxl遍历每行，将第1列值设为字典的键，2-8列设为字典的值，并将每行的字典添加到一个列表，
+    #             # 行可能会有合并单元格，导致某个列有多个值，需要将多个值存在一个列表中，就是这个元组的元素是个列表
+    #             # 初始化一个空列表，用于存储第2到第8列的值
+    #             # 获取合并单元格范围
+    #             merged_cells = sheet.merged_cells.ranges
+    #             values = []
+    #
+    #             # 遍历第2到第8列
+    #             for i in range(1, sheet.max_column):
+    #                 cell_value = row[i]
+    #                 cell = row[i]
+    #                 cell_value = excel_h.check_is_mergecell(cell, sheet)
+    #
+    #                 # 如果不是合并单元格，直接将值添加到列表
+    #                 if not isinstance(cell_value, list):
+    #                     cell_value = [cell_value]
+    #                 values.append(cell_value)
+    #             if key not in bus_config_dict:
+    #                 bus_config_dict[key] = values
 
     """*****************主程序处理******************"""
 
@@ -287,6 +346,9 @@ with WaapiClient() as client:
     bus_name_list = []
     # 用于记录要创建的子aux名称及属性
     aux_name_list = []
+    # 用于记录需要ducking的bus
+    ducking_name_list=[]
+
 
     # 所有Bus的配置
     bus_config_dict = {}
@@ -299,17 +361,20 @@ with WaapiClient() as client:
     if wb["Bus创建"]:
         sheet = wb["Bus创建"]
         require_name_column, value_desc_column, duck_column, aux_column, state_column, break_column = get_descrip_and_status_column()
-        get_sub_bus_config()
-        # 配置获取
-        get_create_sub_bus_name_list()
-        bus_name_list.sort(key=len)
-        aux_name_list.sort(key=len)
+        # get_sub_bus_config()
         # 子bus创建
-        create_wwise_sub_obj("AuxBus", "Bus", aux_name_list, config.wwise_bus_path)
-        create_wwise_sub_obj("Bus", "Bus", bus_name_list, config.wwise_bus_path)
+        get_create_sub_bus_name_list()
+        # bus_name_list.sort(key=len)
+        # aux_name_list.sort(key=len)
+        # 子bus创建
+        # create_wwise_sub_obj("AuxBus", "Bus", aux_name_list, config.wwise_bus_path)
+        # create_wwise_sub_obj("Bus", "Bus", bus_name_list, config.wwise_bus_path)
         # pprint(bus_name_list)
         # pprint(aux_name_list)
         # pprint(bus_config_dict)
+        # Ducking配置检索
+
+
 
     # """同步表中删除的内容"""
     # """对象删除"""

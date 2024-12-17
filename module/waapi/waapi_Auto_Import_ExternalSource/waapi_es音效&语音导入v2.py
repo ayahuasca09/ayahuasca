@@ -126,7 +126,7 @@ def write_dt_excel(vo_id, cell_sound, dt_sheet, cell_es_type):
             if cell.value in value_dict:
                 dt_sheet.cell(row=insert_row, column=cell.column).value = value_dict[cell.value]
     else:
-        oi_h.print_error(cell_sound + ":ES Type请映射请补充在config")
+        oi_h.print_error(cell_sound.value + ":ES Type请映射请补充在config")
 
 
 """写入media_info excel表"""
@@ -196,16 +196,17 @@ def delete_cancel_content(table_name_list):
         cell = sheet_mediainfo.cell(row=row, column=mediainfo_title_dict['MediaName'])
         # pprint(cell.value)
         flag = 0
-        for table_name in table_name_list:
-            # 在media_info表中找到该ID，则删除
-            if table_name in cell.value:
-                flag = 1
-                break
-        if flag == 0:
-            sheet_mediainfo.delete_rows(cell.row)
-            sheet_wwisecookie.delete_rows(cell.row)
-            oi_h.print_warning(cell.value + ":在mediainfo和wwisecookie中删除相关信息")
-            delete_cancel_wem(cell.value)
+        if cell.value:
+            for table_name in table_name_list:
+                # 在media_info表中找到该ID，则删除
+                if table_name in cell.value:
+                    flag = 1
+                    break
+            if flag == 0:
+                sheet_mediainfo.delete_rows(cell.row)
+                sheet_wwisecookie.delete_rows(cell.row)
+                oi_h.print_warning(cell.value + ":在mediainfo和wwisecookie中删除相关信息")
+                delete_cancel_wem(cell.value)
 
 
 """检查是否以CG_External_或VO_External_开头"""
@@ -297,7 +298,8 @@ def auto_gen_es_file(file_wav_dict):
                             if cell_sound.value and (cell_sound.value != "文件名"):
 
                                 """查找文件"""
-                                if cell_sound.value in file_wav_name:
+                                if (cell_sound.value in file_wav_name) and (cell_sound.value not in excel_name_list):
+                                    excel_name_list.append(cell_sound.value)
                                     flag = 1
                                     if sheet.cell(row=cell_sound.row, column=excel_h.sheet_title_column("State",
                                                                                                         title_colunmn_dict)).value != 'cancel':
@@ -317,10 +319,10 @@ def auto_gen_es_file(file_wav_dict):
                                                 column=excel_h.sheet_title_column("External_Type",
                                                                                   title_colunmn_dict)).value
                                             if external_sound_dict['parent']['name'] == cell_es_type:
-                                                # pprint(external_sound_dict['shortId'])
+                                                # print(cell_es_type)
+                                                # print(external_sound_dict['shortId'])
                                                 # 查找mediainfo表的id有没有，没有则添加，有则修改内容
                                                 vo_id = excel_h.create_id(config.es_id_config, i, sheet_mediainfo)
-
                                                 # 写入media_info excel表
                                                 write_media_info_excel(vo_id, cell_sound)
                                                 # # 写入wwise_cookie excel表
@@ -337,11 +339,10 @@ def auto_gen_es_file(file_wav_dict):
                                                 oi_h.print_warning(file_wav_name + "：已导入")
                                                 is_wwise_have = 1
                                                 break
+
                                         if is_wwise_have == 0:
                                             oi_h.print_error(
                                                 file_wav_name + "：在Wwise中未建立相应容器，请检查填写是否正确或Wwise中容器是否存在")
-
-                                    break
 
                 wb.save(file_path_xlsx)
 
@@ -396,6 +397,7 @@ with (WaapiClient() as client):
     external_sound_list = external_vo_list + external_sfx_list
 
     """*******************主程序*******************"""
+    excel_name_list = []
 
     # 命名规范检查
     if check_name():
@@ -413,7 +415,7 @@ with (WaapiClient() as client):
             # pprint(doc.toprettyxml())
             # 复制xml为wsources
             shutil.copy2(os.path.join(py_path, config.es_xml_path),
-                         os.path.join(py_path, config.es_wsources_path))
+                         config.external_input_path)
 
             gen_external(language)
 
@@ -425,7 +427,7 @@ with (WaapiClient() as client):
 
             # 将删除的xml内容写入wsources
             shutil.copy2(os.path.join(py_path, config.es_xml_path),
-                         os.path.join(py_path, config.es_wsources_path))
+                         config.external_input_path)
 
         # 删除xml的内容
         doc = parse(config.es_xml_path)

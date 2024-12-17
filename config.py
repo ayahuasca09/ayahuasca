@@ -78,10 +78,10 @@ cg_external_path = "\\Actor-Mixer Hierarchy\\v1\\CG\\CG\\CG_External"
 
 # xml路径
 es_xml_path = 'ExternalSource.xml'
-es_wsources_path = 'ExternalSource.wsources'
+
 
 # external的输入输出路径
-external_input_path = "/module/waapi/waapi_Auto_Import_ExternalSource/ExternalSource.wsources"
+external_input_path = r"F:\pppppy\SP\module\waapi\waapi_Auto_Import_ExternalSource\ExternalSource.wsources"
 external_output_win_path = 'S:\\Ver_1.0.0\\Project\\Content\\Audio\\GeneratedExternalSources\\Windows'
 external_output_android_path = 'S:\\Ver_1.0.0\\Project\\Content\\Audio\\GeneratedExternalSources\\Android'
 external_output_ios_path = 'S:\\Ver_1.0.0\\Project\\Content\\Audio\\GeneratedExternalSources\\iOS'
@@ -123,7 +123,13 @@ es_id_config = {
 
 es_event_id_dict = {
     "CG_External_1P_2D": 36003,
-    "VO_External_1P_2D": 15001
+    "VO_External_1P_2D": 15001,
+    "VO_External_1P_3D": 15157,
+    "VO_External_3P_2D": 15158,
+    "VO_External_3P_3D": 15159,
+    "VO_External_NPC_2D": 15156,
+    "VO_External_NPC_3D": 15155,
+
 }
 
 """WAAPI查询"""
