@@ -2,6 +2,7 @@ import os
 
 from waapi import WaapiClient
 import openpyxl
+import re
 from pprint import pprint
 
 import config
@@ -41,6 +42,47 @@ wb = openpyxl.load_workbook(excel_bus_path)
 
 with WaapiClient() as client:
     """*****************Wwise功能区******************"""
+
+
+    # 设置对象引用
+    def set_obj_refer(obj_id, refer, value):
+        args = {
+            "object": obj_id,
+            "reference": refer,
+            "value": value
+        }
+        client.call("ak.wwise.core.object.setReference", args)
+
+
+    """修改Wwise内容的名字"""
+
+
+    def change_name_by_wwise_content(obj_id, name, old_name, obj_type):
+        args = {
+            "objects": [
+                {
+
+                    "object": obj_id,
+                    "name": name,
+                }
+            ]
+        }
+        client.call("ak.wwise.core.object.set", args)
+        oi_h.print_warning(old_name + "(" + obj_type + ")改名为：" + name)
+
+
+    """设置obj的notes"""
+
+
+    def set_obj_notes(obj_id, notes_value):
+        args = {
+            'object': obj_id,
+            'value': notes_value
+        }
+        client.call("ak.wwise.core.object.setNotes", args)
+        # print_warning(obj_name + "描述更改为：" + notes_value)
+
+
     """设置对象属性"""
 
 
@@ -81,6 +123,57 @@ with WaapiClient() as client:
         return wwise_bus_name_name_dict
 
 
+    """list中以_拆分的元素都必须在list2以_拆分的元素中"""
+
+
+    # 遍历 `list1`：对于 `list1` 中的每个元素，将其用下划线分隔
+    # 遍历 `list2`：对于 `list2` 中的每个元素，同样进行分隔
+    # list2中的元素必须都得在list1中找到
+
+    def check_word(list1, list2):
+        list_1 = list1.split('_')
+        list_2 = list2.split('_')
+        for name2 in list_2:
+            if name2 not in list_1:
+                pprint(list1 + "：拼写有误，请检查")
+                return False
+        return True
+
+
+    """获取最长共同前缀"""
+
+
+    def longest_common_prefix(s1, s2):
+        """Helper function to find the longest common prefix of two strings."""
+        min_length = min(len(s1), len(s2))
+        for i in range(min_length):
+            if s1[i] != s2[i]:
+                return s1[:i]
+        return s1[:min_length]
+
+
+    """在字典中查找最长共同前缀的值，且字典值长度需小于target"""
+
+
+    def find_longest_prefix_key(target, dictionary):
+        max_prefix_length = 0
+        best_key = None
+
+        for key in dictionary.keys():
+            if key in target:
+                if len(key) < len(target):
+                    prefix = longest_common_prefix(target, key)
+                    if len(prefix) > max_prefix_length:
+                        max_prefix_length = len(prefix)
+                        best_key = key
+        if best_key:
+            if check_word(target, best_key):
+                return best_key
+            else:
+                return None
+        return best_key
+
+
     """obj子级创建"""
 
 
@@ -92,7 +185,7 @@ with WaapiClient() as client:
     def create_wwise_sub_obj(obj_type, parent_type, obj_list, have_obj_path):
         for obj_name in obj_list:
             bus_have_dict = get_wwise_type_list(have_obj_path, parent_type)
-            aux_parent = oi_h.find_longest_prefix_key(obj_name, bus_have_dict)
+            aux_parent = find_longest_prefix_key(obj_name, bus_have_dict)
             if aux_parent:
                 create_wwise_obj(obj_type,
                                  bus_have_dict[aux_parent], obj_name,
@@ -113,11 +206,13 @@ with WaapiClient() as client:
 
     def create_wwise_obj_by_excel(obj_type, parent_type, obj_name, have_obj_path, desc_value):
         bus_have_dict = get_wwise_type_list(have_obj_path, parent_type)
-        aux_parent = oi_h.find_longest_prefix_key(obj_name, bus_have_dict)
+        aux_parent = find_longest_prefix_key(obj_name, bus_have_dict)
         if aux_parent:
-            create_wwise_obj(obj_type,
-                             bus_have_dict[aux_parent], obj_name,
-                             desc_value)
+            # create_wwise_obj(obj_type,
+            #                  bus_have_dict[aux_parent], obj_name,
+            #                  desc_value)
+            create_obj_content(bus_have_dict[aux_parent], obj_type,
+                               obj_name, desc_value)
 
             # print(bus_config_dict[obj_name][value_desc_column - 2])
         else:
@@ -140,7 +235,7 @@ with WaapiClient() as client:
                     # Wwise里没有unit的的
                     if bus_name not in unit_have_dict:
                         # 查找该unit需要放的父级是谁
-                        bus_name_parent = oi_h.find_longest_prefix_key(bus_name, unit_have_dict)
+                        bus_name_parent = find_longest_prefix_key(bus_name, unit_have_dict)
                         # 根目录创建
                         if not bus_name_parent:
                             oi_h.print_error(bus_name + "：未找到可以存放的父级Unit，请创建")
@@ -160,7 +255,7 @@ with WaapiClient() as client:
                     bus_have_dict = get_wwise_type_list(config.wwise_bus_path, "Bus")
                     if bus_name not in bus_have_dict:
                         # 查找该unit需要放的父级是谁
-                        bus_name_parent = oi_h.find_longest_prefix_key(bus_name, bus_have_dict)
+                        bus_name_parent = find_longest_prefix_key(bus_name, bus_have_dict)
                         # Bus创建
                         bus_object = create_wwise_obj("Bus",
                                                       bus_have_dict[bus_name_parent], bus_name,
@@ -197,18 +292,139 @@ with WaapiClient() as client:
 
             # print()
 
+
+    """通用内容创建"""
+
+
+    def create_obj_content(obj_parent_path, obj_type,
+                           obj_name, obj_desc):
+        flag = 0
+        obj_id = ""
+        # 查找此obj是否存在
+        obj_list = client.call("ak.wwise.core.object.get",
+                               waapi_h.waql_by_type(obj_type, obj_parent_path),
+                               options=config.options)['return']
+        # obj已存在
+        for obj_dict in obj_list:
+            if obj_dict['name'] == obj_name:
+                flag = 1
+                # 设置notes
+                set_obj_notes(obj_dict['id'], obj_desc)
+                obj_id = obj_dict['id']
+                break
+            # 改名了但描述一致
+            elif obj_dict['notes'] == obj_desc:
+                flag = 2
+                # 改名
+                change_name_by_wwise_content(obj_dict['id'], obj_name, obj_dict['name'],
+                                             obj_type)
+                obj_id = obj_dict['id']
+                break
+        # obj不存在，需要创建
+        # 不存在则创建
+        if flag == 0:
+            obj_object = None
+            if obj_type == "Effect":
+                args = waapi_h.args_effect_create(obj_parent_path, 8454147,
+                                                  obj_name)
+                obj_list = client.call("ak.wwise.core.object.set", args)
+                # pprint(obj_list)
+                obj_object = obj_list['objects'][0]['children'][0]
+            else:
+                args = waapi_h.args_object_create(obj_parent_path, obj_type,
+                                                  obj_name, obj_desc)
+                obj_object = client.call("ak.wwise.core.object.create", args)
+                # print(obj_object)
+            obj_id = obj_object['id']
+            oi_h.print_warning(obj_object['name'] + ":" + obj_type + "已创建")
+        set_obj_property(obj_id, "OverrideColor", False)
+        return obj_id
+
+
+    """ducking metter指派"""
+
+
+    def set_source_meter_and_rtpc(rtpc_name):
+        flag = 0
+        rtpc_id = None
+        meter_id = None
+        # rtpc创建
+        for rtpc_unit_name in rtpc_unit_have_dict:
+            pattern = f"^{re.escape(rtpc_unit_name)}"
+            if re.match(pattern, rtpc_name):
+                flag = 1
+                rtpc_id = create_obj_content(rtpc_unit_have_dict[rtpc_unit_name], "GameParameter",
+                                             rtpc_name, "")
+        if flag == 0:
+            oi_h.print_error(rtpc_name + "：未找到相应的rtpc unit父级，请检查")
+
+        # effect创建
+        for effect_unit_name in effect_ducking_unit_have_dict:
+            # print(effect_unit_name)
+            pattern = f"^{re.escape(effect_unit_name)}"
+            if re.match(pattern, rtpc_name):
+                flag = 1
+                # meter创建
+                meter_id = create_obj_content(effect_ducking_unit_have_dict[effect_unit_name], "Effect",
+                                              rtpc_name, "")
+
+        if flag == 0:
+            oi_h.print_error(rtpc_name + "：未找到相应的meter unit父级，请检查")
+
+        return rtpc_id, meter_id
+
+
+    """设置目标的rtpc"""
+
+
+    #   'ControlInput': {'id': '{5D509B17-5562-4145-83B0-414A6107374F}',
+    #                    'name': 'Aux_Ducking_Mus'},
+
+    def set_target_rtpc(target_bus_id, rtpc_id, target_bus_name):
+        # 先查找目标上的RTPC是否存在，若存在则不创建
+        rtpc_list = client.call("ak.wwise.core.object.get",
+                                waapi_h.waql_find_RTPC(target_bus_id),
+                                options=config.options)['return']
+
+        if rtpc_list:
+            for rtpc_dict in rtpc_list:
+                if rtpc_dict['ControlInput']['id'] == rtpc_id:
+                    return
+        args = waapi_h.args_rtpc_ducking_create(target_bus_id, rtpc_id)
+        create_rtpc_list = client.call("ak.wwise.core.object.set", args)
+        oi_h.print_warning(target_bus_name + "：ducking目标已设置相应rtpc")
+
+
     """创建Ducking所需要的内容"""
+
+
     def set_ducking():
         if duck_column:
             for cell in list(sheet.columns)[duck_column - 1]:
-                if cell.value not in ducking_name_list:
-                    if cell.value not in aux_have_dict:
-                        # aux_name_list.append(cell.value)
-                        # 对象创建
-                        create_wwise_obj_by_excel("AuxBus", "Bus", cell.value,
-                                                  config.wwise_bus_path, value_desc_value)
-                else:
-                    oi_h.print_error(cell.value + "：有共同作用对象，需要发送aux bus")
+                if (cell.value) and (
+                        not 命名规范检查.check_is_chinese(cell.value)):
+                    if cell.value not in ducking_name_list:
+                        if cell.value in bus_have_dict:
+                            # 源查找
+                            source_name, _ = excel_h.check_is_mergecell(sheet.cell(row=cell.row,
+                                                                                   column=require_name_column), sheet)
+                            if source_name:
+                                rtpc_name = source_name + "_Ducking"
+                                # print(source_name)
+                                # 设置源的rtpc和meter
+                                rtpc_id, meter_id = set_source_meter_and_rtpc(rtpc_name)
+                                # 设置目标的rtpc
+                                set_target_rtpc(bus_have_dict[cell.value], rtpc_id, cell.value)
+                            else:
+                                oi_h.print_error(cell.value + "：要ducking的bus无source bus的名称，请检查")
+
+
+
+
+                        else:
+                            oi_h.print_error(cell.value + "：要ducking的bus在wwise中未创建，请检查名称或先创建bus")
+                    else:
+                        oi_h.print_error(cell.value + "：有共同作用对象，需要发送aux bus")
 
 
     """获取需要创建的Bus列表"""
@@ -233,21 +449,20 @@ with WaapiClient() as client:
                                 """名称查重及列表添加"""
                                 if "Aux" in cell.value:
                                     if cell.value not in aux_name_list:
-                                        if cell.value not in aux_have_dict:
-                                            # aux_name_list.append(cell.value)
-                                            # 对象创建
-                                            create_wwise_obj_by_excel("AuxBus", "Bus", cell.value,
-                                                                      config.wwise_bus_path, value_desc_value)
+                                        # 对象创建
+                                        create_wwise_obj_by_excel("AuxBus", "Bus", cell.value,
+                                                                  config.wwise_bus_path, value_desc_value)
+
+
                                     else:
                                         oi_h.print_error(value_desc_value + "：表格中有重复项描述，请检查")
 
                                 else:
                                     if cell.value not in bus_name_list:
-                                        if cell.value not in bus_have_dict:
-                                            # bus_name_list.append(cell.value)
-                                            # 对象创建
-                                            create_wwise_obj_by_excel("Bus", "Bus", cell.value,
-                                                                      config.wwise_bus_path, value_desc_value)
+                                        create_wwise_obj_by_excel("Bus", "Bus", cell.value,
+                                                                  config.wwise_bus_path, value_desc_value)
+
+
                                     else:
                                         oi_h.print_error(value_desc_value + "：表格中有重复项描述，请检查")
 
@@ -347,8 +562,7 @@ with WaapiClient() as client:
     # 用于记录要创建的子aux名称及属性
     aux_name_list = []
     # 用于记录需要ducking的bus
-    ducking_name_list=[]
-
+    ducking_name_list = []
 
     # 所有Bus的配置
     bus_config_dict = {}
@@ -356,6 +570,16 @@ with WaapiClient() as client:
     # 资源描述列表
     value_desc_list = []
     aux_have_dict = get_wwise_type_list(config.wwise_bus_path, "AuxBus")
+
+    # rtpc unit字典
+    rtpc_unit_have_dict = get_wwise_type_list(config.wwise_rtpc_path, "WorkUnit")
+    # effect ducking unit字典
+    effect_ducking_unit_have_dict = get_wwise_type_list(config.wwise_effect_ducking_path, "WorkUnit")
+    # pprint(effect_ducking_unit_have_dict)
+    # rtpc列表
+    rtpc_have_dict = get_wwise_type_list(config.wwise_rtpc_path, "GameParameter")
+    # 获取Meter
+    meter_have_dict = get_wwise_type_list(config.wwise_effect_ducking_path, "Effect")
 
     # 子bus创建
     if wb["Bus创建"]:
@@ -373,8 +597,8 @@ with WaapiClient() as client:
         # pprint(aux_name_list)
         # pprint(bus_config_dict)
         # Ducking配置检索
-
-
+        bus_have_dict = get_wwise_type_list(config.wwise_bus_path, "Bus")
+        set_ducking()
 
     # """同步表中删除的内容"""
     # """对象删除"""

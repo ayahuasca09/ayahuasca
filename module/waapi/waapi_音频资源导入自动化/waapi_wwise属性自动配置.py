@@ -309,7 +309,7 @@ with WaapiClient() as client:
                         set_obj_property(sound_dict['id'], "IsZeroLatency", False)
                     else:
                         set_obj_property(sound_dict['id'], "IsZeroLatency", True)
-                    # 循环声需要缓存，其他不需要
+                    # 循环声需要禁用缓存，其他不需要
                     if 'IsLoopingEnabled' in sound_dict:
                         if sound_dict['IsLoopingEnabled']:
                             set_obj_property(sound_dict['id'], "IsNonCachable", False)

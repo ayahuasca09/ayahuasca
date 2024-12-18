@@ -14,6 +14,11 @@ def find_obj(obj_list):
 """WAQL查询"""
 
 
+# 查找某个对象的RTPC
+def waql_find_RTPC(obj_id_or_path):
+    return {'waql': ' "%s" select RTPC  ' % obj_id_or_path}
+
+
 # 通过type查询
 def waql_by_type(waql_type, obj_id_or_path):
     return {'waql': ' "%s" select descendants where type = "%s" ' % (obj_id_or_path, waql_type)}
@@ -42,6 +47,53 @@ def waql_find_children(waql_id):
 """args模板"""
 
 
+# ducking rtpc模板
+def args_rtpc_ducking_create(obj_id, rtpc_id):
+    args = {
+        "objects": [
+            {
+                "object": obj_id,
+                "@RTPC": [
+                    {
+                        "type": "RTPC",
+                        "name": "",
+                        "@Curve": {
+                            "type": "Curve",
+                            "points": [
+                                {
+                                    "x": -48,
+                                    "y": 0,
+                                    "shape": "Linear"
+                                },
+                                {
+                                    "x": 0,
+                                    "y": -6,
+                                    "shape": "Linear"
+                                }
+                            ]
+                        },
+                        # "notes": "a new rtpc",
+                        "@PropertyName": "OutputBusVolume",
+                        "@ControlInput": rtpc_id
+                        # ControlInput填的是rtpc的id
+                    }
+                ]
+            }
+
+        ]
+    }
+    return args
+
+
+# wwise_info_list = client.call("ak.wwise.core.object.set", args)
+# pprint(wwise_info_list)
+# RTPC的类型就是RTPC，id是@RTPC的id
+# {'objects': [{'@RTPC': [{'id': '{368C32DE-C9E1-4950-ABA3-78E33FF85CAF}',
+#                          'name': ''}],
+#               'id': '{02AA9D36-C4CB-45D4-B0EC-9B17749258E3}',
+#               'name': 'Mon'}]}
+
+
 # 创建obj的模板
 def args_object_create(parent, type, name, notes):
     args = {
@@ -54,6 +106,60 @@ def args_object_create(parent, type, name, notes):
         "onNameConflict": "replace"
     }
     return args
+
+
+# 创建effects的模板
+def args_effect_create(parent, type, name):
+    args = {
+        "objects": [
+            {
+                "object": parent,
+                "children": [
+                    {
+                        "type": "Effect",
+                        "name": name,
+                        "classId": type,
+                    }
+                ]
+            }
+        ],
+        "onNameConflict": "merge"
+
+    }
+    return args
+
+
+# 参考代码
+# #!/usr/bin/env python3
+# from waapi import WaapiClient, CannotConnectToWaapiException
+# from pprint import pprint
+#
+# try:
+#     # Connecting to Waapi using default URL
+#     with WaapiClient() as client:
+#         args = {
+#             "objects": [
+#                 {
+#                     "object": "\\Effects\\Amb",
+#                     "children": [
+#                         {
+#                             "type": "Effect",
+#                             "name": "MyTestEffect",
+#                             "classId": 8454147, # Meter
+#                             "@AttackTime": 10,
+#                         }
+#                     ]
+#                 }
+#             ],
+#             "onNameConflict": "merge"
+#         }
+#
+#
+#         result = client.call("ak.wwise.core.object.set", args)
+#         pprint(result)
+#
+# except CannotConnectToWaapiException:
+#     print("Could not connect to Waapi: Is Wwise running and Wwise Authoring API enabled?")
 
 
 # 创建rnd的模板

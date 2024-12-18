@@ -492,16 +492,72 @@ with WaapiClient() as client:
     # amb_2d_list = list(map(extract_key, obj_sub_list))
     # pprint(amb_2d_list)
 
-    """获取选中对象的属性"""
-    """获取选中对象的打包流媒体的路径"""
-    objects_list = client.call("ak.wwise.ui.getSelectedObjects")['objects']
-    obj_id = objects_list[0]['id']
-    print(obj_id)
+    """RTPC创建测试"""
+
+    # args = {
+    #     "objects": [
+    #         {
+    #             "object": "{02AA9D36-C4CB-45D4-B0EC-9B17749258E3}",
+    #             "@RTPC": [
+    #                 {
+    #                     "type": "RTPC",
+    #                     "name": "",
+    #                     "@Curve": {
+    #                         "type": "Curve",
+    #                         "points": [
+    #                             {
+    #                                 "x": -48,
+    #                                 "y": 0,
+    #                                 "shape": "Linear"
+    #                             },
+    #                             {
+    #                                 "x": 0,
+    #                                 "y": -6,
+    #                                 "shape": "Linear"
+    #                             }
+    #                         ]
+    #                     },
+    #                     # "notes": "a new rtpc",
+    #                     "@PropertyName": "OutputBusVolume",
+    #                     "@ControlInput": "{5D509B17-5562-4145-83B0-414A6107374F}"
+    #                     # ControlInput填的是rtpc的名子
+    #                 }
+    #             ]
+    #         }
+    #
+    #     ]
+    # }
+    #
+    # wwise_info_list = client.call("ak.wwise.core.object.set", args)
+    # pprint(wwise_info_list)
+    # RTPC的类型就是RTPC，id是@RTPC的id
+    # {'objects': [{'@RTPC': [{'id': '{368C32DE-C9E1-4950-ABA3-78E33FF85CAF}',
+    #                          'name': ''}],
+    #               'id': '{02AA9D36-C4CB-45D4-B0EC-9B17749258E3}',
+    #               'name': 'Mon'}]}
+
+    # """获取选中对象的属性"""
+    # """获取选中对象的打包流媒体的路径"""
+    # objects_list = client.call("ak.wwise.ui.getSelectedObjects")['objects']
+    # obj_id = objects_list[0]['id']
+    # print(obj_id)
+    # args = {
+    #     'waql': '"%s"' % obj_id
+    # }
+    # options = {
+    #     'return': ['name', 'Color', 'maxDurationSource', 'type', 'pluginname']
+    # }
+    # # 存储了所有Event的单元结构
+    # wwise_info_list = client.call("ak.wwise.core.object.get", args, options=options)['return']
+    # pprint(wwise_info_list)
+
+    """获取某个id的obj的信息"""
     args = {
-        'waql': '"%s"' % obj_id
+        'waql': '"%s" select RTPC where notes="%s"' % ("{02AA9D36-C4CB-45D4-B0EC-9B17749258E3}", "a new rtpc")
     }
     options = {
-        'return': ['name', 'Color', 'maxDurationSource']
+        'return': ['name', 'Color', 'maxDurationSource', 'type', 'pluginname', 'parent', 'owner', "RTPC", 'notes', 'id',
+                   'ControlInput']
     }
     # 存储了所有Event的单元结构
     wwise_info_list = client.call("ak.wwise.core.object.get", args, options=options)['return']

@@ -55,6 +55,10 @@ trig_path = "{94BBA60A-29EF-4328-83E8-075770BF2687}"
 trig_event_path = "{EDD34B59-3938-4C22-A63D-838FD8DCD57E}"
 """媒体资源路径"""
 original_path = r'S:\chen.gong_DCC_Audio\Audio\SilverPalace_WwiseProject\Originals\SFX'
+"""rtpc路径"""
+wwise_rtpc_path = "\\Game Parameters"
+"""meter_path"""
+wwise_effect_ducking_path = "\\Effects\\Ducking"
 
 """External Source"""
 # excel表路径
@@ -78,7 +82,6 @@ cg_external_path = "\\Actor-Mixer Hierarchy\\v1\\CG\\CG\\CG_External"
 
 # xml路径
 es_xml_path = 'ExternalSource.xml'
-
 
 # external的输入输出路径
 external_input_path = r"F:\pppppy\SP\module\waapi\waapi_Auto_Import_ExternalSource\ExternalSource.wsources"
@@ -137,7 +140,7 @@ es_event_id_dict = {
 options = {
     'return': ['name', 'id', 'notes', 'originalWavFilePath', 'isIncluded', 'IsLoopingEnabled',
                'musicPlaylistRoot', 'LoopCount', 'PlaylistItemType', 'owner', 'parent', 'type',
-               'Sequences', 'path', 'shortId', 'Inclusion', 'Target', 'ActionType', "Color", 'maxDurationSource']
+               'Sequences', 'path', 'shortId', 'Inclusion', 'Target', 'ActionType', "Color", 'maxDurationSource','ControlInput']
 
 }
 

@@ -4,27 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="17a8a927-0db7-41d4-8f81-9181fc87e6d9" name="更改" comment="event持有修改">
-      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/Excel/C类（操控演员表演，接管镜头）剧情语音.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/SilverPalace战斗音频需求资源管理表.xlsx" afterDir="false" />
+    <list default="true" id="17a8a927-0db7-41d4-8f81-9181fc87e6d9" name="更改" comment="es自动化——修复问题">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/files/Bus自动化/Bus资源表.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/files/Bus自动化/Bus资源表.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/files/ID表生成/Audio.csv" beforeDir="false" afterPath="$PROJECT_DIR$/files/ID表生成/Audio.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/files/ID表生成/Audio.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/files/ID表生成/Audio.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/func/Bus自动化.py" beforeDir="false" afterPath="$PROJECT_DIR$/func/Bus自动化.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/csv/csv_h.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/csv/csv_h.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/DT_AudioPlotInfo.csv" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/DT_AudioPlotInfo.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/DT_AudioPlotInfo.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/DT_AudioPlotInfo.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/DT_AudioPlotSoundInfo.csv" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/DT_AudioPlotSoundInfo.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/DT_AudioPlotSoundInfo.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/DT_AudioPlotSoundInfo.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/Excel/B类（LevelSequence）剧情语音.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/Excel/B类（LevelSequence）剧情音效.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/ExternalSourceDefaultMedia.csv" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/ExternalSourceDefaultMedia.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/ExternalSourceDefaultMedia.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/ExternalSourceDefaultMedia.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/MediaInfoTable.csv" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/MediaInfoTable.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/MediaInfoTable.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/MediaInfoTable.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/waapi_es音效&amp;语音导入v2.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/waapi_es音效&amp;语音导入v2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_h.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_h.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/SilverPalace战斗音频需求资源管理表.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/waapi_wwise属性自动配置.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/waapi_wwise属性自动配置.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -169,7 +159,7 @@
       <visibility group="运行配置" flag="true" />
     </myKeys>
   </component>
-  <component name="RunManager" selected="Python.waapi_es音效&amp;语音导入v2">
+  <component name="RunManager" selected="Python.Bus自动化">
     <configuration name="Bus自动化" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="SP" />
       <option name="ENV_FILES" value="" />
@@ -184,28 +174,6 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/func/Bus自动化.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="csv_h" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="SP" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/module/csv" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/module/csv/csv_h.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -258,7 +226,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="waapi_es音效导入(飞书云版）" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="waapi_音频资源导入_从表导入" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="SP" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -267,11 +235,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/waapi_es音效导入(飞书云版）.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/waapi_音频资源导入_从表导入.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -280,7 +248,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="waapi_es音效&amp;语音导入v2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="waapi_音频资源导入_从媒体资源导入" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="SP" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -289,11 +257,33 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/module/waapi/waapi_Auto_Import_ExternalSource/waapi_es音效&amp;语音导入v2.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/waapi_音频资源导入_从媒体资源导入.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="waapi_test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="SP" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/module/waapi" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/module/waapi/waapi_test.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -304,11 +294,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.waapi_es音效&amp;语音导入v2" />
-        <item itemvalue="Python.csv_h" />
-        <item itemvalue="Python.waapi_音频资源全流程生成" />
-        <item itemvalue="Python.waapi_es音效导入(飞书云版）" />
         <item itemvalue="Python.Bus自动化" />
+        <item itemvalue="Python.waapi_test" />
+        <item itemvalue="Python.waapi_音频资源全流程生成" />
+        <item itemvalue="Python.waapi_音频资源导入_从媒体资源导入" />
+        <item itemvalue="Python.waapi_音频资源导入_从表导入" />
       </list>
     </recent_temporary>
   </component>
@@ -327,14 +317,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1716955384994</updated>
-    </task>
-    <task id="LOCAL-00101" summary="ES语音在线表读取">
-      <option name="closed" value="true" />
-      <created>1730371631972</created>
-      <option name="number" value="00101" />
-      <option name="presentableId" value="LOCAL-00101" />
-      <option name="project" value="LOCAL" />
-      <updated>1730371631972</updated>
     </task>
     <task id="LOCAL-00102" summary="ES音效自动化流程：数据转list">
       <option name="closed" value="true" />
@@ -720,7 +702,15 @@
       <option name="project" value="LOCAL" />
       <updated>1734402888867</updated>
     </task>
-    <option name="localTasksCounter" value="150" />
+    <task id="LOCAL-00150" summary="es自动化——修复问题">
+      <option name="closed" value="true" />
+      <created>1734444390548</created>
+      <option name="number" value="00150" />
+      <option name="presentableId" value="LOCAL-00150" />
+      <option name="project" value="LOCAL" />
+      <updated>1734444390548</updated>
+    </task>
+    <option name="localTasksCounter" value="151" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -736,7 +726,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="全流程自动化：导入表的命名规范检查" />
     <MESSAGE value="全流程自动化：导入表的命名规范检查及unit收集" />
     <MESSAGE value="全流程自动化：准备创建unit" />
     <MESSAGE value="全流程自动化：收集各个unit列表，合并收集规则" />
@@ -761,20 +750,21 @@
     <MESSAGE value="Bus自动化生成:要生成的子列表获取" />
     <MESSAGE value="子Bus自动化生成，包括notes添加" />
     <MESSAGE value="event持有修改" />
-    <option name="LAST_COMMIT_MESSAGE" value="event持有修改" />
+    <MESSAGE value="es自动化——修复问题" />
+    <option name="LAST_COMMIT_MESSAGE" value="es自动化——修复问题" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/func/Bus自动化.py</url>
-          <line>113</line>
-          <option name="timeStamp" value="6" />
+          <line>346</line>
+          <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/func/Bus自动化.py</url>
-          <line>200</line>
-          <option name="timeStamp" value="7" />
+          <line>382</line>
+          <option name="timeStamp" value="9" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
