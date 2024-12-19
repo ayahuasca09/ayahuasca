@@ -4,17 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="17a8a927-0db7-41d4-8f81-9181fc87e6d9" name="更改" comment="es自动化——修复问题">
+    <list default="true" id="17a8a927-0db7-41d4-8f81-9181fc87e6d9" name="更改" comment="Bus指派自动化生成">
+      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/SilverPalace战斗音频需求资源管理表 (13).xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/files/Bus自动化/Bus资源表.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/files/Bus自动化/Bus资源表.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/ID表生成/Audio.csv" beforeDir="false" afterPath="$PROJECT_DIR$/files/ID表生成/Audio.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/ID表生成/Audio.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/files/ID表生成/Audio.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/func/Bus自动化.py" beforeDir="false" afterPath="$PROJECT_DIR$/func/Bus自动化.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/module/waapi/waapi_h.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_h.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/module/waapi/waapi_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/SilverPalace战斗音频需求资源管理表.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/waapi_wwise属性自动配置.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/waapi_wwise属性自动配置.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -317,14 +313,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1716955384994</updated>
-    </task>
-    <task id="LOCAL-00102" summary="ES音效自动化流程：数据转list">
-      <option name="closed" value="true" />
-      <created>1730388106964</created>
-      <option name="number" value="00102" />
-      <option name="presentableId" value="LOCAL-00102" />
-      <option name="project" value="LOCAL" />
-      <updated>1730388106964</updated>
     </task>
     <task id="LOCAL-00103" summary="ES音效自动化流程">
       <option name="closed" value="true" />
@@ -710,7 +698,15 @@
       <option name="project" value="LOCAL" />
       <updated>1734444390548</updated>
     </task>
-    <option name="localTasksCounter" value="151" />
+    <task id="LOCAL-00151" summary="Bus指派自动化生成">
+      <option name="closed" value="true" />
+      <created>1734534647624</created>
+      <option name="number" value="00151" />
+      <option name="presentableId" value="LOCAL-00151" />
+      <option name="project" value="LOCAL" />
+      <updated>1734534647624</updated>
+    </task>
+    <option name="localTasksCounter" value="152" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -726,7 +722,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="全流程自动化：导入表的命名规范检查及unit收集" />
     <MESSAGE value="全流程自动化：准备创建unit" />
     <MESSAGE value="全流程自动化：收集各个unit列表，合并收集规则" />
     <MESSAGE value="全流程自动化：规则检查修复" />
@@ -751,7 +746,8 @@
     <MESSAGE value="子Bus自动化生成，包括notes添加" />
     <MESSAGE value="event持有修改" />
     <MESSAGE value="es自动化——修复问题" />
-    <option name="LAST_COMMIT_MESSAGE" value="es自动化——修复问题" />
+    <MESSAGE value="Bus指派自动化生成" />
+    <option name="LAST_COMMIT_MESSAGE" value="Bus指派自动化生成" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

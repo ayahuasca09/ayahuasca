@@ -313,7 +313,7 @@ with WaapiClient() as client:
                 obj_id = obj_dict['id']
                 break
             # 改名了但描述一致
-            elif obj_dict['notes'] == obj_desc:
+            elif (obj_dict['notes'] == obj_desc) and obj_dict['notes']:
                 flag = 2
                 # 改名
                 change_name_by_wwise_content(obj_dict['id'], obj_name, obj_dict['name'],
@@ -395,6 +395,15 @@ with WaapiClient() as client:
         oi_h.print_warning(target_bus_name + "：ducking目标已设置相应rtpc")
 
 
+    """将meter添加到source上，这个用不了"""
+
+
+    def add_meter_to_source(source_id, meter_id):
+        args = waapi_h.args_effect_set(source_id, meter_id)
+        result = client.call("ak.wwise.core.object.set", args)
+        pprint(result)
+
+
     """创建Ducking所需要的内容"""
 
 
@@ -415,6 +424,8 @@ with WaapiClient() as client:
                                 rtpc_id, meter_id = set_source_meter_and_rtpc(rtpc_name)
                                 # 设置目标的rtpc
                                 set_target_rtpc(bus_have_dict[cell.value], rtpc_id, cell.value)
+                                # 将meter添加到源
+                                # add_meter_to_source(bus_have_dict[source_name], meter_id)
                             else:
                                 oi_h.print_error(cell.value + "：要ducking的bus无source bus的名称，请检查")
 

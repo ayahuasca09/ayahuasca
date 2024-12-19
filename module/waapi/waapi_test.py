@@ -536,8 +536,8 @@ with WaapiClient() as client:
     #               'id': '{02AA9D36-C4CB-45D4-B0EC-9B17749258E3}',
     #               'name': 'Mon'}]}
 
-    # """获取选中对象的属性"""
-    # """获取选中对象的打包流媒体的路径"""
+    """获取选中对象的属性"""
+    """获取选中对象的打包流媒体的路径"""
     # objects_list = client.call("ak.wwise.ui.getSelectedObjects")['objects']
     # obj_id = objects_list[0]['id']
     # print(obj_id)
@@ -545,15 +545,50 @@ with WaapiClient() as client:
     #     'waql': '"%s"' % obj_id
     # }
     # options = {
-    #     'return': ['name', 'Color', 'maxDurationSource', 'type', 'pluginname']
+    #     'return': ['name', 'Color', 'maxDurationSource', 'type', 'pluginname', 'Effect']
     # }
     # # 存储了所有Event的单元结构
     # wwise_info_list = client.call("ak.wwise.core.object.get", args, options=options)['return']
     # pprint(wwise_info_list)
 
     """获取某个id的obj的信息"""
+    # args = {
+    #     'waql': '"%s" select Effects where notes="%s"' % ("{02AA9D36-C4CB-45D4-B0EC-9B17749258E3}", "a new rtpc")
+    # }
+    # options = {
+    #     'return': ['name', 'Color', 'maxDurationSource', 'type', 'pluginname', 'parent', 'owner', "RTPC", 'notes', 'id',
+    #                'ControlInput']
+    # }
+    # # 存储了所有Event的单元结构
+    # wwise_info_list = client.call("ak.wwise.core.object.get", args, options=options)['return']
+    # pprint(wwise_info_list)
+
+    """为obj添加相应effects:报错"""
+    # args = {
+    #     "objects": [
+    #         {
+    #             "object": "{8E4DD34E-5139-4EF2-9494-5303775493DE}",
+    #             "@Effects": [
+    #                 {
+    #                     "type": "EffectSlot",
+    #                     "name": "",
+    #                     "@Effect": {
+    #                         "type": "Effect",
+    #                         "name": "myCustomEffect",
+    #                         "classId": 7733251,
+    #                         "@PreDelay": 24,
+    #                         "@RoomShape": 99
+    #                     }
+    #                 }
+    #             ]
+    #         }
+    #     ]
+    # }
+    # result = client.call("ak.wwise.core.object.set", args)
+
+    """效果器查找"""
     args = {
-        'waql': '"%s" select RTPC where notes="%s"' % ("{02AA9D36-C4CB-45D4-B0EC-9B17749258E3}", "a new rtpc")
+        'waql': '"%s"  ' % "{2D86BD0B-BC69-4416-8368-FED6C2E956B7}"
     }
     options = {
         'return': ['name', 'Color', 'maxDurationSource', 'type', 'pluginname', 'parent', 'owner', "RTPC", 'notes', 'id',

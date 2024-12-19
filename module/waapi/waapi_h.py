@@ -93,6 +93,48 @@ def args_rtpc_ducking_create(obj_id, rtpc_id):
 #               'id': '{02AA9D36-C4CB-45D4-B0EC-9B17749258E3}',
 #               'name': 'Mon'}]}
 
+# 设置effect的模板
+def args_effect_set(obj_id, effect_id):
+    args = {
+        "objects": [
+            {
+                "object": obj_id,
+                "@Effects": [
+                    {
+                        "type": "EffectSlot",
+                        "name": "",
+                        "@Effect": {
+                            "id": effect_id,
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+    return args
+
+
+# {
+#     "objects": [
+#         {
+#             "object": "\\Actor-Mixer Hierarchy\\Default Work Unit\\MySound",
+#             "@Effects": [
+#                 {
+#                     "type": "EffectSlot",
+#                     "name": "",
+#                     "@Effect": {
+#                         "type": "Effect",
+#                         "name": "myCustomEffect",
+#                         "classId": 7733251,
+#                         "@PreDelay": 24,
+#                         "@RoomShape": 99
+#                     }
+#                 }
+#             ]
+#         }
+#     ]
+# }
+
 
 # 创建obj的模板
 def args_object_create(parent, type, name, notes):
