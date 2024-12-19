@@ -207,16 +207,18 @@ with WaapiClient() as client:
     def create_wwise_obj_by_excel(obj_type, parent_type, obj_name, have_obj_path, desc_value):
         bus_have_dict = get_wwise_type_list(have_obj_path, parent_type)
         aux_parent = find_longest_prefix_key(obj_name, bus_have_dict)
+        obj_id = None
         if aux_parent:
             # create_wwise_obj(obj_type,
             #                  bus_have_dict[aux_parent], obj_name,
             #                  desc_value)
-            create_obj_content(bus_have_dict[aux_parent], obj_type,
-                               obj_name, desc_value)
+            obj_id = create_obj_content(bus_have_dict[aux_parent], obj_type,
+                                        obj_name, desc_value)
 
             # print(bus_config_dict[obj_name][value_desc_column - 2])
         else:
             oi_h.print_error(obj_name + "：无相应父级，请检查命名是否正确或先创建父级bus")
+        return obj_id
 
 
     """Bus创建"""
@@ -408,6 +410,7 @@ with WaapiClient() as client:
 
 
     def set_ducking():
+        # meter发送
         if duck_column:
             for cell in list(sheet.columns)[duck_column - 1]:
                 if (cell.value) and (
@@ -417,25 +420,49 @@ with WaapiClient() as client:
                             # 源查找
                             source_name, _ = excel_h.check_is_mergecell(sheet.cell(row=cell.row,
                                                                                    column=require_name_column), sheet)
-                            if source_name:
-                                rtpc_name = source_name + "_Ducking"
-                                # print(source_name)
-                                # 设置源的rtpc和meter
-                                rtpc_id, meter_id = set_source_meter_and_rtpc(rtpc_name)
-                                # 设置目标的rtpc
-                                set_target_rtpc(bus_have_dict[cell.value], rtpc_id, cell.value)
-                                # 将meter添加到源
-                                # add_meter_to_source(bus_have_dict[source_name], meter_id)
-                            else:
-                                oi_h.print_error(cell.value + "：要ducking的bus无source bus的名称，请检查")
-
-
-
+                            if 'Aux' not in source_name:
+                                if source_name:
+                                    rtpc_name = source_name + "_Ducking"
+                                    # print(source_name)
+                                    # 设置源的rtpc和meter
+                                    rtpc_id, meter_id = set_source_meter_and_rtpc(rtpc_name)
+                                    # 设置目标的rtpc
+                                    set_target_rtpc(bus_have_dict[cell.value], rtpc_id, cell.value)
+                                    # 将meter添加到源
+                                    # add_meter_to_source(bus_have_dict[source_name], meter_id)
+                                else:
+                                    oi_h.print_error(cell.value + "：要ducking的bus无source bus的名称，请检查")
 
                         else:
                             oi_h.print_error(cell.value + "：要ducking的bus在wwise中未创建，请检查名称或先创建bus")
                     else:
                         oi_h.print_error(cell.value + "：有共同作用对象，需要发送aux bus")
+        # aux发送
+        if aux_column:
+            for cell in list(sheet.columns)[aux_column - 1]:
+                if (cell.value) and (
+                        not 命名规范检查.check_is_chinese(cell.value)):
+                    if cell.value in aux_have_dict:
+                        # 设置目标的aux发送
+                        # 源查找
+                        source_name, _ = excel_h.check_is_mergecell(sheet.cell(row=cell.row,
+                                                                               column=require_name_column), sheet)
+                        if (source_name) and (source_name in bus_have_dict):
+                            set_obj_refer(bus_have_dict[source_name], "UserAuxSend0", aux_have_dict[cell.value])
+
+                    else:
+                        oi_h.print_error(cell.value + "：auxbus在wwise中未创建，请检查名称或先创建bus")
+
+
+    """自动指派状态:只支持23"""
+
+
+    def set_state(obj_id, stategroup_name):
+        if stategroup_name:
+            # print(stategroup_name)
+            if stategroup_name in stategroup_have_dict:
+                args = waapi_h.args_stategroup_set(obj_id, stategroup_have_dict[stategroup_name])
+                client.call("ak.wwise.core.object.setStateGroups", args)
 
 
     """获取需要创建的Bus列表"""
@@ -452,6 +479,10 @@ with WaapiClient() as client:
                         """资源描述"""
                         value_desc_value = sheet.cell(row=cell.row,
                                                       column=value_desc_column).value
+                        """stategroup name"""
+                        stategroup_name = sheet.cell(row=cell.row,
+                                                     column=state_column).value
+
                         """资源描述检查"""
                         if value_desc_value:
                             if value_desc_value not in value_desc_list:
@@ -461,17 +492,31 @@ with WaapiClient() as client:
                                 if "Aux" in cell.value:
                                     if cell.value not in aux_name_list:
                                         # 对象创建
-                                        create_wwise_obj_by_excel("AuxBus", "Bus", cell.value,
-                                                                  config.wwise_bus_path, value_desc_value)
+                                        obj_id = create_wwise_obj_by_excel("AuxBus", "Bus", cell.value,
+                                                                           config.wwise_bus_path, value_desc_value)
+                                        # set_state(obj_id, stategroup_name)
+
 
 
                                     else:
                                         oi_h.print_error(value_desc_value + "：表格中有重复项描述，请检查")
 
+                                    # Aux的meter和rtpc创建及target设置
+                                    target_name = sheet.cell(row=cell.row,
+                                                             column=duck_column).value
+                                    if target_name:
+                                        rtpc_name = "Aux_Ducking_" + target_name
+                                        # print(source_name)
+                                        # 设置源的rtpc和meter
+                                        rtpc_id, meter_id = set_source_meter_and_rtpc(rtpc_name)
+                                        # 设置目标的rtpc
+                                        # set_target_rtpc(bus_have_dict[target_name], rtpc_id, target_name)
+
                                 else:
                                     if cell.value not in bus_name_list:
-                                        create_wwise_obj_by_excel("Bus", "Bus", cell.value,
-                                                                  config.wwise_bus_path, value_desc_value)
+                                        obj_id = create_wwise_obj_by_excel("Bus", "Bus", cell.value,
+                                                                           config.wwise_bus_path, value_desc_value)
+                                        set_state(obj_id, stategroup_name)
 
 
                                     else:
@@ -505,7 +550,7 @@ with WaapiClient() as client:
                         aux_column = cell.column
                     elif '添加StateGroup' == str(cell.value):
                         state_column = cell.column
-                    elif '打断bus名称' == str(cell.value):
+                    elif '打断bus的event' == str(cell.value):
                         break_column = cell.column
 
         return require_name_column, status_column, duck_column, aux_column, state_column, break_column
@@ -591,6 +636,8 @@ with WaapiClient() as client:
     rtpc_have_dict = get_wwise_type_list(config.wwise_rtpc_path, "GameParameter")
     # 获取Meter
     meter_have_dict = get_wwise_type_list(config.wwise_effect_ducking_path, "Effect")
+    # 获取StateGroup
+    stategroup_have_dict = get_wwise_type_list(config.wwise_state_path, "StateGroup")
 
     # 子bus创建
     if wb["Bus创建"]:
@@ -609,6 +656,7 @@ with WaapiClient() as client:
         # pprint(bus_config_dict)
         # Ducking配置检索
         bus_have_dict = get_wwise_type_list(config.wwise_bus_path, "Bus")
+        aux_have_dict = get_wwise_type_list(config.wwise_bus_path, "AuxBus")
         set_ducking()
 
     # """同步表中删除的内容"""

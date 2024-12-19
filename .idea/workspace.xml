@@ -4,13 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="17a8a927-0db7-41d4-8f81-9181fc87e6d9" name="更改" comment="Bus指派自动化生成">
-      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/SilverPalace战斗音频需求资源管理表 (13).xlsx" afterDir="false" />
+    <list default="true" id="17a8a927-0db7-41d4-8f81-9181fc87e6d9" name="更改" comment="修复bus自动化的问题">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/files/Bus自动化/Bus资源表.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/files/Bus自动化/Bus资源表.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/func/Bus自动化.py" beforeDir="false" afterPath="$PROJECT_DIR$/func/Bus自动化.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/module/waapi/waapi_h.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_h.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_test.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -313,14 +311,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1716955384994</updated>
-    </task>
-    <task id="LOCAL-00103" summary="ES音效自动化流程">
-      <option name="closed" value="true" />
-      <created>1730453707786</created>
-      <option name="number" value="00103" />
-      <option name="presentableId" value="LOCAL-00103" />
-      <option name="project" value="LOCAL" />
-      <updated>1730453707786</updated>
     </task>
     <task id="LOCAL-00104" summary="ES音效自动化流程">
       <option name="closed" value="true" />
@@ -706,7 +696,15 @@
       <option name="project" value="LOCAL" />
       <updated>1734534647624</updated>
     </task>
-    <option name="localTasksCounter" value="152" />
+    <task id="LOCAL-00152" summary="修复bus自动化的问题">
+      <option name="closed" value="true" />
+      <created>1734607550743</created>
+      <option name="number" value="00152" />
+      <option name="presentableId" value="LOCAL-00152" />
+      <option name="project" value="LOCAL" />
+      <updated>1734607550743</updated>
+    </task>
+    <option name="localTasksCounter" value="153" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -722,7 +720,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="全流程自动化：准备创建unit" />
     <MESSAGE value="全流程自动化：收集各个unit列表，合并收集规则" />
     <MESSAGE value="全流程自动化：规则检查修复" />
     <MESSAGE value="全流程自动化：补全其他模块的命名规范检查" />
@@ -747,20 +744,21 @@
     <MESSAGE value="event持有修改" />
     <MESSAGE value="es自动化——修复问题" />
     <MESSAGE value="Bus指派自动化生成" />
-    <option name="LAST_COMMIT_MESSAGE" value="Bus指派自动化生成" />
+    <MESSAGE value="修复bus自动化的问题" />
+    <option name="LAST_COMMIT_MESSAGE" value="修复bus自动化的问题" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/func/Bus自动化.py</url>
-          <line>346</line>
-          <option name="timeStamp" value="8" />
+          <line>459</line>
+          <option name="timeStamp" value="18" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/func/Bus自动化.py</url>
-          <line>382</line>
-          <option name="timeStamp" value="9" />
+          <line>469</line>
+          <option name="timeStamp" value="19" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

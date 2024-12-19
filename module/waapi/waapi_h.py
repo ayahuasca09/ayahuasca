@@ -203,6 +203,17 @@ def args_effect_create(parent, type, name):
 # except CannotConnectToWaapiException:
 #     print("Could not connect to Waapi: Is Wwise running and Wwise Authoring API enabled?")
 
+# 设置stategroup的模板
+def args_stategroup_set(obj_id, stategroup_id):
+    args = {
+        "object": obj_id,
+        "stateGroups": [
+            stategroup_id
+        ]
+    }
+    return args
+# unit_object = client.call("ak.wwise.core.object.setStateGroups", args)
+
 
 # 创建rnd的模板
 def args_rnd_create(parent, type, name, notes):
