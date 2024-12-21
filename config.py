@@ -157,8 +157,10 @@ app_secret = "kw5O5VboETIgZERiNe39ebqL72kzbruu"
 excel_es_vo_token_list = ["PVNYwZbdVi1LMhkhvbVch4cJn4C"]
 # ES音效表token
 excel_es_sfx_token_list = ["AsW4wmAbQiIHeLkI2cscdN0Ln3e"]
-# 音频资源命名配置token
-check_name_token = "K2Cfwl44XiMe6Wkhi7AcJ0fGnVb"
+# 音频资源命名配置token v2
+check_name_token = "OEX6wc8FOixi9QkmihecoooCnLg"
+# v1:"K2Cfwl44XiMe6Wkhi7AcJ0fGnVb"
+
 # 音效语音表
 excel_media_token_list = ["TcbAwUoNriYh0Rk8gG0clcNCnTh", "CatewGc9miJplrkKVi2cvBd5nMb", "XXq2wK5dbiH7lWkbw36ciHK4nCc"]
 # Wwise属性配置表token

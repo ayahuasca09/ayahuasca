@@ -18,6 +18,25 @@ def check_is_mergecell(cell, sheet):
     return cell.value, is_merge
 
 
+"""合并单元格检查及获取合并行区间"""
+
+
+def check_mergecell_row(cell, sheet):
+    is_merge = False
+    merge_min_row = 0
+    merge_max_row = 0
+    for merged_range in sheet.merged_cells.ranges:  # 循环查找该单元格所属的合并区域
+        if cell.coordinate in merged_range:
+            # 获取合并区域左上角的单元格作为该单元格的值返回
+            cell = sheet.cell(row=merged_range.min_row, column=merged_range.min_col)
+            merge_min_row = merged_range.min_row
+            merge_max_row = merged_range.max_row
+            is_merge = True
+            break
+
+    return cell.value, is_merge, merge_min_row, merge_max_row
+
+
 """打开工作簿并获取工作表"""
 
 
