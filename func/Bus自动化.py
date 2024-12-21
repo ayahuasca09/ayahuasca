@@ -214,6 +214,8 @@ with WaapiClient() as client:
             #                  desc_value)
             obj_id = create_obj_content(bus_have_dict[aux_parent], obj_type,
                                         obj_name, desc_value)
+            # if 'Aux' in obj_name:
+            #     rtpc_id, meter_id = set_source_meter_and_rtpc(obj_name)
 
             # print(bus_config_dict[obj_name][value_desc_column - 2])
         else:
@@ -332,6 +334,8 @@ with WaapiClient() as client:
                 obj_list = client.call("ak.wwise.core.object.set", args)
                 # pprint(obj_list)
                 obj_object = obj_list['objects'][0]['children'][0]
+            # elif obj_type == "AuxBus":
+            #     set_source_meter_and_rtpc(obj_name)
             else:
                 args = waapi_h.args_object_create(obj_parent_path, obj_type,
                                                   obj_name, obj_desc)
@@ -433,6 +437,7 @@ with WaapiClient() as client:
                                 else:
                                     oi_h.print_error(cell.value + "：要ducking的bus无source bus的名称，请检查")
 
+
                         else:
                             oi_h.print_error(cell.value + "：要ducking的bus在wwise中未创建，请检查名称或先创建bus")
                     else:
@@ -510,13 +515,13 @@ with WaapiClient() as client:
                                         # 设置源的rtpc和meter
                                         rtpc_id, meter_id = set_source_meter_and_rtpc(rtpc_name)
                                         # 设置目标的rtpc
-                                        # set_target_rtpc(bus_have_dict[target_name], rtpc_id, target_name)
+                                        set_target_rtpc(bus_have_dict[target_name], rtpc_id, target_name)
 
                                 else:
                                     if cell.value not in bus_name_list:
                                         obj_id = create_wwise_obj_by_excel("Bus", "Bus", cell.value,
                                                                            config.wwise_bus_path, value_desc_value)
-                                        set_state(obj_id, stategroup_name)
+                                        # set_state(obj_id, stategroup_name)
 
 
                                     else:
@@ -556,40 +561,6 @@ with WaapiClient() as client:
         return require_name_column, status_column, duck_column, aux_column, state_column, break_column
 
 
-    # """获取每行bus的配置，将bus名存为字典的键，将配置存为元组"""
-    #
-    #
-    # def get_sub_bus_config():
-    #     for row in sheet.iter_rows(min_row=1, max_row=sheet.max_row, min_col=1, max_col=sheet.max_column,
-    #                                values_only=True):
-    #
-    #         if row[0] and (
-    #                 not 命名规范检查.check_is_chinese(row[0])) and 命名规范检查.check_by_length_and_word_bool(
-    #             row[0], 10):
-    #             key = row[0]
-    #             # if key not in bus_config_dict:
-    #             #     bus_config_dict[key] = row[1:]
-    #
-    #             # openpyxl遍历每行，将第1列值设为字典的键，2-8列设为字典的值，并将每行的字典添加到一个列表，
-    #             # 行可能会有合并单元格，导致某个列有多个值，需要将多个值存在一个列表中，就是这个元组的元素是个列表
-    #             # 初始化一个空列表，用于存储第2到第8列的值
-    #             # 获取合并单元格范围
-    #             merged_cells = sheet.merged_cells.ranges
-    #             values = []
-    #
-    #             # 遍历第2到第8列
-    #             for i in range(1, sheet.max_column):
-    #                 cell_value = row[i]
-    #                 cell = row[i]
-    #                 cell_value = excel_h.check_is_mergecell(cell, sheet)
-    #
-    #                 # 如果不是合并单元格，直接将值添加到列表
-    #                 if not isinstance(cell_value, list):
-    #                     cell_value = [cell_value]
-    #                 values.append(cell_value)
-    #             if key not in bus_config_dict:
-    #                 bus_config_dict[key] = values
-
     """*****************主程序处理******************"""
 
     # bus结构创建
@@ -600,6 +571,7 @@ with WaapiClient() as client:
         # pprint(unit_create_list)
         # 列表排序
         bus_create_list.sort(key=len)
+        # pprint(bus_create_list)
         unit_create_list.sort(key=len)
         create_wwise_bus(unit_create_list, bus_create_list)
 
@@ -646,46 +618,98 @@ with WaapiClient() as client:
         # get_sub_bus_config()
         # 子bus创建
         get_create_sub_bus_name_list()
-        # bus_name_list.sort(key=len)
-        # aux_name_list.sort(key=len)
-        # 子bus创建
-        # create_wwise_sub_obj("AuxBus", "Bus", aux_name_list, config.wwise_bus_path)
-        # create_wwise_sub_obj("Bus", "Bus", bus_name_list, config.wwise_bus_path)
-        # pprint(bus_name_list)
-        # pprint(aux_name_list)
-        # pprint(bus_config_dict)
         # Ducking配置检索
         bus_have_dict = get_wwise_type_list(config.wwise_bus_path, "Bus")
         aux_have_dict = get_wwise_type_list(config.wwise_bus_path, "AuxBus")
         set_ducking()
 
-    # """同步表中删除的内容"""
-    # """对象删除"""
-    #
-    #
-    # def delete_obj(obj_id, obj_name, obj_type):
-    #     args = {
-    #         "object": "%s" % obj_id
-    #     }
-    #     client.call("ak.wwise.core.object.delete", args)
-    #     oi_h.print_warning(obj_name + "(" + obj_type + ")" + ":已删除")
-    #
-    #
-    # """删除状态"""
-    #
-    #
-    # def delete_check(wwise_obj_dict, excel_list, obj_type):
-    #     for wwise_obj in wwise_obj_dict:
-    #         # pprint(wwise_obj_dict['name'])
-    #         if wwise_obj not in excel_list:
-    #             # State/StateGroup删除
-    #             delete_obj(wwise_obj_dict[wwise_obj], wwise_obj, obj_type)
-    #             # StateGroupUnit删除
-    #
-    #
-    # unit_have_dict = get_wwise_type_list(config.wwise_bus_path, "WorkUnit")
-    # bus_have_dict = get_wwise_type_list(config.wwise_bus_path, "Bus")
-    #
-    # # 查找state/switch，再跟表格比对有没有，没有就删除资源及事件引用
-    # delete_check(bus_have_dict, bus_create_list, "Bus")
-    # delete_check(unit_have_dict, unit_create_list, "WorkUnit")
+    """同步表中删除的内容"""
+    """对象删除"""
+
+
+    def delete_obj(obj_id, obj_name, obj_type):
+        args = {
+            "object": "%s" % obj_id
+        }
+        client.call("ak.wwise.core.object.delete", args)
+        oi_h.print_warning(obj_name + "(" + obj_type + ")" + ":已删除")
+
+
+    """查找包含对象的删除"""
+
+
+    def delete_check_have(wwise_obj_dict, excel_list, obj_type):
+        for wwise_obj in wwise_obj_dict:
+            flag = 0
+            for excel_name in excel_list:
+                if excel_name in wwise_obj:
+                    flag = 1
+                    break
+            if flag == 0:
+                delete_obj(wwise_obj_dict[wwise_obj], wwise_obj, obj_type)
+
+
+    """对象删除"""
+
+
+    def delete_check(wwise_obj_dict, excel_list, obj_type):
+        for wwise_obj in wwise_obj_dict:
+            # pprint(wwise_obj_dict['name'])
+            rtpc_name = ""
+            if wwise_obj not in excel_list:
+                if obj_type == "Bus":
+                    if (wwise_obj not in config.bus_no_color_list) and (
+                            not oi_h.check_by_re(r'^Aux', wwise_obj)):
+                        delete_obj(wwise_obj_dict[wwise_obj], wwise_obj, obj_type)
+                        # pprint(wwise_obj)
+                        rtpc_name = wwise_obj + "_Ducking"
+            # 删除关联的rtpc和meter
+            if rtpc_name:
+                # rtpc列表
+                rtpc_have_dict = get_wwise_type_list(config.wwise_rtpc_path, "GameParameter")
+                if rtpc_name in rtpc_have_dict:
+                    delete_obj(rtpc_have_dict[rtpc_name], rtpc_name, "GameParameter")
+                # 获取Meter
+                meter_have_dict = get_wwise_type_list(config.wwise_effect_ducking_path, "Effect")
+                if rtpc_name in rtpc_have_dict:
+                    delete_obj(meter_have_dict[rtpc_name], rtpc_name, "Effect")
+
+
+    # 获取已有的所有子bus
+    # 子bus创建
+    if wb["Bus创建"]:
+        sheet = wb["Bus创建"]
+        require_name_column, value_desc_column, duck_column, aux_column, state_column, break_column = get_descrip_and_status_column()
+        excel_have_sub_bus_list = excel_h.get_colunmn_one_list(require_name_column, sheet)
+        # 所有子bus列表
+        sub_bus_list = excel_have_sub_bus_list + bus_create_list
+        # 子bus删除
+        bus_have_dict = get_wwise_type_list(config.wwise_bus_path, "Bus")
+        delete_check(bus_have_dict, sub_bus_list, "Bus")
+        # 子aux duck bus删除
+        aux_duck_have_dict = get_wwise_type_list(config.wwise_aux_duck_path, "AuxBus")
+        delete_check(aux_duck_have_dict, sub_bus_list, "AuxBus")
+
+        # 未引用的rtpc和meter删除
+        rtpc_have_dict = get_wwise_type_list(config.wwise_rtpc_path, "GameParameter")
+        meter_have_dict = get_wwise_type_list(config.wwise_effect_ducking_path, "Effect")
+        if require_name_column:
+            for cell in list(sheet.columns)[require_name_column - 1]:
+                if (cell.value) and (
+                        not 命名规范检查.check_is_chinese(cell.value)):
+                    if 命名规范检查.check_by_length_and_word_bool(
+                            cell.value, 10):
+                        if "Aux" in cell.value:
+                            # rtpc删除
+                            for wwise_obj in rtpc_have_dict:
+                                flag = 0
+                                target_name = sheet.cell(row=cell.row,
+                                                         column=duck_column).value
+                                if target_name:
+                                    if target_name in wwise_obj:
+                                        flag = 1
+                                        break
+                                    if flag == 0:
+                                        delete_obj(rtpc_have_dict[wwise_obj], wwise_obj, "GameParameter")
+                                        delete_obj(meter_have_dict[wwise_obj], wwise_obj, "Effect")
+

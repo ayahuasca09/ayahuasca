@@ -38,6 +38,8 @@ wwise_state_bank_path = '\\SoundBanks\\Set\\Set_State'
 wwise_event_workunit_path = r"S:\chen.gong_DCC_Audio\Audio\SilverPalace_WwiseProject\Events"
 # Bus根路径
 wwise_bus_path = "\\Master-Mixer Hierarchy\\v1\\Master Audio Bus"
+# Aux Ducking Bus路径
+wwise_aux_duck_path = "\\Master-Mixer Hierarchy\\v1\\Master Audio Bus\\Auxiliary\\Aux_Ducking\\Aux_Ducking"
 # State Music路径
 # wwise_mus_state_path = "\\Interactive Music Hierarchy\\v1\\Mus"
 # State Amb路径
@@ -140,7 +142,8 @@ es_event_id_dict = {
 options = {
     'return': ['name', 'id', 'notes', 'originalWavFilePath', 'isIncluded', 'IsLoopingEnabled',
                'musicPlaylistRoot', 'LoopCount', 'PlaylistItemType', 'owner', 'parent', 'type',
-               'Sequences', 'path', 'shortId', 'Inclusion', 'Target', 'ActionType', "Color", 'maxDurationSource','ControlInput']
+               'Sequences', 'path', 'shortId', 'Inclusion', 'Target', 'ActionType', "Color", 'maxDurationSource',
+               'ControlInput']
 
 }
 

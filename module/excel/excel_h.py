@@ -87,6 +87,16 @@ def sheet_title_column(title_name, title_colunmn_dict):
     return title_colunmn
 
 
+"""检测字符串是否含有中文"""
+
+
+def check_is_chinese(string):
+    for ch in string:
+        if u'\u4e00' <= ch <= u'\u9fff':
+            return True
+    return False
+
+
 """遍历第n列内容并生成列表,列表生成的是单列"""
 
 
@@ -97,8 +107,10 @@ def get_colunmn_one_list(column_index, sheet):
     # 遍历第 8 列，从第二行开始
     for row in sheet.iter_rows(min_row=2, min_col=column_index, max_col=column_index, values_only=True):
         # row 是一个元组，只有一个元素
-        if row not in column_data:
-            column_data.append(row[0])
+        if row[0]:
+            if not check_is_chinese(row[0]):
+                if row not in column_data:
+                    column_data.append(row[0])
 
     return column_data
 
