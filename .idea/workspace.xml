@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="17a8a927-0db7-41d4-8f81-9181fc87e6d9" name="更改" comment="[x] 从表生成媒体资源优化">
+    <list default="true" id="17a8a927-0db7-41d4-8f81-9181fc87e6d9" name="更改" comment="引用查找：战斗喊话">
+      <change afterPath="$PROJECT_DIR$/func/媒体资源替换及随机资源新增.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/ue/ue_ID表生成/DCC表的引用路径生成v2.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/ue/ue_ID表生成/DCC表的引用路径生成v2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/命名规范检查/命名规范检查表.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/files/命名规范检查/命名规范检查表.xlsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,6 +115,7 @@
     "Python.响度均衡测试.executor": "Run",
     "Python.媒体资源从表导入.executor": "Run",
     "Python.媒体资源占位生成.executor": "Run",
+    "Python.媒体资源替换及随机资源新增.executor": "Run",
     "Python.将Wwise工程的响度标准化.executor": "Run",
     "Python.打包测试.executor": "Run",
     "Python.正则测试.executor": "Run",
@@ -153,7 +154,7 @@
       <visibility group="运行配置" flag="true" />
     </myKeys>
   </component>
-  <component name="RunManager" selected="Python.DCC表的引用路径生成v2">
+  <component name="RunManager" selected="Python.媒体资源替换及随机资源新增">
     <configuration name="命名规范检查" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="SP" />
       <option name="ENV_FILES" value="" />
@@ -220,7 +221,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Bus自动化" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="媒体资源替换及随机资源新增" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="SP" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -233,7 +234,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/func/Bus自动化.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/func/媒体资源替换及随机资源新增.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -288,11 +289,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.媒体资源替换及随机资源新增" />
         <item itemvalue="Python.DCC表的引用路径生成v2" />
         <item itemvalue="Python.媒体资源从表导入" />
         <item itemvalue="Python.媒体资源占位生成" />
         <item itemvalue="Python.命名规范检查" />
-        <item itemvalue="Python.Bus自动化" />
       </list>
     </recent_temporary>
   </component>
@@ -311,14 +312,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1716955384994</updated>
-    </task>
-    <task id="LOCAL-00109" summary="新增命名规范检测">
-      <option name="closed" value="true" />
-      <created>1730866741536</created>
-      <option name="number" value="00109" />
-      <option name="presentableId" value="LOCAL-00109" />
-      <option name="project" value="LOCAL" />
-      <updated>1730866741536</updated>
     </task>
     <task id="LOCAL-00110" summary="ES自动化：id表规划">
       <option name="closed" value="true" />
@@ -704,7 +697,15 @@
       <option name="project" value="LOCAL" />
       <updated>1734873341940</updated>
     </task>
-    <option name="localTasksCounter" value="158" />
+    <task id="LOCAL-00158" summary="引用查找：战斗喊话">
+      <option name="closed" value="true" />
+      <created>1734873959834</created>
+      <option name="number" value="00158" />
+      <option name="presentableId" value="LOCAL-00158" />
+      <option name="project" value="LOCAL" />
+      <updated>1734873959834</updated>
+    </task>
+    <option name="localTasksCounter" value="159" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -720,7 +721,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="修复自动化unit的问题：event多创建" />
     <MESSAGE value="ID表更新" />
     <MESSAGE value="ID表自动化：分页" />
     <MESSAGE value="ID表自动化：剧情索引查找" />
@@ -745,7 +745,8 @@
     <MESSAGE value="bus自动化:删除自动" />
     <MESSAGE value="命名规范检查：合并单元格检查" />
     <MESSAGE value="[x] 从表生成媒体资源优化" />
-    <option name="LAST_COMMIT_MESSAGE" value="[x] 从表生成媒体资源优化" />
+    <MESSAGE value="引用查找：战斗喊话" />
+    <option name="LAST_COMMIT_MESSAGE" value="引用查找：战斗喊话" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
