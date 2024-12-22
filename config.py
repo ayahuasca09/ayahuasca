@@ -28,6 +28,8 @@ wwise_sfx_path = "\\Actor-Mixer Hierarchy\\v1"
 wwise_event_path = "\\Events\\v1"
 # 语音媒体资源的路径
 wwise_vo_media_path = r'S:\chen.gong_DCC_Audio\Audio\SilverPalace_WwiseProject\Originals\Voices'
+# 游戏语音的路径
+wwise_vo_game_path = '\\Actor-Mixer Hierarchy\\v1\\VO\\VO\\VO_Game'
 # Wwise工程路径
 wwise_proj_path = r"S:\\chen.gong_DCC_Audio\\Audio\\SilverPalace_WwiseProject"
 # State的路径

@@ -4,11 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="17a8a927-0db7-41d4-8f81-9181fc87e6d9" name="更改" comment="bus自动化:删除自动">
+    <list default="true" id="17a8a927-0db7-41d4-8f81-9181fc87e6d9" name="更改" comment="命名规范检查：合并单元格检查">
+      <change afterPath="$PROJECT_DIR$/func/媒体资源从表导入.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/命名规范检查/命名规范检查表.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/files/命名规范检查/命名规范检查表.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/媒体资源占位生成/SilverPalace战斗音频需求资源管理表 .xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/files/媒体资源占位生成/SilverPalace战斗音频需求资源管理表 .xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/媒体资源占位生成/SilverPalace语音资源管理表.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/files/媒体资源占位生成/SilverPalace语音资源管理表.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/媒体资源占位生成/SilverPalace音频需求资源管理表.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/files/媒体资源占位生成/SilverPalace音频需求资源管理表.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/func/命名规范检查.py" beforeDir="false" afterPath="$PROJECT_DIR$/func/命名规范检查.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/excel/excel_h.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/excel/excel_h.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_h.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_h.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/waapi_音频资源导入_从表导入v2.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,6 +120,7 @@
     "Python.xml文件读写示例.executor": "Run",
     "Python.命名规范检查.executor": "Run",
     "Python.响度均衡测试.executor": "Run",
+    "Python.媒体资源从表导入.executor": "Run",
     "Python.媒体资源占位生成.executor": "Run",
     "Python.将Wwise工程的响度标准化.executor": "Run",
     "Python.打包测试.executor": "Run",
@@ -153,7 +160,7 @@
       <visibility group="运行配置" flag="true" />
     </myKeys>
   </component>
-  <component name="RunManager" selected="Python.命名规范检查">
+  <component name="RunManager" selected="Python.媒体资源从表导入">
     <configuration name="命名规范检查" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="SP" />
       <option name="ENV_FILES" value="" />
@@ -176,6 +183,50 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="媒体资源占位生成" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="SP" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/func" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/func/媒体资源占位生成.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="媒体资源从表导入" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="SP" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/func" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/func/媒体资源从表导入.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="Bus自动化" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="SP" />
       <option name="ENV_FILES" value="" />
@@ -190,50 +241,6 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/func/Bus自动化.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="waapi_音频资源全流程生成" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="SP" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/module/waapi" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/module/waapi/waapi_音频资源全流程生成.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="waapi_音频资源导入_从媒体资源导入" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="SP" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/waapi_音频资源导入_从媒体资源导入.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -288,11 +295,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.媒体资源从表导入" />
+        <item itemvalue="Python.媒体资源占位生成" />
         <item itemvalue="Python.命名规范检查" />
         <item itemvalue="Python.Bus自动化" />
         <item itemvalue="Python.waapi_test" />
-        <item itemvalue="Python.waapi_音频资源全流程生成" />
-        <item itemvalue="Python.waapi_音频资源导入_从媒体资源导入" />
       </list>
     </recent_temporary>
   </component>
@@ -311,22 +318,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1716955384994</updated>
-    </task>
-    <task id="LOCAL-00106" summary="ID表复制到DCC">
-      <option name="closed" value="true" />
-      <created>1730707183673</created>
-      <option name="number" value="00106" />
-      <option name="presentableId" value="LOCAL-00106" />
-      <option name="project" value="LOCAL" />
-      <updated>1730707183673</updated>
-    </task>
-    <task id="LOCAL-00107" summary="将ID的引用写入DCC Audio表">
-      <option name="closed" value="true" />
-      <created>1730778572002</created>
-      <option name="number" value="00107" />
-      <option name="presentableId" value="LOCAL-00107" />
-      <option name="project" value="LOCAL" />
-      <updated>1730778572002</updated>
     </task>
     <task id="LOCAL-00108" summary="修复数据更改时ES资源表未同步的问题">
       <option name="closed" value="true" />
@@ -704,7 +695,23 @@
       <option name="project" value="LOCAL" />
       <updated>1734793030354</updated>
     </task>
-    <option name="localTasksCounter" value="155" />
+    <task id="LOCAL-00155" summary="命名规范检查：合并单元格检查">
+      <option name="closed" value="true" />
+      <created>1734798408304</created>
+      <option name="number" value="00155" />
+      <option name="presentableId" value="LOCAL-00155" />
+      <option name="project" value="LOCAL" />
+      <updated>1734798408304</updated>
+    </task>
+    <task id="LOCAL-00156" summary="命名规范检查：合并单元格检查">
+      <option name="closed" value="true" />
+      <created>1734798431490</created>
+      <option name="number" value="00156" />
+      <option name="presentableId" value="LOCAL-00156" />
+      <option name="project" value="LOCAL" />
+      <updated>1734798431490</updated>
+    </task>
+    <option name="localTasksCounter" value="157" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -720,7 +727,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="全流程自动化：补全其他模块的命名规范检查" />
     <MESSAGE value="全流程自动化：命名规范检查优化" />
     <MESSAGE value="修复自动化unit的问题：event多创建" />
     <MESSAGE value="ID表更新" />
@@ -745,7 +751,8 @@
     <MESSAGE value="修复bus自动化的问题" />
     <MESSAGE value="bus自动化:aux自动化" />
     <MESSAGE value="bus自动化:删除自动" />
-    <option name="LAST_COMMIT_MESSAGE" value="bus自动化:删除自动" />
+    <MESSAGE value="命名规范检查：合并单元格检查" />
+    <option name="LAST_COMMIT_MESSAGE" value="命名规范检查：合并单元格检查" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

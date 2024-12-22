@@ -1,4 +1,5 @@
 import openpyxl
+import json
 import sys
 from os.path import abspath, dirname
 import os
@@ -7,264 +8,29 @@ import re
 from waapi import WaapiClient
 import shutil
 from openpyxl.cell import MergedCell
-
-import module.excel.excel_h as excel_h
-import config as config
+import module.cloudfeishu.cloudfeishu_h as cloudfeishu_h
 import module.oi.oi_h as oi_h
-import module.json.json_h as json_h
+import config
+import module.excel.excel_h as excel_h
+import module.waapi.waapi_h as waapi_h
+from pathlib import Path
+import 命名规范检查
 
-# 文件所在目录
-py_path = ""
-if hasattr(sys, 'frozen'):
-    py_path = dirname(sys.executable)
-elif __file__:
-    py_path = dirname(abspath(__file__))
+"""根目录获取"""
+# 获取当前脚本的文件名及路径
+script_name_with_extension = __file__.split('/')[-1]
+# 去掉扩展名
+script_name = script_name_with_extension.rsplit('.', 1)[0]
+# 替换为files
+root_path = script_name.replace("func", "files")
+root_path = root_path.replace("媒体资源从表导入", "媒体资源占位生成")
 
-"""获取json文件路径"""
-js_dict = json_h.read_json_file(os.path.join(py_path, config.check_name_json))
+# print(f"当前脚本的名字是: {root_path}")
+file_name_list = excel_h.excel_get_path_list(root_path)
+# pprint(file_name_list)
 
-# 获取Wwise的配置
-wwise_dict = js_dict["Wwise"]
-
-"""获取.xlsx文件"""
-file_name_list = excel_h.excel_get_path_list(py_path)
-
-# 一级系统名称
-system_name = ""
-
-# 事件描述字典：用于记录描述键和行作为值
-event_descrip_dict = {}
 
 """*****************功能检测区******************"""
-
-"""通过正则表达式检查"""
-
-
-def check_by_re(pattern, name):
-    pattern = str(pattern)
-    name = str(name)
-    result = re.search(pattern, name)
-    new_name = ""
-    if result == None:
-        oi_h.print_error(cell_sound.value + "：请检查" + pattern + "是否拼写错误或未添加到列表中")
-    else:
-        new_name = name.replace(result.group(), "")
-    return new_name
-
-
-"""模块类型输出报错"""
-
-
-def print_error_by_module(module_dict):
-    module_type = ""
-    for module in module_dict:
-        # 如果不是最后一位，需要加|
-        if module != list(module_dict.keys())[-1]:
-            module_type += module + "|"
-        else:
-            module_type += module
-    oi_h.print_error(cell_sound.value + "：" + module_type + "有误，请检查是否添加模块名称或是否拼写有误")
-
-
-"""Amb类型检查"""
-
-
-def check_by_Amb(name):
-    global is_pass
-    is_pass = False
-
-
-"""CG类型检查"""
-
-
-def check_by_CG(name):
-    global is_pass
-    is_pass = False
-
-
-"""Imp类型检查"""
-
-
-def check_by_Imp(name):
-    if name:
-        # sub
-        name = check_by_re(js_dict[system_name]['sub'] + "_", name)
-        if name:
-            # property
-            name = check_by_re(js_dict[system_name]['property'] + "_", name)
-            if name:
-                # desc1
-                name = check_by_re(js_dict[system_name]['desc1'] + "_", name)
-                if name:
-                    # desc2
-                    check_by_re(js_dict[system_name]['desc2'], name)
-                else:
-                    oi_h.print_error(cell_sound.value + "：" + js_dict[system_name][
-                        'desc2'] + "有误，请检查是否添加模块名称或是否拼写有误")
-            else:
-                oi_h.print_error(cell_sound.value + "：" + js_dict[system_name][
-                    'desc1'] + "有误，请检查是否添加模块名称或是否拼写有误")
-        else:
-            oi_h.print_error(
-                cell_sound.value + "：" + js_dict[system_name]['property'] + "有误，请检查是否添加模块名称或是否拼写有误")
-    else:
-        oi_h.print_error(
-            cell_sound.value + "：" + js_dict[system_name]['sub'] + "有误，请检查是否添加模块名称或是否拼写有误")
-
-
-"""Mus类型检查"""
-
-
-def check_by_Mus(name):
-    global is_pass
-    is_pass = False
-
-
-"""VO类型检查"""
-
-
-def check_by_VO(name):
-    module_dict = js_dict[system_name]['module']
-    flag = 0
-    for module in module_dict:
-        # 模块层查询
-        if module + "_" in name:
-            name = name.replace(module + "_", "")
-            if name:
-                # 类型名查询
-                name = check_by_re(module_dict[module]['property'] + "_", name)
-                if name:
-                    # 角色名查询
-                    name = check_by_re(js_dict[system_name]['name'] + "_", name)
-                    if name:
-                        # 数字编号查询
-                        name = check_by_re(r"\d*", name)
-            flag = 1
-            break
-    if flag == 0:
-        print_error_by_module(module_dict)
-
-
-"""Char类型检查"""
-
-
-def check_by_Char(name):
-    module_dict = js_dict[system_name]['module']
-    flag = 0
-    is_mov = False
-    for module in module_dict:
-        # 模块层查询
-        if module + "_" in name:
-            name = name.replace(module + "_", "")
-            # 角色名层查询
-            name = check_by_re(js_dict[system_name]['name'] + "_", name)
-            if name:
-                if "Mov_" in name:
-                    is_mov = True
-                # property
-                name = check_by_re(module_dict[module]['property'] + "_*", name)
-                # 长度限制查询
-                if name:
-                    oi_h.check_by_str_length(name, js_dict[system_name]['length'], cell_sound.value)
-                # Mov层加查询
-                if is_mov:
-                    name = check_by_re(module_dict[module]['property2'] + "_*", name)
-                    if name:
-                        name = check_by_re(module_dict[module]['property3'] + "_*", name)
-
-            flag = 1
-            break
-
-    if flag == 0:
-        print_error_by_module(module_dict)
-
-
-"""Mon类型检查"""
-
-
-def check_by_Mon(name):
-    type_dict = js_dict[system_name]
-    flag = 0
-    for type in type_dict:
-        if type in name:
-            name = name.replace(type + "_", "")
-            flag = 1
-            module_dict = js_dict[system_name][type]['module']
-            flag = 0
-            for module in module_dict:
-                # 模块层查询
-                if module + "_" in name:
-                    name = name.replace(module + "_", "")
-                    # Boss名层查询
-                    name = check_by_re(js_dict[system_name][type]['name'] + "_", name)
-                    if name:
-                        # 技能层查询
-                        name = check_by_re(module_dict[module]['property'] + "_*", name)
-                        # 长度限制查询
-                        if name:
-                            oi_h.check_by_str_length(name, js_dict[system_name][type]['length'], cell_sound.value)
-
-                    flag = 1
-                    break
-
-            if flag == 0:
-                print_error_by_module(module_dict)
-            break
-    if flag == 0:
-        print_error_by_module(type_dict)
-
-
-def check_by_Sys(name):
-    module_dict = js_dict[system_name]['module']
-    flag = 0
-    for module in module_dict:
-        # 模块层查询
-        if module + "_" in name:
-            name = name.replace(module + "_", "")
-            # Show类查询
-            if module == "Show":
-                if name:
-                    # 角色名称
-                    name = check_by_re(module_dict[module]['property'] + "_", name)
-                    if name:
-                        # 皮肤名称
-                        name = check_by_re(module_dict[module]['property2'] + "_", name)
-                        if name:
-                            # 动作名称
-                            name = check_by_re(module_dict[module]['property3'] + "_*", name)
-                            if name:
-                                # 长度限制查询
-                                oi_h.check_by_str_length(name, module_dict[module]['length'], cell_sound.value)
-            flag = 1
-            break
-    if flag == 0:
-        print_error_by_module(module_dict)
-
-
-"""检查是否使用通用词汇"""
-
-
-def check_by_com_word(name):
-    com_word_dict = js_dict['Gen_Word']
-    for key in com_word_dict:
-        for value in com_word_dict[key]:
-            if value in name:
-                oi_h.print_error(cell_sound.value + value + "应改为通用词" + key)
-                if "Medium" in name:
-                    oi_h.print_error(cell_sound.value + "PS：Mid表体积/重量，Med表距离")
-
-
-"""获取一级系统名走不同的检测方式"""
-
-
-def check_first_system_name(name):
-    if system_name and (system_name in js_dict):
-        func_name = "check_by_" + system_name
-        eval(func_name)(name.replace(system_name + "_", ""))
-    else:
-        print_error_by_module(js_dict)
-
-
 """获取表格中的事件描述和状态所在的列"""
 
 
@@ -273,6 +39,8 @@ def get_descrip_and_status_column():
     second_module_column = None
     require_name_column = None
     status_column = None
+    sample_name_column = None
+
     if list(sheet.rows)[0]:
         for cell in list(sheet.rows)[0]:
             if cell.value:
@@ -288,21 +56,11 @@ def get_descrip_and_status_column():
                 elif 'Status' in str(cell.value):
                     status_column = cell.column
                     # print(status_column)
+                elif 'Sample Name' in str(cell.value):
+                    sample_name_column = cell.column
+                    # print(status_column)
 
-    return require_module_column, second_module_column, require_name_column, status_column
-
-
-"""检查是否为合并单元格"""
-
-
-def check_is_mergecell(cell):
-    if isinstance(cell, MergedCell):  # 判断该单元格是否为合并单元格
-        for merged_range in sheet.merged_cells.ranges:  # 循环查找该单元格所属的合并区域
-            if cell.coordinate in merged_range:
-                # 获取合并区域左上角的单元格作为该单元格的值返回
-                cell = sheet.cell(row=merged_range.min_row, column=merged_range.min_col)
-                break
-    return cell.value
+    return require_module_column, second_module_column, require_name_column, status_column, sample_name_column
 
 
 """拼接事件描述"""
@@ -311,11 +69,13 @@ def check_is_mergecell(cell):
 def get_event_descrip():
     event_descrip = ""
     if require_module_column:
-        require_module_value = check_is_mergecell(sheet.cell(row=cell_sound.row, column=require_module_column))
+        require_module_value, _ = excel_h.check_is_mergecell(
+            sheet.cell(row=cell_sound.row, column=require_module_column), sheet)
         if require_module_value:
             event_descrip = require_module_value + "_"
     if second_module_column:
-        second_module_value = check_is_mergecell(sheet.cell(row=cell_sound.row, column=second_module_column))
+        second_module_value, _ = excel_h.check_is_mergecell(sheet.cell(row=cell_sound.row, column=second_module_column),
+                                                            sheet)
         if event_descrip:
             if second_module_value:
                 event_descrip = event_descrip + second_module_value + "_"
@@ -324,7 +84,8 @@ def get_event_descrip():
                 event_descrip = second_module_value + "_"
 
     if require_name_column:
-        require_name_value = check_is_mergecell(sheet.cell(row=cell_sound.row, column=require_name_column))
+        require_name_value, _ = excel_h.check_is_mergecell(sheet.cell(row=cell_sound.row, column=require_name_column),
+                                                           sheet)
         if event_descrip:
             if require_name_value:
                 event_descrip = event_descrip + require_name_value + "_"
@@ -345,7 +106,6 @@ def get_event_descrip():
 
 with WaapiClient() as client:
     """*****************Wwise功能区******************"""
-
     """查找对象"""
 
 
@@ -392,8 +152,8 @@ with WaapiClient() as client:
     def import_media(media_name, rnd_path):
         # 媒体资源复制
         # 复制到的目录
-        copy_catalog = os.path.join(py_path, "New_Media")
-        source_path = shutil.copy2(os.path.join(py_path, "Media_Temp.wav"),
+        copy_catalog = os.path.join(root_path, "New_Media")
+        source_path = shutil.copy2(os.path.join(root_path, "Media_Temp.wav"),
                                    os.path.join(copy_catalog, media_name + ".wav"))
 
         # 在容器中创建媒体资源
@@ -426,7 +186,7 @@ with WaapiClient() as client:
             'value': notes_value
         }
         client.call("ak.wwise.core.object.setNotes", args)
-        # print_warning(obj_name + "描述更改为：" + notes_value)
+        # oi_h.print_warning(obj_name + "描述更改为：" + notes_value)
 
 
     """导入媒体资源"""
@@ -447,7 +207,7 @@ with WaapiClient() as client:
     """创建新的随机容器"""
 
 
-    def create_rnd_container(media_name, system_name):
+    def create_rnd_container(media_name, sys_name):
         # 查找该rnd是否已存在
         flag = 0
         # 去除随机容器数字
@@ -456,7 +216,7 @@ with WaapiClient() as client:
         rnd_path = ""
         rnd_container_list, rnd_id, _ = find_obj(
             {'waql': ' "%s" select descendants where type = "RandomSequenceContainer" ' % os.path.join(
-                wwise_dict['Root'], system_name)})
+                config.wwise_sfx_path, sys_name)})
         # 找到重名的
         for rnd_container_dict in rnd_container_list:
             if rnd_container_dict['name'] == rnd_name:
@@ -492,7 +252,7 @@ with WaapiClient() as client:
                     oi_h.print_warning(sound_cotainer_dict['originalWavFilePath'] + "(Media)改名为：" + new_media_path)
 
                     # 语音的话需要删除容器内的引用
-                    if system_name == "VO":
+                    if sys_name == "VO":
                         sound_language_list, _, _ = find_obj(
                             {'waql': ' "%s" select children  ' %
                                      sound_cotainer_dict['id']})
@@ -515,7 +275,7 @@ with WaapiClient() as client:
                                             {
                                                 'waql': ' "%s" select descendants,this where type = "ActorMixer" ' %
                                                         os.path.join(
-                                                            wwise_dict['Root'], system_name)})
+                                                            config.wwise_sfx_path, sys_name)})
             if rnd_parent_id:
 
                 # 创建的rnd属性
@@ -593,7 +353,7 @@ with WaapiClient() as client:
 
     def import_media_in_rnd(source_path, media_name, rnd_path):
         # 导入语音
-        if system_name == "VO":
+        if sys_name == "VO":
             args_import = {
                 "importOperation": "useExisting",
                 "imports": [
@@ -633,7 +393,7 @@ with WaapiClient() as client:
                     {
                         "audioFile": source_path,
                         "objectPath": rnd_path + '\\<Sound SFX>' + media_name,
-                        "originalsSubFolder": system_name
+                        "originalsSubFolder": sys_name
                         #                                                         名为Test 0的顺序容器            名为My SFX 0 的音效
                         # "objectPath": "\\Actor-Mixer Hierarchy\\Default Work Unit\\<Sequence Container>Test 0\\<Sound SFX>My SFX 0"
                     }
@@ -649,7 +409,7 @@ with WaapiClient() as client:
         }
         client.call("ak.wwise.core.audio.import", args_import, options=opts)
 
-        if system_name == "VO":
+        if sys_name == "VO":
             copy_reference_VO_to_other(media_name)
 
 
@@ -682,14 +442,14 @@ with WaapiClient() as client:
 
     def create_event(rnd_name, rnd_path):
         parent_id = find_obj_parent(rnd_name, {
-            'waql': ' "%s" select descendants where type = "WorkUnit" ' % os.path.join(wwise_dict['Event_Root'],
-                                                                                       system_name)})
+            'waql': ' "%s" select descendants where type = "WorkUnit" ' % os.path.join(config.wwise_event_path,
+                                                                                       sys_name)})
         event_name = "AKE_" + "Play_" + rnd_name
         event_stop_name = "AKE_" + "Stop_" + rnd_name
         # 查找事件是否已存在
         event_list, _, _ = find_obj(
             {'waql': ' "%s" select descendants where type = "Event" ' %
-                     wwise_dict['Event_Root']})
+                     config.wwise_event_path})
 
         # 判断其random容器的父级是不是actor-mixer，如果不是就不生成event
         rnd_parent_list, _, _ = find_obj(
@@ -736,13 +496,10 @@ with WaapiClient() as client:
                         pprint(event_name + "事件创建")
 
 
-    """媒体资源导入的总流程"""
-
-
-    def create_wwise_content(media_name, system_name):
+    def create_wwise_content(media_name, sys_name):
 
         # 随机容器创建
-        rnd_path, rnd_name = create_rnd_container(media_name, system_name)
+        rnd_path, rnd_name = create_rnd_container(media_name, sys_name)
 
         # 事件自动生成
         create_event(rnd_name, rnd_path)
@@ -779,7 +536,7 @@ with WaapiClient() as client:
         for i in file_name_list:
             if ".xlsx" in i:
                 # 拼接xlsx的路径
-                file_path_xlsx = os.path.join(py_path, i)
+                file_path_xlsx = os.path.join(root_path, i)
                 # 获取xlsx的workbook
                 wb = openpyxl.load_workbook(file_path_xlsx)
                 # 获取xlsx的所有sheet
@@ -794,7 +551,7 @@ with WaapiClient() as client:
                             for cell_sound in list(sheet.columns)[cell.column - 1]:
                                 # 空格和中文不检测
                                 if cell_sound.value != None:
-                                    if oi_h.check_is_chinese(cell_sound.value) == False:
+                                    if 命名规范检查.check_is_chinese(cell_sound.value) == False:
 
                                         """事件描述"""
                                         event_descrip = get_event_descrip()
@@ -809,8 +566,9 @@ with WaapiClient() as client:
         # 其他为在表格中搜索不到的名字
         delete_wwise_content()
 
+        # 删除语音不对应的rnd sound资源
 
-    # 删除语音不对应的rnd sound资源
+
     def delete_wwise_content_vo_sound():
         # Sound容器删除
         args = {
@@ -824,13 +582,14 @@ with WaapiClient() as client:
             os.remove(sound_container['originalWavFilePath'])
             oi_h.print_warning(sound_container['originalWavFilePath'] + "已删除")
 
+        # 删除语音不对应的rnd sound资源
 
-    # 删除语音不对应的rnd sound资源
+
     def delete_or_modify_wwise_content_vo_sound():
         for i in file_name_list:
             if ".xlsx" in i:
                 # 拼接xlsx的路径
-                file_path_xlsx = os.path.join(py_path, i)
+                file_path_xlsx = os.path.join(root_path, i)
                 # 获取xlsx的workbook
                 wb = openpyxl.load_workbook(file_path_xlsx)
                 # 获取xlsx的所有sheet
@@ -845,7 +604,7 @@ with WaapiClient() as client:
                             for cell_sound in list(sheet.columns)[cell.column - 1]:
                                 # 空格和中文不检测
                                 if cell_sound.value != None:
-                                    if oi_h.check_is_chinese(cell_sound.value) == False:
+                                    if 命名规范检查.check_is_chinese(cell_sound.value) == False:
 
                                         """事件描述"""
                                         event_descrip = get_event_descrip()
@@ -864,15 +623,17 @@ with WaapiClient() as client:
     """*****************主程序处理******************"""
     # 撤销开始
     client.call("ak.wwise.core.undo.beginGroup")
-
     # 记录所有资源名称
     sound_name_list = []
+
+    # 事件描述字典：用于记录描述键和行作为值
+    event_descrip_dict = {}
 
     # 提取规则：只提取xlsx文件
     for i in file_name_list:
         if ".xlsx" in i:
             # 拼接xlsx的路径
-            file_path_xlsx = os.path.join(py_path, i)
+            file_path_xlsx = os.path.join(root_path, i)
             # 获取xlsx的workbook
             wb = openpyxl.load_workbook(file_path_xlsx)
             # 获取xlsx的所有sheet
@@ -880,89 +641,76 @@ with WaapiClient() as client:
             # 加载所有工作表
             for sheet_name in sheet_names:
                 sheet = wb[sheet_name]
-                require_module_column, second_module_column, require_name_column, status_column = get_descrip_and_status_column()
-                # 获取工作表第一行数据
-                for cell in list(sheet.rows)[0]:
-                    if 'Sample Name' in str(cell.value):
-                        # 获取音效名下的内容
-                        for cell_sound in list(sheet.columns)[cell.column - 1]:
-                            # 空格和中文不检测
-                            if cell_sound.value:
-                                if not oi_h.check_is_chinese(cell_sound.value):
-                                    if status_column:
-                                        if sheet.cell(row=cell_sound.row,
-                                                      column=status_column).value in config.status_list:
+                word_list_len = sheet.max_column
 
-                                            """❤❤❤❤数据获取❤❤❤❤"""
-                                            """检测表格内容"""
-                                            is_pass = True
+                require_module_column, second_module_column, require_name_column, status_column, sample_name_column = get_descrip_and_status_column()
+                if sample_name_column:
+                    for cell_sound in list(sheet.columns)[sample_name_column - 1]:
+                        if status_column:
+                            if sheet.cell(row=cell_sound.row,
+                                          column=status_column).value in config.status_list:
+                                if (cell_sound.value) and (
+                                        not 命名规范检查.check_is_chinese(cell_sound.value)):
+                                    # pprint(cell_sound.value)
+                                    """检查表格中是否有内容重复项"""
+                                    if cell_sound.value in sound_name_list:
+                                        oi_h.print_error(cell_sound.value + "：表格中有重复项音效名，请检查")
+                                    else:
+                                        sound_name_list.append(cell_sound.value)
+                                        """测试名称"""
+                                        name = cell_sound.value
+                                        """事件描述"""
+                                        event_descrip = get_event_descrip()
+                                        if (event_descrip in event_descrip_dict) and (
+                                                not 命名规范检查.check_is_random(name)):
+                                            oi_h.print_error(event_descrip + "：表格中有重复项描述，请检查")
 
-                                            """检查表格中是否有内容重复项"""
-                                            if cell_sound.value in sound_name_list:
-                                                oi_h.print_error(cell_sound.value + "：表格中有重复项音效名，请检查")
-                                            else:
-                                                sound_name_list.append(cell_sound.value)
-                                                """测试名称"""
-                                                name = cell_sound.value
-                                                """事件描述"""
-                                                event_descrip = get_event_descrip()
-                                                if (event_descrip in event_descrip_dict) and (not check_is_random()):
-                                                    oi_h.print_error(event_descrip + "：表格中有重复项描述，请检查")
-                                                else:
-                                                    event_descrip_dict[event_descrip] = cell_sound.value
+                                        else:
+                                            event_descrip_dict[event_descrip] = cell_sound.value
+                                            name_list = name.split("_")
+                                            sys_name = name_list[0]
+                                            # print(sys_name)
+                                            create_wwise_content(cell_sound.value, sys_name)
 
-                                                # print(event_descrip)
+    """同步表中删除的内容"""
+    # 查找所有Rnd和Event
+    rnd_container_list, rnd_id, _ = find_obj(
+        {'waql': ' "%s" select descendants where type = "RandomSequenceContainer" ' % config.wwise_sfx_path})
+    # [{'id': '{C1BFDDC1-CA6F-45BC-8B43-15AE866AA20A}',
+    #   'name': 'Char_Skill_C01_Atk1',
+    #   'notes': '',
+    #   'path': '\\Actor-Mixer '
+    #           'Hierarchy\\v1\\Char\\Char\\Char_Skill\\Char_Skill\\Char_Skill_C01\\Char_Skill_C01\\Char_Skill_C01_Atk1'}
+    event_list, event_id, _ = find_obj(
+        {'waql': ' "%s" select descendants where type = "Event" ' % config.wwise_event_path})
 
-                                                """命名规范检查"""
-                                                if is_pass:
-                                                    # 音频命名规范基础检查
-                                                    system_name, name, is_pass = oi_h.check_name_all(cell_sound.value)
+    # 查找Amb_Global的内容，不删除
+    obj_sub_list, _, _ = find_obj(
+        {
+            'waql': ' "{8B09C109-84EA-448C-BDF9-C7E371E6375C}" select descendants where type = "RandomSequenceContainer" '})
+    extract_key = lambda d: d['id']
+    amb_2d_list = list(map(extract_key, obj_sub_list))
+    # pprint(amb_2d_list)
 
-                                                    if is_pass:
-                                                        # 通用词汇检查
-                                                        check_by_com_word(name)
+    for rnd_container in rnd_container_list:
+        if rnd_container['id'] not in amb_2d_list:
+            delete_or_modify_wwise_content()
 
-                                                        # 检查一级系统并索引到不同的检测方式
-                                                        check_first_system_name(name)
-                                                        # print(name)
+    # 对于语音，需要查找Sound容器里的随机资源
+    # 查找所有Sound
+    sound_container_list, _, _ = find_obj(
+        {'waql': ' "%s" select descendants where type = "Sound" ' % config.wwise_vo_game_path})
 
-                                                        # 检查是否为随机样本
-                                                        is_pass = oi_h.check_is_random(name)
+    for sound_container in sound_container_list:
+        delete_or_modify_wwise_content_vo_sound()
 
-                                                        # # 生成Wwise内容
-                                                        # if is_pass:
-                                                        #     create_wwise_content(cell_sound.value, system_name)
+    # 撤销结束
+    client.call("ak.wwise.core.undo.endGroup", displayName="rnd创建撤销")
 
-    # """同步表中删除的内容"""
-    # # 查找所有Rnd和Event
-    # rnd_container_list, rnd_id, _ = find_obj(
-    #     {'waql': ' "%s" select descendants where type = "RandomSequenceContainer" ' % wwise_dict['Root']})
-    # # [{'id': '{C1BFDDC1-CA6F-45BC-8B43-15AE866AA20A}',
-    # #   'name': 'Char_Skill_C01_Atk1',
-    # #   'notes': '',
-    # #   'path': '\\Actor-Mixer '
-    # #           'Hierarchy\\v1\\Char\\Char\\Char_Skill\\Char_Skill\\Char_Skill_C01\\Char_Skill_C01\\Char_Skill_C01_Atk1'}
-    # event_list, event_id, _ = find_obj(
-    #     {'waql': ' "%s" select descendants where type = "Event" ' % wwise_dict['Event_Root']})
-    #
-    # for rnd_container in rnd_container_list:
-    #     delete_or_modify_wwise_content()
-    #
-    # # 对于语音，需要查找Sound容器里的随机资源
-    # # 查找所有Sound
-    # sound_container_list, _, _ = find_obj(
-    #     {'waql': ' "%s" select descendants where type = "Sound" ' % wwise_dict['VO_Game']})
-    #
-    # for sound_container in sound_container_list:
-    #     delete_or_modify_wwise_content_vo_sound()
-    #
-    # # 撤销结束
-    # client.call("ak.wwise.core.undo.endGroup", displayName="rnd创建撤销")
-    #
-    # # 清除复制的媒体资源
-    # shutil.rmtree("New_Media")
-    # os.mkdir("New_Media")
-    # os.mkdir("New_Media/Chinese")
-    # os.mkdir("New_Media/English")
-    # os.mkdir("New_Media/Japanese")
-    # os.mkdir("New_Media/Korean")
+    # 清除复制的媒体资源
+    shutil.rmtree(os.path.join(root_path, 'New_Media'))
+    os.mkdir(os.path.join(root_path, 'New_Media'))
+    os.mkdir(os.path.join(root_path, "New_Media/Chinese"))
+    os.mkdir(os.path.join(root_path, "New_Media/English"))
+    os.mkdir(os.path.join(root_path, "New_Media/Japanese"))
+    os.mkdir(os.path.join(root_path, "New_Media/Korean"))

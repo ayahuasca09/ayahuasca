@@ -137,6 +137,17 @@ def check_by_str_length(str1, length, name):
     return True
 
 
+"""随机容器后缀检查"""
+
+
+def check_is_random(name):
+    is_random = re.search(r"(_R\d{2,4})$", name)
+    if is_random:
+        return True
+    else:
+        return False
+
+
 """基础规范检查"""
 
 
@@ -517,7 +528,6 @@ def check_by_wb(media_name, audio_unit_list, event_unit_list, audio_mixer_list):
     if sys_name_flag == 0:
         print_error(media_name + "：" + media_name_list[0] + "未找到，请检查命名是否正确")
     return is_pass
-
 
 # 检查命名规范测试
 # audio_unit_list = []
