@@ -177,6 +177,8 @@ combat_id_refer_dict_3 = find_excel_ID_refer_path(config.excel_combat_path, 5, "
 combat_id_refer_dict = combat_boss_id_refer_dict_1 | combat_boss_id_refer_dict_2 | combat_boss_id_refer_dict_3 | combat_id_refer_dict_1 | combat_id_refer_dict_2 | combat_id_refer_dict_3
 # pprint(combat_id_refer_dict)
 a3d_id_refer_dict = find_excel_ID_refer_path(config.excel_3d_path, 5, "eventID")
+# 战斗喊话表路径
+excel_combat_shout_dict = find_excel_ID_refer_path(config.excel_combat_path, 5, "喊话ID")
 
 sheet_names = wb_dcc.sheetnames
 # 加载所有工作表
@@ -206,5 +208,6 @@ for sheet_name in sheet_names:
         set_config_type_and_path(first_col_value, '场景声源', a3d_id_refer_dict)
         set_config_type_and_path(first_col_value, '程序写死', config.logic_id_refer_dict)
         set_config_type_and_path(first_col_value, '天气系统', config.time_id_refer_dict)
+        set_config_type_and_path(first_col_value, '战斗喊话', excel_combat_shout_dict)
 
 wb_dcc.save(config.excel_dcc_dt_audio_page_path)
