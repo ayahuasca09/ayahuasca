@@ -57,6 +57,8 @@ def args_set_obj_property(obj_id, property, value):
     # client.call("ak.wwise.core.object.setProperty", args)
     # print(name_2 + ":" + str(trigger_rate))
     return args
+
+
 # args=waapi_h.args_set_obj_property(obj_id, "OverrideColor", False)
 # client.call("ak.wwise.core.object.setProperty", args)
 
@@ -70,6 +72,7 @@ def args_set_obj_notes(obj_id, notes_value):
     # client.call("ak.wwise.core.object.setNotes", args)
     # print_warning(obj_name + "描述更改为：" + notes_value)
     return args
+
 
 # args=waapi_h.args_set_obj_notes(obj_dict['id'], obj_desc)
 # client.call("ak.wwise.core.object.setNotes", args)
@@ -89,6 +92,8 @@ def args_change_name_by_wwise_content(obj_id, name, old_name, obj_type):
     # client.call("ak.wwise.core.object.set", args)
     # oi_h.print_warning(old_name + "(" + obj_type + ")改名为：" + name)
     return args
+
+
 # args = waapi_h.args_change_name_by_wwise_content(obj_dict['id'], obj_name, obj_dict['name'],
 #                                                                  obj_type)
 # client.call("ak.wwise.core.object.set", args)
@@ -146,15 +151,7 @@ def args_effect_set(obj_id, effect_id):
         "objects": [
             {
                 "object": obj_id,
-                "@Effects": [
-                    {
-                        "type": "EffectSlot",
-                        "name": "",
-                        "@Effect": {
-                            "id": effect_id,
-                        }
-                    }
-                ]
+                "@Effect0": effect_id
             }
         ]
     }

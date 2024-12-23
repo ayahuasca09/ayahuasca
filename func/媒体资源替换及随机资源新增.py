@@ -1,21 +1,37 @@
-import openpyxl
-import json
 import sys
-from os.path import abspath, dirname
 import os
-from pprint import pprint
 import re
 from waapi import WaapiClient
 import shutil
-import config
+import importlib.util
 
-"""根目录获取"""
-# 获取当前脚本的文件名及路径
-script_name_with_extension = __file__.split('/')[-1]
-# 去掉扩展名
-script_name = script_name_with_extension.rsplit('.', 1)[0]
-# 替换为files
-root_path = script_name.replace("func", "files")
+# """根目录获取"""
+# # 获取当前脚本的文件名及路径
+# script_name_with_extension = __file__.split('/')[-1]
+# # 去掉扩展名
+# script_name = script_name_with_extension.rsplit('.', 1)[0]
+# # 替换为files
+# root_path = script_name.replace("func", "files")
+root_path = r'F:\pppppy\SP\files\媒体资源替换及随机资源新增'
+
+
+def resource_path(relative_path):
+    """ Get the absolute path to a resource, works for dev and for PyInstaller """
+    try:
+        # PyInstaller creates a temp folder and stores path in _MEIPASS
+        base_path = sys._MEIPASS
+    except Exception:
+        base_path = os.path.abspath(".")
+
+    return os.path.join(base_path, relative_path)
+
+
+config_path = r"F:\pppppy\SP\config.py"
+# print(config_path)
+spec = importlib.util.spec_from_file_location("config", config_path)
+config = importlib.util.module_from_spec(spec)
+sys.modules["config"] = config
+spec.loader.exec_module(config)
 
 # 是否通过
 is_pass = True
@@ -383,3 +399,5 @@ with WaapiClient() as client:
     os.mkdir(os.path.join(wav_path, "Japanese"))
     os.mkdir(os.path.join(wav_path, "Korean"))
 
+    print("")
+    input("please input any key to exit!")

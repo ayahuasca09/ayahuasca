@@ -405,9 +405,11 @@ with WaapiClient() as client:
 
 
     def add_meter_to_source(source_id, meter_id):
+        # 超越父级设置,不需要设置
+        # set_obj_property(source_id, "OverrideEffect", True)
         args = waapi_h.args_effect_set(source_id, meter_id)
         result = client.call("ak.wwise.core.object.set", args)
-        pprint(result)
+        # pprint(result)
 
 
     """创建Ducking所需要的内容"""
@@ -425,6 +427,7 @@ with WaapiClient() as client:
                             source_name, _ = excel_h.check_is_mergecell(sheet.cell(row=cell.row,
                                                                                    column=require_name_column), sheet)
                             if 'Aux' not in source_name:
+
                                 if source_name:
                                     rtpc_name = source_name + "_Ducking"
                                     # print(source_name)
@@ -433,7 +436,7 @@ with WaapiClient() as client:
                                     # 设置目标的rtpc
                                     set_target_rtpc(bus_have_dict[cell.value], rtpc_id, cell.value)
                                     # 将meter添加到源
-                                    # add_meter_to_source(bus_have_dict[source_name], meter_id)
+                                    add_meter_to_source(bus_have_dict[source_name], meter_id)
                                 else:
                                     oi_h.print_error(cell.value + "：要ducking的bus无source bus的名称，请检查")
 
@@ -495,6 +498,7 @@ with WaapiClient() as client:
 
                                 """名称查重及列表添加"""
                                 if "Aux" in cell.value:
+                                    obj_id = None
                                     if cell.value not in aux_name_list:
                                         # 对象创建
                                         obj_id = create_wwise_obj_by_excel("AuxBus", "Bus", cell.value,
@@ -515,7 +519,9 @@ with WaapiClient() as client:
                                         # 设置源的rtpc和meter
                                         rtpc_id, meter_id = set_source_meter_and_rtpc(rtpc_name)
                                         # 设置目标的rtpc
-                                        set_target_rtpc(bus_have_dict[target_name], rtpc_id, target_name)
+                                        set_target_rtpc(obj_id, rtpc_id, target_name)
+                                        # 将meter添加到源
+                                        add_meter_to_source(obj_id, meter_id)
 
                                 else:
                                     if cell.value not in bus_name_list:
@@ -674,42 +680,40 @@ with WaapiClient() as client:
                 if rtpc_name in rtpc_have_dict:
                     delete_obj(meter_have_dict[rtpc_name], rtpc_name, "Effect")
 
-
-    # 获取已有的所有子bus
-    # 子bus创建
-    if wb["Bus创建"]:
-        sheet = wb["Bus创建"]
-        require_name_column, value_desc_column, duck_column, aux_column, state_column, break_column = get_descrip_and_status_column()
-        excel_have_sub_bus_list = excel_h.get_colunmn_one_list(require_name_column, sheet)
-        # 所有子bus列表
-        sub_bus_list = excel_have_sub_bus_list + bus_create_list
-        # 子bus删除
-        bus_have_dict = get_wwise_type_list(config.wwise_bus_path, "Bus")
-        delete_check(bus_have_dict, sub_bus_list, "Bus")
-        # 子aux duck bus删除
-        aux_duck_have_dict = get_wwise_type_list(config.wwise_aux_duck_path, "AuxBus")
-        delete_check(aux_duck_have_dict, sub_bus_list, "AuxBus")
-
-        # 未引用的rtpc和meter删除
-        rtpc_have_dict = get_wwise_type_list(config.wwise_rtpc_path, "GameParameter")
-        meter_have_dict = get_wwise_type_list(config.wwise_effect_ducking_path, "Effect")
-        if require_name_column:
-            for cell in list(sheet.columns)[require_name_column - 1]:
-                if (cell.value) and (
-                        not 命名规范检查.check_is_chinese(cell.value)):
-                    if 命名规范检查.check_by_length_and_word_bool(
-                            cell.value, 10):
-                        if "Aux" in cell.value:
-                            # rtpc删除
-                            for wwise_obj in rtpc_have_dict:
-                                flag = 0
-                                target_name = sheet.cell(row=cell.row,
-                                                         column=duck_column).value
-                                if target_name:
-                                    if target_name in wwise_obj:
-                                        flag = 1
-                                        break
-                                    if flag == 0:
-                                        delete_obj(rtpc_have_dict[wwise_obj], wwise_obj, "GameParameter")
-                                        delete_obj(meter_have_dict[wwise_obj], wwise_obj, "Effect")
-
+    # # 获取已有的所有子bus
+    # # 子bus创建
+    # if wb["Bus创建"]:
+    #     sheet = wb["Bus创建"]
+    #     require_name_column, value_desc_column, duck_column, aux_column, state_column, break_column = get_descrip_and_status_column()
+    #     excel_have_sub_bus_list = excel_h.get_colunmn_one_list(require_name_column, sheet)
+    #     # 所有子bus列表
+    #     sub_bus_list = excel_have_sub_bus_list + bus_create_list
+    #     # 子bus删除
+    #     bus_have_dict = get_wwise_type_list(config.wwise_bus_path, "Bus")
+    #     delete_check(bus_have_dict, sub_bus_list, "Bus")
+    #     # 子aux duck bus删除
+    #     aux_duck_have_dict = get_wwise_type_list(config.wwise_aux_duck_path, "AuxBus")
+    #     delete_check(aux_duck_have_dict, sub_bus_list, "AuxBus")
+    #
+    #     # 未引用的rtpc和meter删除
+    #     rtpc_have_dict = get_wwise_type_list(config.wwise_rtpc_path, "GameParameter")
+    #     meter_have_dict = get_wwise_type_list(config.wwise_effect_ducking_path, "Effect")
+    #     if require_name_column:
+    #         for cell in list(sheet.columns)[require_name_column - 1]:
+    #             if (cell.value) and (
+    #                     not 命名规范检查.check_is_chinese(cell.value)):
+    #                 if 命名规范检查.check_by_length_and_word_bool(
+    #                         cell.value, 10):
+    #                     if "Aux" in cell.value:
+    #                         # rtpc删除
+    #                         for wwise_obj in rtpc_have_dict:
+    #                             flag = 0
+    #                             target_name = sheet.cell(row=cell.row,
+    #                                                      column=duck_column).value
+    #                             if target_name:
+    #                                 if target_name in wwise_obj:
+    #                                     flag = 1
+    #                                     break
+    #                                 if flag == 0:
+    #                                     delete_obj(rtpc_have_dict[wwise_obj], wwise_obj, "GameParameter")
+    #                                     delete_obj(meter_have_dict[wwise_obj], wwise_obj, "Effect")

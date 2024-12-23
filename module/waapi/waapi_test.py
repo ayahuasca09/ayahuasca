@@ -587,13 +587,25 @@ with WaapiClient() as client:
     # result = client.call("ak.wwise.core.object.set", args)
 
     """效果器查找"""
+    # args = {
+    #     'waql': '"%s"  ' % "{2D86BD0B-BC69-4416-8368-FED6C2E956B7}"
+    # }
+    # options = {
+    #     'return': ['name', 'Color', 'maxDurationSource', 'type', 'pluginname', 'parent', 'owner', "RTPC", 'notes', 'id',
+    #                'ControlInput']
+    # }
+    # # 存储了所有Event的单元结构
+    # wwise_info_list = client.call("ak.wwise.core.object.get", args, options=options)['return']
+    # pprint(wwise_info_list)
+
+    """效果器设置"""
+    # 需要先超越父级
     args = {
-        'waql': '"%s"  ' % "{2D86BD0B-BC69-4416-8368-FED6C2E956B7}"
+        "objects": [
+            {
+                "object": "{372CAE82-5A26-4877-B844-D6F780045924}",
+                "@Effect0": "{BCB310CA-FC40-4CB6-A454-F711631441DA}"
+            }
+        ]
     }
-    options = {
-        'return': ['name', 'Color', 'maxDurationSource', 'type', 'pluginname', 'parent', 'owner', "RTPC", 'notes', 'id',
-                   'ControlInput']
-    }
-    # 存储了所有Event的单元结构
-    wwise_info_list = client.call("ak.wwise.core.object.get", args, options=options)['return']
-    pprint(wwise_info_list)
+    client.call("ak.wwise.core.object.set", args)
