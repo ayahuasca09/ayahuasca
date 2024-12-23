@@ -510,7 +510,8 @@ with WaapiClient() as client:
                 if value:
                     for cell in list(sheet.columns)[value - 1]:
                         if (cell.value) and (not 命名规范检查.check_is_chinese(cell.value)) and (
-                                cell.value != "Mus_Login"):
+                                cell.value != "Mus_Login") and (命名规范检查.check_by_length_and_word_bool(
+                            cell.value, 10)):
                             """名称查重"""
                             if cell.value not in mus_name_list:
                                 mus_name_list.append(cell.value)

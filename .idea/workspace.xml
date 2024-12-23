@@ -4,26 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="17a8a927-0db7-41d4-8f81-9181fc87e6d9" name="更改" comment="媒体资源替换入轨">
-      <change afterPath="$PROJECT_DIR$/files/媒体资源替换及随机资源新增/Media_Temp.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/媒体资源替换及随机资源新增/Analysis-00.toc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/媒体资源替换及随机资源新增/EXE-00.toc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/媒体资源替换及随机资源新增/PKG-00.toc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/媒体资源替换及随机资源新增/PYZ-00.pyz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/媒体资源替换及随机资源新增/PYZ-00.toc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/媒体资源替换及随机资源新增/base_library.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/媒体资源替换及随机资源新增/warn-媒体资源替换及随机资源新增.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/媒体资源替换及随机资源新增/xref-媒体资源替换及随机资源新增.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/媒体资源替换及随机资源新增/媒体资源替换及随机资源新增.pkg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/dist/媒体资源替换及随机资源新增.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/媒体资源替换及随机资源新增.spec" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/Bus自动化/Bus资源表.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/files/Bus自动化/Bus资源表.xlsx" afterDir="false" />
+    <list default="true" id="17a8a927-0db7-41d4-8f81-9181fc87e6d9" name="更改" comment="添加效果器设置">
       <change beforePath="$PROJECT_DIR$/files/命名规范检查/命名规范检查表.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/files/命名规范检查/命名规范检查表.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/func/Bus自动化.py" beforeDir="false" afterPath="$PROJECT_DIR$/func/Bus自动化.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/func/媒体资源替换及随机资源新增.py" beforeDir="false" afterPath="$PROJECT_DIR$/func/媒体资源替换及随机资源新增.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_h.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_h.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/func/Mus自动化.py" beforeDir="false" afterPath="$PROJECT_DIR$/func/Mus自动化.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -170,29 +153,7 @@
       <visibility group="运行配置" flag="true" />
     </myKeys>
   </component>
-  <component name="RunManager" selected="Python.Bus自动化">
-    <configuration name="媒体资源从表导入" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="SP" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/func" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/func/媒体资源从表导入.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Python.Mus自动化">
     <configuration name="媒体资源替换及随机资源新增" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="SP" />
       <option name="ENV_FILES" value="" />
@@ -259,6 +220,28 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="Mus自动化" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="SP" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/func" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/func/Mus自动化.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="waapi_音频资源导入_从媒体资源导入" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="SP" />
       <option name="ENV_FILES" value="" />
@@ -305,11 +288,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.Mus自动化" />
         <item itemvalue="Python.Bus自动化" />
         <item itemvalue="Python.waapi_test" />
         <item itemvalue="Python.媒体资源替换及随机资源新增" />
         <item itemvalue="Python.DCC表的引用路径生成v2" />
-        <item itemvalue="Python.媒体资源从表导入" />
       </list>
     </recent_temporary>
   </component>
@@ -328,14 +311,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1716955384994</updated>
-    </task>
-    <task id="LOCAL-00111" summary="ES自动化：删除同步">
-      <option name="closed" value="true" />
-      <created>1730964242121</created>
-      <option name="number" value="00111" />
-      <option name="presentableId" value="LOCAL-00111" />
-      <option name="project" value="LOCAL" />
-      <updated>1730964242121</updated>
     </task>
     <task id="LOCAL-00112" summary="ES自动化：删除同步">
       <option name="closed" value="true" />
@@ -721,7 +696,15 @@
       <option name="project" value="LOCAL" />
       <updated>1734875899620</updated>
     </task>
-    <option name="localTasksCounter" value="160" />
+    <task id="LOCAL-00160" summary="添加效果器设置">
+      <option name="closed" value="true" />
+      <created>1734964977532</created>
+      <option name="number" value="00160" />
+      <option name="presentableId" value="LOCAL-00160" />
+      <option name="project" value="LOCAL" />
+      <updated>1734964977532</updated>
+    </task>
+    <option name="localTasksCounter" value="161" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -737,7 +720,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="ID表自动化：分页" />
     <MESSAGE value="ID表自动化：剧情索引查找" />
     <MESSAGE value="ID表自动化：所有配置索引查找" />
     <MESSAGE value="音乐自动化：bpm单元格合并" />
@@ -762,7 +744,8 @@
     <MESSAGE value="[x] 从表生成媒体资源优化" />
     <MESSAGE value="引用查找：战斗喊话" />
     <MESSAGE value="媒体资源替换入轨" />
-    <option name="LAST_COMMIT_MESSAGE" value="媒体资源替换入轨" />
+    <MESSAGE value="添加效果器设置" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加效果器设置" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
