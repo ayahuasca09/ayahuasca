@@ -245,7 +245,7 @@ def copy_to_dcc_audio():
 
                 # 填充第8列的空值为0
                 if cell_col8.value is None:
-                    cell_col8.value = 0
+                    cell_col8.value = 8
 
                 # 填充第9列的空值为0
                 if cell_col9.value is None:
