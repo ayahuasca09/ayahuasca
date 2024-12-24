@@ -380,7 +380,7 @@ with WaapiClient() as client:
             no_wav_name = re.sub(".wav", "", wav_name)
             # pprint(no_wav_name)
             word_list = no_wav_name.split("_")
-            if word_list[0] in config.event_id_config:
+            if word_list[0] in config.cc:
                 check_is_R01(no_wav_name)
                 if is_pass == True:
                     create_wwise_content(no_wav_name, word_list[0])

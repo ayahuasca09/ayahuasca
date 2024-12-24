@@ -1,6 +1,7 @@
 from os.path import abspath, dirname
 import sys
 import os
+import configparser
 
 """获取py的根路径"""
 
@@ -22,6 +23,24 @@ def get_py_file_path(script_name):
         get_py_path(), "files", script_name)
     return py_file_path
 
+
+"""ini读取"""
+# 创建一个 ConfigParser 对象
+config = configparser.ConfigParser()
+
+# 读取 INI 文件
+config.read('config.ini')
+
+# 访问 DEFAULT 区域的设置
+wwise_path = config['DEFAULT']['WwisePath']
+ue_path = config['DEFAULT']['UEPath']
+# 测试文件
+# new_path = os.path.join(wwise_path, 'Originals', 'Voices')
+# 检查路径是否存在
+# if os.path.exists(new_path):
+#     print(f"The path '{new_path}' exists.")
+# else:
+#     print(f"The path '{new_path}' does not exist.")
 
 """Wwise"""
 wwise_sfx_path = "\\Actor-Mixer Hierarchy\\v1"

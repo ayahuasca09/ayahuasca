@@ -5,10 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="17a8a927-0db7-41d4-8f81-9181fc87e6d9" name="更改" comment="id表：默认配置更改">
-      <change afterPath="$PROJECT_DIR$/module/waapi/waapi_auto_gen_music/游戏音乐资源表 (14).xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_generatesoundbank/GenerateSoundbank_Log.json" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_generatesoundbank/GenerateSoundbank_Log.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_generatesoundbank/waapi_订阅_soundbank生成数据.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_generatesoundbank/waapi_订阅_soundbank生成数据.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -155,7 +153,7 @@
       <visibility group="运行配置" flag="true" />
     </myKeys>
   </component>
-  <component name="RunManager" selected="Python.waapi_订阅_soundbank生成数据">
+  <component name="RunManager" selected="Python.config">
     <configuration name="ID表生成" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="SP" />
       <option name="ENV_FILES" value="" />
@@ -200,7 +198,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="waapi_音频资源全流程生成" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="config" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="SP" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -209,11 +207,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/module/waapi" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/module/waapi/waapi_音频资源全流程生成.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/config.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -290,11 +288,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.config" />
         <item itemvalue="Python.waapi_订阅_soundbank生成数据" />
         <item itemvalue="Python.ID表生成" />
         <item itemvalue="Python.waapi_auto_gen_music" />
         <item itemvalue="Python.Mus自动化" />
-        <item itemvalue="Python.waapi_音频资源全流程生成" />
       </list>
     </recent_temporary>
   </component>
@@ -313,14 +311,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1716955384994</updated>
-    </task>
-    <task id="LOCAL-00114" summary="ES自动化：剧情表自动化生成">
-      <option name="closed" value="true" />
-      <created>1730970986895</created>
-      <option name="number" value="00114" />
-      <option name="presentableId" value="LOCAL-00114" />
-      <option name="project" value="LOCAL" />
-      <updated>1730970986895</updated>
     </task>
     <task id="LOCAL-00115" summary="ES自动化：新增命名规范检测、转码设置根据CG和VO区分、相应ID表自动化生成">
       <option name="closed" value="true" />
@@ -706,7 +696,15 @@
       <option name="project" value="LOCAL" />
       <updated>1735027683455</updated>
     </task>
-    <option name="localTasksCounter" value="163" />
+    <task id="LOCAL-00163" summary="id表：默认配置更改">
+      <option name="closed" value="true" />
+      <created>1735033367864</created>
+      <option name="number" value="00163" />
+      <option name="presentableId" value="LOCAL-00163" />
+      <option name="project" value="LOCAL" />
+      <updated>1735033367864</updated>
+    </task>
+    <option name="localTasksCounter" value="164" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -771,6 +769,11 @@
           <url>file://$PROJECT_DIR$/func/Bus自动化.py</url>
           <line>521</line>
           <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/module/oi/oi_h.py</url>
+          <line>51</line>
+          <option name="timeStamp" value="24" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
