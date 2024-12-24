@@ -2,25 +2,25 @@
     "logs": [
         {
             "message": "Override project External Sources output paths: False",
-            "time": 1729247988,
+            "time": 1735032600,
             "severity": "Message",
             "messageId": "OverrideProjectExternalSourcesOutputPaths"
         },
         {
             "message": "Override project SoundBank settings: False",
-            "time": 1729247988,
+            "time": 1735032600,
             "severity": "Message",
             "messageId": "OverrideProjectSoundBankSettings"
         },
         {
             "message": "Override project SoundBank paths: False",
-            "time": 1729247988,
+            "time": 1735032600,
             "severity": "Message",
             "messageId": "OverrideProjectSoundBankPaths"
         },
         {
             "message": "Use Source Control for Generated Files: False",
-            "time": 1729247988,
+            "time": 1735032600,
             "severity": "Message",
             "messageId": "UseSourceControlGeneratedFiles"
         },
@@ -29,8 +29,8 @@
                 "id": "{A6F7E702-5333-4251-8D99-8E15D0F96E20}",
                 "name": "Windows"
             },
-            "message": "External Sources output path: S:\\Ver_1.0.0\\Project\\Content\\Audio\\GeneratedExternalSources\\Windows",
-            "time": 1729247989,
+            "message": "External Sources output path: S:\\chen.gong_CE\\Project\\Content\\Audio\\GeneratedExternalSources\\Windows",
+            "time": 1735032600,
             "severity": "Message",
             "messageId": "ExternalSourcesOutputPath"
         },
@@ -39,8 +39,8 @@
                 "id": "{A6F7E702-5333-4251-8D99-8E15D0F96E20}",
                 "name": "Windows"
             },
-            "message": "SoundBanks output path: S:\\Ver_1.0.0\\Project\\Content\\Audio\\GeneratedSoundBanks\\Windows\\",
-            "time": 1729247989,
+            "message": "SoundBanks output path: S:\\chen.gong_CE\\Project\\Content\\Audio\\GeneratedSoundBanks\\Windows\\",
+            "time": 1735032600,
             "severity": "Message",
             "messageId": "SoundBanksOutputPath"
         },
@@ -49,8 +49,8 @@
                 "id": "{D31960DE-8093-49AF-AF08-1D4E7BA82FF4}",
                 "name": "iOS"
             },
-            "message": "External Sources output path: S:\\Ver_1.0.0\\Project\\Content\\Audio\\GeneratedExternalSources\\iOS",
-            "time": 1729247989,
+            "message": "External Sources output path: S:\\chen.gong_CE\\Project\\Content\\Audio\\GeneratedExternalSources\\iOS",
+            "time": 1735032601,
             "severity": "Message",
             "messageId": "ExternalSourcesOutputPath"
         },
@@ -59,8 +59,8 @@
                 "id": "{D31960DE-8093-49AF-AF08-1D4E7BA82FF4}",
                 "name": "iOS"
             },
-            "message": "SoundBanks output path: S:\\Ver_1.0.0\\Project\\Content\\Audio\\GeneratedSoundBanks\\iOS\\",
-            "time": 1729247989,
+            "message": "SoundBanks output path: S:\\chen.gong_CE\\Project\\Content\\Audio\\GeneratedSoundBanks\\iOS\\",
+            "time": 1735032601,
             "severity": "Message",
             "messageId": "SoundBanksOutputPath"
         },
@@ -69,8 +69,8 @@
                 "id": "{ED1F22F4-D025-4F26-8597-12485BE3F4EC}",
                 "name": "Android"
             },
-            "message": "External Sources output path: S:\\Ver_1.0.0\\Project\\Content\\Audio\\GeneratedExternalSources\\Android",
-            "time": 1729247989,
+            "message": "External Sources output path: S:\\chen.gong_CE\\Project\\Content\\Audio\\GeneratedExternalSources\\Android",
+            "time": 1735032601,
             "severity": "Message",
             "messageId": "ExternalSourcesOutputPath"
         },
@@ -79,14 +79,14 @@
                 "id": "{ED1F22F4-D025-4F26-8597-12485BE3F4EC}",
                 "name": "Android"
             },
-            "message": "SoundBanks output path: S:\\Ver_1.0.0\\Project\\Content\\Audio\\GeneratedSoundBanks\\Android\\",
-            "time": 1729247989,
+            "message": "SoundBanks output path: S:\\chen.gong_CE\\Project\\Content\\Audio\\GeneratedSoundBanks\\Android\\",
+            "time": 1735032601,
             "severity": "Message",
             "messageId": "SoundBanksOutputPath"
         },
         {
             "message": "10 message(s), 0 warning(s), 0 error(s), 0 fatal error(s)",
-            "time": 1729247989,
+            "time": 1735032602,
             "severity": "Message",
             "messageId": ""
         }

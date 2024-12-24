@@ -25,6 +25,9 @@ if hasattr(sys, 'frozen'):
 elif __file__:
     py_path = dirname(abspath(__file__))
 
+
+print(os.path.dirname(py_path))
+
 # 获取excel文件路径
 excel_name = '生成的wem文件查询.xlsx'
 excel_path = os.path.join(py_path, excel_name)
