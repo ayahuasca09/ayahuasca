@@ -19,12 +19,29 @@ py_path = get_py_path()
 py_parent_path = os.path.dirname(py_path)
 # print(py_parent_path)
 config_path = os.path.join(py_parent_path, 'config_custom.py')
-print(config_path)
+# print(config_path)
 spec = importlib.util.spec_from_file_location("config_custom", config_path)
 config_custom = importlib.util.module_from_spec(spec)
 sys.modules["config_custom"] = config_custom
 spec.loader.exec_module(config_custom)
-print(config_custom.wwise_path)
+# print(config_custom.wwise_path)
+
+"""Wwise主要路径"""
+# 'S:\chen.gong_DCC_Audio\Audio\SilverPalace_WwiseProject'
+wwise_path = config_custom.wwise_path
+
+"""Audio父级路径"""
+audio_parent_path = os.path.dirname(wwise_path)
+# print(audio_parent_path)
+
+"""UE主要路径"""
+ue_content_path = config_custom.ue_path
+ue_project_path = os.path.dirname(ue_content_path)
+# print(ue_project_path)
+ue_audio_path = os.path.join(ue_content_path, 'Audio')
+ue_wwiseaudio_path = os.path.join(ue_audio_path, 'WwiseAudio')
+ue_gensoundbank_path = os.path.join(ue_audio_path, 'GeneratedSoundBanks')
+ue_genes_path = os.path.join(ue_audio_path, 'GeneratedExternalSources')
 
 """获取主目录下的文件"""
 
@@ -45,25 +62,27 @@ elif __file__:
 wwise_sfx_path = "\\Actor-Mixer Hierarchy\\v1"
 wwise_event_path = "\\Events\\v1"
 # 语音媒体资源的路径
-wwise_vo_media_path = r'S:\chen.gong_DCC_Audio\Audio\SilverPalace_WwiseProject\Originals\Voices'
+# wwise_vo_media_path = r'S:\chen.gong_DCC_Audio\Audio\SilverPalace_WwiseProject\Originals\Voices'
+wwise_vo_media_path = os.path.join(wwise_path, 'Originals', 'Voices')
+# print(wwise_vo_media_path)
+
 # 游戏语音的路径
 wwise_vo_game_path = '\\Actor-Mixer Hierarchy\\v1\\VO\\VO\\VO_Game'
 # Wwise工程路径
-wwise_proj_path = r"S:\\chen.gong_DCC_Audio\\Audio\\SilverPalace_WwiseProject"
+# wwise_proj_path = r"S:\\chen.gong_DCC_Audio\\Audio\\SilverPalace_WwiseProject"
+wwise_proj_path = wwise_path
+
 # State的路径
 wwise_state_path = '\\States\\Default Work Unit'
 # State Bank的路径
 wwise_state_bank_path = '\\SoundBanks\\Set\\Set_State'
 # Event的实体路径
-wwise_event_workunit_path = r"S:\chen.gong_DCC_Audio\Audio\SilverPalace_WwiseProject\Events"
+# wwise_event_workunit_path = r"S:\chen.gong_DCC_Audio\Audio\SilverPalace_WwiseProject\Events"
+wwise_event_workunit_path = os.path.join(wwise_path, 'Events')
 # Bus根路径
 wwise_bus_path = "\\Master-Mixer Hierarchy\\v1\\Master Audio Bus"
 # Aux Ducking Bus路径
 wwise_aux_duck_path = "\\Master-Mixer Hierarchy\\v1\\Master Audio Bus\\Auxiliary\\Aux_Ducking\\Aux_Ducking"
-# State Music路径
-# wwise_mus_state_path = "\\Interactive Music Hierarchy\\v1\\Mus"
-# State Amb路径
-# wwise_amb_state_path = "\\Actor-Mixer Hierarchy\\v1\\Amb\\Amb\\Amb_Global\\Amb_Global\\Amb_Global_Area"
 # Mus_Global路径
 wwise_mus_global_path = "\\Interactive Music Hierarchy\\v1\\Mus\\Mus_Global"
 # Amb_Global路径
@@ -76,7 +95,8 @@ stin_path = "{DD48832A-AAC1-49F7-B57B-86F5FACD8FB3}"
 trig_path = "{94BBA60A-29EF-4328-83E8-075770BF2687}"
 trig_event_path = "{EDD34B59-3938-4C22-A63D-838FD8DCD57E}"
 """媒体资源路径"""
-original_path = r'S:\chen.gong_DCC_Audio\Audio\SilverPalace_WwiseProject\Originals\SFX'
+# original_path = r'S:\chen.gong_DCC_Audio\Audio\SilverPalace_WwiseProject\Originals\SFX'
+original_path = os.path.join(wwise_path, 'Originals', 'SFX')
 """rtpc路径"""
 wwise_rtpc_path = "\\Game Parameters"
 """meter_path"""
@@ -107,10 +127,13 @@ es_xml_path = 'ExternalSource.xml'
 
 # external的输入输出路径
 external_input_path = r"F:\pppppy\SP\module\waapi\waapi_Auto_Import_ExternalSource\ExternalSource.wsources"
-external_output_win_path = 'S:\\Ver_1.0.0\\Project\\Content\\Audio\\GeneratedExternalSources\\Windows'
-external_output_android_path = 'S:\\Ver_1.0.0\\Project\\Content\\Audio\\GeneratedExternalSources\\Android'
-external_output_ios_path = 'S:\\Ver_1.0.0\\Project\\Content\\Audio\\GeneratedExternalSources\\iOS'
-external_output_path = 'S:\\Ver_1.0.0\\Project\\Content\\Audio\\GeneratedExternalSources'
+# external_output_win_path = 'S:\\Ver_1.0.0\\Project\\Content\\Audio\\GeneratedExternalSources\\Windows'
+external_output_win_path = os.path.join(ue_genes_path, 'Windows')
+# external_output_android_path = 'S:\\Ver_1.0.0\\Project\\Content\\Audio\\GeneratedExternalSources\\Android'
+external_output_android_path = os.path.join(ue_genes_path, 'Android')
+# external_output_ios_path = 'S:\\Ver_1.0.0\\Project\\Content\\Audio\\GeneratedExternalSources\\iOS'
+external_output_ios_path = os.path.join(ue_genes_path, 'iOS')
+
 language_list = ['Chinese', 'English', 'Japanese', 'Korean', "SFX"]
 
 es_id_config = {
@@ -197,9 +220,10 @@ mus_sheet_token_list = ["OcV8wP6cmi78GtkuR2UcM4bEnTe", "YDHHwNt61idv0SkhFMbcWNzX
 amb_sheet_token = "AaZuw0vlWiyLCrkgxr6c6wqonmh"
 
 """ID表生成"""
-excel_dcc_dt_audio_path = r"S:\chen.gong_DCC_Audio\Audio\Config\Audio.xlsx"
 # 分页版dcc表
-excel_dcc_dt_audio_page_path = r"S:\chen.gong_DCC_Audio\Audio\Config\Audio_Page.xlsx"
+# excel_dcc_dt_audio_page_path = r"S:\chen.gong_DCC_Audio\Audio\Config\Audio_Page.xlsx"
+excel_dcc_dt_audio_page_path = os.path.join(audio_parent_path, 'Config', 'Audio_Page.xlsx')
+# print(excel_dcc_dt_audio_page_path)
 excel_dt_audio_path = "Audio.xlsx"
 dt_audio_sheet_name = "audio"
 csv_dt_audio_path = "Audio.csv"
@@ -286,9 +310,11 @@ event_id_config = {
 }
 
 """UE"""
-ue_event_path = r"S:\Ver_1.0.0\Project\Content\Audio\WwiseAudio\Events\v1"
+# ue_event_path = r"S:\Ver_1.0.0\Project\Content\Audio\WwiseAudio\Events\v1"
+ue_event_path = os.path.join(ue_wwiseaudio_path, 'Events', 'v1')
 # GE路径
-ue_ge_path = r'S:\Ver_1.0.0\Project\Content\SPSkill'
+# ue_ge_path = r'S:\Ver_1.0.0\Project\Content\SPSkill'
+ue_ge_path = os.path.join(ue_content_path, 'SPSkill')
 
 """资源导入"""
 # 导入规则json
@@ -308,16 +334,25 @@ word_list_len = 7
 """媒体资源占位生成"""
 
 """DCC表的引用路径生成v2"""
+# ue excel表路径
+ue_excel_path = os.path.join(ue_project_path, 'Designer', 'Excel')
 # 剧情表路径
-excel_plot_path = r'S:\Ver_1.0.0\Project\Designer\Excel\Scenario\ScenarioInstance'
+# excel_plot_path = r'S:\Ver_1.0.0\Project\Designer\Excel\Scenario\ScenarioInstance'
+excel_plot_path = os.path.join(ue_excel_path, 'Scenario', 'ScenarioInstance')
+# print(excel_plot_path)
+
 # 大世界表路径
-excel_world_path = r"S:\Ver_1.0.0\Project\Designer\Excel\WorldRegion\P_MapData.xlsx"
+# excel_world_path = r"S:\Ver_1.0.0\Project\Designer\Excel\WorldRegion\P_MapData.xlsx"
+excel_world_path = os.path.join(ue_excel_path, 'WorldRegion', 'P_MapData.xlsx')
 # 角色展示表路径
-excel_show_path = r"S:\Ver_1.0.0\Project\Designer\Excel\Character\C_CharacterTable.xlsx"
+# excel_show_path = r"S:\Ver_1.0.0\Project\Designer\Excel\Character\C_CharacterTable.xlsx"
+excel_show_path = os.path.join(ue_excel_path, 'Character', 'C_CharacterTable.xlsx')
 # 战斗状态表路径
-excel_combat_path = r"S:\Ver_1.0.0\Project\Designer\Excel\BattleField\C_BattleFieldSystem.xlsx"
+# excel_combat_path = r"S:\Ver_1.0.0\Project\Designer\Excel\BattleField\C_BattleFieldSystem.xlsx"
+excel_combat_path = os.path.join(ue_excel_path, 'BattleField', 'C_ChaC_BattleFieldSystem.xlsx')
 # 3D点声源表路径
-excel_3d_path = r"S:\Ver_1.0.0\Project\Designer\Excel\Audio\P_Audio3D.xlsx"
+# excel_3d_path = r"S:\Ver_1.0.0\Project\Designer\Excel\Audio\P_Audio3D.xlsx"
+excel_3d_path = os.path.join(ue_excel_path, 'Audio', 'P_Audio3D.xlsx')
 
 # 程序写死的dict
 logic_id_refer_dict = {

@@ -4,8 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="17a8a927-0db7-41d4-8f81-9181fc87e6d9" name="更改" comment="ini配置添加">
+    <list default="true" id="17a8a927-0db7-41d4-8f81-9181fc87e6d9" name="更改" comment="媒体资源替换及随机新增打包">
+      <change afterPath="$PROJECT_DIR$/func/State和Switch创建打包版.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/comlib/cloudfeishu_h.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/comlib/excel_h.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/comlib/oi_h.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/func/comlib/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/func/comlib/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/func/媒体资源替换及随机资源新增.spec" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/func/媒体资源替换及随机资源新增打包版.py" beforeDir="false" afterPath="$PROJECT_DIR$/func/媒体资源替换及随机资源新增打包版.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/func/音效语音全流程自动化打包版.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,101 +56,105 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Python.Amb自动化.executor": "Run",
-    "Python.Bus自动化.executor": "Run",
-    "Python.DCC表的引用路径生成.executor": "Run",
-    "Python.DCC表的引用路径生成v2.executor": "Run",
-    "Python.FeishuSheetHelper.executor": "Run",
-    "Python.ID表生成.executor": "Run",
-    "Python.Mus自动化.executor": "Run",
-    "Python.SP飞书表格读写测试.executor": "Run",
-    "Python.State和Switch创建.executor": "Run",
-    "Python.Wwise属性配置.executor": "Run",
-    "Python.__main__ (1).executor": "Run",
-    "Python.__main__.executor": "Run",
-    "Python.audio_h.executor": "Run",
-    "Python.cloudfeishu_h.executor": "Run",
-    "Python.config (1).executor": "Run",
-    "Python.config.executor": "Run",
-    "Python.csv_h.executor": "Debug",
-    "Python.csv_pandas测试.executor": "Run",
-    "Python.excel_h.executor": "Run",
-    "Python.excel_音效需求表音效名读取.executor": "Run",
-    "Python.exe_pak.executor": "Run",
-    "Python.main (1).executor": "Run",
-    "Python.main.executor": "Run",
-    "Python.oi_h.executor": "Run",
-    "Python.oi_媒体资源重命名 (1).executor": "Run",
-    "Python.oi_媒体资源重命名.executor": "Run",
-    "Python.test.executor": "Run",
-    "Python.test4.executor": "Run",
-    "Python.ue_ID表生成 (1).executor": "Run",
-    "Python.ue_ID表生成.executor": "Run",
-    "Python.ue_ID表生成v2.executor": "Run",
-    "Python.ue_ID表生成v3.executor": "Run",
-    "Python.ue_ID表生成v4.executor": "Run",
-    "Python.waapi_2023test.executor": "Run",
-    "Python.waapi_auto_gen_music.executor": "Run",
-    "Python.waapi_auto_gen_state.executor": "Run",
-    "Python.waapi_es音效&语音导入v2.executor": "Run",
-    "Python.waapi_es音效导入(飞书云版）.executor": "Run",
-    "Python.waapi_es音效导入.executor": "Run",
-    "Python.waapi_json数据解析.executor": "Run",
-    "Python.waapi_sounbank生成.executor": "Run",
-    "Python.waapi_test.executor": "Run",
-    "Python.waapi_wwise属性自动配置.executor": "Run",
-    "Python.waapi_订阅_soundbank生成数据 (1).executor": "Run",
-    "Python.waapi_订阅_soundbank生成数据.executor": "Run",
-    "Python.waapi_订阅_soundbank生成数据打印 (1).executor": "Run",
-    "Python.waapi_订阅_接收对象名称被修改时的信息.executor": "Run",
-    "Python.waapi_语音导入 (1).executor": "Run",
-    "Python.waapi_语音导入.executor": "Run",
-    "Python.waapi_语音导入_本地UE工程测试版.executor": "Run",
-    "Python.waapi_语音导入测试.executor": "Run",
-    "Python.waapi_转码类型创建.executor": "Run",
-    "Python.waapi_音频资源全流程生成.executor": "Run",
-    "Python.waapi_音频资源导入_从媒体资源导入.executor": "Run",
-    "Python.waapi_音频资源导入_从表导入 (1).executor": "Run",
-    "Python.waapi_音频资源导入_从表导入.executor": "Run",
-    "Python.waapi_音频资源导入_从表导入v2.executor": "Run",
-    "Python.waapi_音频资源导入自动化.executor": "Run",
-    "Python.xml文件读写示例 (1).executor": "Run",
-    "Python.xml文件读写示例.executor": "Run",
-    "Python.命名规范检查.executor": "Run",
-    "Python.响度均衡测试.executor": "Run",
-    "Python.媒体资源从表导入.executor": "Run",
-    "Python.媒体资源占位生成.executor": "Run",
-    "Python.媒体资源替换及随机资源新增.executor": "Run",
-    "Python.将Wwise工程的响度标准化.executor": "Run",
-    "Python.打包测试.executor": "Run",
-    "Python.正则测试.executor": "Run",
-    "Python.静音片段测试.executor": "Run",
-    "Python.飞书表格读写测试 (1).executor": "Run",
-    "Python.飞书表格读写测试.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "F:/pppppy/SP/func",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Python.Amb自动化.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Bus自动化.executor&quot;: &quot;Run&quot;,
+    &quot;Python.DCC表的引用路径生成.executor&quot;: &quot;Run&quot;,
+    &quot;Python.DCC表的引用路径生成v2.executor&quot;: &quot;Run&quot;,
+    &quot;Python.FeishuSheetHelper.executor&quot;: &quot;Run&quot;,
+    &quot;Python.ID表生成.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Mus自动化.executor&quot;: &quot;Run&quot;,
+    &quot;Python.SP飞书表格读写测试.executor&quot;: &quot;Run&quot;,
+    &quot;Python.State和Switch创建.executor&quot;: &quot;Run&quot;,
+    &quot;Python.State和Switch创建打包版.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Wwise属性配置.executor&quot;: &quot;Run&quot;,
+    &quot;Python.__main__ (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.__main__.executor&quot;: &quot;Run&quot;,
+    &quot;Python.audio_h.executor&quot;: &quot;Run&quot;,
+    &quot;Python.cloudfeishu_h.executor&quot;: &quot;Run&quot;,
+    &quot;Python.config (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.config (2).executor&quot;: &quot;Run&quot;,
+    &quot;Python.config.executor&quot;: &quot;Run&quot;,
+    &quot;Python.configparser.executor&quot;: &quot;Run&quot;,
+    &quot;Python.csv_h.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.csv_pandas测试.executor&quot;: &quot;Run&quot;,
+    &quot;Python.excel_h.executor&quot;: &quot;Run&quot;,
+    &quot;Python.excel_音效需求表音效名读取.executor&quot;: &quot;Run&quot;,
+    &quot;Python.exe_pak.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.oi_h.executor&quot;: &quot;Run&quot;,
+    &quot;Python.oi_媒体资源重命名 (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.oi_媒体资源重命名.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test4.executor&quot;: &quot;Run&quot;,
+    &quot;Python.ue_ID表生成 (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.ue_ID表生成.executor&quot;: &quot;Run&quot;,
+    &quot;Python.ue_ID表生成v2.executor&quot;: &quot;Run&quot;,
+    &quot;Python.ue_ID表生成v3.executor&quot;: &quot;Run&quot;,
+    &quot;Python.ue_ID表生成v4.executor&quot;: &quot;Run&quot;,
+    &quot;Python.waapi_2023test.executor&quot;: &quot;Run&quot;,
+    &quot;Python.waapi_auto_gen_music.executor&quot;: &quot;Run&quot;,
+    &quot;Python.waapi_auto_gen_state.executor&quot;: &quot;Run&quot;,
+    &quot;Python.waapi_es音效&amp;语音导入v2.executor&quot;: &quot;Run&quot;,
+    &quot;Python.waapi_es音效导入(飞书云版）.executor&quot;: &quot;Run&quot;,
+    &quot;Python.waapi_es音效导入.executor&quot;: &quot;Run&quot;,
+    &quot;Python.waapi_json数据解析.executor&quot;: &quot;Run&quot;,
+    &quot;Python.waapi_sounbank生成.executor&quot;: &quot;Run&quot;,
+    &quot;Python.waapi_test.executor&quot;: &quot;Run&quot;,
+    &quot;Python.waapi_wwise属性自动配置.executor&quot;: &quot;Run&quot;,
+    &quot;Python.waapi_订阅_soundbank生成数据 (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.waapi_订阅_soundbank生成数据.executor&quot;: &quot;Run&quot;,
+    &quot;Python.waapi_订阅_soundbank生成数据打印 (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.waapi_订阅_接收对象名称被修改时的信息.executor&quot;: &quot;Run&quot;,
+    &quot;Python.waapi_语音导入 (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.waapi_语音导入.executor&quot;: &quot;Run&quot;,
+    &quot;Python.waapi_语音导入_本地UE工程测试版.executor&quot;: &quot;Run&quot;,
+    &quot;Python.waapi_语音导入测试.executor&quot;: &quot;Run&quot;,
+    &quot;Python.waapi_转码类型创建.executor&quot;: &quot;Run&quot;,
+    &quot;Python.waapi_音频资源全流程生成.executor&quot;: &quot;Run&quot;,
+    &quot;Python.waapi_音频资源导入_从媒体资源导入.executor&quot;: &quot;Run&quot;,
+    &quot;Python.waapi_音频资源导入_从表导入 (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.waapi_音频资源导入_从表导入.executor&quot;: &quot;Run&quot;,
+    &quot;Python.waapi_音频资源导入_从表导入v2.executor&quot;: &quot;Run&quot;,
+    &quot;Python.waapi_音频资源导入自动化.executor&quot;: &quot;Run&quot;,
+    &quot;Python.xml文件读写示例 (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.xml文件读写示例.executor&quot;: &quot;Run&quot;,
+    &quot;Python.命名规范检查.executor&quot;: &quot;Run&quot;,
+    &quot;Python.响度均衡测试.executor&quot;: &quot;Run&quot;,
+    &quot;Python.媒体资源从表导入.executor&quot;: &quot;Run&quot;,
+    &quot;Python.媒体资源占位生成.executor&quot;: &quot;Run&quot;,
+    &quot;Python.媒体资源替换及随机资源新增.executor&quot;: &quot;Run&quot;,
+    &quot;Python.将Wwise工程的响度标准化.executor&quot;: &quot;Run&quot;,
+    &quot;Python.打包测试.executor&quot;: &quot;Run&quot;,
+    &quot;Python.正则测试.executor&quot;: &quot;Run&quot;,
+    &quot;Python.静音片段测试.executor&quot;: &quot;Run&quot;,
+    &quot;Python.音效语音全流程自动化打包版.executor&quot;: &quot;Run&quot;,
+    &quot;Python.飞书表格读写测试 (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.飞书表格读写测试.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;F:/pppppy/SP/func/comlib&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\pppppy\SP\func\comlib" />
       <recent name="F:\pppppy\SP\func" />
       <recent name="F:\pppppy\SP\module\ue\ue_ID表生成" />
       <recent name="F:\pppppy\SP\module\waapi\waapi_音频资源导入自动化" />
       <recent name="F:\pppppy\SP\module\waapi\waapi_Auto_Import_ExternalSource" />
-      <recent name="F:\pppppy\SP\module\cloudfeishu" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\pppppy\SP\func" />
       <recent name="F:\pppppy\SP\files\命名规范检查" />
       <recent name="F:\pppppy\SP" />
       <recent name="F:\pppppy\SP\test\使用自定义库打包测试\my_lib" />
       <recent name="F:\pppppy\SP\module\xml" />
-      <recent name="F:\pppppy\SP\module\waapi\waapi_音频资源导入自动化" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -154,8 +166,8 @@
       <visibility group="运行配置" flag="true" />
     </myKeys>
   </component>
-  <component name="RunManager" selected="Python.config (1)">
-    <configuration name="ID表生成" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.config">
+    <configuration name="媒体资源替换及随机资源新增打包版" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="SP" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -168,7 +180,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/func/ID表生成.py" />
+      <option name="SCRIPT_NAME" value="F:\pppppy\SP\func\媒体资源替换及随机资源新增打包版.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -177,7 +189,29 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="config (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="State和Switch创建打包版" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="SP" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/func" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/func/State和Switch创建打包版.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="音效语音全流程自动化打包版" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="SP" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -190,7 +224,29 @@
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="S:/chen.gong_DCC_Audio/Audio/Tool/Auto_Sound/config.py" />
+      <option name="SCRIPT_NAME" value="S:/chen.gong_DCC_Audio/Audio/Tool/Auto_Sound/音效语音全流程自动化打包版.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="cloudfeishu_h" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="SP" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/func/comlib" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/func/comlib/cloudfeishu_h.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -208,11 +264,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/func/comlib" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/config.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/func/comlib/config.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -230,55 +286,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/module/oi" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/func/comlib" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/module/oi/oi_h.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="waapi_音频资源导入_从媒体资源导入" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="SP" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/waapi_音频资源导入_从媒体资源导入.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="waapi_订阅_soundbank生成数据" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="SP" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/module/waapi/waapi_generatesoundbank" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/module/waapi/waapi_generatesoundbank/waapi_订阅_soundbank生成数据.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/func/comlib/oi_h.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -289,11 +301,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.config (1)" />
         <item itemvalue="Python.config" />
+        <item itemvalue="Python.State和Switch创建打包版" />
+        <item itemvalue="Python.cloudfeishu_h" />
         <item itemvalue="Python.oi_h" />
-        <item itemvalue="Python.waapi_订阅_soundbank生成数据" />
-        <item itemvalue="Python.ID表生成" />
+        <item itemvalue="Python.媒体资源替换及随机资源新增打包版" />
       </list>
     </recent_temporary>
   </component>
@@ -312,14 +324,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1716955384994</updated>
-    </task>
-    <task id="LOCAL-00116" summary="ES自动化：剧情表生成">
-      <option name="closed" value="true" />
-      <created>1731062743829</created>
-      <option name="number" value="00116" />
-      <option name="presentableId" value="LOCAL-00116" />
-      <option name="project" value="LOCAL" />
-      <updated>1731062743829</updated>
     </task>
     <task id="LOCAL-00117" summary="全流程自动化：配置自动化">
       <option name="closed" value="true" />
@@ -705,7 +709,15 @@
       <option name="project" value="LOCAL" />
       <updated>1735049569218</updated>
     </task>
-    <option name="localTasksCounter" value="165" />
+    <task id="LOCAL-00165" summary="媒体资源替换及随机新增打包">
+      <option name="closed" value="true" />
+      <created>1735093972165</created>
+      <option name="number" value="00165" />
+      <option name="presentableId" value="LOCAL-00165" />
+      <option name="project" value="LOCAL" />
+      <updated>1735093972165</updated>
+    </task>
+    <option name="localTasksCounter" value="166" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -721,7 +733,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="配置自动化：静音片段检测" />
     <MESSAGE value="配置自动化：音频配置更新" />
     <MESSAGE value="State bank自动化：内容指派、ID表生成" />
     <MESSAGE value="State bank自动化：state表填写并赋值" />
@@ -746,7 +757,8 @@
     <MESSAGE value="Mus自动化：添加命名检查" />
     <MESSAGE value="id表：默认配置更改" />
     <MESSAGE value="ini配置添加" />
-    <option name="LAST_COMMIT_MESSAGE" value="ini配置添加" />
+    <MESSAGE value="媒体资源替换及随机新增打包" />
+    <option name="LAST_COMMIT_MESSAGE" value="媒体资源替换及随机新增打包" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -1,12 +1,14 @@
-import sys
 import os
 import re
 from waapi import WaapiClient
 import shutil
+
+"""************打包版需全部复制************"""
+
 import comlib.config as config
 from os.path import abspath, dirname
 
-
+import sys
 def get_py_path():
     py_path = ""
     if hasattr(sys, 'frozen'):
@@ -18,8 +20,9 @@ def get_py_path():
 
 # 打包版
 root_path = get_py_path()
+"""************打包版需全部复制************"""
 
-print(root_path)
+# print(root_path)
 # 代码版
 # root_path = r'F:\pppppy\SP\files\媒体资源替换及随机资源新增'
 
