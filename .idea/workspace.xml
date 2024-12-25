@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="17a8a927-0db7-41d4-8f81-9181fc87e6d9" name="更改" comment="id表：默认配置更改">
+    <list default="true" id="17a8a927-0db7-41d4-8f81-9181fc87e6d9" name="更改" comment="ini配置添加">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,6 +65,8 @@
     "Python.__main__.executor": "Run",
     "Python.audio_h.executor": "Run",
     "Python.cloudfeishu_h.executor": "Run",
+    "Python.config (1).executor": "Run",
+    "Python.config.executor": "Run",
     "Python.csv_h.executor": "Debug",
     "Python.csv_pandas测试.executor": "Run",
     "Python.excel_h.executor": "Run",
@@ -153,7 +154,7 @@
       <visibility group="运行配置" flag="true" />
     </myKeys>
   </component>
-  <component name="RunManager" selected="Python.config">
+  <component name="RunManager" selected="Python.config (1)">
     <configuration name="ID表生成" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="SP" />
       <option name="ENV_FILES" value="" />
@@ -176,7 +177,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Mus自动化" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="config (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="SP" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -185,11 +186,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/func" />
-      <option name="IS_MODULE_SDK" value="true" />
+      <option name="WORKING_DIRECTORY" value="S:/chen.gong_DCC_Audio/Audio/Tool/Auto_Sound" />
+      <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/func/Mus自动化.py" />
+      <option name="SCRIPT_NAME" value="S:/chen.gong_DCC_Audio/Audio/Tool/Auto_Sound/config.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -212,6 +213,28 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/config.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="oi_h" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="SP" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/module/oi" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/module/oi/oi_h.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -264,35 +287,13 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="waapi_auto_gen_music" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="SP" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/module/waapi/waapi_auto_gen_music" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/module/waapi/waapi_auto_gen_music/waapi_auto_gen_music.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.config (1)" />
         <item itemvalue="Python.config" />
+        <item itemvalue="Python.oi_h" />
         <item itemvalue="Python.waapi_订阅_soundbank生成数据" />
         <item itemvalue="Python.ID表生成" />
-        <item itemvalue="Python.waapi_auto_gen_music" />
-        <item itemvalue="Python.Mus自动化" />
       </list>
     </recent_temporary>
   </component>
@@ -311,14 +312,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1716955384994</updated>
-    </task>
-    <task id="LOCAL-00115" summary="ES自动化：新增命名规范检测、转码设置根据CG和VO区分、相应ID表自动化生成">
-      <option name="closed" value="true" />
-      <created>1730983496604</created>
-      <option name="number" value="00115" />
-      <option name="presentableId" value="LOCAL-00115" />
-      <option name="project" value="LOCAL" />
-      <updated>1730983496604</updated>
     </task>
     <task id="LOCAL-00116" summary="ES自动化：剧情表生成">
       <option name="closed" value="true" />
@@ -704,7 +697,15 @@
       <option name="project" value="LOCAL" />
       <updated>1735033367864</updated>
     </task>
-    <option name="localTasksCounter" value="164" />
+    <task id="LOCAL-00164" summary="ini配置添加">
+      <option name="closed" value="true" />
+      <created>1735049569218</created>
+      <option name="number" value="00164" />
+      <option name="presentableId" value="LOCAL-00164" />
+      <option name="project" value="LOCAL" />
+      <updated>1735049569218</updated>
+    </task>
+    <option name="localTasksCounter" value="165" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -720,7 +721,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="音乐自动化：bpm单元格合并" />
     <MESSAGE value="配置自动化：静音片段检测" />
     <MESSAGE value="配置自动化：音频配置更新" />
     <MESSAGE value="State bank自动化：内容指派、ID表生成" />
@@ -745,7 +745,8 @@
     <MESSAGE value="添加效果器设置" />
     <MESSAGE value="Mus自动化：添加命名检查" />
     <MESSAGE value="id表：默认配置更改" />
-    <option name="LAST_COMMIT_MESSAGE" value="id表：默认配置更改" />
+    <MESSAGE value="ini配置添加" />
+    <option name="LAST_COMMIT_MESSAGE" value="ini配置添加" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -1,7 +1,7 @@
 from os.path import abspath, dirname
 import sys
 import os
-
+import importlib.util
 
 """获取py的根路径"""
 
@@ -15,6 +15,17 @@ def get_py_path():
     return py_path
 
 
+py_path = get_py_path()
+py_parent_path = os.path.dirname(py_path)
+# print(py_parent_path)
+config_path = os.path.join(py_parent_path, 'config_custom.py')
+print(config_path)
+spec = importlib.util.spec_from_file_location("config_custom", config_path)
+config_custom = importlib.util.module_from_spec(spec)
+sys.modules["config_custom"] = config_custom
+spec.loader.exec_module(config_custom)
+print(config_custom.wwise_path)
+
 """获取主目录下的文件"""
 
 
@@ -23,6 +34,12 @@ def get_py_file_path(script_name):
         get_py_path(), "files", script_name)
     return py_file_path
 
+
+py_path = ""
+if hasattr(sys, 'frozen'):
+    py_path = dirname(sys.executable)
+elif __file__:
+    py_path = dirname(abspath(__file__))
 
 """Wwise"""
 wwise_sfx_path = "\\Actor-Mixer Hierarchy\\v1"

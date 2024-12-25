@@ -3,35 +3,26 @@ import os
 import re
 from waapi import WaapiClient
 import shutil
-import importlib.util
-
-# """根目录获取"""
-# # 获取当前脚本的文件名及路径
-# script_name_with_extension = __file__.split('/')[-1]
-# # 去掉扩展名
-# script_name = script_name_with_extension.rsplit('.', 1)[0]
-# # 替换为files
-# root_path = script_name.replace("func", "files")
-root_path = r'F:\pppppy\SP\files\媒体资源替换及随机资源新增'
+import comlib.config as config
+from os.path import abspath, dirname
 
 
-def resource_path(relative_path):
-    """ Get the absolute path to a resource, works for dev and for PyInstaller """
-    try:
-        # PyInstaller creates a temp folder and stores path in _MEIPASS
-        base_path = sys._MEIPASS
-    except Exception:
-        base_path = os.path.abspath(".")
-
-    return os.path.join(base_path, relative_path)
+def get_py_path():
+    py_path = ""
+    if hasattr(sys, 'frozen'):
+        py_path = dirname(sys.executable)
+    elif __file__:
+        py_path = dirname(abspath(__file__))
+    return py_path
 
 
-config_path = r"F:\pppppy\SP\config.py"
-# print(config_path)
-spec = importlib.util.spec_from_file_location("config", config_path)
-config = importlib.util.module_from_spec(spec)
-sys.modules["config"] = config
-spec.loader.exec_module(config)
+# 打包版
+root_path = get_py_path()
+
+print(root_path)
+# 代码版
+# root_path = r'F:\pppppy\SP\files\媒体资源替换及随机资源新增'
+
 
 # 是否通过
 is_pass = True
@@ -380,7 +371,7 @@ with WaapiClient() as client:
             no_wav_name = re.sub(".wav", "", wav_name)
             # pprint(no_wav_name)
             word_list = no_wav_name.split("_")
-            if word_list[0] in config.cc:
+            if word_list[0] in config.event_id_config:
                 check_is_R01(no_wav_name)
                 if is_pass == True:
                     create_wwise_content(no_wav_name, word_list[0])
