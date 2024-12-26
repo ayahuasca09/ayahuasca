@@ -320,7 +320,6 @@ time_id_refer_dict = {
     "30041": "在UE找DT_SPTODMatrix",
     "30042": "在UE找DT_SPTODMatrix",
     "30043": "在UE找DT_SPTODMatrix",
-    "30044": "在UE找DT_SPTODMatrix",
 
 }
 
