@@ -10,7 +10,7 @@ import shutil
 from openpyxl.cell import MergedCell
 import module.cloudfeishu.cloudfeishu_h as cloudfeishu_h
 import module.oi.oi_h as oi_h
-import config
+import comlib.config as config
 import module.excel.excel_h as excel_h
 import module.waapi.waapi_h as waapi_h
 from pathlib import Path
@@ -28,16 +28,88 @@ root_path = script_name.replace("func", "files")
 file_name_list = excel_h.excel_get_path_list(root_path)
 # pprint(file_name_list)
 
+"""表格获取输入"""
+# 所有音频资源表的映射
+media_sheet_token_dict = config.media_sheet_token_dict
+media_sheet_token_keys = list(media_sheet_token_dict.keys())
+# 将一个list转为dict，list的index+1作为键，元素作为值
+digi_meidia_dict = {index + 1: value for index, value in enumerate(media_sheet_token_keys)}
+
+
+# print(digi_meidia_dict)
+
+
+# python输入检查
+# 1.必须为数字和以,为间隔，例如1，4，2，6
+# 2.通过,分隔的数字不能重复
+def is_valid_input(input_string):
+    # 删除空格
+    input_string = input_string.replace(" ", "")
+
+    # 检查是否仅包含数字和逗号
+    if not all((c.isdigit() or c == ',') for c in input_string):
+        print("输入错误，请确保输入的只有数字且以,隔开")
+        return False
+
+    # 拆分字符串并转换为整数列表
+    try:
+        numbers = list(map(int, input_string.split(',')))
+    except ValueError:
+        print("输入错误，请确保输入的只有数字且以,隔开")
+        return False
+
+    # 检查是否有重复
+    if len(numbers) != len(set(numbers)):
+        print("输入错误，请输无重复的数字")
+        return False
+
+    for numbers in numbers:
+        if numbers > len(media_sheet_token_keys):
+            print("输入错误，请输入上述表中有的数字")
+            return False
+
+    return True
+
+
+print("--------------------------")
+print("输入数字对应资源表类型如下：")
+print("输入值若为0，代表更新所有资源表内容")
+print("若需获取多个资源表，以英文字符,(逗号）隔开，输入完毕后按下回车即可")
+print("输入案例：1,3,5,6")
+
+for i in range(len(media_sheet_token_keys)):
+    print("{}、".format(i + 1) + str(media_sheet_token_keys[i]))
+print("--------------------------")
+
+temp = ''
+flag = 1
+while flag:
+    temp = input("请输入要更新资源的音效表数字:")
+    if not is_valid_input(temp):
+        print("")
+        print("请重新输入⬇")
+        continue
+    flag = 0
+
+input_digi_list = list(map(int, temp.split(',')))
+for i in input_digi_list:
+    if i in digi_meidia_dict:
+        media_sheet_name = digi_meidia_dict[i]
+        if media_sheet_name in media_sheet_token_dict:
+            print(media_sheet_name + "：音频资源表更新")
+            sheet_token = media_sheet_token_dict[media_sheet_name]
+            cloudfeishu_h.download_cloud_sheet(sheet_token, os.path.join(root_path, media_sheet_name))
+
 """在线表获取"""
 # 规范检查表
-for excel_media_token in config.excel_media_token_list:
-    _, excel_name = cloudfeishu_h.get_excel_token(excel_media_token)
-    # pprint(excel_name)
-    for file_name in file_name_list:
-        if excel_name in file_name:
-            print(excel_name)
-            cloudfeishu_h.download_cloud_sheet(excel_media_token, os.path.join(root_path, file_name))
-            break
+# for excel_media_token in config.excel_media_token_list:
+#     _, excel_name = cloudfeishu_h.get_excel_token(excel_media_token)
+#     # pprint(excel_name)
+#     for file_name in file_name_list:
+#         if excel_name in file_name:
+#             print(excel_name)
+#             cloudfeishu_h.download_cloud_sheet(excel_media_token, os.path.join(root_path, file_name))
+#             break
 
 """收集unit的路径"""
 audio_unit_list = []
@@ -309,9 +381,9 @@ with WaapiClient() as client:
     # pprint(audio_unit_list)
     # print()
 
-    pprint("event_unit_list：")
-    pprint(event_unit_list)
-    print()
+    # pprint("event_unit_list：")
+    # pprint(event_unit_list)
+    # print()
     #
     # pprint("audio_mixer_list：")
     # pprint(audio_mixer_list)

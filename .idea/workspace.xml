@@ -4,16 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="17a8a927-0db7-41d4-8f81-9181fc87e6d9" name="更改" comment="媒体资源替换及随机新增打包">
-      <change afterPath="$PROJECT_DIR$/func/State和Switch创建打包版.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/comlib/cloudfeishu_h.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/comlib/excel_h.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/comlib/oi_h.py" afterDir="false" />
+    <list default="true" id="17a8a927-0db7-41d4-8f81-9181fc87e6d9" name="更改" comment="comlib-config路径修改">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/State和Switch创建/State和Switch创建表.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/files/State和Switch创建/State和Switch创建表.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/命名规范检查/命名规范检查表.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/files/命名规范检查/命名规范检查表.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/媒体资源占位生成/SilverPalace战斗音频需求资源管理表 .xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/files/媒体资源占位生成/SilverPalace战斗音频需求资源管理表 .xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/媒体资源占位生成/SilverPalace语音资源管理表.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/files/媒体资源占位生成/SilverPalace语音资源管理表.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/func/State和Switch创建打包版.py" beforeDir="false" afterPath="$PROJECT_DIR$/func/State和Switch创建打包版.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/func/comlib/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/func/comlib/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/func/媒体资源替换及随机资源新增.spec" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/func/媒体资源占位生成.py" beforeDir="false" afterPath="$PROJECT_DIR$/func/媒体资源占位生成.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/func/媒体资源替换及随机资源新增打包版.py" beforeDir="false" afterPath="$PROJECT_DIR$/func/媒体资源替换及随机资源新增打包版.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/func/音效语音全流程自动化打包版.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -166,8 +167,30 @@
       <visibility group="运行配置" flag="true" />
     </myKeys>
   </component>
-  <component name="RunManager" selected="Python.config">
-    <configuration name="媒体资源替换及随机资源新增打包版" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.媒体资源占位生成">
+    <configuration name="音效语音全流程自动化打包版" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="SP" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="S:/chen.gong_DCC_Audio/Audio/Tool/Auto_Sound" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="S:/chen.gong_DCC_Audio/Audio/Tool/Auto_Sound/音效语音全流程自动化打包版.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="媒体资源占位生成" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="SP" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -180,7 +203,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="F:\pppppy\SP\func\媒体资源替换及随机资源新增打包版.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/func/媒体资源占位生成.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -211,6 +234,28 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="State和Switch创建" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="SP" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/func" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/func/State和Switch创建.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="音效语音全流程自动化打包版" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="SP" />
       <option name="ENV_FILES" value="" />
@@ -233,7 +278,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="cloudfeishu_h" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="SP" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -242,55 +287,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/func/comlib" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/func/comlib/cloudfeishu_h.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="config" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="SP" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/func/comlib" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/func/comlib/config.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="oi_h" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="SP" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/func/comlib" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/func/comlib/oi_h.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test/test.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -301,11 +302,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.config" />
+        <item itemvalue="Python.媒体资源占位生成" />
+        <item itemvalue="Python.test" />
+        <item itemvalue="Python.音效语音全流程自动化打包版" />
         <item itemvalue="Python.State和Switch创建打包版" />
-        <item itemvalue="Python.cloudfeishu_h" />
-        <item itemvalue="Python.oi_h" />
-        <item itemvalue="Python.媒体资源替换及随机资源新增打包版" />
+        <item itemvalue="Python.State和Switch创建" />
       </list>
     </recent_temporary>
   </component>
@@ -324,14 +325,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1716955384994</updated>
-    </task>
-    <task id="LOCAL-00117" summary="全流程自动化：配置自动化">
-      <option name="closed" value="true" />
-      <created>1731309721306</created>
-      <option name="number" value="00117" />
-      <option name="presentableId" value="LOCAL-00117" />
-      <option name="project" value="LOCAL" />
-      <updated>1731309721306</updated>
     </task>
     <task id="LOCAL-00118" summary="全流程自动化：配置自动化">
       <option name="closed" value="true" />
@@ -717,7 +710,15 @@
       <option name="project" value="LOCAL" />
       <updated>1735093972165</updated>
     </task>
-    <option name="localTasksCounter" value="166" />
+    <task id="LOCAL-00166" summary="comlib-config路径修改">
+      <option name="closed" value="true" />
+      <created>1735115629607</created>
+      <option name="number" value="00166" />
+      <option name="presentableId" value="LOCAL-00166" />
+      <option name="project" value="LOCAL" />
+      <updated>1735115629607</updated>
+    </task>
+    <option name="localTasksCounter" value="167" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -733,7 +734,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="配置自动化：音频配置更新" />
     <MESSAGE value="State bank自动化：内容指派、ID表生成" />
     <MESSAGE value="State bank自动化：state表填写并赋值" />
     <MESSAGE value="Bus自动化生成" />
@@ -758,7 +758,8 @@
     <MESSAGE value="id表：默认配置更改" />
     <MESSAGE value="ini配置添加" />
     <MESSAGE value="媒体资源替换及随机新增打包" />
-    <option name="LAST_COMMIT_MESSAGE" value="媒体资源替换及随机新增打包" />
+    <MESSAGE value="comlib-config路径修改" />
+    <option name="LAST_COMMIT_MESSAGE" value="comlib-config路径修改" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

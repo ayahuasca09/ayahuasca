@@ -9,6 +9,8 @@ import comlib.config as config
 from os.path import abspath, dirname
 
 import sys
+
+
 def get_py_path():
     py_path = ""
     if hasattr(sys, 'frozen'):
@@ -393,5 +395,4 @@ with WaapiClient() as client:
     os.mkdir(os.path.join(wav_path, "Japanese"))
     os.mkdir(os.path.join(wav_path, "Korean"))
 
-    print("")
-    input("please input any key to exit!")
+os.system("pause")

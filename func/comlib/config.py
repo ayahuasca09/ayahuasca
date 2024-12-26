@@ -219,6 +219,22 @@ mus_sheet_token_list = ["OcV8wP6cmi78GtkuR2UcM4bEnTe", "YDHHwNt61idv0SkhFMbcWNzX
 # Amb资源表
 amb_sheet_token = "AaZuw0vlWiyLCrkgxr6c6wqonmh"
 
+# 音效资源表token
+media_sheet_token_dict = {
+    "区域环境音效表": "H4pPwDOTLiKB7tkDoP5cSQm8npg",
+    "系统音效资源表": "ZgL3wJHnjiEgxwkl9skcjvWrnDb",
+    "交互音效资源表": "WJ6wwdtjBiTwdGkfVAZcftNunRe",
+    "打击音效资源表": "UFVnwDUqsi5tpXkLJnnciRYmnPG",
+    "怪物音效资源表": "M0oQwnPSBiElLKkpylsc3HXUneT",
+    "Boss音效资源表": "DFClw5jSyiVwSkk2ELwcKa3In5c",
+    "角色战斗音效资源表": "WQR1wkJmKipl0Zk0qzgcE5uynkf",
+    "角色Foley音效资源表": "IeRBwGPHmie8nWkOYxlcceKAnGb",
+    "角色移动资源表": "IeRBwGPHmie8nWkOYxlcceKAnGb",
+    "角色战斗语音资源表": "DFClw5jSyiVwSkk2ELwcKa3In5c",
+    "Boss战斗语音资源表": "DfEywr6nNiy4fIkabEgcddRznFh",
+    "怪物战斗语音资源表": "QMtVw2yZKiTuybk6XabcKAVxnsg"
+}
+
 """ID表生成"""
 # 分页版dcc表
 # excel_dcc_dt_audio_page_path = r"S:\chen.gong_DCC_Audio\Audio\Config\Audio_Page.xlsx"

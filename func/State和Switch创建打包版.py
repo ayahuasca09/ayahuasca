@@ -523,3 +523,5 @@ with WaapiClient() as client:
 
     # 撤销结束
     client.call("ak.wwise.core.undo.endGroup", displayName="rnd创建撤销")
+
+os.system("pause")

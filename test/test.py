@@ -145,34 +145,68 @@ import re
 
 """event结构找父级测试"""
 
+#
+# def find_longest_key_in_dict(dict1, string):
+#     # 将字符串拆分为列表
+#     string_list = string.split('_')
+#
+#     # 过滤符合条件的键
+#     valid_keys = [
+#         key for key in dict1.keys()
+#         if all(part in string_list for part in key.split('_'))
+#     ]
+#
+#     if valid_keys:
+#         # 找出最长的键
+#         longest_key = max(valid_keys, key=len)
+#         return longest_key
+#     else:
+#         return None
+#
+#
+# # 示例字典和字符串
+# dict1 = {
+#     'key_one': 1,
+#     'key_two': 2,
+#     'key_three': 3
+# }
+#
+# string = 'key_one_key_two_key_three_key_four'
+#
+# # 调用函数并打印结果
+# longest_key = find_longest_key_in_dict(dict1, string)
+# print(longest_key)
 
-def find_longest_key_in_dict(dict1, string):
-    # 将字符串拆分为列表
-    string_list = string.split('_')
-
-    # 过滤符合条件的键
-    valid_keys = [
-        key for key in dict1.keys()
-        if all(part in string_list for part in key.split('_'))
-    ]
-
-    if valid_keys:
-        # 找出最长的键
-        longest_key = max(valid_keys, key=len)
-        return longest_key
-    else:
-        return None
+"""输入检查"""
 
 
-# 示例字典和字符串
-dict1 = {
-    'key_one': 1,
-    'key_two': 2,
-    'key_three': 3
-}
+# python输入检查
+# 1.必须为数字和以,为间隔，例如1，4，2，6
+# 2.通过,分隔的数字不能重复
+def is_valid_input(input_string):
+    # 删除空格
+    input_string = input_string.replace(" ", "")
 
-string = 'key_one_key_two_key_three_key_four'
+    # 检查是否仅包含数字和逗号
+    if not all(c.isdigit() or c == ',' for c in input_string):
+        return False
 
-# 调用函数并打印结果
-longest_key = find_longest_key_in_dict(dict1, string)
-print(longest_key)
+    # 拆分字符串并转换为整数列表
+    try:
+        numbers = list(map(int, input_string.split(',')))
+    except ValueError:
+        return False
+
+    # 检查是否有重复
+    if len(numbers) != len(set(numbers)):
+        return False
+
+    return True
+
+
+# 示例用法
+user_input = input("请输入数字，使用逗号分隔：")
+if is_valid_input(user_input):
+    print("输入有效。")
+else:
+    print("输入无效，请确保输入为数字且不重复。")
