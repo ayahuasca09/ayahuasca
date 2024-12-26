@@ -4,91 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="17a8a927-0db7-41d4-8f81-9181fc87e6d9" name="更改" comment="添加分表更新下载功能">
-      <change afterPath="$PROJECT_DIR$/files/媒体资源占位生成/区域环境音效表" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/Wwise属性配置打包版.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/媒体资源替换及随机资源新增打包版/Analysis-00.toc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/媒体资源替换及随机资源新增打包版/COLLECT-00.toc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/媒体资源替换及随机资源新增打包版/EXE-00.toc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/媒体资源替换及随机资源新增打包版/PKG-00.toc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/媒体资源替换及随机资源新增打包版/PYZ-00.pyz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/媒体资源替换及随机资源新增打包版/PYZ-00.toc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/媒体资源替换及随机资源新增打包版/base_library.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/媒体资源替换及随机资源新增打包版/warn-媒体资源替换及随机资源新增打包版.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/媒体资源替换及随机资源新增打包版/xref-媒体资源替换及随机资源新增打包版.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/媒体资源替换及随机资源新增打包版/媒体资源替换及随机资源新增打包版.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/媒体资源替换及随机资源新增打包版/媒体资源替换及随机资源新增打包版.pkg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/dist/媒体资源替换及随机资源新增打包版/_internal/VCRUNTIME140.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/dist/媒体资源替换及随机资源新增打包版/_internal/VCRUNTIME140_1.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/dist/媒体资源替换及随机资源新增打包版/_internal/_asyncio.pyd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/dist/媒体资源替换及随机资源新增打包版/_internal/_bz2.pyd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/dist/媒体资源替换及随机资源新增打包版/_internal/_ctypes.pyd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/dist/媒体资源替换及随机资源新增打包版/_internal/_decimal.pyd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/dist/媒体资源替换及随机资源新增打包版/_internal/_hashlib.pyd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/dist/媒体资源替换及随机资源新增打包版/_internal/_lzma.pyd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/dist/媒体资源替换及随机资源新增打包版/_internal/_multiprocessing.pyd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/dist/媒体资源替换及随机资源新增打包版/_internal/_overlapped.pyd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/dist/媒体资源替换及随机资源新增打包版/_internal/_queue.pyd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/dist/媒体资源替换及随机资源新增打包版/_internal/_socket.pyd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/dist/媒体资源替换及随机资源新增打包版/_internal/_ssl.pyd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/dist/媒体资源替换及随机资源新增打包版/_internal/_wmi.pyd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/dist/媒体资源替换及随机资源新增打包版/_internal/api-ms-win-core-console-l1-1-0.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/dist/媒体资源替换及随机资源新增打包版/_internal/api-ms-win-core-datetime-l1-1-0.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/dist/媒体资源替换及随机资源新增打包版/_internal/api-ms-win-core-debug-l1-1-0.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/dist/媒体资源替换及随机资源新增打包版/_internal/api-ms-win-core-errorhandling-l1-1-0.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/dist/媒体资源替换及随机资源新增打包版/_internal/api-ms-win-core-file-l1-1-0.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/dist/媒体资源替换及随机资源新增打包版/_internal/api-ms-win-core-file-l1-2-0.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/dist/媒体资源替换及随机资源新增打包版/_internal/api-ms-win-core-file-l2-1-0.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/dist/媒体资源替换及随机资源新增打包版/_internal/api-ms-win-core-handle-l1-1-0.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/dist/媒体资源替换及随机资源新增打包版/_internal/api-ms-win-core-heap-l1-1-0.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/dist/媒体资源替换及随机资源新增打包版/_internal/api-ms-win-core-interlocked-l1-1-0.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/dist/媒体资源替换及随机资源新增打包版/_internal/api-ms-win-core-libraryloader-l1-1-0.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/dist/媒体资源替换及随机资源新增打包版/_internal/api-ms-win-core-localization-l1-2-0.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/dist/媒体资源替换及随机资源新增打包版/_internal/api-ms-win-core-memory-l1-1-0.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/dist/媒体资源替换及随机资源新增打包版/_internal/api-ms-win-core-namedpipe-l1-1-0.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/dist/媒体资源替换及随机资源新增打包版/_internal/api-ms-win-core-processenvironment-l1-1-0.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/dist/媒体资源替换及随机资源新增打包版/_internal/api-ms-win-core-processthreads-l1-1-0.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/dist/媒体资源替换及随机资源新增打包版/_internal/api-ms-win-core-processthreads-l1-1-1.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/dist/媒体资源替换及随机资源新增打包版/_internal/api-ms-win-core-profile-l1-1-0.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/dist/媒体资源替换及随机资源新增打包版/_internal/api-ms-win-core-rtlsupport-l1-1-0.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/dist/媒体资源替换及随机资源新增打包版/_internal/api-ms-win-core-string-l1-1-0.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/dist/媒体资源替换及随机资源新增打包版/_internal/api-ms-win-core-synch-l1-1-0.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/dist/媒体资源替换及随机资源新增打包版/_internal/api-ms-win-core-synch-l1-2-0.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/dist/媒体资源替换及随机资源新增打包版/_internal/api-ms-win-core-sysinfo-l1-1-0.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/dist/媒体资源替换及随机资源新增打包版/_internal/api-ms-win-core-timezone-l1-1-0.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/dist/媒体资源替换及随机资源新增打包版/_internal/api-ms-win-core-util-l1-1-0.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/dist/媒体资源替换及随机资源新增打包版/_internal/api-ms-win-crt-conio-l1-1-0.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/dist/媒体资源替换及随机资源新增打包版/_internal/api-ms-win-crt-convert-l1-1-0.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/dist/媒体资源替换及随机资源新增打包版/_internal/api-ms-win-crt-environment-l1-1-0.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/dist/媒体资源替换及随机资源新增打包版/_internal/api-ms-win-crt-filesystem-l1-1-0.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/dist/媒体资源替换及随机资源新增打包版/_internal/api-ms-win-crt-heap-l1-1-0.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/dist/媒体资源替换及随机资源新增打包版/_internal/api-ms-win-crt-locale-l1-1-0.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/dist/媒体资源替换及随机资源新增打包版/_internal/api-ms-win-crt-math-l1-1-0.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/dist/媒体资源替换及随机资源新增打包版/_internal/api-ms-win-crt-process-l1-1-0.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/dist/媒体资源替换及随机资源新增打包版/_internal/api-ms-win-crt-runtime-l1-1-0.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/dist/媒体资源替换及随机资源新增打包版/_internal/api-ms-win-crt-stdio-l1-1-0.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/dist/媒体资源替换及随机资源新增打包版/_internal/api-ms-win-crt-string-l1-1-0.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/dist/媒体资源替换及随机资源新增打包版/_internal/api-ms-win-crt-time-l1-1-0.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/dist/媒体资源替换及随机资源新增打包版/_internal/api-ms-win-crt-utility-l1-1-0.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/dist/媒体资源替换及随机资源新增打包版/_internal/base_library.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/dist/媒体资源替换及随机资源新增打包版/_internal/dest/cloudfeishu_h.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/dist/媒体资源替换及随机资源新增打包版/_internal/dest/config.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/dist/媒体资源替换及随机资源新增打包版/_internal/dest/excel_h.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/dist/媒体资源替换及随机资源新增打包版/_internal/dest/oi_h.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/dist/媒体资源替换及随机资源新增打包版/_internal/dest/waapi_h.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/dist/媒体资源替换及随机资源新增打包版/_internal/libcrypto-3.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/dist/媒体资源替换及随机资源新增打包版/_internal/libffi-8.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/dist/媒体资源替换及随机资源新增打包版/_internal/libssl-3.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/dist/媒体资源替换及随机资源新增打包版/_internal/pyexpat.pyd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/dist/媒体资源替换及随机资源新增打包版/_internal/python312.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/dist/媒体资源替换及随机资源新增打包版/_internal/select.pyd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/dist/媒体资源替换及随机资源新增打包版/_internal/ucrtbase.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/dist/媒体资源替换及随机资源新增打包版/_internal/unicodedata.pyd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/dist/媒体资源替换及随机资源新增打包版/媒体资源替换及随机资源新增打包版.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/媒体资源替换及随机资源新增打包版.spec" afterDir="false" />
+    <list default="true" id="17a8a927-0db7-41d4-8f81-9181fc87e6d9" name="更改" comment="属性配置更改">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/func/comlib/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/func/comlib/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/func/Wwise属性配置打包版.py" beforeDir="false" afterPath="$PROJECT_DIR$/func/Wwise属性配置打包版.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/audio/audio_h.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/audio/audio_h.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -131,91 +50,92 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;Python.Amb自动化.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Bus自动化.executor&quot;: &quot;Run&quot;,
-    &quot;Python.DCC表的引用路径生成.executor&quot;: &quot;Run&quot;,
-    &quot;Python.DCC表的引用路径生成v2.executor&quot;: &quot;Run&quot;,
-    &quot;Python.FeishuSheetHelper.executor&quot;: &quot;Run&quot;,
-    &quot;Python.ID表生成.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Mus自动化.executor&quot;: &quot;Run&quot;,
-    &quot;Python.SP飞书表格读写测试.executor&quot;: &quot;Run&quot;,
-    &quot;Python.State和Switch创建.executor&quot;: &quot;Run&quot;,
-    &quot;Python.State和Switch创建打包版.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Wwise属性配置.executor&quot;: &quot;Run&quot;,
-    &quot;Python.__main__ (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python.__main__.executor&quot;: &quot;Run&quot;,
-    &quot;Python.audio_h.executor&quot;: &quot;Run&quot;,
-    &quot;Python.cloudfeishu_h.executor&quot;: &quot;Run&quot;,
-    &quot;Python.config (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python.config (2).executor&quot;: &quot;Run&quot;,
-    &quot;Python.config.executor&quot;: &quot;Run&quot;,
-    &quot;Python.configparser.executor&quot;: &quot;Run&quot;,
-    &quot;Python.csv_h.executor&quot;: &quot;Debug&quot;,
-    &quot;Python.csv_pandas测试.executor&quot;: &quot;Run&quot;,
-    &quot;Python.excel_h.executor&quot;: &quot;Run&quot;,
-    &quot;Python.excel_音效需求表音效名读取.executor&quot;: &quot;Run&quot;,
-    &quot;Python.exe_pak.executor&quot;: &quot;Run&quot;,
-    &quot;Python.main (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python.main.executor&quot;: &quot;Run&quot;,
-    &quot;Python.oi_h.executor&quot;: &quot;Run&quot;,
-    &quot;Python.oi_媒体资源重命名 (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python.oi_媒体资源重命名.executor&quot;: &quot;Run&quot;,
-    &quot;Python.test.executor&quot;: &quot;Run&quot;,
-    &quot;Python.test4.executor&quot;: &quot;Run&quot;,
-    &quot;Python.ue_ID表生成 (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python.ue_ID表生成.executor&quot;: &quot;Run&quot;,
-    &quot;Python.ue_ID表生成v2.executor&quot;: &quot;Run&quot;,
-    &quot;Python.ue_ID表生成v3.executor&quot;: &quot;Run&quot;,
-    &quot;Python.ue_ID表生成v4.executor&quot;: &quot;Run&quot;,
-    &quot;Python.waapi_2023test.executor&quot;: &quot;Run&quot;,
-    &quot;Python.waapi_auto_gen_music.executor&quot;: &quot;Run&quot;,
-    &quot;Python.waapi_auto_gen_state.executor&quot;: &quot;Run&quot;,
-    &quot;Python.waapi_es音效&amp;语音导入v2.executor&quot;: &quot;Run&quot;,
-    &quot;Python.waapi_es音效导入(飞书云版）.executor&quot;: &quot;Run&quot;,
-    &quot;Python.waapi_es音效导入.executor&quot;: &quot;Run&quot;,
-    &quot;Python.waapi_json数据解析.executor&quot;: &quot;Run&quot;,
-    &quot;Python.waapi_sounbank生成.executor&quot;: &quot;Run&quot;,
-    &quot;Python.waapi_test.executor&quot;: &quot;Run&quot;,
-    &quot;Python.waapi_wwise属性自动配置.executor&quot;: &quot;Run&quot;,
-    &quot;Python.waapi_订阅_soundbank生成数据 (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python.waapi_订阅_soundbank生成数据.executor&quot;: &quot;Run&quot;,
-    &quot;Python.waapi_订阅_soundbank生成数据打印 (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python.waapi_订阅_接收对象名称被修改时的信息.executor&quot;: &quot;Run&quot;,
-    &quot;Python.waapi_语音导入 (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python.waapi_语音导入.executor&quot;: &quot;Run&quot;,
-    &quot;Python.waapi_语音导入_本地UE工程测试版.executor&quot;: &quot;Run&quot;,
-    &quot;Python.waapi_语音导入测试.executor&quot;: &quot;Run&quot;,
-    &quot;Python.waapi_转码类型创建.executor&quot;: &quot;Run&quot;,
-    &quot;Python.waapi_音频资源全流程生成.executor&quot;: &quot;Run&quot;,
-    &quot;Python.waapi_音频资源导入_从媒体资源导入.executor&quot;: &quot;Run&quot;,
-    &quot;Python.waapi_音频资源导入_从表导入 (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python.waapi_音频资源导入_从表导入.executor&quot;: &quot;Run&quot;,
-    &quot;Python.waapi_音频资源导入_从表导入v2.executor&quot;: &quot;Run&quot;,
-    &quot;Python.waapi_音频资源导入自动化.executor&quot;: &quot;Run&quot;,
-    &quot;Python.xml文件读写示例 (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python.xml文件读写示例.executor&quot;: &quot;Run&quot;,
-    &quot;Python.命名规范检查.executor&quot;: &quot;Run&quot;,
-    &quot;Python.响度均衡测试.executor&quot;: &quot;Run&quot;,
-    &quot;Python.媒体资源从表导入.executor&quot;: &quot;Run&quot;,
-    &quot;Python.媒体资源占位生成.executor&quot;: &quot;Run&quot;,
-    &quot;Python.媒体资源替换及随机资源新增.executor&quot;: &quot;Run&quot;,
-    &quot;Python.将Wwise工程的响度标准化.executor&quot;: &quot;Run&quot;,
-    &quot;Python.打包测试.executor&quot;: &quot;Run&quot;,
-    &quot;Python.正则测试.executor&quot;: &quot;Run&quot;,
-    &quot;Python.静音片段测试.executor&quot;: &quot;Run&quot;,
-    &quot;Python.音效语音全流程自动化打包版.executor&quot;: &quot;Run&quot;,
-    &quot;Python.飞书表格读写测试 (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python.飞书表格读写测试.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;F:/pppppy/SP/func/comlib&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Python.Amb自动化.executor": "Run",
+    "Python.Bus自动化.executor": "Run",
+    "Python.DCC表的引用路径生成.executor": "Run",
+    "Python.DCC表的引用路径生成v2.executor": "Run",
+    "Python.FeishuSheetHelper.executor": "Run",
+    "Python.ID表生成.executor": "Run",
+    "Python.Mus自动化.executor": "Run",
+    "Python.SP飞书表格读写测试.executor": "Run",
+    "Python.State和Switch创建.executor": "Run",
+    "Python.State和Switch创建打包版.executor": "Run",
+    "Python.Wwise属性配置.executor": "Run",
+    "Python.Wwise属性配置打包版.executor": "Run",
+    "Python.__main__ (1).executor": "Run",
+    "Python.__main__.executor": "Run",
+    "Python.audio_h.executor": "Run",
+    "Python.cloudfeishu_h.executor": "Run",
+    "Python.config (1).executor": "Run",
+    "Python.config (2).executor": "Run",
+    "Python.config.executor": "Run",
+    "Python.configparser.executor": "Run",
+    "Python.csv_h.executor": "Debug",
+    "Python.csv_pandas测试.executor": "Run",
+    "Python.excel_h.executor": "Run",
+    "Python.excel_音效需求表音效名读取.executor": "Run",
+    "Python.exe_pak.executor": "Run",
+    "Python.main (1).executor": "Run",
+    "Python.main.executor": "Run",
+    "Python.oi_h.executor": "Run",
+    "Python.oi_媒体资源重命名 (1).executor": "Run",
+    "Python.oi_媒体资源重命名.executor": "Run",
+    "Python.test.executor": "Run",
+    "Python.test4.executor": "Run",
+    "Python.ue_ID表生成 (1).executor": "Run",
+    "Python.ue_ID表生成.executor": "Run",
+    "Python.ue_ID表生成v2.executor": "Run",
+    "Python.ue_ID表生成v3.executor": "Run",
+    "Python.ue_ID表生成v4.executor": "Run",
+    "Python.waapi_2023test.executor": "Run",
+    "Python.waapi_auto_gen_music.executor": "Run",
+    "Python.waapi_auto_gen_state.executor": "Run",
+    "Python.waapi_es音效&语音导入v2.executor": "Run",
+    "Python.waapi_es音效导入(飞书云版）.executor": "Run",
+    "Python.waapi_es音效导入.executor": "Run",
+    "Python.waapi_json数据解析.executor": "Run",
+    "Python.waapi_sounbank生成.executor": "Run",
+    "Python.waapi_test.executor": "Run",
+    "Python.waapi_wwise属性自动配置.executor": "Run",
+    "Python.waapi_订阅_soundbank生成数据 (1).executor": "Run",
+    "Python.waapi_订阅_soundbank生成数据.executor": "Run",
+    "Python.waapi_订阅_soundbank生成数据打印 (1).executor": "Run",
+    "Python.waapi_订阅_接收对象名称被修改时的信息.executor": "Run",
+    "Python.waapi_语音导入 (1).executor": "Run",
+    "Python.waapi_语音导入.executor": "Run",
+    "Python.waapi_语音导入_本地UE工程测试版.executor": "Run",
+    "Python.waapi_语音导入测试.executor": "Run",
+    "Python.waapi_转码类型创建.executor": "Run",
+    "Python.waapi_音频资源全流程生成.executor": "Run",
+    "Python.waapi_音频资源导入_从媒体资源导入.executor": "Run",
+    "Python.waapi_音频资源导入_从表导入 (1).executor": "Run",
+    "Python.waapi_音频资源导入_从表导入.executor": "Run",
+    "Python.waapi_音频资源导入_从表导入v2.executor": "Run",
+    "Python.waapi_音频资源导入自动化.executor": "Run",
+    "Python.xml文件读写示例 (1).executor": "Run",
+    "Python.xml文件读写示例.executor": "Run",
+    "Python.命名规范检查.executor": "Run",
+    "Python.响度均衡测试.executor": "Run",
+    "Python.媒体资源从表导入.executor": "Run",
+    "Python.媒体资源占位生成.executor": "Run",
+    "Python.媒体资源替换及随机资源新增.executor": "Run",
+    "Python.将Wwise工程的响度标准化.executor": "Run",
+    "Python.打包测试.executor": "Run",
+    "Python.正则测试.executor": "Run",
+    "Python.静音片段测试.executor": "Run",
+    "Python.音效语音全流程自动化打包版.executor": "Run",
+    "Python.飞书表格读写测试 (1).executor": "Run",
+    "Python.飞书表格读写测试.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "F:/pppppy/SP/func/comlib",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="F:\pppppy\SP\func\comlib" />
@@ -241,29 +161,7 @@
       <visibility group="运行配置" flag="true" />
     </myKeys>
   </component>
-  <component name="RunManager" selected="Python.DCC表的引用路径生成v2">
-    <configuration name="音效语音全流程自动化打包版" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="SP" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="S:/chen.gong_DCC_Audio/Audio/Tool/Auto_Sound" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="S:/chen.gong_DCC_Audio/Audio/Tool/Auto_Sound/音效语音全流程自动化打包版.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Python.Wwise属性配置打包版">
     <configuration name="媒体资源占位生成" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="SP" />
       <option name="ENV_FILES" value="" />
@@ -308,7 +206,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="State和Switch创建打包版" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="Wwise属性配置打包版" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="SP" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -321,7 +219,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/func/State和Switch创建打包版.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/func/Wwise属性配置打包版.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -374,13 +272,35 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="waapi_wwise属性自动配置" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="SP" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/waapi_wwise属性自动配置.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.Wwise属性配置打包版" />
+        <item itemvalue="Python.waapi_wwise属性自动配置" />
         <item itemvalue="Python.DCC表的引用路径生成v2" />
         <item itemvalue="Python.媒体资源占位生成" />
         <item itemvalue="Python.test" />
-        <item itemvalue="Python.音效语音全流程自动化打包版" />
-        <item itemvalue="Python.State和Switch创建打包版" />
       </list>
     </recent_temporary>
   </component>
@@ -399,14 +319,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1716955384994</updated>
-    </task>
-    <task id="LOCAL-00119" summary="全流程自动化：event和audio的unit收集">
-      <option name="closed" value="true" />
-      <created>1732014890075</created>
-      <option name="number" value="00119" />
-      <option name="presentableId" value="LOCAL-00119" />
-      <option name="project" value="LOCAL" />
-      <updated>1732014890076</updated>
     </task>
     <task id="LOCAL-00120" summary="全流程自动化：导入表的命名规范检查">
       <option name="closed" value="true" />
@@ -792,7 +704,15 @@
       <option name="project" value="LOCAL" />
       <updated>1735208474576</updated>
     </task>
-    <option name="localTasksCounter" value="168" />
+    <task id="LOCAL-00168" summary="属性配置更改">
+      <option name="closed" value="true" />
+      <created>1735221020588</created>
+      <option name="number" value="00168" />
+      <option name="presentableId" value="LOCAL-00168" />
+      <option name="project" value="LOCAL" />
+      <updated>1735221020588</updated>
+    </task>
+    <option name="localTasksCounter" value="169" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -808,7 +728,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="State bank自动化：state表填写并赋值" />
     <MESSAGE value="Bus自动化生成" />
     <MESSAGE value="Mus自动化生成" />
     <MESSAGE value="Amb自动化生成" />
@@ -833,7 +752,8 @@
     <MESSAGE value="媒体资源替换及随机新增打包" />
     <MESSAGE value="comlib-config路径修改" />
     <MESSAGE value="添加分表更新下载功能" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加分表更新下载功能" />
+    <MESSAGE value="属性配置更改" />
+    <option name="LAST_COMMIT_MESSAGE" value="属性配置更改" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
