@@ -366,7 +366,7 @@ excel_world_path = os.path.join(ue_excel_path, 'WorldRegion', 'P_MapData.xlsx')
 excel_show_path = os.path.join(ue_excel_path, 'Character', 'C_CharacterTable.xlsx')
 # 战斗状态表路径
 # excel_combat_path = r"S:\Ver_1.0.0\Project\Designer\Excel\BattleField\C_BattleFieldSystem.xlsx"
-excel_combat_path = os.path.join(ue_excel_path, 'BattleField', 'C_ChaC_BattleFieldSystem.xlsx')
+excel_combat_path = os.path.join(ue_excel_path, 'BattleField', 'C_BattleFieldSystem.xlsx')
 # 3D点声源表路径
 # excel_3d_path = r"S:\Ver_1.0.0\Project\Designer\Excel\Audio\P_Audio3D.xlsx"
 excel_3d_path = os.path.join(ue_excel_path, 'Audio', 'P_Audio3D.xlsx')

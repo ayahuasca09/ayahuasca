@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="17a8a927-0db7-41d4-8f81-9181fc87e6d9" name="更改" comment="修复wwise属性配置：因为读取路径不同导致语音资源删除有误的问题">
+    <list default="true" id="17a8a927-0db7-41d4-8f81-9181fc87e6d9" name="更改" comment="Wwise属性配置：功能更新并打包">
+      <change afterPath="$PROJECT_DIR$/func/ID表生成打包版.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/Wwise属性配置打包版.spec" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/comlib/DCC表的引用路径生成打包版.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/func/Wwise属性配置打包版.py" beforeDir="false" afterPath="$PROJECT_DIR$/func/Wwise属性配置打包版.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/func/comlib/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/func/comlib/config.py" afterDir="false" />
@@ -57,8 +60,10 @@
     "Python.Bus自动化.executor": "Run",
     "Python.DCC表的引用路径生成.executor": "Run",
     "Python.DCC表的引用路径生成v2.executor": "Run",
+    "Python.DCC表的引用路径生成打包版.executor": "Run",
     "Python.FeishuSheetHelper.executor": "Run",
     "Python.ID表生成.executor": "Run",
+    "Python.ID表生成打包版.executor": "Run",
     "Python.Mus自动化.executor": "Run",
     "Python.SP飞书表格读写测试.executor": "Run",
     "Python.State和Switch创建.executor": "Run",
@@ -75,6 +80,7 @@
     "Python.configparser.executor": "Run",
     "Python.csv_h.executor": "Debug",
     "Python.csv_pandas测试.executor": "Run",
+    "Python.excel.executor": "Run",
     "Python.excel_h.executor": "Run",
     "Python.excel_音效需求表音效名读取.executor": "Run",
     "Python.exe_pak.executor": "Run",
@@ -132,24 +138,24 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "F:/pppppy/SP/func/comlib",
+    "last_opened_file_path": "F:/pppppy/SP/func",
     "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="F:\pppppy\SP\func\comlib" />
       <recent name="F:\pppppy\SP\func" />
+      <recent name="F:\pppppy\SP\func\comlib" />
       <recent name="F:\pppppy\SP\module\ue\ue_ID表生成" />
       <recent name="F:\pppppy\SP\module\waapi\waapi_音频资源导入自动化" />
       <recent name="F:\pppppy\SP\module\waapi\waapi_Auto_Import_ExternalSource" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\pppppy\SP\func\comlib" />
       <recent name="F:\pppppy\SP\func" />
       <recent name="F:\pppppy\SP\files\命名规范检查" />
       <recent name="F:\pppppy\SP" />
       <recent name="F:\pppppy\SP\test\使用自定义库打包测试\my_lib" />
-      <recent name="F:\pppppy\SP\module\xml" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -184,7 +190,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="媒体资源占位生成" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="DCC表的引用路径生成打包版" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="SP" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -197,7 +203,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/func/媒体资源占位生成.py" />
+      <option name="SCRIPT_NAME" value="F:\pppppy\SP\func\comlib\DCC表的引用路径生成打包版.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -206,7 +212,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="DCC表的引用路径生成v2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="ID表生成打包版" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="SP" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -215,11 +221,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/module/ue/ue_ID表生成" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/func" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/module/ue/ue_ID表生成/DCC表的引用路径生成v2.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/func/ID表生成打包版.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -272,7 +278,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="waapi_wwise属性自动配置" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="excel" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="SP" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -281,11 +287,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/.venv/Lib/site-packages/openpyxl/reader" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/module/waapi/waapi_音频资源导入自动化/waapi_wwise属性自动配置.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/.venv/Lib/site-packages/openpyxl/reader/excel.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -297,10 +303,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.音效语音全流程自动化打包版" />
+        <item itemvalue="Python.ID表生成打包版" />
+        <item itemvalue="Python.DCC表的引用路径生成打包版" />
+        <item itemvalue="Python.excel" />
         <item itemvalue="Python.Wwise属性配置打包版" />
-        <item itemvalue="Python.waapi_wwise属性自动配置" />
-        <item itemvalue="Python.DCC表的引用路径生成v2" />
-        <item itemvalue="Python.媒体资源占位生成" />
       </list>
     </recent_temporary>
   </component>
@@ -319,14 +325,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1716955384994</updated>
-    </task>
-    <task id="LOCAL-00121" summary="全流程自动化：导入表的命名规范检查及unit收集">
-      <option name="closed" value="true" />
-      <created>1732175053589</created>
-      <option name="number" value="00121" />
-      <option name="presentableId" value="LOCAL-00121" />
-      <option name="project" value="LOCAL" />
-      <updated>1732175053589</updated>
     </task>
     <task id="LOCAL-00122" summary="全流程自动化：准备创建unit">
       <option name="closed" value="true" />
@@ -712,7 +710,15 @@
       <option name="project" value="LOCAL" />
       <updated>1735226455483</updated>
     </task>
-    <option name="localTasksCounter" value="170" />
+    <task id="LOCAL-00170" summary="Wwise属性配置：功能更新并打包">
+      <option name="closed" value="true" />
+      <created>1735290809803</created>
+      <option name="number" value="00170" />
+      <option name="presentableId" value="LOCAL-00170" />
+      <option name="project" value="LOCAL" />
+      <updated>1735290809803</updated>
+    </task>
+    <option name="localTasksCounter" value="171" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -728,7 +734,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Mus自动化生成" />
     <MESSAGE value="Amb自动化生成" />
     <MESSAGE value="MUS自动化生成:媒体资源自动化导入" />
     <MESSAGE value="AMB自动化生成:资源导入" />
@@ -753,7 +758,8 @@
     <MESSAGE value="添加分表更新下载功能" />
     <MESSAGE value="属性配置更改" />
     <MESSAGE value="修复wwise属性配置：因为读取路径不同导致语音资源删除有误的问题" />
-    <option name="LAST_COMMIT_MESSAGE" value="修复wwise属性配置：因为读取路径不同导致语音资源删除有误的问题" />
+    <MESSAGE value="Wwise属性配置：功能更新并打包" />
+    <option name="LAST_COMMIT_MESSAGE" value="Wwise属性配置：功能更新并打包" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
