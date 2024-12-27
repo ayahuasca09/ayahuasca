@@ -59,6 +59,7 @@ elif __file__:
     py_path = dirname(abspath(__file__))
 
 """Wwise"""
+wwise_cache_path = os.path.join(wwise_path, '.cache')
 wwise_sfx_path = "\\Actor-Mixer Hierarchy\\v1"
 wwise_event_path = "\\Events\\v1"
 # 语音媒体资源的路径
@@ -418,3 +419,9 @@ amb_state_dict = {
     "Amb_System": "System_Type"
 
 }
+
+"""音频属性配置"""
+# 长音效转码
+duration_long = 3
+# 大于夺少kb开流
+stream_size = 32

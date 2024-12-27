@@ -18,19 +18,19 @@ elif __file__:
 # 获取Wwise工程路径
 wwise_proj_path = config.wwise_proj_path
 # 获取Wwise媒体资源的路径
-wwise_sfx_path = os.path.normpath(os.path.join(wwise_proj_path, "Originals", "SFX"))
+wwise_sfx_path = os.path.normpath(config.original_path)
 # print(wwise_media_path)
-wwise_vo_path = os.path.normpath(os.path.join(wwise_proj_path, "Originals", "Voices"))
+wwise_vo_path = os.path.normpath(config.wwise_vo_media_path)
 # print(wwise_vo_path)
 # 获取Wwise的Audio根路径
 wwise_audio_root = "{5EA7BBF8-64C0-4A50-8821-A07E8BE21D68}"
 # 获取Wwise的Music路径
-wwise_music_root = "{E8A5F6A0-AB3E-4166-BB68-C7D7ECC92B29}"
+wwise_music_root = config.music_path
 
 # 转码设置的配置
 # 配置
 # 时长：当超过此时长则为长音效
-duration_long = 3
+duration_long = config.duration_long
 
 # 不同转码格式的路径
 default = "\\Conversion Settings\\Default Work Unit\\Default Conversion Settings"
@@ -46,6 +46,8 @@ VO = "\\Conversion Settings\\User Conversion Settings\\VO"
 
 # 获取Wwise的Sound根路径
 wwise_sfx_root = "{5CB72D1B-8D4B-484D-8B9D-FC52BD496843}"
+# 获取wwisecache路径
+wwise_cache_path = config.wwise_cache_path
 
 """*****************功能检测区******************"""
 """log打印"""
@@ -297,27 +299,37 @@ with WaapiClient() as client:
 
 
     def set_stream():
-        # 针对流的处理
-        if 'maxDurationSource' in sound_dict:
-            if 'trimmedDuration' in sound_dict['maxDurationSource']:
-                sound_duration = sound_dict['maxDurationSource']['trimmedDuration']
-                # 长音效开流
-                if sound_duration > 5:
-                    set_obj_property(sound_dict['id'], "IsStreamingEnabled", True)
+        flag = 0
+        for lower_cache_path in lower_cache_list:
+            if sound_dict['name'] in lower_cache_path:
+                flag = 1
+                set_obj_property(sound_dict['id'], "IsStreamingEnabled", False)
+                break
+        if 'VO' in sound_dict['name']:
+            flag = 2
+            set_obj_property(sound_dict['id'], "IsStreamingEnabled", True)
+            set_obj_property(sound_dict['id'], "IsNonCachable", True)
+            set_obj_property(sound_dict['id'], "IsZeroLatency", True)
 
-                    # 环境声不需要零延迟
-                    if "Amb" in sound_dict['name']:
-                        set_obj_property(sound_dict['id'], "IsZeroLatency", False)
-                    else:
-                        set_obj_property(sound_dict['id'], "IsZeroLatency", True)
-                    # 循环声需要禁用缓存，其他不需要
-                    if 'IsLoopingEnabled' in sound_dict:
-                        if sound_dict['IsLoopingEnabled']:
-                            set_obj_property(sound_dict['id'], "IsNonCachable", False)
-                        else:
-                            set_obj_property(sound_dict['id'], "IsNonCachable", True)
-                    else:
-                        set_obj_property(sound_dict['id'], "IsNonCachable", True)
+        # 大于32kb开流
+        if flag == 0:
+            set_obj_property(sound_dict['id'], "IsStreamingEnabled", True)
+            # 环境声不需要零延迟
+            if "Amb" in sound_dict['name']:
+                set_obj_property(sound_dict['id'], "IsZeroLatency", False)
+            else:
+                set_obj_property(sound_dict['id'], "IsZeroLatency", True)
+            # 循环声和语音需要禁用缓存
+            if 'IsLoopingEnabled' in sound_dict:
+                if sound_dict['IsLoopingEnabled']:
+                    set_obj_property(sound_dict['id'], "IsNonCachable", True)
+                else:
+                    set_obj_property(sound_dict['id'], "IsNonCachable", False)
+            else:
+                if "VO" in sound_dict['name']:
+                    set_obj_property(sound_dict['id'], "IsNonCachable", True)
+                else:
+                    set_obj_property(sound_dict['id'], "IsNonCachable", False)
 
 
     """检测是否静音：若非静音则跟随父级颜色"""
@@ -332,7 +344,33 @@ with WaapiClient() as client:
             #     print(sound_dict['name'])
 
 
+    """获取为.wav且文件大小大于32kb的文件"""
+
+
+    def get_size_path_list():
+        for cache_path in cache_list:
+            if '.wem' in cache_path:
+                if os.path.isfile(cache_path):
+                    file_size = os.path.getsize(cache_path)
+                    # 将字节转换为千字节（KB）
+                    file_size_kb = file_size / 1024
+                    if file_size_kb < config.stream_size:
+                        if cache_path not in lower_cache_list:
+                            lower_cache_list.append(cache_path)
+                            # print(cache_path)
+                            # print(file_size_kb)
+
+
     """*****************主程序处理******************"""
+    # 获取cache文件路径
+    cache_list = get_all_media_path(wwise_cache_path)
+    # pprint(cache_list)
+    # 获取制定大小之内的cache文件列表
+    lower_cache_list = []
+    # 获取为.wav且文件大小大于32kb的文件
+    get_size_path_list()
+    # pprint(lower_cache_list)
+
     # 不需要的文件清理
     clear_file()
 
@@ -377,3 +415,5 @@ with WaapiClient() as client:
 
     gen_log = client.call("ak.wwise.core.soundbank.generate", args)
     pprint(gen_log)
+
+os.system("pause")
