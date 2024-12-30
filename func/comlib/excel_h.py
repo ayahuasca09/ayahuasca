@@ -3,6 +3,18 @@ import os
 from . import oi_h
 from openpyxl.cell import MergedCell
 
+"""检查表格是否为空"""
+
+
+def is_sheet_empty(sheet):
+    # 遍历工作表中的所有行和列，检查是否有非空单元格
+    for row in sheet.iter_rows():
+        for cell in row:
+            if cell.value is not None:
+                return False
+    return True
+
+
 """合并单元格检查"""
 
 
@@ -110,9 +122,13 @@ def sheet_title_column(title_name, title_colunmn_dict):
 
 
 def check_is_chinese(string):
-    for ch in string:
-        if u'\u4e00' <= ch <= u'\u9fff':
-            return True
+    if isinstance(string, int):
+        return False
+    else:
+        for ch in string:
+            if u'\u4e00' <= ch <= u'\u9fff':
+                return True
+
     return False
 
 
@@ -163,6 +179,7 @@ def get_colunmn_multi_list(column_min, column_max, sheet):
 # id_type_name：要获取的区间段类型
 # id_sheet：id表的sheet
 def create_id(id_type_dict, id_type_name, id_sheet):
+
     # 获取目前已有的ID列表
     id_list = get_colunmn_one_list(1, id_sheet)
     for id_type in id_type_dict:

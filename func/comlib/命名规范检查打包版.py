@@ -1,10 +1,9 @@
-import module.cloudfeishu.cloudfeishu_h as cloudfeishu_h
-import config
 import os
-import module.excel.excel_h as excel_h
-from pprint import pprint
 import re
-from openpyxl.styles import PatternFill
+
+from . import excel_h
+from . import config
+from . import cloudfeishu_h
 
 is_pass = True
 
@@ -61,6 +60,8 @@ for row in sheet_config.iter_rows(min_row=1, max_col=1, max_row=sheet_config.max
         #         print(f'Cell {cell.coordinate} has no solid fill')
 
 """********************功能函数***********************"""
+
+
 
 """检测正则表达式的pattern是否正确"""
 

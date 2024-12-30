@@ -110,6 +110,9 @@ excel_wwisecookie_path = 'ExternalSourceDefaultMedia.xlsx'
 excel_DT_AudioPlotInfo_path = "DT_AudioPlotInfo.xlsx"
 excel_DT_AudioPlotSoundInfo_path = "DT_AudioPlotSoundInfo.xlsx"
 
+# 剧情表中媒体资源名称所在列
+plot_media_name_column=3
+
 # excel表标题列
 excel_es_title_list = ["文件名", "External_Type", "State", "剧情ID"]
 
@@ -127,8 +130,9 @@ cg_external_path = "\\Actor-Mixer Hierarchy\\v1\\CG\\CG\\CG_External"
 es_xml_path = 'ExternalSource.xml'
 
 # external的输入输出路径
-external_input_path = r"F:\pppppy\SP\module\waapi\waapi_Auto_Import_ExternalSource\ExternalSource.wsources"
+external_input_path = "ExternalSource.wsources"
 # external_output_win_path = 'S:\\Ver_1.0.0\\Project\\Content\\Audio\\GeneratedExternalSources\\Windows'
+external_output_path = ue_genes_path
 external_output_win_path = os.path.join(ue_genes_path, 'Windows')
 # external_output_android_path = 'S:\\Ver_1.0.0\\Project\\Content\\Audio\\GeneratedExternalSources\\Android'
 external_output_android_path = os.path.join(ue_genes_path, 'Android')
@@ -220,6 +224,16 @@ mus_sheet_token_list = ["OcV8wP6cmi78GtkuR2UcM4bEnTe", "YDHHwNt61idv0SkhFMbcWNzX
 # Amb资源表
 amb_sheet_token = "AaZuw0vlWiyLCrkgxr6c6wqonmh"
 
+# ES资源表token
+es_sheet_token_dict = {
+    "B类（LevelSequence）剧情音效": "AsW4wmAbQiIHeLkI2cscdN0Ln3e",
+    "B类（LevelSequence）剧情语音": "PVNYwZbdVi1LMhkhvbVch4cJn4C",
+    "C类（操控演员表演，接管镜头）剧情语音": "EJmuwpPf5iNEz7k744Pc17qpnOb",
+    "C类（操控演员表演，接管镜头）剧情音效": "JR6jw2o2kizDfmkKNeCcOYePnSe",
+    "D类（操控演员表演，不接管镜头）剧情音效": "JRnqwTO5qikuWfknEoicEY7SnWd",
+    "D类（操控演员表演，不接管镜头）剧情语音": "MDV7wYrd5i3LRYkJh30cKehNniS",
+}
+
 # 音效资源表token
 media_sheet_token_dict = {
     "区域环境音效表": "H4pPwDOTLiKB7tkDoP5cSQm8npg",
@@ -233,7 +247,7 @@ media_sheet_token_dict = {
     "角色移动资源表": "IeRBwGPHmie8nWkOYxlcceKAnGb",
     "角色战斗语音资源表": "DFClw5jSyiVwSkk2ELwcKa3In5c",
     "Boss战斗语音资源表": "DfEywr6nNiy4fIkabEgcddRznFh",
-    "怪物战斗语音资源表": "QMtVw2yZKiTuybk6XabcKAVxnsg"
+    "怪物战斗语音资源表": "QMtVw2yZKiTuybk6XabcKAVxnsg",
 }
 
 """ID表生成"""

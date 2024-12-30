@@ -73,7 +73,7 @@ def is_valid_input(input_string):
 
 print("--------------------------")
 print("输入数字对应资源表类型如下：")
-print("输入值若为0，代表更新所有资源表内容")
+print("输入值若为all，代表更新所有资源表内容")
 print("若需获取多个资源表，以英文字符,(逗号）隔开，输入完毕后按下回车即可")
 print("输入案例：1,3,5,6")
 
@@ -85,20 +85,27 @@ temp = ''
 flag = 1
 while flag:
     temp = input("请输入要更新资源的音效表数字:")
-    if not is_valid_input(temp):
+    if temp == "all":
+        for media_sheet_name in media_sheet_token_dict:
+            print(media_sheet_name + "：音频资源表更新")
+            sheet_token = media_sheet_token_dict[media_sheet_name]
+            cloudfeishu_h.download_cloud_sheet(sheet_token, os.path.join(py_path, "Excel", media_sheet_name) + '.xlsx')
+
+    elif not is_valid_input(temp):
         print("")
         print("请重新输入⬇")
         continue
     flag = 0
 
-input_digi_list = list(map(int, temp.split(',')))
-for i in input_digi_list:
-    if i in digi_meidia_dict:
-        media_sheet_name = digi_meidia_dict[i]
-        if media_sheet_name in media_sheet_token_dict:
-            print(media_sheet_name + "：音频资源表更新")
-            sheet_token = media_sheet_token_dict[media_sheet_name]
-            cloudfeishu_h.download_cloud_sheet(sheet_token, os.path.join(root_path, media_sheet_name))
+if temp.isdigit():
+    input_digi_list = list(map(int, temp.split(',')))
+    for i in input_digi_list:
+        if i in digi_meidia_dict:
+            media_sheet_name = digi_meidia_dict[i]
+            if media_sheet_name in media_sheet_token_dict:
+                print(media_sheet_name + "：音频资源表更新")
+                sheet_token = media_sheet_token_dict[media_sheet_name]
+                cloudfeishu_h.download_cloud_sheet(sheet_token, os.path.join(root_path, media_sheet_name) + ".xlsx")
 
 """在线表获取"""
 # 规范检查表
