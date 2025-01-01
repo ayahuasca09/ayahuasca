@@ -179,7 +179,6 @@ def get_colunmn_multi_list(column_min, column_max, sheet):
 # id_type_name：要获取的区间段类型
 # id_sheet：id表的sheet
 def create_id(id_type_dict, id_type_name, id_sheet):
-
     # 获取目前已有的ID列表
     id_list = get_colunmn_one_list(1, id_sheet)
     for id_type in id_type_dict:
