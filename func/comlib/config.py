@@ -111,7 +111,7 @@ excel_DT_AudioPlotInfo_path = "DT_AudioPlotInfo.xlsx"
 excel_DT_AudioPlotSoundInfo_path = "DT_AudioPlotSoundInfo.xlsx"
 
 # 剧情表中媒体资源名称所在列
-plot_media_name_column=3
+plot_media_name_column = 3
 
 # excel表标题列
 excel_es_title_list = ["文件名", "External_Type", "State", "剧情ID"]
@@ -144,33 +144,33 @@ language_list = ['Chinese', 'English', 'Japanese', 'Korean', "SFX"]
 es_id_config = {
     "B类（LevelSequence）剧情音效":
         {
-            "min": 1,
-            "max": 5000
+            "min": 3000001,
+            "max": 3100000
         },
     "B类（LevelSequence）剧情语音":
         {
-            "min": 50001,
-            "max": 60000
+            "min": 1000001,
+            "max": 2000000
         },
     "C类（操控演员表演，接管镜头）剧情音效":
         {
-            "min": 5001,
-            "max": 10000
+            "min": 3100001,
+            "max": 3200000
         },
     "C类（操控演员表演，接管镜头）剧情语音":
         {
-            "min": 60001,
-            "max": 70000
+            "min": 1,
+            "max": 1000000
         },
     "D类（操控演员表演，不接管镜头）剧情音效":
         {
-            "min": 10001,
-            "max": 15000
+            "min": 3200001,
+            "max": 3300000
         },
     "D类（操控演员表演，不接管镜头）剧情语音":
         {
-            "min": 70001,
-            "max": 80000
+            "min": 2000001,
+            "max": 3000000
         }
 }
 
@@ -315,28 +315,28 @@ event_id_config = {
     "Set_State":
         {
             "min": 30001,
-            "max": 32000
+            "max": 100000
         },
     "Set_Switch":
         {
-            "min": 32001,
-            "max": 34000
+            "min": 100001,
+            "max": 105000
         },
     "Set_Trigger":
         {
-            "min": 34001,
-            "max": 36000
-        },
-    "CG":
-        {
-            "min": 36001,
-            "max": 40000
+            "min": 105001,
+            "max": 110000
         },
     "Item":
         {
-            "min": 40001,
-            "max": 42000
-        }
+            "min": 110001,
+            "max": 115000
+        },
+    "CG":
+        {
+            "min": 115001,
+            "max": 120000
+        },
 
 }
 
