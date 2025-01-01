@@ -469,11 +469,11 @@ def auto_gen_es_file(file_wav_dict):
                                                         write_wwise_cookie_excel(vo_id, cell_sound, external_sound_dict)
 
                                                         # 写入dt excel表
-                                                        if vo_id > 3000000:
+                                                        if vo_id > 9000000:
                                                             write_dt_excel(vo_id, cell_sound,
                                                                            sheet_DT_AudioPlotSoundInfo,
                                                                            cell_es_type)
-                                                        elif 0 < vo_id <= 3000000:
+                                                        elif 0 < vo_id <= 9000000:
                                                             write_dt_excel(vo_id, cell_sound, sheet_DT_AudioPlotInfo,
                                                                            cell_es_type)
 
