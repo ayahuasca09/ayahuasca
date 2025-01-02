@@ -108,8 +108,9 @@ if __name__ == "__main__":
     # package_script("ES导入自动化打包版.py", "ES_Import")
     # package_script("ID表生成打包版.py", "ID表生成")
     # Switch和State有引用ID表生成的exe
-    package_script_add_other_script("State和Switch创建打包版.py", "State和Switch创建", "ID表生成打包版.py")
+    # package_script_add_other_script("State和Switch创建打包版.py", "State和Switch创建", "ID表生成打包版.py")
     # package_script("Wwise属性配置打包版.py", "Wwise属性配置")
+    package_script("GenSoundbank打包版.py", "GenSoundbank")
 
     copy_directories(output_path, r"S:\chen.gong_DCC_Audio\Audio\Tool\Auto_Sound")
     shutil.rmtree(output_path)
