@@ -7,6 +7,7 @@ import sys
 import comlib.cloudfeishu_h as cloudfeishu_h
 import comlib.excel_h as excel_h
 import comlib.config as config
+import comlib.exe_h as exe_h
 from os.path import abspath, dirname
 
 
@@ -523,5 +524,14 @@ with WaapiClient() as client:
 
     # 撤销结束
     client.call("ak.wwise.core.undo.endGroup", displayName="rnd创建撤销")
+
+# gen soundbank
+exe_h.gen_soundbank()
+# ue reconcile
+exe_h.run_ue_reconcile()
+# id表生成
+auto_sound_path = config.auto_sound_path
+gen_dt_id_path = os.path.join(auto_sound_path, 'ID表生成', 'ID表生成.exe')
+exe_h.run_exe(gen_dt_id_path)
 
 os.system("pause")

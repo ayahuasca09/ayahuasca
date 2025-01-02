@@ -71,11 +71,44 @@ def package_script(script_name, output_name):
         print(script_name + f"发生错误：{e}")
 
 
+gen_dt_id_path = r"F:\pppppy\SP\func\ID表生成打包版.py"
+
+
+def package_script_add_other_script(script_name, output_name, other_script):
+    # 定义脚本路径
+    # script_name = "媒体资源替换及随机资源新增打包版.py"
+
+    # 检查输出路径是否存在，不存在则创建
+    if not os.path.exists(output_path):
+        os.makedirs(output_path)
+
+    # 构建 PyInstaller 命令
+    command = [
+        "pyinstaller",
+        "--onedir",
+        "--add-data", "comlib:dest",
+        "--distpath", output_path,
+        "--name", output_name,
+        "--hidden-import", other_script,  # 隐式导入
+        script_name
+    ]
+
+    try:
+        # 执行命令
+        subprocess.run(command, check=True)
+        print(script_name + "打包成功！")
+    except subprocess.CalledProcessError as e:
+        print(script_name + f"打包失败：{e}")
+    except Exception as e:
+        print(script_name + f"发生错误：{e}")
+
+
 if __name__ == "__main__":
     # package_script("媒体资源替换及随机资源新增打包版.py", "媒体资源替换及随机资源新增")
-    package_script("ES导入自动化打包版.py", "ES_Import")
+    # package_script("ES导入自动化打包版.py", "ES_Import")
     # package_script("ID表生成打包版.py", "ID表生成")
-    # package_script("State和Switch创建打包版.py", "State和Switch创建")
+    # Switch和State有引用ID表生成的exe
+    package_script_add_other_script("State和Switch创建打包版.py", "State和Switch创建", "ID表生成打包版.py")
     # package_script("Wwise属性配置打包版.py", "Wwise属性配置")
 
     copy_directories(output_path, r"S:\chen.gong_DCC_Audio\Audio\Tool\Auto_Sound")

@@ -29,10 +29,13 @@ spec.loader.exec_module(config_custom)
 """Wwise主要路径"""
 # 'S:\chen.gong_DCC_Audio\Audio\SilverPalace_WwiseProject'
 wwise_path = config_custom.wwise_path
+wwise_console_path = config_custom.wwise_console_path
 
 """Audio父级路径"""
 audio_parent_path = os.path.dirname(wwise_path)
 # print(audio_parent_path)
+# 打包文件路径
+auto_sound_path = os.path.join(audio_parent_path, 'Tool', 'Auto_Sound')
 
 """UE主要路径"""
 ue_content_path = config_custom.ue_path
@@ -40,7 +43,12 @@ ue_project_path = os.path.dirname(ue_content_path)
 # print(ue_project_path)
 ue_audio_path = os.path.join(ue_content_path, 'Audio')
 ue_wwiseaudio_path = os.path.join(ue_audio_path, 'WwiseAudio')
+
 ue_gensoundbank_path = os.path.join(ue_audio_path, 'GeneratedSoundBanks')
+gensoundbank_output_win_path = os.path.join(ue_gensoundbank_path, 'Windows')
+gensoundbank_output_android_path = os.path.join(ue_gensoundbank_path, 'Android')
+gensoundbank_output_ios_path = os.path.join(ue_gensoundbank_path, 'iOS')
+
 ue_genes_path = os.path.join(ue_audio_path, 'GeneratedExternalSources')
 
 """获取主目录下的文件"""
