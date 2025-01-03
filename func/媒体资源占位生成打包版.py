@@ -1,32 +1,32 @@
 import openpyxl
-import json
-import sys
-from os.path import abspath, dirname
 import os
-from pprint import pprint
-import re
 from waapi import WaapiClient
-import shutil
-from openpyxl.cell import MergedCell
-import module.cloudfeishu.cloudfeishu_h as cloudfeishu_h
-import module.oi.oi_h as oi_h
+from os.path import abspath, dirname
+import sys
+
+import comlib.cloudfeishu_h as cloudfeishu_h
+import comlib.oi_h as oi_h
 import comlib.config as config
-import module.excel.excel_h as excel_h
-import module.waapi.waapi_h as waapi_h
-from pathlib import Path
-import 命名规范检查
+import comlib.excel_h as excel_h
+import comlib.waapi_h as waapi_h
+import 命名规范检查打包版
+
+is_pass_check_name = True
 
 """根目录获取"""
-# 获取当前脚本的文件名及路径
-script_name_with_extension = __file__.split('/')[-1]
-# 去掉扩展名
-script_name = script_name_with_extension.rsplit('.', 1)[0]
-# 替换为files
-root_path = script_name.replace("func", "files")
-# print(f"当前脚本的名字是: {root_path}")c
 
-file_name_list = excel_h.excel_get_path_list(root_path)
-# pprint(file_name_list)
+
+def get_py_path():
+    py_path = ""
+    if hasattr(sys, 'frozen'):
+        py_path = dirname(sys.executable)
+    elif __file__:
+        py_path = dirname(abspath(__file__))
+    return py_path
+
+
+# 打包版
+root_path = get_py_path()
 
 """表格获取输入"""
 # 所有音频资源表的映射
@@ -89,7 +89,8 @@ while flag:
         for media_sheet_name in media_sheet_token_dict:
             print(media_sheet_name + "：音频资源表更新")
             sheet_token = media_sheet_token_dict[media_sheet_name]
-            cloudfeishu_h.download_cloud_sheet(sheet_token, os.path.join(root_path, "Excel", media_sheet_name) + '.xlsx')
+            cloudfeishu_h.download_cloud_sheet(sheet_token,
+                                               os.path.join(root_path, "Excel", media_sheet_name) + '.xlsx')
 
     elif not is_valid_input(temp):
         print("")
@@ -107,16 +108,9 @@ if temp.isdigit():
                 sheet_token = media_sheet_token_dict[media_sheet_name]
                 cloudfeishu_h.download_cloud_sheet(sheet_token, os.path.join(root_path, media_sheet_name) + ".xlsx")
 
-"""在线表获取"""
-# 规范检查表
-# for excel_media_token in config.excel_media_token_list:
-#     _, excel_name = cloudfeishu_h.get_excel_token(excel_media_token)
-#     # pprint(excel_name)
-#     for file_name in file_name_list:
-#         if excel_name in file_name:
-#             print(excel_name)
-#             cloudfeishu_h.download_cloud_sheet(excel_media_token, os.path.join(root_path, file_name))
-#             break
+file_name_list = oi_h.find_all_files_by_type(root_path, '.xlsx')
+
+# print(file_name_list)
 
 """收集unit的路径"""
 audio_unit_list = []
@@ -217,25 +211,25 @@ def get_descrip_and_status_column():
     require_name_column = None
     status_column = None
     sample_name_column = None
-
-    if list(sheet.rows)[0]:
-        for cell in list(sheet.rows)[0]:
-            if cell.value:
-                if 'Require Module' in str(cell.value):
-                    require_module_column = cell.column
-                    # print(require_module_column)
-                elif 'Second Module' in str(cell.value):
-                    second_module_column = cell.column
-                    # print(second_module_column)
-                elif 'Require Name' in str(cell.value):
-                    require_name_column = cell.column
-                    # print(require_name_column)
-                elif 'Status' in str(cell.value):
-                    status_column = cell.column
-                    # print(status_column)
-                elif 'Sample Name' in str(cell.value):
-                    sample_name_column = cell.column
-                    # print(status_column)
+    if list(sheet.rows):
+        if list(sheet.rows)[0]:
+            for cell in list(sheet.rows)[0]:
+                if cell.value:
+                    if 'Require Module' in str(cell.value):
+                        require_module_column = cell.column
+                        # print(require_module_column)
+                    elif 'Second Module' in str(cell.value):
+                        second_module_column = cell.column
+                        # print(second_module_column)
+                    elif 'Require Name' in str(cell.value):
+                        require_name_column = cell.column
+                        # print(require_name_column)
+                    elif 'Status' in str(cell.value):
+                        status_column = cell.column
+                        # print(status_column)
+                    elif 'Sample Name' in str(cell.value):
+                        sample_name_column = cell.column
+                        # print(status_column)
 
     return require_module_column, second_module_column, require_name_column, status_column, sample_name_column
 
@@ -362,11 +356,15 @@ with WaapiClient() as client:
                                           column=status_column).value in config.status_list:
                                 # pprint(cell_sound.value)
 
-                                if 命名规范检查.check_basic(cell_sound.value, audio_unit_list, event_unit_list,
-                                                            audio_mixer_list, word_list_len):
+                                if 命名规范检查打包版.check_basic(cell_sound.value, audio_unit_list,
+                                                                  event_unit_list,
+                                                                  audio_mixer_list, word_list_len):
                                     # 通过命名规范检查
                                     # pprint(cell_sound.value)
                                     pass
+                                # 命名规范只要一次不通过就算失败
+                                else:
+                                    is_pass_check_name = False
 
     """*****************work unit创建******************"""
     # 对列表进行排序
@@ -394,3 +392,13 @@ with WaapiClient() as client:
     #
     # pprint("audio_mixer_list：")
     # pprint(audio_mixer_list)
+
+if is_pass_check_name:
+    print("--------------------------")
+    print("资源命名检查通过，请输入以下数字选项继续：")
+    print("1：生成占位资源")
+    print("0：结束")
+    temp = input("请输入数字:")
+    if temp == 1 or temp == "1":
+        import 媒体资源从表导入打包版
+os.system("pause")

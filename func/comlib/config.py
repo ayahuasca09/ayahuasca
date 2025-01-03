@@ -93,7 +93,8 @@ wwise_bus_path = "\\Master-Mixer Hierarchy\\v1\\Master Audio Bus"
 # Aux Ducking Bus路径
 wwise_aux_duck_path = "\\Master-Mixer Hierarchy\\v1\\Master Audio Bus\\Auxiliary\\Aux_Ducking\\Aux_Ducking"
 # Mus_Global路径
-wwise_mus_global_path = "\\Interactive Music Hierarchy\\v1\\Mus\\Mus_Global"
+# wwise_mus_global_path = "\\Interactive Music Hierarchy\\v1\\Mus\\Mus_Global"
+wwise_mus_global_path = "\\Interactive Music Hierarchy\\Default Work Unit\\Test\\Mus_Global_Test"
 # Amb_Global路径
 wwise_amb_global_path = "\\Actor-Mixer Hierarchy\\v1\\Amb\\Amb\\Amb_Global\\Amb_Global\\Amb_Global_Area\\Amb_Global_Area\\Amb_Global_Area"
 """state folder path"""
@@ -229,8 +230,8 @@ bus_sheet_token = "F0ApwYVFViCQ6SkammRcs9cGnIh"
 mus_config_token = "OA69weFjaiNq13knGSVcNzV5n2d"
 # Mus资源表token
 mus_sheet_token_list = ["OcV8wP6cmi78GtkuR2UcM4bEnTe", "YDHHwNt61idv0SkhFMbcWNzXn4f", "OA69weFjaiNq13knGSVcNzV5n2d"]
-# Amb资源表
-amb_sheet_token = "AaZuw0vlWiyLCrkgxr6c6wqonmh"
+# 全局Amb资源表
+amb_sheet_token = "ZbeBwK43uiq55ekqZpccOq9NnCo"
 
 # ES资源表token
 es_sheet_token_dict = {
@@ -434,7 +435,7 @@ excel_mus_config_path = "Mus结构表.xlsx"
 """Amb自动化"""
 excel_amb_config_path = "全局环境音效表.xlsx"
 sheet_amb_config = "Amb框架结构"
-sheet_amb_media = "Amb"
+sheet_amb_media = "Amb_Global_Area"
 # 结构与环境音效映射字典
 amb_state_dict = {
     "Amb_Map": "Map_Type",

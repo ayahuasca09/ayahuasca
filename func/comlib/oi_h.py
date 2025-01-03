@@ -65,6 +65,7 @@ def find_all_files_by_type(dir_path, file_type):
             # print(i)
             file_name_type_list.append(i)
     # pprint(file_name_type_list)
+    return file_name_type_list
 
 
 # 测试
