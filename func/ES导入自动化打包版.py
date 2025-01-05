@@ -17,6 +17,7 @@ import comlib.oi_h as oi_h
 import comlib.waapi_h as waapi_h
 import comlib.csv_h as csv_h
 import comlib.cloudfeishu_h as cloudfeishu_h
+import comlib.exe_h as exe_h
 
 """****************数据获取******************"""
 
@@ -609,4 +610,7 @@ with (WaapiClient() as client):
     os.mkdir(os.path.join(wav_path, "Korean"))
     os.mkdir(os.path.join(wav_path, "SFX"))
 
+# dt表导入UE
+ue_csv_dt_es_path = os.path.join(py_path, "ue_csv_dt_es.py")
+exe_h.run_unreal_editor_with_script(ue_csv_dt_es_path)
 os.system("pause")

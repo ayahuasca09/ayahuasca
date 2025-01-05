@@ -13,6 +13,7 @@ import comlib.excel_h as excel_h
 import comlib.config as config
 import comlib.oi_h as oi_h
 import comlib.waapi_h as waapi_h
+import comlib.exe_h as exe_h
 
 from os.path import abspath, dirname
 
@@ -469,5 +470,9 @@ with WaapiClient() as client:
     messagebox.showinfo("Info", "ID表已更新，记得提交DCC下的Audio表")
 
 import comlib.DCC表的引用路径生成打包版
+
+# dt表导入UE
+ue_csv_dt_audio_path = os.path.join(root_path, "ue_csv_dt_audio.py")
+exe_h.run_unreal_editor_with_script(ue_csv_dt_audio_path)
 
 os.system("pause")

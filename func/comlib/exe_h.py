@@ -19,16 +19,17 @@ external_output_android_path = config.external_output_android_path
 external_output_ios_path = config.external_output_ios_path
 
 """UE资产同步"""
+ue_proj_path = config.ue_project_path
+# SP工程路径
+ue_sp_path = os.path.join(ue_proj_path, "SilverPalace.uproject")
+ue_root_path = os.path.dirname(ue_proj_path)
+# print(ue_sp_path)
+ue_editor_path = os.path.join(ue_root_path, "Editor", "Engine", "Binaries", "Win64", "UnrealEditor.exe")
 
+
+# print(ue_editor_path)
 
 def run_ue_reconcile():
-    ue_proj_path = config.ue_project_path
-    # SP工程路径
-    ue_sp_path = os.path.join(ue_proj_path, "SilverPalace.uproject")
-    ue_root_path = os.path.dirname(ue_proj_path)
-    # print(ue_sp_path)
-    ue_editor_path = os.path.join(ue_root_path, "Editor", "Engine", "Binaries", "Win64", "UnrealEditor.exe")
-    # print(ue_editor_path)
     command_path = ue_editor_path + " " + ue_sp_path + " " + "-run=WwiseReconcileCommandlet -modes=all"
     # print(command_path)
     subprocess.run(command_path, capture_output=True, text=True, check=True, shell=True)
@@ -95,3 +96,35 @@ def gen_es(external_input_path):
         print("Command executed successfully")
     except subprocess.CalledProcessError as e:
         print(f"An error occurred: {e}")
+
+
+"""在ue外部执行"""
+
+
+def run_unreal_editor_with_script(script_path):
+    print("*************UE导表开始执行**************")
+    # Construct the command
+    command = [
+        ue_editor_path,  # Path to the Unreal Engine executable
+        ue_sp_path,  # Path to your .uproject file
+        "-run=pythonscript",
+        f"-script={script_path}"  # Path to your Python script
+    ]
+
+    # Print the command to verify correctness
+    print("Running command:", " ".join(command))
+
+    # Execute the command
+    try:
+        subprocess.run(command, check=True)
+        print("Script executed successfully.")
+    except subprocess.CalledProcessError as e:
+        print("An error occurred while executing the script:", e)
+    print("*************UE导表执行完毕**************")
+    print("*************若UE处于开启状态，需重启UE才能看到导表修改**************")
+
+# # Set your paths here
+# python_script_path = r"F:\pppppy\SP\module\ue\ue_h.py"  # Update this path
+#
+# # Run the function
+# run_unreal_editor_with_script(ue_editor_path, ue_sp_path, python_script_path)
