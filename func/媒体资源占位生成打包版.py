@@ -7,7 +7,6 @@ import sys
 import comlib.cloudfeishu_h as cloudfeishu_h
 import comlib.oi_h as oi_h
 import comlib.config as config
-import comlib.excel_h as excel_h
 import comlib.waapi_h as waapi_h
 import 命名规范检查打包版
 
