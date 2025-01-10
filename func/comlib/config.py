@@ -39,6 +39,7 @@ auto_sound_path = os.path.join(audio_parent_path, 'Tool', 'Auto_Sound')
 
 """UE主要路径"""
 ue_content_path = config_custom.ue_path
+print(ue_content_path)
 ue_project_path = os.path.dirname(ue_content_path)
 # print(ue_project_path)
 ue_audio_path = os.path.join(ue_content_path, 'Audio')

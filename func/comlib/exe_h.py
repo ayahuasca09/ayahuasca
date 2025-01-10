@@ -7,6 +7,7 @@ wwise_path = config.wwise_path
 wproj_path = os.path.join(wwise_path, 'SilverPalace_WwiseProject.wproj')
 
 ue_gensoundbank_path = config.ue_gensoundbank_path
+# print(ue_gensoundbank_path)
 gensoundbank_output_win_path = config.gensoundbank_output_win_path
 gensoundbank_output_android_path = config.gensoundbank_output_android_path
 gensoundbank_output_ios_path = config.gensoundbank_output_ios_path
