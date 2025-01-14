@@ -32,20 +32,20 @@ external_input_path = os.path.join(py_path, config.external_input_path)
 csv_mediainfo_path = os.path.join(py_path, config.csv_mediainfo_path)
 csv_wwisecookie_path = os.path.join(py_path, config.csv_wwisecookie_path)
 csv_DT_AudioPlotInfo_path = os.path.join(py_path, config.csv_DT_AudioPlotInfo_path)
-csv_DT_AudioPlotSoundInfo_path = os.path.join(py_path, config.csv_DT_AudioPlotSoundInfo_path)
+# csv_DT_AudioPlotSoundInfo_path = os.path.join(py_path, config.csv_DT_AudioPlotSoundInfo_path)
 
 # 获取.xlsx文件
 excel_mediainfo_path = os.path.join(py_path, config.excel_mediainfo_path)
 excel_wwisecookie_path = os.path.join(py_path, config.excel_wwisecookie_path)
 excel_DT_AudioPlotInfo_path = os.path.join(py_path, config.excel_DT_AudioPlotInfo_path)
-excel_DT_AudioPlotSoundInfo_path = os.path.join(py_path, config.excel_DT_AudioPlotSoundInfo_path)
+# excel_DT_AudioPlotSoundInfo_path = os.path.join(py_path, config.excel_DT_AudioPlotSoundInfo_path)
 
 # 获取相应的excel表信息
 sheet_mediainfo, wb_mediainfo = excel_h.excel_get_sheet(excel_mediainfo_path, 'Sheet1')
 sheet_wwisecookie, wb_wwisecookie = excel_h.excel_get_sheet(excel_wwisecookie_path, 'Sheet1')
 sheet_DT_AudioPlotInfo, wb_DT_AudioPlotInfo = excel_h.excel_get_sheet(excel_DT_AudioPlotInfo_path, 'Sheet1')
-sheet_DT_AudioPlotSoundInfo, wb_DT_AudioPlotSoundInfo = excel_h.excel_get_sheet(excel_DT_AudioPlotSoundInfo_path,
-                                                                                'Sheet1')
+# sheet_DT_AudioPlotSoundInfo, wb_DT_AudioPlotSoundInfo = excel_h.excel_get_sheet(excel_DT_AudioPlotSoundInfo_path,
+#                                                                                 'Sheet1')
 
 # 获取媒体资源文件列表
 wav_path = os.path.join(py_path, "New_Media")
@@ -60,23 +60,23 @@ file_name_list = excel_h.excel_get_path_list(os.path.join(py_path, "Excel"))
 mediainfo_title_dict = excel_h.excel_get_all_sheet_title_column(sheet_mediainfo)
 wwisecookie_title_dict = excel_h.excel_get_all_sheet_title_column(sheet_wwisecookie)
 DT_AudioPlotInfo_title_dict = excel_h.excel_get_all_sheet_title_column(sheet_DT_AudioPlotInfo)
-DT_AudioPlotSoundInfo_dict = excel_h.excel_get_all_sheet_title_column(sheet_DT_AudioPlotSoundInfo)
+# DT_AudioPlotSoundInfo_dict = excel_h.excel_get_all_sheet_title_column(sheet_DT_AudioPlotSoundInfo)
 
 # 复制列
 copy_wwisecookie_list = [wwisecookie_title_dict['MediaInfoId'], wwisecookie_title_dict['MediaInfoId'],
                          wwisecookie_title_dict['ExternalSourceName'], wwisecookie_title_dict['MediaInfoId']]
-copy_DT_AudioPlotInfo_list = [DT_AudioPlotSoundInfo_dict['Row'], DT_AudioPlotSoundInfo_dict['PlotID'],
-                              DT_AudioPlotSoundInfo_dict['Extern Source Name'],
-                              DT_AudioPlotSoundInfo_dict['Extern Source ID']]
-
-copy_dict = {
-    DT_AudioPlotSoundInfo_dict['Row']: wwisecookie_title_dict['MediaInfoId'],
-    DT_AudioPlotSoundInfo_dict['PlotID']: wwisecookie_title_dict['MediaInfoId'],
-    DT_AudioPlotSoundInfo_dict['Extern Source Name']: wwisecookie_title_dict['ExternalSourceName'],
-    DT_AudioPlotSoundInfo_dict['Extern Source ID']: wwisecookie_title_dict['MediaInfoId']
-}
-
-copy_DT_AudioPlotSoundInfo_list = copy_DT_AudioPlotInfo_list
+# copy_DT_AudioPlotInfo_list = [DT_AudioPlotSoundInfo_dict['Row'], DT_AudioPlotSoundInfo_dict['PlotID'],
+#                               DT_AudioPlotSoundInfo_dict['Extern Source Name'],
+#                               DT_AudioPlotSoundInfo_dict['Extern Source ID']]
+#
+# copy_dict = {
+#     DT_AudioPlotSoundInfo_dict['Row']: wwisecookie_title_dict['MediaInfoId'],
+#     DT_AudioPlotSoundInfo_dict['PlotID']: wwisecookie_title_dict['MediaInfoId'],
+#     DT_AudioPlotSoundInfo_dict['Extern Source Name']: wwisecookie_title_dict['ExternalSourceName'],
+#     DT_AudioPlotSoundInfo_dict['Extern Source ID']: wwisecookie_title_dict['MediaInfoId']
+# }
+#
+# copy_DT_AudioPlotSoundInfo_list = copy_DT_AudioPlotInfo_list
 
 _, wem_list = oi_h.get_type_file_name_and_path('.wem', config.external_output_path)
 
@@ -235,17 +235,17 @@ def delete_cancel_content(table_name_list):
                         break
 
                 # 剧情音效表查找并删除
-                for row in range(2, sheet_DT_AudioPlotSoundInfo.max_row + 1):
-                    plot_sound_delete_cell = sheet_DT_AudioPlotSoundInfo.cell(row=row,
-                                                                              column=config.plot_media_name_column)
-                    cell_value = plot_sound_delete_cell.value
-                    if cell_value == cell.value:
-                        if plot_sound_delete_cell.row not in plot_del_list:
-                            plot_sound_del_list.append(plot_sound_delete_cell.row)
-                        # sheet_DT_AudioPlotSoundInfo.delete_rows(plot_sound_delete_cell.row)
-                        # wb_DT_AudioPlotInfo.save(excel_DT_AudioPlotInfo_path)
-                        oi_h.print_warning(cell.value + ":在DT_AudioPlotSoundInfo中删除相关信息")
-                        break
+                # for row in range(2, sheet_DT_AudioPlotSoundInfo.max_row + 1):
+                #     plot_sound_delete_cell = sheet_DT_AudioPlotSoundInfo.cell(row=row,
+                #                                                               column=config.plot_media_name_column)
+                #     cell_value = plot_sound_delete_cell.value
+                #     if cell_value == cell.value:
+                #         if plot_sound_delete_cell.row not in plot_del_list:
+                #             plot_sound_del_list.append(plot_sound_delete_cell.row)
+                #         # sheet_DT_AudioPlotSoundInfo.delete_rows(plot_sound_delete_cell.row)
+                #         # wb_DT_AudioPlotInfo.save(excel_DT_AudioPlotInfo_path)
+                #         oi_h.print_warning(cell.value + ":在DT_AudioPlotSoundInfo中删除相关信息")
+                #         break
 
     # 列表多行删除，为避免行数出问题，需倒序删除
     # 从最后一行开始删除
@@ -254,12 +254,12 @@ def delete_cancel_content(table_name_list):
         sheet_wwisecookie.delete_rows(row)
     for row in sorted(plot_del_list, reverse=True):
         sheet_DT_AudioPlotInfo.delete_rows(row)
-    for row in sorted(plot_sound_del_list, reverse=True):
-        sheet_DT_AudioPlotSoundInfo.delete_rows(row)
+    # for row in sorted(plot_sound_del_list, reverse=True):
+    #     sheet_DT_AudioPlotSoundInfo.delete_rows(row)
     # 保存excel表的信息
     wb_mediainfo.save(excel_mediainfo_path)
     wb_wwisecookie.save(excel_wwisecookie_path)
-    wb_DT_AudioPlotSoundInfo.save(excel_DT_AudioPlotSoundInfo_path)
+    # wb_DT_AudioPlotSoundInfo.save(excel_DT_AudioPlotSoundInfo_path)
     wb_DT_AudioPlotInfo.save(excel_DT_AudioPlotInfo_path)
 
 
@@ -394,9 +394,10 @@ def auto_gen_es_file(file_wav_dict):
 
                                                         # 写入dt excel表
                                                         if vo_id > 9000000:
-                                                            write_dt_excel(vo_id, cell_sound,
-                                                                           sheet_DT_AudioPlotSoundInfo,
-                                                                           cell_es_type)
+                                                            # write_dt_excel(vo_id, cell_sound,
+                                                            #                sheet_DT_AudioPlotSoundInfo,
+                                                            #                cell_es_type)
+                                                            pass
                                                         elif 0 < vo_id <= 9000000:
                                                             write_dt_excel(vo_id, cell_sound, sheet_DT_AudioPlotInfo,
                                                                            cell_es_type)
@@ -464,14 +465,14 @@ if check_name():
     # 保存excel表的信息
     wb_mediainfo.save(excel_mediainfo_path)
     wb_wwisecookie.save(excel_wwisecookie_path)
-    wb_DT_AudioPlotSoundInfo.save(excel_DT_AudioPlotSoundInfo_path)
+    # wb_DT_AudioPlotSoundInfo.save(excel_DT_AudioPlotSoundInfo_path)
     wb_DT_AudioPlotInfo.save(excel_DT_AudioPlotInfo_path)
 
     # 将excel转为csv
     csv_h.excel_to_csv(excel_mediainfo_path, csv_mediainfo_path)
     csv_h.excel_to_csv(excel_wwisecookie_path, csv_wwisecookie_path)
     csv_h.excel_to_csv(excel_DT_AudioPlotInfo_path, csv_DT_AudioPlotInfo_path)
-    csv_h.excel_to_csv(excel_DT_AudioPlotSoundInfo_path, csv_DT_AudioPlotSoundInfo_path)
+    # csv_h.excel_to_csv(excel_DT_AudioPlotSoundInfo_path, csv_DT_AudioPlotSoundInfo_path)
 
     # have_media_list = excel_h.get_colunmn_one_list(3, sheet_mediainfo)
     # pprint(have_media_list)
