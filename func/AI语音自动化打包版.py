@@ -1,7 +1,6 @@
 # xml读取库
 import shutil
 import os
-from waapi import WaapiClient
 import sys
 from os.path import abspath, dirname
 import openpyxl
@@ -14,9 +13,7 @@ from pprint import pprint
 import comlib.excel_h as excel_h
 import comlib.config as config
 import comlib.oi_h as oi_h
-import comlib.waapi_h as waapi_h
 import comlib.csv_h as csv_h
-import comlib.cloudfeishu_h as cloudfeishu_h
 import comlib.exe_h as exe_h
 
 """****************数据获取******************"""
@@ -83,85 +80,8 @@ copy_DT_AudioPlotSoundInfo_list = copy_DT_AudioPlotInfo_list
 
 _, wem_list = oi_h.get_type_file_name_and_path('.wem', config.external_output_path)
 
-"""****************表格获取输入****************"""
-# 所有音频资源表的映射
-media_sheet_token_dict = config.es_sheet_token_dict
-media_sheet_token_keys = list(media_sheet_token_dict.keys())
-# 将一个list转为dict，list的index+1作为键，元素作为值
-digi_meidia_dict = {index + 1: value for index, value in enumerate(media_sheet_token_keys)}
-
-
-# print(digi_meidia_dict)
-
-
-# python输入检查
-# 1.必须为数字和以,为间隔，例如1，4，2，6
-# 2.通过,分隔的数字不能重复
-def is_valid_input(input_string):
-    # 删除空格
-    input_string = input_string.replace(" ", "")
-
-    # 检查是否仅包含数字和逗号
-    if not all((c.isdigit() or c == ',') for c in input_string):
-        print("输入错误，请确保输入的只有数字且以,隔开")
-        return False
-
-    # 拆分字符串并转换为整数列表
-    try:
-        numbers = list(map(int, input_string.split(',')))
-    except ValueError:
-        print("输入错误，请确保输入的只有数字且以,隔开")
-        return False
-
-    # 检查是否有重复
-    if len(numbers) != len(set(numbers)):
-        print("输入错误，请输无重复的数字")
-        return False
-
-    for numbers in numbers:
-        if numbers > len(media_sheet_token_keys):
-            print("输入错误，请输入上述表中有的数字")
-            return False
-
-    return True
-
-
-print("--------------------------")
-print("输入数字对应资源表类型如下：")
-print("输入值若为all，代表更新所有资源表内容")
-print("若需获取多个资源表，以英文字符,(逗号）隔开，输入完毕后按下回车即可")
-print("输入案例：1,3,5,6")
-
-for i in range(len(media_sheet_token_keys)):
-    print("{}、".format(i + 1) + str(media_sheet_token_keys[i]))
-print("--------------------------")
-
-temp = ''
-flag = 1
-while flag:
-    temp = input("请输入要更新资源的音效表数字:")
-    if temp == "all":
-        for media_sheet_name in media_sheet_token_dict:
-            print(media_sheet_name + "：音频资源表更新")
-            sheet_token = media_sheet_token_dict[media_sheet_name]
-            cloudfeishu_h.download_cloud_sheet(sheet_token, os.path.join(py_path, "Excel", media_sheet_name) + '.xlsx')
-
-    elif not is_valid_input(temp):
-        print("")
-        print("请重新输入⬇")
-        continue
-    flag = 0
-
-if temp.isdigit():
-    input_digi_list = list(map(int, temp.split(',')))
-    for i in input_digi_list:
-        if i in digi_meidia_dict:
-            media_sheet_name = digi_meidia_dict[i]
-            if media_sheet_name in media_sheet_token_dict:
-                print(media_sheet_name + "：音频资源表更新")
-                sheet_token = media_sheet_token_dict[media_sheet_name]
-                cloudfeishu_h.download_cloud_sheet(sheet_token,
-                                                   os.path.join(py_path, "Excel", media_sheet_name) + '.xlsx')
+# 获取写死的cookie数据表
+es_vo_data_dict = config.es_vo_data_dict
 
 """**************写xml**************"""
 # 创建一个对象
@@ -238,13 +158,13 @@ def write_media_info_excel(vo_id, cell_sound):
 """写入wwise_cookie excel表"""
 
 
-def write_wwise_cookie_excel(vo_id, cell_sound, external_sound_dict):
+def write_wwise_cookie_excel(vo_id, cell_sound, external_cookiedata):
     # 插入为空的行
     insert_row = sheet_wwisecookie.max_row + 1
     value_dict = {
         "Name": vo_id,
-        'ExternalSourceCookie': external_sound_dict['shortId'],
-        'ExternalSourceName': external_sound_dict['name'],
+        'ExternalSourceCookie': int(external_cookiedata[1]),
+        'ExternalSourceName': str(external_cookiedata[0]),
         'MediaInfoId': vo_id,
         'MediaName': cell_sound.value + ".wem"
     }
@@ -437,23 +357,25 @@ def auto_gen_es_file(file_wav_dict):
                                         excel_name_list.append(cell_sound.value)
                                         flag = 1
                                         if sheet.cell(row=cell_sound.row, column=excel_h.sheet_title_column("State",
-                                                                                                            title_colunmn_dict)).value != 'cancel':
+                                                                                                            title_colunmn_dict)).value == 'AI':
                                             # print(file_wav_dict[file_wav_name])
                                             # 在表格中找到此音效才将其写入xml
                                             xml_create_element(file_wav_dict[file_wav_name])
 
                                             # 在状态处自动标记完成
-                                            sheet.cell(row=cell_sound.row,
-                                                       column=excel_h.sheet_title_column("State",
-                                                                                         title_colunmn_dict)).value = 'done'
+                                            # sheet.cell(row=cell_sound.row,
+                                            #            column=excel_h.sheet_title_column("State",
+                                            #                                              title_colunmn_dict)).value = 'done'
                                             is_wwise_have = 0
-                                            # 查找Wwise中有无相应的Sound
-                                            for external_sound_dict in external_sound_list:
+
+                                            # 查找字典里有无对应的ES容器
+                                            for external_sound in es_vo_data_dict:
+                                                # for external_sound_dict in external_sound_list:
                                                 cell_es_type = sheet.cell(
                                                     row=cell_sound.row,
                                                     column=excel_h.sheet_title_column("External_Type",
                                                                                       title_colunmn_dict)).value
-                                                if external_sound_dict['parent']['name'] == cell_es_type:
+                                                if external_sound == cell_es_type:
                                                     # 获取已有的媒体资源列表
                                                     have_media_list = excel_h.get_colunmn_one_list(
                                                         config.plot_media_name_column, sheet_mediainfo)
@@ -467,7 +389,8 @@ def auto_gen_es_file(file_wav_dict):
                                                         # 写入media_info excel表
                                                         write_media_info_excel(vo_id, cell_sound)
                                                         # # 写入wwise_cookie excel表
-                                                        write_wwise_cookie_excel(vo_id, cell_sound, external_sound_dict)
+                                                        write_wwise_cookie_excel(vo_id, cell_sound,
+                                                                                 es_vo_data_dict[external_sound])
 
                                                         # 写入dt excel表
                                                         if vo_id > 9000000:
@@ -496,119 +419,74 @@ def auto_gen_es_file(file_wav_dict):
             oi_h.print_error(file_wav_name + "：在语音需求表中不存在，请检查名称是否正确或在表格中补充该名字")
 
 
-with (WaapiClient() as client):
-    """自动生成externalsource"""
+"""*******************主程序*******************"""
+excel_name_list = []
+table_name_list = []
 
+# 命名规范检查
+if check_name():
+    # 语音ES生成
+    for language in config.language_list:
+        wav_language_path = os.path.join(wav_path, language)
+        file_wav_language_dict, _ = oi_h.get_type_file_name_and_path('.wav', wav_language_path)
+        # print(file_wav_language_dict)
+        auto_gen_es_file(file_wav_language_dict)
+        # # xml文件写入
+        # pprint(file_wav_dict)
+        with open(config.es_xml_path, 'w+') as f:
+            # 按照格式写入
+            f.write(doc.toprettyxml())
+            f.close()
+        # pprint(doc.toprettyxml())
+        # 复制xml为wsources
+        shutil.copy2(os.path.join(py_path, config.es_xml_path),
+                     external_input_path)
 
-    def gen_external(language):
-        if language == "SFX":
-            language = ""
-        args = {
-            "sources": [
-                {
-                    "input": external_input_path,
-                    "platform": "Windows",
-                    "output": os.path.join(config.external_output_win_path, language)
-                },
-                {
-                    "input": external_input_path,
-                    "platform": "Android",
-                    "output": os.path.join(config.external_output_android_path, language)
-                },
-                {
-                    "input": external_input_path,
-                    "platform": "iOS",
-                    "output": os.path.join(config.external_output_ios_path, language)
-                }
-            ]
-        }
+        # gen_external(language)
+        exe_h.gen_ai_language(external_input_path)
 
-        gen_log = client.call("ak.wwise.core.soundbank.convertExternalSources", args)
+        # 初始化xml
+        doc = Document()
+        root = doc.createElement("ExternalSourcesList")
+        root.setAttribute("SchemaVersion", "1")
+        doc.appendChild(root)
 
+        # 将删除的xml内容写入wsources
+        shutil.copy2(os.path.join(py_path, config.es_xml_path),
+                     external_input_path)
 
-    # 查找External下的VO
-    obj_list = client.call("ak.wwise.core.object.get",
-                           waapi_h.waql_by_type("ExternalSource", config.vo_external_path),
-                           options=config.options)['return']
-    external_vo_list, _, _ = waapi_h.find_obj(obj_list)
-    # pprint(external_sound_list)
+    # 删除xml的内容
+    doc = parse(config.es_xml_path)
+    parent_node = doc.getElementsByTagName('ExternalSourcesList')[0]
+    while parent_node.hasChildNodes():
+        parent_node.removeChild(parent_node.firstChild)
 
-    # 查找External下的CG
-    obj_list = client.call("ak.wwise.core.object.get",
-                           waapi_h.waql_by_type("ExternalSource", config.cg_external_path),
-                           options=config.options)['return']
-    external_sfx_list, _, _ = waapi_h.find_obj(obj_list)
-    # pprint(external_cg_list)
+    # 保存excel表的信息
+    wb_mediainfo.save(excel_mediainfo_path)
+    wb_wwisecookie.save(excel_wwisecookie_path)
+    wb_DT_AudioPlotSoundInfo.save(excel_DT_AudioPlotSoundInfo_path)
+    wb_DT_AudioPlotInfo.save(excel_DT_AudioPlotInfo_path)
 
-    external_sound_list = external_vo_list + external_sfx_list
+    # 将excel转为csv
+    csv_h.excel_to_csv(excel_mediainfo_path, csv_mediainfo_path)
+    csv_h.excel_to_csv(excel_wwisecookie_path, csv_wwisecookie_path)
+    csv_h.excel_to_csv(excel_DT_AudioPlotInfo_path, csv_DT_AudioPlotInfo_path)
+    csv_h.excel_to_csv(excel_DT_AudioPlotSoundInfo_path, csv_DT_AudioPlotSoundInfo_path)
 
-    """*******************主程序*******************"""
-    excel_name_list = []
-    table_name_list = []
+    # have_media_list = excel_h.get_colunmn_one_list(3, sheet_mediainfo)
+    # pprint(have_media_list)
 
-    # 命名规范检查
-    if check_name():
-        # 语音ES生成
-        for language in config.language_list:
-            wav_language_path = os.path.join(wav_path, language)
-            file_wav_language_dict, _ = oi_h.get_type_file_name_and_path('.wav', wav_language_path)
-            # print(file_wav_language_dict)
-            auto_gen_es_file(file_wav_language_dict)
-            # # xml文件写入
-            # pprint(file_wav_dict)
-            with open(config.es_xml_path, 'w+') as f:
-                # 按照格式写入
-                f.write(doc.toprettyxml())
-                f.close()
-            # pprint(doc.toprettyxml())
-            # 复制xml为wsources
-            shutil.copy2(os.path.join(py_path, config.es_xml_path),
-                         external_input_path)
+# else:
+#     print(1)
 
-            gen_external(language)
-
-            # 初始化xml
-            doc = Document()
-            root = doc.createElement("ExternalSourcesList")
-            root.setAttribute("SchemaVersion", "1")
-            doc.appendChild(root)
-
-            # 将删除的xml内容写入wsources
-            shutil.copy2(os.path.join(py_path, config.es_xml_path),
-                         external_input_path)
-
-        # 删除xml的内容
-        doc = parse(config.es_xml_path)
-        parent_node = doc.getElementsByTagName('ExternalSourcesList')[0]
-        while parent_node.hasChildNodes():
-            parent_node.removeChild(parent_node.firstChild)
-
-        # 保存excel表的信息
-        wb_mediainfo.save(excel_mediainfo_path)
-        wb_wwisecookie.save(excel_wwisecookie_path)
-        wb_DT_AudioPlotSoundInfo.save(excel_DT_AudioPlotSoundInfo_path)
-        wb_DT_AudioPlotInfo.save(excel_DT_AudioPlotInfo_path)
-
-        # 将excel转为csv
-        csv_h.excel_to_csv(excel_mediainfo_path, csv_mediainfo_path)
-        csv_h.excel_to_csv(excel_wwisecookie_path, csv_wwisecookie_path)
-        csv_h.excel_to_csv(excel_DT_AudioPlotInfo_path, csv_DT_AudioPlotInfo_path)
-        csv_h.excel_to_csv(excel_DT_AudioPlotSoundInfo_path, csv_DT_AudioPlotSoundInfo_path)
-
-        # have_media_list = excel_h.get_colunmn_one_list(3, sheet_mediainfo)
-        # pprint(have_media_list)
-
-    # else:
-    #     print(1)
-
-    # 清除复制的媒体资源
-    shutil.rmtree(wav_path)
-    os.mkdir(wav_path)
-    os.mkdir(os.path.join(wav_path, "Chinese"))
-    os.mkdir(os.path.join(wav_path, "English"))
-    os.mkdir(os.path.join(wav_path, "Japanese"))
-    os.mkdir(os.path.join(wav_path, "Korean"))
-    os.mkdir(os.path.join(wav_path, "SFX"))
+# 清除复制的媒体资源
+shutil.rmtree(wav_path)
+os.mkdir(wav_path)
+os.mkdir(os.path.join(wav_path, "Chinese"))
+os.mkdir(os.path.join(wav_path, "English"))
+os.mkdir(os.path.join(wav_path, "Japanese"))
+os.mkdir(os.path.join(wav_path, "Korean"))
+os.mkdir(os.path.join(wav_path, "SFX"))
 
 # dt表导入UE
 ue_csv_dt_es_path = os.path.join(py_path, "ue_csv_dt_es.py")
