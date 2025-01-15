@@ -75,7 +75,7 @@ for row in sheet_config.iter_rows(min_row=1, max_col=1, max_row=sheet_config.max
 def is_valid_regex(pattern):
     try:
         re.compile(pattern)
-        return True, None
+        return True
     except re.error as e:
         print(f"正则表达式不合规。错误信息: {str(e)}")
         return False
@@ -201,6 +201,8 @@ def check_by_re(pattern, name, media_name):
             if result:
                 is_pass = True
                 return is_pass
+        else:
+            print_error(media_name + "：" + name + "的正则表达式" + pattern + "不正确，请检查")
     # else:
     #     pprint(media_name + "：" + name + "的正则表达式" + pattern + "为空")
 
