@@ -449,3 +449,14 @@ amb_state_dict = {
 duration_long = 3
 # 大于夺少kb开流
 stream_size = 32
+
+"""AI语音自动化"""
+es_vo_data_dict = {
+    'VO_External_1P_2D': ('v12', 1986569276),
+    'VO_External_1P_3D': ('v13', 1986569277),
+    'VO_External_3P_2D': ('v32', 1953013978),
+    'VO_External_3P_3D': ('v33', 1953013979),
+    'VO_External_NPC_2D': ('vn2', 560471565),
+    'VO_External_NPC_3D': ('vn3', 560471564)
+}
+# print(es_vo_data_dict['VO_External_1P_2D'][0])

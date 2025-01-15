@@ -99,6 +99,27 @@ def gen_es(external_input_path):
         print(f"An error occurred: {e}")
 
 
+"""AI语音生成"""
+
+
+def gen_ai_language(external_input_path):
+    args = [
+        'convert-external-source',
+        wproj_path,
+        '--output', 'Windows', os.path.join(external_output_win_path, 'AILanguage'),
+        '--output', 'Android', os.path.join(external_output_android_path, 'AILanguage'),
+        '--output', 'iOS', os.path.join(external_output_ios_path, 'AILanguage'),
+        '--source-file', external_input_path
+    ]
+
+    # 执行命令
+    try:
+        subprocess.run([wwise_console_path] + args, check=True)
+        print("Command executed successfully")
+    except subprocess.CalledProcessError as e:
+        print(f"An error occurred: {e}")
+
+
 """在ue外部执行"""
 
 

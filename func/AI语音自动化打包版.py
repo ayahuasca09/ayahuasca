@@ -15,6 +15,7 @@ import comlib.config as config
 import comlib.oi_h as oi_h
 import comlib.csv_h as csv_h
 import comlib.exe_h as exe_h
+import comlib.cloudfeishu_h as cloudfeishu_h
 
 """****************数据获取******************"""
 
@@ -24,6 +25,19 @@ if hasattr(sys, 'frozen'):
     py_path = dirname(sys.executable)
 elif __file__:
     py_path = dirname(abspath(__file__))
+
+# 飞书在线文档下载
+media_sheet_token_dict = config.es_sheet_token_dict
+c_vo_sheet_name = 'C类（操控演员表演，接管镜头）剧情语音'
+d_vo_sheet_name = 'D类（操控演员表演，不接管镜头）剧情语音'
+c_vo_sheet_token = media_sheet_token_dict[c_vo_sheet_name]
+d_vo_sheet_token = media_sheet_token_dict[d_vo_sheet_name]
+print(c_vo_sheet_name + "：音频资源表更新")
+cloudfeishu_h.download_cloud_sheet(c_vo_sheet_token,
+                                   os.path.join(py_path, "Excel", c_vo_sheet_name) + '.xlsx')
+print(d_vo_sheet_name + "：音频资源表更新")
+cloudfeishu_h.download_cloud_sheet(d_vo_sheet_token,
+                                   os.path.join(py_path, "Excel", d_vo_sheet_name) + '.xlsx')
 
 # 获取wsources文件
 external_input_path = os.path.join(py_path, config.external_input_path)
@@ -97,6 +111,32 @@ root.setAttribute("SchemaVersion", "1")
 doc.appendChild(root)
 
 """*****************功能检测区******************"""
+"""语音ID生成"""
+
+
+def create_es_id(name):
+    # 以'_'分隔字符串，组成列表
+    parts = name.split('_')
+
+    # 确保列表有足够的元素
+    if len(parts) < 5:
+        raise ValueError(name + "：输入字符串格式不正确")
+
+    # 根据第3个元素确定数字
+    third_element = parts[2]
+    if third_element == 'C':
+        number = '1'
+    elif third_element == 'D':
+        number = '2'
+    else:
+        raise ValueError(name + "以_切分思维第三个元素非C或D，请检查")
+
+    # 拼接数字及第4和第5个元素
+    id_str = number + parts[3] + parts[4]
+    es_id = int(id_str)
+
+    return es_id
+
 
 """xml创建元素"""
 
@@ -384,24 +424,14 @@ def auto_gen_es_file(file_wav_dict):
                                                         # print(cell_es_type)
                                                         # print(external_sound_dict['shortId'])
                                                         # 查找mediainfo表的id有没有，没有则添加，有则修改内容
-                                                        vo_id = excel_h.create_id(config.es_id_config, i,
-                                                                                  sheet_mediainfo)
+                                                        vo_id = create_es_id(cell_sound.value)
                                                         # 写入media_info excel表
                                                         write_media_info_excel(vo_id, cell_sound)
                                                         # # 写入wwise_cookie excel表
                                                         write_wwise_cookie_excel(vo_id, cell_sound,
                                                                                  es_vo_data_dict[external_sound])
-
-                                                        # 写入dt excel表
-                                                        if vo_id > 9000000:
-                                                            # write_dt_excel(vo_id, cell_sound,
-                                                            #                sheet_DT_AudioPlotSoundInfo,
-                                                            #                cell_es_type)
-                                                            pass
-                                                        elif 0 < vo_id <= 9000000:
-                                                            write_dt_excel(vo_id, cell_sound, sheet_DT_AudioPlotInfo,
-                                                                           cell_es_type)
-
+                                                        write_dt_excel(vo_id, cell_sound, sheet_DT_AudioPlotInfo,
+                                                                       cell_es_type)
                                                         oi_h.print_warning(file_wav_name + "：已导入")
                                                         is_wwise_have = 1
                                                         break

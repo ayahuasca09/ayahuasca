@@ -141,14 +141,14 @@ if __name__ == "__main__":
     # Switch和State有引用ID表生成的exe
     # package_script("State和Switch创建打包版.py", "State和Switch创建")
     # package_script("Wwise属性配置打包版.py", "Wwise属性配置")
-    package_script("GenSoundbank打包版.py", "GenSoundbank")
+    # package_script("GenSoundbank打包版.py", "GenSoundbank")
     # package_script("Amb自动化打包版.py", "全局环境音生成")
     # package_script("Mus自动化打包版.py", "Mus自动化")
     # package_script("Bus自动化打包版.py", "Bus自动化")
     # package_script_add_other_script_2("媒体资源占位生成打包版.py", "媒体资源占位生成", "命名规范检查打包版.py",
     #                                   "媒体资源从表导入打包版.py")
     # package_script("音效语音全流程自动化打包版.py", "音效语音全流程自动化")
-
+    package_script("AI语音自动化打包版.py", "AILanguage_Import")
     copy_directories(output_path, r"S:\chen.gong_DCC_Audio\Audio\Tool\Auto_Sound")
     shutil.rmtree(output_path)
     os.mkdir(output_path)

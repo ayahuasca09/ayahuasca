@@ -3,6 +3,7 @@ import os
 from waapi import WaapiClient
 from os.path import abspath, dirname
 import sys
+from pprint import pprint
 
 import comlib.cloudfeishu_h as cloudfeishu_h
 import comlib.oi_h as oi_h
@@ -381,16 +382,16 @@ with WaapiClient() as client:
     # 2：audio下，只需要创建actormixer
     create_wwise_audio_unit(audio_mixer_list, 2)
 
-    # pprint("audio_unit_list：")
-    # pprint(audio_unit_list)
-    # print()
+    pprint("audio_unit_list：")
+    pprint(audio_unit_list)
+    print()
 
-    # pprint("event_unit_list：")
-    # pprint(event_unit_list)
-    # print()
-    #
-    # pprint("audio_mixer_list：")
-    # pprint(audio_mixer_list)
+    pprint("event_unit_list：")
+    pprint(event_unit_list)
+    print()
+
+    pprint("audio_mixer_list：")
+    pprint(audio_mixer_list)
 
 if is_pass_check_name:
     print("--------------------------")

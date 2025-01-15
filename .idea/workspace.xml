@@ -4,24 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="17a8a927-0db7-41d4-8f81-9181fc87e6d9" name="更改" comment="id表流程优化">
-      <change afterPath="$PROJECT_DIR$/func/GenSoundbank.spec" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/GenSoundbank/Analysis-00.toc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/GenSoundbank/COLLECT-00.toc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/GenSoundbank/EXE-00.toc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/GenSoundbank/GenSoundbank.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/GenSoundbank/GenSoundbank.pkg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/GenSoundbank/PKG-00.toc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/GenSoundbank/PYZ-00.pyz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/GenSoundbank/PYZ-00.toc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/GenSoundbank/base_library.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/GenSoundbank/warn-GenSoundbank.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/GenSoundbank/xref-GenSoundbank.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module/p4v/p4v测试.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/testprint.py" afterDir="false" />
+    <list default="true" id="17a8a927-0db7-41d4-8f81-9181fc87e6d9" name="更改" comment="ES音效表流程清理">
+      <change afterPath="$PROJECT_DIR$/func/Boss战斗语音资源表.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/Media_Temp.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/命名规范检查表.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/func/AI语音自动化打包版.py" beforeDir="false" afterPath="$PROJECT_DIR$/func/AI语音自动化打包版.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/func/comlib/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/func/comlib/config.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/func/comlib/exe_h.py" beforeDir="false" afterPath="$PROJECT_DIR$/func/comlib/exe_h.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/func/config_custom.py" beforeDir="false" afterPath="$PROJECT_DIR$/func/config_custom.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/func/命名规范检查打包版.py" beforeDir="false" afterPath="$PROJECT_DIR$/func/命名规范检查打包版.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/func/媒体资源占位生成打包版.py" beforeDir="false" afterPath="$PROJECT_DIR$/func/媒体资源占位生成打包版.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/func/打包自动化.py" beforeDir="false" afterPath="$PROJECT_DIR$/func/打包自动化.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -197,7 +190,7 @@
       <visibility group="运行配置" flag="true" />
     </myKeys>
   </component>
-  <component name="RunManager" selected="Python.打包自动化">
+  <component name="RunManager" selected="Python.媒体资源占位生成打包版">
     <configuration name="打包自动化" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="SP" />
       <option name="ENV_FILES" value="" />
@@ -212,6 +205,50 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/func/打包自动化.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="媒体资源占位生成打包版" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="SP" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/func" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/func/媒体资源占位生成打包版.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="命名规范检查打包版" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="SP" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/func" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/func/命名规范检查打包版.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -286,7 +323,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="p4v测试" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="config" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="SP" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -295,11 +332,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/module/p4v" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/func/comlib" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/module/p4v/p4v测试.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/func/comlib/config.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -308,7 +345,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="testprint" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="SP" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -321,51 +358,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test/testprint.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="ue_csv_dt_audio" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="SP" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="S:/chen.gong_DCC_Audio/Audio/Tool/Auto_Sound/ID表生成" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="S:/chen.gong_DCC_Audio/Audio/Tool/Auto_Sound/ID表生成/ue_csv_dt_audio.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="ue_h" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="SP" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="S:/chen.gong_DCC_Audio/Audio/Tool/Auto_Sound/ID表生成" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="S:/chen.gong_DCC_Audio/Audio/Tool/Auto_Sound/ID表生成/ue_h.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test/test.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -376,11 +369,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.媒体资源占位生成打包版" />
+        <item itemvalue="Python.命名规范检查打包版" />
         <item itemvalue="Python.打包自动化" />
-        <item itemvalue="Python.testprint" />
-        <item itemvalue="Python.p4v测试" />
-        <item itemvalue="Python.ue_csv_dt_audio" />
-        <item itemvalue="Python.ue_h" />
+        <item itemvalue="Python.config" />
+        <item itemvalue="Python.test" />
       </list>
     </recent_temporary>
   </component>
@@ -399,30 +392,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1716955384994</updated>
-    </task>
-    <task id="LOCAL-00133" summary="ID表自动化：剧情索引查找">
-      <option name="closed" value="true" />
-      <created>1732702516495</created>
-      <option name="number" value="00133" />
-      <option name="presentableId" value="LOCAL-00133" />
-      <option name="project" value="LOCAL" />
-      <updated>1732702516495</updated>
-    </task>
-    <task id="LOCAL-00134" summary="ID表自动化：所有配置索引查找">
-      <option name="closed" value="true" />
-      <created>1732708771538</created>
-      <option name="number" value="00134" />
-      <option name="presentableId" value="LOCAL-00134" />
-      <option name="project" value="LOCAL" />
-      <updated>1732708771538</updated>
-    </task>
-    <task id="LOCAL-00135" summary="音乐自动化：bpm单元格合并">
-      <option name="closed" value="true" />
-      <created>1732762571519</created>
-      <option name="number" value="00135" />
-      <option name="presentableId" value="LOCAL-00135" />
-      <option name="project" value="LOCAL" />
-      <updated>1732762571519</updated>
     </task>
     <task id="LOCAL-00136" summary="配置自动化：静音片段检测">
       <option name="closed" value="true" />
@@ -792,7 +761,31 @@
       <option name="project" value="LOCAL" />
       <updated>1736149186777</updated>
     </task>
-    <option name="localTasksCounter" value="182" />
+    <task id="LOCAL-00182" summary="更新">
+      <option name="closed" value="true" />
+      <created>1736494228533</created>
+      <option name="number" value="00182" />
+      <option name="presentableId" value="LOCAL-00182" />
+      <option name="project" value="LOCAL" />
+      <updated>1736494228534</updated>
+    </task>
+    <task id="LOCAL-00183" summary="更新">
+      <option name="closed" value="true" />
+      <created>1736838174869</created>
+      <option name="number" value="00183" />
+      <option name="presentableId" value="LOCAL-00183" />
+      <option name="project" value="LOCAL" />
+      <updated>1736838174869</updated>
+    </task>
+    <task id="LOCAL-00184" summary="ES音效表流程清理">
+      <option name="closed" value="true" />
+      <created>1736838558557</created>
+      <option name="number" value="00184" />
+      <option name="presentableId" value="LOCAL-00184" />
+      <option name="project" value="LOCAL" />
+      <updated>1736838558557</updated>
+    </task>
+    <option name="localTasksCounter" value="185" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -808,8 +801,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="bus自动化:删除自动" />
-    <MESSAGE value="命名规范检查：合并单元格检查" />
     <MESSAGE value="[x] 从表生成媒体资源优化" />
     <MESSAGE value="引用查找：战斗喊话" />
     <MESSAGE value="媒体资源替换入轨" />
@@ -833,7 +824,9 @@
     <MESSAGE value="ue导表自动化" />
     <MESSAGE value="音效全流程自动化" />
     <MESSAGE value="id表流程优化" />
-    <option name="LAST_COMMIT_MESSAGE" value="id表流程优化" />
+    <MESSAGE value="更新" />
+    <MESSAGE value="ES音效表流程清理" />
+    <option name="LAST_COMMIT_MESSAGE" value="ES音效表流程清理" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

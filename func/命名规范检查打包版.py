@@ -10,6 +10,8 @@ import sys
 is_pass = True
 
 """根目录获取"""
+
+
 def get_py_path():
     py_path = ""
     if hasattr(sys, 'frozen'):
@@ -177,6 +179,9 @@ def check_basic(media_name, audio_unit_list, event_unit_list, audio_mixer_list, 
 
 
 def check_by_re(pattern, name, media_name):
+    # print("pattern："+pattern)
+    # print("name："+name)
+    # print("media_name："+media_name)
     if pattern:
         # pprint(media_name)
         # pprint(name + ":" + pattern)
@@ -535,12 +540,13 @@ def check_by_wb(media_name, audio_unit_list, event_unit_list, audio_mixer_list):
         print_error(media_name + "：" + media_name_list[0] + "未找到，请检查命名是否正确")
     return is_pass
 
-# 检查命名规范测试
+
+# # 检查命名规范测试
 # audio_unit_list = []
 # event_unit_list = []
 # audio_mixer_list = []
 # name_list = ['Char_Skill_C01_Counter', 'Amb_A01_MgSt_Crowd_Street_Day_LP', 'Imp_Greatsword_Chop_Flesh_Hvy',
-#              'Char_Skill_C01_Execution2_Stand',
+#              'VO_Game_Battle_Shout_B01_33',
 #              'Char_Skill_C01_Strafe_Exit', "Mon_Mob_Skill_MN01_Da", "Mon_Mob_Mov_MN01_Da", "Mon_Mob_Mov_MN_Da"]
 # for name in name_list:
 #     if check_by_wb(name, audio_unit_list, event_unit_list, audio_mixer_list):
