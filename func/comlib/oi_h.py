@@ -54,7 +54,7 @@ def find_all_files_by_type(dir_path, file_type):
     for i in os.walk(dir_path):
         file_names.append(i)
 
-    pprint("输出文件夹下的文件名：")
+    # pprint("输出文件夹下的文件名：")
     file_name_list = file_names[0][2]
     # pprint(file_name_list)
 

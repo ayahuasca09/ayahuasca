@@ -179,34 +179,55 @@ import re
 
 """输入检查"""
 
+#
+# # python输入检查
+# # 1.必须为数字和以,为间隔，例如1，4，2，6
+# # 2.通过,分隔的数字不能重复
+# def is_valid_input(input_string):
+#     # 删除空格
+#     input_string = input_string.replace(" ", "")
+#
+#     # 检查是否仅包含数字和逗号
+#     if not all(c.isdigit() or c == ',' for c in input_string):
+#         return False
+#
+#     # 拆分字符串并转换为整数列表
+#     try:
+#         numbers = list(map(int, input_string.split(',')))
+#     except ValueError:
+#         return False
+#
+#     # 检查是否有重复
+#     if len(numbers) != len(set(numbers)):
+#         return False
+#
+#     return True
+#
+#
+# # 示例用法
+# user_input = input("请输入数字，使用逗号分隔：")
+# if is_valid_input(user_input):
+#     print("输入有效。")
+# else:
+#     print("输入无效，请确保输入为数字且不重复。")
 
-# python输入检查
-# 1.必须为数字和以,为间隔，例如1，4，2，6
-# 2.通过,分隔的数字不能重复
-def is_valid_input(input_string):
-    # 删除空格
-    input_string = input_string.replace(" ", "")
-
-    # 检查是否仅包含数字和逗号
-    if not all(c.isdigit() or c == ',' for c in input_string):
-        return False
-
-    # 拆分字符串并转换为整数列表
-    try:
-        numbers = list(map(int, input_string.split(',')))
-    except ValueError:
-        return False
-
-    # 检查是否有重复
-    if len(numbers) != len(set(numbers)):
-        return False
-
-    return True
+# 全局变量is_pass测试
+is_pass = True
 
 
-# 示例用法
-user_input = input("请输入数字，使用逗号分隔：")
-if is_valid_input(user_input):
-    print("输入有效。")
-else:
-    print("输入无效，请确保输入为数字且不重复。")
+def aa():
+    global is_pass
+    bb()
+    return is_pass
+
+
+def bb():
+    cc()
+
+
+def cc():
+    global is_pass
+    is_pass = False
+
+
+print(aa())

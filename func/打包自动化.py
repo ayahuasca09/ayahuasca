@@ -148,7 +148,7 @@ if __name__ == "__main__":
     package_script_add_other_script_2("媒体资源占位生成打包版.py", "媒体资源占位生成", "命名规范检查打包版.py",
                                       "媒体资源从表导入打包版.py")
     # package_script("音效语音全流程自动化打包版.py", "音效语音全流程自动化")
-    # package_script("AI语音自动化打包版.py", "AILanguage_Import")
+    # package_script("AI语音自动化打包版v2.py", "AILanguage_Import")
     copy_directories(output_path, r"S:\chen.gong_DCC_Audio\Audio\Tool\Auto_Sound")
     shutil.rmtree(output_path)
     os.mkdir(output_path)

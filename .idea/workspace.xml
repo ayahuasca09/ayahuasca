@@ -4,18 +4,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="17a8a927-0db7-41d4-8f81-9181fc87e6d9" name="更改" comment="ES音效表流程清理">
-      <change afterPath="$PROJECT_DIR$/func/Boss战斗语音资源表.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/Media_Temp.wav" afterDir="false" />
+    <list default="true" id="17a8a927-0db7-41d4-8f81-9181fc87e6d9" name="更改" comment="命名规范检查：增加对正则表达式的输出">
+      <change afterPath="$PROJECT_DIR$/func/AILanguage_Import.spec" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/AI语音自动化打包版v2.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/build/媒体资源占位生成/Analysis-00.toc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/build/媒体资源占位生成/COLLECT-00.toc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/build/媒体资源占位生成/EXE-00.toc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/build/媒体资源占位生成/PKG-00.toc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/build/媒体资源占位生成/PYZ-00.pyz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/build/媒体资源占位生成/PYZ-00.toc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/build/媒体资源占位生成/base_library.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/build/媒体资源占位生成/warn-媒体资源占位生成.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/build/媒体资源占位生成/xref-媒体资源占位生成.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/build/媒体资源占位生成/媒体资源占位生成.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/build/媒体资源占位生成/媒体资源占位生成.pkg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/ue_csv_dt_es_v1.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/func/命名规范检查表.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/媒体资源占位生成.spec" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/func/AI语音自动化打包版.py" beforeDir="false" afterPath="$PROJECT_DIR$/func/AI语音自动化打包版.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/func/comlib/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/func/comlib/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/func/comlib/exe_h.py" beforeDir="false" afterPath="$PROJECT_DIR$/func/comlib/exe_h.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/func/config_custom.py" beforeDir="false" afterPath="$PROJECT_DIR$/func/config_custom.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/func/comlib/oi_h.py" beforeDir="false" afterPath="$PROJECT_DIR$/func/comlib/oi_h.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/func/命名规范检查打包版.py" beforeDir="false" afterPath="$PROJECT_DIR$/func/命名规范检查打包版.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/func/媒体资源占位生成打包版.py" beforeDir="false" afterPath="$PROJECT_DIR$/func/媒体资源占位生成打包版.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/func/打包自动化.py" beforeDir="false" afterPath="$PROJECT_DIR$/func/打包自动化.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -190,7 +202,7 @@
       <visibility group="运行配置" flag="true" />
     </myKeys>
   </component>
-  <component name="RunManager" selected="Python.媒体资源占位生成打包版">
+  <component name="RunManager" selected="Python.打包自动化">
     <configuration name="打包自动化" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="SP" />
       <option name="ENV_FILES" value="" />
@@ -369,11 +381,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.媒体资源占位生成打包版" />
-        <item itemvalue="Python.命名规范检查打包版" />
         <item itemvalue="Python.打包自动化" />
-        <item itemvalue="Python.config" />
+        <item itemvalue="Python.命名规范检查打包版" />
         <item itemvalue="Python.test" />
+        <item itemvalue="Python.媒体资源占位生成打包版" />
+        <item itemvalue="Python.config" />
       </list>
     </recent_temporary>
   </component>
@@ -392,22 +404,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1716955384994</updated>
-    </task>
-    <task id="LOCAL-00136" summary="配置自动化：静音片段检测">
-      <option name="closed" value="true" />
-      <created>1732787594201</created>
-      <option name="number" value="00136" />
-      <option name="presentableId" value="LOCAL-00136" />
-      <option name="project" value="LOCAL" />
-      <updated>1732787594201</updated>
-    </task>
-    <task id="LOCAL-00137" summary="配置自动化：音频配置更新">
-      <option name="closed" value="true" />
-      <created>1732971108657</created>
-      <option name="number" value="00137" />
-      <option name="presentableId" value="LOCAL-00137" />
-      <option name="project" value="LOCAL" />
-      <updated>1732971108657</updated>
     </task>
     <task id="LOCAL-00138" summary="State bank自动化：内容指派、ID表生成">
       <option name="closed" value="true" />
@@ -785,7 +781,23 @@
       <option name="project" value="LOCAL" />
       <updated>1736838558557</updated>
     </task>
-    <option name="localTasksCounter" value="185" />
+    <task id="LOCAL-00185" summary="更新">
+      <option name="closed" value="true" />
+      <created>1736938004906</created>
+      <option name="number" value="00185" />
+      <option name="presentableId" value="LOCAL-00185" />
+      <option name="project" value="LOCAL" />
+      <updated>1736938004906</updated>
+    </task>
+    <task id="LOCAL-00186" summary="命名规范检查：增加对正则表达式的输出">
+      <option name="closed" value="true" />
+      <created>1736939144707</created>
+      <option name="number" value="00186" />
+      <option name="presentableId" value="LOCAL-00186" />
+      <option name="project" value="LOCAL" />
+      <updated>1736939144707</updated>
+    </task>
+    <option name="localTasksCounter" value="187" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -801,7 +813,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="[x] 从表生成媒体资源优化" />
     <MESSAGE value="引用查找：战斗喊话" />
     <MESSAGE value="媒体资源替换入轨" />
     <MESSAGE value="添加效果器设置" />
@@ -824,9 +835,10 @@
     <MESSAGE value="ue导表自动化" />
     <MESSAGE value="音效全流程自动化" />
     <MESSAGE value="id表流程优化" />
-    <MESSAGE value="更新" />
     <MESSAGE value="ES音效表流程清理" />
-    <option name="LAST_COMMIT_MESSAGE" value="ES音效表流程清理" />
+    <MESSAGE value="更新" />
+    <MESSAGE value="命名规范检查：增加对正则表达式的输出" />
+    <option name="LAST_COMMIT_MESSAGE" value="命名规范检查：增加对正则表达式的输出" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

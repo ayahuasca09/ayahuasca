@@ -35,6 +35,9 @@ media_sheet_token_keys = list(media_sheet_token_dict.keys())
 # 将一个list转为dict，list的index+1作为键，元素作为值
 digi_meidia_dict = {index + 1: value for index, value in enumerate(media_sheet_token_keys)}
 
+# 通过_间隔分割的单词个数
+word_list_len = config.word_list_len
+
 
 # print(digi_meidia_dict)
 
@@ -74,6 +77,7 @@ def is_valid_input(input_string):
 print("--------------------------")
 print("输入数字对应资源表类型如下：")
 print("输入值若为all，代表更新所有资源表内容")
+print("输入值若为no，代表不更新内容")
 print("若需获取多个资源表，以英文字符,(逗号）隔开，输入完毕后按下回车即可")
 print("输入案例：1,3,5,6")
 
@@ -91,7 +95,8 @@ while flag:
             sheet_token = media_sheet_token_dict[media_sheet_name]
             cloudfeishu_h.download_cloud_sheet(sheet_token,
                                                os.path.join(root_path, "Excel", media_sheet_name) + '.xlsx')
-
+    elif temp == "no":
+        break
     elif not is_valid_input(temp):
         print("")
         print("请重新输入⬇")
@@ -346,8 +351,6 @@ with WaapiClient() as client:
             # 加载所有工作表
             for sheet_name in sheet_names:
                 sheet = wb[sheet_name]
-                word_list_len = sheet.max_column
-
                 require_module_column, second_module_column, require_name_column, status_column, sample_name_column = get_descrip_and_status_column()
                 if sample_name_column:
                     for cell_sound in list(sheet.columns)[sample_name_column - 1]:
@@ -355,12 +358,11 @@ with WaapiClient() as client:
                             if sheet.cell(row=cell_sound.row,
                                           column=status_column).value in config.status_list:
                                 # pprint(cell_sound.value)
-
+                                # 通过命名规范检查
                                 if 命名规范检查打包版.check_basic(cell_sound.value, audio_unit_list,
                                                                   event_unit_list,
                                                                   audio_mixer_list, word_list_len):
                                     # 通过命名规范检查
-                                    # pprint(cell_sound.value)
                                     pass
                                 # 命名规范只要一次不通过就算失败
                                 else:
@@ -375,12 +377,21 @@ with WaapiClient() as client:
     # 获取event_unit_list中缺失的unit
     get_missing_event_unit(event_unit_list, audio_unit_list)
 
+    print("*************Audio的Unit和ActorMixer创建****************")
     # # 1：audio下，unit和actormixer都需要创建
     create_wwise_audio_unit(audio_unit_list, 1)
+    print()
+    print()
+    print("*************Event的Unit创建****************")
     # # event下，unit创建
     create_wwise_event_unit(event_unit_list)
+    print()
+    print()
+    print("*************ActorMixer创建****************")
     # 2：audio下，只需要创建actormixer
     create_wwise_audio_unit(audio_mixer_list, 2)
+    print()
+    print()
 
     pprint("audio_unit_list：")
     pprint(audio_unit_list)

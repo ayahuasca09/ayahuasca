@@ -101,7 +101,7 @@ def check_by_length_and_word(name, word_list_len):
         if is_title == False:
             print_error(name + "：通过”_“分隔的每个单词开头都需要大写")
     else:
-        print_error(name + "：通过”_“分隔的单词个数不能超过" + str(config.word_list_len))
+        print_error(name + "：通过”_“分隔的单词个数不能超过" + str(word_list_len))
 
     if word_list:
         return word_list[0]
@@ -161,6 +161,7 @@ def check_is_random(name):
 
 def check_basic(media_name, audio_unit_list, event_unit_list, audio_mixer_list, word_list_len):
     global is_pass
+    is_pass = True
     # 检查是否为空
     if media_name:
         # 检查是否中文
@@ -171,7 +172,8 @@ def check_basic(media_name, audio_unit_list, event_unit_list, audio_mixer_list, 
             is_pass = False
     else:
         is_pass = False
-
+    # print(media_name)
+    # print(is_pass)
     return is_pass
 
 
@@ -179,32 +181,25 @@ def check_basic(media_name, audio_unit_list, event_unit_list, audio_mixer_list, 
 
 
 def check_by_re(pattern, name, media_name):
-    # print("pattern："+pattern)
-    # print("name："+name)
-    # print("media_name："+media_name)
+    is_re_pass = True
     if pattern:
-        # pprint(media_name)
-        # pprint(name + ":" + pattern)
-        global is_pass
         if pattern == "GenTable":
-            is_pass = True
-            # print(media_name)
-            # print(check_by_gentable(name, media_name))
-
             return check_by_gentable(name, media_name)
 
-        is_pass = False
         # 将双反斜杠替换为单反斜杠
         pattern = pattern.replace('\\\\', '\\')
         if is_valid_regex(pattern):
             result = re.search(pattern, name)
-            if result:
-                is_pass = True
-                return is_pass
+            if not result:
+                is_re_pass = False
+
         else:
             print_error(media_name + "：" + name + "的正则表达式" + pattern + "不正确，请检查")
-    # else:
-    #     pprint(media_name + "：" + name + "的正则表达式" + pattern + "为空")
+            is_re_pass = False
+    else:
+        is_re_pass = False
+        print_error(media_name + "：" + name + "的正则表达式" + pattern + "不存在，请检查")
+    return is_re_pass
 
 
 """log捕获"""
@@ -551,8 +546,10 @@ def check_by_wb(media_name, audio_unit_list, event_unit_list, audio_mixer_list):
 #              'VO_Game_Battle_Shout_B01_33',
 #              'Char_Skill_C01_Strafe_Exit', "Mon_Mob_Skill_MN01_Da", "Mon_Mob_Mov_MN01_Da", "Mon_Mob_Mov_MN_Da"]
 # for name in name_list:
-#     if check_by_wb(name, audio_unit_list, event_unit_list, audio_mixer_list):
-#         # print(name)
+#     # if check_by_wb(name, audio_unit_list, event_unit_list, audio_mixer_list):
+#     #     # print(name)
+#     #     pass
+#     if check_basic(name, audio_unit_list, event_unit_list, audio_mixer_list, 10):
 #         pass
 
 # unit列表长度排序

@@ -119,6 +119,7 @@ excel_mediainfo_path = 'MediaInfoTable.xlsx'
 excel_wwisecookie_path = 'ExternalSourceDefaultMedia.xlsx'
 excel_DT_AudioPlotInfo_path = "DT_AudioPlotInfo.xlsx"
 excel_DT_AudioPlotSoundInfo_path = "DT_AudioPlotSoundInfo.xlsx"
+excel_DT_Merge = 'DT_ExternalSourceMediaAndCookieInfo.xlsx'
 
 # 剧情表中媒体资源名称所在列
 plot_media_name_column = 3
@@ -131,6 +132,7 @@ csv_mediainfo_path = "MediaInfoTable.csv"
 csv_wwisecookie_path = "ExternalSourceDefaultMedia.csv"
 csv_DT_AudioPlotInfo_path = "DT_AudioPlotInfo.csv"
 csv_DT_AudioPlotSoundInfo_path = "DT_AudioPlotSoundInfo.csv"
+csv_DT_Merge_path = "DT_ExternalSourceMediaAndCookieInfo.csv"
 
 # Wwise ES路径
 vo_external_path = "\\Actor-Mixer Hierarchy\\v1\\VO\\VO\\VO_External"
