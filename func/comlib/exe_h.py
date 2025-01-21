@@ -102,13 +102,24 @@ def gen_es(external_input_path):
 """AI语音生成"""
 
 
-def gen_ai_language(external_input_path):
+def gen_ai_language(external_input_path, language):
+    # 若没有路径需要创建
+    win_output = os.path.join(external_output_win_path, language, 'AILanguage')
+    android_output = os.path.join(external_output_android_path, language, 'AILanguage')
+    ios_output = os.path.join(external_output_ios_path, language, 'AILanguage')
+    if not os.path.exists(win_output):
+        os.makedirs(win_output)
+    if not os.path.exists(android_output):
+        os.makedirs(android_output)
+    if not os.path.exists(ios_output):
+        os.makedirs(ios_output)
+
     args = [
         'convert-external-source',
         wproj_path,
-        '--output', 'Windows', os.path.join(external_output_win_path, 'AILanguage'),
-        '--output', 'Android', os.path.join(external_output_android_path, 'AILanguage'),
-        '--output', 'iOS', os.path.join(external_output_ios_path, 'AILanguage'),
+        '--output', 'Windows', os.path.join(external_output_win_path, language, 'AILanguage'),
+        '--output', 'Android', os.path.join(external_output_android_path, language, 'AILanguage'),
+        '--output', 'iOS', os.path.join(external_output_ios_path, language, 'AILanguage'),
         '--source-file', external_input_path
     ]
 
