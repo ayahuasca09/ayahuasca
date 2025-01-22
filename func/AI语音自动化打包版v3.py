@@ -252,28 +252,97 @@ def delete_cancel_wem(media_name):
 """移除标记为cancel的所有内容"""
 
 
-def delete_cancel_content(table_name_list, sheet_DT_Merge, wb_DT_Merge, excel_DT_Merge_path):
+def delete_cancel_content():
+    # 提取规则：只提取xlsx文件
+    for i in file_name_list:
+        if ".xlsx" in i:
+            plot_type = ""
+            if c_vo_sheet_name in i:
+                plot_type = "C"
+            elif d_vo_sheet_name in i:
+                plot_type = "D"
+            if plot_type:
+                # 拼接xlsx的路径
+                file_path_xlsx = os.path.join(os.path.join(py_path, "Excel"), i)
+                # 获取xlsx的workbook
+                wb = openpyxl.load_workbook(file_path_xlsx)
+                # 获取xlsx的所有sheet
+                sheet_names = wb.sheetnames
+                # 加载所有工作表
+                for sheet_name in sheet_names:
+                    # 统计当前ES资源表的文件名，用于删除资源（dt表中有此列表中没有的名字将会被删除)
+                    sheet_file_name_list = []
+                    # 统计当前ES资源表中被标记为cancel的文件名（dt表中有此列表中的名字将会被删除)
+                    cancel_file_name_list = []
+                    sheet = wb[sheet_name]
+                    dt_plot_name = "DT_AudioPlotLanguage_" + plot_type + "_" + sheet_name
+                    dt_plot_excel_path = os.path.join(genexcel_path, dt_plot_name + '.xlsx')
+                    dt_plot_csv_path = os.path.join(gencsv_path, dt_plot_name + '.csv')
+                    if os.path.exists(dt_plot_excel_path):
+                        sheet_DT_Merge, wb_DT_Merge = excel_h.excel_get_sheet(dt_plot_excel_path, 'Sheet1')
+                        if not excel_h.is_sheet_empty(sheet):
+                            title_colunmn_dict = excel_h.excel_get_sheet_title_column(sheet, excel_es_title_list)
+                            if title_colunmn_dict:
+                                # 获取音效名下的内容
+                                for cell_sound in list(sheet.columns)[
+                                    excel_h.sheet_title_column("文件名", title_colunmn_dict) - 1]:
+                                    if cell_sound.value and (cell_sound.value != "文件名"):
+                                        # 统计当前ES资源表的文件名
+                                        if cell_sound.value not in sheet_file_name_list:
+                                            sheet_file_name_list.append(cell_sound.value)
+                                            if sheet.cell(row=cell_sound.row,
+                                                          column=excel_h.sheet_title_column("State",
+                                                                                            title_colunmn_dict)).value == 'cancel':
+                                                # 统计当前ES资源表中标记为cancel的文件名
+                                                if cell_sound.value not in cancel_file_name_list:
+                                                    cancel_file_name_list.append(cell_sound.value)
+                        # 进行删除操作
+                        delete_cancel_content_action(sheet_file_name_list, cancel_file_name_list, sheet_DT_Merge,
+                                                     wb_DT_Merge,
+                                                     dt_plot_excel_path,
+                                                     dt_plot_csv_path)
+
+
+"""具体操作删除内容"""
+
+
+def delete_cancel_content_action(sheet_file_name_list, cancel_file_name_list, sheet_DT_Merge, wb_DT_Merge,
+                                 excel_DT_Merge_path,
+                                 csv_DT_Merge_path):
     # pprint(table_name_list)
     # 记录要删除的行的索引
     merge_del_list = []
-    # 删除excel表的相应内容
 
+    # 删除excel表的相应内容
+    # es资源表中没有的添加到merge_del_list
     for row in range(2, sheet_DT_Merge.max_row + 1):
         cell = sheet_DT_Merge.cell(row=row, column=Merge_title_dict['Media Name'])
         # pprint(cell.value)
         flag = 0
         if cell.value:
-            for table_name in table_name_list:
+            for sheet_file_name in sheet_file_name_list:
                 # 在media_info表中找到该ID，则标记
-                if table_name in cell.value:
-                    flag = 1
-                    break
+                if sheet_file_name in cell.value:
+                    is_cancel = False
+                    # cancel列表中有的添加到merge_del_list
+                    for cancel_file_name in cancel_file_name_list:
+                        if cancel_file_name in cell.value:
+                            if cell.row not in merge_del_list:
+                                merge_del_list.append(cell.row)
+                                oi_h.print_warning(cell.value + ":ES资源表中文件被标记为cancel，在ID表中删除相关信息")
+                                delete_cancel_wem(cell.value)
+                                is_cancel = True
+                                flag = 2
+                                break
+                    if is_cancel == False:
+                        flag = 1
+                        break
             # 未找到media name的则删除
             if flag == 0:
                 if cell.row not in merge_del_list:
                     merge_del_list.append(cell.row)
-                oi_h.print_warning(cell.value + ":在mediainfo和wwisecookie中删除相关信息")
-                delete_cancel_wem(cell.value)
+                    oi_h.print_warning(cell.value + ":ES资源表中该文件名不存在，在ID表中删除相关信息")
+                    delete_cancel_wem(cell.value)
 
     # 列表多行删除，为避免行数出问题，需倒序删除
     # 从最后一行开始删除
@@ -281,6 +350,8 @@ def delete_cancel_content(table_name_list, sheet_DT_Merge, wb_DT_Merge, excel_DT
         sheet_DT_Merge.delete_rows(row)
     # 保存excel表的信息
     wb_DT_Merge.save(excel_DT_Merge_path)
+    # excel转csv
+    csv_h.excel_to_csv(excel_DT_Merge_path, csv_DT_Merge_path)
 
 
 """检查是否以CG_External_或VO_External_开头"""
@@ -317,9 +388,6 @@ def check_name():
                             excel_h.sheet_title_column("文件名", title_colunmn_dict) - 1]:
                             if cell_sound.value and (cell_sound.value != "文件名"):
                                 """资源命名规范检查"""
-                                check_list = [
-
-                                ]
                                 _, _, is_pass = oi_h.check_name_all(cell_sound.value)
                                 if is_pass:
                                     # 检查是否以CG_External_或VO_External_开头
@@ -376,11 +444,8 @@ def auto_gen_es_file(file_wav_dict):
                                     for cell_sound in list(sheet.columns)[
                                         excel_h.sheet_title_column("文件名", title_colunmn_dict) - 1]:
                                         if cell_sound.value and (cell_sound.value != "文件名"):
-
                                             """查找文件"""
-                                            if (cell_sound.value in file_wav_name) and (
-                                                    cell_sound.value not in excel_name_list):
-                                                excel_name_list.append(cell_sound.value)
+                                            if cell_sound.value in file_wav_name:
                                                 flag = 1
                                                 if sheet.cell(row=cell_sound.row,
                                                               column=excel_h.sheet_title_column("State",
@@ -407,8 +472,10 @@ def auto_gen_es_file(file_wav_dict):
                                                                 # 查找mediainfo表的id有没有，没有则添加，有则修改内容
                                                                 vo_id = create_es_id(cell_sound.value)
 
-                                                                write_DT_Merge_excel(vo_id, cell_sound, cell_es_type,
-                                                                                     es_vo_data_dict[external_sound],
+                                                                write_DT_Merge_excel(vo_id, cell_sound,
+                                                                                     cell_es_type,
+                                                                                     es_vo_data_dict[
+                                                                                         external_sound],
                                                                                      sheet_DT_Merge)
                                                                 oi_h.print_warning(file_wav_name + "：已导入")
                                                                 is_wwise_have = 1
@@ -421,8 +488,6 @@ def auto_gen_es_file(file_wav_dict):
                                                     if is_wwise_have == 0:
                                                         oi_h.print_error(
                                                             file_wav_name + "：在Wwise中未建立相应容器，请检查填写是否正确或Wwise中容器是否存在")
-                            # 文件清理
-                            delete_cancel_content(table_name_list, sheet_DT_Merge, wb_DT_Merge, dt_plot_excel_path)
 
                             # 这里保存xlsx和csv的信息
                             # 保存excel表的信息
@@ -476,9 +541,8 @@ def move_file_to_different_catalog(source_directory_path):
 
 
 """*******************主程序*******************"""
-excel_name_list = []
-table_name_list = []
 
+table_name_list = []
 # 新建excel和csv表
 create_new_excel_and_csv()
 
@@ -524,6 +588,9 @@ if check_name():
     parent_node = doc.getElementsByTagName('ExternalSourcesList')[0]
     while parent_node.hasChildNodes():
         parent_node.removeChild(parent_node.firstChild)
+
+# 文件清理
+delete_cancel_content()
 
 # else:
 #     print(1)
