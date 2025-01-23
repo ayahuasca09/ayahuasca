@@ -25,7 +25,9 @@ ue_proj_path = config.ue_project_path
 ue_sp_path = os.path.join(ue_proj_path, "SilverPalace.uproject")
 ue_root_path = os.path.dirname(ue_proj_path)
 # print(ue_sp_path)
-ue_editor_path = os.path.join(ue_root_path, "Editor", "Engine", "Binaries", "Win64", "UnrealEditor.exe")
+ue_editor_path = config.ue_editor_path
+if not config.ue_editor_path:
+    ue_editor_path = os.path.join(ue_root_path, "Editor", "Engine", "Binaries", "Win64", "UnrealEditor.exe")
 
 
 # print(ue_editor_path)

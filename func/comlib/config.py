@@ -44,6 +44,8 @@ ue_project_path = os.path.dirname(ue_content_path)
 # print(ue_project_path)
 ue_audio_path = os.path.join(ue_content_path, 'Audio')
 ue_wwiseaudio_path = os.path.join(ue_audio_path, 'WwiseAudio')
+# UE编辑器路径
+ue_editor_path = config_custom.ue_editor_path
 
 ue_gensoundbank_path = os.path.join(ue_audio_path, 'GeneratedSoundBanks')
 gensoundbank_output_win_path = os.path.join(ue_gensoundbank_path, 'Windows')

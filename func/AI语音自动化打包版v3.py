@@ -607,4 +607,4 @@ os.mkdir(os.path.join(wav_path, "SFX"))
 # dt表导入UE
 ue_csv_dt_es_path = os.path.join(py_path, "ue_csv_dt_es.py")
 exe_h.run_unreal_editor_with_script(ue_csv_dt_es_path)
-os.system("pause")
+# os.system("pause")

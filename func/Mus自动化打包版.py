@@ -182,30 +182,42 @@ with WaapiClient() as client:
                     unit_object = create_wwise_obj("WorkUnit",
                                                    config.wwise_mus_global_path, mus_name,
                                                    "")
+                    if unit_object:
+                        # Switch父级创建
+                        switch_object = create_wwise_obj("MusicSwitchContainer",
+                                                         unit_object['id'], mus_name,
+                                                         "")
+                        print("1:" + mus_name)
+
                 else:
                     # t5apprint(playlist_list)
                     unit_have_dict = get_wwise_type_list(config.wwise_mus_global_path, "WorkUnit")
                     unit_parent = oi_h.find_longest_prefix_key(mus_name, unit_have_dict)
                     if mus_name in switch_list:
                         if mus_name not in switch_have_dict:
-                            # Switch父级创建
-                            switch_object = create_wwise_obj("MusicSwitchContainer",
-                                                             unit_have_dict[unit_parent], mus_name,
-                                                             "")
+                            print("2:" + mus_name)
                             # WorkUnit创建
                             unit_object = create_wwise_obj("WorkUnit",
-                                                           switch_object['id'], mus_name,
+                                                           switch_have_dict[unit_parent], mus_name,
                                                            "")
+
+                            # Switch父级创建
+                            switch_object = create_wwise_obj("MusicSwitchContainer",
+                                                             unit_object['id'], mus_name,
+                                                             "")
+
                         else:
+                            print("3:" + mus_name)
                             unit_object = create_wwise_obj("WorkUnit",
                                                            switch_have_dict[mus_name], mus_name,
                                                            "")
 
                     elif mus_name in playlist_list:
                         if mus_name not in playlist_have_dict:
+                            print("4:" + mus_name)
                             # WorkUnit创建
                             unit_object = create_wwise_obj("WorkUnit",
-                                                           unit_have_dict[unit_parent], mus_name,
+                                                           switch_have_dict[unit_parent], mus_name,
                                                            "")
 
                             # Switch父级创建
@@ -219,20 +231,10 @@ with WaapiClient() as client:
             switch_have_dict = get_wwise_type_list(config.wwise_mus_global_path, "MusicSwitchContainer")
 
             if mus_name not in switch_have_dict:
-                # 找到的父级为unit
-                unit_parent_1 = oi_h.find_longest_prefix_key(mus_name, unit_have_dict)
-                unit_parent_2 = oi_h.find_longest_prefix_key(mus_name, switch_have_dict)
-                parent_id = None
-                if unit_parent_1:
-                    if unit_parent_2:
-                        if len(unit_parent_2) > len(unit_parent_1):
-                            parent_id = switch_have_dict[unit_parent_2]
-                        else:
-                            parent_id = unit_have_dict[unit_parent_1]
-                    else:
-                        parent_id = unit_have_dict[unit_parent_1]
-                elif unit_parent_2:
-                    parent_id = switch_have_dict[unit_parent_2]
+                switch_parent = oi_h.find_longest_prefix_key(mus_name, switch_have_dict)
+                parent_id = ""
+                if switch_parent in switch_have_dict:
+                    parent_id = switch_have_dict[switch_parent]
 
                 if parent_id:
                     switch_object = create_wwise_obj("MusicSwitchContainer",
@@ -256,7 +258,7 @@ with WaapiClient() as client:
                 if unit_parent_1:
 
                     if unit_parent_2:
-                        if len(unit_parent_2) > len(unit_parent_1):
+                        if len(unit_parent_2) >= len(unit_parent_1):
                             parent_id = switch_have_dict[unit_parent_2]
                         else:
                             parent_id = unit_have_dict[unit_parent_1]
@@ -514,7 +516,7 @@ with WaapiClient() as client:
                 media_path = media_info_dict[media_info_name]
                 # import_media_in_track(media_path, mus_track_path)
                 client.call("ak.wwise.core.audio.import",
-                            waapi_h.args_sfx_create(media_path, mus_track_path, sheet_name))
+                            waapi_h.args_sfx_create(media_path, mus_track_path, sheet_name, "Mus"))
                 oi_h.print_warning((mus_name + ":媒体资源已导入"))
                 flag = 1
                 break
@@ -540,7 +542,7 @@ with WaapiClient() as client:
                         mus_track_id, mus_track_path = create_obj_content(mus_segment_id, "MusicTrack", mus_name,
                                                                           mus_desc, "")
                         client.call("ak.wwise.core.audio.import",
-                                    waapi_h.args_sfx_create(media_path, mus_track_path, sheet_name))
+                                    waapi_h.args_sfx_create(media_path, mus_track_path, sheet_name, "Mus"))
                         oi_h.print_warning((mus_name + ":媒体资源已导入"))
                         flag = 1
                         break
