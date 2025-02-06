@@ -211,23 +211,28 @@ import re
 # else:
 #     print("输入无效，请确保输入为数字且不重复。")
 
-# 全局变量is_pass测试
-is_pass = True
+"""全局变量is_pass测试"""
+# is_pass = True
+#
+#
+# def aa():
+#     global is_pass
+#     bb()
+#     return is_pass
+#
+#
+# def bb():
+#     cc()
+#
+#
+# def cc():
+#     global is_pass
+#     is_pass = False
+#
+#
+# print(aa())
 
-
-def aa():
-    global is_pass
-    bb()
-    return is_pass
-
-
-def bb():
-    cc()
-
-
-def cc():
-    global is_pass
-    is_pass = False
-
-
-print(aa())
+"""or的使用测试"""
+a = 4
+if a == (8 or 4):
+    print(a)
