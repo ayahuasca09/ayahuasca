@@ -96,8 +96,8 @@ wwise_bus_path = "\\Master-Mixer Hierarchy\\v1\\Master Audio Bus"
 # Aux Ducking Bus路径
 wwise_aux_duck_path = "\\Master-Mixer Hierarchy\\v1\\Master Audio Bus\\Auxiliary\\Aux_Ducking\\Aux_Ducking"
 # Mus_Global路径
-# wwise_mus_global_path = "\\Interactive Music Hierarchy\\v1\\Mus\\Mus_Global"
-wwise_mus_global_path = "\\Interactive Music Hierarchy\\Default Work Unit\\Test\\Mus_Global_Test"
+wwise_mus_global_path = "\\Interactive Music Hierarchy\\v1\\Mus\\Mus_Global"
+# wwise_mus_global_path = "\\Interactive Music Hierarchy\\Default Work Unit\\Test\\Mus_Global_Test"
 # Amb_Global路径
 wwise_amb_global_path = "\\Actor-Mixer Hierarchy\\v1\\Amb\\Amb\\Amb_Global\\Amb_Global\\Amb_Global_Area\\Amb_Global_Area\\Amb_Global_Area"
 """state folder path"""

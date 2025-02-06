@@ -4,20 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="17a8a927-0db7-41d4-8f81-9181fc87e6d9" name="更改" comment="ai语音自动化：当ES资源表中资源信息被删除或被标记为cancel，所有相关资源引用都会被删除">
-      <change afterPath="$PROJECT_DIR$/func/AILanguage_Import.spec" afterDir="false" />
+    <list default="true" id="17a8a927-0db7-41d4-8f81-9181fc87e6d9" name="更改" comment="音乐自动化：结构创建错误修复">
+      <change afterPath="$PROJECT_DIR$/func/AI语音自动化打包版v4（暂先不改）.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/func/Mus自动化.spec" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/AILanguage_Import/AILanguage_Import.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/AILanguage_Import/AILanguage_Import.pkg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/AILanguage_Import/Analysis-00.toc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/AILanguage_Import/COLLECT-00.toc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/AILanguage_Import/EXE-00.toc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/AILanguage_Import/PKG-00.toc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/AILanguage_Import/PYZ-00.pyz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/AILanguage_Import/PYZ-00.toc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/AILanguage_Import/base_library.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/AILanguage_Import/warn-AILanguage_Import.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/AILanguage_Import/xref-AILanguage_Import.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/State和Switch创建.spec" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/func/build/Mus自动化/Analysis-00.toc" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/func/build/Mus自动化/COLLECT-00.toc" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/func/build/Mus自动化/EXE-00.toc" afterDir="false" />
@@ -29,12 +19,19 @@
       <change afterPath="$PROJECT_DIR$/func/build/Mus自动化/base_library.zip" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/func/build/Mus自动化/warn-Mus自动化.txt" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/func/build/Mus自动化/xref-Mus自动化.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/build/State和Switch创建/Analysis-00.toc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/build/State和Switch创建/COLLECT-00.toc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/build/State和Switch创建/EXE-00.toc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/build/State和Switch创建/PKG-00.toc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/build/State和Switch创建/PYZ-00.pyz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/build/State和Switch创建/PYZ-00.toc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/build/State和Switch创建/State和Switch创建.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/build/State和Switch创建/State和Switch创建.pkg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/build/State和Switch创建/base_library.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/build/State和Switch创建/warn-State和Switch创建.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/build/State和Switch创建/xref-State和Switch创建.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/func/AI语音自动化打包版v3.py" beforeDir="false" afterPath="$PROJECT_DIR$/func/AI语音自动化打包版v3.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/func/Mus自动化打包版.py" beforeDir="false" afterPath="$PROJECT_DIR$/func/Mus自动化打包版.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/func/comlib/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/func/comlib/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/func/comlib/exe_h.py" beforeDir="false" afterPath="$PROJECT_DIR$/func/comlib/exe_h.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/func/config_custom.py" beforeDir="false" afterPath="$PROJECT_DIR$/func/config_custom.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/func/打包自动化.py" beforeDir="false" afterPath="$PROJECT_DIR$/func/打包自动化.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -413,14 +410,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1716955384994</updated>
-    </task>
-    <task id="LOCAL-00141" summary="Mus自动化生成">
-      <option name="closed" value="true" />
-      <created>1733838536356</created>
-      <option name="number" value="00141" />
-      <option name="presentableId" value="LOCAL-00141" />
-      <option name="project" value="LOCAL" />
-      <updated>1733838536356</updated>
     </task>
     <task id="LOCAL-00142" summary="Amb自动化生成">
       <option name="closed" value="true" />
@@ -806,7 +795,15 @@
       <option name="project" value="LOCAL" />
       <updated>1737520148950</updated>
     </task>
-    <option name="localTasksCounter" value="190" />
+    <task id="LOCAL-00190" summary="音乐自动化：结构创建错误修复">
+      <option name="closed" value="true" />
+      <created>1737635535103</created>
+      <option name="number" value="00190" />
+      <option name="presentableId" value="LOCAL-00190" />
+      <option name="project" value="LOCAL" />
+      <updated>1737635535103</updated>
+    </task>
+    <option name="localTasksCounter" value="191" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -822,7 +819,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Mus自动化：添加命名检查" />
     <MESSAGE value="id表：默认配置更改" />
     <MESSAGE value="ini配置添加" />
     <MESSAGE value="媒体资源替换及随机新增打包" />
@@ -847,7 +843,8 @@
     <MESSAGE value="媒体资源占位：优化" />
     <MESSAGE value="ai语音自动化：多表生成及多路径生成资源" />
     <MESSAGE value="ai语音自动化：当ES资源表中资源信息被删除或被标记为cancel，所有相关资源引用都会被删除" />
-    <option name="LAST_COMMIT_MESSAGE" value="ai语音自动化：当ES资源表中资源信息被删除或被标记为cancel，所有相关资源引用都会被删除" />
+    <MESSAGE value="音乐自动化：结构创建错误修复" />
+    <option name="LAST_COMMIT_MESSAGE" value="音乐自动化：结构创建错误修复" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
