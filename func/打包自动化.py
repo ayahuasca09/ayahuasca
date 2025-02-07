@@ -136,7 +136,7 @@ def package_script_add_other_script_2(script_name, output_name, other_script, ot
 
 if __name__ == "__main__":
     # package_script("媒体资源替换及随机资源新增打包版.py", "媒体资源替换及随机资源新增")
-    # package_script("ES导入自动化打包版v3.py", "ES_Import")
+    package_script("ES导入自动化打包版v3.py", "ES_Import")
     # package_script("ID表生成打包版v2.py", "ID表生成")
     # Switch和State有引用ID表生成的exe
     # package_script("State和Switch创建打包版.py", "State和Switch创建")

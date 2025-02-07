@@ -580,8 +580,6 @@ for language in config.language_list:
         shutil.copy2(es_xml_path,
                      external_input_path)
 
-
-
 # 删除xml的内容
 doc = parse(es_xml_path)
 parent_node = doc.getElementsByTagName('ExternalSourcesList')[0]
@@ -591,6 +589,9 @@ while parent_node.hasChildNodes():
 # 可选：如果需要，将更改保存回文件
 with open(es_xml_path, 'w', encoding='utf-8') as f:
     doc.writexml(f)
+
+# 将删除的xml内容写入wsources
+shutil.copy2(es_xml_path, external_input_path)
 
 print(f"创建wem资源完毕 {datetime.datetime.now()}")
 

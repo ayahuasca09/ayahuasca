@@ -649,6 +649,9 @@ while parent_node.hasChildNodes():
 with open(es_xml_path, 'w', encoding='utf-8') as f:
     doc.writexml(f)
 
+# 将删除的xml内容写入wsources
+shutil.copy2(es_xml_path, external_input_path)
+
 # 文件清理
 delete_cancel_content()
 
