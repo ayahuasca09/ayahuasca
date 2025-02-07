@@ -61,14 +61,7 @@ external_output_win_path = config.external_output_win_path
 external_output_android_path = config.external_output_android_path
 external_output_ios_path = config.external_output_ios_path
 
-# 获取.csv文件
-# csv_DT_Merge_path = os.path.join(py_path, config.csv_DT_Merge_path)
-
-# 获取.xlsx文件
-# excel_DT_Merge_path = os.path.join(py_path, config.excel_DT_Merge)
-
-# 获取相应的excel表信息
-# sheet_DT_Merge, wb_DT_Merge = excel_h.excel_get_sheet(excel_DT_Merge_path, 'Sheet1')
+es_xml_path = os.path.join(py_path, config.es_xml_path)
 
 # 获取媒体资源文件列表
 wav_path = os.path.join(py_path, "New_Media")
@@ -366,6 +359,7 @@ def check_prefix(string):
     pattern = r'^(CG_External_|VO_External_)'
     return re.match(pattern, string) is not None
 
+
 """写入Merge excel表"""
 
 
@@ -619,13 +613,13 @@ for language in config.language_list:
         auto_gen_es_file(file_wav_language_dict)
         # # xml文件写入
         # pprint(file_wav_dict)
-        with open(config.es_xml_path, 'w+') as f:
+        with open(es_xml_path, 'w+') as f:
             # 按照格式写入
             f.write(doc.toprettyxml())
             f.close()
         # pprint(doc.toprettyxml())
         # 复制xml为wsources
-        shutil.copy2(os.path.join(py_path, config.es_xml_path),
+        shutil.copy2(es_xml_path,
                      external_input_path)
 
         # gen_external(language)
@@ -643,15 +637,17 @@ for language in config.language_list:
         doc.appendChild(root)
 
         # 将删除的xml内容写入wsources
-        shutil.copy2(os.path.join(py_path, config.es_xml_path),
-                     external_input_path)
-
+        shutil.copy2(es_xml_path, external_input_path)
 
 # 删除xml的内容
-doc = parse(config.es_xml_path)
+doc = parse(os.path.join(py_path, config.es_xml_path))
 parent_node = doc.getElementsByTagName('ExternalSourcesList')[0]
 while parent_node.hasChildNodes():
     parent_node.removeChild(parent_node.firstChild)
+
+# 可选：如果需要，将更改保存回文件
+with open(es_xml_path, 'w', encoding='utf-8') as f:
+    doc.writexml(f)
 
 # 文件清理
 delete_cancel_content()
