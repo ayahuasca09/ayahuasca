@@ -20,8 +20,7 @@ import comlib.csv_h as csv_h
 import comlib.exe_h as exe_h
 import comlib.cloudfeishu_h as cloudfeishu_h
 
-# 新特性：新增bIsAI列，并写入TRUE
-# 全量写入在线表
+# 新特性：效率提升，多线程下载在线表、激活特定语言的导出
 """****************数据获取******************"""
 
 # 获取文件所在目录
@@ -554,37 +553,39 @@ print(f"结束创建excel和csv表 {datetime.datetime.now()}")
 # 语音ES生成
 for language in config.language_list:
     wav_language_path = os.path.join(wav_path, language)
-    file_wav_language_dict, _ = oi_h.get_type_file_name_and_path('.wav', wav_language_path)
-    # print(file_wav_language_dict)
-    auto_gen_es_file(file_wav_language_dict)
-    # # xml文件写入
-    # pprint(file_wav_dict)
-    with open(config.es_xml_path, 'w+') as f:
-        # 按照格式写入
-        f.write(doc.toprettyxml())
-        f.close()
-    # pprint(doc.toprettyxml())
-    # 复制xml为wsources
-    shutil.copy2(os.path.join(py_path, config.es_xml_path),
-                 external_input_path)
+    # 要文件夹路径存在及文件夹中存在内容才启动以下操作
+    if oi_h.is_folder_empty(wav_language_path):
+        file_wav_language_dict, _ = oi_h.get_type_file_name_and_path('.wav', wav_language_path)
+        # print(file_wav_language_dict)
+        auto_gen_es_file(file_wav_language_dict)
+        # # xml文件写入
+        # pprint(file_wav_dict)
+        with open(config.es_xml_path, 'w+') as f:
+            # 按照格式写入
+            f.write(doc.toprettyxml())
+            f.close()
+        # pprint(doc.toprettyxml())
+        # 复制xml为wsources
+        shutil.copy2(os.path.join(py_path, config.es_xml_path),
+                     external_input_path)
 
-    # gen_external(language)
-    exe_h.gen_ai_language(external_input_path, language)
+        # gen_external(language)
+        exe_h.gen_ai_language(external_input_path, language)
 
-    # 将生成资源移动到每个dt表对应的路径
-    move_file_to_different_catalog(os.path.join(external_output_win_path, language, 'AILanguage'))
-    move_file_to_different_catalog(os.path.join(external_output_android_path, language, 'AILanguage'))
-    move_file_to_different_catalog(os.path.join(external_output_ios_path, language, 'AILanguage'))
+        # 将生成资源移动到每个dt表对应的路径
+        move_file_to_different_catalog(os.path.join(external_output_win_path, language, 'AILanguage'))
+        move_file_to_different_catalog(os.path.join(external_output_android_path, language, 'AILanguage'))
+        move_file_to_different_catalog(os.path.join(external_output_ios_path, language, 'AILanguage'))
 
-    # 初始化xml
-    doc = Document()
-    root = doc.createElement("ExternalSourcesList")
-    root.setAttribute("SchemaVersion", "1")
-    doc.appendChild(root)
+        # 初始化xml
+        doc = Document()
+        root = doc.createElement("ExternalSourcesList")
+        root.setAttribute("SchemaVersion", "1")
+        doc.appendChild(root)
 
-    # 将删除的xml内容写入wsources
-    shutil.copy2(os.path.join(py_path, config.es_xml_path),
-                 external_input_path)
+        # 将删除的xml内容写入wsources
+        shutil.copy2(os.path.join(py_path, config.es_xml_path),
+                     external_input_path)
 
 print(f"创建wem资源完毕 {datetime.datetime.now()}")
 

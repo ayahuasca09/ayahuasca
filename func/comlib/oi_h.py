@@ -7,6 +7,19 @@ import re
 
 is_pass = True
 
+"""检测文件夹的内容是否为空"""
+
+
+def is_folder_empty(folder_path):
+    if os.path.exists(folder_path):
+        # 获取文件夹中的内容列表
+        contents = os.listdir(folder_path)
+        # 检查内容列表是否为空
+        return len(contents) > 0
+    else:
+        return False
+
+
 """建单正则匹配"""
 
 

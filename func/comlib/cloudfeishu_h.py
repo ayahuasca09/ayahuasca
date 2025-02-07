@@ -55,12 +55,23 @@ def get_sheet_id_list(wiki_token):
     sheets_info = response.json()
     sheet_id_list = []
     sheet_id_name_dict = {}
+    sheet_name_id_dict={}
     # 是一整个列表的信息
     sheet_list = sheets_info["data"]["sheets"]
     for sheet in sheet_list:
         sheet_id_list.append(sheet['sheet_id'])
         sheet_id_name_dict[sheet['sheet_id']] = sheet['title']
-    return sheet_id_list, sheet_id_name_dict, excel_id
+        sheet_name_id_dict[sheet['title']] = sheet['sheet_id']
+    return sheet_id_list, sheet_id_name_dict, excel_id,sheet_name_id_dict
+
+
+"""获取excel url"""
+
+
+def get_excel_url(wiki_token):
+    excel_id, _ = get_excel_token(wiki_token)
+    excel_url = f"{sheets_base_url}/{excel_id}/values"  # 写入的sh开头的文档地址，其他不变
+    return excel_url
 
 
 """获取表格所有内容"""
@@ -120,7 +131,7 @@ def col_index_to_letter(index):
 
 
 def get_sheet_row_and_column_value(column_letter, row_index, excel_id, sheet_id):
-    url = f"{sheets_base_url}/{excel_id}/values/{sheet_id}!{column_letter}{row_index + 1}:{column_letter}{row_index + 1}"
+    url = f"{sheets_base_url}/{excel_id}/values/{sheet_id}!{column_letter}{row_index}:{column_letter}{row_index}"
     ret = requests.get(url, headers=get_header())
     data = ret.json()
     # {'code': 0,
@@ -135,6 +146,28 @@ def get_sheet_row_and_column_value(column_letter, row_index, excel_id, sheet_id)
     value = data['data']['valueRange']['values'][0][0]
     # print(value)
     return value
+
+
+"""数据写入"""
+
+
+# 传入的是列索引和行索引
+def insert_sheet_info(sheet_id, excel_url, column_letter, row_index, sheet_value):
+    # range参数中!之前的工作簿ID，后面跟着行列号范围
+    post_data = {
+        "valueRange": {
+            "range": f"{sheet_id}!{column_letter}{row_index + 1}:{column_letter}{row_index + 1}",
+            "values": [[sheet_value]]
+        }
+    }
+    # 在486268这个工作簿内的单元格C3到N8写入内容为helloworld等内容
+    r2 = requests.put(excel_url, data=json.dumps(post_data), headers=get_header())  # 请求写入
+    # print(r2.json())  # 输出来判断写入是否成功
+    update_result = r2.json()
+    if update_result["code"] == 0:
+        print("写入成功:", update_result['data']['updatedRange'], sheet_value)
+    else:
+        print("写入失败:", update_result["msg"], update_result["code"])
 
 
 """获取标题列下的某行的值"""

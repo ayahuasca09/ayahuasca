@@ -33,7 +33,7 @@ if not config.ue_editor_path:
 # print(ue_editor_path)
 
 def run_ue_reconcile():
-    command_path = ue_editor_path + " " + ue_sp_path + " " + "-run=WwiseReconcileCommandlet -modes=all" + " -nocompile"
+    command_path = ue_editor_path + " " + ue_sp_path + " " + "-run=WwiseReconcileCommandlet -modes=all"
     # print(command_path)
     subprocess.run(command_path, capture_output=True, text=True, check=True, shell=True)
 

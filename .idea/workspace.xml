@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="17a8a927-0db7-41d4-8f81-9181fc87e6d9" name="更改" comment="AI语音自动化：新增bIsAI数据">
+    <list default="true" id="17a8a927-0db7-41d4-8f81-9181fc87e6d9" name="更改" comment="AI语音自动化：从在线表生成">
+      <change afterPath="$PROJECT_DIR$/func/AILanguage_Import.spec" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/AI语音自动化打包版v5.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/func/ES_Import.spec" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/ES导入自动化打包版v2.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/ES导入自动化打包版v3.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/func/build/AILanguage_Import/AILanguage_Import.exe" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/func/build/AILanguage_Import/AILanguage_Import.pkg" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/func/build/AILanguage_Import/Analysis-00.toc" afterDir="false" />
@@ -31,9 +33,12 @@
       <change afterPath="$PROJECT_DIR$/func/build/ES_Import/xref-ES_Import.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/func/AI语音自动化打包版v4.py" beforeDir="false" afterPath="$PROJECT_DIR$/func/AI语音自动化打包版v4.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/func/ES导入自动化打包版v2.py" beforeDir="false" afterPath="$PROJECT_DIR$/func/ES导入自动化打包版v2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/func/comlib/cloudfeishu_h.py" beforeDir="false" afterPath="$PROJECT_DIR$/func/comlib/cloudfeishu_h.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/func/comlib/exe_h.py" beforeDir="false" afterPath="$PROJECT_DIR$/func/comlib/exe_h.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/func/comlib/oi_h.py" beforeDir="false" afterPath="$PROJECT_DIR$/func/comlib/oi_h.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/func/打包自动化.py" beforeDir="false" afterPath="$PROJECT_DIR$/func/打包自动化.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,6 +95,7 @@
     &quot;Python.DCC表的引用路径生成打包版.executor&quot;: &quot;Run&quot;,
     &quot;Python.ES_Import (1).executor&quot;: &quot;Run&quot;,
     &quot;Python.ES导入打包版.executor&quot;: &quot;Run&quot;,
+    &quot;Python.ES导入自动化打包版v2.executor&quot;: &quot;Run&quot;,
     &quot;Python.FeishuSheetHelper.executor&quot;: &quot;Run&quot;,
     &quot;Python.ID表生成.executor&quot;: &quot;Run&quot;,
     &quot;Python.ID表生成打包版.executor&quot;: &quot;Run&quot;,
@@ -246,6 +252,28 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/func/AI语音自动化打包版v3.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="ES导入自动化打包版v2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="SP" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/func" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/func/ES导入自动化打包版v2.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -411,6 +439,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.打包自动化" />
+        <item itemvalue="Python.ES导入自动化打包版v2" />
         <item itemvalue="Python.test" />
         <item itemvalue="Python.Mus自动化打包版" />
         <item itemvalue="Python.AI语音自动化打包版v3" />
@@ -432,14 +461,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1716955384994</updated>
-    </task>
-    <task id="LOCAL-00143" summary="Amb自动化生成">
-      <option name="closed" value="true" />
-      <created>1734192297112</created>
-      <option name="number" value="00143" />
-      <option name="presentableId" value="LOCAL-00143" />
-      <option name="project" value="LOCAL" />
-      <updated>1734192297112</updated>
     </task>
     <task id="LOCAL-00144" summary="MUS自动化生成:媒体资源自动化导入">
       <option name="closed" value="true" />
@@ -825,7 +846,15 @@
       <option name="project" value="LOCAL" />
       <updated>1738826942143</updated>
     </task>
-    <option name="localTasksCounter" value="192" />
+    <task id="LOCAL-00192" summary="AI语音自动化：从在线表生成">
+      <option name="closed" value="true" />
+      <created>1738836789415</created>
+      <option name="number" value="00192" />
+      <option name="presentableId" value="LOCAL-00192" />
+      <option name="project" value="LOCAL" />
+      <updated>1738836789415</updated>
+    </task>
+    <option name="localTasksCounter" value="193" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -841,7 +870,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="ini配置添加" />
     <MESSAGE value="媒体资源替换及随机新增打包" />
     <MESSAGE value="comlib-config路径修改" />
     <MESSAGE value="添加分表更新下载功能" />
@@ -866,7 +894,8 @@
     <MESSAGE value="ai语音自动化：当ES资源表中资源信息被删除或被标记为cancel，所有相关资源引用都会被删除" />
     <MESSAGE value="音乐自动化：结构创建错误修复" />
     <MESSAGE value="AI语音自动化：新增bIsAI数据" />
-    <option name="LAST_COMMIT_MESSAGE" value="AI语音自动化：新增bIsAI数据" />
+    <MESSAGE value="AI语音自动化：从在线表生成" />
+    <option name="LAST_COMMIT_MESSAGE" value="AI语音自动化：从在线表生成" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -924,6 +953,11 @@
           <url>file://$PROJECT_DIR$/func/Mus自动化打包版.py</url>
           <line>544</line>
           <option name="timeStamp" value="41" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/func/ES导入自动化打包版v2.py</url>
+          <line>538</line>
+          <option name="timeStamp" value="42" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
