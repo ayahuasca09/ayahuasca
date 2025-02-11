@@ -4,27 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="17a8a927-0db7-41d4-8f81-9181fc87e6d9" name="更改" comment="AI语音自动化：修复多语言导入时wsources未清除的问题">
-      <change afterPath="$PROJECT_DIR$/func/AILanguage_Import.spec" afterDir="false" />
+    <list default="true" id="17a8a927-0db7-41d4-8f81-9181fc87e6d9" name="更改" comment="正式版语音自动化：多线程下载">
       <change afterPath="$PROJECT_DIR$/func/ES_Import.spec" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/ES导入自动化打包版v4.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/Excel/B类（LevelSequence）剧情语音.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/Excel/B类（LevelSequence）剧情音效.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/Excel/C类（操控演员表演，接管镜头）剧情语音.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/Excel/C类（操控演员表演，接管镜头）剧情音效.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/Excel/D类（操控演员表演，不接管镜头）剧情语音.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/Excel/D类（操控演员表演，不接管镜头）剧情音效.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/AILanguage_Import/AILanguage_Import.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/AILanguage_Import/AILanguage_Import.pkg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/AILanguage_Import/Analysis-00.toc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/AILanguage_Import/COLLECT-00.toc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/AILanguage_Import/EXE-00.toc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/AILanguage_Import/PKG-00.toc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/AILanguage_Import/PYZ-00.pyz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/AILanguage_Import/PYZ-00.toc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/AILanguage_Import/base_library.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/AILanguage_Import/warn-AILanguage_Import.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/AILanguage_Import/xref-AILanguage_Import.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/func/build/ES_Import/Analysis-00.toc" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/func/build/ES_Import/COLLECT-00.toc" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/func/build/ES_Import/ES_Import.exe" afterDir="false" />
@@ -36,13 +17,8 @@
       <change afterPath="$PROJECT_DIR$/func/build/ES_Import/base_library.zip" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/func/build/ES_Import/warn-ES_Import.txt" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/func/build/ES_Import/xref-ES_Import.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/多线程下载飞书剧情音频资源表测试.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/func/AI语音自动化打包版v5.py" beforeDir="false" afterPath="$PROJECT_DIR$/func/AI语音自动化打包版v5.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/func/ES导入自动化打包版v3.py" beforeDir="false" afterPath="$PROJECT_DIR$/func/ES导入自动化打包版v3.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/func/comlib/cloudfeishu_h.py" beforeDir="false" afterPath="$PROJECT_DIR$/func/comlib/cloudfeishu_h.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/func/comlib/oi_h.py" beforeDir="false" afterPath="$PROJECT_DIR$/func/comlib/oi_h.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/func/打包自动化.py" beforeDir="false" afterPath="$PROJECT_DIR$/func/打包自动化.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/func/ES导入自动化打包版v4.py" beforeDir="false" afterPath="$PROJECT_DIR$/func/ES导入自动化打包版v4.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -468,14 +444,6 @@
       <option name="presentableId" value="Default" />
       <updated>1716955384994</updated>
     </task>
-    <task id="LOCAL-00147" summary="Bus自动化生成:要生成的子列表获取">
-      <option name="closed" value="true" />
-      <created>1734343492228</created>
-      <option name="number" value="00147" />
-      <option name="presentableId" value="LOCAL-00147" />
-      <option name="project" value="LOCAL" />
-      <updated>1734343492228</updated>
-    </task>
     <task id="LOCAL-00148" summary="子Bus自动化生成，包括notes添加">
       <option name="closed" value="true" />
       <created>1734355520208</created>
@@ -860,7 +828,15 @@
       <option name="project" value="LOCAL" />
       <updated>1738928627183</updated>
     </task>
-    <option name="localTasksCounter" value="196" />
+    <task id="LOCAL-00196" summary="正式版语音自动化：多线程下载">
+      <option name="closed" value="true" />
+      <created>1739262154020</created>
+      <option name="number" value="00196" />
+      <option name="presentableId" value="LOCAL-00196" />
+      <option name="project" value="LOCAL" />
+      <updated>1739262154020</updated>
+    </task>
+    <option name="localTasksCounter" value="197" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -876,7 +852,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="添加分表更新下载功能" />
     <MESSAGE value="属性配置更改" />
     <MESSAGE value="修复wwise属性配置：因为读取路径不同导致语音资源删除有误的问题" />
     <MESSAGE value="Wwise属性配置：功能更新并打包" />
@@ -901,7 +876,8 @@
     <MESSAGE value="AI语音自动化：从在线表生成" />
     <MESSAGE value="AI语音自动化：bisai更新，提速更新" />
     <MESSAGE value="AI语音自动化：修复多语言导入时wsources未清除的问题" />
-    <option name="LAST_COMMIT_MESSAGE" value="AI语音自动化：修复多语言导入时wsources未清除的问题" />
+    <MESSAGE value="正式版语音自动化：多线程下载" />
+    <option name="LAST_COMMIT_MESSAGE" value="正式版语音自动化：多线程下载" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

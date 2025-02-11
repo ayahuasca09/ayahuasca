@@ -8,6 +8,7 @@ import re
 # xml写入库
 from xml.dom.minidom import Document, parse
 from pprint import pprint
+import concurrent.futures
 
 # 自定义库
 import comlib.excel_h as excel_h
@@ -31,25 +32,6 @@ elif __file__:
 media_excel_token_dict = config.es_sheet_token_dict
 cloudfeishu_h.input_show(media_excel_token_dict, py_path)
 
-"""飞书在线文档下载只包含C和D"""
-# c_vo_excel_name = 'C类（操控演员表演，接管镜头）剧情语音'
-# d_vo_excel_name = 'D类（操控演员表演，不接管镜头）剧情语音'
-# c_vo_wiki_token = media_excel_token_dict[c_vo_excel_name]
-# d_vo_wiki_token = media_excel_token_dict[d_vo_excel_name]
-#
-# # 获取excel中所有sheet的id及组成的字典
-# c_sheet_id_list, c_sheet_id_name_dict, c_excel_id, c_sheet_name_id_dict = cloudfeishu_h.get_sheet_id_list(
-#     c_vo_wiki_token)
-# d_sheet_id_list, d_sheet_id_name_dict, d_excel_id, d_sheet_name_id_dict = cloudfeishu_h.get_sheet_id_list(
-#     d_vo_wiki_token)
-# sheet_name_id_dict = {**c_sheet_name_id_dict, **d_sheet_name_id_dict}
-# # pprint(sheet_name_id_dict)
-#
-# # 获取excel的url
-# c_excel_url = cloudfeishu_h.get_excel_url(c_vo_wiki_token)
-# d_excel_url = cloudfeishu_h.get_excel_url(d_vo_wiki_token)
-"""****************************************************"""
-
 # 获取wsources文件
 external_input_path = os.path.join(py_path, config.external_input_path)
 
@@ -71,6 +53,7 @@ excel_es_title_list = config.excel_es_title_list
 file_name_list = excel_h.excel_get_path_list(os.path.join(py_path, "Excel"))
 
 _, wem_list = oi_h.get_type_file_name_and_path('.wem', external_output_path)
+# pprint(wem_list)
 
 # 获取写死的cookie数据表
 es_vo_data_dict = config.es_vo_data_dict
@@ -100,6 +83,30 @@ root.setAttribute("SchemaVersion", "1")
 doc.appendChild(root)
 
 """*****************功能检测区******************"""
+"""删除标记为done的AI语音"""
+
+
+def delete_done_ai_vo(dt_name, wem_name):
+    platform = [external_output_win_path, external_output_android_path, external_output_ios_path
+                ]
+    for external_platform_win_path in platform:
+        ai_path = os.path.join(external_platform_win_path, language, "AILanguage")
+        wem_path = os.path.join(ai_path, dt_name, wem_name)
+
+        if os.path.isfile(wem_path):
+            os.remove(wem_path)
+            print(f"AI语音 '{wem_path}' 已删除。")
+        else:
+            print(f"AI语音 '{wem_path}' 不存在。")
+
+
+"""写入done到飞书在线表"""
+
+
+def write_done_to_feishu(sheet_id, excel_url, column_letter, row_index, value):
+    cloudfeishu_h.insert_sheet_info(sheet_id, excel_url, column_letter, row_index, value)
+
+
 """复制excel和csv表"""
 
 
@@ -470,80 +477,96 @@ def auto_gen_es_dt():
 
 
 def auto_gen_es_file(file_wav_dict):
-    # 查找要导入的媒体文件里有没有对应的
-    for file_wav_name in file_wav_dict:
-        # 读excel表
-        # 提取规则：只提取xlsx文件
-        for i in file_name_list:
-            if ".xlsx" in i:
-                plot_type = oi_h.is_first_char_alpha(i)
-                excel_name = i.replace(".xlsx", "")
-                excel_token = media_excel_token_dict[excel_name]
-                _, _, _, sheet_name_id_dict = cloudfeishu_h.get_sheet_id_list(
-                    excel_token)
-                excel_url = cloudfeishu_h.get_excel_url(excel_token)
-                if plot_type:
-                    # 拼接xlsx的路径
-                    file_path_xlsx = os.path.join(os.path.join(py_path, "Excel"), i)
-                    # 获取xlsx的workbook
-                    wb = openpyxl.load_workbook(file_path_xlsx)
-                    # 获取xlsx的所有sheet
-                    sheet_names = wb.sheetnames
-                    # 加载所有工作表
-                    for sheet_name in sheet_names:
-                        sheet_id = ""
-                        if sheet_name in sheet_name_id_dict:
-                            sheet_id = sheet_name_id_dict[sheet_name]
-                        else:
-                            print(sheet_name + "：不在当前已有的excel表内，请检查")
-                        sheet = wb[sheet_name]
-                        dt_plot_name = "DT_AudioPlotLanguage_" + plot_type + "_" + sheet_name
-                        dt_plot_excel_path = os.path.join(genexcel_path, dt_plot_name + '.xlsx')
-                        dt_plot_csv_path = os.path.join(gencsv_path, dt_plot_name + '.csv')
-                        if os.path.exists(dt_plot_excel_path):
-                            sheet_DT_Merge, wb_DT_Merge = excel_h.excel_get_sheet(dt_plot_excel_path, 'Sheet1')
-                            if not excel_h.is_sheet_empty(sheet):
-                                title_colunmn_dict = excel_h.excel_get_sheet_title_column(sheet, excel_es_title_list)
-                                if title_colunmn_dict:
-                                    # 获取音效名下的内容
-                                    for cell_sound in list(sheet.columns)[
-                                        excel_h.sheet_title_column("文件名", title_colunmn_dict) - 1]:
-                                        if cell_sound.value and (cell_sound.value != "文件名"):
-                                            """查找文件"""
-                                            if cell_sound.value in file_wav_name:
-                                                if sheet.cell(row=cell_sound.row,
-                                                              column=excel_h.sheet_title_column("State",
-                                                                                                title_colunmn_dict)).value != 'cancel':
-                                                    column_letter = cloudfeishu_h.col_index_to_letter(
-                                                        excel_h.sheet_title_column("State",
-                                                                                   title_colunmn_dict) - 1)
-                                                    row_index = cell_sound.row - 1
-                                                    # 写入测试
-                                                    if sheet_id:
-                                                        cloudfeishu_h.insert_sheet_info(sheet_id, excel_url,
-                                                                                        column_letter,
-                                                                                        row_index, "done")
-                                                        # 查找mediainfo表的id有没有，没有则添加，有则修改内容
-                                                        vo_id = create_es_id(cell_sound.value)
-                                                        # 将数据写入DT excel表
-                                                        cover_DT_Merge_excel(vo_id, sheet_DT_Merge, "FALSE")
-                                                    else:
-                                                        print(
-                                                            sheet_id + "：sheet表id不存在," + cell_sound.value + "导入失败")
+    # 获取音效名下的内容
+    with concurrent.futures.ThreadPoolExecutor() as executor:
+        futures = []
+        # 查找要导入的媒体文件里有没有对应的
+        for file_wav_name in file_wav_dict:
+            # 读excel表
+            # 提取规则：只提取xlsx文件
+            for i in file_name_list:
+                if ".xlsx" in i:
+                    plot_type = oi_h.is_first_char_alpha(i)
+                    excel_name = i.replace(".xlsx", "")
+                    excel_token = media_excel_token_dict[excel_name]
+                    _, _, _, sheet_name_id_dict = cloudfeishu_h.get_sheet_id_list(
+                        excel_token)
+                    excel_url = cloudfeishu_h.get_excel_url(excel_token)
+                    if plot_type:
+                        # 拼接xlsx的路径
+                        file_path_xlsx = os.path.join(os.path.join(py_path, "Excel"), i)
+                        # 获取xlsx的workbook
+                        wb = openpyxl.load_workbook(file_path_xlsx)
+                        # 获取xlsx的所有sheet
+                        sheet_names = wb.sheetnames
+                        # 加载所有工作表
+                        for sheet_name in sheet_names:
+                            sheet_id = ""
+                            if sheet_name in sheet_name_id_dict:
+                                sheet_id = sheet_name_id_dict[sheet_name]
+                            else:
+                                print(sheet_name + "：不在当前已有的excel表内，请检查")
+                            sheet = wb[sheet_name]
+                            dt_plot_name = "DT_AudioPlotLanguage_" + plot_type + "_" + sheet_name
+                            folder_plot_name = "AudioPlotLanguage_" + plot_type + "_" + sheet_name
+                            dt_plot_excel_path = os.path.join(genexcel_path, dt_plot_name + '.xlsx')
+                            dt_plot_csv_path = os.path.join(gencsv_path, dt_plot_name + '.csv')
+                            if os.path.exists(dt_plot_excel_path):
+                                sheet_DT_Merge, wb_DT_Merge = excel_h.excel_get_sheet(dt_plot_excel_path, 'Sheet1')
+                                if not excel_h.is_sheet_empty(sheet):
+                                    title_colunmn_dict = excel_h.excel_get_sheet_title_column(sheet,
+                                                                                              excel_es_title_list)
+                                    if title_colunmn_dict:
+                                        # 获取音效名下的内容
+                                        for cell_sound in list(sheet.columns)[
+                                            excel_h.sheet_title_column("文件名", title_colunmn_dict) - 1]:
+                                            if cell_sound.value and (cell_sound.value != "文件名"):
+                                                """查找文件"""
+                                                if cell_sound.value in file_wav_name:
+                                                    if sheet.cell(row=cell_sound.row,
+                                                                  column=excel_h.sheet_title_column("State",
+                                                                                                    title_colunmn_dict)).value != 'cancel':
+                                                        column_letter = cloudfeishu_h.col_index_to_letter(
+                                                            excel_h.sheet_title_column("State",
+                                                                                       title_colunmn_dict) - 1)
+                                                        row_index = cell_sound.row - 1
+                                                        # 写入测试
+                                                        if sheet_id:
+                                                            if sheet.cell(row=cell_sound.row,
+                                                                          column=excel_h.sheet_title_column("State",
+                                                                                                            title_colunmn_dict)).value != 'done':
+                                                                # 提交任务到线程池
+                                                                future = executor.submit(write_done_to_feishu, sheet_id,
+                                                                                         excel_url, column_letter,
+                                                                                         row_index, "done")
+                                                                futures.append(future)
 
-                                                    # print(file_wav_dict[file_wav_name])
-                                                    # 在表格中找到此音效才将其写入xml
-                                                    xml_create_element(file_wav_dict[file_wav_name])
-                                                    oi_h.print_warning(file_wav_name + "：已导入")
-                                                    break
-                            # 这里保存xlsx和csv的信息
-                            # 保存excel表的信息
-                            wb_DT_Merge.save(dt_plot_excel_path)
+                                                            # 删除相应的AI语音
+                                                            delete_done_ai_vo(folder_plot_name,
+                                                                              cell_sound.value + ".wem")
+                                                            # 查找mediainfo表的id有没有，没有则添加，有则修改内容
+                                                            vo_id = create_es_id(cell_sound.value)
+                                                            # 将数据写入DT excel表
+                                                            cover_DT_Merge_excel(vo_id, sheet_DT_Merge, "FALSE")
+                                                        else:
+                                                            print(
+                                                                sheet_id + "：sheet表id不存在," + cell_sound.value + "导入失败")
 
-                            # 将excel转为csv
-                            csv_h.excel_to_csv(dt_plot_excel_path, dt_plot_csv_path)
+                                                        # print(file_wav_dict[file_wav_name])
+                                                        # 在表格中找到此音效才将其写入xml
+                                                        xml_create_element(file_wav_dict[file_wav_name])
+                                                        oi_h.print_warning(file_wav_name + "：已导入")
+                                                        break
+                                # 这里保存xlsx和csv的信息
+                                # 保存excel表的信息
+                                wb_DT_Merge.save(dt_plot_excel_path)
 
-                    wb.save(file_path_xlsx)
+                                # 将excel转为csv
+                                csv_h.excel_to_csv(dt_plot_excel_path, dt_plot_csv_path)
+
+                        wb.save(file_path_xlsx)
+        # 等待所有线程完成
+        concurrent.futures.wait(futures)
 
 
 """分目录移动文件夹"""
@@ -643,9 +666,6 @@ shutil.copy2(es_xml_path, external_input_path)
 
 # 文件清理
 delete_cancel_content()
-
-# else:
-#     print(1)
 
 # 清除复制的媒体资源
 shutil.rmtree(wav_path)
