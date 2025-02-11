@@ -605,6 +605,7 @@ auto_gen_es_dt()
 
 # 语音ES生成
 for language in config.language_list:
+    oi_h.print_log(language + "ES文件生成")
     wav_language_path = os.path.join(wav_path, language)
     # 要文件夹路径存在及文件夹中存在内容才启动以下操作
     if oi_h.is_folder_empty(wav_language_path):

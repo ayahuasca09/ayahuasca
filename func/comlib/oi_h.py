@@ -7,6 +7,24 @@ import re
 
 is_pass = True
 
+"""获取字符串的第一个字符，并判断它是否为字母"""
+
+
+def is_first_char_alpha(s):
+    if len(s) == 0:
+        return None
+    first_char = s[0]
+    if first_char.isalpha():
+        return first_char
+    else:
+        return None
+
+
+# # 示例用法
+# string = "Hello"
+# result = is_first_char_alpha(string)
+# print(f"The first character is a letter: {result}")
+
 """检测文件夹的内容是否为空"""
 
 
@@ -160,6 +178,14 @@ def get_py_path():
 
 def print_warning(warn_info):
     print("[warning]" + warn_info)
+
+
+"""打印带格式的输出日志"""
+
+
+def print_log(warn_info):
+    print("")
+    print("***************" + warn_info + "***************")
 
 
 """报错捕获"""
