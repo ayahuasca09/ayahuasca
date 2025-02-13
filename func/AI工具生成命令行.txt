@@ -1,0 +1,1 @@
+pyinstaller --onefile --add-data "F:\pppppy\SP\func\comlib;comlib" AI语音自动化打包版v5.py
