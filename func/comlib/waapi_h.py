@@ -1,3 +1,5 @@
+# from waapi import WaapiClient
+
 """获取对象信息"""
 
 
@@ -319,7 +321,12 @@ def args_mus_create(source_path, obj_id, sub_path):
     return args
 
 
-# client.call("ak.wwise.core.audio.import", args_import)
+# args = args_mus_create(r"C:\Users\happyelements\Desktop\1204样本更新\Char_Skill_C02_Execu2_End_Sp.wav",
+#                        '\\Interactive Music Hierarchy\\v1\\Mus\\Mus_Global\\Mus_Story\\Mus_Story\\Mus_Story_S07\\Mus_Story_S07\\Mus_Story_S07a\\New Music Track',
+#                        'Mus')
+# with WaapiClient() as client:
+#     client.call("ak.wwise.core.audio.import", args)
+
 
 # sfx媒体资源导入的模板
 def args_sfx_create(source_path, rnd_path, media_name, sub_path):
