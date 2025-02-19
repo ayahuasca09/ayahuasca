@@ -143,10 +143,10 @@ if __name__ == "__main__":
     # package_script("Wwise属性配置打包版.py", "Wwise属性配置")
     # package_script("GenSoundbank打包版.py", "GenSoundbank")
     # package_script("Amb自动化打包版.py", "全局环境音生成")
-    # package_script("Mus自动化打包版.py", "Mus自动化")
+    package_script("Mus自动化打包版.py", "Mus自动化")
     # package_script("Bus自动化打包版.py", "Bus自动化")
-    package_script_add_other_script_2("媒体资源占位生成打包版.py", "媒体资源占位生成", "命名规范检查打包版.py",
-                                      "媒体资源从表导入打包版.py")
+    # package_script_add_other_script_2("媒体资源占位生成打包版.py", "媒体资源占位生成", "命名规范检查打包版.py",
+    #                                   "媒体资源从表导入打包版.py")
     # package_script("音效语音全流程自动化打包版.py", "音效语音全流程自动化")
     """已弃用# package_script("AI语音自动化打包版v5.py", "AILanguage_Import")"""
     # AI语音自动化工具请用AI工具生成命令.bat打包

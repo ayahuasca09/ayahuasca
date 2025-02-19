@@ -4,65 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="17a8a927-0db7-41d4-8f81-9181fc87e6d9" name="更改" comment="AI优化：放置readme文件夹并不删除，清理旧版本资源">
-      <change afterPath="$PROJECT_DIR$/func/ID表生成.spec" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/State和Switch创建.spec" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/ID表生成/Analysis-00.toc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/ID表生成/COLLECT-00.toc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/ID表生成/EXE-00.toc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/ID表生成/ID表生成.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/ID表生成/ID表生成.pkg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/ID表生成/PKG-00.toc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/ID表生成/PYZ-00.pyz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/ID表生成/PYZ-00.toc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/ID表生成/Tree-00.toc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/ID表生成/Tree-01.toc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/ID表生成/Tree-02.toc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/ID表生成/base_library.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/ID表生成/warn-ID表生成.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/ID表生成/xref-ID表生成.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/State和Switch创建/Analysis-00.toc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/State和Switch创建/COLLECT-00.toc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/State和Switch创建/EXE-00.toc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/State和Switch创建/PKG-00.toc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/State和Switch创建/PYZ-00.pyz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/State和Switch创建/PYZ-00.toc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/State和Switch创建/State和Switch创建.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/State和Switch创建/State和Switch创建.pkg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/State和Switch创建/base_library.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/State和Switch创建/warn-State和Switch创建.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/State和Switch创建/xref-State和Switch创建.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/媒体资源占位生成/Analysis-00.toc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/媒体资源占位生成/COLLECT-00.toc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/媒体资源占位生成/EXE-00.toc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/媒体资源占位生成/PKG-00.toc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/媒体资源占位生成/PYZ-00.pyz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/媒体资源占位生成/PYZ-00.toc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/媒体资源占位生成/base_library.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/媒体资源占位生成/warn-媒体资源占位生成.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/媒体资源占位生成/xref-媒体资源占位生成.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/媒体资源占位生成/媒体资源占位生成.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/媒体资源占位生成/媒体资源占位生成.pkg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/媒体资源占位生成.spec" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/old/build/媒体资源占位生成/Analysis-00.toc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/old/build/媒体资源占位生成/COLLECT-00.toc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/old/build/媒体资源占位生成/EXE-00.toc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/old/build/媒体资源占位生成/PKG-00.toc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/old/build/媒体资源占位生成/PYZ-00.pyz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/old/build/媒体资源占位生成/PYZ-00.toc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/old/build/媒体资源占位生成/base_library.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/old/build/媒体资源占位生成/warn-媒体资源占位生成.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/old/build/媒体资源占位生成/xref-媒体资源占位生成.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/old/build/媒体资源占位生成/媒体资源占位生成.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/old/build/媒体资源占位生成/媒体资源占位生成.pkg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/old/媒体资源占位生成.spec" afterDir="false" />
+    <list default="true" id="17a8a927-0db7-41d4-8f81-9181fc87e6d9" name="更改" comment="游戏音效/语音自动化管线流程优化：多线程处理云文档、excel文件放单独文件夹、log显示优化、空文件夹资源占位及不清除占位资源">
+      <change afterPath="$PROJECT_DIR$/func/Mus自动化.spec" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/build/Mus自动化/Analysis-00.toc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/build/Mus自动化/COLLECT-00.toc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/build/Mus自动化/EXE-00.toc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/build/Mus自动化/Mus自动化.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/build/Mus自动化/Mus自动化.pkg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/build/Mus自动化/PKG-00.toc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/build/Mus自动化/PYZ-00.pyz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/build/Mus自动化/PYZ-00.toc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/build/Mus自动化/base_library.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/build/Mus自动化/warn-Mus自动化.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/build/Mus自动化/xref-Mus自动化.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/func/Mus自动化打包版.py" beforeDir="false" afterPath="$PROJECT_DIR$/func/Mus自动化打包版.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/func/comlib/cloudfeishu_h.py" beforeDir="false" afterPath="$PROJECT_DIR$/func/comlib/cloudfeishu_h.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/func/comlib/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/func/comlib/config.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/func/comlib/oi_h.py" beforeDir="false" afterPath="$PROJECT_DIR$/func/comlib/oi_h.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/func/多线程下载飞书剧情音频资源表测试.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/func/媒体资源从表导入打包版.py" beforeDir="false" afterPath="$PROJECT_DIR$/func/媒体资源从表导入打包版.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/func/媒体资源占位生成打包版.py" beforeDir="false" afterPath="$PROJECT_DIR$/func/媒体资源占位生成打包版.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/func/打包自动化.py" beforeDir="false" afterPath="$PROJECT_DIR$/func/打包自动化.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/old/打包自动化.py" beforeDir="false" afterPath="$PROJECT_DIR$/old/打包自动化.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -511,14 +471,6 @@
       <option name="presentableId" value="Default" />
       <updated>1716955384994</updated>
     </task>
-    <task id="LOCAL-00152" summary="修复bus自动化的问题">
-      <option name="closed" value="true" />
-      <created>1734607550743</created>
-      <option name="number" value="00152" />
-      <option name="presentableId" value="LOCAL-00152" />
-      <option name="project" value="LOCAL" />
-      <updated>1734607550743</updated>
-    </task>
     <task id="LOCAL-00153" summary="bus自动化:aux自动化">
       <option name="closed" value="true" />
       <created>1734624485126</created>
@@ -903,7 +855,15 @@
       <option name="project" value="LOCAL" />
       <updated>1739946336470</updated>
     </task>
-    <option name="localTasksCounter" value="201" />
+    <task id="LOCAL-00201" summary="游戏音效/语音自动化管线流程优化：多线程处理云文档、excel文件放单独文件夹、log显示优化、空文件夹资源占位及不清除占位资源">
+      <option name="closed" value="true" />
+      <created>1739948786376</created>
+      <option name="number" value="00201" />
+      <option name="presentableId" value="LOCAL-00201" />
+      <option name="project" value="LOCAL" />
+      <updated>1739948786376</updated>
+    </task>
+    <option name="localTasksCounter" value="202" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -919,7 +879,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="ES自动化：名称修改" />
     <MESSAGE value="ES自动化：command测试" />
     <MESSAGE value="ES自动化：ID配置更改" />
     <MESSAGE value="State自动化：添加后续打包操作" />
@@ -944,7 +903,8 @@
     <MESSAGE value="添加AI工具生成命令行" />
     <MESSAGE value="添加AI工具生成命令行bat工具" />
     <MESSAGE value="AI优化：放置readme文件夹并不删除，清理旧版本资源" />
-    <option name="LAST_COMMIT_MESSAGE" value="AI优化：放置readme文件夹并不删除，清理旧版本资源" />
+    <MESSAGE value="游戏音效/语音自动化管线流程优化：多线程处理云文档、excel文件放单独文件夹、log显示优化、空文件夹资源占位及不清除占位资源" />
+    <option name="LAST_COMMIT_MESSAGE" value="游戏音效/语音自动化管线流程优化：多线程处理云文档、excel文件放单独文件夹、log显示优化、空文件夹资源占位及不清除占位资源" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -957,11 +917,6 @@
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/func/comlib/audio_h.py</url>
           <option name="timeStamp" value="26" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/func/Mus自动化打包版.py</url>
-          <line>544</line>
-          <option name="timeStamp" value="41" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

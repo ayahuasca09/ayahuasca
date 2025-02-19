@@ -307,6 +307,28 @@ def download_cloud_sheet(wiki_token, sheet_save_path):
 
 """****************表格获取输入****************"""
 
+"""不带输入的多线程下载"""
+
+
+def thread_download_excel(media_excel_token_dict, py_path):
+    tasks = []  # 用于存储所有任务的列表
+
+    # 使用 ThreadPoolExecutor 来并行执行任务
+    with ThreadPoolExecutor() as executor:
+        # 检查媒体表名是否在媒体表令牌字典中
+        for media_excel_name in media_excel_token_dict:
+            excel_token = media_excel_token_dict[media_excel_name]  # 获取对应的表令牌
+
+            # 提交下载任务到线程池
+            # 第一个参数是函数名，后面参数是函数参数
+            task = executor.submit(download_media_excel, media_excel_name, excel_token, py_path)
+            tasks.append(task)  # 将任务添加到任务列表中
+
+    # 等待所有任务完成（可选）
+    for task in tasks:
+        task.result()  # 调用 result() 确保任务完成，并捕获可能的异常
+
+
 """检查输出的资源表数字索引是否正确"""
 
 

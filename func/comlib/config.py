@@ -234,7 +234,13 @@ bus_sheet_token = "F0ApwYVFViCQ6SkammRcs9cGnIh"
 # Mus结构表token
 mus_config_token = "OA69weFjaiNq13knGSVcNzV5n2d"
 # Mus资源表token
-mus_sheet_token_list = ["OcV8wP6cmi78GtkuR2UcM4bEnTe", "YDHHwNt61idv0SkhFMbcWNzXn4f", "OA69weFjaiNq13knGSVcNzV5n2d"]
+# mus_sheet_token_list = ["OcV8wP6cmi78GtkuR2UcM4bEnTe", "YDHHwNt61idv0SkhFMbcWNzXn4f", "OA69weFjaiNq13knGSVcNzV5n2d"]
+mus_sheet_token_dict = {
+    "游戏音乐资源表": "OcV8wP6cmi78GtkuR2UcM4bEnTe",
+    "剧情音乐资源表": "YDHHwNt61idv0SkhFMbcWNzXn4f",
+    "Mus结构表": "OA69weFjaiNq13knGSVcNzV5n2d",
+}
+
 # 全局Amb资源表
 amb_sheet_token = "ZbeBwK43uiq55ekqZpccOq9NnCo"
 

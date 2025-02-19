@@ -27,19 +27,11 @@ def get_py_path():
 # 打包版
 root_path = get_py_path()
 
-file_name_list = excel_h.excel_get_path_list(root_path)
-# pprint(file_name_list)
-
 """在线表获取"""
-# 规范检查表
-for excel_media_token in config.mus_sheet_token_list:
-    _, excel_name = cloudfeishu_h.get_excel_token(excel_media_token)
-    # pprint(excel_name)
-    for file_name in file_name_list:
-        if excel_name in file_name:
-            print(excel_name)
-            cloudfeishu_h.download_cloud_sheet(excel_media_token, os.path.join(root_path, file_name))
-            break
+cloudfeishu_h.thread_download_excel(config.mus_sheet_token_dict, root_path)
+excel_path = os.path.join(root_path, 'Excel')
+file_name_list = excel_h.excel_get_path_list(excel_path)
+# pprint(file_name_list)
 
 """功能数据初始化"""
 # switch创建列表
@@ -321,7 +313,7 @@ with WaapiClient() as client:
     """音乐结构创建"""
 
     # 拼接xlsx的路径
-    file_path_xlsx = os.path.join(root_path, config.excel_mus_config_path)
+    file_path_xlsx = os.path.join(excel_path, config.excel_mus_config_path)
     # 获取xlsx的workbook
     wb = openpyxl.load_workbook(file_path_xlsx)
     mus_config_sheet = wb['Mus']
@@ -555,7 +547,7 @@ with WaapiClient() as client:
     for i in file_name_list:
         if ".xlsx" in i:
             # 拼接xlsx的路径
-            file_path_xlsx = os.path.join(root_path, i)
+            file_path_xlsx = os.path.join(excel_path, i)
             # 获取xlsx的workbook
             wb = openpyxl.load_workbook(file_path_xlsx)
             # 获取xlsx的所有sheet
@@ -602,7 +594,8 @@ with WaapiClient() as client:
     delete_check(musegment_have_dict, mus_name_list, "MusicSegment")
 
     # 清除复制的媒体资源
-    shutil.rmtree(os.path.join(root_path, 'New_Media'))
-    os.mkdir(os.path.join(root_path, 'New_Media'))
+    # shutil.rmtree(os.path.join(root_path, 'New_Media'))
+    # os.mkdir(os.path.join(root_path, 'New_Media'))
+    oi_h.delete_type_files(os.path.join(root_path, "New_Media"), '.wav')
 
 os.system("pause")

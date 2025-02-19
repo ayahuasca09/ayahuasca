@@ -19,7 +19,7 @@ def delete_type_files(directory, file_type):
                 file_path = os.path.join(root, file)
                 try:
                     os.remove(file_path)
-                    print(f'Deleted: {file_path}')
+                    # print(f'Deleted: {file_path}')
                 except Exception as e:
                     print(f'Error deleting {file_path}: {e}')
 
