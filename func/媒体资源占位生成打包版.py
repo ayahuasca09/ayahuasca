@@ -27,95 +27,16 @@ def get_py_path():
 
 # 打包版
 root_path = get_py_path()
-
-"""表格获取输入"""
-# 所有音频资源表的映射
-media_sheet_token_dict = config.media_sheet_token_dict
-media_sheet_token_keys = list(media_sheet_token_dict.keys())
-# 将一个list转为dict，list的index+1作为键，元素作为值
-digi_meidia_dict = {index + 1: value for index, value in enumerate(media_sheet_token_keys)}
-
 # 通过_间隔分割的单词个数
 word_list_len = config.word_list_len
 
-
-# print(digi_meidia_dict)
-
-
-# python输入检查
-# 1.必须为数字和以,为间隔，例如1，4，2，6
-# 2.通过,分隔的数字不能重复
-def is_valid_input(input_string):
-    # 删除空格
-    input_string = input_string.replace(" ", "")
-
-    # 检查是否仅包含数字和逗号
-    if not all((c.isdigit() or c == ',') for c in input_string):
-        print("输入错误，请确保输入的只有数字且以,隔开")
-        return False
-
-    # 拆分字符串并转换为整数列表
-    try:
-        numbers = list(map(int, input_string.split(',')))
-    except ValueError:
-        print("输入错误，请确保输入的只有数字且以,隔开")
-        return False
-
-    # 检查是否有重复
-    if len(numbers) != len(set(numbers)):
-        print("输入错误，请输无重复的数字")
-        return False
-
-    for numbers in numbers:
-        if numbers > len(media_sheet_token_keys):
-            print("输入错误，请输入上述表中有的数字")
-            return False
-
-    return True
-
-
-print("--------------------------")
-print("输入数字对应资源表类型如下：")
-print("输入值若为all，代表更新所有资源表内容")
-print("输入值若为no，代表不更新内容")
-print("若需获取多个资源表，以英文字符,(逗号）隔开，输入完毕后按下回车即可")
-print("输入案例：1,3,5,6")
-
-for i in range(len(media_sheet_token_keys)):
-    print("{}、".format(i + 1) + str(media_sheet_token_keys[i]))
-print("--------------------------")
-
-temp = ''
-flag = 1
-while flag:
-    temp = input("请输入要更新资源的音效表数字:")
-    if temp == "all":
-        for media_sheet_name in media_sheet_token_dict:
-            print(media_sheet_name + "：音频资源表更新")
-            sheet_token = media_sheet_token_dict[media_sheet_name]
-            cloudfeishu_h.download_cloud_sheet(sheet_token,
-                                               os.path.join(root_path, "Excel", media_sheet_name) + '.xlsx')
-    elif temp == "no":
-        break
-    elif not is_valid_input(temp):
-        print("")
-        print("请重新输入⬇")
-        continue
-    flag = 0
-
-if temp.isdigit():
-    input_digi_list = list(map(int, temp.split(',')))
-    for i in input_digi_list:
-        if i in digi_meidia_dict:
-            media_sheet_name = digi_meidia_dict[i]
-            if media_sheet_name in media_sheet_token_dict:
-                print(media_sheet_name + "：音频资源表更新")
-                sheet_token = media_sheet_token_dict[media_sheet_name]
-                cloudfeishu_h.download_cloud_sheet(sheet_token, os.path.join(root_path, media_sheet_name) + ".xlsx")
-
-file_name_list = oi_h.find_all_files_by_type(root_path, '.xlsx')
-
+# 飞书在线文档下载
+media_excel_token_dict = config.media_sheet_token_dict
+cloudfeishu_h.input_show(media_excel_token_dict, root_path)
+excel_path = os.path.join(root_path, "Excel")
+file_name_list = oi_h.find_all_files_by_type(excel_path, '.xlsx')
 # print(file_name_list)
+# print(1111)
 
 """收集unit的路径"""
 audio_unit_list = []
@@ -343,11 +264,13 @@ with WaapiClient() as client:
     for i in file_name_list:
         if ".xlsx" in i:
             # 拼接xlsx的路径
-            file_path_xlsx = os.path.join(root_path, i)
+            file_path_xlsx = os.path.join(excel_path, i)
             # 获取xlsx的workbook
             wb = openpyxl.load_workbook(file_path_xlsx)
             # 获取xlsx的所有sheet
             sheet_names = wb.sheetnames
+            # pprint(sheet_names)
+            # pprint(1111)
             # 加载所有工作表
             for sheet_name in sheet_names:
                 sheet = wb[sheet_name]

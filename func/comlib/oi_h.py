@@ -7,6 +7,23 @@ import re
 
 is_pass = True
 
+"""删除目录中指定格式的文件夹"""
+
+
+def delete_type_files(directory, file_type):
+    # 遍历目录中的所有文件和子目录
+    for root, dirs, files in os.walk(directory):
+        for file in files:
+            # 检查文件是否是 .wav 文件
+            if file.endswith(file_type):
+                file_path = os.path.join(root, file)
+                try:
+                    os.remove(file_path)
+                    print(f'Deleted: {file_path}')
+                except Exception as e:
+                    print(f'Error deleting {file_path}: {e}')
+
+
 """获取字符串的第一个字符，并判断它是否为字母"""
 
 

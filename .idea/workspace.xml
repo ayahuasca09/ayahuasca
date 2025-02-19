@@ -4,96 +4,65 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="17a8a927-0db7-41d4-8f81-9181fc87e6d9" name="更改" comment="添加AI工具生成命令行bat工具">
-      <change afterPath="$PROJECT_DIR$/func/AILanguage_Import.spec" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/AILanguage_Import/AILanguage_Import.pkg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/AILanguage_Import/Analysis-00.toc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/AILanguage_Import/EXE-00.toc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/AILanguage_Import/PKG-00.toc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/AILanguage_Import/PYZ-00.pyz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/AILanguage_Import/PYZ-00.toc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/AILanguage_Import/base_library.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/AILanguage_Import/warn-AILanguage_Import.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/AILanguage_Import/xref-AILanguage_Import.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/old/AILanguage_Import.spec" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/old/AILanguage_Import_v5.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/old/AI工具生成命令.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/old/AI语音自动化打包版.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/old/AI语音自动化打包版v2.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/old/AI语音自动化打包版v3.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/old/AI语音自动化打包版v4.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/old/Amb自动化.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/old/Amb自动化打包版.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/old/Bus自动化.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/old/Bus自动化打包版.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/old/ES导入自动化打包版.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/old/ES导入自动化打包版v2.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/old/ES导入自动化打包版v3.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/old/ES导入自动化打包版v4.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/old/GenSoundbank打包版.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/old/ID表生成.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/old/ID表生成打包版.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/old/ID表生成打包版v2.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/old/Mus自动化.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/old/Mus自动化打包版.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/old/State和Switch创建.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/old/State和Switch创建打包版.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/old/Wwise属性配置.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/old/Wwise属性配置打包版.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/old/build/AILanguage_Import/AILanguage_Import.pkg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/old/build/AILanguage_Import/Analysis-00.toc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/old/build/AILanguage_Import/EXE-00.toc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/old/build/AILanguage_Import/PKG-00.toc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/old/build/AILanguage_Import/PYZ-00.pyz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/old/build/AILanguage_Import/PYZ-00.toc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/old/build/AILanguage_Import/base_library.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/old/build/AILanguage_Import/warn-AILanguage_Import.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/old/build/AILanguage_Import/xref-AILanguage_Import.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/old/comlib/DCC表的引用路径生成打包版.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/old/comlib/audio_h.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/old/comlib/cloudfeishu_h.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/old/comlib/config.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/old/comlib/csv_h.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/old/comlib/excel_h.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/old/comlib/exe_h.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/old/comlib/oi_h.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/old/comlib/waapi_h.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/old/config_custom.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/old/ue_csv_dt_es_v1.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/old/ue_csv_dt_es_v2.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/old/临时代码.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/old/命名规范检查.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/old/命名规范检查打包版.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/old/多线程下载飞书剧情音频资源表测试.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/old/媒体资源从表导入.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/old/媒体资源从表导入打包版.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/old/媒体资源占位生成.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/old/媒体资源占位生成打包版.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/old/媒体资源替换及随机资源新增打包版.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/old/打包自动化.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/old/音效语音全流程自动化打包版.py" afterDir="false" />
+    <list default="true" id="17a8a927-0db7-41d4-8f81-9181fc87e6d9" name="更改" comment="AI优化：放置readme文件夹并不删除，清理旧版本资源">
+      <change afterPath="$PROJECT_DIR$/func/ID表生成.spec" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/State和Switch创建.spec" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/build/ID表生成/Analysis-00.toc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/build/ID表生成/COLLECT-00.toc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/build/ID表生成/EXE-00.toc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/build/ID表生成/ID表生成.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/build/ID表生成/ID表生成.pkg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/build/ID表生成/PKG-00.toc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/build/ID表生成/PYZ-00.pyz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/build/ID表生成/PYZ-00.toc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/build/ID表生成/Tree-00.toc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/build/ID表生成/Tree-01.toc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/build/ID表生成/Tree-02.toc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/build/ID表生成/base_library.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/build/ID表生成/warn-ID表生成.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/build/ID表生成/xref-ID表生成.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/build/State和Switch创建/Analysis-00.toc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/build/State和Switch创建/COLLECT-00.toc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/build/State和Switch创建/EXE-00.toc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/build/State和Switch创建/PKG-00.toc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/build/State和Switch创建/PYZ-00.pyz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/build/State和Switch创建/PYZ-00.toc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/build/State和Switch创建/State和Switch创建.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/build/State和Switch创建/State和Switch创建.pkg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/build/State和Switch创建/base_library.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/build/State和Switch创建/warn-State和Switch创建.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/build/State和Switch创建/xref-State和Switch创建.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/build/媒体资源占位生成/Analysis-00.toc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/build/媒体资源占位生成/COLLECT-00.toc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/build/媒体资源占位生成/EXE-00.toc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/build/媒体资源占位生成/PKG-00.toc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/build/媒体资源占位生成/PYZ-00.pyz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/build/媒体资源占位生成/PYZ-00.toc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/build/媒体资源占位生成/base_library.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/build/媒体资源占位生成/warn-媒体资源占位生成.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/build/媒体资源占位生成/xref-媒体资源占位生成.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/build/媒体资源占位生成/媒体资源占位生成.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/build/媒体资源占位生成/媒体资源占位生成.pkg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/媒体资源占位生成.spec" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/old/build/媒体资源占位生成/Analysis-00.toc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/old/build/媒体资源占位生成/COLLECT-00.toc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/old/build/媒体资源占位生成/EXE-00.toc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/old/build/媒体资源占位生成/PKG-00.toc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/old/build/媒体资源占位生成/PYZ-00.pyz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/old/build/媒体资源占位生成/PYZ-00.toc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/old/build/媒体资源占位生成/base_library.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/old/build/媒体资源占位生成/warn-媒体资源占位生成.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/old/build/媒体资源占位生成/xref-媒体资源占位生成.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/old/build/媒体资源占位生成/媒体资源占位生成.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/old/build/媒体资源占位生成/媒体资源占位生成.pkg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/old/媒体资源占位生成.spec" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/func/AILanguage_Import_v5.py" beforeDir="false" afterPath="$PROJECT_DIR$/func/AILanguage_Import_v5.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/func/AI语音自动化打包版.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/func/AI语音自动化打包版v2.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/func/AI语音自动化打包版v3.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/func/AI语音自动化打包版v4.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/func/Amb自动化.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/func/Bus自动化.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/func/ES导入自动化打包版.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/func/ES导入自动化打包版v2.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/func/ES导入自动化打包版v3.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/func/ID表生成.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/func/ID表生成打包版.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/func/ID表生成打包版v2.py" beforeDir="false" afterPath="$PROJECT_DIR$/func/ID表生成打包版v2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/func/Mus自动化.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/func/State和Switch创建.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/func/State和Switch创建打包版.py" beforeDir="false" afterPath="$PROJECT_DIR$/func/State和Switch创建打包版.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/func/ue_csv_dt_es_v1.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/func/命名规范检查.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/func/媒体资源从表导入.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/func/媒体资源占位生成.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/func/comlib/oi_h.py" beforeDir="false" afterPath="$PROJECT_DIR$/func/comlib/oi_h.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/func/多线程下载飞书剧情音频资源表测试.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/func/媒体资源从表导入打包版.py" beforeDir="false" afterPath="$PROJECT_DIR$/func/媒体资源从表导入打包版.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/func/媒体资源占位生成打包版.py" beforeDir="false" afterPath="$PROJECT_DIR$/func/媒体资源占位生成打包版.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/func/打包自动化.py" beforeDir="false" afterPath="$PROJECT_DIR$/func/打包自动化.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/old/打包自动化.py" beforeDir="false" afterPath="$PROJECT_DIR$/old/打包自动化.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -136,117 +105,118 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;Python.AI语音自动化打包版v3.executor&quot;: &quot;Run&quot;,
-    &quot;Python.AI语音自动化打包版v5.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Amb自动化.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Amb自动化打包版.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Bus自动化.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Bus自动化打包版.executor&quot;: &quot;Run&quot;,
-    &quot;Python.DCC表的引用路径生成.executor&quot;: &quot;Run&quot;,
-    &quot;Python.DCC表的引用路径生成v2.executor&quot;: &quot;Run&quot;,
-    &quot;Python.DCC表的引用路径生成打包版 (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python.DCC表的引用路径生成打包版.executor&quot;: &quot;Run&quot;,
-    &quot;Python.ES_Import (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python.ES导入打包版.executor&quot;: &quot;Run&quot;,
-    &quot;Python.ES导入自动化打包版v2.executor&quot;: &quot;Run&quot;,
-    &quot;Python.FeishuSheetHelper.executor&quot;: &quot;Run&quot;,
-    &quot;Python.ID表生成.executor&quot;: &quot;Run&quot;,
-    &quot;Python.ID表生成打包版.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Mus自动化.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Mus自动化打包版.executor&quot;: &quot;Run&quot;,
-    &quot;Python.SP飞书表格读写测试.executor&quot;: &quot;Run&quot;,
-    &quot;Python.State和Switch创建.executor&quot;: &quot;Run&quot;,
-    &quot;Python.State和Switch创建打包版.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Test.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Wwise属性配置.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Wwise属性配置打包版.executor&quot;: &quot;Run&quot;,
-    &quot;Python.__main__ (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python.__main__.executor&quot;: &quot;Run&quot;,
-    &quot;Python.audio_h.executor&quot;: &quot;Run&quot;,
-    &quot;Python.cloudfeishu_h.executor&quot;: &quot;Run&quot;,
-    &quot;Python.config (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python.config (2).executor&quot;: &quot;Run&quot;,
-    &quot;Python.config.executor&quot;: &quot;Run&quot;,
-    &quot;Python.configparser.executor&quot;: &quot;Run&quot;,
-    &quot;Python.csv_h.executor&quot;: &quot;Debug&quot;,
-    &quot;Python.csv_pandas测试.executor&quot;: &quot;Run&quot;,
-    &quot;Python.excel.executor&quot;: &quot;Run&quot;,
-    &quot;Python.excel_h.executor&quot;: &quot;Run&quot;,
-    &quot;Python.excel_音效需求表音效名读取.executor&quot;: &quot;Run&quot;,
-    &quot;Python.exe_h.executor&quot;: &quot;Run&quot;,
-    &quot;Python.exe_pak.executor&quot;: &quot;Run&quot;,
-    &quot;Python.main (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python.main.executor&quot;: &quot;Run&quot;,
-    &quot;Python.oi_h.executor&quot;: &quot;Run&quot;,
-    &quot;Python.oi_媒体资源重命名 (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python.oi_媒体资源重命名.executor&quot;: &quot;Run&quot;,
-    &quot;Python.p4v测试.executor&quot;: &quot;Run&quot;,
-    &quot;Python.test.executor&quot;: &quot;Run&quot;,
-    &quot;Python.test4.executor&quot;: &quot;Run&quot;,
-    &quot;Python.testprint.executor&quot;: &quot;Run&quot;,
-    &quot;Python.ue_ID表生成 (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python.ue_ID表生成.executor&quot;: &quot;Run&quot;,
-    &quot;Python.ue_ID表生成v2.executor&quot;: &quot;Run&quot;,
-    &quot;Python.ue_ID表生成v3.executor&quot;: &quot;Run&quot;,
-    &quot;Python.ue_ID表生成v4.executor&quot;: &quot;Run&quot;,
-    &quot;Python.ue_csv_dt_audio.executor&quot;: &quot;Run&quot;,
-    &quot;Python.ue_h.executor&quot;: &quot;Run&quot;,
-    &quot;Python.waapi_2023test.executor&quot;: &quot;Run&quot;,
-    &quot;Python.waapi_auto_gen_music.executor&quot;: &quot;Run&quot;,
-    &quot;Python.waapi_auto_gen_state.executor&quot;: &quot;Run&quot;,
-    &quot;Python.waapi_es音效&amp;语音导入v2.executor&quot;: &quot;Run&quot;,
-    &quot;Python.waapi_es音效导入(飞书云版）.executor&quot;: &quot;Run&quot;,
-    &quot;Python.waapi_es音效导入.executor&quot;: &quot;Run&quot;,
-    &quot;Python.waapi_json数据解析.executor&quot;: &quot;Run&quot;,
-    &quot;Python.waapi_sounbank生成.executor&quot;: &quot;Run&quot;,
-    &quot;Python.waapi_test.executor&quot;: &quot;Run&quot;,
-    &quot;Python.waapi_wwise属性自动配置.executor&quot;: &quot;Run&quot;,
-    &quot;Python.waapi_订阅_soundbank生成数据 (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python.waapi_订阅_soundbank生成数据.executor&quot;: &quot;Run&quot;,
-    &quot;Python.waapi_订阅_soundbank生成数据打印 (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python.waapi_订阅_接收对象名称被修改时的信息.executor&quot;: &quot;Run&quot;,
-    &quot;Python.waapi_语音导入 (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python.waapi_语音导入.executor&quot;: &quot;Run&quot;,
-    &quot;Python.waapi_语音导入_本地UE工程测试版.executor&quot;: &quot;Run&quot;,
-    &quot;Python.waapi_语音导入测试.executor&quot;: &quot;Run&quot;,
-    &quot;Python.waapi_转码类型创建.executor&quot;: &quot;Run&quot;,
-    &quot;Python.waapi_音频资源全流程生成.executor&quot;: &quot;Run&quot;,
-    &quot;Python.waapi_音频资源导入_从媒体资源导入.executor&quot;: &quot;Run&quot;,
-    &quot;Python.waapi_音频资源导入_从表导入 (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python.waapi_音频资源导入_从表导入.executor&quot;: &quot;Run&quot;,
-    &quot;Python.waapi_音频资源导入_从表导入v2.executor&quot;: &quot;Run&quot;,
-    &quot;Python.waapi_音频资源导入自动化.executor&quot;: &quot;Run&quot;,
-    &quot;Python.xml文件读写示例 (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python.xml文件读写示例.executor&quot;: &quot;Run&quot;,
-    &quot;Python.使用command运行ES测试.executor&quot;: &quot;Run&quot;,
-    &quot;Python.使用command运行GenSoundbank测试.executor&quot;: &quot;Run&quot;,
-    &quot;Python.命名规范检查.executor&quot;: &quot;Run&quot;,
-    &quot;Python.命名规范检查打包版.executor&quot;: &quot;Run&quot;,
-    &quot;Python.响度均衡测试.executor&quot;: &quot;Run&quot;,
-    &quot;Python.多线程下载飞书剧情音频资源表.executor&quot;: &quot;Run&quot;,
-    &quot;Python.媒体资源从表导入.executor&quot;: &quot;Run&quot;,
-    &quot;Python.媒体资源从表导入打包版.executor&quot;: &quot;Run&quot;,
-    &quot;Python.媒体资源占位生成.executor&quot;: &quot;Run&quot;,
-    &quot;Python.媒体资源占位生成打包版.executor&quot;: &quot;Run&quot;,
-    &quot;Python.媒体资源替换及随机资源新增.executor&quot;: &quot;Run&quot;,
-    &quot;Python.将Wwise工程的响度标准化.executor&quot;: &quot;Run&quot;,
-    &quot;Python.打包测试.executor&quot;: &quot;Run&quot;,
-    &quot;Python.打包自动化.executor&quot;: &quot;Run&quot;,
-    &quot;Python.正则测试.executor&quot;: &quot;Run&quot;,
-    &quot;Python.静音片段测试.executor&quot;: &quot;Run&quot;,
-    &quot;Python.音效语音全流程自动化打包版.executor&quot;: &quot;Run&quot;,
-    &quot;Python.飞书表格读写测试 (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python.飞书表格读写测试.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;F:/pppppy/SP/func&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Python.AI语音自动化打包版v3.executor": "Run",
+    "Python.AI语音自动化打包版v5.executor": "Run",
+    "Python.Amb自动化.executor": "Run",
+    "Python.Amb自动化打包版.executor": "Run",
+    "Python.Bus自动化.executor": "Run",
+    "Python.Bus自动化打包版.executor": "Run",
+    "Python.DCC表的引用路径生成.executor": "Run",
+    "Python.DCC表的引用路径生成v2.executor": "Run",
+    "Python.DCC表的引用路径生成打包版 (1).executor": "Run",
+    "Python.DCC表的引用路径生成打包版.executor": "Run",
+    "Python.ES_Import (1).executor": "Run",
+    "Python.ES导入打包版.executor": "Run",
+    "Python.ES导入自动化打包版v2.executor": "Run",
+    "Python.FeishuSheetHelper.executor": "Run",
+    "Python.ID表生成.executor": "Run",
+    "Python.ID表生成打包版.executor": "Run",
+    "Python.Mus自动化.executor": "Run",
+    "Python.Mus自动化打包版.executor": "Run",
+    "Python.SP飞书表格读写测试.executor": "Run",
+    "Python.State和Switch创建.executor": "Run",
+    "Python.State和Switch创建打包版.executor": "Run",
+    "Python.Test.executor": "Run",
+    "Python.Wwise属性配置.executor": "Run",
+    "Python.Wwise属性配置打包版.executor": "Run",
+    "Python.__main__ (1).executor": "Run",
+    "Python.__main__.executor": "Run",
+    "Python.audio_h.executor": "Run",
+    "Python.cloudfeishu_h.executor": "Run",
+    "Python.config (1).executor": "Run",
+    "Python.config (2).executor": "Run",
+    "Python.config.executor": "Run",
+    "Python.configparser.executor": "Run",
+    "Python.csv_h.executor": "Debug",
+    "Python.csv_pandas测试.executor": "Run",
+    "Python.excel.executor": "Run",
+    "Python.excel_h.executor": "Run",
+    "Python.excel_音效需求表音效名读取.executor": "Run",
+    "Python.exe_h.executor": "Run",
+    "Python.exe_pak.executor": "Run",
+    "Python.main (1).executor": "Run",
+    "Python.main.executor": "Run",
+    "Python.oi_h.executor": "Run",
+    "Python.oi_媒体资源重命名 (1).executor": "Run",
+    "Python.oi_媒体资源重命名.executor": "Run",
+    "Python.p4v测试.executor": "Run",
+    "Python.test.executor": "Run",
+    "Python.test4.executor": "Run",
+    "Python.testprint.executor": "Run",
+    "Python.ue_ID表生成 (1).executor": "Run",
+    "Python.ue_ID表生成.executor": "Run",
+    "Python.ue_ID表生成v2.executor": "Run",
+    "Python.ue_ID表生成v3.executor": "Run",
+    "Python.ue_ID表生成v4.executor": "Run",
+    "Python.ue_csv_dt_audio.executor": "Run",
+    "Python.ue_h.executor": "Run",
+    "Python.waapi_2023test.executor": "Run",
+    "Python.waapi_auto_gen_music.executor": "Run",
+    "Python.waapi_auto_gen_state.executor": "Run",
+    "Python.waapi_es音效&语音导入v2.executor": "Run",
+    "Python.waapi_es音效导入(飞书云版）.executor": "Run",
+    "Python.waapi_es音效导入.executor": "Run",
+    "Python.waapi_json数据解析.executor": "Run",
+    "Python.waapi_sounbank生成.executor": "Run",
+    "Python.waapi_test.executor": "Run",
+    "Python.waapi_wwise属性自动配置.executor": "Run",
+    "Python.waapi_订阅_soundbank生成数据 (1).executor": "Run",
+    "Python.waapi_订阅_soundbank生成数据.executor": "Run",
+    "Python.waapi_订阅_soundbank生成数据打印 (1).executor": "Run",
+    "Python.waapi_订阅_接收对象名称被修改时的信息.executor": "Run",
+    "Python.waapi_语音导入 (1).executor": "Run",
+    "Python.waapi_语音导入.executor": "Run",
+    "Python.waapi_语音导入_本地UE工程测试版.executor": "Run",
+    "Python.waapi_语音导入测试.executor": "Run",
+    "Python.waapi_转码类型创建.executor": "Run",
+    "Python.waapi_音频资源全流程生成.executor": "Run",
+    "Python.waapi_音频资源导入_从媒体资源导入.executor": "Run",
+    "Python.waapi_音频资源导入_从表导入 (1).executor": "Run",
+    "Python.waapi_音频资源导入_从表导入.executor": "Run",
+    "Python.waapi_音频资源导入_从表导入v2.executor": "Run",
+    "Python.waapi_音频资源导入自动化.executor": "Run",
+    "Python.xml文件读写示例 (1).executor": "Run",
+    "Python.xml文件读写示例.executor": "Run",
+    "Python.使用command运行ES测试.executor": "Run",
+    "Python.使用command运行GenSoundbank测试.executor": "Run",
+    "Python.命名规范检查.executor": "Run",
+    "Python.命名规范检查打包版.executor": "Run",
+    "Python.响度均衡测试.executor": "Run",
+    "Python.多线程下载飞书剧情音频资源表.executor": "Run",
+    "Python.媒体资源从表导入.executor": "Run",
+    "Python.媒体资源从表导入打包版.executor": "Run",
+    "Python.媒体资源占位生成.executor": "Run",
+    "Python.媒体资源占位生成打包版.executor": "Run",
+    "Python.媒体资源替换及随机资源新增.executor": "Run",
+    "Python.将Wwise工程的响度标准化.executor": "Run",
+    "Python.打包测试.executor": "Run",
+    "Python.打包自动化 (1).executor": "Run",
+    "Python.打包自动化.executor": "Run",
+    "Python.正则测试.executor": "Run",
+    "Python.静音片段测试.executor": "Run",
+    "Python.音效语音全流程自动化打包版.executor": "Run",
+    "Python.飞书表格读写测试 (1).executor": "Run",
+    "Python.飞书表格读写测试.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "F:/pppppy/SP/func",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="F:\pppppy\SP\func" />
@@ -273,6 +243,28 @@
     </myKeys>
   </component>
   <component name="RunManager" selected="Python.打包自动化">
+    <configuration name="打包自动化 (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="SP" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/old" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/old/打包自动化.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="打包自动化" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="SP" />
       <option name="ENV_FILES" value="" />
@@ -496,6 +488,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.打包自动化" />
+        <item itemvalue="Python.打包自动化 (1)" />
         <item itemvalue="Python.AI语音自动化打包版v5" />
         <item itemvalue="Python.ES导入自动化打包版v2" />
         <item itemvalue="Python.test" />
@@ -517,14 +510,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1716955384994</updated>
-    </task>
-    <task id="LOCAL-00151" summary="Bus指派自动化生成">
-      <option name="closed" value="true" />
-      <created>1734534647624</created>
-      <option name="number" value="00151" />
-      <option name="presentableId" value="LOCAL-00151" />
-      <option name="project" value="LOCAL" />
-      <updated>1734534647624</updated>
     </task>
     <task id="LOCAL-00152" summary="修复bus自动化的问题">
       <option name="closed" value="true" />
@@ -910,7 +895,15 @@
       <option name="project" value="LOCAL" />
       <updated>1739438974417</updated>
     </task>
-    <option name="localTasksCounter" value="200" />
+    <task id="LOCAL-00200" summary="AI优化：放置readme文件夹并不删除，清理旧版本资源">
+      <option name="closed" value="true" />
+      <created>1739946336470</created>
+      <option name="number" value="00200" />
+      <option name="presentableId" value="LOCAL-00200" />
+      <option name="project" value="LOCAL" />
+      <updated>1739946336470</updated>
+    </task>
+    <option name="localTasksCounter" value="201" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -926,7 +919,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="ES自动化：打包" />
     <MESSAGE value="ES自动化：名称修改" />
     <MESSAGE value="ES自动化：command测试" />
     <MESSAGE value="ES自动化：ID配置更改" />
@@ -951,7 +943,8 @@
     <MESSAGE value="正式版语音自动化：遍历所有媒体资源，当标记为done时删除相应的AI资源（语种区分）" />
     <MESSAGE value="添加AI工具生成命令行" />
     <MESSAGE value="添加AI工具生成命令行bat工具" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加AI工具生成命令行bat工具" />
+    <MESSAGE value="AI优化：放置readme文件夹并不删除，清理旧版本资源" />
+    <option name="LAST_COMMIT_MESSAGE" value="AI优化：放置readme文件夹并不删除，清理旧版本资源" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

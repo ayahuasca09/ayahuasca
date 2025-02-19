@@ -8,6 +8,7 @@ import shutil
 import comlib.oi_h as oi_h
 import comlib.config as config
 import comlib.excel_h as excel_h
+
 print("*****************媒体占位资源开始生成******************")
 
 """根目录获取"""
@@ -718,13 +719,18 @@ with WaapiClient() as client:
     # 撤销结束
     client.call("ak.wwise.core.undo.endGroup", displayName="rnd创建撤销")
 
-    # 清除复制的媒体资源
-    shutil.rmtree(os.path.join(root_path, 'New_Media'))
-    os.mkdir(os.path.join(root_path, 'New_Media'))
-    os.mkdir(os.path.join(root_path, "New_Media/Chinese"))
-    os.mkdir(os.path.join(root_path, "New_Media/English"))
-    os.mkdir(os.path.join(root_path, "New_Media/Japanese"))
-    os.mkdir(os.path.join(root_path, "New_Media/Korean"))
+    oi_h.delete_type_files(os.path.join(root_path, "New_Media/Chinese"), '.wav')
+    oi_h.delete_type_files(os.path.join(root_path, "New_Media/English"), '.wav')
+    oi_h.delete_type_files(os.path.join(root_path, "New_Media/Japanese"), '.wav')
+    oi_h.delete_type_files(os.path.join(root_path, "New_Media/Korean"), '.wav')
+
+    # # 清除复制的媒体资源
+    # shutil.rmtree(os.path.join(root_path, 'New_Media'))
+    # os.mkdir(os.path.join(root_path, 'New_Media'))
+    # os.mkdir(os.path.join(root_path, "New_Media/Chinese"))
+    # os.mkdir(os.path.join(root_path, "New_Media/English"))
+    # os.mkdir(os.path.join(root_path, "New_Media/Japanese"))
+    # os.mkdir(os.path.join(root_path, "New_Media/Korean"))
 
 print("*****************媒体占位资源生成完毕******************")
 os.system("pause")
