@@ -1,0 +1,436 @@
+import requests
+import json
+import time
+from . import config
+from . import oi_h
+from concurrent.futures import ThreadPoolExecutor
+import os
+
+url = "https://open.feishu.cn/open-apis/auth/v3/tenant_access_token/internal/"
+sheets_base_url = "https://open.feishu.cn/open-apis/sheets/v2/spreadsheets"
+access_id = "t-g104avfnX4I53QVTO2DHLZWRNXCT632VSRMC2QOY"
+
+"""获取acess token"""
+
+
+def get_access_id():
+    post_data = {
+        "app_id": config.app_id,
+        "app_secret": config.app_secret
+    }
+    r = requests.post(url, data=post_data)
+    tat = r.json()["tenant_access_token"]
+    return tat
+
+
+"""获取header"""
+
+
+def get_header():
+    header = {
+        "Content-Type": "application/json",
+        "Authorization": "Bearer " + str(get_access_id())
+    }  # 请求头
+    return header
+
+
+"""获取wiki的token"""
+
+
+def get_excel_token(wiki_token):
+    url = f"https://open.feishu.cn/open-apis/wiki/v2/spaces/get_node?token={wiki_token}"
+    response = requests.get(url, headers=get_header())
+    node_info = response.json()
+    excel_name = node_info["data"]["node"]["title"]
+    token = node_info["data"]["node"]["obj_token"]
+    return token, excel_name
+
+
+"""获取表格ID"""
+
+
+def get_sheet_id_list(wiki_token):
+    excel_id, _ = get_excel_token(wiki_token)
+    url = f"https://open.feishu.cn/open-apis/sheets/v3/spreadsheets/{excel_id}/sheets/query"
+
+    response = requests.get(url, headers=get_header())
+    sheets_info = response.json()
+    sheet_id_list = []
+    sheet_id_name_dict = {}
+    sheet_name_id_dict = {}
+    # 是一整个列表的信息
+    sheet_list = sheets_info["data"]["sheets"]
+    for sheet in sheet_list:
+        sheet_id_list.append(sheet['sheet_id'])
+        sheet_id_name_dict[sheet['sheet_id']] = sheet['title']
+        sheet_name_id_dict[sheet['title']] = sheet['sheet_id']
+    return sheet_id_list, sheet_id_name_dict, excel_id, sheet_name_id_dict
+
+
+"""获取excel url"""
+
+
+def get_excel_url(wiki_token):
+    excel_id, _ = get_excel_token(wiki_token)
+    excel_url = f"{sheets_base_url}/{excel_id}/values"  # 写入的sh开头的文档地址，其他不变
+    return excel_url
+
+
+"""获取表格所有内容"""
+
+
+def get_sheet_all_content(wiki_token, sheet_id):
+    excel_id, _ = get_excel_token(wiki_token)
+    sheet_all_url = f"{sheets_base_url}/{excel_id}/values/{sheet_id}!A:Z"
+    ret = requests.get(sheet_all_url, headers=get_header())
+    # print(ret.text)
+    data = ret.json()
+    # pprint(data)
+    return data
+
+
+"""获取表格标题列"""
+
+
+def get_sheet_title_column(wiki_token, sheet_id, title_list):
+    data = get_sheet_all_content(wiki_token, sheet_id)
+    values = ""
+    # 标题所在列的字典映射
+    title_colunmn_dict = {}
+    # 如果响应成功code会返回0
+    if data["code"] == 0:
+        # 表格数据
+        values = data["data"]["valueRange"]["values"]
+        # 获取第一行的数据
+        sheet_header = values[0]
+
+        # 查找第一行中数据为xxx的，获取列索引column_index
+        for i, value in enumerate(sheet_header):
+            # print(value)
+            for title_name in title_list:
+                if value == title_name:
+                    title_colunmn_dict[value] = i
+
+    else:
+        oi_h.print_error("读取" + sheet_id + "失败:" + data["msg"])
+    return title_colunmn_dict, values
+
+
+"""将列索引转换为字母表示形式"""
+
+
+# 代码中的 update_range = f"Sheet1!{chr(65 + column_index)}{row_index + 1}" 可能会有问题，
+# 因为 chr(65 + column_index) 只适用于列索引在 0 到 25 之间的情况，
+# 即列在 A 到 Z 之间。如果列索引超过 25，则需要考虑多字母列（如 AA、AB 等）
+def col_index_to_letter(index):
+    letter = ""
+    while index >= 0:
+        letter = chr(index % 26 + 65) + letter
+        index = index // 26 - 1
+    return letter
+
+
+"""获取某行某列的数据"""
+
+
+def get_sheet_row_and_column_value(column_letter, row_index, excel_id, sheet_id):
+    url = f"{sheets_base_url}/{excel_id}/values/{sheet_id}!{column_letter}{row_index}:{column_letter}{row_index}"
+    ret = requests.get(url, headers=get_header())
+    data = ret.json()
+    # {'code': 0,
+    #  'data': {'revision': 84,
+    #           'spreadsheetToken': 'ZXAksWz0UhgLVGtvQ5fcH48qnrb',
+    #           'valueRange': {'majorDimension': 'ROWS',
+    #                          'range': '1FDwtz!C2:C2',
+    #                          'revision': 84,
+    #                          'values': [['VO_External_Emotion_C01_01']]}},
+    #  'msg': 'success'}
+
+    value = data['data']['valueRange']['values'][0][0]
+    # print(value)
+    return value
+
+
+"""数据写入"""
+
+
+# 传入的是列索引和行索引
+def insert_sheet_info(sheet_id, excel_url, column_letter, row_index, sheet_value):
+    # range参数中!之前的工作簿ID，后面跟着行列号范围
+    post_data = {
+        "valueRange": {
+            "range": f"{sheet_id}!{column_letter}{row_index + 1}:{column_letter}{row_index + 1}",
+            "values": [[sheet_value]]
+        }
+    }
+    # 在486268这个工作簿内的单元格C3到N8写入内容为helloworld等内容
+    r2 = requests.put(excel_url, data=json.dumps(post_data), headers=get_header())  # 请求写入
+    # print(r2.json())  # 输出来判断写入是否成功
+    update_result = r2.json()
+    if update_result["code"] == 0:
+        print("写入成功:", update_result['data']['updatedRange'], sheet_value)
+    else:
+        print("写入失败:", update_result["msg"], update_result["code"])
+
+
+"""获取标题列下的某行的值"""
+
+
+def get_title_row_and_column_value(title_name, title_colunmn_dict, row_index, excel_id, sheet_id):
+    file_name = ""
+    if title_name in title_colunmn_dict.keys():
+        # 为防止过界
+        column_letter = col_index_to_letter(title_colunmn_dict[title_name])
+        # 读取测试
+        file_name = get_sheet_row_and_column_value(column_letter, row_index,
+                                                   excel_id,
+                                                   sheet_id)
+    else:
+        oi_h.print_error(title_name + ":标题列不存在，请检查表格中是否有该标题的列表")
+    return file_name
+
+
+"""将在线表转list处理"""
+
+
+# list保存的每一行为dict，dict为每行所需列的数据
+# wiki_token_list：可以放多个云文档excel的id
+# need_title_list:所需的标题列，会保存这些标题下的数据
+def convert_sheet_to_list(wiki_token_list, need_title_list):
+    # 将所需要的表格数据转为一个list，每一个dict存取每行所需的数据
+    sheet_list = []
+    for wiki_token in wiki_token_list:
+        sheet_id_list, _, excel_id, _ = get_sheet_id_list(wiki_token)
+
+        # 读飞书在线表
+        for sheet_id in sheet_id_list:
+            # 获取表格的标题列及表格数据
+            title_colunmn_dict, values = get_sheet_title_column(wiki_token, sheet_id, need_title_list)
+            # print(title_colunmn_dict)
+            # {'文件名': 2, 'External_Type': 8}
+
+            # 遍历列
+            for row_index in range(1, len(values)):
+                # 每行所需要的数据
+                every_row_content_dict = {}
+                # 获取每行数据
+                for title_name in need_title_list:
+                    every_row_content_dict[title_name] = get_title_row_and_column_value(title_name,
+                                                                                        title_colunmn_dict,
+                                                                                        row_index,
+                                                                                        excel_id,
+                                                                                        sheet_id)
+                # 若为cancel的则不加入
+                if every_row_content_dict['State'] != 'cancel':
+                    sheet_list.append(every_row_content_dict)
+
+    return sheet_list
+
+
+"""下载云文档无延时"""
+
+
+def download_cloud_sheet_no_time(wiki_token, sheet_save_path):
+    access_token = get_access_id()
+    token, _ = get_excel_token(wiki_token)
+    # 创建导出任务
+    url1 = "https://open.feishu.cn/open-apis/drive/v1/export_tasks"
+    headers = {"Content-Type": "application/json", "Authorization": "Bearer " + str(access_token)}  # 请求头
+    payload1 = json.dumps({
+        "file_extension": "xlsx",
+        "token": token,
+        "type": "sheet"
+    })
+    response = requests.request("POST", url=url1, data=payload1, headers=headers)
+    print("1:" + response.json()["msg"])
+    ticket = response.json()["data"]["ticket"]
+    print("2:" + ticket)
+    # time.sleep(3)
+    # 查看导出任务结果
+    url2 = "https://open.feishu.cn/open-apis/drive/v1/export_tasks/" + ticket + "?token=" + token
+    headers2 = {'Authorization': 'Bearer ' + str(access_token)}  # 请求头
+    response = requests.request("GET", url2, headers=headers2)
+    file_token = response.json()["data"]["result"]["file_token"]
+    # file_token=token
+    # pprint(response.json())
+    print("3:" + file_token)
+    # 下载文件
+    url = "https://open.feishu.cn/open-apis/drive/v1/export_tasks/file/" + file_token + "/download"
+    payload = ''
+    response = requests.request("GET", url, headers=headers, data=payload)
+    if response.status_code == 200:
+        with open(sheet_save_path, "wb") as f:
+            f.write(response.content)
+        print("下载成功")
+    else:
+        print(f"下载失败: {response.status_code}, {response.text}")
+
+
+"""下载云文档"""
+
+
+def download_cloud_sheet(wiki_token, sheet_save_path):
+    access_token = get_access_id()
+    token, _ = get_excel_token(wiki_token)
+    # 创建导出任务
+    url1 = "https://open.feishu.cn/open-apis/drive/v1/export_tasks"
+    headers = {"Content-Type": "application/json", "Authorization": "Bearer " + str(access_token)}  # 请求头
+    payload1 = json.dumps({
+        "file_extension": "xlsx",
+        "token": token,
+        "type": "sheet"
+    })
+    response = requests.request("POST", url=url1, data=payload1, headers=headers)
+    print("1:" + response.json()["msg"])
+    ticket = response.json()["data"]["ticket"]
+    print("2:" + ticket)
+    time.sleep(3)
+    # 查看导出任务结果
+    url2 = "https://open.feishu.cn/open-apis/drive/v1/export_tasks/" + ticket + "?token=" + token
+    headers2 = {'Authorization': 'Bearer ' + str(access_token)}  # 请求头
+    response = requests.request("GET", url2, headers=headers2)
+    file_token = response.json()["data"]["result"]["file_token"]
+    # file_token=token
+    # pprint(response.json())
+    print("3:" + file_token)
+    # 下载文件
+    url = "https://open.feishu.cn/open-apis/drive/v1/export_tasks/file/" + file_token + "/download"
+    payload = ''
+    response = requests.request("GET", url, headers=headers, data=payload)
+    if response.status_code == 200:
+        with open(sheet_save_path, "wb") as f:
+            f.write(response.content)
+        print("下载成功")
+    else:
+        print(f"下载失败: {response.status_code}, {response.text}")
+
+
+"""****************表格获取输入****************"""
+
+"""检查输出的资源表数字索引是否正确"""
+
+
+# python输入检查
+# 1.必须为数字和以,为间隔，例如1，4，2，6
+# 2.通过,分隔的数字不能重复
+def is_valid_input(input_string, media_excel_token_keys):
+    # 删除空格
+    input_string = input_string.replace(" ", "")
+
+    # 检查是否仅包含数字和逗号
+    if not all((c.isdigit() or c == ',') for c in input_string):
+        print("输入错误，请确保输入的只有数字且以,隔开")
+        return False
+
+    # 拆分字符串并转换为整数列表
+    try:
+        numbers = list(map(int, input_string.split(',')))
+    except ValueError:
+        print("输入错误，请确保输入的只有数字且以,隔开")
+        return False
+
+    # 检查是否有重复
+    if len(numbers) != len(set(numbers)):
+        print("输入错误，请输无重复的数字")
+        return False
+
+    for numbers in numbers:
+        if numbers > len(media_excel_token_keys):
+            print("输入错误，请输入上述表中有的数字")
+            return False
+
+    return True
+
+
+def input_show(media_excel_token_dict, py_path):
+    media_excel_token_keys = list(media_excel_token_dict.keys())
+    print("--------------------------")
+    print("输入数字对应资源表类型如下：")
+    print("输入值若为all，代表更新所有资源表内容")
+    print("输入值若为no，代表不更新资源表内容")
+    print("若需获取多个资源表，以英文字符,(逗号）隔开，输入完毕后按下回车即可")
+    print("输入案例：1,3,5,6")
+
+    for i in range(len(media_excel_token_keys)):
+        print("{}、".format(i + 1) + str(media_excel_token_keys[i]))
+    print("--------------------------")
+
+    temp = ''
+    flag = 1
+    while flag:
+        temp = input("请输入要更新资源的音效表数字:")
+        if temp == "all":
+            flag = 2
+            tasks = []  # 用于存储所有任务的列表
+
+            # 使用 ThreadPoolExecutor 来并行执行任务
+            with ThreadPoolExecutor() as executor:
+                for media_excel_name in media_excel_token_dict:
+                    excel_token = media_excel_token_dict[media_excel_name]  # 获取对应的表令牌
+                    # 提交下载任务到线程池
+                    # 第一个参数是函数名，后面参数是函数参数
+                    task = executor.submit(download_media_excel, media_excel_name, excel_token, py_path)
+                    tasks.append(task)  # 将任务添加到任务列表中
+            # 等待所有任务完成（可选）
+            for task in tasks:
+                task.result()  # 调用 result() 确保任务完成，并捕获可能的异常
+            break
+
+        elif temp == "no":
+            flag = 3
+            break
+        elif not is_valid_input(temp, media_excel_token_keys):
+            print("")
+            print("请重新输入⬇")
+            continue
+        flag = 0
+
+    # 输入指定数字的下载
+    if flag == 0:
+        input_digi_list = list(map(int, temp.split(',')))
+        digi_meidia_dict = {index + 1: value for index, value in enumerate(media_excel_token_keys)}
+        # 示例调用 multi_thread_download 函数
+        multi_thread_download(input_digi_list, digi_meidia_dict, media_excel_token_dict, py_path)
+
+
+# 定义一个函数来下载媒体资源表
+def download_media_excel(media_excel_name, excel_token, py_path):
+    # 打印当前正在更新的资源表名称
+    print(f"{media_excel_name}：音频资源表更新")
+
+    # 下载云端表格到本地指定路径
+    download_cloud_sheet(
+        excel_token,
+        os.path.join(py_path, "Excel", f"{media_excel_name}.xlsx")
+    )
+
+
+# 使用多线程下载
+def multi_thread_download(input_digi_list, digi_meidia_dict, media_excel_token_dict, py_path):
+    tasks = []  # 用于存储所有任务的列表
+
+    # 使用 ThreadPoolExecutor 来并行执行任务
+    with ThreadPoolExecutor() as executor:
+        # 遍历输入的数字列表
+        for i in input_digi_list:
+            # 检查当前数字是否在媒体字典中
+            if i in digi_meidia_dict:
+                media_excel_name = digi_meidia_dict[i]  # 获取对应的媒体表名
+
+                # 检查媒体表名是否在媒体表令牌字典中
+                if media_excel_name in media_excel_token_dict:
+                    excel_token = media_excel_token_dict[media_excel_name]  # 获取对应的表令牌
+
+                    # 提交下载任务到线程池
+                    # 第一个参数是函数名，后面参数是函数参数
+                    task = executor.submit(download_media_excel, media_excel_name, excel_token, py_path)
+                    tasks.append(task)  # 将任务添加到任务列表中
+
+    # 等待所有任务完成（可选）
+    for task in tasks:
+        task.result()  # 调用 result() 确保任务完成，并捕获可能的异常
+
+# # 测试代码
+# # 所有音频资源表的映射
+# media_excel_token_dict = config.es_sheet_token_dict
+# input_show(media_excel_token_dict)

@@ -1,6 +1,5 @@
 import datetime
 
-print("")
 print(f"AIAudioTasks Start {datetime.datetime.now()}")
 # xml读取库
 import shutil
@@ -12,7 +11,6 @@ import re
 # xml写入库
 from xml.dom.minidom import Document, parse
 from pprint import pprint
-from concurrent.futures import ThreadPoolExecutor
 
 # 自定义库
 import comlib.excel_h as excel_h
@@ -22,7 +20,8 @@ import comlib.csv_h as csv_h
 import comlib.exe_h as exe_h
 import comlib.cloudfeishu_h as cloudfeishu_h
 
-# 新特性：效率提升，多线程下载在线表、激活特定语言的导出
+# 新特性：新增bIsAI列，并写入TRUE
+# 全量写入在线表
 """****************数据获取******************"""
 
 # 获取文件所在目录
@@ -38,26 +37,12 @@ c_vo_sheet_name = 'C类（操控演员表演，接管镜头）剧情语音'
 d_vo_sheet_name = 'D类（操控演员表演，不接管镜头）剧情语音'
 c_vo_sheet_token = media_sheet_token_dict[c_vo_sheet_name]
 d_vo_sheet_token = media_sheet_token_dict[d_vo_sheet_name]
-
-
-def download_feishu_c():
-    print(c_vo_sheet_name + "：音频资源表更新")
-    cloudfeishu_h.download_cloud_sheet(c_vo_sheet_token,
-                                       os.path.join(py_path, "Excel", c_vo_sheet_name) + '.xlsx')
-
-
-def download_feishu_d():
-    print(d_vo_sheet_name + "：音频资源表更新")
-    cloudfeishu_h.download_cloud_sheet(d_vo_sheet_token,
-                                       os.path.join(py_path, "Excel", d_vo_sheet_name) + '.xlsx')
-
-
-# 创建一个线程池执行器
-with ThreadPoolExecutor() as executor:
-    # 提交任务 'A' 到线程池
-    result_1 = executor.submit(download_feishu_c)
-    # 提交任务 'B' 到线程池
-    result_2 = executor.submit(download_feishu_d)
+print(c_vo_sheet_name + "：音频资源表更新")
+cloudfeishu_h.download_cloud_sheet(c_vo_sheet_token,
+                                   os.path.join(py_path, "Excel", c_vo_sheet_name) + '.xlsx')
+print(d_vo_sheet_name + "：音频资源表更新")
+cloudfeishu_h.download_cloud_sheet(d_vo_sheet_token,
+                                   os.path.join(py_path, "Excel", d_vo_sheet_name) + '.xlsx')
 
 # 获取wsources文件
 external_input_path = os.path.join(py_path, config.external_input_path)
@@ -68,7 +53,14 @@ external_output_win_path = config.external_output_win_path
 external_output_android_path = config.external_output_android_path
 external_output_ios_path = config.external_output_ios_path
 
-es_xml_path = os.path.join(py_path, config.es_xml_path)
+# 获取.csv文件
+# csv_DT_Merge_path = os.path.join(py_path, config.csv_DT_Merge_path)
+
+# 获取.xlsx文件
+# excel_DT_Merge_path = os.path.join(py_path, config.excel_DT_Merge)
+
+# 获取相应的excel表信息
+# sheet_DT_Merge, wb_DT_Merge = excel_h.excel_get_sheet(excel_DT_Merge_path, 'Sheet1')
 
 # 获取媒体资源文件列表
 wav_path = os.path.join(py_path, "New_Media")
@@ -554,67 +546,53 @@ table_name_list = []
 # 新建excel和csv表
 create_new_excel_and_csv()
 
-print("")
 print(f"开始创建excel和csv表 {datetime.datetime.now()}")
 # 创建ES DT表
 auto_gen_es_dt()
-
-print("")
 print(f"结束创建excel和csv表 {datetime.datetime.now()}")
 
 # 语音ES生成
 for language in config.language_list:
-    oi_h.print_log(language+"ES文件生成")
     wav_language_path = os.path.join(wav_path, language)
-    # 要文件夹路径存在及文件夹中存在内容才启动以下操作
-    if oi_h.is_folder_empty(wav_language_path):
-        file_wav_language_dict, _ = oi_h.get_type_file_name_and_path('.wav', wav_language_path)
-        # print(file_wav_language_dict)
-        auto_gen_es_file(file_wav_language_dict)
-        # # xml文件写入
-        # pprint(file_wav_dict)
-        with open(es_xml_path, 'w+') as f:
-            # 按照格式写入
-            f.write(doc.toprettyxml())
-            f.close()
-        # pprint(doc.toprettyxml())
-        # 复制xml为wsources
-        shutil.copy2(es_xml_path,
-                     external_input_path)
+    file_wav_language_dict, _ = oi_h.get_type_file_name_and_path('.wav', wav_language_path)
+    # print(file_wav_language_dict)
+    auto_gen_es_file(file_wav_language_dict)
+    # # xml文件写入
+    # pprint(file_wav_dict)
+    with open(config.es_xml_path, 'w+') as f:
+        # 按照格式写入
+        f.write(doc.toprettyxml())
+        f.close()
+    # pprint(doc.toprettyxml())
+    # 复制xml为wsources
+    shutil.copy2(os.path.join(py_path, config.es_xml_path),
+                 external_input_path)
 
-        # gen_external(language)
-        exe_h.gen_ai_language(external_input_path, language)
+    # gen_external(language)
+    exe_h.gen_ai_language(external_input_path, language)
 
-        # 将生成资源移动到每个dt表对应的路径
-        move_file_to_different_catalog(os.path.join(external_output_win_path, language, 'AILanguage'))
-        move_file_to_different_catalog(os.path.join(external_output_android_path, language, 'AILanguage'))
-        move_file_to_different_catalog(os.path.join(external_output_ios_path, language, 'AILanguage'))
+    # 将生成资源移动到每个dt表对应的路径
+    move_file_to_different_catalog(os.path.join(external_output_win_path, language, 'AILanguage'))
+    move_file_to_different_catalog(os.path.join(external_output_android_path, language, 'AILanguage'))
+    move_file_to_different_catalog(os.path.join(external_output_ios_path, language, 'AILanguage'))
 
-        # 初始化xml
-        doc = Document()
-        root = doc.createElement("ExternalSourcesList")
-        root.setAttribute("SchemaVersion", "1")
-        doc.appendChild(root)
+    # 初始化xml
+    doc = Document()
+    root = doc.createElement("ExternalSourcesList")
+    root.setAttribute("SchemaVersion", "1")
+    doc.appendChild(root)
 
-        # 将删除的xml内容写入wsources
-        shutil.copy2(es_xml_path,
-                     external_input_path)
+    # 将删除的xml内容写入wsources
+    shutil.copy2(os.path.join(py_path, config.es_xml_path),
+                 external_input_path)
+
+print(f"创建wem资源完毕 {datetime.datetime.now()}")
 
 # 删除xml的内容
-doc = parse(es_xml_path)
+doc = parse(config.es_xml_path)
 parent_node = doc.getElementsByTagName('ExternalSourcesList')[0]
 while parent_node.hasChildNodes():
     parent_node.removeChild(parent_node.firstChild)
-
-# 可选：如果需要，将更改保存回文件
-with open(es_xml_path, 'w', encoding='utf-8') as f:
-    doc.writexml(f)
-
-# 将删除的xml内容写入wsources
-shutil.copy2(es_xml_path, external_input_path)
-
-print("")
-print(f"创建wem资源完毕 {datetime.datetime.now()}")
 
 # 文件清理
 delete_cancel_content()
@@ -652,13 +630,10 @@ delete_wav_files(os.path.join(wav_path, "Korean"))
 # os.mkdir(os.path.join(wav_path, "Korean"))
 # os.mkdir(os.path.join(wav_path, "SFX"))
 
-print("")
 print(f"无效文件清理 {datetime.datetime.now()}")
 
 # dt表导入UE
 ue_csv_dt_es_path = os.path.join(py_path, "ue_csv_dt_es.py")
 exe_h.run_unreal_editor_with_script(ue_csv_dt_es_path)
 # os.system("pause")
-
-print("")
 print(f"在ue中导入dt表 {datetime.datetime.now()}")

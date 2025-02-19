@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="17a8a927-0db7-41d4-8f81-9181fc87e6d9" name="更改" comment="添加AI工具生成命令行">
+    <list default="true" id="17a8a927-0db7-41d4-8f81-9181fc87e6d9" name="更改" comment="添加AI工具生成命令行bat工具">
       <change afterPath="$PROJECT_DIR$/func/AILanguage_Import.spec" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/AILanguage_Import_v5.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/AI工具生成命令.bat" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/func/build/AILanguage_Import/AILanguage_Import.pkg" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/func/build/AILanguage_Import/Analysis-00.toc" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/func/build/AILanguage_Import/EXE-00.toc" afterDir="false" />
@@ -17,9 +15,84 @@
       <change afterPath="$PROJECT_DIR$/func/build/AILanguage_Import/base_library.zip" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/func/build/AILanguage_Import/warn-AILanguage_Import.txt" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/func/build/AILanguage_Import/xref-AILanguage_Import.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/old/AILanguage_Import.spec" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/old/AILanguage_Import_v5.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/old/AI工具生成命令.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/old/AI语音自动化打包版.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/old/AI语音自动化打包版v2.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/old/AI语音自动化打包版v3.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/old/AI语音自动化打包版v4.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/old/Amb自动化.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/old/Amb自动化打包版.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/old/Bus自动化.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/old/Bus自动化打包版.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/old/ES导入自动化打包版.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/old/ES导入自动化打包版v2.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/old/ES导入自动化打包版v3.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/old/ES导入自动化打包版v4.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/old/GenSoundbank打包版.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/old/ID表生成.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/old/ID表生成打包版.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/old/ID表生成打包版v2.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/old/Mus自动化.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/old/Mus自动化打包版.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/old/State和Switch创建.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/old/State和Switch创建打包版.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/old/Wwise属性配置.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/old/Wwise属性配置打包版.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/old/build/AILanguage_Import/AILanguage_Import.pkg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/old/build/AILanguage_Import/Analysis-00.toc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/old/build/AILanguage_Import/EXE-00.toc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/old/build/AILanguage_Import/PKG-00.toc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/old/build/AILanguage_Import/PYZ-00.pyz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/old/build/AILanguage_Import/PYZ-00.toc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/old/build/AILanguage_Import/base_library.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/old/build/AILanguage_Import/warn-AILanguage_Import.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/old/build/AILanguage_Import/xref-AILanguage_Import.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/old/comlib/DCC表的引用路径生成打包版.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/old/comlib/audio_h.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/old/comlib/cloudfeishu_h.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/old/comlib/config.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/old/comlib/csv_h.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/old/comlib/excel_h.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/old/comlib/exe_h.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/old/comlib/oi_h.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/old/comlib/waapi_h.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/old/config_custom.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/old/ue_csv_dt_es_v1.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/old/ue_csv_dt_es_v2.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/old/临时代码.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/old/命名规范检查.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/old/命名规范检查打包版.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/old/多线程下载飞书剧情音频资源表测试.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/old/媒体资源从表导入.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/old/媒体资源从表导入打包版.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/old/媒体资源占位生成.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/old/媒体资源占位生成打包版.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/old/媒体资源替换及随机资源新增打包版.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/old/打包自动化.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/old/音效语音全流程自动化打包版.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/func/AI工具生成命令行.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/func/AI语音自动化打包版v5.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/func/AILanguage_Import_v5.py" beforeDir="false" afterPath="$PROJECT_DIR$/func/AILanguage_Import_v5.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/func/AI语音自动化打包版.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/func/AI语音自动化打包版v2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/func/AI语音自动化打包版v3.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/func/AI语音自动化打包版v4.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/func/Amb自动化.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/func/Bus自动化.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/func/ES导入自动化打包版.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/func/ES导入自动化打包版v2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/func/ES导入自动化打包版v3.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/func/ID表生成.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/func/ID表生成打包版.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/func/ID表生成打包版v2.py" beforeDir="false" afterPath="$PROJECT_DIR$/func/ID表生成打包版v2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/func/Mus自动化.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/func/State和Switch创建.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/func/State和Switch创建打包版.py" beforeDir="false" afterPath="$PROJECT_DIR$/func/State和Switch创建打包版.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/func/ue_csv_dt_es_v1.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/func/命名规范检查.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/func/媒体资源从表导入.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/func/媒体资源占位生成.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/func/打包自动化.py" beforeDir="false" afterPath="$PROJECT_DIR$/func/打包自动化.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -445,14 +518,6 @@
       <option name="presentableId" value="Default" />
       <updated>1716955384994</updated>
     </task>
-    <task id="LOCAL-00150" summary="es自动化——修复问题">
-      <option name="closed" value="true" />
-      <created>1734444390548</created>
-      <option name="number" value="00150" />
-      <option name="presentableId" value="LOCAL-00150" />
-      <option name="project" value="LOCAL" />
-      <updated>1734444390548</updated>
-    </task>
     <task id="LOCAL-00151" summary="Bus指派自动化生成">
       <option name="closed" value="true" />
       <created>1734534647624</created>
@@ -837,7 +902,15 @@
       <option name="project" value="LOCAL" />
       <updated>1739438352780</updated>
     </task>
-    <option name="localTasksCounter" value="199" />
+    <task id="LOCAL-00199" summary="添加AI工具生成命令行bat工具">
+      <option name="closed" value="true" />
+      <created>1739438974417</created>
+      <option name="number" value="00199" />
+      <option name="presentableId" value="LOCAL-00199" />
+      <option name="project" value="LOCAL" />
+      <updated>1739438974417</updated>
+    </task>
+    <option name="localTasksCounter" value="200" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -853,7 +926,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Wwise属性配置：功能更新并打包" />
     <MESSAGE value="ES自动化：打包" />
     <MESSAGE value="ES自动化：名称修改" />
     <MESSAGE value="ES自动化：command测试" />
@@ -878,31 +950,12 @@
     <MESSAGE value="正式版语音自动化：多线程下载" />
     <MESSAGE value="正式版语音自动化：遍历所有媒体资源，当标记为done时删除相应的AI资源（语种区分）" />
     <MESSAGE value="添加AI工具生成命令行" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加AI工具生成命令行" />
+    <MESSAGE value="添加AI工具生成命令行bat工具" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加AI工具生成命令行bat工具" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/func/Bus自动化.py</url>
-          <line>467</line>
-          <option name="timeStamp" value="18" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/func/Bus自动化.py</url>
-          <line>478</line>
-          <option name="timeStamp" value="19" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/func/Bus自动化.py</url>
-          <line>660</line>
-          <option name="timeStamp" value="20" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/func/Bus自动化.py</url>
-          <line>521</line>
-          <option name="timeStamp" value="23" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/module/oi/oi_h.py</url>
           <line>51</line>
@@ -913,34 +966,9 @@
           <option name="timeStamp" value="26" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/func/ES导入自动化打包版.py</url>
-          <line>274</line>
-          <option name="timeStamp" value="29" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/func/ES导入自动化打包版.py</url>
-          <line>304</line>
-          <option name="timeStamp" value="30" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/func/AI语音自动化打包版v3.py</url>
-          <line>123</line>
-          <option name="timeStamp" value="36" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/func/AI语音自动化打包版v3.py</url>
-          <line>438</line>
-          <option name="timeStamp" value="39" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/func/Mus自动化打包版.py</url>
           <line>544</line>
           <option name="timeStamp" value="41" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/func/ES导入自动化打包版v2.py</url>
-          <line>538</line>
-          <option name="timeStamp" value="42" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

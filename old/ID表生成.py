@@ -7,6 +7,7 @@ import tkinter as tk
 from tkinter import messagebox
 from os.path import abspath, dirname
 import openpyxl
+import comlib.exe_h as exe_h
 from pprint import pprint
 
 # 新增特性：标识颜色的持有标1，超过固定时长的视为长音效标2
@@ -406,6 +407,10 @@ with WaapiClient() as client:
 
 
     """*************主程序*************"""
+    # gen soundbank
+    exe_h.gen_soundbank()
+    # ue reconcile
+    exe_h.run_ue_reconcile()
 
     # 获取为循环的音乐列表
     loop_musicplaylist_container_id_list = find_music_lp_list()
