@@ -268,6 +268,7 @@ media_sheet_token_dict = {
     "角色战斗语音资源表": "DFClw5jSyiVwSkk2ELwcKa3In5c",
     "Boss战斗语音资源表": "DfEywr6nNiy4fIkabEgcddRznFh",
     "怪物战斗语音资源表": "QMtVw2yZKiTuybk6XabcKAVxnsg",
+    "系统语音资源表": "PG7TwPGsZi4gbnktMyEcSkisnWd"
 }
 
 """ID表生成"""

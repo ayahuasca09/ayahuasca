@@ -4,22 +4,46 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="17a8a927-0db7-41d4-8f81-9181fc87e6d9" name="更改" comment="音乐自动化管线流程优化：多线程下载">
-      <change afterPath="$PROJECT_DIR$/func/Mus自动化.spec" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/Mus自动化/Analysis-00.toc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/Mus自动化/COLLECT-00.toc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/Mus自动化/EXE-00.toc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/Mus自动化/Mus自动化.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/Mus自动化/Mus自动化.pkg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/Mus自动化/PKG-00.toc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/Mus自动化/PYZ-00.pyz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/Mus自动化/PYZ-00.toc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/Mus自动化/base_library.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/Mus自动化/warn-Mus自动化.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/Mus自动化/xref-Mus自动化.html" afterDir="false" />
+    <list default="true" id="17a8a927-0db7-41d4-8f81-9181fc87e6d9" name="更改" comment="音乐自动化管线流程优化：音乐资源改名">
+      <change afterPath="$PROJECT_DIR$/func/AILanguage_Import.spec" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/Excel/系统语音资源表.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/Media_Temp.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/New_Media/Chinese/VO_Menu_Lead_C01_04.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/New_Media/Chinese/VO_Menu_Lead_C01_04_R02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/New_Media/Chinese/VO_Menu_Lead_C07_04.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/New_Media/Chinese/VO_Menu_Lead_C07_04_R02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/New_Media/Chinese/VO_Menu_Lead_C08_04.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/New_Media/Chinese/VO_Menu_Lead_C08_04_R02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/New_Media/Chinese/VO_Menu_Show_C01_03.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/New_Media/Chinese/VO_Menu_Show_C07_03.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/New_Media/Chinese/VO_Menu_Show_C08_03.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/New_Media/Chinese/readme.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/New_Media/English/readme.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/New_Media/Japanese/readme.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/New_Media/Korean/readme.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/New_Media/readme.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/build/媒体资源重命名/Analysis-00.toc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/build/媒体资源重命名/EXE-00.toc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/build/媒体资源重命名/PKG-00.toc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/build/媒体资源重命名/PYZ-00.pyz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/build/媒体资源重命名/PYZ-00.toc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/build/媒体资源重命名/base_library.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/build/媒体资源重命名/warn-媒体资源重命名.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/build/媒体资源重命名/xref-媒体资源重命名.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/build/媒体资源重命名/媒体资源重命名.pkg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/comlib/xml_h.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/media_rename.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/媒体资源占位生成.spec" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/媒体资源名称重定向.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/媒体资源替换及随机资源新增.spec" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/媒体资源重命名.spec" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/func/Mus自动化打包版.py" beforeDir="false" afterPath="$PROJECT_DIR$/func/Mus自动化打包版.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/func/comlib/waapi_h.py" beforeDir="false" afterPath="$PROJECT_DIR$/func/comlib/waapi_h.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/func/Wwise属性配置.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/func/comlib/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/func/comlib/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/func/comlib/excel_h.py" beforeDir="false" afterPath="$PROJECT_DIR$/func/comlib/excel_h.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/func/媒体资源从表导入打包版.py" beforeDir="false" afterPath="$PROJECT_DIR$/func/媒体资源从表导入打包版.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/func/媒体资源替换及随机资源新增打包版.py" beforeDir="false" afterPath="$PROJECT_DIR$/func/媒体资源替换及随机资源新增打包版.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/func/打包自动化.py" beforeDir="false" afterPath="$PROJECT_DIR$/func/打包自动化.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,6 +130,7 @@
     "Python.exe_pak.executor": "Run",
     "Python.main (1).executor": "Run",
     "Python.main.executor": "Run",
+    "Python.media_rename.executor": "Run",
     "Python.oi_h.executor": "Run",
     "Python.oi_媒体资源重命名 (1).executor": "Run",
     "Python.oi_媒体资源重命名.executor": "Run",
@@ -202,28 +227,6 @@
     </myKeys>
   </component>
   <component name="RunManager" selected="Python.打包自动化">
-    <configuration name="打包自动化 (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="SP" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/old" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/old/打包自动化.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="打包自动化" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="SP" />
       <option name="ENV_FILES" value="" />
@@ -400,6 +403,28 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="media_rename" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="SP" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/func" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/func/media_rename.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="shutil" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="SP" />
       <option name="ENV_FILES" value="" />
@@ -447,10 +472,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.打包自动化" />
+        <item itemvalue="Python.media_rename" />
         <item itemvalue="Python.waapi_h" />
         <item itemvalue="Python.Mus自动化打包版" />
         <item itemvalue="Python.shutil" />
-        <item itemvalue="Python.打包自动化 (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -469,14 +494,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1716955384994</updated>
-    </task>
-    <task id="LOCAL-00154" summary="bus自动化:删除自动">
-      <option name="closed" value="true" />
-      <created>1734793030354</created>
-      <option name="number" value="00154" />
-      <option name="presentableId" value="LOCAL-00154" />
-      <option name="project" value="LOCAL" />
-      <updated>1734793030354</updated>
     </task>
     <task id="LOCAL-00155" summary="命名规范检查：合并单元格检查">
       <option name="closed" value="true" />
@@ -862,7 +879,15 @@
       <option name="project" value="LOCAL" />
       <updated>1739955066156</updated>
     </task>
-    <option name="localTasksCounter" value="203" />
+    <task id="LOCAL-00203" summary="音乐自动化管线流程优化：音乐资源改名">
+      <option name="closed" value="true" />
+      <created>1739967566952</created>
+      <option name="number" value="00203" />
+      <option name="presentableId" value="LOCAL-00203" />
+      <option name="project" value="LOCAL" />
+      <updated>1739967566952</updated>
+    </task>
+    <option name="localTasksCounter" value="204" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -878,7 +903,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="ES自动化：ID配置更改" />
     <MESSAGE value="State自动化：添加后续打包操作" />
     <MESSAGE value="GenSoundBank打包" />
     <MESSAGE value="其他操作打包自动化" />
@@ -903,7 +927,8 @@
     <MESSAGE value="AI优化：放置readme文件夹并不删除，清理旧版本资源" />
     <MESSAGE value="游戏音效/语音自动化管线流程优化：多线程处理云文档、excel文件放单独文件夹、log显示优化、空文件夹资源占位及不清除占位资源" />
     <MESSAGE value="音乐自动化管线流程优化：多线程下载" />
-    <option name="LAST_COMMIT_MESSAGE" value="音乐自动化管线流程优化：多线程下载" />
+    <MESSAGE value="音乐自动化管线流程优化：音乐资源改名" />
+    <option name="LAST_COMMIT_MESSAGE" value="音乐自动化管线流程优化：音乐资源改名" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

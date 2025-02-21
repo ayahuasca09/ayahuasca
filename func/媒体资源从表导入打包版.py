@@ -13,8 +13,9 @@ print("*****************媒体占位资源开始生成******************")
 
 """根目录获取"""
 root_path = os.path.join(config.auto_sound_path, "媒体资源占位生成")
+excel_path = os.path.join(root_path, "Excel")
 
-file_name_list = excel_h.excel_get_path_list(root_path)
+file_name_list = excel_h.excel_get_path_list(excel_path)
 
 """*****************功能检测区******************"""
 """检测字符串是否含有中文"""
@@ -544,7 +545,7 @@ with WaapiClient() as client:
         for i in file_name_list:
             if ".xlsx" in i:
                 # 拼接xlsx的路径
-                file_path_xlsx = os.path.join(root_path, i)
+                file_path_xlsx = os.path.join(excel_path, i)
                 # 获取xlsx的workbook
                 wb = openpyxl.load_workbook(file_path_xlsx)
                 # 获取xlsx的所有sheet
@@ -597,7 +598,7 @@ with WaapiClient() as client:
         for i in file_name_list:
             if ".xlsx" in i:
                 # 拼接xlsx的路径
-                file_path_xlsx = os.path.join(root_path, i)
+                file_path_xlsx = os.path.join(excel_path, i)
                 # 获取xlsx的workbook
                 wb = openpyxl.load_workbook(file_path_xlsx)
                 # 获取xlsx的所有sheet
@@ -641,7 +642,7 @@ with WaapiClient() as client:
     for i in file_name_list:
         if ".xlsx" in i:
             # 拼接xlsx的路径
-            file_path_xlsx = os.path.join(root_path, i)
+            file_path_xlsx = os.path.join(excel_path, i)
             # 获取xlsx的workbook
             wb = openpyxl.load_workbook(file_path_xlsx)
             # 获取xlsx的所有sheet
@@ -719,18 +720,7 @@ with WaapiClient() as client:
     # 撤销结束
     client.call("ak.wwise.core.undo.endGroup", displayName="rnd创建撤销")
 
-    oi_h.delete_type_files(os.path.join(root_path, "New_Media/Chinese"), '.wav')
-    oi_h.delete_type_files(os.path.join(root_path, "New_Media/English"), '.wav')
-    oi_h.delete_type_files(os.path.join(root_path, "New_Media/Japanese"), '.wav')
-    oi_h.delete_type_files(os.path.join(root_path, "New_Media/Korean"), '.wav')
-
-    # # 清除复制的媒体资源
-    # shutil.rmtree(os.path.join(root_path, 'New_Media'))
-    # os.mkdir(os.path.join(root_path, 'New_Media'))
-    # os.mkdir(os.path.join(root_path, "New_Media/Chinese"))
-    # os.mkdir(os.path.join(root_path, "New_Media/English"))
-    # os.mkdir(os.path.join(root_path, "New_Media/Japanese"))
-    # os.mkdir(os.path.join(root_path, "New_Media/Korean"))
+    oi_h.delete_type_files(os.path.join(root_path, "New_Media"), '.wav')
 
 print("*****************媒体占位资源生成完毕******************")
 os.system("pause")

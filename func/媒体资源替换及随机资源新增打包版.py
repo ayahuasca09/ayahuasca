@@ -6,6 +6,7 @@ import shutil
 """************打包版需全部复制************"""
 
 import comlib.config as config
+import comlib.oi_h as oi_h
 from os.path import abspath, dirname
 
 import sys
@@ -388,11 +389,6 @@ with WaapiClient() as client:
     client.call("ak.wwise.core.undo.endGroup", displayName="rnd创建撤销")
 
     # 清除复制的媒体资源
-    shutil.rmtree(wav_path)
-    os.mkdir(wav_path)
-    os.mkdir(os.path.join(wav_path, "Chinese"))
-    os.mkdir(os.path.join(wav_path, "English"))
-    os.mkdir(os.path.join(wav_path, "Japanese"))
-    os.mkdir(os.path.join(wav_path, "Korean"))
+    oi_h.delete_type_files(os.path.join(root_path, "New_Media"), '.wav')
 
 os.system("pause")

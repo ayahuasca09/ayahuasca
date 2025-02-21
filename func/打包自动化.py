@@ -41,6 +41,31 @@ def move_directories(src, dst):
 
 
 output_path = r"S:\chen.gong_DCC_Audio\Audio\Tool\Auto_Sound\临时打包文件"
+gen_dt_id_path = r"F:\pppppy\SP\func\ID表生成打包版.py"
+check_name_path = r''
+
+"""单文件打包"""
+
+
+def package_script_onefile(script_name, output_name, output_path):
+    # 构建 PyInstaller 命令
+    command = [
+        "pyinstaller",
+        "--onefile",  # 使用单文件打包
+        "--add-data", "comlib:dest",  # 根据实际需求调整路径
+        "--distpath", output_path,
+        "--name", output_name,
+        script_name
+    ]
+
+    try:
+        # 执行命令
+        subprocess.run(command, check=True)
+        print(script_name + "打包成功！")
+    except subprocess.CalledProcessError as e:
+        print(script_name + f"打包失败：{e}")
+    except Exception as e:
+        print(script_name + f"发生错误：{e}")
 
 
 def package_script(script_name, output_name):
@@ -134,8 +159,13 @@ def package_script_add_other_script_2(script_name, output_name, other_script, ot
         print(script_name + f"发生错误：{e}")
 
 
+# Example usage
+# bat_file_path = r"C:\path\to\your\script.bat"
+# stdout, stderr = execute_bat_file(bat_file_path)
+
+
 if __name__ == "__main__":
-    # package_script("媒体资源替换及随机资源新增打包版.py", "媒体资源替换及随机资源新增")
+    package_script("媒体资源替换及随机资源新增打包版.py", "媒体资源替换及随机资源新增")
     # package_script("ES导入自动化打包版v4.py", "ES_Import")
     # package_script("ID表生成打包版v2.py", "ID表生成")
     # Switch和State有引用ID表生成的exe
@@ -143,13 +173,17 @@ if __name__ == "__main__":
     # package_script("Wwise属性配置打包版.py", "Wwise属性配置")
     # package_script("GenSoundbank打包版.py", "GenSoundbank")
     # package_script("Amb自动化打包版.py", "全局环境音生成")
-    package_script("Mus自动化打包版.py", "Mus自动化")
+    # package_script("Mus自动化打包版.py", "Mus自动化")
     # package_script("Bus自动化打包版.py", "Bus自动化")
     # package_script_add_other_script_2("媒体资源占位生成打包版.py", "媒体资源占位生成", "命名规范检查打包版.py",
     #                                   "媒体资源从表导入打包版.py")
     # package_script("音效语音全流程自动化打包版.py", "音效语音全流程自动化")
-    """已弃用# package_script("AI语音自动化打包版v5.py", "AILanguage_Import")"""
-    # AI语音自动化工具请用AI工具生成命令.bat打包
+    package_script_onefile("media_rename.py", "媒体资源重命名",
+                           r"S:\chen.gong_DCC_Audio\Audio\Tool\Auto_Sound\媒体资源替换及随机资源新增")
+
+    # 以下工具请调用bat
+    # AI语音自动化工具
+    # 媒体资源名称重定向
 
     copy_directories(output_path, r"S:\chen.gong_DCC_Audio\Audio\Tool\Auto_Sound")
     shutil.rmtree(output_path)
