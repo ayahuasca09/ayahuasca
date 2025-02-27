@@ -49,8 +49,10 @@ wav_path = os.path.join(py_path, "New_Media")
 # excel表标题列
 excel_es_title_list = config.excel_es_title_list
 
+excel_path = os.path.join(py_path, "Excel")
+
 # 获取当前目录下要遍历的表路径列表
-file_name_list = excel_h.excel_get_path_list(os.path.join(py_path, "Excel"))
+file_name_list = excel_h.excel_get_path_list(excel_path)
 
 _, wem_list = oi_h.get_type_file_name_and_path('.wem', external_output_path)
 # pprint(wem_list)
@@ -621,7 +623,7 @@ for language in config.language_list:
     oi_h.print_log(language + "ES文件生成")
     wav_language_path = os.path.join(wav_path, language)
     # 要文件夹路径存在及文件夹中存在内容才启动以下操作
-    if oi_h.is_folder_empty(wav_language_path):
+    if oi_h.is_have_type_file(wav_language_path, '.wav'):
         file_wav_language_dict, _ = oi_h.get_type_file_name_and_path('.wav', wav_language_path)
         # print(file_wav_language_dict)
         auto_gen_es_file(file_wav_language_dict)
@@ -671,6 +673,9 @@ delete_cancel_content()
 
 # 清除复制的媒体资源
 oi_h.delete_type_files(wav_path, '.wav')
+oi_h.delete_type_files(wav_path, '.akd')
+# 清除excel表的目录
+oi_h.delete_type_files(excel_path, '.xlsx')
 
 # dt表导入UE
 ue_csv_dt_es_path = os.path.join(py_path, "ue_csv_dt_es.py")

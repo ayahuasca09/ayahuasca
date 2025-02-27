@@ -305,6 +305,16 @@ with WaapiClient() as client:
                 flag = 1
                 set_obj_property(sound_dict['id'], "IsStreamingEnabled", False)
                 break
+
+        # 长音效也要开流
+        if 'maxDurationSource' in sound_dict:
+            if 'trimmedDuration' in sound_dict['maxDurationSource']:
+                sound_duration = sound_dict['maxDurationSource']['trimmedDuration']
+                # 长音效开流
+                if sound_duration > config.duration_long:
+                    flag = 0
+                    # print(sound_dict['name'] + "长音效开流")
+
         if 'VO' in sound_dict['name']:
             flag = 2
             set_obj_property(sound_dict['id'], "IsStreamingEnabled", True)

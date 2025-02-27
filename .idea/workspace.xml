@@ -4,17 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="17a8a927-0db7-41d4-8f81-9181fc87e6d9" name="更改" comment="媒体资源重命名工具更新">
+    <list default="true" id="17a8a927-0db7-41d4-8f81-9181fc87e6d9" name="更改" comment="媒体占位资源生成及ES导入问题修复">
       <change afterPath="$PROJECT_DIR$/func/AILanguage_Import.spec" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/func/ES_Import.spec" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/Excel/readme.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/Excel/系统音效资源表.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/Media_Temp.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/New_Media/Chinese/readme.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/New_Media/English/readme.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/New_Media/Japanese/readme.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/New_Media/Korean/readme.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/New_Media/readme.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/Wwise属性配置.spec" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/build/AILanguage_Import/AILanguage_Import.pkg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/build/AILanguage_Import/Analysis-00.toc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/build/AILanguage_Import/EXE-00.toc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/build/AILanguage_Import/PKG-00.toc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/build/AILanguage_Import/PYZ-00.pyz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/build/AILanguage_Import/PYZ-00.toc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/build/AILanguage_Import/base_library.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/build/AILanguage_Import/warn-AILanguage_Import.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/build/AILanguage_Import/xref-AILanguage_Import.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/func/build/ES_Import/Analysis-00.toc" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/func/build/ES_Import/COLLECT-00.toc" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/func/build/ES_Import/ES_Import.exe" afterDir="false" />
@@ -26,6 +28,17 @@
       <change afterPath="$PROJECT_DIR$/func/build/ES_Import/base_library.zip" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/func/build/ES_Import/warn-ES_Import.txt" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/func/build/ES_Import/xref-ES_Import.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/build/Wwise属性配置/Analysis-00.toc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/build/Wwise属性配置/COLLECT-00.toc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/build/Wwise属性配置/EXE-00.toc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/build/Wwise属性配置/PKG-00.toc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/build/Wwise属性配置/PYZ-00.pyz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/build/Wwise属性配置/PYZ-00.toc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/build/Wwise属性配置/Wwise属性配置.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/build/Wwise属性配置/Wwise属性配置.pkg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/build/Wwise属性配置/base_library.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/build/Wwise属性配置/warn-Wwise属性配置.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/build/Wwise属性配置/xref-Wwise属性配置.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/func/build/媒体资源占位生成/Analysis-00.toc" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/func/build/媒体资源占位生成/COLLECT-00.toc" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/func/build/媒体资源占位生成/EXE-00.toc" afterDir="false" />
@@ -37,19 +50,14 @@
       <change afterPath="$PROJECT_DIR$/func/build/媒体资源占位生成/xref-媒体资源占位生成.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/func/build/媒体资源占位生成/媒体资源占位生成.exe" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/func/build/媒体资源占位生成/媒体资源占位生成.pkg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/命名规范检查表.xlsx" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/func/媒体资源占位生成.spec" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/func/AILanguage_Import_v5.py" beforeDir="false" afterPath="$PROJECT_DIR$/func/AILanguage_Import_v5.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/func/ES导入自动化打包版v4.py" beforeDir="false" afterPath="$PROJECT_DIR$/func/ES导入自动化打包版v4.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/func/comlib/cloudfeishu_h.py" beforeDir="false" afterPath="$PROJECT_DIR$/func/comlib/cloudfeishu_h.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/func/comlib/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/func/comlib/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/func/comlib/excel_h.py" beforeDir="false" afterPath="$PROJECT_DIR$/func/comlib/excel_h.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/func/comlib/exe_h.py" beforeDir="false" afterPath="$PROJECT_DIR$/func/comlib/exe_h.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/func/临时代码.py" beforeDir="false" afterPath="$PROJECT_DIR$/func/临时代码.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/func/Wwise属性配置打包版.py" beforeDir="false" afterPath="$PROJECT_DIR$/func/Wwise属性配置打包版.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/func/comlib/oi_h.py" beforeDir="false" afterPath="$PROJECT_DIR$/func/comlib/oi_h.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/func/媒体资源从表导入打包版.py" beforeDir="false" afterPath="$PROJECT_DIR$/func/媒体资源从表导入打包版.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/func/打包自动化.py" beforeDir="false" afterPath="$PROJECT_DIR$/func/打包自动化.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_test.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -196,6 +204,7 @@
     "Python.打包自动化 (1).executor": "Run",
     "Python.打包自动化.executor": "Run",
     "Python.正则测试.executor": "Run",
+    "Python.遍历所有文件夹.executor": "Run",
     "Python.静音片段测试.executor": "Run",
     "Python.音效语音全流程自动化打包版.executor": "Run",
     "Python.飞书表格读写测试 (1).executor": "Run",
@@ -247,6 +256,28 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/func/打包自动化.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="遍历所有文件夹" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="SP" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/module/oi" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/module/oi/遍历所有文件夹.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -478,8 +509,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.打包自动化" />
-        <item itemvalue="Python.媒体资源占位生成打包版" />
-        <item itemvalue="Python.媒体资源从表导入打包版" />
+        <item itemvalue="Python.遍历所有文件夹" />
         <item itemvalue="Python.waapi_test" />
         <item itemvalue="Python.exe_h" />
       </list>
@@ -500,14 +530,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1716955384994</updated>
-    </task>
-    <task id="LOCAL-00156" summary="命名规范检查：合并单元格检查">
-      <option name="closed" value="true" />
-      <created>1734798431490</created>
-      <option name="number" value="00156" />
-      <option name="presentableId" value="LOCAL-00156" />
-      <option name="project" value="LOCAL" />
-      <updated>1734798431490</updated>
     </task>
     <task id="LOCAL-00157" summary="[x] 从表生成媒体资源优化">
       <option name="closed" value="true" />
@@ -893,7 +915,15 @@
       <option name="project" value="LOCAL" />
       <updated>1740124104402</updated>
     </task>
-    <option name="localTasksCounter" value="205" />
+    <task id="LOCAL-00205" summary="媒体占位资源生成及ES导入问题修复">
+      <option name="closed" value="true" />
+      <created>1740622062910</created>
+      <option name="number" value="00205" />
+      <option name="presentableId" value="LOCAL-00205" />
+      <option name="project" value="LOCAL" />
+      <updated>1740622062910</updated>
+    </task>
+    <option name="localTasksCounter" value="206" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -909,7 +939,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="GenSoundBank打包" />
     <MESSAGE value="其他操作打包自动化" />
     <MESSAGE value="ue导表自动化" />
     <MESSAGE value="音效全流程自动化" />
@@ -934,7 +963,8 @@
     <MESSAGE value="音乐自动化管线流程优化：多线程下载" />
     <MESSAGE value="音乐自动化管线流程优化：音乐资源改名" />
     <MESSAGE value="媒体资源重命名工具更新" />
-    <option name="LAST_COMMIT_MESSAGE" value="媒体资源重命名工具更新" />
+    <MESSAGE value="媒体占位资源生成及ES导入问题修复" />
+    <option name="LAST_COMMIT_MESSAGE" value="媒体占位资源生成及ES导入问题修复" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

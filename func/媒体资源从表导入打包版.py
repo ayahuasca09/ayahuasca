@@ -15,6 +15,7 @@ print("*****************媒体占位资源开始生成******************")
 root_path = os.path.join(config.auto_sound_path, "媒体资源占位生成")
 excel_path = os.path.join(root_path, "Excel")
 # print(excel_path)
+wav_path = os.path.join(root_path, "New_Media")
 
 file_name_list = excel_h.excel_get_path_list(excel_path)
 # print(file_name_list)
@@ -723,7 +724,11 @@ with WaapiClient() as client:
         # 撤销结束
         client.call("ak.wwise.core.undo.endGroup", displayName="rnd创建撤销")
 
-        oi_h.delete_type_files(os.path.join(root_path, "New_Media"), '.wav')
+        # 清除复制的媒体资源
+        oi_h.delete_type_files(wav_path, '.wav')
+        # oi_h.delete_type_files(wav_path, '.akd')
+        # 清除excel表的目录
+        oi_h.delete_type_files(excel_path, '.xlsx')
 
     print("*****************媒体占位资源生成完毕******************")
 

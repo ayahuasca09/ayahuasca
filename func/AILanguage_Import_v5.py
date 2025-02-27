@@ -41,6 +41,7 @@ try:
     d_vo_sheet_name = 'D类（操控演员表演，不接管镜头）剧情语音'
     c_vo_sheet_token = media_sheet_token_dict[c_vo_sheet_name]
     d_vo_sheet_token = media_sheet_token_dict[d_vo_sheet_name]
+    excel_path = os.path.join(py_path, "Excel")
 
 
     def download_feishu_c():
@@ -572,7 +573,7 @@ try:
         oi_h.print_log(language + "ES文件生成")
         wav_language_path = os.path.join(wav_path, language)
         # 要文件夹路径存在及文件夹中存在内容才启动以下操作
-        if oi_h.is_folder_empty(wav_language_path):
+        if oi_h.is_have_type_file(wav_language_path, '.wav'):
             file_wav_language_dict, _ = oi_h.get_type_file_name_and_path('.wav', wav_language_path)
             # print(file_wav_language_dict)
             auto_gen_es_file(file_wav_language_dict)
@@ -625,13 +626,6 @@ try:
     delete_cancel_content()
 
 
-    # else:
-    #     print(1)
-
-    # 清除复制的媒体资源
-    # shutil.rmtree(wav_path)
-    # os.mkdir(wav_path)
-
     def delete_wav_files(directory):
         # 遍历目录中的所有文件和子目录
         for root, dirs, files in os.walk(directory):
@@ -646,11 +640,11 @@ try:
                         print(f'Error deleting {file_path}: {e}')
 
 
-    # delete_wav_files(os.path.join(wav_path, "Chinese"))
-    # delete_wav_files(os.path.join(wav_path, "English"))
-    # delete_wav_files(os.path.join(wav_path, "Japanese"))
-    # delete_wav_files(os.path.join(wav_path, "Korean"))
+    # 清除复制的媒体资源
     oi_h.delete_type_files(wav_path, '.wav')
+    oi_h.delete_type_files(wav_path, '.akd')
+    # 清除excel表的目录
+    oi_h.delete_type_files(excel_path, '.xlsx')
 
     print("")
     print(f"无效文件清理 {datetime.datetime.now()}")

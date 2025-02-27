@@ -42,6 +42,7 @@ def is_first_char_alpha(s):
 # result = is_first_char_alpha(string)
 # print(f"The first character is a letter: {result}")
 
+
 """检测文件夹的内容是否为空"""
 
 
@@ -53,6 +54,35 @@ def is_folder_empty(folder_path):
         return len(contents) > 0
     else:
         return False
+
+
+"""检测文件夹中是否含有特定类型的文件"""
+
+
+def is_have_type_file(directory, extension):
+    """
+    检查目录中是否存在指定扩展名的文件。
+
+    :param directory: 要检查的目录路径。
+    :param extension: 要检查的文件扩展名，例如 '.wav'。
+    :return: 如果存在指定扩展名的文件，则返回 True；否则返回 False。
+    """
+    if is_folder_empty(directory) is False:
+        return False
+    for filename in os.listdir(directory):
+        if filename.endswith(extension):
+            return True
+    return False
+
+
+# # 示例用法
+# directory_path = 'path/to/your/directory'
+# file_extension = '.wav'
+#
+# if is_have_type_file(directory_path, file_extension):
+#     print(f"目录中存在 {file_extension} 文件。")
+# else:
+#     print(f"目录中不存在 {file_extension} 文件。")
 
 
 """建单正则匹配"""
