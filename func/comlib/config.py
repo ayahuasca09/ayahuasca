@@ -35,6 +35,9 @@ wwise_console_path = config_custom.wwise_console_path
 audio_parent_path = os.path.dirname(wwise_path)
 # print(audio_parent_path)
 # 打包文件路径
+if "WwiseProj_SP_Branch" in audio_parent_path:
+    audio_parent_path = os.path.dirname(audio_parent_path)
+    audio_parent_path = os.path.dirname(audio_parent_path)
 auto_sound_path = os.path.join(audio_parent_path, 'Tool', 'Auto_Sound')
 
 """UE主要路径"""
@@ -459,7 +462,7 @@ amb_state_dict = {
 # 长音效转码
 duration_long = 3
 # 大于夺少kb开流
-stream_size = 32
+stream_size = 100
 
 """AI语音自动化"""
 es_vo_data_dict = {

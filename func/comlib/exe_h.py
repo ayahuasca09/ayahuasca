@@ -1,6 +1,7 @@
 import os.path
 import subprocess
 from . import config
+# import config
 
 wwise_console_path = config.wwise_console_path
 wwise_path = config.wwise_path
@@ -79,6 +80,42 @@ def gen_soundbank():
     except subprocess.CalledProcessError as e:
         print(f"An error occurred: {e}")
 
+
+"""首包soundbank生成"""
+
+
+# 这个代码没生效
+# #
+# def gen_soundbank_first():
+#     # 若没有路径需要创建
+#     win_output = os.path.join(gensoundbank_output_win_path, "BNK_First")
+#     android_output = os.path.join(gensoundbank_output_android_path, "BNK_First")
+#     ios_output = os.path.join(gensoundbank_output_ios_path, "BNK_First")
+#     if not os.path.exists(win_output):
+#         os.makedirs(win_output)
+#     if not os.path.exists(android_output):
+#         os.makedirs(android_output)
+#     if not os.path.exists(ios_output):
+#         os.makedirs(ios_output)
+#     args = [
+#         'generate-soundbank',
+#         wproj_path,
+#         '--bank', 'BNK_First', 'aa'
+#         # '--soundbank-path', 'Windows', win_output,
+#         # '--soundbank-path', 'Android', android_output,
+#         # '--soundbank-path', 'iOS', ios_output,
+#         # '--root-output-path', ue_gensoundbank_path
+#     ]
+#
+#     # 执行命令
+#     try:
+#         subprocess.run([wwise_console_path] + args, check=True)
+#         print("Command executed successfully")
+#     except subprocess.CalledProcessError as e:
+#         print(f"An error occurred: {e}")
+#
+#
+# gen_soundbank_first()
 
 """ES生成"""
 

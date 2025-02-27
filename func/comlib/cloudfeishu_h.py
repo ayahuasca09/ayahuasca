@@ -58,12 +58,14 @@ def get_sheet_id_list(wiki_token):
     sheet_id_list = []
     sheet_id_name_dict = {}
     sheet_name_id_dict = {}
-    # 是一整个列表的信息
-    sheet_list = sheets_info["data"]["sheets"]
-    for sheet in sheet_list:
-        sheet_id_list.append(sheet['sheet_id'])
-        sheet_id_name_dict[sheet['sheet_id']] = sheet['title']
-        sheet_name_id_dict[sheet['title']] = sheet['sheet_id']
+    if 'data' in sheets_info:
+        if "sheets" in sheets_info['data']:
+            # 是一整个列表的信息
+            sheet_list = sheets_info["data"]["sheets"]
+            for sheet in sheet_list:
+                sheet_id_list.append(sheet['sheet_id'])
+                sheet_id_name_dict[sheet['sheet_id']] = sheet['title']
+                sheet_name_id_dict[sheet['title']] = sheet['sheet_id']
     return sheet_id_list, sheet_id_name_dict, excel_id, sheet_name_id_dict
 
 

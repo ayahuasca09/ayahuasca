@@ -165,7 +165,7 @@ def package_script_add_other_script_2(script_name, output_name, other_script, ot
 
 
 if __name__ == "__main__":
-    package_script("媒体资源替换及随机资源新增打包版.py", "媒体资源替换及随机资源新增")
+    # package_script("媒体资源替换及随机资源新增打包版.py", "媒体资源替换及随机资源新增")
     # package_script("ES导入自动化打包版v4.py", "ES_Import")
     # package_script("ID表生成打包版v2.py", "ID表生成")
     # Switch和State有引用ID表生成的exe
@@ -175,11 +175,11 @@ if __name__ == "__main__":
     # package_script("Amb自动化打包版.py", "全局环境音生成")
     # package_script("Mus自动化打包版.py", "Mus自动化")
     # package_script("Bus自动化打包版.py", "Bus自动化")
-    # package_script_add_other_script_2("媒体资源占位生成打包版.py", "媒体资源占位生成", "命名规范检查打包版.py",
-    #                                   "媒体资源从表导入打包版.py")
+    package_script_add_other_script_2("媒体资源占位生成打包版.py", "媒体资源占位生成", "命名规范检查打包版.py",
+                                      "媒体资源从表导入打包版.py")
     # package_script("音效语音全流程自动化打包版.py", "音效语音全流程自动化")
-    package_script_onefile("media_rename.py", "媒体资源重命名",
-                           r"S:\chen.gong_DCC_Audio\Audio\Tool\Auto_Sound\媒体资源替换及随机资源新增")
+    # package_script_onefile("media_rename.py", "媒体资源重命名",
+    #                        r"S:\chen.gong_DCC_Audio\Audio\Tool\Auto_Sound\媒体资源替换及随机资源新增")
 
     # 以下工具请调用bat
     # AI语音自动化工具

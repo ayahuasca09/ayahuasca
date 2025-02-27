@@ -285,11 +285,15 @@ with WaapiClient() as client:
                                 if 命名规范检查打包版.check_basic(cell_sound.value, audio_unit_list,
                                                                   event_unit_list,
                                                                   audio_mixer_list, word_list_len):
+                                    print(cell_sound.value)
                                     # 通过命名规范检查
+                                    pass
+                                elif cell_sound.value is None:
                                     pass
                                 # 命名规范只要一次不通过就算失败
                                 else:
                                     is_pass_check_name = False
+                                    print(cell_sound.value+"未通过")
 
     """*****************work unit创建******************"""
     # 对列表进行排序

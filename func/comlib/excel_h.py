@@ -99,8 +99,9 @@ def excel_get_path_list(py_path):
     for i in os.walk(py_path):
         file_names.append(i)
     # pprint("输出文件夹下的文件名：")
-    file_name_list = file_names[0][2]
-    return file_name_list
+    if file_names:
+        return file_names[0][2]
+
 
 
 

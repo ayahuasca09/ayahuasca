@@ -599,13 +599,24 @@ with WaapiClient() as client:
     # pprint(wwise_info_list)
 
     """效果器设置"""
-    # 需要先超越父级
+    # # 需要先超越父级
+    # args = {
+    #     "objects": [
+    #         {
+    #             "object": "{372CAE82-5A26-4877-B844-D6F780045924}",
+    #             "@Effect0": "{BCB310CA-FC40-4CB6-A454-F711631441DA}"
+    #         }
+    #     ]
+    # }
+    # client.call("ak.wwise.core.object.set", args)
+
+    '''soundbank生成'''
     args = {
-        "objects": [
-            {
-                "object": "{372CAE82-5A26-4877-B844-D6F780045924}",
-                "@Effect0": "{BCB310CA-FC40-4CB6-A454-F711631441DA}"
-            }
-        ]
+        "soundbanks": [
+            {"name": "AA"}
+        ],
+        "writeToDisk": True,
+        # "clearAudioFileCache": True
     }
-    client.call("ak.wwise.core.object.set", args)
+
+    gen_log = client.call("ak.wwise.core.soundbank.generate", args)
