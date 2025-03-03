@@ -610,13 +610,25 @@ with WaapiClient() as client:
     # }
     # client.call("ak.wwise.core.object.set", args)
 
-    '''soundbank生成'''
-    args = {
-        "soundbanks": [
-            {"name": "AA"}
-        ],
-        "writeToDisk": True,
-        # "clearAudioFileCache": True
-    }
+    # '''soundbank生成'''
+    # args = {
+    #     "soundbanks": [
+    #         {"name": "AA"}
+    #     ],
+    #     "writeToDisk": True,
+    #     # "clearAudioFileCache": True
+    # }
+    #
+    # gen_log = client.call("ak.wwise.core.soundbank.generate", args)
 
-    gen_log = client.call("ak.wwise.core.soundbank.generate", args)
+    """Music里State中的某个id查找"""
+    args = {
+        'waql': '"%s"  ' % "{EF08DDC0-D411-41F2-B193-6F2D6EB8A369}"
+    }
+    options = {
+        'return': ['name', 'Color', 'maxDurationSource', 'type', 'pluginname', 'parent', 'owner', "RTPC", 'notes', 'id',
+                   'ControlInput']
+    }
+    # 存储了所有Event的单元结构
+    wwise_info_list = client.call("ak.wwise.core.object.get", args, options=options)['return']
+    pprint(wwise_info_list)

@@ -50,7 +50,7 @@ def insert_into_xml(file_path, xpath, new_element):
     # 检查是否已有相同的元素
     for existing_element in parent_element.findall(new_element.tag):
         if elements_are_equal(existing_element, new_element):
-            print("相同的元素已经存在于XML中。")
+            # print("相同的元素已经存在于XML中。")
             return
 
     # 将新元素插入到找到的父元素中
@@ -77,17 +77,17 @@ def save_pretty_xml(tree, file_path):
 
 
 # 示例XML数据，表示要插入的条目的结构和属性
-xml_data = '''
-<Entry>
-    <Path Name="AbaAbaB" ID="{aaaaaaaaaaaaa}" />
-    <AudioNodeInfo Name="Mus_Loading" ID="{AD0A4F68-B1E4-457C-BB0E-94639CE826A1}" 
-                   WorkUnitID="{8B94E63D-66D7-49B0-A134-D2A9CDBE7006}" 
-                   Platform="Linked" />
-</Entry>
-'''
-
-# 创建新的XML元素
-new_entry = create_element_from_xml_string(xml_data)
+# xml_data = '''
+# <Entry>
+#     <Path Name="AbaAbaB" ID="{aaaaaaaaaaaaa}" />
+#     <AudioNodeInfo Name="Mus_Loading" ID="{AD0A4F68-B1E4-457C-BB0E-94639CE826A1}"
+#                    WorkUnitID="{8B94E63D-66D7-49B0-A134-D2A9CDBE7006}"
+#                    Platform="Linked" />
+# </Entry>
+# '''
+#
+# # 创建新的XML元素
+# new_entry = create_element_from_xml_string(xml_data)
 
 # 将新元素插入到指定的XML文件中
 # insert_into_xml('Mus_Test.xml', './/EntryList', new_entry)
@@ -118,7 +118,7 @@ def remove_element_from_xml(file_path, xpath):
     print("元素已删除并更新 XML 文件。")
 
 
-remove_element_from_xml('Mus_Test.xml', './/Entry[Path[@Name="New"]]')
+# remove_element_from_xml('Mus_Test.xml', './/Entry[Path[@Name="New"]]')
 
 """xml数据读取和输出"""
 

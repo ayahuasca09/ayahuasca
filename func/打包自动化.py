@@ -180,6 +180,7 @@ if __name__ == "__main__":
     # package_script("音效语音全流程自动化打包版.py", "音效语音全流程自动化")
     # package_script_onefile("media_rename.py", "媒体资源重命名",
     #                        r"S:\chen.gong_DCC_Audio\Audio\Tool\Auto_Sound\媒体资源替换及随机资源新增")
+    package_script("xml音乐状态设置测试.py", "xml音乐状态设置测试")
 
     # 以下工具请调用bat
     # AI语音自动化工具

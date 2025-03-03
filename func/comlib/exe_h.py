@@ -1,6 +1,8 @@
 import os.path
 import subprocess
 from . import config
+import psutil
+
 # import config
 
 wwise_console_path = config.wwise_console_path
@@ -59,6 +61,71 @@ def run_exe(exe_path):
 # run_exe(r"Wwise属性配置\Wwise属性配置打包版.exe")
 # run_exe(r"ID表生成\ID表生成打包版.exe")
 
+"""关闭任意exe进程"""
+
+
+def close_exe(exe_name):
+    """
+    通过可执行文件名终止进程。
+
+    参数：
+    exe_name (str): 要终止的可执行文件的名称，例如 'Wwise.exe'。
+    """
+    try:
+        # 获取当前运行的进程列表
+        result = subprocess.run(["tasklist"], capture_output=True, text=True, check=True)
+
+        # 检查进程是否在运行
+        if exe_name in result.stdout:
+            # 如果进程存在，执行终止命令
+            subprocess.run(["taskkill", "/f", "/im", exe_name], check=True)
+            print(f"成功终止了 {exe_name}。")
+        else:
+            pass
+            # print(f"进程 {exe_name} 不存在。")
+
+    except subprocess.CalledProcessError as e:
+        # 捕获并处理命令执行失败的异常
+        print(f"无法执行命令。错误信息: {e}")
+
+
+# 示例用法
+# close_exe("Wwise.exe")
+
+
+"""打开任意exe进程"""
+
+
+def open_exe(file_path):
+    # 检查文件是否存在
+    if os.path.exists(file_path):
+        # 获取文件名，用于判断进程
+        file_name = os.path.basename(file_path)
+
+        # 检查文件是否已经打开
+        def is_file_open(file_name):
+            for process in psutil.process_iter(['name', 'cmdline']):
+                try:
+                    cmdline = process.info['cmdline']
+                    # 确保 cmdline 不是 None 再检查是否包含 file_name
+                    if cmdline and file_name in cmdline:
+                        return True
+                except (psutil.NoSuchProcess, psutil.AccessDenied, psutil.ZombieProcess):
+                    pass
+            return False
+
+        # 如果文件未被打开，则使用默认程序打开
+        if not is_file_open(file_name):
+            subprocess.run(['start', file_path], shell=True)
+        else:
+            print("文件已经打开。")
+    else:
+        print("文件不存在，请检查路径。")
+
+    # 使用实例：假设 example.exe 位于当前目录
+    # example_exe_path = 'example.exe'
+    # open_exe(example_exe_path)
+
 
 """soundbank生成"""
 
@@ -82,7 +149,6 @@ def gen_soundbank():
 
 
 """首包soundbank生成"""
-
 
 # 这个代码没生效
 # #

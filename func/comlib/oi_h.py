@@ -1,11 +1,53 @@
 from . import config
+# import config
 import os
 from pprint import pprint
 import sys
 from os.path import abspath, dirname
 import re
+import shutil
 
 is_pass = True
+
+"""从一路径复制文件到另一路径，并将文件改名"""
+
+
+# src_file_path：带文件名的完整路径
+# est_dir：不需要文件名的路径
+# new_file_name：新文件名写这
+
+def copy_and_rename_file(src_file_path, dest_dir, new_file_name, update=False):
+    # 确保目标目录存在，如果不存在则创建
+    if not os.path.exists(dest_dir):
+        os.makedirs(dest_dir)
+
+    # 构建目标文件的完整路径
+    dest_file_path = os.path.join(dest_dir, new_file_name)
+
+    # 检查目标文件是否已经存在
+    if os.path.exists(dest_file_path):
+        if update:
+            # 如果 update 为 True，即使文件存在也执行复制
+            shutil.copy(src_file_path, dest_file_path)
+            # print(f"文件已从 {src_file_path} 复制到 {dest_file_path}（已更新）。")
+        else:
+            pass
+            # 如果 update 为 False，文件存在时不执行复制
+            # print(f"文件 {dest_file_path} 已存在，未执行复制。")
+
+    else:
+        # 目标文件不存在时执行复制
+        shutil.copy(src_file_path, dest_file_path)
+        # print(f"文件已从 {src_file_path} 复制到 {dest_file_path}")
+
+
+# 示例用法
+# src_file_path = '/path/to/source/file.txt'  # 源文件路径
+# dest_dir = '/path/to/destination/directory'  # 目标目录
+# new_file_name = 'new_file_name.txt'  # 新的文件名
+#
+# # 调用函数，设置 update 参数为 True 或 False
+# copy_and_rename_file(src_file_path, dest_dir, new_file_name, update=True)
 
 """删除目录中指定格式的文件夹"""
 
