@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{4F2828D8-D7D3-47F0-B737-5D1908EC0B7A}" SchemaVersion="110" RootDocumentID="{438EE591-96D4-4DA4-B144-0F43D285268D}" ParentDocumentID="{438EE591-96D4-4DA4-B144-0F43D285268D}">
+	<InteractiveMusic>
+		<WorkUnit Name="v0" ID="{4F2828D8-D7D3-47F0-B737-5D1908EC0B7A}" OwnerID="{438EE591-96D4-4DA4-B144-0F43D285268D}" PersistMode="Nested">
+			<ChildrenList>
+				<WorkUnit Name="Music" ID="{329DE8B0-8C68-4D3A-AE65-E1C7E723F56E}" PersistMode="Reference"/>
+				<WorkUnit Name="Music_Boss" ID="{576BA22F-30D2-4155-A561-E517A47F8D4B}" PersistMode="Reference"/>
+			</ChildrenList>
+		</WorkUnit>
+	</InteractiveMusic>
+</WwiseDocument>

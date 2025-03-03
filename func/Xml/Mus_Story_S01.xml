@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{F8687B25-8D4A-4962-BA36-5BD90743ADF8}" SchemaVersion="110" RootDocumentID="{E8A5F6A0-AB3E-4166-BB68-C7D7ECC92B29}" ParentDocumentID="{03D94B59-A8D2-4EC2-AC77-A99E485245E8}">
+	<InteractiveMusic>
+		<WorkUnit Name="Mus_Story_S01" ID="{F8687B25-8D4A-4962-BA36-5BD90743ADF8}" OwnerID="{5630EFA7-A343-494C-A2E0-B5361C9ACC50}" PersistMode="Nested">
+			<ChildrenList>
+				<MusicPlaylistContainer Name="Mus_Story_S01" ID="{F2449230-A7B3-466E-BBF4-4B3C9C5E68F5}" ShortID="583445219">
+					<PropertyList>
+						<Property Name="GridOffsetPreset" Type="int16" Value="1"/>
+						<Property Name="Priority" Type="int16">
+							<ValueList>
+								<Value>30</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Music" ID="{C97BE259-C5F2-451D-B4D0-A9582976A202}" WorkUnitID="{52413F6A-0454-4387-866C-C7E426BBDADD}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Mus_Story" ID="{45765D8C-F595-403C-AFAA-000091BD4D2C}" WorkUnitID="{9A86BFBA-B12F-4D1A-8049-990F76E26649}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<MusicSegment Name="Mus_Story_S01" ID="{44A0848D-F2F8-4F17-8828-8BA77DF800F8}" ShortID="901598003">
+							<Comment>剧情音乐-1.1.2 - 酒馆</Comment>
+							<PropertyList>
+								<Property Name="EndPosition" Type="Real64" Value="105866.625"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{6F969F3D-55F1-426B-A47B-EF0B277D173A}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5FD1269D-1FE1-419F-BD5C-0232E03AA6DD}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<MusicTrack Name="Mus_Story_S01" ID="{685498FB-C63C-4D4C-8021-B7CCF6D47531}" ShortID="140106726">
+									<Comment>剧情音乐-1.1.2 - 酒馆</Comment>
+									<PropertyList>
+										<Property Name="IsStreamingEnabled" Type="bool">
+											<ValueList>
+												<Value>True</Value>
+											</ValueList>
+										</Property>
+										<Property Name="IsZeroLatency" Type="bool">
+											<ValueList>
+												<Value>True</Value>
+											</ValueList>
+										</Property>
+										<Property Name="OverrideConversion" Type="bool" Value="True"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Music" ID="{C97BE259-C5F2-451D-B4D0-A9582976A202}" WorkUnitID="{52413F6A-0454-4387-866C-C7E426BBDADD}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5FD1269D-1FE1-419F-BD5C-0232E03AA6DD}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Mus_Story_01" ID="{A63C677E-8041-404B-86BF-9F1617E1FE2E}">
+											<Language>SFX</Language>
+											<AudioFile>Mus\Mus_Story_01.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="637126969"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<TransitionList>
+										<MusicTransition Name="Root" ID="{C6E9B8BF-A5E5-43A3-BD2A-585F74EC5F29}">
+											<PropertyList>
+												<Property Name="IsFolder" Type="bool" Value="True"/>
+											</PropertyList>
+											<TransitionInfo/>
+										</MusicTransition>
+									</TransitionList>
+									<ObjectLists>
+										<ObjectList Name="Sequences">
+											<Reference>
+												<Local>
+													<MusicTrackSequence Name="" ID="{466DE305-65FC-47DC-BBF5-32C8AD4FDD5A}">
+														<ObjectLists>
+															<ObjectList Name="Clips">
+																<Reference>
+																	<Local>
+																		<MusicClip Name="Mus_Story_01" ID="{B7101F83-A727-416E-96B6-9C4DCF7AB92A}">
+																			<PropertyList>
+																				<Property Name="EndTrimOffset" Type="Real64" Value="52933.3125"/>
+																				<Property Name="FadeInMode" Type="int16" Value="0"/>
+																			</PropertyList>
+																			<AudioSourceRef Name="Mus_Story_01" ID="{A63C677E-8041-404B-86BF-9F1617E1FE2E}"/>
+																		</MusicClip>
+																	</Local>
+																</Reference>
+															</ObjectList>
+														</ObjectLists>
+													</MusicTrackSequence>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</MusicTrack>
+							</ChildrenList>
+							<ObjectLists>
+								<ObjectList Name="Cues">
+									<Reference>
+										<Local>
+											<MusicCue Name="Entry Cue" ID="{D085478E-6BCA-428B-8EA0-BAF7202F0ABE}"/>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<MusicCue Name="Exit Cue" ID="{E2E87894-BC7B-4D5F-90D7-15F1EE3F5918}">
+												<PropertyList>
+													<Property Name="CueType" Type="int16" Value="1"/>
+													<Property Name="TimeMs" Type="Real64" Value="52925.6074923733"/>
+												</PropertyList>
+											</MusicCue>
+										</Local>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
+						</MusicSegment>
+					</ChildrenList>
+					<TransitionList>
+						<MusicTransition Name="Root" ID="{6A56BFE9-F588-406D-89F9-C1E5D537EDEB}">
+							<PropertyList>
+								<Property Name="IsFolder" Type="bool" Value="True"/>
+							</PropertyList>
+							<ChildrenList>
+								<MusicTransition Name="Transition" ID="{FB4D4681-66B2-4769-88E8-786D45B6A11C}">
+									<TransitionInfo/>
+								</MusicTransition>
+							</ChildrenList>
+							<TransitionInfo/>
+						</MusicTransition>
+					</TransitionList>
+					<Playlist>
+						<MusicPlaylistItem Name="" ID="{F14A772B-F21C-4115-8A7A-28BB48F5153D}" ShortID="22451520">
+							<ChildrenList>
+								<MusicPlaylistItem Name="" ID="{07860117-F39A-4CCE-A49D-7E985C59C77B}" ShortID="46779358">
+									<PropertyList>
+										<Property Name="LoopCount" Type="int16" Value="0"/>
+										<Property Name="PlaylistItemType" Type="int16" Value="1"/>
+									</PropertyList>
+									<SegmentRef Name="Mus_Story_S01" ID="{44A0848D-F2F8-4F17-8828-8BA77DF800F8}"/>
+								</MusicPlaylistItem>
+							</ChildrenList>
+						</MusicPlaylistItem>
+					</Playlist>
+				</MusicPlaylistContainer>
+			</ChildrenList>
+		</WorkUnit>
+	</InteractiveMusic>
+</WwiseDocument>

@@ -1,0 +1,776 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{FB717825-3A21-4880-99DA-75864B153726}" SchemaVersion="110" RootDocumentID="{E8A5F6A0-AB3E-4166-BB68-C7D7ECC92B29}" ParentDocumentID="{A760CF39-119E-4EC1-BE5B-EE18BCE5945C}">
+	<InteractiveMusic>
+		<WorkUnit Name="Mus_Map_A05" ID="{FB717825-3A21-4880-99DA-75864B153726}" OwnerID="{8E2E9975-595B-4589-8405-1CD3958EA952}" PersistMode="Nested">
+			<ChildrenList>
+				<MusicSwitchContainer Name="Mus_Map_A05" ID="{CD208B50-59DA-47C2-82C5-7B6C32F165C5}" ShortID="286620053">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{6F969F3D-55F1-426B-A47B-EF0B277D173A}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5FD1269D-1FE1-419F-BD5C-0232E03AA6DD}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<MusicPlaylistContainer Name="Mus_Map_A05_Combat" ID="{B79586C1-A7EE-4D4B-89E5-BCBFBCE86AAE}" ShortID="976813865">
+							<PropertyList>
+								<Property Name="OverrideClockSettings" Type="bool" Value="True"/>
+								<Property Name="OverrideOutput" Type="bool" Value="True"/>
+								<Property Name="Priority" Type="int16">
+									<ValueList>
+										<Value>30</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Tempo" Type="Real64" Value="144"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-3</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Music" ID="{C97BE259-C5F2-451D-B4D0-A9582976A202}" WorkUnitID="{52413F6A-0454-4387-866C-C7E426BBDADD}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Mus_Combat" ID="{2819F04A-D891-4834-95DE-3A5A322ADDCB}" WorkUnitID="{9A86BFBA-B12F-4D1A-8049-990F76E26649}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<MusicSegment Name="Mus_Map_A05_Combat_Verse1" ID="{9BE1C0FC-6078-4558-B3A8-71708B6C51DF}" ShortID="598341872">
+									<Comment>新手关卡音乐 - 主歌1</Comment>
+									<PropertyList>
+										<Property Name="EndPosition" Type="Real64" Value="53347.875"/>
+										<Property Name="OverrideClockSettings" Type="bool" Value="True"/>
+										<Property Name="Tempo" Type="Real64" Value="144"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{6F969F3D-55F1-426B-A47B-EF0B277D173A}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5FD1269D-1FE1-419F-BD5C-0232E03AA6DD}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<MusicTrack Name="Mus_Map_A05_Combat_Verse1" ID="{931B5CF9-DE5B-4D07-95A0-D70E2018A669}" ShortID="998558969">
+											<Comment>新手关卡音乐 - 主歌1</Comment>
+											<PropertyList>
+												<Property Name="IsStreamingEnabled" Type="bool">
+													<ValueList>
+														<Value>True</Value>
+													</ValueList>
+												</Property>
+												<Property Name="IsZeroLatency" Type="bool">
+													<ValueList>
+														<Value>True</Value>
+													</ValueList>
+												</Property>
+												<Property Name="OverrideConversion" Type="bool" Value="True"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Music" ID="{C97BE259-C5F2-451D-B4D0-A9582976A202}" WorkUnitID="{52413F6A-0454-4387-866C-C7E426BBDADD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5FD1269D-1FE1-419F-BD5C-0232E03AA6DD}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Mus_Map_A05_Combat_Verse1" ID="{09663C0E-60D8-4AC7-9EDD-B5CDF297C8C5}">
+													<Language>SFX</Language>
+													<AudioFile>Mus\Mus_Map_A05_Combat_Verse1.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="626400323"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<TransitionList>
+												<MusicTransition Name="Root" ID="{1F347D21-9C63-4893-83DD-01614751A0DC}">
+													<PropertyList>
+														<Property Name="IsFolder" Type="bool" Value="True"/>
+													</PropertyList>
+													<TransitionInfo/>
+												</MusicTransition>
+											</TransitionList>
+											<ObjectLists>
+												<ObjectList Name="Sequences">
+													<Reference>
+														<Local>
+															<MusicTrackSequence Name="" ID="{66E607F1-97EB-448D-B8F0-0CA6FBA46856}">
+																<ObjectLists>
+																	<ObjectList Name="Clips">
+																		<Reference>
+																			<Local>
+																				<MusicClip Name="Mus_Map_A05_Combat_Verse1" ID="{A5DF4A85-DEAB-4BEB-BE05-1C81FD786FFC}">
+																					<PropertyList>
+																						<Property Name="EndTrimOffset" Type="Real64" Value="26673.9375"/>
+																						<Property Name="FadeInMode" Type="int16" Value="0"/>
+																						<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																					</PropertyList>
+																					<AudioSourceRef Name="Mus_Map_A05_Combat_Verse1" ID="{09663C0E-60D8-4AC7-9EDD-B5CDF297C8C5}"/>
+																				</MusicClip>
+																			</Local>
+																		</Reference>
+																	</ObjectList>
+																</ObjectLists>
+															</MusicTrackSequence>
+														</Local>
+													</Reference>
+												</ObjectList>
+											</ObjectLists>
+										</MusicTrack>
+									</ChildrenList>
+									<ObjectLists>
+										<ObjectList Name="Cues">
+											<Reference>
+												<Local>
+													<MusicCue Name="Entry Cue" ID="{E5AA91A7-FC35-44AC-A84D-7B2C7ECFBE8E}"/>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<MusicCue Name="Exit Cue" ID="{242483BD-03BA-4B06-BE8D-C1F9A76BFEB7}">
+														<PropertyList>
+															<Property Name="CueType" Type="int16" Value="1"/>
+															<Property Name="TimeMs" Type="Real64" Value="26652.9255382775"/>
+														</PropertyList>
+													</MusicCue>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</MusicSegment>
+								<MusicSegment Name="Mus_Map_A05_Combat_Verse2" ID="{77E9D986-43A2-4085-959A-3AF3DE0917AF}" ShortID="344196664">
+									<Comment>新手关卡音乐 - 主歌2(第二首)</Comment>
+									<PropertyList>
+										<Property Name="EndPosition" Type="Real64" Value="372244.907312925"/>
+										<Property Name="OverrideClockSettings" Type="bool" Value="True"/>
+										<Property Name="Tempo" Type="Real64" Value="144"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{6F969F3D-55F1-426B-A47B-EF0B277D173A}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5FD1269D-1FE1-419F-BD5C-0232E03AA6DD}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<MusicTrack Name="Mus_Map_A05_Combat_Verse2" ID="{4D06ADB2-F485-4550-A007-A6FF2437B939}" ShortID="372983873">
+											<Comment>新手关卡音乐 - 主歌2(第二首)</Comment>
+											<PropertyList>
+												<Property Name="IsStreamingEnabled" Type="bool">
+													<ValueList>
+														<Value>True</Value>
+													</ValueList>
+												</Property>
+												<Property Name="IsZeroLatency" Type="bool">
+													<ValueList>
+														<Value>True</Value>
+													</ValueList>
+												</Property>
+												<Property Name="OverrideConversion" Type="bool" Value="True"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Music" ID="{C97BE259-C5F2-451D-B4D0-A9582976A202}" WorkUnitID="{52413F6A-0454-4387-866C-C7E426BBDADD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5FD1269D-1FE1-419F-BD5C-0232E03AA6DD}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Mus_Map_A05_Combat_Verse2" ID="{5F1C8F7E-9C39-4204-8774-F61CFAF1EC64}">
+													<Language>SFX</Language>
+													<AudioFile>Mus\Mus_Map_A05_Combat_Verse2.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="17417336"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<TransitionList>
+												<MusicTransition Name="Root" ID="{2FE22D79-6AC4-43E1-AF3E-B502BDF7EAA4}">
+													<PropertyList>
+														<Property Name="IsFolder" Type="bool" Value="True"/>
+													</PropertyList>
+													<TransitionInfo/>
+												</MusicTransition>
+											</TransitionList>
+											<ObjectLists>
+												<ObjectList Name="Sequences">
+													<Reference>
+														<Local>
+															<MusicTrackSequence Name="" ID="{D3F82427-5A83-466A-B8EF-1F53E06C5FEA}">
+																<ObjectLists>
+																	<ObjectList Name="Clips">
+																		<Reference>
+																			<Local>
+																				<MusicClip Name="Mus_Map_A05_Combat_Verse2" ID="{9C828A16-0AF2-4B67-8B45-02C15BC74579}">
+																					<PropertyList>
+																						<Property Name="EndTrimOffset" Type="Real64" Value="186122.458333333"/>
+																						<Property Name="FadeInMode" Type="int16" Value="0"/>
+																						<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																					</PropertyList>
+																					<AudioSourceRef Name="Mus_Map_A05_Combat_Verse2" ID="{5F1C8F7E-9C39-4204-8774-F61CFAF1EC64}"/>
+																				</MusicClip>
+																			</Local>
+																		</Reference>
+																	</ObjectList>
+																</ObjectLists>
+															</MusicTrackSequence>
+														</Local>
+													</Reference>
+												</ObjectList>
+											</ObjectLists>
+										</MusicTrack>
+									</ChildrenList>
+									<ObjectLists>
+										<ObjectList Name="Cues">
+											<Reference>
+												<Local>
+													<MusicCue Name="Entry Cue" ID="{139772A0-726B-474E-8452-D33504454F1C}"/>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<MusicCue Name="Exit Cue" ID="{7EFED13A-4BB5-4BB4-9699-142FE29D1EA0}">
+														<PropertyList>
+															<Property Name="CueType" Type="int16" Value="1"/>
+															<Property Name="TimeMs" Type="Real64" Value="186122.448979592"/>
+														</PropertyList>
+													</MusicCue>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</MusicSegment>
+								<MusicSegment Name="Mus_Map_A05_Combat_Drop1" ID="{C75B0986-EB1E-40C6-BF45-9B2A5D243AE3}" ShortID="223862583">
+									<Comment>新手关卡音乐 - 副歌1</Comment>
+									<PropertyList>
+										<Property Name="EndPosition" Type="Real64" Value="53347.875"/>
+										<Property Name="OverrideClockSettings" Type="bool" Value="True"/>
+										<Property Name="Tempo" Type="Real64" Value="144"/>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-6</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{6F969F3D-55F1-426B-A47B-EF0B277D173A}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5FD1269D-1FE1-419F-BD5C-0232E03AA6DD}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<MusicTrack Name="Mus_Map_A05_Combat_Drop1" ID="{07281EC0-A739-4E51-90A5-85226D625022}" ShortID="18270500">
+											<Comment>新手关卡音乐 - 副歌1</Comment>
+											<PropertyList>
+												<Property Name="IsStreamingEnabled" Type="bool">
+													<ValueList>
+														<Value>True</Value>
+													</ValueList>
+												</Property>
+												<Property Name="IsZeroLatency" Type="bool">
+													<ValueList>
+														<Value>True</Value>
+													</ValueList>
+												</Property>
+												<Property Name="OverrideConversion" Type="bool" Value="True"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Music" ID="{C97BE259-C5F2-451D-B4D0-A9582976A202}" WorkUnitID="{52413F6A-0454-4387-866C-C7E426BBDADD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5FD1269D-1FE1-419F-BD5C-0232E03AA6DD}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Mus_Map_A05_Combat_Drop1" ID="{F227E36F-8376-4AE6-9621-FD914BC0518F}">
+													<Language>SFX</Language>
+													<AudioFile>Mus\Mus_Map_A05_Combat_Drop1.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="338039610"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<TransitionList>
+												<MusicTransition Name="Root" ID="{75650164-7228-479C-AFFB-381DDFC3A047}">
+													<PropertyList>
+														<Property Name="IsFolder" Type="bool" Value="True"/>
+													</PropertyList>
+													<TransitionInfo/>
+												</MusicTransition>
+											</TransitionList>
+											<ObjectLists>
+												<ObjectList Name="Sequences">
+													<Reference>
+														<Local>
+															<MusicTrackSequence Name="" ID="{35B837D5-9F34-4E98-998D-A916787FBAED}">
+																<ObjectLists>
+																	<ObjectList Name="Clips">
+																		<Reference>
+																			<Local>
+																				<MusicClip Name="Mus_Map_A05_Combat_Drop1" ID="{A8440FCC-D08B-43FD-B8BB-DB307B367F4C}">
+																					<PropertyList>
+																						<Property Name="EndTrimOffset" Type="Real64" Value="26673.9375"/>
+																						<Property Name="FadeInMode" Type="int16" Value="0"/>
+																						<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																					</PropertyList>
+																					<AudioSourceRef Name="Mus_Map_A05_Combat_Drop1" ID="{F227E36F-8376-4AE6-9621-FD914BC0518F}"/>
+																				</MusicClip>
+																			</Local>
+																		</Reference>
+																	</ObjectList>
+																</ObjectLists>
+															</MusicTrackSequence>
+														</Local>
+													</Reference>
+												</ObjectList>
+											</ObjectLists>
+										</MusicTrack>
+									</ChildrenList>
+									<ObjectLists>
+										<ObjectList Name="Cues">
+											<Reference>
+												<Local>
+													<MusicCue Name="Entry Cue" ID="{630EA6EC-E64F-4262-964E-6AC9C15242FF}"/>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<MusicCue Name="Exit Cue" ID="{4BAC156B-2427-40B1-9219-3665B258FE7E}">
+														<PropertyList>
+															<Property Name="CueType" Type="int16" Value="1"/>
+															<Property Name="TimeMs" Type="Real64" Value="26652.9255382775"/>
+														</PropertyList>
+													</MusicCue>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</MusicSegment>
+								<MusicSegment Name="Mus_Map_A05_Combat_Drop2" ID="{6D91ED37-7D3F-4E83-A183-B24FAF5DB440}" ShortID="993813654">
+									<Comment>新手关卡音乐 - 副歌2</Comment>
+									<PropertyList>
+										<Property Name="EndPosition" Type="Real64" Value="53347.875"/>
+										<Property Name="OverrideClockSettings" Type="bool" Value="True"/>
+										<Property Name="Tempo" Type="Real64" Value="144"/>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-1</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{6F969F3D-55F1-426B-A47B-EF0B277D173A}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5FD1269D-1FE1-419F-BD5C-0232E03AA6DD}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<MusicTrack Name="Mus_Map_A05_Combat_Drop2" ID="{A045BFBD-E182-4BEE-9670-0B291B8A9871}" ShortID="509557843">
+											<Comment>新手关卡音乐 - 副歌2</Comment>
+											<PropertyList>
+												<Property Name="IsStreamingEnabled" Type="bool">
+													<ValueList>
+														<Value>True</Value>
+													</ValueList>
+												</Property>
+												<Property Name="IsZeroLatency" Type="bool">
+													<ValueList>
+														<Value>True</Value>
+													</ValueList>
+												</Property>
+												<Property Name="OverrideConversion" Type="bool" Value="True"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Music" ID="{C97BE259-C5F2-451D-B4D0-A9582976A202}" WorkUnitID="{52413F6A-0454-4387-866C-C7E426BBDADD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5FD1269D-1FE1-419F-BD5C-0232E03AA6DD}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Mus_Map_A05_Combat_Drop2" ID="{C22105E7-0E1F-4CE3-A17D-6B392E4C0D51}">
+													<Language>SFX</Language>
+													<AudioFile>Mus\Mus_Map_A05_Combat_Drop2.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="965224061"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<TransitionList>
+												<MusicTransition Name="Root" ID="{FE92FA91-D38F-4716-96B2-6B70002FE78D}">
+													<PropertyList>
+														<Property Name="IsFolder" Type="bool" Value="True"/>
+													</PropertyList>
+													<TransitionInfo/>
+												</MusicTransition>
+											</TransitionList>
+											<ObjectLists>
+												<ObjectList Name="Sequences">
+													<Reference>
+														<Local>
+															<MusicTrackSequence Name="" ID="{90CA0B6F-9814-4536-AA7C-01547080DCB3}">
+																<ObjectLists>
+																	<ObjectList Name="Clips">
+																		<Reference>
+																			<Local>
+																				<MusicClip Name="Mus_Map_A05_Combat_Drop2" ID="{B45DDADB-2320-4F99-B5F3-5B2455A3BC3D}">
+																					<PropertyList>
+																						<Property Name="EndTrimOffset" Type="Real64" Value="26673.9375"/>
+																						<Property Name="FadeInMode" Type="int16" Value="0"/>
+																						<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																					</PropertyList>
+																					<AudioSourceRef Name="Mus_Map_A05_Combat_Drop2" ID="{C22105E7-0E1F-4CE3-A17D-6B392E4C0D51}"/>
+																				</MusicClip>
+																			</Local>
+																		</Reference>
+																	</ObjectList>
+																</ObjectLists>
+															</MusicTrackSequence>
+														</Local>
+													</Reference>
+												</ObjectList>
+											</ObjectLists>
+										</MusicTrack>
+									</ChildrenList>
+									<ObjectLists>
+										<ObjectList Name="Cues">
+											<Reference>
+												<Local>
+													<MusicCue Name="Entry Cue" ID="{1C6D920F-899E-4AC9-93AB-217E5E3CD815}"/>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<MusicCue Name="Exit Cue" ID="{5C8FE18E-9E00-45C7-803A-B2E5027D0B30}">
+														<PropertyList>
+															<Property Name="CueType" Type="int16" Value="1"/>
+															<Property Name="TimeMs" Type="Real64" Value="26601.8749401914"/>
+														</PropertyList>
+													</MusicCue>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</MusicSegment>
+								<MusicSegment Name="Mus_Map_A05_Combat_Outro" ID="{E47791C9-8F54-4B17-AD37-AA61F00141E1}" ShortID="622615255">
+									<Comment>新手关卡音乐 - 尾奏</Comment>
+									<PropertyList>
+										<Property Name="EndPosition" Type="Real64" Value="53347.875"/>
+										<Property Name="OverrideClockSettings" Type="bool" Value="True"/>
+										<Property Name="Tempo" Type="Real64" Value="144"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{6F969F3D-55F1-426B-A47B-EF0B277D173A}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5FD1269D-1FE1-419F-BD5C-0232E03AA6DD}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<MusicTrack Name="Mus_Map_A05_Combat_Outro" ID="{819A94BD-1C71-4BD1-8B7A-D89109946425}" ShortID="896519489">
+											<Comment>新手关卡音乐 - 尾奏</Comment>
+											<PropertyList>
+												<Property Name="IsStreamingEnabled" Type="bool">
+													<ValueList>
+														<Value>True</Value>
+													</ValueList>
+												</Property>
+												<Property Name="IsZeroLatency" Type="bool">
+													<ValueList>
+														<Value>True</Value>
+													</ValueList>
+												</Property>
+												<Property Name="OverrideConversion" Type="bool" Value="True"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Music" ID="{C97BE259-C5F2-451D-B4D0-A9582976A202}" WorkUnitID="{52413F6A-0454-4387-866C-C7E426BBDADD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5FD1269D-1FE1-419F-BD5C-0232E03AA6DD}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Mus_Map_A05_Combat_Outro" ID="{129AD68E-1D06-4003-A6FE-9B9076DC3889}">
+													<Language>SFX</Language>
+													<AudioFile>Mus\Mus_Map_A05_Combat_Outro.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="849729096"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<TransitionList>
+												<MusicTransition Name="Root" ID="{97CD2007-9C1B-4724-A7DA-B5D0E8D1CC87}">
+													<PropertyList>
+														<Property Name="IsFolder" Type="bool" Value="True"/>
+													</PropertyList>
+													<TransitionInfo/>
+												</MusicTransition>
+											</TransitionList>
+											<ObjectLists>
+												<ObjectList Name="Sequences">
+													<Reference>
+														<Local>
+															<MusicTrackSequence Name="" ID="{B207D5CA-5181-4797-95C7-6C46A215D86D}">
+																<ObjectLists>
+																	<ObjectList Name="Clips">
+																		<Reference>
+																			<Local>
+																				<MusicClip Name="Mus_Map_A05_Combat_Outro" ID="{A6A5BDEE-5910-471B-BDBA-3F7080CCAD1E}">
+																					<PropertyList>
+																						<Property Name="EndTrimOffset" Type="Real64" Value="26673.9375"/>
+																						<Property Name="FadeInMode" Type="int16" Value="0"/>
+																						<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																					</PropertyList>
+																					<AudioSourceRef Name="Mus_Map_A05_Combat_Outro" ID="{129AD68E-1D06-4003-A6FE-9B9076DC3889}"/>
+																				</MusicClip>
+																			</Local>
+																		</Reference>
+																	</ObjectList>
+																</ObjectLists>
+															</MusicTrackSequence>
+														</Local>
+													</Reference>
+												</ObjectList>
+											</ObjectLists>
+										</MusicTrack>
+									</ChildrenList>
+									<ObjectLists>
+										<ObjectList Name="Cues">
+											<Reference>
+												<Local>
+													<MusicCue Name="Entry Cue" ID="{3C51AA36-E068-4A93-B4F0-1DF3764F8C4C}"/>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<MusicCue Name="Exit Cue" ID="{E96576C5-45F0-473F-A8AF-DD9F83D87B9F}">
+														<PropertyList>
+															<Property Name="CueType" Type="int16" Value="1"/>
+															<Property Name="TimeMs" Type="Real64" Value="26703.9761363636"/>
+														</PropertyList>
+													</MusicCue>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</MusicSegment>
+								<MusicSegment Name="Mus_Map_A05_Combat_Intro" ID="{A42CAE1B-470C-4203-B7F0-749FE661374C}" ShortID="348380303">
+									<Comment>新手关卡音乐 - 引子</Comment>
+									<PropertyList>
+										<Property Name="EndPosition" Type="Real64" Value="30833.3333333333"/>
+										<Property Name="OverrideClockSettings" Type="bool" Value="True"/>
+										<Property Name="Tempo" Type="Real64" Value="144"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{6F969F3D-55F1-426B-A47B-EF0B277D173A}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5FD1269D-1FE1-419F-BD5C-0232E03AA6DD}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<MusicTrack Name="Mus_Map_A05_Combat_Intro" ID="{1DCFB859-6A04-4CA9-92DC-013D848A9285}" ShortID="680510921">
+											<PropertyList>
+												<Property Name="IsStreamingEnabled" Type="bool">
+													<ValueList>
+														<Value>True</Value>
+													</ValueList>
+												</Property>
+												<Property Name="IsZeroLatency" Type="bool">
+													<ValueList>
+														<Value>True</Value>
+													</ValueList>
+												</Property>
+												<Property Name="OverrideConversion" Type="bool" Value="True"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Music" ID="{C97BE259-C5F2-451D-B4D0-A9582976A202}" WorkUnitID="{52413F6A-0454-4387-866C-C7E426BBDADD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5FD1269D-1FE1-419F-BD5C-0232E03AA6DD}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Mus_Map_A05_Combat_Intro" ID="{F8A8A12C-1491-4FE5-BADD-CD31F075BBBA}">
+													<Language>SFX</Language>
+													<AudioFile>Mus\Mus_Map_A05_Combat_Intro.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="962951405"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<TransitionList>
+												<MusicTransition Name="Root" ID="{FA500355-C067-47F0-9BF6-F004FF885F1C}">
+													<PropertyList>
+														<Property Name="IsFolder" Type="bool" Value="True"/>
+													</PropertyList>
+													<TransitionInfo/>
+												</MusicTransition>
+											</TransitionList>
+											<ObjectLists>
+												<ObjectList Name="Sequences">
+													<Reference>
+														<Local>
+															<MusicTrackSequence Name="" ID="{3CA6EDF1-7B63-49FA-A48C-327B51196C84}">
+																<ObjectLists>
+																	<ObjectList Name="Clips">
+																		<Reference>
+																			<Local>
+																				<MusicClip Name="Mus_Map_A05_Combat_Intro" ID="{719E6B01-5743-4852-BF5D-EF01F9D99E09}">
+																					<PropertyList>
+																						<Property Name="EndTrimOffset" Type="Real64" Value="26673.9375"/>
+																						<Property Name="FadeInMode" Type="int16" Value="0"/>
+																						<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																					</PropertyList>
+																					<AudioSourceRef Name="Mus_Map_A05_Combat_Intro" ID="{F8A8A12C-1491-4FE5-BADD-CD31F075BBBA}"/>
+																				</MusicClip>
+																			</Local>
+																		</Reference>
+																	</ObjectList>
+																</ObjectLists>
+															</MusicTrackSequence>
+														</Local>
+													</Reference>
+												</ObjectList>
+											</ObjectLists>
+										</MusicTrack>
+									</ChildrenList>
+									<ObjectLists>
+										<ObjectList Name="Cues">
+											<Reference>
+												<Local>
+													<MusicCue Name="Entry Cue" ID="{67E997DA-88FA-403F-B526-DE9C11497BCE}"/>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<MusicCue Name="Exit Cue" ID="{EEFC0485-FF91-4D23-8FEF-6CA0C07F470D}">
+														<PropertyList>
+															<Property Name="CueType" Type="int16" Value="1"/>
+															<Property Name="TimeMs" Type="Real64" Value="26666.6666666667"/>
+														</PropertyList>
+													</MusicCue>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</MusicSegment>
+							</ChildrenList>
+							<TransitionList>
+								<MusicTransition Name="Root" ID="{E5AAE19E-95DE-4359-9A80-AB37DEA1665F}">
+									<PropertyList>
+										<Property Name="IsFolder" Type="bool" Value="True"/>
+									</PropertyList>
+									<ChildrenList>
+										<MusicTransition Name="Transition" ID="{E144EA2A-7805-4E9C-A933-46F1BCA35E13}">
+											<TransitionInfo/>
+										</MusicTransition>
+									</ChildrenList>
+									<TransitionInfo/>
+								</MusicTransition>
+							</TransitionList>
+							<Playlist>
+								<MusicPlaylistItem Name="" ID="{64C148F1-A7EE-4768-853A-00EA8FE3EFB9}" ShortID="694066653">
+									<ChildrenList>
+										<MusicPlaylistItem Name="" ID="{B1AA2D2C-2DD0-4B35-BCAD-C1C14A2C32E6}" ShortID="70022535">
+											<PropertyList>
+												<Property Name="PlaylistItemType" Type="int16" Value="1"/>
+											</PropertyList>
+											<SegmentRef Name="Mus_Map_A05_Combat_Intro" ID="{A42CAE1B-470C-4203-B7F0-749FE661374C}"/>
+										</MusicPlaylistItem>
+										<MusicPlaylistItem Name="" ID="{4859F00B-CA7E-4D3F-BD17-6E9B002E923F}" ShortID="106966533">
+											<PropertyList>
+												<Property Name="PlaylistItemType" Type="int16" Value="1"/>
+											</PropertyList>
+											<SegmentRef Name="Mus_Map_A05_Combat_Verse1" ID="{9BE1C0FC-6078-4558-B3A8-71708B6C51DF}"/>
+										</MusicPlaylistItem>
+										<MusicPlaylistItem Name="" ID="{0D14049B-72F4-4CE2-846D-8C86F3569E0F}" ShortID="501047914">
+											<PropertyList>
+												<Property Name="LoopCount" Type="int16" Value="2"/>
+												<Property Name="PlaylistItemType" Type="int16" Value="1"/>
+											</PropertyList>
+											<SegmentRef Name="Mus_Map_A05_Combat_Drop1" ID="{C75B0986-EB1E-40C6-BF45-9B2A5D243AE3}"/>
+										</MusicPlaylistItem>
+										<MusicPlaylistItem Name="" ID="{3C3EA8E6-5E53-4587-B62C-5A5758965093}" ShortID="327537339">
+											<PropertyList>
+												<Property Name="PlaylistItemType" Type="int16" Value="1"/>
+											</PropertyList>
+											<SegmentRef Name="Mus_Map_A05_Combat_Drop2" ID="{6D91ED37-7D3F-4E83-A183-B24FAF5DB440}"/>
+										</MusicPlaylistItem>
+										<MusicPlaylistItem Name="" ID="{22B8FA64-54F3-4F3B-B2B8-1E81C9D22544}" ShortID="421768241">
+											<PropertyList>
+												<Property Name="PlaylistItemType" Type="int16" Value="1"/>
+											</PropertyList>
+											<SegmentRef Name="Mus_Map_A05_Combat_Drop1" ID="{C75B0986-EB1E-40C6-BF45-9B2A5D243AE3}"/>
+										</MusicPlaylistItem>
+										<MusicPlaylistItem Name="" ID="{8618A266-DD6B-4440-8273-62FDDCEFA2DF}" ShortID="471512640">
+											<PropertyList>
+												<Property Name="PlaylistItemType" Type="int16" Value="1"/>
+											</PropertyList>
+											<SegmentRef Name="Mus_Map_A05_Combat_Outro" ID="{E47791C9-8F54-4B17-AD37-AA61F00141E1}"/>
+										</MusicPlaylistItem>
+										<MusicPlaylistItem Name="" ID="{1303D4B5-B62D-4D66-ACB5-DF0D05F4B3D1}" ShortID="415715937">
+											<PropertyList>
+												<Property Name="LoopCount" Type="int16" Value="0"/>
+											</PropertyList>
+											<ChildrenList>
+												<MusicPlaylistItem Name="" ID="{8CD46CEB-2044-4A35-8ACF-28B7FCD9456F}" ShortID="1032341624">
+													<PropertyList>
+														<Property Name="PlaylistItemType" Type="int16" Value="1"/>
+													</PropertyList>
+													<SegmentRef Name="Mus_Map_A05_Combat_Verse2" ID="{77E9D986-43A2-4085-959A-3AF3DE0917AF}"/>
+												</MusicPlaylistItem>
+											</ChildrenList>
+										</MusicPlaylistItem>
+									</ChildrenList>
+								</MusicPlaylistItem>
+							</Playlist>
+						</MusicPlaylistContainer>
+					</ChildrenList>
+					<TransitionList>
+						<MusicTransition Name="Root" ID="{19A18E95-3791-483B-BE90-8FA416D3890A}">
+							<PropertyList>
+								<Property Name="IsFolder" Type="bool" Value="True"/>
+							</PropertyList>
+							<ChildrenList>
+								<MusicTransition Name="Transition" ID="{FA7438B0-0AEB-45C7-970C-3ECF2764FA3A}">
+									<TransitionInfo/>
+								</MusicTransition>
+							</ChildrenList>
+							<TransitionInfo/>
+						</MusicTransition>
+					</TransitionList>
+					<ArgumentList>
+						<ArgumentRef Name="Gameplay_State" ID="{4A407E48-F886-4F55-AEF2-151EC76B36FE}"/>
+					</ArgumentList>
+					<EntryList>
+						<Entry>
+							<Path>
+								<PathElementRef Name="Combat" ID="{F4CA22A4-367E-4041-962A-673F4F21C198}"/>
+							</Path>
+							<AudioNodeInfo>
+								<AudioNodeRef Name="Mus_Map_A05_Combat" ID="{B79586C1-A7EE-4D4B-89E5-BCBFBCE86AAE}" WorkUnitID="{FB717825-3A21-4880-99DA-75864B153726}" Platform="Linked"/>
+							</AudioNodeInfo>
+						</Entry>
+					</EntryList>
+				</MusicSwitchContainer>
+			</ChildrenList>
+		</WorkUnit>
+	</InteractiveMusic>
+</WwiseDocument>

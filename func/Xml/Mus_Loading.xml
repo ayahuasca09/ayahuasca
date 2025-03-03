@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{894F1FEC-D439-41C5-8472-B870B11F98A0}" SchemaVersion="110" RootDocumentID="{E8A5F6A0-AB3E-4166-BB68-C7D7ECC92B29}" ParentDocumentID="{32F674A8-5DCD-4FF9-BA4C-CF8215152DDC}">
+	<InteractiveMusic>
+		<WorkUnit Name="Mus_Loading" ID="{894F1FEC-D439-41C5-8472-B870B11F98A0}" OwnerID="{A0300139-3918-43F8-B6DC-6756C9A5343D}" PersistMode="Nested">
+			<ChildrenList>
+				<MusicPlaylistContainer Name="Mus_Loading" ID="{E8481A92-B113-4434-A871-11DBD6489ED0}" ShortID="985559951">
+					<PropertyList>
+						<Property Name="GridOffsetPreset" Type="int16" Value="1"/>
+						<Property Name="OverrideOutput" Type="bool" Value="True"/>
+						<Property Name="Priority" Type="int16">
+							<ValueList>
+								<Value>30</Value>
+							</ValueList>
+						</Property>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-96</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Music" ID="{C97BE259-C5F2-451D-B4D0-A9582976A202}" WorkUnitID="{52413F6A-0454-4387-866C-C7E426BBDADD}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Mus_Loading" ID="{61D8E63F-30D3-4F0B-88C1-B129B19EDA72}" WorkUnitID="{9A86BFBA-B12F-4D1A-8049-990F76E26649}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<MusicSegment Name="Mus_Loading" ID="{E4EB9488-6F8D-432C-9A0C-6D8FBFC1F92D}" ShortID="4128279">
+							<Comment>Loading界面音乐</Comment>
+							<PropertyList>
+								<Property Name="EndPosition" Type="Real64" Value="282298.416666667"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>1.5</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{6F969F3D-55F1-426B-A47B-EF0B277D173A}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5FD1269D-1FE1-419F-BD5C-0232E03AA6DD}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<MusicTrack Name="Mus_Loading" ID="{F374FD59-607C-400D-AF5D-FD940E5B8284}" ShortID="741332739">
+									<Comment>Loading界面音乐</Comment>
+									<PropertyList>
+										<Property Name="IsStreamingEnabled" Type="bool">
+											<ValueList>
+												<Value>True</Value>
+											</ValueList>
+										</Property>
+										<Property Name="IsZeroLatency" Type="bool">
+											<ValueList>
+												<Value>True</Value>
+											</ValueList>
+										</Property>
+										<Property Name="OverrideConversion" Type="bool" Value="True"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Music" ID="{C97BE259-C5F2-451D-B4D0-A9582976A202}" WorkUnitID="{52413F6A-0454-4387-866C-C7E426BBDADD}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5FD1269D-1FE1-419F-BD5C-0232E03AA6DD}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Mus_Login" ID="{68DD4C6D-4F25-4131-AA3C-09E37E0A8CAB}">
+											<Language>SFX</Language>
+											<AudioFile>Mus\Mus_Login.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="870788007"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<TransitionList>
+										<MusicTransition Name="Root" ID="{479A8DB8-BA42-4E94-A715-1BDBDFE567B8}">
+											<PropertyList>
+												<Property Name="IsFolder" Type="bool" Value="True"/>
+											</PropertyList>
+											<TransitionInfo/>
+										</MusicTransition>
+									</TransitionList>
+									<ObjectLists>
+										<ObjectList Name="Sequences">
+											<Reference>
+												<Local>
+													<MusicTrackSequence Name="" ID="{088F302A-D923-4B6A-958B-D4F5A2BF9C1D}">
+														<ObjectLists>
+															<ObjectList Name="Clips">
+																<Reference>
+																	<Local>
+																		<MusicClip Name="Mus_Login" ID="{5C9E913B-67CF-4BE5-98A0-04555A8BFA0C}">
+																			<PropertyList>
+																				<Property Name="EndTrimOffset" Type="Real64" Value="259408.416666667"/>
+																				<Property Name="FadeInMode" Type="int16" Value="0"/>
+																				<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																			</PropertyList>
+																			<AudioSourceRef Name="Mus_Login" ID="{68DD4C6D-4F25-4131-AA3C-09E37E0A8CAB}"/>
+																		</MusicClip>
+																	</Local>
+																</Reference>
+															</ObjectList>
+														</ObjectLists>
+													</MusicTrackSequence>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</MusicTrack>
+							</ChildrenList>
+							<ObjectLists>
+								<ObjectList Name="Cues">
+									<Reference>
+										<Local>
+											<MusicCue Name="Entry Cue" ID="{43379ACC-B78A-474F-8710-6DEAAC96AFF0}"/>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<MusicCue Name="Exit Cue" ID="{C3402A2D-193E-43CC-86BE-4C9DF40E28A6}">
+												<PropertyList>
+													<Property Name="CueType" Type="int16" Value="1"/>
+													<Property Name="TimeMs" Type="Real64" Value="256500"/>
+												</PropertyList>
+											</MusicCue>
+										</Local>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
+						</MusicSegment>
+					</ChildrenList>
+					<TransitionList>
+						<MusicTransition Name="Root" ID="{70F065D1-A5FA-4B1E-AE35-08AE2B1F8272}">
+							<PropertyList>
+								<Property Name="IsFolder" Type="bool" Value="True"/>
+							</PropertyList>
+							<ChildrenList>
+								<MusicTransition Name="Transition" ID="{9740F07F-75E3-4160-B705-84BC70561B06}">
+									<TransitionInfo/>
+								</MusicTransition>
+							</ChildrenList>
+							<TransitionInfo/>
+						</MusicTransition>
+					</TransitionList>
+					<Playlist>
+						<MusicPlaylistItem Name="" ID="{79A37CCB-BBFF-4B62-913B-2BF34E517A70}" ShortID="167996540">
+							<ChildrenList>
+								<MusicPlaylistItem Name="" ID="{176D0FB2-6470-466A-8DF4-4535FE7D5C57}" ShortID="73783166">
+									<PropertyList>
+										<Property Name="LoopCount" Type="int16" Value="0"/>
+										<Property Name="PlaylistItemType" Type="int16" Value="1"/>
+									</PropertyList>
+									<SegmentRef Name="Mus_Loading" ID="{E4EB9488-6F8D-432C-9A0C-6D8FBFC1F92D}"/>
+								</MusicPlaylistItem>
+							</ChildrenList>
+						</MusicPlaylistItem>
+					</Playlist>
+				</MusicPlaylistContainer>
+			</ChildrenList>
+		</WorkUnit>
+	</InteractiveMusic>
+</WwiseDocument>

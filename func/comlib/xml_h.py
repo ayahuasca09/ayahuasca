@@ -92,24 +92,122 @@ def save_pretty_xml(tree, file_path):
 # 将新元素插入到指定的XML文件中
 # insert_into_xml('Mus_Test.xml', './/EntryList', new_entry)
 
+"""xml元素查找"""
+
+
+def find_element_names(xml_file, tag_name, property_name):
+    """
+    查找 XML 文件中指定标签的元素，并返回其名称。
+
+    参数：
+        xml_file (str): XML 文件的路径。
+        tag_name (str): 要查找的标签名称。
+        property_name：属性名称
+
+    返回：
+        list: 包含找到的元素的名称列表。
+    """
+    # 解析 XML 文件
+    tree = ET.parse(xml_file)
+    root = tree.getroot()
+
+    # 用于存储找到的名称
+    names = []
+
+    # 查找所有指定标签的元素
+    for element in root.findall(f'.//{tag_name}'):
+        # 获取名称属性
+        name = element.get(property_name)
+        if name:
+            names.append(name)
+
+    return names
+
+
+# # 使用示例
+# xml_file_path = 'path_to_your_file.xml'
+# tag_name = 'MusicSwitchContainer'
+# names = find_element_names(xml_file_path, tag_name)
+#
+# # 打印找到的名称
+# print(names)
+
+
+def find_elements_in_xml(file_path, xpath):
+    """
+    解析 XML 文件并根据提供的 XPath 表达式查找元素。
+
+    :param file_path: XML 文件路径
+    :param xpath: XPath 表达式，用于查找元素
+    :return: 匹配的元素列表，如果没有匹配则返回空列表
+    """
+    # 解析 XML 文件
+    tree = etree.parse(file_path)
+
+    # 获取 XML 的根元素
+    root = tree.getroot()
+
+    # 使用 lxml 库的 XPath 功能查找元素
+    elements = root.xpath(xpath)
+
+    # 如果没有找到元素，打印提示信息
+    if not elements:
+        print(f"没有找到与 XPath 匹配的元素: {xpath}")
+        return []
+
+    return elements
+
+
+def check_for_element(file_path, container_type, container_name, sub_element):
+    """
+    检查指定的容器类型和名称下是否存在特定的子元素，并打印其属性。
+
+    :param file_path: XML 文件路径
+    :param container_type: 容器类型标签名（例如 'MusicSwitchContainer'）
+    :param container_name: 容器的 Name 属性值（例如 'Mus_Global'）
+    :param sub_element: 需要查找的子元素标签名（例如 'ArgumentList'）
+    """
+    # 使用格式化字符串构建 XPath 表达式
+    xpath = f".//{container_type}[@Name='{container_name}']/{sub_element}"
+
+    # 调用函数查找元素
+    elements = find_elements_in_xml(file_path, xpath)
+
+    # 判断是否找到子元素，并打印结果
+    if elements:
+        for elem in elements:
+            print_attributes(elem)
+            parse_element(elem)
+        return elements
+    else:
+        print(f"没有找到标签为 '{sub_element}' 的元素。")
+        return None
+
+
+# # 使用示例
+# file_path = 'your_file.xml'  # 替换为实际的 XML 文件路径
+# container_type = 'MusicSwitchContainer'  # 容器标签名
+# container_name = 'Mus_Global'  # 容器的 Name 属性
+# sub_element = 'ArgumentList'  # 需要查找的子元素标签
+#
+# # 调用函数进行检查
+# check_for_element(file_path, container_type, container_name, sub_element)
 
 """xml元素及数据删除"""
 
 
-def remove_element_from_xml(file_path, xpath):
+def remove_elements_from_xml(file_path, elements):
+    if not elements:
+        print("没有提供要删除的元素。")
+        return
+
     tree = etree.parse(file_path)
     root = tree.getroot()
 
-    # 使用 lxml 的 XPath 功能
-    elements_to_remove = root.xpath(xpath)
-    if not elements_to_remove:
-        print(f"没有找到与 XPath 匹配的元素: {xpath}")
-        return
-
-    for element_to_remove in elements_to_remove:
-        parent = element_to_remove.getparent()
+    for element in elements:
+        parent = element.getparent()
         if parent is not None:
-            parent.remove(element_to_remove)
+            parent.remove(element)
 
     # 写回修改后的 XML 文件
     with open(file_path, 'wb') as f:
@@ -118,7 +216,9 @@ def remove_element_from_xml(file_path, xpath):
     print("元素已删除并更新 XML 文件。")
 
 
-# remove_element_from_xml('Mus_Test.xml', './/Entry[Path[@Name="New"]]')
+# 示例用法
+# elements_to_remove = find_elements_in_xml('Mus_Test.xml', './/Entry[Path[@Name="New"]]')
+# remove_elements_from_xml('Mus_Test.xml', elements_to_remove)
 
 """xml数据读取和输出"""
 
@@ -151,6 +251,39 @@ def parse_element(element, indent=0, is_show_property=True):
         parse_element(child, indent + 1)
 
 
+# 递归遍历特定元素信息
+def parse_selected(file_path, tag_name):
+    """
+    解析 XML 文件并查找指定标签，输出该标签作为根的子树。
+
+    参数:
+    - file_path: str
+        要解析的 XML 文件的路径。
+    - tag_name: str
+        要查找的标签名称。
+    """
+
+    # 解析 XML 文件
+    tree = ET.parse(file_path)
+    root = tree.getroot()
+
+    # 查找第一个指定标签的元素
+    for elem in root.iter(tag_name):
+        # print(f"Found element: {elem.tag} as new root")
+        print_attributes(elem)
+
+        # 递归解析并打印该元素及其子元素
+        parse_element(elem)
+
+
+# 使用示例
+# xml_file_path = 'your_file.xml'
+# tag_to_find = 'MusicSwitchContainer'
+#
+# parse_selected(xml_file_path, tag_to_find)
+
+
+# 递归遍历所有元素信息
 def parse_xml(file_path):
     """
         解析XML文件并格式化输出其结构。

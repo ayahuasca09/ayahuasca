@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{F152D01E-52A5-435B-976A-3FFB45B535A8}" SchemaVersion="110" RootDocumentID="{E8A5F6A0-AB3E-4166-BB68-C7D7ECC92B29}" ParentDocumentID="{03D94B59-A8D2-4EC2-AC77-A99E485245E8}">
+	<InteractiveMusic>
+		<WorkUnit Name="Mus_Story_S05" ID="{F152D01E-52A5-435B-976A-3FFB45B535A8}" OwnerID="{5630EFA7-A343-494C-A2E0-B5361C9ACC50}" PersistMode="Nested">
+			<ChildrenList>
+				<MusicPlaylistContainer Name="Mus_Story_S05" ID="{F7F22D49-9757-4FD8-B891-72DD0688771A}" ShortID="603573622">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{6F969F3D-55F1-426B-A47B-EF0B277D173A}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5FD1269D-1FE1-419F-BD5C-0232E03AA6DD}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<MusicSegment Name="Mus_Story_S05" ID="{0A98F72B-3D83-47C9-BEB8-2BAEDA6E7679}" ShortID="282489602">
+							<Comment>剧情音乐-灰姑娘boss战-开场</Comment>
+							<PropertyList>
+								<Property Name="EndPosition" Type="Real64" Value="69757.3246488113"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{6F969F3D-55F1-426B-A47B-EF0B277D173A}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5FD1269D-1FE1-419F-BD5C-0232E03AA6DD}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<MusicTrack Name="Mus_Story_S05" ID="{DAB7F714-16A9-4ABF-99FB-1558741F2FF9}" ShortID="907374598">
+									<Comment>剧情音乐-灰姑娘boss战-开场</Comment>
+									<PropertyList>
+										<Property Name="IsStreamingEnabled" Type="bool">
+											<ValueList>
+												<Value>True</Value>
+											</ValueList>
+										</Property>
+										<Property Name="IsZeroLatency" Type="bool">
+											<ValueList>
+												<Value>True</Value>
+											</ValueList>
+										</Property>
+										<Property Name="OverrideConversion" Type="bool" Value="True"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Music" ID="{C97BE259-C5F2-451D-B4D0-A9582976A202}" WorkUnitID="{52413F6A-0454-4387-866C-C7E426BBDADD}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5FD1269D-1FE1-419F-BD5C-0232E03AA6DD}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Mus_Story_S05" ID="{3E9BC08C-014C-4970-A341-B3330BD72572}">
+											<Language>SFX</Language>
+											<AudioFile>Mus\Mus_Story_S05.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="647406684"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<TransitionList>
+										<MusicTransition Name="Root" ID="{785FA377-A1A7-4734-A09F-9BF4F4A8B31C}">
+											<PropertyList>
+												<Property Name="IsFolder" Type="bool" Value="True"/>
+											</PropertyList>
+											<TransitionInfo/>
+										</MusicTransition>
+									</TransitionList>
+									<ObjectLists>
+										<ObjectList Name="Sequences">
+											<Reference>
+												<Local>
+													<MusicTrackSequence Name="" ID="{5765440F-033D-4B4D-9C09-12B00D3F9809}">
+														<ObjectLists>
+															<ObjectList Name="Clips">
+																<Reference>
+																	<Local>
+																		<MusicClip Name="Mus_Story_S05" ID="{E2E483E0-2ABE-4D73-82E0-3EF5A260E4D4}">
+																			<PropertyList>
+																				<Property Name="EndTrimOffset" Type="Real64" Value="66375"/>
+																				<Property Name="FadeInMode" Type="int16" Value="0"/>
+																				<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																			</PropertyList>
+																			<AudioSourceRef Name="Mus_Story_S05" ID="{3E9BC08C-014C-4970-A341-B3330BD72572}"/>
+																		</MusicClip>
+																	</Local>
+																</Reference>
+															</ObjectList>
+														</ObjectLists>
+													</MusicTrackSequence>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</MusicTrack>
+							</ChildrenList>
+							<ObjectLists>
+								<ObjectList Name="Cues">
+									<Reference>
+										<Local>
+											<MusicCue Name="Entry Cue" ID="{BEE2F919-6899-48C3-8F1F-2BC4D3DF706C}"/>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<MusicCue Name="Exit Cue" ID="{94E9455A-3A2F-40BA-B8DF-0A622FAA74B2}">
+												<PropertyList>
+													<Property Name="CueType" Type="int16" Value="1"/>
+													<Property Name="TimeMs" Type="Real64" Value="66438.9000082321"/>
+												</PropertyList>
+											</MusicCue>
+										</Local>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
+						</MusicSegment>
+					</ChildrenList>
+					<TransitionList>
+						<MusicTransition Name="Root" ID="{739CA76C-D964-4442-84C3-AECAAF28B8C2}">
+							<PropertyList>
+								<Property Name="IsFolder" Type="bool" Value="True"/>
+							</PropertyList>
+							<ChildrenList>
+								<MusicTransition Name="Transition" ID="{3738A7D1-EE94-4E4D-8B1B-DB9F371E0F51}">
+									<TransitionInfo/>
+								</MusicTransition>
+							</ChildrenList>
+							<TransitionInfo/>
+						</MusicTransition>
+					</TransitionList>
+					<Playlist>
+						<MusicPlaylistItem Name="" ID="{00F4CAB7-A0D8-4C82-98F2-9718DB53385D}" ShortID="196501470">
+							<ChildrenList>
+								<MusicPlaylistItem Name="" ID="{8A2E4DD6-F71F-46E8-8CFF-2F82869C7083}" ShortID="474667213">
+									<PropertyList>
+										<Property Name="PlaylistItemType" Type="int16" Value="1"/>
+									</PropertyList>
+									<SegmentRef Name="Mus_Story_S05" ID="{0A98F72B-3D83-47C9-BEB8-2BAEDA6E7679}"/>
+								</MusicPlaylistItem>
+							</ChildrenList>
+						</MusicPlaylistItem>
+					</Playlist>
+				</MusicPlaylistContainer>
+			</ChildrenList>
+		</WorkUnit>
+	</InteractiveMusic>
+</WwiseDocument>

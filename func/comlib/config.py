@@ -2,6 +2,7 @@ from os.path import abspath, dirname
 import sys
 import os
 import importlib.util
+import re
 
 """获取py的根路径"""
 
@@ -42,7 +43,7 @@ auto_sound_path = os.path.join(audio_parent_path, 'Tool', 'Auto_Sound')
 
 """UE主要路径"""
 ue_content_path = config_custom.ue_path
-print(ue_content_path)
+# print(ue_content_path)
 ue_project_path = os.path.dirname(ue_content_path)
 # print(ue_project_path)
 ue_audio_path = os.path.join(ue_content_path, 'Audio')
@@ -101,6 +102,7 @@ wwise_aux_duck_path = "\\Master-Mixer Hierarchy\\v1\\Master Audio Bus\\Auxiliary
 # Mus_Global路径
 wwise_mus_global_path = "\\Interactive Music Hierarchy\\v1\\Mus\\Mus_Global"
 # wwise_mus_global_path = "\\Interactive Music Hierarchy\\Default Work Unit\\Test\\Mus_Global_Test"
+wwise_mus_path = "\\Interactive Music Hierarchy\\v1"
 # Amb_Global路径
 wwise_amb_global_path = "\\Actor-Mixer Hierarchy\\v1\\Amb\\Amb\\Amb_Global\\Amb_Global\\Amb_Global_Area\\Amb_Global_Area\\Amb_Global_Area"
 """state folder path"""
@@ -474,3 +476,38 @@ es_vo_data_dict = {
     'VO_External_NPC_3D': ('vn3', 560471564)
 }
 # print(es_vo_data_dict['VO_External_1P_2D'][0])
+
+
+"""xml音乐状态设置"""
+# 该字典为mus的switchcontainer名称和stategroup名称映射
+# 注意，mus的switchcontainer名称为正则表达式
+mus_to_stategroup_dict = {
+    "Mus_Global": "Process_State",
+    "Mus_Map": "Map_Type",
+    "Mus_Story": "Story_Type",
+    "Mus_System": "System_Type"
+}
+pattern_Mus_Map_A0x = re.compile(r"Mus_Map_A\d+(?!_\w+)")
+
+pattern_Combat_Type = re.compile(r'.*_Combat$')
+
+pattern_Mon_Type = re.compile(r'.*(_Elite|_Medium|_Small)$')
+
+pattern_Boss = re.compile(r'.*_Boss$')
+
+"""mus的switch容器与state的映射判定"""
+
+
+# 返回值是Stategroup的名字
+
+def mus_map_to_state(switch_container_name):
+    if switch_container_name in mus_to_stategroup_dict:
+        return mus_to_stategroup_dict[switch_container_name]
+    elif re.match(pattern_Mus_Map_A0x, switch_container_name):
+        return "Gameplay_State"
+    elif re.match(pattern_Combat_Type, switch_container_name):
+        return "Combat_Mon_Type"
+    elif re.match(pattern_Mon_Type, switch_container_name):
+        return "Battle_Type"
+    elif re.match(pattern_Boss, switch_container_name):
+        return "Combat_Boss_State"

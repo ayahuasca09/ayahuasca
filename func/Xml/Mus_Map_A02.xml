@@ -1,0 +1,1508 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{1B7DE30A-022A-4F3E-833D-4700956087BA}" SchemaVersion="110" RootDocumentID="{E8A5F6A0-AB3E-4166-BB68-C7D7ECC92B29}" ParentDocumentID="{A760CF39-119E-4EC1-BE5B-EE18BCE5945C}">
+	<InteractiveMusic>
+		<WorkUnit Name="Mus_Map_A02" ID="{1B7DE30A-022A-4F3E-833D-4700956087BA}" OwnerID="{8E2E9975-595B-4589-8405-1CD3958EA952}" PersistMode="Nested">
+			<ChildrenList>
+				<MusicSwitchContainer Name="Mus_Map_A02" ID="{460C9E38-1E25-4B86-AE4F-74149DE8FA46}" ShortID="459889903">
+					<PropertyList>
+						<Property Name="GridOffsetPreset" Type="int16" Value="1"/>
+						<Property Name="Priority" Type="int16">
+							<ValueList>
+								<Value>30</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Music" ID="{C97BE259-C5F2-451D-B4D0-A9582976A202}" WorkUnitID="{52413F6A-0454-4387-866C-C7E426BBDADD}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Mus" ID="{CA31BF9F-00D3-4EE4-8C60-D7A60ECDEA91}" WorkUnitID="{9A86BFBA-B12F-4D1A-8049-990F76E26649}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<MusicSwitchContainer Name="Mus_Map_A02_Combat" ID="{4A0D26FC-B529-443A-85EE-EFC62D963B07}" ShortID="375913230">
+							<PropertyList>
+								<Property Name="OverrideOutput" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{6F969F3D-55F1-426B-A47B-EF0B277D173A}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Mus_Combat" ID="{2819F04A-D891-4834-95DE-3A5A322ADDCB}" WorkUnitID="{9A86BFBA-B12F-4D1A-8049-990F76E26649}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<MusicSwitchContainer Name="Mus_Map_A02_Combat_Boss" ID="{3D682B0D-FFF8-4C09-AD70-7B60C0607DEF}" ShortID="55002157">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{6F969F3D-55F1-426B-A47B-EF0B277D173A}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5FD1269D-1FE1-419F-BD5C-0232E03AA6DD}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<MusicPlaylistContainer Name="Mus_Map_A02_Combat_Boss_Start" ID="{69F2CBCB-1BBC-4CAD-994A-5795AF86B5BE}" ShortID="810697359">
+											<PropertyList>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>7.5</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{6F969F3D-55F1-426B-A47B-EF0B277D173A}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5FD1269D-1FE1-419F-BD5C-0232E03AA6DD}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<MusicSegment Name="Mus_Map_A02_Combat_Boss_Start_End" ID="{F840AB14-4C10-4F1A-88A1-68ABEAC76A38}" ShortID="670780263">
+													<Comment>灰姑娘boss战_一阶段过场演出衔接</Comment>
+													<PropertyList>
+														<Property Name="EndPosition" Type="Real64" Value="187886.832010353"/>
+														<Property Name="OverrideClockSettings" Type="bool" Value="True"/>
+														<Property Name="Tempo" Type="Real64" Value="146"/>
+														<Property Name="Volume" Type="Real64">
+															<ValueList>
+																<Value>-3</Value>
+															</ValueList>
+														</Property>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{6F969F3D-55F1-426B-A47B-EF0B277D173A}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5FD1269D-1FE1-419F-BD5C-0232E03AA6DD}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<MusicTrack Name="Mus_Map_A02_Combat_Boss_Start_End" ID="{DA22DB93-96D3-4928-9030-D30E036B0DEC}" ShortID="746527423">
+															<Comment>灰姑娘boss战_一阶段过场演出衔接</Comment>
+															<PropertyList>
+																<Property Name="IsStreamingEnabled" Type="bool">
+																	<ValueList>
+																		<Value>True</Value>
+																	</ValueList>
+																</Property>
+																<Property Name="IsZeroLatency" Type="bool">
+																	<ValueList>
+																		<Value>True</Value>
+																	</ValueList>
+																</Property>
+																<Property Name="OverrideConversion" Type="bool" Value="True"/>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Music" ID="{C97BE259-C5F2-451D-B4D0-A9582976A202}" WorkUnitID="{52413F6A-0454-4387-866C-C7E426BBDADD}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5FD1269D-1FE1-419F-BD5C-0232E03AA6DD}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="Mus_Map_A02_Combat_Boss_Start_End" ID="{E0259664-1508-4BB8-A1BA-1E199E5455B3}">
+																	<Language>SFX</Language>
+																	<AudioFile>Mus\Mus_Map_A02_Combat_Boss_Start_End.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="259287103"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<TransitionList>
+																<MusicTransition Name="Root" ID="{6517A5F3-EF48-4093-89AE-72A2F6DE13B4}">
+																	<PropertyList>
+																		<Property Name="IsFolder" Type="bool" Value="True"/>
+																	</PropertyList>
+																	<TransitionInfo/>
+																</MusicTransition>
+															</TransitionList>
+															<ObjectLists>
+																<ObjectList Name="Sequences">
+																	<Reference>
+																		<Local>
+																			<MusicTrackSequence Name="" ID="{724B948B-47C3-4466-8019-DA3C5A8D0FD9}">
+																				<ObjectLists>
+																					<ObjectList Name="Clips">
+																						<Reference>
+																							<Local>
+																								<MusicClip Name="Mus_Map_A02_Combat_Boss_Start_End" ID="{997D78D8-62C2-4B2D-9FD4-F9FE7F15FB02}">
+																									<PropertyList>
+																										<Property Name="EndTrimOffset" Type="Real64" Value="138550.479166667"/>
+																										<Property Name="FadeInMode" Type="int16" Value="0"/>
+																										<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																									</PropertyList>
+																									<AudioSourceRef Name="Mus_Map_A02_Combat_Boss_Start_End" ID="{E0259664-1508-4BB8-A1BA-1E199E5455B3}"/>
+																								</MusicClip>
+																							</Local>
+																						</Reference>
+																					</ObjectList>
+																				</ObjectLists>
+																			</MusicTrackSequence>
+																		</Local>
+																	</Reference>
+																</ObjectList>
+															</ObjectLists>
+														</MusicTrack>
+													</ChildrenList>
+													<ObjectLists>
+														<ObjectList Name="Cues">
+															<Reference>
+																<Local>
+																	<MusicCue Name="Entry Cue" ID="{B51F3CAC-1BD1-4F59-A75C-3A61A95C21B6}"/>
+																</Local>
+															</Reference>
+															<Reference>
+																<Local>
+																	<MusicCue Name="Exit Cue" ID="{4CC45239-76E4-40C3-B228-D8BC9066475F}">
+																		<PropertyList>
+																			<Property Name="CueType" Type="int16" Value="1"/>
+																			<Property Name="TimeMs" Type="Real64" Value="137750"/>
+																		</PropertyList>
+																	</MusicCue>
+																</Local>
+															</Reference>
+														</ObjectList>
+													</ObjectLists>
+												</MusicSegment>
+												<MusicSegment Name="Mus_Map_A02_Combat_Boss_Start" ID="{D22522FB-DB26-464A-A12F-41D91B45DCD6}" ShortID="21166922">
+													<Comment>灰姑娘boss战_开场</Comment>
+													<PropertyList>
+														<Property Name="EndPosition" Type="Real64" Value="66000"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{6F969F3D-55F1-426B-A47B-EF0B277D173A}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5FD1269D-1FE1-419F-BD5C-0232E03AA6DD}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<MusicTrack Name="Mus_Map_A02_Combat_Boss_Start" ID="{93739A08-DB5F-4F19-8C1E-6E67A453C44B}" ShortID="649529690">
+															<Comment>灰姑娘boss战_开场</Comment>
+															<PropertyList>
+																<Property Name="IsStreamingEnabled" Type="bool">
+																	<ValueList>
+																		<Value>True</Value>
+																	</ValueList>
+																</Property>
+																<Property Name="IsZeroLatency" Type="bool">
+																	<ValueList>
+																		<Value>True</Value>
+																	</ValueList>
+																</Property>
+																<Property Name="OverrideConversion" Type="bool" Value="True"/>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Music" ID="{C97BE259-C5F2-451D-B4D0-A9582976A202}" WorkUnitID="{52413F6A-0454-4387-866C-C7E426BBDADD}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5FD1269D-1FE1-419F-BD5C-0232E03AA6DD}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="Mus_Map_A02_Combat_Boss_Start" ID="{2703AC82-F17F-4EC0-912E-1ACEECAF5324}">
+																	<Language>SFX</Language>
+																	<AudioFile>Mus\Mus_Map_A02_Combat_Boss_Start.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="367335624"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<TransitionList>
+																<MusicTransition Name="Root" ID="{D9B747DE-EBB9-4796-AD8F-78CCC1A2D010}">
+																	<PropertyList>
+																		<Property Name="IsFolder" Type="bool" Value="True"/>
+																	</PropertyList>
+																	<TransitionInfo/>
+																</MusicTransition>
+															</TransitionList>
+															<ObjectLists>
+																<ObjectList Name="Sequences">
+																	<Reference>
+																		<Local>
+																			<MusicTrackSequence Name="" ID="{13E356BA-A0CD-48D6-BEA1-2A81297CF133}">
+																				<ObjectLists>
+																					<ObjectList Name="Clips">
+																						<Reference>
+																							<Local>
+																								<MusicClip Name="Mus_Map_A02_Combat_Boss_Start" ID="{8CA3EBD1-FDF6-4166-B036-FB8C8E821EF6}">
+																									<PropertyList>
+																										<Property Name="EndTrimOffset" Type="Real64" Value="64375"/>
+																										<Property Name="FadeInMode" Type="int16" Value="0"/>
+																										<Property Name="FadeOutDuration" Type="Real64" Value="1683.12939959081"/>
+																									</PropertyList>
+																									<AudioSourceRef Name="Mus_Map_A02_Combat_Boss_Start" ID="{2703AC82-F17F-4EC0-912E-1ACEECAF5324}"/>
+																									<PropertyCurveList>
+																										<PropertyCurve PropertyName="Highpass">
+																											<Curve Name="" ID="{302C519C-A101-465C-A12F-A88E00104C3E}">
+																												<PropertyList>
+																													<Property Name="Flags" Type="int32" Value="1"/>
+																												</PropertyList>
+																												<PointList>
+																													<Point>
+																														<XPos>0</XPos>
+																														<YPos>0</YPos>
+																														<Flags>5</Flags>
+																													</Point>
+																													<Point>
+																														<XPos>64.375</XPos>
+																														<YPos>0</YPos>
+																														<Flags>37</Flags>
+																													</Point>
+																												</PointList>
+																											</Curve>
+																										</PropertyCurve>
+																										<PropertyCurve PropertyName="Lowpass">
+																											<Curve Name="" ID="{CD3D83D4-14EB-4DDE-AB06-66AC6B6E5E97}">
+																												<PropertyList>
+																													<Property Name="Flags" Type="int32" Value="1"/>
+																												</PropertyList>
+																												<PointList>
+																													<Point>
+																														<XPos>0</XPos>
+																														<YPos>0</YPos>
+																														<Flags>5</Flags>
+																													</Point>
+																													<Point>
+																														<XPos>64.375</XPos>
+																														<YPos>0</YPos>
+																														<Flags>37</Flags>
+																													</Point>
+																												</PointList>
+																											</Curve>
+																										</PropertyCurve>
+																										<PropertyCurve PropertyName="Volume">
+																											<Curve Name="" ID="{434A29B7-84F2-4362-B769-89CF6C7D96D9}">
+																												<PropertyList>
+																													<Property Name="Flags" Type="int32" Value="3"/>
+																												</PropertyList>
+																												<PointList>
+																													<Point>
+																														<XPos>0</XPos>
+																														<YPos>0</YPos>
+																														<Flags>5</Flags>
+																													</Point>
+																													<Point>
+																														<XPos>64.375</XPos>
+																														<YPos>0</YPos>
+																														<Flags>37</Flags>
+																													</Point>
+																												</PointList>
+																											</Curve>
+																										</PropertyCurve>
+																									</PropertyCurveList>
+																								</MusicClip>
+																							</Local>
+																						</Reference>
+																					</ObjectList>
+																				</ObjectLists>
+																			</MusicTrackSequence>
+																		</Local>
+																	</Reference>
+																</ObjectList>
+															</ObjectLists>
+														</MusicTrack>
+													</ChildrenList>
+													<ObjectLists>
+														<ObjectList Name="Cues">
+															<Reference>
+																<Local>
+																	<MusicCue Name="Entry Cue" ID="{E8BE4397-010A-4373-8C40-3CADC41506E3}"/>
+																</Local>
+															</Reference>
+															<Reference>
+																<Local>
+																	<MusicCue Name="Exit Cue" ID="{3D36AF0F-F24D-4F9C-A4A7-A8A4E1B1F00E}">
+																		<PropertyList>
+																			<Property Name="CueType" Type="int16" Value="1"/>
+																			<Property Name="TimeMs" Type="Real64" Value="61500"/>
+																		</PropertyList>
+																	</MusicCue>
+																</Local>
+															</Reference>
+														</ObjectList>
+													</ObjectLists>
+												</MusicSegment>
+											</ChildrenList>
+											<TransitionList>
+												<MusicTransition Name="Root" ID="{A36A4DCD-0867-49C0-BBFA-958BFCF43E30}">
+													<PropertyList>
+														<Property Name="IsFolder" Type="bool" Value="True"/>
+													</PropertyList>
+													<ChildrenList>
+														<MusicTransition Name="Transition" ID="{A0EB454D-614F-471A-B1C4-CC285D24BE53}">
+															<TransitionInfo/>
+														</MusicTransition>
+													</ChildrenList>
+													<TransitionInfo/>
+												</MusicTransition>
+											</TransitionList>
+											<Playlist>
+												<MusicPlaylistItem Name="" ID="{CD7992B8-1330-4BB8-84B5-B343D62FA4ED}" ShortID="518042829">
+													<ChildrenList>
+														<MusicPlaylistItem Name="" ID="{24F2A8FF-C34C-4389-A387-2096F3AC3BD0}" ShortID="528739094">
+															<PropertyList>
+																<Property Name="PlaylistItemType" Type="int16" Value="1"/>
+															</PropertyList>
+															<SegmentRef Name="Mus_Map_A02_Combat_Boss_Start" ID="{D22522FB-DB26-464A-A12F-41D91B45DCD6}"/>
+														</MusicPlaylistItem>
+														<MusicPlaylistItem Name="" ID="{3A854DBE-BDCB-4923-BD9C-E81F8889AF14}" ShortID="284348817">
+															<PropertyList>
+																<Property Name="PlaylistItemType" Type="int16" Value="1"/>
+															</PropertyList>
+															<SegmentRef Name="Mus_Map_A02_Combat_Boss_Start_End" ID="{F840AB14-4C10-4F1A-88A1-68ABEAC76A38}"/>
+														</MusicPlaylistItem>
+													</ChildrenList>
+												</MusicPlaylistItem>
+											</Playlist>
+										</MusicPlaylistContainer>
+										<MusicPlaylistContainer Name="Mus_Map_A02_Combat_Boss_Stage1" ID="{63818446-33F0-4727-9456-B8555DC874D9}" ShortID="1031631085">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{6F969F3D-55F1-426B-A47B-EF0B277D173A}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5FD1269D-1FE1-419F-BD5C-0232E03AA6DD}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<MusicSegment Name="Mus_Map_A02_Combat_Boss_Stage1_LP" ID="{E093A749-12B8-4F3C-80CC-DC884B9FFB96}" ShortID="97610472">
+													<Comment>灰姑娘Boss战一阶段-积极等级1-循环音乐</Comment>
+													<PropertyList>
+														<Property Name="EndPosition" Type="Real64" Value="187886.832010353"/>
+														<Property Name="OverrideClockSettings" Type="bool" Value="True"/>
+														<Property Name="Tempo" Type="Real64" Value="146"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{6F969F3D-55F1-426B-A47B-EF0B277D173A}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5FD1269D-1FE1-419F-BD5C-0232E03AA6DD}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<MusicTrack Name="Mus_Map_A02_Combat_Boss_Stage1_LP" ID="{98DC13F3-0651-4D22-9FA3-73B03E71235D}" ShortID="924590962">
+															<Comment>灰姑娘Boss战一阶段-积极等级1-循环音乐</Comment>
+															<PropertyList>
+																<Property Name="IsStreamingEnabled" Type="bool">
+																	<ValueList>
+																		<Value>True</Value>
+																	</ValueList>
+																</Property>
+																<Property Name="IsZeroLatency" Type="bool">
+																	<ValueList>
+																		<Value>True</Value>
+																	</ValueList>
+																</Property>
+																<Property Name="OverrideConversion" Type="bool" Value="True"/>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Music" ID="{C97BE259-C5F2-451D-B4D0-A9582976A202}" WorkUnitID="{52413F6A-0454-4387-866C-C7E426BBDADD}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5FD1269D-1FE1-419F-BD5C-0232E03AA6DD}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="Mus_Map_A02_Combat_Boss_Stage1_LP" ID="{95969AE8-4793-45E8-9BCF-56AFB2B26B54}">
+																	<Language>SFX</Language>
+																	<AudioFile>Mus\Mus_Map_A02_Combat_Boss_Stage1_LP.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="178473112"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<TransitionList>
+																<MusicTransition Name="Root" ID="{8AA773C6-A66D-41FF-AFFA-9AC6395EEB90}">
+																	<PropertyList>
+																		<Property Name="IsFolder" Type="bool" Value="True"/>
+																	</PropertyList>
+																	<TransitionInfo/>
+																</MusicTransition>
+															</TransitionList>
+															<ObjectLists>
+																<ObjectList Name="Sequences">
+																	<Reference>
+																		<Local>
+																			<MusicTrackSequence Name="" ID="{4F390E75-2197-4593-BED0-963E59A2F0E7}">
+																				<ObjectLists>
+																					<ObjectList Name="Clips">
+																						<Reference>
+																							<Local>
+																								<MusicClip Name="Mus_Map_A02_Combat_Boss_Stage1_LP" ID="{FA170EAC-ECDD-4D0D-93A7-D1827EC33645}">
+																									<PropertyList>
+																										<Property Name="EndTrimOffset" Type="Real64" Value="138550.479166667"/>
+																										<Property Name="FadeInMode" Type="int16" Value="0"/>
+																										<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																									</PropertyList>
+																									<AudioSourceRef Name="Mus_Map_A02_Combat_Boss_Stage1_LP" ID="{95969AE8-4793-45E8-9BCF-56AFB2B26B54}"/>
+																								</MusicClip>
+																							</Local>
+																						</Reference>
+																					</ObjectList>
+																				</ObjectLists>
+																			</MusicTrackSequence>
+																		</Local>
+																	</Reference>
+																</ObjectList>
+															</ObjectLists>
+														</MusicTrack>
+													</ChildrenList>
+													<ObjectLists>
+														<ObjectList Name="Cues">
+															<Reference>
+																<Local>
+																	<MusicCue Name="Entry Cue" ID="{99FCC562-5E2D-4CCB-9F1C-25EB8214A472}"/>
+																</Local>
+															</Reference>
+															<Reference>
+																<Local>
+																	<MusicCue Name="Exit Cue" ID="{9E629825-03EA-4C4B-8A25-3014D150FC00}">
+																		<PropertyList>
+																			<Property Name="CueType" Type="int16" Value="1"/>
+																			<Property Name="TimeMs" Type="Real64" Value="137750"/>
+																		</PropertyList>
+																	</MusicCue>
+																</Local>
+															</Reference>
+														</ObjectList>
+													</ObjectLists>
+												</MusicSegment>
+											</ChildrenList>
+											<TransitionList>
+												<MusicTransition Name="Root" ID="{123927E8-C904-4CD5-B340-9491D4551C2C}">
+													<PropertyList>
+														<Property Name="IsFolder" Type="bool" Value="True"/>
+													</PropertyList>
+													<ChildrenList>
+														<MusicTransition Name="Transition" ID="{4D9F7783-B443-4350-AEB2-F5454F38BEE5}">
+															<TransitionInfo/>
+														</MusicTransition>
+													</ChildrenList>
+													<TransitionInfo/>
+												</MusicTransition>
+											</TransitionList>
+											<Playlist>
+												<MusicPlaylistItem Name="" ID="{8067887C-A5D0-4744-BCE9-5C138BE903DE}" ShortID="920559085">
+													<ChildrenList>
+														<MusicPlaylistItem Name="" ID="{D6AE104A-6128-4874-9437-1F944CFB18EA}" ShortID="1033333796">
+															<PropertyList>
+																<Property Name="LoopCount" Type="int16" Value="0"/>
+																<Property Name="PlaylistItemType" Type="int16" Value="1"/>
+															</PropertyList>
+															<SegmentRef Name="Mus_Map_A02_Combat_Boss_Stage1_LP" ID="{E093A749-12B8-4F3C-80CC-DC884B9FFB96}"/>
+														</MusicPlaylistItem>
+													</ChildrenList>
+												</MusicPlaylistItem>
+											</Playlist>
+										</MusicPlaylistContainer>
+										<MusicPlaylistContainer Name="Mus_Map_A02_Combat_Boss_Trans" ID="{E5C547B8-6F58-4F67-B2B1-72BC21DDC23C}" ShortID="546378683">
+											<PropertyList>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>7.5</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{6F969F3D-55F1-426B-A47B-EF0B277D173A}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5FD1269D-1FE1-419F-BD5C-0232E03AA6DD}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<MusicSegment Name="Mus_Map_A02_Combat_Boss_Trans_End" ID="{B9A9A9E6-8DE4-423C-ABD1-931EF24CF6BB}" ShortID="756413750">
+													<Comment>灰姑娘boss战_二阶段过场演出衔接</Comment>
+													<PropertyList>
+														<Property Name="EndPosition" Type="Real64" Value="179331.9375"/>
+														<Property Name="OverrideClockSettings" Type="bool" Value="True"/>
+														<Property Name="Volume" Type="Real64">
+															<ValueList>
+																<Value>-5</Value>
+															</ValueList>
+														</Property>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{6F969F3D-55F1-426B-A47B-EF0B277D173A}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5FD1269D-1FE1-419F-BD5C-0232E03AA6DD}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<MusicTrack Name="Mus_Map_A02_Combat_Boss_Trans_End" ID="{60E751B7-337B-40F0-B38F-0091A0D19BC1}" ShortID="335672470">
+															<Comment>灰姑娘boss战_二阶段过场演出衔接</Comment>
+															<PropertyList>
+																<Property Name="IsStreamingEnabled" Type="bool">
+																	<ValueList>
+																		<Value>True</Value>
+																	</ValueList>
+																</Property>
+																<Property Name="IsZeroLatency" Type="bool">
+																	<ValueList>
+																		<Value>True</Value>
+																	</ValueList>
+																</Property>
+																<Property Name="OverrideConversion" Type="bool" Value="True"/>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Music" ID="{C97BE259-C5F2-451D-B4D0-A9582976A202}" WorkUnitID="{52413F6A-0454-4387-866C-C7E426BBDADD}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5FD1269D-1FE1-419F-BD5C-0232E03AA6DD}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="Mus_Map_A02_Combat_Boss_Trans_End" ID="{A34AE9AD-5363-4731-A078-2ED7A8D8F5DE}">
+																	<Language>SFX</Language>
+																	<AudioFile>Mus\Mus_Map_A02_Combat_Boss_Trans_End.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="22936577"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<TransitionList>
+																<MusicTransition Name="Root" ID="{86824001-1140-4789-87EE-C721DDB31F46}">
+																	<PropertyList>
+																		<Property Name="IsFolder" Type="bool" Value="True"/>
+																	</PropertyList>
+																	<TransitionInfo/>
+																</MusicTransition>
+															</TransitionList>
+															<ObjectLists>
+																<ObjectList Name="Sequences">
+																	<Reference>
+																		<Local>
+																			<MusicTrackSequence Name="" ID="{CA54C0E1-A63E-4473-8D88-525B8269919D}">
+																				<ObjectLists>
+																					<ObjectList Name="Clips">
+																						<Reference>
+																							<Local>
+																								<MusicClip Name="Mus_Map_A02_Combat_Boss_Trans_End" ID="{C2276F86-E5B1-41A3-9501-47FBAA24A403}">
+																									<PropertyList>
+																										<Property Name="EndTrimOffset" Type="Real64" Value="163331.9375"/>
+																										<Property Name="FadeInMode" Type="int16" Value="0"/>
+																										<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																									</PropertyList>
+																									<AudioSourceRef Name="Mus_Map_A02_Combat_Boss_Trans_End" ID="{A34AE9AD-5363-4731-A078-2ED7A8D8F5DE}"/>
+																								</MusicClip>
+																							</Local>
+																						</Reference>
+																					</ObjectList>
+																				</ObjectLists>
+																			</MusicTrackSequence>
+																		</Local>
+																	</Reference>
+																</ObjectList>
+															</ObjectLists>
+														</MusicTrack>
+													</ChildrenList>
+													<ObjectLists>
+														<ObjectList Name="Cues">
+															<Reference>
+																<Local>
+																	<MusicCue Name="Entry Cue" ID="{A827BDE0-6417-4645-80EF-FD46F9A23F6F}"/>
+																</Local>
+															</Reference>
+															<Reference>
+																<Local>
+																	<MusicCue Name="Exit Cue" ID="{B2B7BDDB-0BAF-4D34-99D0-E17FCC6E5D83}">
+																		<PropertyList>
+																			<Property Name="CueType" Type="int16" Value="1"/>
+																			<Property Name="TimeMs" Type="Real64" Value="162000"/>
+																		</PropertyList>
+																	</MusicCue>
+																</Local>
+															</Reference>
+														</ObjectList>
+													</ObjectLists>
+												</MusicSegment>
+												<MusicSegment Name="Mus_Map_A02_Combat_Boss_Trans" ID="{1B5F1041-5198-4A95-B97C-54B73AD83CE9}" ShortID="204022">
+													<Comment>灰姑娘boss战_二阶段过场演出</Comment>
+													<PropertyList>
+														<Property Name="EndPosition" Type="Real64" Value="22000"/>
+														<Property Name="OverrideClockSettings" Type="bool" Value="True"/>
+														<Property Name="Tempo" Type="Real64" Value="164"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{6F969F3D-55F1-426B-A47B-EF0B277D173A}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5FD1269D-1FE1-419F-BD5C-0232E03AA6DD}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<MusicTrack Name="Mus_Map_A02_Combat_Boss_Trans" ID="{C0A49D6A-F05F-4627-838C-9A348541853D}" ShortID="797487577">
+															<Comment>灰姑娘boss战_二阶段过场演出</Comment>
+															<PropertyList>
+																<Property Name="IsStreamingEnabled" Type="bool">
+																	<ValueList>
+																		<Value>True</Value>
+																	</ValueList>
+																</Property>
+																<Property Name="IsZeroLatency" Type="bool">
+																	<ValueList>
+																		<Value>True</Value>
+																	</ValueList>
+																</Property>
+																<Property Name="OverrideConversion" Type="bool" Value="True"/>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Music" ID="{C97BE259-C5F2-451D-B4D0-A9582976A202}" WorkUnitID="{52413F6A-0454-4387-866C-C7E426BBDADD}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5FD1269D-1FE1-419F-BD5C-0232E03AA6DD}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="Mus_Map_A02_Combat_Boss_Trans" ID="{32ACF407-7E9F-4D31-97FB-6D90C61EBBD0}">
+																	<Language>SFX</Language>
+																	<AudioFile>Mus\Mus_Map_A02_Combat_Boss_Trans.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="384604148"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<TransitionList>
+																<MusicTransition Name="Root" ID="{0477F42B-6440-46FA-BD35-D6F56D21E46F}">
+																	<PropertyList>
+																		<Property Name="IsFolder" Type="bool" Value="True"/>
+																	</PropertyList>
+																	<TransitionInfo/>
+																</MusicTransition>
+															</TransitionList>
+															<ObjectLists>
+																<ObjectList Name="Sequences">
+																	<Reference>
+																		<Local>
+																			<MusicTrackSequence Name="" ID="{DEB9F87C-969B-4DEA-A830-B0F86C088B28}">
+																				<ObjectLists>
+																					<ObjectList Name="Clips">
+																						<Reference>
+																							<Local>
+																								<MusicClip Name="Mus_Map_A02_Combat_Boss_Trans" ID="{9500AB28-BBC7-4E9A-9EF8-7AC43BDA4CE9}">
+																									<PropertyList>
+																										<Property Name="BeginTrimOffset" Type="Real64" Value="91.4634146341467"/>
+																										<Property Name="EndTrimOffset" Type="Real64" Value="16920.7317073171"/>
+																										<Property Name="FadeInMode" Type="int16" Value="0"/>
+																										<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																										<Property Name="PlayAt" Type="Real64" Value="-91.4634146341467"/>
+																									</PropertyList>
+																									<AudioSourceRef Name="Mus_Map_A02_Combat_Boss_Trans" ID="{32ACF407-7E9F-4D31-97FB-6D90C61EBBD0}"/>
+																									<PropertyCurveList>
+																										<PropertyCurve PropertyName="Highpass">
+																											<Curve Name="" ID="{D1DB6895-C649-44A0-BAD0-F56EAB523BF0}">
+																												<PropertyList>
+																													<Property Name="Flags" Type="int32" Value="1"/>
+																												</PropertyList>
+																												<PointList>
+																													<Point>
+																														<XPos>0.09146</XPos>
+																														<YPos>0</YPos>
+																														<Flags>5</Flags>
+																													</Point>
+																													<Point>
+																														<XPos>16.92073</XPos>
+																														<YPos>0</YPos>
+																														<Flags>37</Flags>
+																													</Point>
+																												</PointList>
+																											</Curve>
+																										</PropertyCurve>
+																										<PropertyCurve PropertyName="Lowpass">
+																											<Curve Name="" ID="{373CF5F2-8F17-49A0-9DD4-9FB93980EDA9}">
+																												<PropertyList>
+																													<Property Name="Flags" Type="int32" Value="1"/>
+																												</PropertyList>
+																												<PointList>
+																													<Point>
+																														<XPos>0.09146</XPos>
+																														<YPos>0</YPos>
+																														<Flags>5</Flags>
+																													</Point>
+																													<Point>
+																														<XPos>16.92073</XPos>
+																														<YPos>0</YPos>
+																														<Flags>37</Flags>
+																													</Point>
+																												</PointList>
+																											</Curve>
+																										</PropertyCurve>
+																										<PropertyCurve PropertyName="Volume">
+																											<Curve Name="" ID="{F93F6FF9-3708-4185-9CEE-C1DF535D04B1}">
+																												<PropertyList>
+																													<Property Name="Flags" Type="int32" Value="3"/>
+																												</PropertyList>
+																												<PointList>
+																													<Point>
+																														<XPos>0.09146</XPos>
+																														<YPos>0</YPos>
+																														<Flags>5</Flags>
+																													</Point>
+																													<Point>
+																														<XPos>16.92073</XPos>
+																														<YPos>0</YPos>
+																														<Flags>37</Flags>
+																													</Point>
+																												</PointList>
+																											</Curve>
+																										</PropertyCurve>
+																									</PropertyCurveList>
+																								</MusicClip>
+																							</Local>
+																						</Reference>
+																					</ObjectList>
+																				</ObjectLists>
+																			</MusicTrackSequence>
+																		</Local>
+																	</Reference>
+																</ObjectList>
+															</ObjectLists>
+														</MusicTrack>
+													</ChildrenList>
+													<ObjectLists>
+														<ObjectList Name="Cues">
+															<Reference>
+																<Local>
+																	<MusicCue Name="Entry Cue" ID="{F063CE3C-60FD-4F50-AB1C-3C0182C5D3B6}"/>
+																</Local>
+															</Reference>
+															<Reference>
+																<Local>
+																	<MusicCue Name="Exit Cue" ID="{3306F853-151C-487E-A260-A1B595CEB19F}">
+																		<PropertyList>
+																			<Property Name="CueType" Type="int16" Value="1"/>
+																			<Property Name="TimeMs" Type="Real64" Value="14625"/>
+																		</PropertyList>
+																	</MusicCue>
+																</Local>
+															</Reference>
+														</ObjectList>
+													</ObjectLists>
+												</MusicSegment>
+											</ChildrenList>
+											<TransitionList>
+												<MusicTransition Name="Root" ID="{B98056F2-E348-41C8-B3A6-3C57630FD96F}">
+													<PropertyList>
+														<Property Name="IsFolder" Type="bool" Value="True"/>
+													</PropertyList>
+													<ChildrenList>
+														<MusicTransition Name="Transition" ID="{E11B54A6-D4B7-4AB5-8FB6-A84B8121E899}">
+															<TransitionInfo/>
+														</MusicTransition>
+													</ChildrenList>
+													<TransitionInfo/>
+												</MusicTransition>
+											</TransitionList>
+											<Playlist>
+												<MusicPlaylistItem Name="" ID="{4299B3FF-6FD7-4F9B-BCE6-41A4715FE4ED}" ShortID="1023450512">
+													<ChildrenList>
+														<MusicPlaylistItem Name="" ID="{344CEDD5-7DE8-48CA-8381-3F460AFDF694}" ShortID="64980986">
+															<PropertyList>
+																<Property Name="PlaylistItemType" Type="int16" Value="1"/>
+															</PropertyList>
+															<SegmentRef Name="Mus_Map_A02_Combat_Boss_Trans" ID="{1B5F1041-5198-4A95-B97C-54B73AD83CE9}"/>
+														</MusicPlaylistItem>
+														<MusicPlaylistItem Name="" ID="{777E572A-9DCB-499E-AF61-16DB6ADCE2AE}" ShortID="858483541">
+															<PropertyList>
+																<Property Name="PlaylistItemType" Type="int16" Value="1"/>
+															</PropertyList>
+															<SegmentRef Name="Mus_Map_A02_Combat_Boss_Trans_End" ID="{B9A9A9E6-8DE4-423C-ABD1-931EF24CF6BB}"/>
+														</MusicPlaylistItem>
+													</ChildrenList>
+												</MusicPlaylistItem>
+											</Playlist>
+										</MusicPlaylistContainer>
+										<MusicPlaylistContainer Name="Mus_Map_A02_Combat_Boss_Last" ID="{F8B2CBEF-9555-4650-81F2-909EEA6B2B7D}" ShortID="799216910">
+											<PropertyList>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>6</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{6F969F3D-55F1-426B-A47B-EF0B277D173A}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5FD1269D-1FE1-419F-BD5C-0232E03AA6DD}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<MusicSegment Name="Mus_Map_A02_Combat_Boss_Last" ID="{2CD76B4D-2C45-4066-B384-052D1BAFCD70}" ShortID="308256419">
+													<Comment>灰姑娘boss战_结尾</Comment>
+													<PropertyList>
+														<Property Name="EndPosition" Type="Real64" Value="47125"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{6F969F3D-55F1-426B-A47B-EF0B277D173A}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5FD1269D-1FE1-419F-BD5C-0232E03AA6DD}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<MusicTrack Name="Mus_Map_A02_Combat_Boss_Last" ID="{CCF8A54B-639B-482B-BFB4-E972034D0D42}" ShortID="869067428">
+															<Comment>灰姑娘boss战_结尾</Comment>
+															<PropertyList>
+																<Property Name="IsStreamingEnabled" Type="bool">
+																	<ValueList>
+																		<Value>True</Value>
+																	</ValueList>
+																</Property>
+																<Property Name="IsZeroLatency" Type="bool">
+																	<ValueList>
+																		<Value>True</Value>
+																	</ValueList>
+																</Property>
+																<Property Name="OverrideConversion" Type="bool" Value="True"/>
+																<Property Name="Volume" Type="Real64">
+																	<ValueList>
+																		<Value>1.5</Value>
+																	</ValueList>
+																</Property>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Music" ID="{C97BE259-C5F2-451D-B4D0-A9582976A202}" WorkUnitID="{52413F6A-0454-4387-866C-C7E426BBDADD}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5FD1269D-1FE1-419F-BD5C-0232E03AA6DD}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="Mus_Map_A02_Combat_Boss_Last" ID="{89F36C64-9C34-41F5-8A08-C0BEA395BBC6}">
+																	<Language>SFX</Language>
+																	<AudioFile>Mus\Mus_Map_A02_Combat_Boss_Last.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="177031682"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<TransitionList>
+																<MusicTransition Name="Root" ID="{FF8A6D11-46B2-41DA-AFD7-ECCBF0EFDA56}">
+																	<PropertyList>
+																		<Property Name="IsFolder" Type="bool" Value="True"/>
+																	</PropertyList>
+																	<TransitionInfo/>
+																</MusicTransition>
+															</TransitionList>
+															<ObjectLists>
+																<ObjectList Name="Sequences">
+																	<Reference>
+																		<Local>
+																			<MusicTrackSequence Name="" ID="{0A1C124E-F036-44B5-B44E-18C3F769ECC6}">
+																				<ObjectLists>
+																					<ObjectList Name="Clips">
+																						<Reference>
+																							<Local>
+																								<MusicClip Name="Mus_Map_A02_Combat_Boss_Last" ID="{85AA3A95-B308-4CBF-8C16-C6970B753CC3}">
+																									<PropertyList>
+																										<Property Name="EndTrimOffset" Type="Real64" Value="46500"/>
+																										<Property Name="FadeInMode" Type="int16" Value="0"/>
+																										<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																									</PropertyList>
+																									<AudioSourceRef Name="Mus_Map_A02_Combat_Boss_Last" ID="{89F36C64-9C34-41F5-8A08-C0BEA395BBC6}"/>
+																									<PropertyCurveList>
+																										<PropertyCurve PropertyName="Highpass">
+																											<Curve Name="" ID="{BC81DFB5-5143-4DEF-A367-484BF71DD7BB}">
+																												<PropertyList>
+																													<Property Name="Flags" Type="int32" Value="1"/>
+																												</PropertyList>
+																												<PointList>
+																													<Point>
+																														<XPos>0</XPos>
+																														<YPos>0</YPos>
+																														<Flags>5</Flags>
+																													</Point>
+																													<Point>
+																														<XPos>46.5</XPos>
+																														<YPos>0</YPos>
+																														<Flags>37</Flags>
+																													</Point>
+																												</PointList>
+																											</Curve>
+																										</PropertyCurve>
+																										<PropertyCurve PropertyName="Lowpass">
+																											<Curve Name="" ID="{5E2CA244-C4AB-4ABE-BE16-5A62F0F4C3DE}">
+																												<PropertyList>
+																													<Property Name="Flags" Type="int32" Value="1"/>
+																												</PropertyList>
+																												<PointList>
+																													<Point>
+																														<XPos>0</XPos>
+																														<YPos>0</YPos>
+																														<Flags>5</Flags>
+																													</Point>
+																													<Point>
+																														<XPos>46.5</XPos>
+																														<YPos>0</YPos>
+																														<Flags>37</Flags>
+																													</Point>
+																												</PointList>
+																											</Curve>
+																										</PropertyCurve>
+																										<PropertyCurve PropertyName="Volume">
+																											<Curve Name="" ID="{713AC2F4-9BEB-4118-B068-D6F37AFE30C3}">
+																												<PropertyList>
+																													<Property Name="Flags" Type="int32" Value="3"/>
+																												</PropertyList>
+																												<PointList>
+																													<Point>
+																														<XPos>0</XPos>
+																														<YPos>0</YPos>
+																														<Flags>5</Flags>
+																													</Point>
+																													<Point>
+																														<XPos>46.5</XPos>
+																														<YPos>0</YPos>
+																														<Flags>37</Flags>
+																													</Point>
+																												</PointList>
+																											</Curve>
+																										</PropertyCurve>
+																									</PropertyCurveList>
+																								</MusicClip>
+																							</Local>
+																						</Reference>
+																					</ObjectList>
+																				</ObjectLists>
+																			</MusicTrackSequence>
+																		</Local>
+																	</Reference>
+																</ObjectList>
+															</ObjectLists>
+														</MusicTrack>
+													</ChildrenList>
+													<ObjectLists>
+														<ObjectList Name="Cues">
+															<Reference>
+																<Local>
+																	<MusicCue Name="Entry Cue" ID="{41C5C657-5A12-4187-849E-39E099021345}"/>
+																</Local>
+															</Reference>
+															<Reference>
+																<Local>
+																	<MusicCue Name="Exit Cue" ID="{28110AB8-3E3E-44DB-9469-592D366AA116}">
+																		<PropertyList>
+																			<Property Name="CueType" Type="int16" Value="1"/>
+																			<Property Name="TimeMs" Type="Real64" Value="46500"/>
+																		</PropertyList>
+																	</MusicCue>
+																</Local>
+															</Reference>
+														</ObjectList>
+													</ObjectLists>
+												</MusicSegment>
+											</ChildrenList>
+											<TransitionList>
+												<MusicTransition Name="Root" ID="{5AD3D190-BD2E-4A9D-9B16-71B4AD0BE678}">
+													<PropertyList>
+														<Property Name="IsFolder" Type="bool" Value="True"/>
+													</PropertyList>
+													<ChildrenList>
+														<MusicTransition Name="Transition" ID="{DBB293F2-3871-4480-BB09-1588AE49F49F}">
+															<TransitionInfo/>
+														</MusicTransition>
+													</ChildrenList>
+													<TransitionInfo/>
+												</MusicTransition>
+											</TransitionList>
+											<ObjectLists>
+												<ObjectList Name="Stingers">
+													<Reference>
+														<Local>
+															<MusicStinger Name="" ID="{7C803537-0320-4569-90A3-B3817761E758}"/>
+														</Local>
+													</Reference>
+												</ObjectList>
+											</ObjectLists>
+											<Playlist>
+												<MusicPlaylistItem Name="" ID="{6A73DB22-54FF-4A2D-8D0C-C800343BE92E}" ShortID="864946219">
+													<ChildrenList>
+														<MusicPlaylistItem Name="" ID="{7F59CDEC-B48F-49BE-8D97-613D2238BEDA}" ShortID="90757988">
+															<PropertyList>
+																<Property Name="PlaylistItemType" Type="int16" Value="1"/>
+															</PropertyList>
+															<SegmentRef Name="Mus_Map_A02_Combat_Boss_Last" ID="{2CD76B4D-2C45-4066-B384-052D1BAFCD70}"/>
+														</MusicPlaylistItem>
+													</ChildrenList>
+												</MusicPlaylistItem>
+											</Playlist>
+										</MusicPlaylistContainer>
+										<MusicPlaylistContainer Name="Mus_Map_A02_Combat_Boss_End" ID="{DA2EBF2A-A931-42EF-A216-C74F44F136DA}" ShortID="374667259">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{6F969F3D-55F1-426B-A47B-EF0B277D173A}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5FD1269D-1FE1-419F-BD5C-0232E03AA6DD}"/>
+												</Reference>
+											</ReferenceList>
+											<TransitionList>
+												<MusicTransition Name="Root" ID="{D0F9ACA7-53CB-4F41-A5CF-383DE79303F8}">
+													<PropertyList>
+														<Property Name="IsFolder" Type="bool" Value="True"/>
+													</PropertyList>
+													<ChildrenList>
+														<MusicTransition Name="Transition" ID="{39D200E0-35D3-473C-A965-348D0DAD4ACC}">
+															<TransitionInfo/>
+														</MusicTransition>
+													</ChildrenList>
+													<TransitionInfo/>
+												</MusicTransition>
+											</TransitionList>
+											<ObjectLists>
+												<ObjectList Name="Stingers">
+													<Reference>
+														<Local>
+															<MusicStinger Name="" ID="{919B96E3-B208-495E-BF10-9B0387F3519F}"/>
+														</Local>
+													</Reference>
+												</ObjectList>
+											</ObjectLists>
+											<Playlist>
+												<MusicPlaylistItem Name="" ID="{541907DC-5034-4BD2-8FD8-CA031882DF53}" ShortID="191682406"/>
+											</Playlist>
+										</MusicPlaylistContainer>
+										<MusicPlaylistContainer Name="Mus_Map_A02_Combat_Boss_Stage2" ID="{AC0E5CC1-8289-45F3-96B2-FF1B2F772F9F}" ShortID="348308496">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{6F969F3D-55F1-426B-A47B-EF0B277D173A}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5FD1269D-1FE1-419F-BD5C-0232E03AA6DD}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<MusicSegment Name="Mus_Map_A02_Combat_Boss_Stage2_LP" ID="{2F4B54CF-0568-41D1-83D6-6703EB229792}" ShortID="711877312">
+													<Comment>灰姑娘Boss战一阶段-积极等级2-循环音乐</Comment>
+													<PropertyList>
+														<Property Name="EndPosition" Type="Real64" Value="163331.9375"/>
+														<Property Name="OverrideClockSettings" Type="bool" Value="True"/>
+														<Property Name="Tempo" Type="Real64" Value="150"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{6F969F3D-55F1-426B-A47B-EF0B277D173A}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5FD1269D-1FE1-419F-BD5C-0232E03AA6DD}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<MusicTrack Name="Mus_Map_A02_Combat_Boss_Stage2_LP" ID="{D229E92A-A58D-46DF-A0E3-BCEC406BDEC2}" ShortID="760693857">
+															<Comment>灰姑娘Boss战一阶段-积极等级2-循环音乐</Comment>
+															<PropertyList>
+																<Property Name="IsStreamingEnabled" Type="bool">
+																	<ValueList>
+																		<Value>True</Value>
+																	</ValueList>
+																</Property>
+																<Property Name="IsZeroLatency" Type="bool">
+																	<ValueList>
+																		<Value>True</Value>
+																	</ValueList>
+																</Property>
+																<Property Name="OverrideConversion" Type="bool" Value="True"/>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Music" ID="{C97BE259-C5F2-451D-B4D0-A9582976A202}" WorkUnitID="{52413F6A-0454-4387-866C-C7E426BBDADD}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5FD1269D-1FE1-419F-BD5C-0232E03AA6DD}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="Mus_Map_A02_Combat_Boss_Stage2_LP" ID="{C4C93EC2-1A35-417D-AFFD-95CF0E243AC2}">
+																	<Language>SFX</Language>
+																	<AudioFile>Mus\Mus_Map_A02_Combat_Boss_Stage2_LP.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="277772902"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<TransitionList>
+																<MusicTransition Name="Root" ID="{DC0620AB-1EFF-40C2-93BA-08A42E4F0DA9}">
+																	<PropertyList>
+																		<Property Name="IsFolder" Type="bool" Value="True"/>
+																	</PropertyList>
+																	<TransitionInfo/>
+																</MusicTransition>
+															</TransitionList>
+															<ObjectLists>
+																<ObjectList Name="Sequences">
+																	<Reference>
+																		<Local>
+																			<MusicTrackSequence Name="" ID="{094BE6C4-6146-4DEF-B49C-1CCF7181DBE5}">
+																				<ObjectLists>
+																					<ObjectList Name="Clips">
+																						<Reference>
+																							<Local>
+																								<MusicClip Name="Mus_Map_A02_Combat_Boss_Stage2_LP" ID="{31DC387E-FAD4-46A5-9CDF-768E2D290DDA}">
+																									<PropertyList>
+																										<Property Name="EndTrimOffset" Type="Real64" Value="163331.9375"/>
+																										<Property Name="FadeInMode" Type="int16" Value="0"/>
+																										<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																									</PropertyList>
+																									<AudioSourceRef Name="Mus_Map_A02_Combat_Boss_Stage2_LP" ID="{C4C93EC2-1A35-417D-AFFD-95CF0E243AC2}"/>
+																								</MusicClip>
+																							</Local>
+																						</Reference>
+																					</ObjectList>
+																				</ObjectLists>
+																			</MusicTrackSequence>
+																		</Local>
+																	</Reference>
+																</ObjectList>
+															</ObjectLists>
+														</MusicTrack>
+													</ChildrenList>
+													<ObjectLists>
+														<ObjectList Name="Cues">
+															<Reference>
+																<Local>
+																	<MusicCue Name="Entry Cue" ID="{51842A67-AF7D-42BF-A85F-91662AFC29A2}"/>
+																</Local>
+															</Reference>
+															<Reference>
+																<Local>
+																	<MusicCue Name="Exit Cue" ID="{DC26FB6D-B596-4171-AE64-EFB4C63ED482}">
+																		<PropertyList>
+																			<Property Name="CueType" Type="int16" Value="1"/>
+																			<Property Name="TimeMs" Type="Real64" Value="162000"/>
+																		</PropertyList>
+																	</MusicCue>
+																</Local>
+															</Reference>
+														</ObjectList>
+													</ObjectLists>
+												</MusicSegment>
+											</ChildrenList>
+											<TransitionList>
+												<MusicTransition Name="Root" ID="{388E8DD3-D717-4985-B14F-279D5CF63790}">
+													<PropertyList>
+														<Property Name="IsFolder" Type="bool" Value="True"/>
+													</PropertyList>
+													<ChildrenList>
+														<MusicTransition Name="Transition" ID="{B2EE482D-43D6-4DD7-A1EC-AD7ADE45CB6F}">
+															<TransitionInfo/>
+														</MusicTransition>
+													</ChildrenList>
+													<TransitionInfo/>
+												</MusicTransition>
+											</TransitionList>
+											<Playlist>
+												<MusicPlaylistItem Name="" ID="{AEFAF815-A238-42D5-B697-1FC25F70EA15}" ShortID="301376133">
+													<ChildrenList>
+														<MusicPlaylistItem Name="" ID="{048FAA9C-72EE-48F9-969D-A5B87A739B1F}" ShortID="375052143">
+															<PropertyList>
+																<Property Name="LoopCount" Type="int16" Value="0"/>
+																<Property Name="PlaylistItemType" Type="int16" Value="1"/>
+															</PropertyList>
+															<SegmentRef Name="Mus_Map_A02_Combat_Boss_Stage2_LP" ID="{2F4B54CF-0568-41D1-83D6-6703EB229792}"/>
+														</MusicPlaylistItem>
+													</ChildrenList>
+												</MusicPlaylistItem>
+											</Playlist>
+										</MusicPlaylistContainer>
+									</ChildrenList>
+									<TransitionList>
+										<MusicTransition Name="Root" ID="{4EC2E16E-BE61-4B9C-B1F6-193E46B4CF5A}">
+											<PropertyList>
+												<Property Name="IsFolder" Type="bool" Value="True"/>
+											</PropertyList>
+											<ChildrenList>
+												<MusicTransition Name="Transition" ID="{21D0F1E9-7AE9-499A-AF9B-1DBA6CBAD80F}">
+													<PropertyList>
+														<Property Name="ExitSourceAt" Type="int16" Value="0"/>
+													</PropertyList>
+													<TransitionInfo/>
+												</MusicTransition>
+												<MusicTransition Name="Transition" ID="{173BA69C-0347-4D1D-A87C-F38181823931}">
+													<PropertyList>
+														<Property Name="DestinationContextType" Type="int16" Value="2"/>
+														<Property Name="DestinationJumpPositionPreset" Type="int16" Value="1"/>
+														<Property Name="ExitSourceAt" Type="int16" Value="0"/>
+														<Property Name="SourceContextType" Type="int16" Value="2"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="DestinationContextObject">
+															<ObjectRef Name="Mus_Map_A02_Combat_Boss_Stage1" ID="{63818446-33F0-4727-9456-B8555DC874D9}" WorkUnitID="{1B7DE30A-022A-4F3E-833D-4700956087BA}"/>
+														</Reference>
+														<Reference Name="SourceContextObject">
+															<ObjectRef Name="Mus_Map_A02_Combat_Boss_Start" ID="{69F2CBCB-1BBC-4CAD-994A-5795AF86B5BE}" WorkUnitID="{1B7DE30A-022A-4F3E-833D-4700956087BA}"/>
+														</Reference>
+													</ReferenceList>
+													<TransitionInfo>
+														<SourceFadeOut>
+															<MusicFade Name="Source Fade-out" ID="{31870774-98BF-4AE5-BD4B-30D7B955EA25}">
+																<PropertyList>
+																	<Property Name="FadeCurve" Type="int16" Value="5"/>
+																	<Property Name="FadeTime" Type="Real64" Value="2"/>
+																	<Property Name="FadeType" Type="int16" Value="1"/>
+																</PropertyList>
+															</MusicFade>
+														</SourceFadeOut>
+													</TransitionInfo>
+												</MusicTransition>
+												<MusicTransition Name="Transition" ID="{479C50B5-214D-4A49-B219-8D7697E6FEE1}">
+													<PropertyList>
+														<Property Name="DestinationContextType" Type="int16" Value="2"/>
+														<Property Name="EnableSourceFadeOut" Type="bool" Value="True"/>
+														<Property Name="ExitSourceAt" Type="int16" Value="0"/>
+														<Property Name="SourceContextType" Type="int16" Value="2"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="DestinationContextObject">
+															<ObjectRef Name="Mus_Map_A02_Combat_Boss_Trans" ID="{E5C547B8-6F58-4F67-B2B1-72BC21DDC23C}" WorkUnitID="{1B7DE30A-022A-4F3E-833D-4700956087BA}"/>
+														</Reference>
+														<Reference Name="SourceContextObject">
+															<ObjectRef Name="Mus_Map_A02_Combat_Boss_Stage1" ID="{63818446-33F0-4727-9456-B8555DC874D9}" WorkUnitID="{1B7DE30A-022A-4F3E-833D-4700956087BA}"/>
+														</Reference>
+													</ReferenceList>
+													<TransitionInfo>
+														<SourceFadeOut>
+															<MusicFade Name="Source Fade-out" ID="{D51FE277-CF3D-44E3-832E-3EAB6E2DFC3E}">
+																<PropertyList>
+																	<Property Name="FadeCurve" Type="int16" Value="6"/>
+																	<Property Name="FadeOffset" Type="Real64" Value="1"/>
+																	<Property Name="FadeTime" Type="Real64" Value="1"/>
+																	<Property Name="FadeType" Type="int16" Value="1"/>
+																</PropertyList>
+															</MusicFade>
+														</SourceFadeOut>
+													</TransitionInfo>
+												</MusicTransition>
+												<MusicTransition Name="Transition" ID="{0AA9AFC5-C0F5-49FE-9B41-2D0C2351C0E1}">
+													<PropertyList>
+														<Property Name="DestinationContextType" Type="int16" Value="2"/>
+														<Property Name="DestinationJumpPositionPreset" Type="int16" Value="1"/>
+														<Property Name="ExitSourceAt" Type="int16" Value="0"/>
+														<Property Name="SourceContextType" Type="int16" Value="2"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="DestinationContextObject">
+															<ObjectRef Name="Mus_Map_A02_Combat_Boss_Stage2" ID="{AC0E5CC1-8289-45F3-96B2-FF1B2F772F9F}" WorkUnitID="{1B7DE30A-022A-4F3E-833D-4700956087BA}"/>
+														</Reference>
+														<Reference Name="SourceContextObject">
+															<ObjectRef Name="Mus_Map_A02_Combat_Boss_Trans" ID="{E5C547B8-6F58-4F67-B2B1-72BC21DDC23C}" WorkUnitID="{1B7DE30A-022A-4F3E-833D-4700956087BA}"/>
+														</Reference>
+													</ReferenceList>
+													<TransitionInfo/>
+												</MusicTransition>
+												<MusicTransition Name="Transition" ID="{B1908A3D-1F0F-4020-B1DF-2B9AC16A8781}">
+													<PropertyList>
+														<Property Name="DestinationContextType" Type="int16" Value="2"/>
+														<Property Name="EnableSourceFadeOut" Type="bool" Value="True"/>
+														<Property Name="ExitSourceAt" Type="int16" Value="0"/>
+														<Property Name="SourceContextType" Type="int16" Value="2"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="DestinationContextObject">
+															<ObjectRef Name="Mus_Map_A02_Combat_Boss_End" ID="{DA2EBF2A-A931-42EF-A216-C74F44F136DA}" WorkUnitID="{1B7DE30A-022A-4F3E-833D-4700956087BA}"/>
+														</Reference>
+														<Reference Name="SourceContextObject">
+															<ObjectRef Name="Mus_Map_A02_Combat_Boss_Stage2" ID="{AC0E5CC1-8289-45F3-96B2-FF1B2F772F9F}" WorkUnitID="{1B7DE30A-022A-4F3E-833D-4700956087BA}"/>
+														</Reference>
+													</ReferenceList>
+													<TransitionInfo>
+														<SourceFadeOut>
+															<MusicFade Name="Source Fade-out" ID="{371AEA9C-5BEB-48E7-A029-B17171CAFFFA}">
+																<PropertyList>
+																	<Property Name="FadeCurve" Type="int16" Value="6"/>
+																	<Property Name="FadeOffset" Type="Real64" Value="1.5"/>
+																	<Property Name="FadeTime" Type="Real64" Value="1.5"/>
+																	<Property Name="FadeType" Type="int16" Value="1"/>
+																</PropertyList>
+															</MusicFade>
+														</SourceFadeOut>
+													</TransitionInfo>
+												</MusicTransition>
+												<MusicTransition Name="Transition" ID="{664B4D0F-727A-46B0-90C3-4DF50993C8A2}">
+													<PropertyList>
+														<Property Name="DestinationContextType" Type="int16" Value="2"/>
+														<Property Name="EnableSourceFadeOut" Type="bool" Value="True"/>
+														<Property Name="ExitSourceAt" Type="int16" Value="0"/>
+														<Property Name="SourceContextType" Type="int16" Value="2"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="DestinationContextObject">
+															<ObjectRef Name="Mus_Map_A02_Combat_Boss_Last" ID="{F8B2CBEF-9555-4650-81F2-909EEA6B2B7D}" WorkUnitID="{1B7DE30A-022A-4F3E-833D-4700956087BA}"/>
+														</Reference>
+														<Reference Name="SourceContextObject">
+															<ObjectRef Name="Mus_Map_A02_Combat_Boss_Stage2" ID="{AC0E5CC1-8289-45F3-96B2-FF1B2F772F9F}" WorkUnitID="{1B7DE30A-022A-4F3E-833D-4700956087BA}"/>
+														</Reference>
+													</ReferenceList>
+													<TransitionInfo>
+														<SourceFadeOut>
+															<MusicFade Name="Source Fade-out" ID="{0DA034A8-1460-4B8D-AF75-8064F71E539C}">
+																<PropertyList>
+																	<Property Name="FadeCurve" Type="int16" Value="6"/>
+																	<Property Name="FadeOffset" Type="Real64" Value="0.2"/>
+																	<Property Name="FadeTime" Type="Real64" Value="0.2"/>
+																	<Property Name="FadeType" Type="int16" Value="1"/>
+																</PropertyList>
+															</MusicFade>
+														</SourceFadeOut>
+													</TransitionInfo>
+												</MusicTransition>
+											</ChildrenList>
+											<TransitionInfo/>
+										</MusicTransition>
+									</TransitionList>
+									<ArgumentList>
+										<ArgumentRef Name="Combat_Boss_State" ID="{1B727B1C-088B-4652-997E-C89E8018408C}"/>
+									</ArgumentList>
+									<EntryList>
+										<Entry>
+											<Path>
+												<PathElementRef Name="End" ID="{7E6C7C62-34E5-405F-B3DA-A79F91EECD7C}"/>
+											</Path>
+											<AudioNodeInfo>
+												<AudioNodeRef Name="Mus_Map_A02_Combat_Boss_End" ID="{DA2EBF2A-A931-42EF-A216-C74F44F136DA}" WorkUnitID="{1B7DE30A-022A-4F3E-833D-4700956087BA}" Platform="Linked"/>
+											</AudioNodeInfo>
+										</Entry>
+										<Entry>
+											<Path>
+												<PathElementRef Name="Last" ID="{11FE7CB0-3A97-4994-A44B-462B73DAE1BF}"/>
+											</Path>
+											<AudioNodeInfo>
+												<AudioNodeRef Name="Mus_Map_A02_Combat_Boss_Last" ID="{F8B2CBEF-9555-4650-81F2-909EEA6B2B7D}" WorkUnitID="{1B7DE30A-022A-4F3E-833D-4700956087BA}" Platform="Linked"/>
+											</AudioNodeInfo>
+										</Entry>
+										<Entry>
+											<Path>
+												<PathElementRef Name="Stage1" ID="{92ED6646-53D0-4522-910B-F7B956C78AE7}"/>
+											</Path>
+											<AudioNodeInfo>
+												<AudioNodeRef Name="Mus_Map_A02_Combat_Boss_Stage1" ID="{63818446-33F0-4727-9456-B8555DC874D9}" WorkUnitID="{1B7DE30A-022A-4F3E-833D-4700956087BA}" Platform="Linked"/>
+											</AudioNodeInfo>
+										</Entry>
+										<Entry>
+											<Path>
+												<PathElementRef Name="Stage2" ID="{7CADC526-F911-4080-9E89-D6D5E445AAFD}"/>
+											</Path>
+											<AudioNodeInfo>
+												<AudioNodeRef Name="Mus_Map_A02_Combat_Boss_Stage2" ID="{AC0E5CC1-8289-45F3-96B2-FF1B2F772F9F}" WorkUnitID="{1B7DE30A-022A-4F3E-833D-4700956087BA}" Platform="Linked"/>
+											</AudioNodeInfo>
+										</Entry>
+										<Entry>
+											<Path>
+												<PathElementRef Name="Start" ID="{F9F362BD-B89A-472E-951E-A47A8717D20B}"/>
+											</Path>
+											<AudioNodeInfo>
+												<AudioNodeRef Name="Mus_Map_A02_Combat_Boss_Start" ID="{69F2CBCB-1BBC-4CAD-994A-5795AF86B5BE}" WorkUnitID="{1B7DE30A-022A-4F3E-833D-4700956087BA}" Platform="Linked"/>
+											</AudioNodeInfo>
+										</Entry>
+										<Entry>
+											<Path>
+												<PathElementRef Name="Trans" ID="{1AC502EB-FDF3-47BA-AF73-5E0E8FBF1385}"/>
+											</Path>
+											<AudioNodeInfo>
+												<AudioNodeRef Name="Mus_Map_A02_Combat_Boss_Trans" ID="{E5C547B8-6F58-4F67-B2B1-72BC21DDC23C}" WorkUnitID="{1B7DE30A-022A-4F3E-833D-4700956087BA}" Platform="Linked"/>
+											</AudioNodeInfo>
+										</Entry>
+									</EntryList>
+								</MusicSwitchContainer>
+							</ChildrenList>
+							<TransitionList>
+								<MusicTransition Name="Root" ID="{B380B9A9-650E-48A8-9A84-91BE994A3865}">
+									<PropertyList>
+										<Property Name="IsFolder" Type="bool" Value="True"/>
+									</PropertyList>
+									<ChildrenList>
+										<MusicTransition Name="Transition" ID="{FC4D4FA1-A5D2-4418-B64A-0FD0DCF3FD2A}">
+											<PropertyList>
+												<Property Name="EnableSourceFadeOut" Type="bool" Value="True"/>
+												<Property Name="ExitSourceAt" Type="int16" Value="0"/>
+											</PropertyList>
+											<TransitionInfo>
+												<SourceFadeOut>
+													<MusicFade Name="Source Fade-out" ID="{9C3C45A1-4794-471C-8628-C434C9F4D567}">
+														<PropertyList>
+															<Property Name="FadeOffset" Type="Real64" Value="1"/>
+															<Property Name="FadeTime" Type="Real64" Value="1"/>
+															<Property Name="FadeType" Type="int16" Value="1"/>
+														</PropertyList>
+													</MusicFade>
+												</SourceFadeOut>
+											</TransitionInfo>
+										</MusicTransition>
+									</ChildrenList>
+									<TransitionInfo/>
+								</MusicTransition>
+							</TransitionList>
+							<ArgumentList>
+								<ArgumentRef Name="Combat_Mon_Type" ID="{053EFC69-5258-44B9-8A84-16569B58EDE7}"/>
+							</ArgumentList>
+							<EntryList>
+								<Entry>
+									<Path>
+										<PathElementRef Name="Boss" ID="{FFE7BED7-71E8-4639-93F3-3C0328B5F2A6}"/>
+									</Path>
+									<AudioNodeInfo>
+										<AudioNodeRef Name="Mus_Map_A02_Combat_Boss" ID="{3D682B0D-FFF8-4C09-AD70-7B60C0607DEF}" WorkUnitID="{1B7DE30A-022A-4F3E-833D-4700956087BA}" Platform="Linked"/>
+									</AudioNodeInfo>
+								</Entry>
+							</EntryList>
+						</MusicSwitchContainer>
+					</ChildrenList>
+					<TransitionList>
+						<MusicTransition Name="Root" ID="{A403AB51-72E7-4222-8C98-56011AF3EBBA}">
+							<PropertyList>
+								<Property Name="IsFolder" Type="bool" Value="True"/>
+							</PropertyList>
+							<ChildrenList>
+								<MusicTransition Name="Transition" ID="{890ADE16-7493-4344-9CA8-50E08E80961F}">
+									<TransitionInfo/>
+								</MusicTransition>
+							</ChildrenList>
+							<TransitionInfo/>
+						</MusicTransition>
+					</TransitionList>
+					<ArgumentList>
+						<ArgumentRef Name="Gameplay_State" ID="{4A407E48-F886-4F55-AEF2-151EC76B36FE}"/>
+					</ArgumentList>
+					<EntryList>
+						<Entry>
+							<Path>
+								<PathElementRef Name="Gameplay_State" ID="{4A407E48-F886-4F55-AEF2-151EC76B36FE}"/>
+							</Path>
+							<AudioNodeInfo>
+								<NoObject Platform="Linked"/>
+							</AudioNodeInfo>
+						</Entry>
+						<Entry>
+							<Path>
+								<PathElementRef Name="Combat" ID="{F4CA22A4-367E-4041-962A-673F4F21C198}"/>
+							</Path>
+							<AudioNodeInfo>
+								<AudioNodeRef Name="Mus_Map_A02_Combat" ID="{4A0D26FC-B529-443A-85EE-EFC62D963B07}" WorkUnitID="{1B7DE30A-022A-4F3E-833D-4700956087BA}" Platform="Linked"/>
+							</AudioNodeInfo>
+						</Entry>
+					</EntryList>
+				</MusicSwitchContainer>
+			</ChildrenList>
+		</WorkUnit>
+	</InteractiveMusic>
+</WwiseDocument>

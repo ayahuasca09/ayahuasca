@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{2C3F80C7-B0ED-4B3D-B679-5AC8377B27F7}" SchemaVersion="110" RootDocumentID="{E8A5F6A0-AB3E-4166-BB68-C7D7ECC92B29}" ParentDocumentID="{32F674A8-5DCD-4FF9-BA4C-CF8215152DDC}">
+	<InteractiveMusic>
+		<WorkUnit Name="Mus_System" ID="{2C3F80C7-B0ED-4B3D-B679-5AC8377B27F7}" OwnerID="{A0300139-3918-43F8-B6DC-6756C9A5343D}" PersistMode="Nested">
+			<ChildrenList>
+				<MusicSwitchContainer Name="Mus_System" ID="{4EF604E1-CA99-46AF-ADE6-84433010B4B0}" ShortID="149936000">
+					<PropertyList>
+						<Property Name="GridOffsetPreset" Type="int16" Value="1"/>
+						<Property Name="Priority" Type="int16">
+							<ValueList>
+								<Value>30</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Music" ID="{C97BE259-C5F2-451D-B4D0-A9582976A202}" WorkUnitID="{52413F6A-0454-4387-866C-C7E426BBDADD}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Mus" ID="{CA31BF9F-00D3-4EE4-8C60-D7A60ECDEA91}" WorkUnitID="{9A86BFBA-B12F-4D1A-8049-990F76E26649}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<WorkUnit Name="Mus_System_Show" ID="{B5BB2AF1-AE62-480A-BA3E-10D0403B2F8E}" PersistMode="Reference"/>
+					</ChildrenList>
+					<TransitionList>
+						<MusicTransition Name="Root" ID="{C776D828-2B57-460D-96E8-1DAD9CF3891E}">
+							<PropertyList>
+								<Property Name="IsFolder" Type="bool" Value="True"/>
+							</PropertyList>
+							<ChildrenList>
+								<MusicTransition Name="Transition" ID="{5F854643-80E6-459A-B387-5CC425BA48B1}">
+									<TransitionInfo/>
+								</MusicTransition>
+							</ChildrenList>
+							<TransitionInfo/>
+						</MusicTransition>
+					</TransitionList>
+					<ArgumentList>
+						<ArgumentRef Name="System_Type" ID="{FA319CCC-9681-4176-B3C6-782782F222F0}"/>
+					</ArgumentList>
+					<EntryList>
+						<Entry>
+							<Path>
+								<PathElementRef Name="Show" ID="{C4BEEB72-7996-4D90-9D39-29F405241F1F}"/>
+							</Path>
+							<AudioNodeInfo>
+								<AudioNodeRef Name="Mus_System_Show" ID="{A4127E54-48BD-4F20-83AB-F84C0DED5D6F}" WorkUnitID="{B5BB2AF1-AE62-480A-BA3E-10D0403B2F8E}" Platform="Linked"/>
+							</AudioNodeInfo>
+						</Entry>
+					</EntryList>
+				</MusicSwitchContainer>
+			</ChildrenList>
+		</WorkUnit>
+	</InteractiveMusic>
+</WwiseDocument>

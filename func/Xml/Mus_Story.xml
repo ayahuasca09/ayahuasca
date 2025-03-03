@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{03D94B59-A8D2-4EC2-AC77-A99E485245E8}" SchemaVersion="110" RootDocumentID="{E8A5F6A0-AB3E-4166-BB68-C7D7ECC92B29}" ParentDocumentID="{32F674A8-5DCD-4FF9-BA4C-CF8215152DDC}">
+	<InteractiveMusic>
+		<WorkUnit Name="Mus_Story" ID="{03D94B59-A8D2-4EC2-AC77-A99E485245E8}" OwnerID="{A0300139-3918-43F8-B6DC-6756C9A5343D}" PersistMode="Nested">
+			<ChildrenList>
+				<MusicSwitchContainer Name="Mus_Story" ID="{5630EFA7-A343-494C-A2E0-B5361C9ACC50}" ShortID="350824554">
+					<PropertyList>
+						<Property Name="GridOffsetPreset" Type="int16" Value="1"/>
+						<Property Name="OverrideOutput" Type="bool" Value="True"/>
+						<Property Name="Priority" Type="int16">
+							<ValueList>
+								<Value>30</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Music" ID="{C97BE259-C5F2-451D-B4D0-A9582976A202}" WorkUnitID="{52413F6A-0454-4387-866C-C7E426BBDADD}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Mus_Story" ID="{45765D8C-F595-403C-AFAA-000091BD4D2C}" WorkUnitID="{9A86BFBA-B12F-4D1A-8049-990F76E26649}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<WorkUnit Name="Mus_Story_S06" ID="{A39001F5-3C41-4086-8E4D-B18CAA018228}" PersistMode="Reference"/>
+						<WorkUnit Name="Mus_Story_S07" ID="{358E58DD-4EA9-4C2E-AB34-7C4B17147CB3}" PersistMode="Reference"/>
+						<WorkUnit Name="Mus_Story_S03" ID="{F38702EF-C60D-4702-B90A-4466C7386997}" PersistMode="Reference"/>
+						<WorkUnit Name="Mus_Story_S01" ID="{F8687B25-8D4A-4962-BA36-5BD90743ADF8}" PersistMode="Reference"/>
+						<WorkUnit Name="Mus_Story_S05" ID="{F152D01E-52A5-435B-976A-3FFB45B535A8}" PersistMode="Reference"/>
+						<WorkUnit Name="Mus_Story_S02" ID="{D01EB348-436E-45DB-9DC1-A97A4ED00B7B}" PersistMode="Reference"/>
+						<WorkUnit Name="Mus_Story_S04" ID="{DD447EA4-2BD4-4B8B-882B-E2E489ADDE09}" PersistMode="Reference"/>
+					</ChildrenList>
+					<TransitionList>
+						<MusicTransition Name="Root" ID="{8179DB5C-1352-4A9F-891F-340B56AB23D0}">
+							<PropertyList>
+								<Property Name="IsFolder" Type="bool" Value="True"/>
+							</PropertyList>
+							<ChildrenList>
+								<MusicTransition Name="Transition" ID="{642C985C-DC5A-40E3-940C-3CB2DC9319AA}">
+									<PropertyList>
+										<Property Name="EnableSourceFadeOut" Type="bool" Value="True"/>
+										<Property Name="ExitSourceAt" Type="int16" Value="0"/>
+									</PropertyList>
+									<TransitionInfo>
+										<SourceFadeOut>
+											<MusicFade Name="Source Fade-out" ID="{73205ECC-1C74-4EF7-9E80-1D3FE2FA8185}">
+												<PropertyList>
+													<Property Name="FadeTime" Type="Real64" Value="1"/>
+													<Property Name="FadeType" Type="int16" Value="1"/>
+												</PropertyList>
+											</MusicFade>
+										</SourceFadeOut>
+									</TransitionInfo>
+								</MusicTransition>
+								<MusicTransition Name="Transition" ID="{8E3AC094-BECF-4A1E-80F7-023ACC6F949F}">
+									<PropertyList>
+										<Property Name="DestinationContextType" Type="int16" Value="2"/>
+										<Property Name="EnableSourceFadeOut" Type="bool" Value="True"/>
+										<Property Name="ExitSourceAt" Type="int16" Value="0"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="DestinationContextObject">
+											<ObjectRef Name="Mus_Story_S02" ID="{E7A51195-2067-4532-9A70-7D29A0205643}" WorkUnitID="{D01EB348-436E-45DB-9DC1-A97A4ED00B7B}"/>
+										</Reference>
+									</ReferenceList>
+									<TransitionInfo>
+										<SourceFadeOut>
+											<MusicFade Name="Source Fade-out" ID="{C3086D84-98A3-4327-B6F8-4659B8F5C637}">
+												<PropertyList>
+													<Property Name="FadeCurve" Type="int16" Value="7"/>
+													<Property Name="FadeTime" Type="Real64" Value="1.25"/>
+													<Property Name="FadeType" Type="int16" Value="1"/>
+												</PropertyList>
+											</MusicFade>
+										</SourceFadeOut>
+									</TransitionInfo>
+								</MusicTransition>
+							</ChildrenList>
+							<TransitionInfo/>
+						</MusicTransition>
+					</TransitionList>
+					<ArgumentList>
+						<ArgumentRef Name="Story_Type" ID="{309429A3-93C9-40EE-B05B-B9B4D8A40787}"/>
+					</ArgumentList>
+					<EntryList>
+						<Entry>
+							<Path>
+								<PathElementRef Name="S01" ID="{2CD502D9-961D-40D4-A400-960A0A30AD5C}"/>
+							</Path>
+							<AudioNodeInfo>
+								<AudioNodeRef Name="Mus_Story_S01" ID="{F2449230-A7B3-466E-BBF4-4B3C9C5E68F5}" WorkUnitID="{F8687B25-8D4A-4962-BA36-5BD90743ADF8}" Platform="Linked"/>
+							</AudioNodeInfo>
+						</Entry>
+						<Entry>
+							<Path>
+								<PathElementRef Name="S02" ID="{3EA7397B-C186-4B62-9BED-DA82E13054EA}"/>
+							</Path>
+							<AudioNodeInfo>
+								<AudioNodeRef Name="Mus_Story_S02" ID="{E7A51195-2067-4532-9A70-7D29A0205643}" WorkUnitID="{D01EB348-436E-45DB-9DC1-A97A4ED00B7B}" Platform="Linked"/>
+							</AudioNodeInfo>
+						</Entry>
+						<Entry>
+							<Path>
+								<PathElementRef Name="S03" ID="{9DD840E5-0741-4FD3-87D3-468B6E11C519}"/>
+							</Path>
+							<AudioNodeInfo>
+								<AudioNodeRef Name="Mus_Story_S03" ID="{31AC26AF-2A09-4DBC-9C0C-9B53E31C45B5}" WorkUnitID="{F38702EF-C60D-4702-B90A-4466C7386997}" Platform="Linked"/>
+							</AudioNodeInfo>
+						</Entry>
+						<Entry>
+							<Path>
+								<PathElementRef Name="S04" ID="{C27912C3-DD10-4D4C-BD52-32C8EC7F4034}"/>
+							</Path>
+							<AudioNodeInfo>
+								<AudioNodeRef Name="Mus_Story_S04" ID="{4251500E-7542-468E-BF23-5EC26E8E847F}" WorkUnitID="{DD447EA4-2BD4-4B8B-882B-E2E489ADDE09}" Platform="Linked"/>
+							</AudioNodeInfo>
+						</Entry>
+						<Entry>
+							<Path>
+								<PathElementRef Name="S05" ID="{CA9063EE-4824-4AB0-9D62-80AF263F21A8}"/>
+							</Path>
+							<AudioNodeInfo>
+								<AudioNodeRef Name="Mus_Story_S05" ID="{F7F22D49-9757-4FD8-B891-72DD0688771A}" WorkUnitID="{F152D01E-52A5-435B-976A-3FFB45B535A8}" Platform="Linked"/>
+							</AudioNodeInfo>
+						</Entry>
+						<Entry>
+							<Path>
+								<PathElementRef Name="S06" ID="{153E916E-D6DD-41F4-89E0-B92907DCB56C}"/>
+							</Path>
+							<AudioNodeInfo>
+								<AudioNodeRef Name="Mus_Story_S06" ID="{D6472B22-BEE6-44D5-A2D3-FA06C75DAFB2}" WorkUnitID="{A39001F5-3C41-4086-8E4D-B18CAA018228}" Platform="Linked"/>
+							</AudioNodeInfo>
+						</Entry>
+						<Entry>
+							<Path>
+								<PathElementRef Name="S07" ID="{45C45A55-2A74-4BA6-8465-41E21CC9DB8D}"/>
+							</Path>
+							<AudioNodeInfo>
+								<AudioNodeRef Name="Mus_Story_S07" ID="{049D6EA3-AFE7-4A4B-9913-510501599B6C}" WorkUnitID="{358E58DD-4EA9-4C2E-AB34-7C4B17147CB3}" Platform="Linked"/>
+							</AudioNodeInfo>
+						</Entry>
+					</EntryList>
+				</MusicSwitchContainer>
+			</ChildrenList>
+		</WorkUnit>
+	</InteractiveMusic>
+</WwiseDocument>

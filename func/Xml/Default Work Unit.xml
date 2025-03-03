@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{438EE591-96D4-4DA4-B144-0F43D285268D}" SchemaVersion="110">
+	<InteractiveMusic>
+		<WorkUnit Name="Default Work Unit" ID="{438EE591-96D4-4DA4-B144-0F43D285268D}" PersistMode="Standalone">
+			<ChildrenList>
+				<WorkUnit Name="v0" ID="{4F2828D8-D7D3-47F0-B737-5D1908EC0B7A}" PersistMode="Reference"/>
+				<WorkUnit Name="Test" ID="{5FA5B146-DA51-4516-B282-4F7799CA27F5}" PersistMode="Reference"/>
+				<WorkUnit Name="CE" ID="{03173B53-16D2-48D9-BEB0-6EA5CA586D1F}" PersistMode="Reference"/>
+			</ChildrenList>
+		</WorkUnit>
+	</InteractiveMusic>
+</WwiseDocument>

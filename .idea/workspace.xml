@@ -4,9 +4,42 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="17a8a927-0db7-41d4-8f81-9181fc87e6d9" name="更改" comment="xml：测试更新">
+    <list default="true" id="17a8a927-0db7-41d4-8f81-9181fc87e6d9" name="更改" comment="备份">
+      <change afterPath="$PROJECT_DIR$/func/Xml/CE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/Xml/Default Work Unit.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/Xml/Mus.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/Xml/Mus_Loading.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/Xml/Mus_Map.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/Xml/Mus_Map_01.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/Xml/Mus_Map_A01.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/Xml/Mus_Map_A02.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/Xml/Mus_Map_A02_01.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/Xml/Mus_Map_A03.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/Xml/Mus_Map_A04.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/Xml/Mus_Map_A05.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/Xml/Mus_Story.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/Xml/Mus_Story_01.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/Xml/Mus_Story_S01.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/Xml/Mus_Story_S02.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/Xml/Mus_Story_S03.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/Xml/Mus_Story_S04.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/Xml/Mus_Story_S05.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/Xml/Mus_Story_S06.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/Xml/Mus_Story_S07.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/Xml/Mus_System.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/Xml/Mus_System_Show.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/Xml/Mus_Test.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/Xml/Music.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/Xml/Music_Boss.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/Xml/Stin.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/Xml/Test.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/Xml/Xml_Test.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/Xml/v0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func/Xml/v1.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/backup/backup.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/backup/backup.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/func/comlib/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/func/comlib/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/func/comlib/xml_h.py" beforeDir="false" afterPath="$PROJECT_DIR$/func/comlib/xml_h.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/func/xml音乐状态设置测试.py" beforeDir="false" afterPath="$PROJECT_DIR$/func/xml音乐状态设置测试.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -195,7 +228,7 @@
       <visibility group="运行配置" flag="true" />
     </myKeys>
   </component>
-  <component name="RunManager" selected="Python.backup">
+  <component name="RunManager" selected="Python.xml音乐状态设置测试">
     <configuration name="打包自动化" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="SP" />
       <option name="ENV_FILES" value="" />
@@ -506,11 +539,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.xml音乐状态设置测试" />
         <item itemvalue="Python.backup" />
         <item itemvalue="Python.打包自动化" />
         <item itemvalue="Python.xml_h" />
         <item itemvalue="Python.exe_h" />
-        <item itemvalue="Python.xml音乐状态设置测试" />
       </list>
     </recent_temporary>
   </component>
@@ -529,14 +562,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1716955384994</updated>
-    </task>
-    <task id="LOCAL-00160" summary="添加效果器设置">
-      <option name="closed" value="true" />
-      <created>1734964977532</created>
-      <option name="number" value="00160" />
-      <option name="presentableId" value="LOCAL-00160" />
-      <option name="project" value="LOCAL" />
-      <updated>1734964977532</updated>
     </task>
     <task id="LOCAL-00161" summary="Mus自动化：添加命名检查">
       <option name="closed" value="true" />
@@ -922,7 +947,15 @@
       <option name="project" value="LOCAL" />
       <updated>1740968852749</updated>
     </task>
-    <option name="localTasksCounter" value="209" />
+    <task id="LOCAL-00209" summary="备份">
+      <option name="closed" value="true" />
+      <created>1740986012060</created>
+      <option name="number" value="00209" />
+      <option name="presentableId" value="LOCAL-00209" />
+      <option name="project" value="LOCAL" />
+      <updated>1740986012060</updated>
+    </task>
+    <option name="localTasksCounter" value="210" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -938,7 +971,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="id表流程优化" />
     <MESSAGE value="ES音效表流程清理" />
     <MESSAGE value="更新" />
     <MESSAGE value="命名规范检查：增加对正则表达式的输出" />
@@ -963,7 +995,8 @@
     <MESSAGE value="媒体占位资源生成及ES优化" />
     <MESSAGE value="xml：测试" />
     <MESSAGE value="xml：测试更新" />
-    <option name="LAST_COMMIT_MESSAGE" value="xml：测试更新" />
+    <MESSAGE value="备份" />
+    <option name="LAST_COMMIT_MESSAGE" value="备份" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
