@@ -4,43 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="17a8a927-0db7-41d4-8f81-9181fc87e6d9" name="更改" comment="xml：测试">
-      <change afterPath="$PROJECT_DIR$/func/Mus自动化打包版v2.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/xml音乐状态设置测试.py/Analysis-00.toc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/xml音乐状态设置测试.py/COLLECT-00.toc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/xml音乐状态设置测试.py/EXE-00.toc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/xml音乐状态设置测试.py/PKG-00.toc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/xml音乐状态设置测试.py/PYZ-00.pyz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/xml音乐状态设置测试.py/PYZ-00.toc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/xml音乐状态设置测试.py/base_library.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/xml音乐状态设置测试.py/warn-xml音乐状态设置测试.py.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/xml音乐状态设置测试.py/xml音乐状态设置测试.py.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/xml音乐状态设置测试.py/xml音乐状态设置测试.py.pkg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/xml音乐状态设置测试.py/xref-xml音乐状态设置测试.py.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/xml音乐状态设置测试/Analysis-00.toc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/xml音乐状态设置测试/COLLECT-00.toc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/xml音乐状态设置测试/EXE-00.toc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/xml音乐状态设置测试/PKG-00.toc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/xml音乐状态设置测试/PYZ-00.pyz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/xml音乐状态设置测试/PYZ-00.toc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/xml音乐状态设置测试/base_library.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/xml音乐状态设置测试/warn-xml音乐状态设置测试.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/xml音乐状态设置测试/xml音乐状态设置测试.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/xml音乐状态设置测试/xml音乐状态设置测试.pkg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/build/xml音乐状态设置测试/xref-xml音乐状态设置测试.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/xml音乐状态设置测试.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/xml音乐状态设置测试.py.spec" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/func/xml音乐状态设置测试.spec" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module/backup/backup.py" afterDir="false" />
+    <list default="true" id="17a8a927-0db7-41d4-8f81-9181fc87e6d9" name="更改" comment="xml：测试更新">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/func/comlib/Mus_Map_A02_01.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/func/comlib/Mus_Test.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/func/comlib/exe_h.py" beforeDir="false" afterPath="$PROJECT_DIR$/func/comlib/exe_h.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/func/comlib/oi_h.py" beforeDir="false" afterPath="$PROJECT_DIR$/func/comlib/oi_h.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/func/comlib/xml_h.py" beforeDir="false" afterPath="$PROJECT_DIR$/func/comlib/xml_h.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/func/打包自动化.py" beforeDir="false" afterPath="$PROJECT_DIR$/func/打包自动化.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/waapi/waapi_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/waapi/waapi_test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pylibrary.txt" beforeDir="false" afterPath="$PROJECT_DIR$/pylibrary.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/backup/backup.py" beforeDir="false" afterPath="$PROJECT_DIR$/module/backup/backup.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -564,14 +530,6 @@
       <option name="presentableId" value="Default" />
       <updated>1716955384994</updated>
     </task>
-    <task id="LOCAL-00159" summary="媒体资源替换入轨">
-      <option name="closed" value="true" />
-      <created>1734875899620</created>
-      <option name="number" value="00159" />
-      <option name="presentableId" value="LOCAL-00159" />
-      <option name="project" value="LOCAL" />
-      <updated>1734875899620</updated>
-    </task>
     <task id="LOCAL-00160" summary="添加效果器设置">
       <option name="closed" value="true" />
       <created>1734964977532</created>
@@ -956,7 +914,15 @@
       <option name="project" value="LOCAL" />
       <updated>1740653305010</updated>
     </task>
-    <option name="localTasksCounter" value="208" />
+    <task id="LOCAL-00208" summary="xml：测试更新">
+      <option name="closed" value="true" />
+      <created>1740968852747</created>
+      <option name="number" value="00208" />
+      <option name="presentableId" value="LOCAL-00208" />
+      <option name="project" value="LOCAL" />
+      <updated>1740968852749</updated>
+    </task>
+    <option name="localTasksCounter" value="209" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -972,7 +938,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="音效全流程自动化" />
     <MESSAGE value="id表流程优化" />
     <MESSAGE value="ES音效表流程清理" />
     <MESSAGE value="更新" />
@@ -997,7 +962,8 @@
     <MESSAGE value="媒体占位资源生成及ES导入问题修复" />
     <MESSAGE value="媒体占位资源生成及ES优化" />
     <MESSAGE value="xml：测试" />
-    <option name="LAST_COMMIT_MESSAGE" value="xml：测试" />
+    <MESSAGE value="xml：测试更新" />
+    <option name="LAST_COMMIT_MESSAGE" value="xml：测试更新" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
